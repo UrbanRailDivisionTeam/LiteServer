@@ -1,0 +1,9 @@
+[submodule "web"]
+	path = web
+	url = https://github.com/UrbanRailDivisionTeam/lite-web-next.git
+[submodule "etl"]
+	path = etl
+	url = https://github.com/UrbanRailDivisionTeam/LiteETL.git
+[submodule "api"]
+	path = api
+	url = https://github.com/UrbanRailDivisionTeam/LiteWebApi.git
