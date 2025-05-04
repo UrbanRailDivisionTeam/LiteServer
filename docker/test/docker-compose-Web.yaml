@@ -1,0 +1,31 @@
+version: '3.8'
+
+services:
+    web:
+        container_name: web
+        build:
+            context: ../../web
+            dockerfile: ../web/dockerfile
+        ports:
+            - "8001:8001"
+        restart: always
+
+    api:
+        container_name: api
+        build:
+            context: ../../api
+            dockerfile: ../api/dockerfile
+        ports:
+            - "8000:8000"
+        restart: always
+
+    mongodb:
+        container_name: mongodb
+        image: mongodb/mongodb-community-server:latest
+        ports:
+            - "27017:27017"
+        restart: always
+        volumes:
+            - ./mongo_data:/data/db
+            # 用于自动化添加测试数据
+            - ./test_data.js:/docker-entrypoint-initdb.d/test_data.js
