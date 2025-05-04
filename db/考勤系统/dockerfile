@@ -1,0 +1,20 @@
+FROM mcr.microsoft.com/mssql/server:2022-latest
+
+# 设置 SA 密码和接受许可协议
+ENV SA_PASSWORD=Swq8855830.
+ENV ACCEPT_EULA=Y
+
+# 创建初始化脚本目录
+USER root
+RUN mkdir -p /init-sql
+
+# 拷贝 SQL 脚本到容器
+COPY init.sql /init-sql/
+COPY data.sql /init-sql/
+
+# 启动 SQL Server 并执行初始化脚本
+CMD /opt/mssql/bin/sqlservr & \
+    sleep 30 && \
+    /opt/mssql-tools/bin/sqlcmd -S localhost -U SA -P "$SA_PASSWORD" -i /init-sql/init.sql && \
+    /opt/mssql-tools/bin/sqlcmd -S localhost -U SA -P "$SA_PASSWORD" -i /init-sql/data.sql && \
+    wait

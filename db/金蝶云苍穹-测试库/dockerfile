@@ -1,12 +1,8 @@
-FROM mysql:8.0
+FROM mysql:9.3.0-oraclelinux9
 
-# 设置环境变量，避免交互式安装
 ENV MYSQL_ROOT_PASSWORD=Swq8855830.
 
-# 拷贝初始化 SQL 脚本到容器的 /docker-entrypoint-initdb.d 目录
-# 该目录下的所有 .sql 文件会在容器初始化时自动执行
 COPY init.sql /docker-entrypoint-initdb.d/
 COPY data.sql /docker-entrypoint-initdb.d/
 
-# 暴露 MySQL 默认端口
 EXPOSE 3306
