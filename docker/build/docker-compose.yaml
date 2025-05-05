@@ -1,0 +1,53 @@
+version: '3.8'
+
+services:
+    web:
+        container_name: web
+        build:
+            context: ../../web
+            dockerfile: ../../web/dockerfile
+        ports:
+            - "8001:8001"
+        restart: always
+        networks:
+            - lite_net_develop
+
+    api:
+        container_name: api
+        build:
+            context: ../../api
+            dockerfile: ../../api/dockerfile
+        ports:
+            - "8000:8000"
+        restart: always
+        networks:
+            - lite_net_develop
+
+    etl:
+        container_name: etl
+        build:
+            context: ../../etl
+            dockerfile: ../../etl/dockerfile
+        restart: always
+        networks:
+            - lite_net_develop
+        volumes:
+            # 保存对应的duckdb数据库文件
+            - ../../etl/source/data.db:/LiteETL/source/data.db
+            - ../../etl/source/data.db.wal:/LiteETL/source/data.db.wal
+
+    mongodb:
+        container_name: mongodb
+        image: mongodb/mongodb-community-server:latest
+        ports:
+            - "27017:27017"
+        restart: always
+        volumes:
+            - ./mongo_data:/data/db
+            - ./init_db.js:/docker-entrypoint-initdb.d/init_db.js
+        networks:
+            - lite_net_develop
+
+networks:
+    lite_net_develop:
+        driver: bridge

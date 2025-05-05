@@ -1,0 +1,153 @@
+version: '3.8'
+
+services:
+    etl:
+        container_name: etl
+        build:
+            context: ../../etl
+            dockerfile: ../../etl/dockerfile
+        ports:
+            - "6379:6379"
+        restart: always
+        networks:
+            - lite_net_testetl
+        volumes:
+            - ../../etl/source/data.db:/LiteETL/source/data.db
+            - ../../etl/source/data.db.wal:/LiteETL/source/data.db.wal
+
+    mongodb:
+        container_name: mongodb
+        image: mongodb/mongodb-community-server:latest
+        ports:
+            - "27017:27017"
+        restart: always
+        volumes:
+            - ./mongo_data:/data/db
+            - ./test_data.js:/docker-entrypoint-initdb.d/test_data.js
+        networks:
+            - lite_net_testetl
+
+    金蝶云苍穹_测试库:
+        container_name: kingdee_cloud_test
+        build:
+            context: ../../db/金蝶云苍穹-测试库
+            dockerfile: ../../db/金蝶云苍穹-测试库/dockerfile
+        ports:
+            - "3306:3306"
+        restart: always
+        networks:
+            - lite_net_testetl
+
+    金蝶云苍穹_正式库:
+        container_name: kingdee_cloud_prod
+        build:
+            context: ../../db/金蝶云苍穹-正式库
+            dockerfile: ../../db/金蝶云苍穹-正式库/dockerfile
+        ports:
+            - "3307:3306"
+        restart: always
+        networks:
+            - lite_net_testetl
+
+    智能立库:
+        container_name: smart_warehouse
+        build:
+            context: ../../db/智能立库
+            dockerfile: ../../db/智能立库/dockerfile
+        ports:
+            - "3308:3306"
+        restart: always
+        networks:
+            - lite_net_testetl
+
+    数据治理平台_正式库:
+        container_name: datagov_prod
+        build:
+            context: ../../db/数据治理平台-正式库
+            dockerfile: ../../db/数据治理平台-正式库/dockerfile
+        ports:
+            - "3309:3306"
+        restart: always
+        networks:
+            - lite_net_testetl
+
+    数据治理平台_测试库:
+        container_name: datagov_test
+        build:
+            context: ../../db/数据治理平台-测试库
+            dockerfile: ../../db/数据治理平台-测试库/dockerfile
+        ports:
+            - "3310:3306"
+        restart: always
+        networks:
+            - lite_net_testetl
+
+    机车数据库:
+        container_name: locomotive_db
+        build:
+            context: ../../db/机车数据库
+            dockerfile: ../../db/机车数据库/dockerfile
+        ports:
+            - "3311:3306"
+        restart: always
+        networks:
+            - lite_net_testetl
+
+    生产辅助系统:
+        container_name: prod_support
+        build:
+            context: ../../db/生产辅助系统
+            dockerfile: ../../db/生产辅助系统/dockerfile
+        ports:
+            - "1433:1433"
+        restart: always
+        networks:
+            - lite_net_testetl
+
+    考勤系统:
+        container_name: attendance_sys
+        build:
+            context: ../../db/考勤系统
+            dockerfile: ../../db/考勤系统/dockerfile
+        ports:
+            - "1434:1433"
+        restart: always
+        networks:
+            - lite_net_testetl
+
+    eas:
+        container_name: eas_db
+        build:
+            context: ../../db/eas
+            dockerfile: ../../db/eas/dockerfile
+        ports:
+            - "1521:1521"
+        restart: always
+        networks:
+            - lite_net_testetl
+
+    mes:
+        container_name: mes_db
+        build:
+            context: ../../db/mes
+            dockerfile: ../../db/mes/dockerfile
+        ports:
+            - "1522:1521"
+        restart: always
+        networks:
+            - lite_net_testetl
+
+    shr:
+        container_name: shr_db
+        build:
+            context: ../../db/shr
+            dockerfile: ../../db/shr/dockerfile
+        ports:
+            - "1523:1521"
+        restart: always
+        networks:
+            - lite_net_testetl
+
+networks:
+    lite_net_testetl:
+        driver: bridge

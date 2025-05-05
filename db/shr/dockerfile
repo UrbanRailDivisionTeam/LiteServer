@@ -1,8 +1,6 @@
-FROM wnameless/oracle-xe-11g
+FROM wnameless/oracle-xe-11g-r2
 
 # 拷贝 SQL 脚本到容器
 COPY init.sql /docker-entrypoint-initdb.d/
 COPY data.sql /docker-entrypoint-initdb.d/
 
-# 容器启动时自动执行 SQL 脚本
-CMD /bin/bash -c "/usr/sbin/startup.sh && sleep 30 && for f in /docker-entrypoint-initdb.d/*.sql; do echo \"Running $f\"; su - oracle -c \"/u01/app/oracle/product/11.2.0/xe/bin/sqlplus system/oracle @\$f\"; done && tail -f /dev/null"

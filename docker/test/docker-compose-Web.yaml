@@ -5,19 +5,21 @@ services:
         container_name: web
         build:
             context: ../../web
-            dockerfile: ../web/dockerfile
-        ports:
-            - "8001:8001"
+            dockerfile: ../../web/dockerfile
         restart: always
+        networks:
+            - lite_net_testweb
 
     api:
         container_name: api
         build:
             context: ../../api
-            dockerfile: ../api/dockerfile
+            dockerfile: ../../api/dockerfile
         ports:
             - "8000:8000"
         restart: always
+        networks:
+            - lite_net_testweb
 
     mongodb:
         container_name: mongodb
@@ -29,3 +31,9 @@ services:
             - ./mongo_data:/data/db
             # 用于自动化添加测试数据
             - ./test_data.js:/docker-entrypoint-initdb.d/test_data.js
+        networks:
+            - lite_net_testweb
+
+networks:
+    lite_net_testweb:
+        driver: bridge
