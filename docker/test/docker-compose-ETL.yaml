@@ -7,11 +7,12 @@ services:
         ports:
             - "6379:6379"
         restart: always
-        networks:
-            - lite_net_testetl
         volumes:
             - ../../etl/source/data.db:/LiteETL/source/data.db
             - ../../etl/source/data.db.wal:/LiteETL/source/data.db.wal
+        networks:
+            lite_net_testetl:
+                ipv4_address: 192.168.1.100
 
     mongodb:
         container_name: mongodb
@@ -23,7 +24,8 @@ services:
             - ./mongo_data:/data/db
             - ./init_db.js:/docker-entrypoint-initdb.d/init_db.js
         networks:
-            - lite_net_testetl
+            lite_net_testetl:
+                ipv4_address: 192.168.1.100
 
     金蝶云苍穹_测试库:
         container_name: kingdee_cloud_test
