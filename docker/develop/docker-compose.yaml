@@ -1,11 +1,9 @@
-version: '3.8'
-
 services:
     web:
         container_name: web
         build:
             context: ../../web
-            dockerfile: ../../web/dockerfile
+            dockerfile: dockerfile
         ports:
             - "8001:8001"
         restart: always
@@ -16,7 +14,7 @@ services:
         container_name: api
         build:
             context: ../../api
-            dockerfile: ../../api/dockerfile
+            dockerfile: dockerfile
         ports:
             - "8000:8000"
         restart: always
@@ -27,7 +25,7 @@ services:
         container_name: etl
         build:
             context: ../../etl
-            dockerfile: ../../etl/dockerfile
+            dockerfile: dockerfile
         ports:
             - "6379:6379"
         restart: always
@@ -35,8 +33,7 @@ services:
             - lite_net_develop
         volumes:
             # 保存对应的duckdb数据库文件
-            - ../../etl/source/data.db:/LiteETL/source/data.db
-            - ../../etl/source/data.db.wal:/LiteETL/source/data.db.wal
+            - ../../etl/source:/LiteETL/source
 
     mongodb:
         container_name: mongodb
@@ -46,6 +43,8 @@ services:
         restart: always
         volumes:
             - ./mongo_data:/data/db
+            - ./init_db.js:/docker-entrypoint-initdb.d/init_db.js
+
         networks:
             - lite_net_develop
 

@@ -1,11 +1,7 @@
-version: '3.8'
-
 services:
     web:
         container_name: web
-        build:
-            context: ../../web
-            dockerfile: ../../web/dockerfile
+        image: cheakf/lite-web:latest
         ports:
             - "8001:8001"
         restart: always
@@ -14,9 +10,7 @@ services:
 
     api:
         container_name: api
-        build:
-            context: ../../api
-            dockerfile: ../../api/dockerfile
+        image: cheakf/lite-api:latest
         ports:
             - "8000:8000"
         restart: always
@@ -25,9 +19,7 @@ services:
 
     etl:
         container_name: etl
-        build:
-            context: ../../etl
-            dockerfile: ../../etl/dockerfile
+        image: cheakf/lite-etl:latest
         restart: always
         networks:
             - lite_net_develop
@@ -44,7 +36,6 @@ services:
         restart: always
         volumes:
             - ./mongo_data:/data/db
-            - ./init_db.js:/docker-entrypoint-initdb.d/init_db.js
         networks:
             - lite_net_develop
 
