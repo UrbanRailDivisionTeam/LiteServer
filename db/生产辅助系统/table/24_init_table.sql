@@ -1,0 +1,15054 @@
+USE [车体事业部];
+CREATE TABLE 车体事业部.dbo.tabA131056280103DIYTable259 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	RepID int NOT NULL,
+	FillDate datetime DEFAULT '' NOT NULL,
+	ModifyDate datetime DEFAULT '' NOT NULL,
+	DeptID int NOT NULL,
+	OperID int NOT NULL,
+	sDesc nvarchar(200) COLLATE Chinese_PRC_CI_AS DEFAULT '' NULL,
+	bIsFinish char(1) COLLATE Chinese_PRC_CI_AS NOT NULL,
+	bLocked char(1) COLLATE Chinese_PRC_CI_AS NOT NULL,
+	bCanViewWhenNoFinished char(1) COLLATE Chinese_PRC_CI_AS NOT NULL,
+	OperID2 int NOT NULL,
+	dUpdate2 datetime DEFAULT '' NULL,
+	F1977 nvarchar(100) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F1978 nvarchar(100) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F1979 nvarchar(40) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F1980 nvarchar(100) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F1981 nvarchar(40) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F1982 nvarchar(100) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F1983 nvarchar(100) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F1984 nvarchar(200) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F1985 nvarchar(100) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F1986 nvarchar(100) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F1987 nvarchar(100) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F1988 nvarchar(100) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+CREATE TABLE 车体事业部.dbo.tabA186DIYTable87 (
+	F463 varchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NULL
+);
+CREATE TABLE 车体事业部.dbo.tabA3227DIYTable2411 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	F19396 nvarchar(100) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F19397 nvarchar(100) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F19398 nvarchar(100) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F19399 nvarchar(40) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F19400 nvarchar(100) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F19401 nvarchar(100) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F19402 nvarchar(100) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F19403 nvarchar(100) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F19404 numeric(20,0) DEFAULT 0 NOT NULL,
+	F19405 numeric(20,2) DEFAULT 0 NOT NULL,
+	F19406 numeric(20,2) DEFAULT 0 NOT NULL,
+	F19407 datetime DEFAULT '' NOT NULL,
+	F19432 nvarchar(100) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F19537 nvarchar(100) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F19538 nvarchar(100) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F19539 nvarchar(100) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F19618 nvarchar(100) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F19619 nvarchar(100) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F19620 nvarchar(100) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F19621 nvarchar(100) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F19622 numeric(20,2) DEFAULT 0 NOT NULL,
+	F19623 numeric(20,2) DEFAULT 0 NOT NULL,
+	F19624 nvarchar(100) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F19625 nvarchar(100) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F19626 datetime DEFAULT '' NOT NULL
+);
+CREATE TABLE 车体事业部.dbo.tabA3227DIYTable2412 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	RepID int NOT NULL,
+	FillDate datetime DEFAULT '' NOT NULL,
+	ModifyDate datetime DEFAULT '' NOT NULL,
+	DeptID int NOT NULL,
+	OperID int NOT NULL,
+	sDesc nvarchar(200) COLLATE Chinese_PRC_CI_AS DEFAULT '' NULL,
+	bIsFinish char(1) COLLATE Chinese_PRC_CI_AS NOT NULL,
+	bLocked char(1) COLLATE Chinese_PRC_CI_AS NOT NULL,
+	bCanViewWhenNoFinished char(1) COLLATE Chinese_PRC_CI_AS NOT NULL,
+	OperID2 int NOT NULL,
+	dUpdate2 datetime DEFAULT '' NULL,
+	F19412 nvarchar(200) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F19413 nvarchar(200) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F19414 nvarchar(100) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F19415 nvarchar(100) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F19416 nvarchar(100) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F19417 datetime DEFAULT '' NOT NULL,
+	F19418 nvarchar(100) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F19419 nvarchar(400) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F19421 nvarchar(100) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F19422 datetime DEFAULT '' NOT NULL,
+	F19423 nvarchar(100) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F19424 datetime DEFAULT '' NOT NULL,
+	F19425 nvarchar(100) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F19426 datetime DEFAULT '' NOT NULL,
+	F19427 nvarchar(100) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F19428 datetime DEFAULT '' NOT NULL,
+	F19429 nvarchar(100) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F19433 nvarchar(100) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F19434 nvarchar(100) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F19435 nvarchar(100) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F19646 nvarchar(100) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F19669 nvarchar(100) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+CREATE TABLE 车体事业部.dbo.tabAppPrint (
+	RepID int NOT NULL,
+	PrintFormat nvarchar(2000) COLLATE Chinese_PRC_CI_AS NULL,
+	CONSTRAINT PK__tabAppPr__2F6FA9AB3D9C3BAE PRIMARY KEY (RepID)
+);
+CREATE TABLE 车体事业部.dbo.tabAutoBM (
+	RuleID int NULL,
+	sFormat nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	iSerial int NULL
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabAutoFill (
+	RepID int NOT NULL,
+	sTimeSetting varchar(100) COLLATE Chinese_PRC_CI_AS NOT NULL,
+	sLastDoTime datetime NULL,
+	DoDate datetime NULL,
+	CONSTRAINT PK__tabAutoF__2F6FA9AB0BE6BFCF PRIMARY KEY (RepID)
+);
+CREATE TABLE 车体事业部.dbo.tabBOMSDR (
+	bomID int NOT NULL,
+	FieldID varchar(20) COLLATE Chinese_PRC_CI_AS NOT NULL,
+	DataRule int NULL,
+	ExFillField varchar(200) COLLATE Chinese_PRC_CI_AS NULL
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabBaseTableDataLocked (
+	tabID int NOT NULL,
+	CONSTRAINT PK__tabBaseT__50656ECA0FB750B3 PRIMARY KEY (tabID)
+);
+CREATE TABLE 车体事业部.dbo.tabBom (
+	bomID int NOT NULL,
+	sBM nvarchar(50) COLLATE Chinese_PRC_CI_AS NOT NULL,
+	sName nvarchar(100) COLLATE Chinese_PRC_CI_AS NOT NULL,
+	iCreator int NOT NULL,
+	bNMOther char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	iMaxLevel int DEFAULT 0 NOT NULL,
+	sColor varchar(200) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	CONSTRAINT PK__tabBom__B6B088681387E197 PRIMARY KEY (bomID)
+);
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabBomNodeType (
+	bomID int NULL,
+	iNodeTypeID int NULL,
+	sDisplayField varchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	sMainFieldID int NULL,
+	sLevelBMFieldID varchar(20) COLLATE Chinese_PRC_CI_AS NULL,
+	sBOMIDFieldID varchar(20) COLLATE Chinese_PRC_CI_AS NULL,
+	iOrd int NULL,
+	slstFieldID varchar(600) COLLATE Chinese_PRC_CI_AS NULL,
+	slstFieldName nvarchar(600) COLLATE Chinese_PRC_CI_AS NULL
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabBomTree (
+	bomID int NULL,
+	DataID int NULL,
+	iNodeID int NULL,
+	iNodeTypeID int NULL,
+	sLevelNo varchar(200) COLLATE Chinese_PRC_CI_AS NULL,
+	sNodeName nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	bIsLeaf char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	iFromDataID int DEFAULT 0 NOT NULL
+);
+ 
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabCAdminR (
+	iID int NOT NULL,
+	sValue char(1) COLLATE Chinese_PRC_CI_AS NOT NULL,
+	sCaption nvarchar(50) COLLATE Chinese_PRC_CI_AS NOT NULL,
+	iImageIndex int NOT NULL,
+	RoleID int NOT NULL,
+	iID2 int NOT NULL,
+	iOrd int NOT NULL
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabCancelTaskFormula (
+	RepID int NOT NULL,
+	DataID int NOT NULL,
+	sFormula text COLLATE Chinese_PRC_CI_AS NULL,
+	sLinkID varchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+CREATE TABLE 车体事业部.dbo.tabCategory (
+	CatID int NOT NULL,
+	sName nvarchar(60) COLLATE Chinese_PRC_CI_AS NOT NULL,
+	SJ int NULL,
+	sBM nvarchar(30) COLLATE Chinese_PRC_CI_AS NULL,
+	CONSTRAINT PK__tabCateg__6A1C8ADA22CA2527 PRIMARY KEY (CatID)
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable (
+	tabID int NOT NULL,
+	tabName nvarchar(100) COLLATE Chinese_PRC_CI_AS NOT NULL,
+	bBase int NULL,
+	FormHeight int NULL,
+	FormWidth int NULL,
+	FormFormat image NULL,
+	sOriTabName nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	sSchema nvarchar(50) COLLATE Chinese_PRC_CI_AS NULL,
+	sDataFL varchar(300) COLLATE Chinese_PRC_CI_AS NULL,
+	sDataOrd varchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	CatID int DEFAULT -1 NOT NULL,
+	sBM varchar(30) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	sName2 nvarchar(100) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	CONSTRAINT PK__tabDIYTa__50656ECA4DB4832C PRIMARY KEY (tabID)
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable0 (
+	F1 char(10) COLLATE Chinese_PRC_CI_AS NOT NULL,
+	CONSTRAINT PK__tabDIYTa__32149270536D5C82 PRIMARY KEY (F1)
+);
+CREATE TABLE 车体事业部.dbo.tabDIYTable1143 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	F9193 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F9194 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F9195 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F9196 nvarchar(1000) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F9197 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F9198 numeric(20,2) NULL,
+	F9199 numeric(20,2) NULL,
+	F9200 numeric(20,2) NULL,
+	F9201 numeric(20,2) NULL,
+	F9202 numeric(20,2) NULL,
+	F9203 numeric(20,2) NULL,
+	F9204 numeric(20,2) NULL,
+	F9205 numeric(20,2) NULL,
+	F9206 numeric(20,2) NULL,
+	F9207 numeric(20,2) NULL,
+	F9208 nvarchar(100) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F9225 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F9226 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F9227 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F9228 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F9229 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F9230 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F11143 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F11894 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F11897 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F12247 nvarchar(200) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F12248 nvarchar(200) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable1144 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	RepID int DEFAULT 0 NOT NULL,
+	FillDate datetime DEFAULT '' NOT NULL,
+	ModifyDate datetime DEFAULT '' NOT NULL,
+	DeptID int DEFAULT 0 NOT NULL,
+	OperID int DEFAULT 0 NOT NULL,
+	sDesc nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	bIsFinish char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bLocked char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bCanViewWhenNoFinished char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	OperID2 int DEFAULT '0' NOT NULL,
+	dUpdate2 datetime NULL,
+	F9209 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F9210 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F9211 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F9212 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F9213 datetime DEFAULT '' NOT NULL,
+	F9214 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F9231 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F11988 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F12249 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable1171 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	RepID int DEFAULT 0 NOT NULL,
+	FillDate datetime DEFAULT '' NOT NULL,
+	ModifyDate datetime DEFAULT '' NOT NULL,
+	DeptID int DEFAULT 0 NOT NULL,
+	OperID int DEFAULT 0 NOT NULL,
+	sDesc nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	bIsFinish char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bLocked char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bCanViewWhenNoFinished char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	OperID2 int DEFAULT '0' NOT NULL,
+	dUpdate2 datetime NULL,
+	F9497 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F9498 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F9499 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F9500 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F9501 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F9502 datetime DEFAULT '' NOT NULL
+);
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable1174 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	RepID int DEFAULT 0 NOT NULL,
+	FillDate datetime DEFAULT '' NOT NULL,
+	ModifyDate datetime DEFAULT '' NOT NULL,
+	DeptID int DEFAULT 0 NOT NULL,
+	OperID int DEFAULT 0 NOT NULL,
+	sDesc nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	bIsFinish char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bLocked char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bCanViewWhenNoFinished char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	OperID2 int DEFAULT '0' NOT NULL,
+	dUpdate2 datetime NULL,
+	F9514 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F9515 nvarchar(100) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F9516 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F9517 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F9518 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F9519 datetime DEFAULT '' NOT NULL
+);
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable1183 (
+	ID int NOT NULL,
+	F9586 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	CONSTRAINT PK__tabDIYTa__3214EC2744D3DFBE PRIMARY KEY (ID)
+);
+CREATE TABLE 车体事业部.dbo.tabDIYTable1184 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	RepID int DEFAULT 0 NOT NULL,
+	FillDate datetime DEFAULT '' NOT NULL,
+	ModifyDate datetime DEFAULT '' NOT NULL,
+	DeptID int DEFAULT 0 NOT NULL,
+	OperID int DEFAULT 0 NOT NULL,
+	sDesc nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	bIsFinish char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bLocked char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bCanViewWhenNoFinished char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	OperID2 int DEFAULT '0' NOT NULL,
+	dUpdate2 datetime NULL,
+	F9587 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F9588 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F9589 datetime DEFAULT '' NOT NULL,
+	F9590 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable1185 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	F9591 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F9592 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F9593 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F9594 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F9595 nvarchar(1500) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F9600 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable1241 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	F9981 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F9982 nvarchar(100) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F9983 nvarchar(100) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F9984 nvarchar(100) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F9985 nvarchar(100) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable1242 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	RepID int DEFAULT 0 NOT NULL,
+	FillDate datetime DEFAULT '' NOT NULL,
+	ModifyDate datetime DEFAULT '' NOT NULL,
+	DeptID int DEFAULT 0 NOT NULL,
+	OperID int DEFAULT 0 NOT NULL,
+	sDesc nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	bIsFinish char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bLocked char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bCanViewWhenNoFinished char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	OperID2 int DEFAULT '0' NOT NULL,
+	dUpdate2 datetime NULL,
+	F9986 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F9987 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F9988 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F9989 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F9990 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F9991 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F9992 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F9993 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F9994 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F9995 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F9996 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F9997 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F9998 nvarchar(2000) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F9999 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F10000 datetime DEFAULT '' NOT NULL,
+	F10001 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable1243 (
+	ID int NOT NULL,
+	F10002 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F10003 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	CONSTRAINT PK__tabDIYTa__3214EC2740146F1E PRIMARY KEY (ID)
+);
+CREATE TABLE 车体事业部.dbo.tabDIYTable1244 (
+	ID int NOT NULL,
+	F10004 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F10005 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	CONSTRAINT PK__tabDIYTa__3214EC27574CDA31 PRIMARY KEY (ID)
+);
+CREATE TABLE 车体事业部.dbo.tabDIYTable1387 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	RepID int DEFAULT 0 NOT NULL,
+	FillDate datetime DEFAULT '' NOT NULL,
+	ModifyDate datetime DEFAULT '' NOT NULL,
+	DeptID int DEFAULT 0 NOT NULL,
+	OperID int DEFAULT 0 NOT NULL,
+	sDesc nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	bIsFinish char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bLocked char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bCanViewWhenNoFinished char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	OperID2 int DEFAULT '0' NOT NULL,
+	dUpdate2 datetime NULL,
+	F11223 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F11224 datetime DEFAULT '' NOT NULL,
+	F11226 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F11227 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F11228 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F11229 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F11231 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F11232 nvarchar(100) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F11233 nvarchar(200) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F11234 image NULL,
+	F11235 image NULL,
+	F11269 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F11270 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F11271 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F11272 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F11273 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F11274 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F11275 nvarchar(200) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F11298 nvarchar(200) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F11310 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F11311 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F11312 nvarchar(100) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F11323 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F11324 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F11347 nvarchar(200) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F11348 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F11349 nvarchar(100) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F11350 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F11351 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F11352 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F11353 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F11358 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F11359 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F11360 datetime DEFAULT '' NOT NULL
+);
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable1388 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	RepID int DEFAULT 0 NOT NULL,
+	FillDate datetime DEFAULT '' NOT NULL,
+	ModifyDate datetime DEFAULT '' NOT NULL,
+	DeptID int DEFAULT 0 NOT NULL,
+	OperID int DEFAULT 0 NOT NULL,
+	sDesc nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	bIsFinish char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bLocked char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bCanViewWhenNoFinished char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	OperID2 int DEFAULT '0' NOT NULL,
+	dUpdate2 datetime NULL,
+	F11253 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable1389 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	F11254 numeric(20,0) DEFAULT 0 NOT NULL,
+	F11255 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F11256 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable1390 (
+	ID int NOT NULL,
+	F11257 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F11258 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F11325 numeric(20,0) DEFAULT 0 NOT NULL,
+	CONSTRAINT PK__tabDIYTa__3214EC272D192324 PRIMARY KEY (ID)
+);
+CREATE TABLE 车体事业部.dbo.tabDIYTable1392 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	RepID int DEFAULT 0 NOT NULL,
+	FillDate datetime DEFAULT '' NOT NULL,
+	ModifyDate datetime DEFAULT '' NOT NULL,
+	DeptID int DEFAULT 0 NOT NULL,
+	OperID int DEFAULT 0 NOT NULL,
+	sDesc nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	bIsFinish char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bLocked char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bCanViewWhenNoFinished char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	OperID2 int DEFAULT '0' NOT NULL,
+	dUpdate2 datetime NULL,
+	F11276 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable1393 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	F11277 numeric(20,0) DEFAULT 0 NOT NULL,
+	F11278 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F11279 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F11280 nvarchar(200) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable1394 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	RepID int DEFAULT 0 NOT NULL,
+	FillDate datetime DEFAULT '' NOT NULL,
+	ModifyDate datetime DEFAULT '' NOT NULL,
+	DeptID int DEFAULT 0 NOT NULL,
+	OperID int DEFAULT 0 NOT NULL,
+	sDesc nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	bIsFinish char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bLocked char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bCanViewWhenNoFinished char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	OperID2 int DEFAULT '0' NOT NULL,
+	dUpdate2 datetime NULL,
+	F11281 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable1395 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	F11282 numeric(20,0) DEFAULT 0 NOT NULL,
+	F11283 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F11284 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F11285 nvarchar(200) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F12025 nvarchar(100) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable1397 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	RepID int DEFAULT 0 NOT NULL,
+	FillDate datetime DEFAULT '' NOT NULL,
+	ModifyDate datetime DEFAULT '' NOT NULL,
+	DeptID int DEFAULT 0 NOT NULL,
+	OperID int DEFAULT 0 NOT NULL,
+	sDesc nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	bIsFinish char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bLocked char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bCanViewWhenNoFinished char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	OperID2 int DEFAULT '0' NOT NULL,
+	dUpdate2 datetime NULL,
+	F11286 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable1398 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	F11287 numeric(20,0) DEFAULT 0 NOT NULL,
+	F11288 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F11289 nvarchar(200) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable1399 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	RepID int DEFAULT 0 NOT NULL,
+	FillDate datetime DEFAULT '' NOT NULL,
+	ModifyDate datetime DEFAULT '' NOT NULL,
+	DeptID int DEFAULT 0 NOT NULL,
+	OperID int DEFAULT 0 NOT NULL,
+	sDesc nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	bIsFinish char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bLocked char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bCanViewWhenNoFinished char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	OperID2 int DEFAULT '0' NOT NULL,
+	dUpdate2 datetime NULL,
+	F11290 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable1400 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	F11291 numeric(20,0) DEFAULT 0 NOT NULL,
+	F11292 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F11293 nvarchar(200) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable1401 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	RepID int DEFAULT 0 NOT NULL,
+	FillDate datetime DEFAULT '' NOT NULL,
+	ModifyDate datetime DEFAULT '' NOT NULL,
+	DeptID int DEFAULT 0 NOT NULL,
+	OperID int DEFAULT 0 NOT NULL,
+	sDesc nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	bIsFinish char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bLocked char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bCanViewWhenNoFinished char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	OperID2 int DEFAULT '0' NOT NULL,
+	dUpdate2 datetime NULL,
+	F11294 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable1402 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	F11295 numeric(20,0) DEFAULT 0 NOT NULL,
+	F11296 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F11297 nvarchar(200) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable1403 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	RepID int DEFAULT 0 NOT NULL,
+	FillDate datetime DEFAULT '' NOT NULL,
+	ModifyDate datetime DEFAULT '' NOT NULL,
+	DeptID int DEFAULT 0 NOT NULL,
+	OperID int DEFAULT 0 NOT NULL,
+	sDesc nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	bIsFinish char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bLocked char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bCanViewWhenNoFinished char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	OperID2 int DEFAULT '0' NOT NULL,
+	dUpdate2 datetime NULL,
+	F11299 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable1404 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	F11300 numeric(20,0) DEFAULT 0 NOT NULL,
+	F11301 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F11302 nvarchar(200) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F11303 nvarchar(200) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F11304 numeric(20,2) DEFAULT 0 NOT NULL
+);
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable1408 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	F11340 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F11341 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable1409 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	F11343 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F11344 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F11345 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F11346 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F11427 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable1410 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	F11354 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F11355 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F11356 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F11357 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable1412 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	RepID int DEFAULT 0 NOT NULL,
+	FillDate datetime DEFAULT '' NOT NULL,
+	ModifyDate datetime DEFAULT '' NOT NULL,
+	DeptID int DEFAULT 0 NOT NULL,
+	OperID int DEFAULT 0 NOT NULL,
+	sDesc nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	bIsFinish char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bLocked char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bCanViewWhenNoFinished char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	OperID2 int DEFAULT '0' NOT NULL,
+	dUpdate2 datetime NULL,
+	F11367 datetime DEFAULT '' NOT NULL,
+	F11368 datetime DEFAULT '' NOT NULL,
+	F11369 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F11370 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable1414 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	F11398 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F11399 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F11400 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F11401 datetime DEFAULT '' NOT NULL,
+	F11402 datetime DEFAULT '' NOT NULL,
+	F11403 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F11404 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F11405 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F11406 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F11407 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F11408 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F11409 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F11410 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F11411 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F11412 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F11413 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F11414 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F11415 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F11416 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F11417 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F11419 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F11420 nvarchar(100) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F11421 nvarchar(100) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F11422 image NULL,
+	F11423 image NULL,
+	F11424 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F11425 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F11428 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F12028 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F12029 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F12030 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F12031 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F12032 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F12033 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable1460 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	RepID int DEFAULT 0 NOT NULL,
+	FillDate datetime DEFAULT '' NOT NULL,
+	ModifyDate datetime DEFAULT '' NOT NULL,
+	DeptID int DEFAULT 0 NOT NULL,
+	OperID int DEFAULT 0 NOT NULL,
+	sDesc nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	bIsFinish char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bLocked char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bCanViewWhenNoFinished char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	OperID2 int DEFAULT '0' NOT NULL,
+	dUpdate2 datetime NULL,
+	F11886 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable1461 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	F11887 numeric(20,0) DEFAULT 0 NOT NULL,
+	F11888 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F11889 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F11890 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F11891 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F11892 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F11893 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable1465 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	RepID int DEFAULT 0 NOT NULL,
+	FillDate datetime DEFAULT '' NOT NULL,
+	ModifyDate datetime DEFAULT '' NOT NULL,
+	DeptID int DEFAULT 0 NOT NULL,
+	OperID int DEFAULT 0 NOT NULL,
+	sDesc nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	bIsFinish char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bLocked char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bCanViewWhenNoFinished char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	OperID2 int DEFAULT '0' NOT NULL,
+	dUpdate2 datetime NULL,
+	F11909 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F11915 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F11914 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F11913 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F11912 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F11911 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F11910 datetime DEFAULT '' NOT NULL,
+	F11916 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F11930 numeric(20,4) NULL,
+	F11931 numeric(20,4) NULL,
+	F12286 numeric(20,0) NULL,
+	F12287 numeric(20,0) NULL,
+	F12288 numeric(20,0) NULL,
+	F12289 numeric(20,0) NULL,
+	F12290 numeric(20,0) NULL,
+	F12291 numeric(20,0) NULL
+);
+ 
+ 
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable1466 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	F11917 numeric(20,0) NULL,
+	F11918 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F11919 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F11920 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F11921 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F11922 numeric(20,2) NULL,
+	F11923 numeric(20,2) NULL,
+	F11924 numeric(20,2) NULL,
+	F11925 numeric(20,2) NULL,
+	F11926 numeric(20,2) NULL,
+	F11927 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F11929 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F12460 nvarchar(100) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable1469 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	RepID int DEFAULT 0 NOT NULL,
+	FillDate datetime DEFAULT '' NOT NULL,
+	ModifyDate datetime DEFAULT '' NOT NULL,
+	DeptID int DEFAULT 0 NOT NULL,
+	OperID int DEFAULT 0 NOT NULL,
+	sDesc nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	bIsFinish char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bLocked char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bCanViewWhenNoFinished char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	OperID2 int DEFAULT '0' NOT NULL,
+	dUpdate2 datetime NULL,
+	F11955 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F11964 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable1470 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	F11956 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F11957 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F11958 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F11959 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F11960 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F11961 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F11962 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F11963 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable1471 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	RepID int DEFAULT 0 NOT NULL,
+	FillDate datetime DEFAULT '' NOT NULL,
+	ModifyDate datetime DEFAULT '' NOT NULL,
+	DeptID int DEFAULT 0 NOT NULL,
+	OperID int DEFAULT 0 NOT NULL,
+	sDesc nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	bIsFinish char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bLocked char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bCanViewWhenNoFinished char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	OperID2 int DEFAULT '0' NOT NULL,
+	dUpdate2 datetime NULL,
+	F11965 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F11966 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F11967 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F11968 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F11972 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+ 
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable1472 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	F11975 numeric(20,0) NULL,
+	F11976 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F11977 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F11978 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F11979 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F11980 numeric(20,2) NULL,
+	F11981 numeric(20,2) NULL,
+	F11982 numeric(20,2) NULL,
+	F11983 numeric(20,2) NULL,
+	F11985 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F11986 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F11987 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable1473 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	RepID int DEFAULT 0 NOT NULL,
+	FillDate datetime DEFAULT '' NOT NULL,
+	ModifyDate datetime DEFAULT '' NOT NULL,
+	DeptID int DEFAULT 0 NOT NULL,
+	OperID int DEFAULT 0 NOT NULL,
+	sDesc nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	bIsFinish char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bLocked char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bCanViewWhenNoFinished char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	OperID2 int DEFAULT '0' NOT NULL,
+	dUpdate2 datetime NULL,
+	F11990 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F11991 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F12283 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F12284 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F12285 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F12295 datetime DEFAULT '' NOT NULL,
+	F12296 datetime DEFAULT '' NOT NULL
+);
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable1474 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	F11992 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F11993 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F11994 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F11995 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F11996 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F11997 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F11998 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F11999 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F12000 numeric(20,2) NULL,
+	F12001 numeric(20,2) NULL,
+	F12002 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F12292 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F12293 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F12294 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F12297 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F12313 datetime DEFAULT '' NOT NULL
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable1475 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	RepID int DEFAULT 0 NOT NULL,
+	FillDate datetime DEFAULT '' NOT NULL,
+	ModifyDate datetime DEFAULT '' NOT NULL,
+	DeptID int DEFAULT 0 NOT NULL,
+	OperID int DEFAULT 0 NOT NULL,
+	sDesc nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	bIsFinish char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bLocked char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bCanViewWhenNoFinished char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	OperID2 int DEFAULT '0' NOT NULL,
+	dUpdate2 datetime NULL,
+	F12003 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F12004 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F12005 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F12006 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F12007 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F12020 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F12196 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F12276 numeric(20,0) NULL,
+	F12277 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F12278 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F12279 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F12280 datetime DEFAULT '' NOT NULL,
+	F12282 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+ 
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable1483 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	F12034 numeric(20,0) DEFAULT 0 NOT NULL,
+	F12035 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F12036 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F12037 nvarchar(100) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F12038 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F12039 nvarchar(100) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F12041 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F12042 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F12043 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F12044 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F12062 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F12063 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F12064 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F12065 datetime DEFAULT '' NOT NULL
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable1484 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	RepID int DEFAULT 0 NOT NULL,
+	FillDate datetime DEFAULT '' NOT NULL,
+	ModifyDate datetime DEFAULT '' NOT NULL,
+	DeptID int DEFAULT 0 NOT NULL,
+	OperID int DEFAULT 0 NOT NULL,
+	sDesc nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	bIsFinish char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bLocked char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bCanViewWhenNoFinished char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	OperID2 int DEFAULT '0' NOT NULL,
+	dUpdate2 datetime NULL,
+	F12045 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F12066 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable1492 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	F12067 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F12068 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F12069 nvarchar(100) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F12070 nvarchar(100) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F12071 numeric(20,2) NULL,
+	F12072 numeric(20,2) NULL,
+	F12073 numeric(20,2) NULL,
+	F12074 numeric(20,2) NULL,
+	F12075 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F12076 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F12116 numeric(20,2) NULL,
+	F12117 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable1495 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	F12099 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F12100 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F12101 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F12102 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F12103 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F12104 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F12105 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F12106 numeric(20,2) NULL,
+	F12107 numeric(20,2) NULL,
+	F12108 numeric(20,2) NULL,
+	F12109 numeric(20,2) NULL,
+	F12110 numeric(20,2) NULL,
+	F12111 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F12112 numeric(20,2) NULL,
+	F12113 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F12114 datetime DEFAULT '' NOT NULL
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable1497 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	RepID int DEFAULT 0 NOT NULL,
+	FillDate datetime DEFAULT '' NOT NULL,
+	ModifyDate datetime DEFAULT '' NOT NULL,
+	DeptID int DEFAULT 0 NOT NULL,
+	OperID int DEFAULT 0 NOT NULL,
+	sDesc nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	bIsFinish char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bLocked char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bCanViewWhenNoFinished char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	OperID2 int DEFAULT '0' NOT NULL,
+	dUpdate2 datetime NULL,
+	F12119 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F12120 datetime DEFAULT '' NOT NULL,
+	F12195 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable1500 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	RepID int DEFAULT 0 NOT NULL,
+	FillDate datetime DEFAULT '' NOT NULL,
+	ModifyDate datetime DEFAULT '' NOT NULL,
+	DeptID int DEFAULT 0 NOT NULL,
+	OperID int DEFAULT 0 NOT NULL,
+	sDesc nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	bIsFinish char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bLocked char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bCanViewWhenNoFinished char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	OperID2 int DEFAULT '0' NOT NULL,
+	dUpdate2 datetime NULL,
+	F12134 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F12135 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable1502 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	F12144 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F12145 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F12146 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F12147 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F12148 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F12149 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F12151 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable1506 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	RepID int DEFAULT 0 NOT NULL,
+	FillDate datetime DEFAULT '' NOT NULL,
+	ModifyDate datetime DEFAULT '' NOT NULL,
+	DeptID int DEFAULT 0 NOT NULL,
+	OperID int DEFAULT 0 NOT NULL,
+	sDesc nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	bIsFinish char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bLocked char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bCanViewWhenNoFinished char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	OperID2 int DEFAULT '0' NOT NULL,
+	dUpdate2 datetime NULL,
+	F12162 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F12163 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F12164 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F12165 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F12166 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F12167 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F12168 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F12169 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F12170 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F12171 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F12172 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F12173 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F12174 nvarchar(2000) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F12175 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F12176 datetime DEFAULT '' NOT NULL,
+	F12177 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable1509 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	F12186 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F12187 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F12188 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F12189 numeric(20,0) NULL,
+	F12190 numeric(20,1) NULL,
+	F12191 numeric(20,1) NULL,
+	F12192 numeric(20,1) NULL,
+	F12193 numeric(20,1) NULL
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable1512 (
+	ID int NOT NULL,
+	F12213 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F12215 nvarchar(100) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F12218 numeric(20,0) DEFAULT 0 NOT NULL,
+	CONSTRAINT PK__tabDIYTa__3214EC2726283DB4 PRIMARY KEY (ID)
+);
+CREATE TABLE 车体事业部.dbo.tabDIYTable1513 (
+	ID int NOT NULL,
+	F12216 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F12217 nvarchar(100) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F12219 numeric(20,0) DEFAULT 0 NOT NULL,
+	CONSTRAINT PK__tabDIYTa__3214EC2734765D0B PRIMARY KEY (ID)
+);
+CREATE TABLE 车体事业部.dbo.tabDIYTable1516 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	RepID int DEFAULT 0 NOT NULL,
+	FillDate datetime DEFAULT '' NOT NULL,
+	ModifyDate datetime DEFAULT '' NOT NULL,
+	DeptID int DEFAULT 0 NOT NULL,
+	OperID int DEFAULT 0 NOT NULL,
+	sDesc nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	bIsFinish char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bLocked char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bCanViewWhenNoFinished char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	OperID2 int DEFAULT '0' NOT NULL,
+	dUpdate2 datetime NULL,
+	F12234 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F12235 datetime DEFAULT '' NOT NULL,
+	F12236 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F12237 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F12238 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F12239 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F12240 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F12241 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F12243 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F12242 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F12244 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F12429 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F12430 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F12431 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F12432 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F12433 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F12434 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F12435 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F12436 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F12437 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F12438 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable1518 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	RepID int DEFAULT 0 NOT NULL,
+	FillDate datetime DEFAULT '' NOT NULL,
+	ModifyDate datetime DEFAULT '' NOT NULL,
+	DeptID int DEFAULT 0 NOT NULL,
+	OperID int DEFAULT 0 NOT NULL,
+	sDesc nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	bIsFinish char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bLocked char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bCanViewWhenNoFinished char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	OperID2 int DEFAULT '0' NOT NULL,
+	dUpdate2 datetime NULL,
+	F12251 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F12252 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F12253 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F12254 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F12255 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F12256 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F12257 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F12258 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F12271 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F12272 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F12273 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F12274 datetime DEFAULT '' NOT NULL,
+	F12275 numeric(20,0) NULL,
+	F12281 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+ 
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable1519 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	F12259 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F12260 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F12261 nvarchar(100) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F12262 nvarchar(100) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F12263 numeric(20,2) NULL,
+	F12264 numeric(20,2) NULL,
+	F12265 numeric(20,2) NULL,
+	F12266 numeric(20,2) NULL,
+	F12267 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F12268 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F12269 numeric(20,2) NULL,
+	F12270 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable1528 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	RepID int DEFAULT 0 NOT NULL,
+	FillDate datetime DEFAULT '' NOT NULL,
+	ModifyDate datetime DEFAULT '' NOT NULL,
+	DeptID int DEFAULT 0 NOT NULL,
+	OperID int DEFAULT 0 NOT NULL,
+	sDesc nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	bIsFinish char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bLocked char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bCanViewWhenNoFinished char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	OperID2 int DEFAULT '0' NOT NULL,
+	dUpdate2 datetime NULL,
+	F12328 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F12329 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F12330 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F12331 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F12332 datetime DEFAULT '' NOT NULL,
+	F12333 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F12456 datetime DEFAULT '' NOT NULL
+);
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable1529 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	F12334 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F12335 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F12336 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F12337 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F12338 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F12339 datetime DEFAULT '' NOT NULL,
+	F12340 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F12341 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F12342 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F12343 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F12344 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F12345 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F12346 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F12347 datetime DEFAULT '' NOT NULL
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable1531 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	F12354 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F12355 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F12356 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F12357 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F12358 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F12359 datetime DEFAULT '' NOT NULL,
+	F12360 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F12361 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F12362 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F12363 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable1532 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	RepID int DEFAULT 0 NOT NULL,
+	FillDate datetime DEFAULT '' NOT NULL,
+	ModifyDate datetime DEFAULT '' NOT NULL,
+	DeptID int DEFAULT 0 NOT NULL,
+	OperID int DEFAULT 0 NOT NULL,
+	sDesc nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	bIsFinish char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bLocked char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bCanViewWhenNoFinished char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	OperID2 int DEFAULT '0' NOT NULL,
+	dUpdate2 datetime NULL,
+	F12368 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F12369 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F12370 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F12371 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F12374 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F12428 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable1551 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	RepID int DEFAULT 0 NOT NULL,
+	FillDate datetime DEFAULT '' NOT NULL,
+	ModifyDate datetime DEFAULT '' NOT NULL,
+	DeptID int DEFAULT 0 NOT NULL,
+	OperID int DEFAULT 0 NOT NULL,
+	sDesc nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	bIsFinish char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bLocked char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bCanViewWhenNoFinished char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	OperID2 int DEFAULT '0' NOT NULL,
+	dUpdate2 datetime NULL,
+	F12554 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F12555 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F12556 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F12557 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F12558 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F12559 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F12560 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F12561 numeric(20,0) NULL,
+	F12562 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F12563 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F12564 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F12565 datetime DEFAULT '' NOT NULL,
+	F12566 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+ 
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable1552 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	F12567 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F12568 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F12569 nvarchar(100) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F12570 nvarchar(100) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F12571 numeric(20,2) NULL,
+	F12572 numeric(20,2) NULL,
+	F12573 numeric(20,2) NULL,
+	F12574 numeric(20,2) NULL,
+	F12575 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F12576 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F12577 numeric(20,2) NULL,
+	F12578 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable1626 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	RepID int DEFAULT 0 NOT NULL,
+	FillDate datetime DEFAULT '' NOT NULL,
+	ModifyDate datetime DEFAULT '' NOT NULL,
+	DeptID int DEFAULT 0 NOT NULL,
+	OperID int DEFAULT 0 NOT NULL,
+	sDesc nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	bIsFinish char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bLocked char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bCanViewWhenNoFinished char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	OperID2 int DEFAULT '0' NOT NULL,
+	dUpdate2 datetime NULL,
+	F13242 datetime DEFAULT '' NOT NULL,
+	F13262 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F13264 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable1627 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	F13243 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F13244 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F13245 datetime DEFAULT '' NOT NULL,
+	F13246 datetime DEFAULT '' NOT NULL,
+	F13247 datetime DEFAULT '' NOT NULL,
+	F13248 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F13249 numeric(20,0) DEFAULT 0 NOT NULL,
+	F13250 numeric(20,0) DEFAULT 0 NOT NULL,
+	F13251 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F13252 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F13253 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F13254 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F13255 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F13256 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F13257 nvarchar(100) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F13258 nvarchar(100) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F13259 nvarchar(100) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F13260 nvarchar(100) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F13261 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F13263 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable1629 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	RepID int DEFAULT 0 NOT NULL,
+	FillDate datetime DEFAULT '' NOT NULL,
+	ModifyDate datetime DEFAULT '' NOT NULL,
+	DeptID int DEFAULT 0 NOT NULL,
+	OperID int DEFAULT 0 NOT NULL,
+	sDesc nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	bIsFinish char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bLocked char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bCanViewWhenNoFinished char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	OperID2 int DEFAULT '0' NOT NULL,
+	dUpdate2 datetime NULL,
+	F13271 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F13279 datetime DEFAULT '' NOT NULL
+);
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable1630 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	F13272 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F13273 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F13274 nvarchar(200) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F13275 nvarchar(200) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F13276 nvarchar(200) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F13277 nvarchar(200) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F13278 nvarchar(200) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable1650 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	F13494 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F13495 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F13496 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F13497 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F13498 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F13500 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F13501 numeric(20,0) DEFAULT 0 NOT NULL,
+	F13503 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F13504 nvarchar(100) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F13526 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F13527 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F13528 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F13535 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable1651 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	RepID int DEFAULT 0 NOT NULL,
+	FillDate datetime DEFAULT '' NOT NULL,
+	ModifyDate datetime DEFAULT '' NOT NULL,
+	DeptID int DEFAULT 0 NOT NULL,
+	OperID int DEFAULT 0 NOT NULL,
+	sDesc nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	bIsFinish char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bLocked char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bCanViewWhenNoFinished char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	OperID2 int DEFAULT '0' NOT NULL,
+	dUpdate2 datetime NULL,
+	F13505 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F13506 datetime DEFAULT '' NOT NULL,
+	F13507 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F13508 datetime DEFAULT '' NOT NULL,
+	F13509 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F13510 datetime DEFAULT '' NOT NULL,
+	F13511 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F13512 datetime DEFAULT '' NOT NULL
+);
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable1653 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	RepID int DEFAULT 0 NOT NULL,
+	FillDate datetime DEFAULT '' NOT NULL,
+	ModifyDate datetime DEFAULT '' NOT NULL,
+	DeptID int DEFAULT 0 NOT NULL,
+	OperID int DEFAULT 0 NOT NULL,
+	sDesc nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	bIsFinish char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bLocked char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bCanViewWhenNoFinished char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	OperID2 int DEFAULT '0' NOT NULL,
+	dUpdate2 datetime NULL,
+	F13514 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F13515 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F13516 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F13517 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F13518 nvarchar(100) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F13519 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F13520 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F13521 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F13522 numeric(20,0) DEFAULT 0 NOT NULL,
+	F13523 nvarchar(200) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F13524 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F13525 datetime DEFAULT '' NOT NULL,
+	F13542 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable1654 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	RepID int DEFAULT 0 NOT NULL,
+	FillDate datetime DEFAULT '' NOT NULL,
+	ModifyDate datetime DEFAULT '' NOT NULL,
+	DeptID int DEFAULT 0 NOT NULL,
+	OperID int DEFAULT 0 NOT NULL,
+	sDesc nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	bIsFinish char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bLocked char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bCanViewWhenNoFinished char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	OperID2 int DEFAULT '0' NOT NULL,
+	dUpdate2 datetime NULL,
+	F13536 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable1655 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	F13537 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F13538 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F13539 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F13540 nvarchar(100) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F13541 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable1680 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	RepID int DEFAULT 0 NOT NULL,
+	FillDate datetime DEFAULT '' NOT NULL,
+	ModifyDate datetime DEFAULT '' NOT NULL,
+	DeptID int DEFAULT 0 NOT NULL,
+	OperID int DEFAULT 0 NOT NULL,
+	sDesc nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	bIsFinish char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bLocked char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bCanViewWhenNoFinished char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	OperID2 int DEFAULT '0' NOT NULL,
+	dUpdate2 datetime NULL,
+	F13723 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F13724 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F13725 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F13727 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F13728 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F13754 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable1682 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	F13745 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F13746 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F13747 datetime DEFAULT '' NOT NULL,
+	F13748 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F13749 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F13750 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F13751 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F13752 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F13753 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable1685 (
+	ID int NOT NULL,
+	F13774 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F13775 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F13776 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F13777 numeric(20,2) DEFAULT 0 NOT NULL,
+	F13778 numeric(20,2) DEFAULT 0 NOT NULL,
+	CONSTRAINT PK__tabDIYTa__3214EC270D02BCF3 PRIMARY KEY (ID)
+);
+CREATE TABLE 车体事业部.dbo.tabDIYTable1839 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	RepID int DEFAULT 0 NOT NULL,
+	FillDate datetime DEFAULT '' NOT NULL,
+	ModifyDate datetime DEFAULT '' NOT NULL,
+	DeptID int DEFAULT 0 NOT NULL,
+	OperID int DEFAULT 0 NOT NULL,
+	sDesc nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	bIsFinish char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bLocked char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bCanViewWhenNoFinished char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	OperID2 int DEFAULT '0' NOT NULL,
+	dUpdate2 datetime NULL,
+	F15009 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F15010 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F15011 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F15012 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F15013 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F15014 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F15029 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F15030 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F15031 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F15032 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F15033 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F15034 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F15035 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F15036 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F15037 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable1840 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	F15015 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F15016 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F15017 datetime DEFAULT '' NOT NULL,
+	F15018 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F15019 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F15020 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F15021 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F15022 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F15023 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable1841 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	F15024 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F15025 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F15026 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F15027 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F15028 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable1906 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	RepID int DEFAULT 0 NOT NULL,
+	FillDate datetime DEFAULT '' NOT NULL,
+	ModifyDate datetime DEFAULT '' NOT NULL,
+	DeptID int DEFAULT 0 NOT NULL,
+	OperID int DEFAULT 0 NOT NULL,
+	sDesc nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	bIsFinish char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bLocked char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bCanViewWhenNoFinished char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	OperID2 int DEFAULT '0' NOT NULL,
+	dUpdate2 datetime NULL,
+	F15493 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F15509 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F15510 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F15511 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F15520 nvarchar(2000) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F15521 nvarchar(2000) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F15522 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F15523 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F15524 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F15525 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F15526 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F15527 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F15528 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F15529 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F15530 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F15532 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F15533 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable1907 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	F15494 nvarchar(100) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F15495 nvarchar(200) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F15496 nvarchar(200) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F15512 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F15513 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F15514 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable1908 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	F15497 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F15498 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F15499 datetime DEFAULT '' NOT NULL,
+	F15500 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F15501 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F15502 datetime DEFAULT '' NOT NULL
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable1909 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	F15515 nvarchar(100) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F15516 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F15517 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F15518 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F15519 nvarchar(500) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable1910 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	F15534 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F15535 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F15536 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F15537 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F15540 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F15543 nvarchar(1500) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable1911 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	F15549 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F15550 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F15551 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F15552 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F15555 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F15558 nvarchar(1500) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable2409 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	F19363 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F19364 datetime DEFAULT '' NOT NULL,
+	F19365 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F19366 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F19367 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F19368 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F19369 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F19370 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F19371 numeric(20,0) DEFAULT 0 NOT NULL,
+	F19372 numeric(20,2) DEFAULT 0 NOT NULL,
+	F19373 numeric(20,2) DEFAULT 0 NOT NULL,
+	F19374 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F19375 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F19376 datetime DEFAULT '' NOT NULL,
+	F19377 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F19378 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F19379 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F19380 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F19381 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F19392 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable2410 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	RepID int DEFAULT 0 NOT NULL,
+	FillDate datetime DEFAULT '' NOT NULL,
+	ModifyDate datetime DEFAULT '' NOT NULL,
+	DeptID int DEFAULT 0 NOT NULL,
+	OperID int DEFAULT 0 NOT NULL,
+	sDesc nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	bIsFinish char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bLocked char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bCanViewWhenNoFinished char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	OperID2 int DEFAULT '0' NOT NULL,
+	dUpdate2 datetime NULL,
+	F19382 datetime DEFAULT '' NOT NULL,
+	F19383 datetime DEFAULT '' NOT NULL,
+	F19384 numeric(20,2) DEFAULT 0 NOT NULL,
+	F19385 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F19386 datetime DEFAULT '' NOT NULL,
+	F19387 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F19388 datetime DEFAULT '' NOT NULL,
+	F19389 datetime DEFAULT '' NOT NULL,
+	F19390 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F19391 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F19393 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F19394 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F19395 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable2411 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	F19396 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F19397 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F19398 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F19399 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F19400 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F19401 nvarchar(500) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F19402 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F19403 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F19404 numeric(20,1) DEFAULT 0 NOT NULL,
+	F19405 numeric(20,2) DEFAULT 0 NOT NULL,
+	F19406 numeric(20,2) DEFAULT 0 NOT NULL,
+	F19407 datetime DEFAULT '' NOT NULL,
+	F19432 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F19537 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F19538 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F19539 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F19618 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F19619 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F19620 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F19621 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29629 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable2412 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	RepID int DEFAULT 0 NOT NULL,
+	FillDate datetime DEFAULT '' NOT NULL,
+	ModifyDate datetime DEFAULT '' NOT NULL,
+	DeptID int DEFAULT 0 NOT NULL,
+	OperID int DEFAULT 0 NOT NULL,
+	sDesc nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	bIsFinish char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bLocked char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bCanViewWhenNoFinished char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	OperID2 int DEFAULT '0' NOT NULL,
+	dUpdate2 datetime NULL,
+	F19412 nvarchar(100) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F19414 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F19415 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F19416 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F19418 numeric(20,2) DEFAULT 0 NOT NULL,
+	F19419 nvarchar(200) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F19421 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F19422 datetime DEFAULT '' NOT NULL,
+	F19423 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F19424 datetime DEFAULT '' NOT NULL,
+	F19428 datetime DEFAULT '' NOT NULL,
+	F19429 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F19433 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F19434 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F19435 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable2421 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	RepID int DEFAULT 0 NOT NULL,
+	FillDate datetime DEFAULT '' NOT NULL,
+	ModifyDate datetime DEFAULT '' NOT NULL,
+	DeptID int DEFAULT 0 NOT NULL,
+	OperID int DEFAULT 0 NOT NULL,
+	sDesc nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	bIsFinish char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bLocked char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bCanViewWhenNoFinished char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	OperID2 int DEFAULT '0' NOT NULL,
+	dUpdate2 datetime NULL,
+	F19586 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F19587 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F19588 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F19591 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F19598 nvarchar(500) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F19636 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F19637 datetime DEFAULT '' NOT NULL,
+	F19642 datetime DEFAULT '' NOT NULL,
+	F19643 datetime DEFAULT '' NOT NULL
+);
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable2422 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	F19599 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F19600 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F19601 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F19602 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F19603 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F19604 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F19605 numeric(20,0) DEFAULT 0 NOT NULL,
+	F19606 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F19607 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F19608 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F19609 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F19610 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F19611 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F19612 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F19613 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F19627 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F19628 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F19629 numeric(20,2) DEFAULT 0 NOT NULL,
+	F19630 numeric(20,2) DEFAULT 0 NOT NULL,
+	F19631 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F19840 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F19984 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F19988 datetime DEFAULT '' NOT NULL,
+	F20132 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20140 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22708 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22978 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22979 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22980 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable2423 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	RepID int DEFAULT 0 NOT NULL,
+	FillDate datetime DEFAULT '' NOT NULL,
+	ModifyDate datetime DEFAULT '' NOT NULL,
+	DeptID int DEFAULT 0 NOT NULL,
+	OperID int DEFAULT 0 NOT NULL,
+	sDesc nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	bIsFinish char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bLocked char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bCanViewWhenNoFinished char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	OperID2 int DEFAULT '0' NOT NULL,
+	dUpdate2 datetime NULL,
+	F19647 nvarchar(200) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F19648 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F19649 nvarchar(100) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F19650 nvarchar(100) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F19651 datetime DEFAULT '' NOT NULL,
+	F19652 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F19653 datetime DEFAULT '' NOT NULL,
+	F19667 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable2424 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	F19654 numeric(20,0) DEFAULT 0 NOT NULL,
+	F19655 nvarchar(100) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F19656 nvarchar(200) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F19657 image NULL,
+	F19658 nvarchar(200) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F19659 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F19660 numeric(20,0) DEFAULT 0 NOT NULL,
+	F19661 numeric(20,2) DEFAULT 0 NOT NULL,
+	F19662 numeric(20,2) DEFAULT 0 NOT NULL,
+	F19663 nvarchar(200) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F19664 nvarchar(500) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F19665 nvarchar(200) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F19666 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F19668 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable2426 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	RepID int DEFAULT 0 NOT NULL,
+	FillDate datetime DEFAULT '' NOT NULL,
+	ModifyDate datetime DEFAULT '' NOT NULL,
+	DeptID int DEFAULT 0 NOT NULL,
+	OperID int DEFAULT 0 NOT NULL,
+	sDesc nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	bIsFinish char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bLocked char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bCanViewWhenNoFinished char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	OperID2 int DEFAULT '0' NOT NULL,
+	dUpdate2 datetime NULL,
+	F19692 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F19693 datetime DEFAULT '' NOT NULL
+);
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable2434 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	F19792 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F19793 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F19794 numeric(20,2) DEFAULT 0 NOT NULL,
+	F19795 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F19796 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F19797 datetime DEFAULT '' NOT NULL,
+	F19798 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F19799 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F19800 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F19801 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F19802 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F19803 numeric(20,0) DEFAULT 0 NOT NULL,
+	F19804 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F19805 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F19806 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F19807 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F19808 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F19809 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F19810 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F19811 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F19812 numeric(20,2) DEFAULT 0 NOT NULL,
+	F19813 numeric(20,2) DEFAULT 0 NOT NULL,
+	F19814 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F19815 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F19841 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable2435 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	F19816 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F19817 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F19819 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F19820 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F19821 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F19822 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F19823 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F19824 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F19825 numeric(20,0) DEFAULT 0 NOT NULL,
+	F19826 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F19827 numeric(20,2) DEFAULT 0 NOT NULL,
+	F19828 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F19829 numeric(20,2) DEFAULT 0 NOT NULL,
+	F19830 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F19831 numeric(20,2) DEFAULT 0 NOT NULL,
+	F19832 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F19833 numeric(20,2) DEFAULT 0 NOT NULL,
+	F19834 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F19835 numeric(20,2) DEFAULT 0 NOT NULL,
+	F19836 numeric(20,2) DEFAULT 0 NOT NULL,
+	F19837 numeric(20,2) DEFAULT 0 NOT NULL,
+	F19838 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F19839 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F19981 datetime DEFAULT '' NOT NULL,
+	F20131 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22704 datetime DEFAULT '' NOT NULL,
+	F22705 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable2438 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	RepID int DEFAULT 0 NOT NULL,
+	FillDate datetime DEFAULT '' NOT NULL,
+	ModifyDate datetime DEFAULT '' NOT NULL,
+	DeptID int DEFAULT 0 NOT NULL,
+	OperID int DEFAULT 0 NOT NULL,
+	sDesc nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	bIsFinish char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bLocked char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bCanViewWhenNoFinished char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	OperID2 int DEFAULT '0' NOT NULL,
+	dUpdate2 datetime NULL,
+	F19870 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F19871 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F19873 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F19874 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F19879 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F19880 datetime DEFAULT '' NOT NULL,
+	F19883 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F19884 datetime DEFAULT '' NOT NULL,
+	F19885 datetime DEFAULT '' NOT NULL,
+	F19886 datetime DEFAULT '' NOT NULL,
+	F19926 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F19947 numeric(20,2) DEFAULT 0 NOT NULL,
+	F28120 datetime DEFAULT '' NOT NULL,
+	F28121 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable2441 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	F19927 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F19928 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F19929 nvarchar(100) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F19930 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F19932 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F19933 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F19934 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F19935 nvarchar(500) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F19936 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F19937 numeric(20,0) DEFAULT 0 NOT NULL,
+	F19938 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F19939 numeric(20,2) DEFAULT 0 NOT NULL,
+	F19940 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F19941 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F19942 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F19943 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F19944 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F19948 numeric(20,2) DEFAULT 0 NOT NULL,
+	F19977 datetime DEFAULT '' NOT NULL,
+	F20126 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20127 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20827 datetime DEFAULT '' NOT NULL,
+	F22662 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22663 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29630 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable2442 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	RepID int DEFAULT 0 NOT NULL,
+	FillDate datetime DEFAULT '' NOT NULL,
+	ModifyDate datetime DEFAULT '' NOT NULL,
+	DeptID int DEFAULT 0 NOT NULL,
+	OperID int DEFAULT 0 NOT NULL,
+	sDesc nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	bIsFinish char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bLocked char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bCanViewWhenNoFinished char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	OperID2 int DEFAULT '0' NOT NULL,
+	dUpdate2 datetime NULL,
+	F19949 datetime DEFAULT '' NOT NULL,
+	F19950 datetime DEFAULT '' NOT NULL
+);
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable2443 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	F19951 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F19952 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F19953 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F19954 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F19955 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F19956 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F19957 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F19958 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F19959 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F19960 numeric(20,0) DEFAULT 0 NOT NULL,
+	F19961 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F19962 numeric(20,2) DEFAULT 0 NOT NULL,
+	F19963 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F19965 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F19967 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F19969 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F19974 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F19975 datetime DEFAULT '' NOT NULL,
+	F19976 datetime DEFAULT '' NOT NULL,
+	F20128 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20129 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20130 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20139 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable2444 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	F19990 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F19991 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F19992 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F19993 numeric(20,0) DEFAULT 0 NOT NULL,
+	F19994 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F19995 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F19996 nvarchar(100) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F19997 image NULL,
+	F19998 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20026 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable2445 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	RepID int DEFAULT 0 NOT NULL,
+	FillDate datetime DEFAULT '' NOT NULL,
+	ModifyDate datetime DEFAULT '' NOT NULL,
+	DeptID int DEFAULT 0 NOT NULL,
+	OperID int DEFAULT 0 NOT NULL,
+	sDesc nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	bIsFinish char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bLocked char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bCanViewWhenNoFinished char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	OperID2 int DEFAULT '0' NOT NULL,
+	dUpdate2 datetime NULL,
+	F19999 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable2454 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	F20052 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20053 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20054 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20055 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20056 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20057 numeric(20,0) DEFAULT 0 NOT NULL,
+	F20058 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20059 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20060 nvarchar(100) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20061 image NULL
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable2455 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	RepID int DEFAULT 0 NOT NULL,
+	FillDate datetime DEFAULT '' NOT NULL,
+	ModifyDate datetime DEFAULT '' NOT NULL,
+	DeptID int DEFAULT 0 NOT NULL,
+	OperID int DEFAULT 0 NOT NULL,
+	sDesc nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	bIsFinish char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bLocked char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bCanViewWhenNoFinished char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	OperID2 int DEFAULT '0' NOT NULL,
+	dUpdate2 datetime NULL,
+	F20063 numeric(20,0) DEFAULT 0 NOT NULL,
+	F20065 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20066 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20067 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable2458 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	F20079 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20080 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20081 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20082 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F24277 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F24278 numeric(20,0) DEFAULT 0 NOT NULL,
+	F24279 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F24280 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F24281 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F24282 nvarchar(500) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F24283 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F24284 nvarchar(100) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F24285 nvarchar(100) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F24287 numeric(20,0) DEFAULT 0 NOT NULL
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable2459 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	RepID int DEFAULT 0 NOT NULL,
+	FillDate datetime DEFAULT '' NOT NULL,
+	ModifyDate datetime DEFAULT '' NOT NULL,
+	DeptID int DEFAULT 0 NOT NULL,
+	OperID int DEFAULT 0 NOT NULL,
+	sDesc nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	bIsFinish char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bLocked char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bCanViewWhenNoFinished char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	OperID2 int DEFAULT '0' NOT NULL,
+	dUpdate2 datetime NULL,
+	F20090 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20091 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20105 nvarchar(100) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20106 datetime DEFAULT '' NOT NULL,
+	F20135 datetime DEFAULT '' NOT NULL,
+	F20136 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F24236 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F24237 datetime DEFAULT '' NOT NULL,
+	F24286 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F24313 numeric(20,1) DEFAULT 0 NOT NULL,
+	F24314 numeric(20,1) DEFAULT 0 NOT NULL
+);
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable2467 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	F20180 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20181 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20183 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20184 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20185 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20186 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20187 numeric(20,0) DEFAULT 0 NOT NULL,
+	F20188 datetime DEFAULT '' NOT NULL,
+	F20189 numeric(20,2) DEFAULT 0 NOT NULL,
+	F20190 numeric(20,2) DEFAULT 0 NOT NULL,
+	F20191 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20192 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20193 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20194 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20195 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20196 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20197 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22707 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29632 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable2468 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	RepID int DEFAULT 0 NOT NULL,
+	FillDate datetime DEFAULT '' NOT NULL,
+	ModifyDate datetime DEFAULT '' NOT NULL,
+	DeptID int DEFAULT 0 NOT NULL,
+	OperID int DEFAULT 0 NOT NULL,
+	sDesc nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	bIsFinish char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bLocked char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bCanViewWhenNoFinished char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	OperID2 int DEFAULT '0' NOT NULL,
+	dUpdate2 datetime NULL,
+	F20199 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20200 numeric(20,2) DEFAULT 0 NOT NULL,
+	F20202 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20203 datetime DEFAULT '' NOT NULL,
+	F20207 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20208 datetime DEFAULT '' NOT NULL,
+	F20209 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22709 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable2471 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	F20256 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20257 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20258 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20259 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20260 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20261 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20262 numeric(20,0) DEFAULT 0 NOT NULL,
+	F20263 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20264 numeric(20,0) DEFAULT 0 NOT NULL,
+	F20265 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20266 numeric(20,0) DEFAULT 0 NOT NULL,
+	F20267 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20268 numeric(20,0) DEFAULT 0 NOT NULL,
+	F20269 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20270 numeric(20,0) DEFAULT 0 NOT NULL,
+	F20271 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20272 numeric(20,0) DEFAULT 0 NOT NULL,
+	F20273 numeric(20,0) DEFAULT 0 NOT NULL,
+	F20274 numeric(20,0) DEFAULT 0 NOT NULL,
+	F20275 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20276 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable2472 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	RepID int DEFAULT 0 NOT NULL,
+	FillDate datetime DEFAULT '' NOT NULL,
+	ModifyDate datetime DEFAULT '' NOT NULL,
+	DeptID int DEFAULT 0 NOT NULL,
+	OperID int DEFAULT 0 NOT NULL,
+	sDesc nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	bIsFinish char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bLocked char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bCanViewWhenNoFinished char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	OperID2 int DEFAULT '0' NOT NULL,
+	dUpdate2 datetime NULL,
+	F20277 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20278 datetime DEFAULT '' NOT NULL,
+	F20283 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20284 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20285 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20286 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20287 datetime DEFAULT '' NOT NULL
+);
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable2475 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	F20338 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20339 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20340 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20341 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20342 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20343 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20344 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20345 numeric(20,0) DEFAULT 0 NOT NULL,
+	F20346 numeric(20,0) DEFAULT 0 NOT NULL,
+	F20347 numeric(20,0) DEFAULT 0 NOT NULL,
+	F20348 datetime DEFAULT '' NOT NULL,
+	F20349 datetime DEFAULT '' NOT NULL,
+	F20350 numeric(20,2) DEFAULT 0 NOT NULL,
+	F20351 numeric(20,2) DEFAULT 0 NOT NULL,
+	F20352 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20353 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20354 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20355 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20356 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20357 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29631 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable2476 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	RepID int DEFAULT 0 NOT NULL,
+	FillDate datetime DEFAULT '' NOT NULL,
+	ModifyDate datetime DEFAULT '' NOT NULL,
+	DeptID int DEFAULT 0 NOT NULL,
+	OperID int DEFAULT 0 NOT NULL,
+	sDesc nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	bIsFinish char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bLocked char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bCanViewWhenNoFinished char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	OperID2 int DEFAULT '0' NOT NULL,
+	dUpdate2 datetime NULL,
+	F20358 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20359 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20360 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20361 datetime DEFAULT '' NOT NULL,
+	F20362 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20363 datetime DEFAULT '' NOT NULL,
+	F20364 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20365 datetime DEFAULT '' NOT NULL,
+	F20369 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20370 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20371 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable2478 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	RepID int DEFAULT 0 NOT NULL,
+	FillDate datetime DEFAULT '' NOT NULL,
+	ModifyDate datetime DEFAULT '' NOT NULL,
+	DeptID int DEFAULT 0 NOT NULL,
+	OperID int DEFAULT 0 NOT NULL,
+	sDesc nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	bIsFinish char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bLocked char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bCanViewWhenNoFinished char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	OperID2 int DEFAULT '0' NOT NULL,
+	dUpdate2 datetime NULL,
+	F20381 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20810 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable2480 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	RepID int DEFAULT 0 NOT NULL,
+	FillDate datetime DEFAULT '' NOT NULL,
+	ModifyDate datetime DEFAULT '' NOT NULL,
+	DeptID int DEFAULT 0 NOT NULL,
+	OperID int DEFAULT 0 NOT NULL,
+	sDesc nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	bIsFinish char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bLocked char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bCanViewWhenNoFinished char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	OperID2 int DEFAULT '0' NOT NULL,
+	dUpdate2 datetime NULL,
+	F20391 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20812 datetime DEFAULT '' NOT NULL,
+	F20813 datetime DEFAULT '' NOT NULL,
+	F20847 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable2481 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	F20392 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20393 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20394 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20395 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20396 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20397 datetime DEFAULT '' NOT NULL,
+	F20398 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20399 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20400 datetime DEFAULT '' NOT NULL
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable2482 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	F20401 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20402 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20403 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20404 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20405 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20406 datetime DEFAULT '' NOT NULL,
+	F20407 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20408 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20409 datetime DEFAULT '' NOT NULL,
+	F20811 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20908 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable2483 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	RepID int DEFAULT 0 NOT NULL,
+	FillDate datetime DEFAULT '' NOT NULL,
+	ModifyDate datetime DEFAULT '' NOT NULL,
+	DeptID int DEFAULT 0 NOT NULL,
+	OperID int DEFAULT 0 NOT NULL,
+	sDesc nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	bIsFinish char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bLocked char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bCanViewWhenNoFinished char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	OperID2 int DEFAULT '0' NOT NULL,
+	dUpdate2 datetime NULL,
+	F20410 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20420 nvarchar(100) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable2484 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	F20411 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20412 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20413 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20414 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20415 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20416 datetime DEFAULT '' NOT NULL,
+	F20417 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20418 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20419 datetime DEFAULT '' NOT NULL
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable2487 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	F20433 numeric(20,0) DEFAULT 0 NOT NULL,
+	F20434 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20435 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20436 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20437 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20438 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20439 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20440 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20441 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20442 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20443 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20444 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20445 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20446 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20447 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20448 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20449 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20450 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20451 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20452 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20453 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20454 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20455 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20456 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20457 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20531 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20532 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20533 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable2488 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	RepID int DEFAULT 0 NOT NULL,
+	FillDate datetime DEFAULT '' NOT NULL,
+	ModifyDate datetime DEFAULT '' NOT NULL,
+	DeptID int DEFAULT 0 NOT NULL,
+	OperID int DEFAULT 0 NOT NULL,
+	sDesc nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	bIsFinish char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bLocked char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bCanViewWhenNoFinished char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	OperID2 int DEFAULT '0' NOT NULL,
+	dUpdate2 datetime NULL,
+	F20458 numeric(20,2) DEFAULT 0 NOT NULL,
+	F20459 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20460 datetime DEFAULT '' NOT NULL,
+	F20461 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable2491 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	RepID int DEFAULT 0 NOT NULL,
+	FillDate datetime DEFAULT '' NOT NULL,
+	ModifyDate datetime DEFAULT '' NOT NULL,
+	DeptID int DEFAULT 0 NOT NULL,
+	OperID int DEFAULT 0 NOT NULL,
+	sDesc nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	bIsFinish char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bLocked char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bCanViewWhenNoFinished char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	OperID2 int DEFAULT '0' NOT NULL,
+	dUpdate2 datetime NULL,
+	F20493 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable2492 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	F20499 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20500 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20501 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20502 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20503 datetime DEFAULT '' NOT NULL,
+	F20504 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20505 numeric(20,0) DEFAULT 0 NOT NULL,
+	F20506 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20515 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20516 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20517 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20518 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20519 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20520 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20521 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20522 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20523 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20524 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20525 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20526 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20527 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20528 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20529 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20530 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20826 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20909 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F21012 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22632 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22633 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22634 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22635 nvarchar(100) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22636 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F25058 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27117 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable2496 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	RepID int DEFAULT 0 NOT NULL,
+	FillDate datetime DEFAULT '' NOT NULL,
+	ModifyDate datetime DEFAULT '' NOT NULL,
+	DeptID int DEFAULT 0 NOT NULL,
+	OperID int DEFAULT 0 NOT NULL,
+	sDesc nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	bIsFinish char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bLocked char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bCanViewWhenNoFinished char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	OperID2 int DEFAULT '0' NOT NULL,
+	dUpdate2 datetime NULL,
+	F20553 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20554 datetime DEFAULT '' NOT NULL,
+	F20555 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20838 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20839 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20840 nvarchar(200) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20841 nvarchar(200) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20842 nvarchar(1000) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20843 numeric(20,1) NULL,
+	F20844 numeric(20,1) NULL,
+	F20845 nvarchar(100) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20846 nvarchar(100) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F21396 nvarchar(1500) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22352 nvarchar(200) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+ 
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable2499 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	F20568 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20569 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20570 nvarchar(100) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20571 datetime DEFAULT '' NOT NULL,
+	F20572 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20573 nvarchar(100) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20574 nvarchar(200) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20575 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20576 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20577 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20578 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable2500 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	RepID int DEFAULT 0 NOT NULL,
+	FillDate datetime DEFAULT '' NOT NULL,
+	ModifyDate datetime DEFAULT '' NOT NULL,
+	DeptID int DEFAULT 0 NOT NULL,
+	OperID int DEFAULT 0 NOT NULL,
+	sDesc nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	bIsFinish char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bLocked char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bCanViewWhenNoFinished char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	OperID2 int DEFAULT '0' NOT NULL,
+	dUpdate2 datetime NULL,
+	F20579 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable2504 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	RepID int DEFAULT 0 NOT NULL,
+	FillDate datetime DEFAULT '' NOT NULL,
+	ModifyDate datetime DEFAULT '' NOT NULL,
+	DeptID int DEFAULT 0 NOT NULL,
+	OperID int DEFAULT 0 NOT NULL,
+	sDesc nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	bIsFinish char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bLocked char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bCanViewWhenNoFinished char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	OperID2 int DEFAULT '0' NOT NULL,
+	dUpdate2 datetime NULL,
+	F20602 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20603 datetime DEFAULT '' NOT NULL,
+	F20604 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20828 nvarchar(100) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20829 nvarchar(100) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20830 nvarchar(200) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20831 nvarchar(100) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20832 nvarchar(1000) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20833 numeric(20,1) NULL,
+	F20834 numeric(20,1) NULL,
+	F20835 nvarchar(100) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20836 nvarchar(100) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20837 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F21401 nvarchar(1500) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22353 nvarchar(200) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22637 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22638 nvarchar(100) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22659 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F25380 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F25381 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F25382 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable2507 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	F20617 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20618 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20619 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20620 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20621 datetime DEFAULT '' NOT NULL,
+	F20622 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20623 nvarchar(100) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20624 nvarchar(100) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20625 numeric(20,1) DEFAULT 0 NOT NULL,
+	F20626 numeric(20,1) DEFAULT 0 NOT NULL,
+	F20627 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20628 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22657 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable2508 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	RepID int DEFAULT 0 NOT NULL,
+	FillDate datetime DEFAULT '' NOT NULL,
+	ModifyDate datetime DEFAULT '' NOT NULL,
+	DeptID int DEFAULT 0 NOT NULL,
+	OperID int DEFAULT 0 NOT NULL,
+	sDesc nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	bIsFinish char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bLocked char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bCanViewWhenNoFinished char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	OperID2 int DEFAULT '0' NOT NULL,
+	dUpdate2 datetime NULL,
+	F20629 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable2511 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	F20662 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20663 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20664 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20665 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20666 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20667 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20668 numeric(20,2) DEFAULT 0 NOT NULL,
+	F20669 numeric(20,2) DEFAULT 0 NOT NULL,
+	F20670 numeric(20,4) DEFAULT 0 NOT NULL,
+	F20671 numeric(20,2) DEFAULT 0 NOT NULL,
+	F20672 numeric(20,2) DEFAULT 0 NOT NULL,
+	F20673 numeric(20,2) DEFAULT 0 NOT NULL,
+	F20674 numeric(20,2) DEFAULT 0 NOT NULL,
+	F20675 numeric(20,2) DEFAULT 0 NOT NULL,
+	F20676 numeric(20,2) DEFAULT 0 NOT NULL,
+	F20677 numeric(20,2) DEFAULT 0 NOT NULL,
+	F20678 nvarchar(100) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F24652 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F24653 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable2512 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	RepID int DEFAULT 0 NOT NULL,
+	FillDate datetime DEFAULT '' NOT NULL,
+	ModifyDate datetime DEFAULT '' NOT NULL,
+	DeptID int DEFAULT 0 NOT NULL,
+	OperID int DEFAULT 0 NOT NULL,
+	sDesc nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	bIsFinish char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bLocked char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bCanViewWhenNoFinished char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	OperID2 int DEFAULT '0' NOT NULL,
+	dUpdate2 datetime NULL,
+	F20679 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20680 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20681 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20682 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20683 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20684 datetime DEFAULT '' NOT NULL,
+	F20685 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20686 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20687 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20688 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20689 numeric(20,1) DEFAULT 0 NOT NULL,
+	F20690 numeric(20,1) DEFAULT 0 NOT NULL,
+	F20691 numeric(20,1) DEFAULT 0 NOT NULL,
+	F20692 numeric(20,2) DEFAULT 0 NOT NULL,
+	F20693 numeric(20,1) DEFAULT 0 NOT NULL,
+	F20694 numeric(20,1) DEFAULT 0 NOT NULL,
+	F20695 numeric(20,1) DEFAULT 0 NOT NULL,
+	F20696 numeric(20,1) DEFAULT 0 NOT NULL,
+	F20697 numeric(20,4) DEFAULT 0 NOT NULL,
+	F20698 numeric(20,4) DEFAULT 0 NOT NULL,
+	F20699 numeric(20,4) DEFAULT 0 NOT NULL,
+	F20700 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20701 numeric(20,1) DEFAULT 0 NOT NULL,
+	F20702 numeric(20,1) DEFAULT 0 NOT NULL,
+	F20703 numeric(20,1) DEFAULT 0 NOT NULL,
+	F20704 numeric(20,1) DEFAULT 0 NOT NULL,
+	F20705 numeric(20,1) DEFAULT 0 NOT NULL,
+	F20706 numeric(20,1) DEFAULT 0 NOT NULL,
+	F20707 numeric(20,1) DEFAULT 0 NOT NULL,
+	F20708 numeric(20,1) DEFAULT 0 NOT NULL,
+	F20709 numeric(20,1) DEFAULT 0 NOT NULL,
+	F20710 numeric(20,1) DEFAULT 0 NOT NULL,
+	F20711 numeric(20,1) DEFAULT 0 NOT NULL,
+	F20712 numeric(20,1) DEFAULT 0 NOT NULL,
+	F20713 numeric(20,1) DEFAULT 0 NOT NULL,
+	F20714 numeric(20,1) DEFAULT 0 NOT NULL,
+	F20715 numeric(20,1) DEFAULT 0 NOT NULL,
+	F20716 numeric(20,1) DEFAULT 0 NOT NULL,
+	F20717 numeric(20,1) DEFAULT 0 NOT NULL,
+	F20718 numeric(20,1) DEFAULT 0 NOT NULL,
+	F20719 numeric(20,1) DEFAULT 0 NOT NULL,
+	F20720 numeric(20,1) DEFAULT 0 NOT NULL,
+	F20721 numeric(20,1) DEFAULT 0 NOT NULL,
+	F20722 numeric(20,1) DEFAULT 0 NOT NULL,
+	F20723 numeric(20,1) DEFAULT 0 NOT NULL,
+	F20724 numeric(20,1) DEFAULT 0 NOT NULL,
+	F20725 numeric(20,1) DEFAULT 0 NOT NULL,
+	F20726 numeric(20,1) DEFAULT 0 NOT NULL,
+	F20727 numeric(20,1) DEFAULT 0 NOT NULL,
+	F20728 numeric(20,1) DEFAULT 0 NOT NULL,
+	F20729 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20730 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20731 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20732 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20809 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20814 nvarchar(100) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20815 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20816 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20817 numeric(20,0) DEFAULT 0 NOT NULL,
+	F24232 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F24233 datetime DEFAULT '' NOT NULL,
+	F24234 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F24235 datetime DEFAULT '' NOT NULL,
+	F26711 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable2513 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	F20733 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20734 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20735 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20736 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20737 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20738 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20739 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20740 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20741 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20742 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20743 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20744 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20745 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20746 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20747 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20748 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20749 nvarchar(100) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable2514 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	RepID int DEFAULT 0 NOT NULL,
+	FillDate datetime DEFAULT '' NOT NULL,
+	ModifyDate datetime DEFAULT '' NOT NULL,
+	DeptID int DEFAULT 0 NOT NULL,
+	OperID int DEFAULT 0 NOT NULL,
+	sDesc nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	bIsFinish char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bLocked char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bCanViewWhenNoFinished char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	OperID2 int DEFAULT '0' NOT NULL,
+	dUpdate2 datetime NULL,
+	F20756 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20757 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20758 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20759 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20760 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20761 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20762 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20763 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20764 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20765 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20766 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20767 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20768 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20769 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20770 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20771 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20772 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20773 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20774 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20775 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20776 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20777 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20778 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20779 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20780 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20781 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20782 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20783 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20784 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20785 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20786 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20787 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20788 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20789 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20790 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20791 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20792 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20793 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20794 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20795 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20796 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20797 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20798 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20799 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20800 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20801 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20802 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20803 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20804 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20805 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20806 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20807 datetime DEFAULT '' NOT NULL,
+	F20808 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20889 numeric(20,0) DEFAULT 0 NOT NULL,
+	F20910 nvarchar(100) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20911 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable2515 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	RepID int DEFAULT 0 NOT NULL,
+	FillDate datetime DEFAULT '' NOT NULL,
+	ModifyDate datetime DEFAULT '' NOT NULL,
+	DeptID int DEFAULT 0 NOT NULL,
+	OperID int DEFAULT 0 NOT NULL,
+	sDesc nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	bIsFinish char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bLocked char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bCanViewWhenNoFinished char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	OperID2 int DEFAULT '0' NOT NULL,
+	dUpdate2 datetime NULL,
+	F20849 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20859 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20860 datetime DEFAULT '' NOT NULL,
+	F20861 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable2518 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	F20866 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20867 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20868 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20869 numeric(20,0) DEFAULT 0 NOT NULL
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable2519 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	RepID int DEFAULT 0 NOT NULL,
+	FillDate datetime DEFAULT '' NOT NULL,
+	ModifyDate datetime DEFAULT '' NOT NULL,
+	DeptID int DEFAULT 0 NOT NULL,
+	OperID int DEFAULT 0 NOT NULL,
+	sDesc nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	bIsFinish char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bLocked char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bCanViewWhenNoFinished char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	OperID2 int DEFAULT '0' NOT NULL,
+	dUpdate2 datetime NULL,
+	F20870 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable2520 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	RepID int DEFAULT 0 NOT NULL,
+	FillDate datetime DEFAULT '' NOT NULL,
+	ModifyDate datetime DEFAULT '' NOT NULL,
+	DeptID int DEFAULT 0 NOT NULL,
+	OperID int DEFAULT 0 NOT NULL,
+	sDesc nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	bIsFinish char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bLocked char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bCanViewWhenNoFinished char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	OperID2 int DEFAULT '0' NOT NULL,
+	dUpdate2 datetime NULL,
+	F20872 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20884 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20885 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20886 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20887 numeric(20,0) DEFAULT 0 NOT NULL,
+	F20888 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20890 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable2524 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	F20900 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20901 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20902 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20903 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20904 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20905 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20906 datetime DEFAULT '' NOT NULL
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable2525 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	F20912 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20913 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20914 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20915 numeric(20,0) DEFAULT 0 NOT NULL,
+	F20917 nvarchar(500) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable2527 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	F20918 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20919 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20920 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20921 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20922 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20923 numeric(20,0) DEFAULT 0 NOT NULL,
+	F20924 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20925 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20926 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20927 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20928 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20929 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20930 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20931 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20932 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20933 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20934 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20935 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20936 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20937 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20938 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20939 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20940 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20941 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20942 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20943 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20944 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20945 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20946 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20947 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20948 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20949 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20950 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20951 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20952 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20953 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20954 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20955 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20956 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20957 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20958 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20959 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20960 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20961 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20962 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20963 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20964 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20965 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20966 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20967 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20968 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20969 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20970 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20971 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20972 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F21395 datetime DEFAULT '' NOT NULL
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable2528 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	RepID int DEFAULT 0 NOT NULL,
+	FillDate datetime DEFAULT '' NOT NULL,
+	ModifyDate datetime DEFAULT '' NOT NULL,
+	DeptID int DEFAULT 0 NOT NULL,
+	OperID int DEFAULT 0 NOT NULL,
+	sDesc nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	bIsFinish char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bLocked char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bCanViewWhenNoFinished char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	OperID2 int DEFAULT '0' NOT NULL,
+	dUpdate2 datetime NULL,
+	F20974 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20975 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20976 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20977 numeric(20,0) DEFAULT 0 NOT NULL,
+	F20978 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20979 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20980 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20981 datetime DEFAULT '' NOT NULL,
+	F21167 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable2529 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	F20982 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20983 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20984 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20985 numeric(20,0) DEFAULT 0 NOT NULL,
+	F20986 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20987 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20988 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20989 numeric(20,0) DEFAULT 0 NOT NULL,
+	F20990 numeric(20,0) DEFAULT 0 NOT NULL,
+	F20991 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20992 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20993 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20994 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20995 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20996 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20997 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20998 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F20999 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F21000 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F21001 datetime DEFAULT '' NOT NULL,
+	F21002 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F21003 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable2530 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	RepID int DEFAULT 0 NOT NULL,
+	FillDate datetime DEFAULT '' NOT NULL,
+	ModifyDate datetime DEFAULT '' NOT NULL,
+	DeptID int DEFAULT 0 NOT NULL,
+	OperID int DEFAULT 0 NOT NULL,
+	sDesc nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	bIsFinish char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bLocked char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bCanViewWhenNoFinished char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	OperID2 int DEFAULT '0' NOT NULL,
+	dUpdate2 datetime NULL,
+	F21004 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F21005 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F21006 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F21007 numeric(20,0) DEFAULT 0 NOT NULL,
+	F21008 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F21009 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F21010 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F21011 datetime DEFAULT '' NOT NULL,
+	F21168 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable2531 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	RepID int DEFAULT 0 NOT NULL,
+	FillDate datetime DEFAULT '' NOT NULL,
+	ModifyDate datetime DEFAULT '' NOT NULL,
+	DeptID int DEFAULT 0 NOT NULL,
+	OperID int DEFAULT 0 NOT NULL,
+	sDesc nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	bIsFinish char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bLocked char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bCanViewWhenNoFinished char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	OperID2 int DEFAULT '0' NOT NULL,
+	dUpdate2 datetime NULL,
+	F21014 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F21015 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F21017 datetime DEFAULT '' NOT NULL,
+	F21860 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable2532 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	F21018 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F21019 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F21020 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F21021 numeric(20,0) DEFAULT 0 NOT NULL
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable2533 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	RepID int DEFAULT 0 NOT NULL,
+	FillDate datetime DEFAULT '' NOT NULL,
+	ModifyDate datetime DEFAULT '' NOT NULL,
+	DeptID int DEFAULT 0 NOT NULL,
+	OperID int DEFAULT 0 NOT NULL,
+	sDesc nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	bIsFinish char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bLocked char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bCanViewWhenNoFinished char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	OperID2 int DEFAULT '0' NOT NULL,
+	dUpdate2 datetime NULL,
+	F21023 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F21024 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F21026 datetime DEFAULT '' NOT NULL,
+	F21499 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable2535 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	RepID int DEFAULT 0 NOT NULL,
+	FillDate datetime DEFAULT '' NOT NULL,
+	ModifyDate datetime DEFAULT '' NOT NULL,
+	DeptID int DEFAULT 0 NOT NULL,
+	OperID int DEFAULT 0 NOT NULL,
+	sDesc nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	bIsFinish char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bLocked char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bCanViewWhenNoFinished char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	OperID2 int DEFAULT '0' NOT NULL,
+	dUpdate2 datetime NULL,
+	F21049 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F21051 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F21052 numeric(20,0) DEFAULT 0 NOT NULL,
+	F21054 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F21055 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F21056 datetime DEFAULT '' NOT NULL,
+	F21058 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F21170 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable2537 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	RepID int DEFAULT 0 NOT NULL,
+	FillDate datetime DEFAULT '' NOT NULL,
+	ModifyDate datetime DEFAULT '' NOT NULL,
+	DeptID int DEFAULT 0 NOT NULL,
+	OperID int DEFAULT 0 NOT NULL,
+	sDesc nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	bIsFinish char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bLocked char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bCanViewWhenNoFinished char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	OperID2 int DEFAULT '0' NOT NULL,
+	dUpdate2 datetime NULL,
+	F21076 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F21077 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F21078 numeric(20,0) DEFAULT 0 NOT NULL,
+	F21080 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F21169 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable2538 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	F21083 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F21084 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F21085 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F21086 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F21087 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F21088 numeric(20,0) DEFAULT 0 NOT NULL,
+	F21089 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F21090 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F21091 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F21092 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F21093 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F21094 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F21095 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F21096 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F21097 numeric(20,0) DEFAULT 0 NOT NULL,
+	F21098 numeric(20,0) DEFAULT 0 NOT NULL,
+	F21099 numeric(20,0) DEFAULT 0 NOT NULL,
+	F21100 datetime DEFAULT '' NOT NULL
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable2539 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	RepID int DEFAULT 0 NOT NULL,
+	FillDate datetime DEFAULT '' NOT NULL,
+	ModifyDate datetime DEFAULT '' NOT NULL,
+	DeptID int DEFAULT 0 NOT NULL,
+	OperID int DEFAULT 0 NOT NULL,
+	sDesc nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	bIsFinish char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bLocked char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bCanViewWhenNoFinished char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	OperID2 int DEFAULT '0' NOT NULL,
+	dUpdate2 datetime NULL,
+	F21101 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F21102 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F21103 numeric(20,0) DEFAULT 0 NOT NULL,
+	F21104 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F21145 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F21146 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable2541 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	F21123 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F21124 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F21125 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F21126 numeric(20,0) DEFAULT 0 NOT NULL,
+	F21127 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F21128 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F21129 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F21130 numeric(20,0) DEFAULT 0 NOT NULL,
+	F21131 numeric(20,0) DEFAULT 0 NOT NULL,
+	F21132 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F21133 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F21134 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F21135 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F21136 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F21137 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F21138 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F21139 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F21140 numeric(20,0) DEFAULT 0 NOT NULL,
+	F21141 numeric(20,0) DEFAULT 0 NOT NULL,
+	F21142 numeric(20,0) DEFAULT 0 NOT NULL,
+	F21143 numeric(20,0) DEFAULT 0 NOT NULL,
+	F21144 datetime DEFAULT '' NOT NULL
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable2542 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	F21147 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F21148 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F21149 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F21150 numeric(20,0) DEFAULT 0 NOT NULL,
+	F21151 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F21152 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F21153 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F21154 numeric(20,0) DEFAULT 0 NOT NULL,
+	F21155 numeric(20,0) DEFAULT 0 NOT NULL,
+	F21156 numeric(20,0) DEFAULT 0 NOT NULL,
+	F21157 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F21158 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F21159 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F21160 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F21161 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F21162 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F21163 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F21164 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F21165 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F21166 datetime DEFAULT '' NOT NULL
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable2543 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	RepID int DEFAULT 0 NOT NULL,
+	FillDate datetime DEFAULT '' NOT NULL,
+	ModifyDate datetime DEFAULT '' NOT NULL,
+	DeptID int DEFAULT 0 NOT NULL,
+	OperID int DEFAULT 0 NOT NULL,
+	sDesc nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	bIsFinish char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bLocked char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bCanViewWhenNoFinished char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	OperID2 int DEFAULT '0' NOT NULL,
+	dUpdate2 datetime NULL,
+	F21174 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F21175 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F21176 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F21177 numeric(20,0) DEFAULT 0 NOT NULL,
+	F21178 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F21179 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F21180 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable2544 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	F21181 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F21182 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F21183 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F21184 numeric(20,0) DEFAULT 0 NOT NULL,
+	F21185 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F21186 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F21187 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F21188 numeric(20,0) DEFAULT 0 NOT NULL,
+	F21189 numeric(20,0) DEFAULT 0 NOT NULL,
+	F21190 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F21191 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F21192 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F21193 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F21194 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F21195 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F21196 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F21197 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F21198 numeric(20,0) DEFAULT 0 NOT NULL,
+	F21199 numeric(20,0) DEFAULT 0 NOT NULL,
+	F21200 numeric(20,0) DEFAULT 0 NOT NULL,
+	F21201 numeric(20,0) DEFAULT 0 NOT NULL,
+	F21202 datetime DEFAULT '' NOT NULL
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable2545 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	F21203 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F21204 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F21205 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F21206 numeric(20,0) DEFAULT 0 NOT NULL,
+	F21207 nvarchar(500) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable2546 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	RepID int DEFAULT 0 NOT NULL,
+	FillDate datetime DEFAULT '' NOT NULL,
+	ModifyDate datetime DEFAULT '' NOT NULL,
+	DeptID int DEFAULT 0 NOT NULL,
+	OperID int DEFAULT 0 NOT NULL,
+	sDesc nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	bIsFinish char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bLocked char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bCanViewWhenNoFinished char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	OperID2 int DEFAULT '0' NOT NULL,
+	dUpdate2 datetime NULL,
+	F21208 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F21209 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F21408 datetime DEFAULT '' NOT NULL,
+	F21409 datetime DEFAULT '' NOT NULL,
+	F21480 image NULL,
+	F21481 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F21482 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F21655 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable2547 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	F21212 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F21213 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F21214 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F21215 numeric(20,0) DEFAULT 0 NOT NULL,
+	F21216 nvarchar(200) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable2548 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	RepID int DEFAULT 0 NOT NULL,
+	FillDate datetime DEFAULT '' NOT NULL,
+	ModifyDate datetime DEFAULT '' NOT NULL,
+	DeptID int DEFAULT 0 NOT NULL,
+	OperID int DEFAULT 0 NOT NULL,
+	sDesc nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	bIsFinish char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bLocked char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bCanViewWhenNoFinished char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	OperID2 int DEFAULT '0' NOT NULL,
+	dUpdate2 datetime NULL,
+	F21218 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F21219 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F21221 datetime DEFAULT '' NOT NULL,
+	F21406 datetime DEFAULT '' NOT NULL,
+	F21407 datetime DEFAULT '' NOT NULL
+);
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable2550 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	RepID int DEFAULT 0 NOT NULL,
+	FillDate datetime DEFAULT '' NOT NULL,
+	ModifyDate datetime DEFAULT '' NOT NULL,
+	DeptID int DEFAULT 0 NOT NULL,
+	OperID int DEFAULT 0 NOT NULL,
+	sDesc nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	bIsFinish char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bLocked char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bCanViewWhenNoFinished char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	OperID2 int DEFAULT '0' NOT NULL,
+	dUpdate2 datetime NULL,
+	F21242 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F21243 nvarchar(100) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F21244 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F21245 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F21246 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F21247 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F21248 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F21249 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F21250 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F21251 nvarchar(2000) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F21252 nvarchar(100) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F21253 nvarchar(2000) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F21254 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F21255 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F21256 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F21257 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F21258 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F21259 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F21260 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F21261 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F21303 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable2554 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	RepID int DEFAULT 0 NOT NULL,
+	FillDate datetime DEFAULT '' NOT NULL,
+	ModifyDate datetime DEFAULT '' NOT NULL,
+	DeptID int DEFAULT 0 NOT NULL,
+	OperID int DEFAULT 0 NOT NULL,
+	sDesc nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	bIsFinish char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bLocked char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bCanViewWhenNoFinished char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	OperID2 int DEFAULT '0' NOT NULL,
+	dUpdate2 datetime NULL,
+	F21304 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable2559 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	F21347 numeric(20,0) DEFAULT 0 NOT NULL,
+	F21348 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F21349 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F21350 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F21351 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F21352 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F21353 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F21354 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F21355 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F21356 nvarchar(1500) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F21357 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F21358 nvarchar(1500) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F21359 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F21360 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F21361 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F21362 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F21363 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F21364 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F21365 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F21366 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F21394 nvarchar(200) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable2560 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	RepID int DEFAULT 0 NOT NULL,
+	FillDate datetime DEFAULT '' NOT NULL,
+	ModifyDate datetime DEFAULT '' NOT NULL,
+	DeptID int DEFAULT 0 NOT NULL,
+	OperID int DEFAULT 0 NOT NULL,
+	sDesc nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	bIsFinish char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bLocked char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bCanViewWhenNoFinished char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	OperID2 int DEFAULT '0' NOT NULL,
+	dUpdate2 datetime NULL,
+	F21367 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F21389 datetime DEFAULT '' NOT NULL
+);
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable2561 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	F21369 numeric(20,0) DEFAULT 0 NOT NULL,
+	F21370 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F21371 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F21372 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F21373 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F21374 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F21375 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F21376 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F21377 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F21378 nvarchar(1500) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F21379 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F21380 nvarchar(1500) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F21381 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F21382 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F21383 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F21384 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F21385 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F21386 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F21387 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F21388 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable2562 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	RepID int DEFAULT 0 NOT NULL,
+	FillDate datetime DEFAULT '' NOT NULL,
+	ModifyDate datetime DEFAULT '' NOT NULL,
+	DeptID int DEFAULT 0 NOT NULL,
+	OperID int DEFAULT 0 NOT NULL,
+	sDesc nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	bIsFinish char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bLocked char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bCanViewWhenNoFinished char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	OperID2 int DEFAULT '0' NOT NULL,
+	dUpdate2 datetime NULL,
+	F21390 datetime DEFAULT '' NOT NULL
+);
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable2563 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	F21391 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F21392 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable2567 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	RepID int DEFAULT 0 NOT NULL,
+	FillDate datetime DEFAULT '' NOT NULL,
+	ModifyDate datetime DEFAULT '' NOT NULL,
+	DeptID int DEFAULT 0 NOT NULL,
+	OperID int DEFAULT 0 NOT NULL,
+	sDesc nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	bIsFinish char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bLocked char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bCanViewWhenNoFinished char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	OperID2 int DEFAULT '0' NOT NULL,
+	dUpdate2 datetime NULL,
+	F21410 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F21411 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F21412 datetime DEFAULT '' NOT NULL,
+	F21413 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable2568 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	F21414 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F21415 nvarchar(100) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F21416 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F21417 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F21418 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F21419 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F21420 numeric(20,0) DEFAULT 0 NOT NULL,
+	F21421 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F21422 numeric(20,0) DEFAULT 0 NOT NULL,
+	F21423 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable2571 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	RepID int DEFAULT 0 NOT NULL,
+	FillDate datetime DEFAULT '' NOT NULL,
+	ModifyDate datetime DEFAULT '' NOT NULL,
+	DeptID int DEFAULT 0 NOT NULL,
+	OperID int DEFAULT 0 NOT NULL,
+	sDesc nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	bIsFinish char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bLocked char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bCanViewWhenNoFinished char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	OperID2 int DEFAULT '0' NOT NULL,
+	dUpdate2 datetime NULL,
+	F21452 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F21453 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable2572 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	F21454 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F21455 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F21456 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F21457 numeric(20,0) DEFAULT 0 NOT NULL,
+	F21458 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F21459 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F21460 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F21461 numeric(20,0) DEFAULT 0 NOT NULL,
+	F21462 numeric(20,0) DEFAULT 0 NOT NULL,
+	F21463 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F21464 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F21465 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F21466 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F21467 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F21468 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F21469 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F21470 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F21471 numeric(20,0) DEFAULT 0 NOT NULL,
+	F21473 numeric(20,0) DEFAULT 0 NOT NULL,
+	F21475 datetime DEFAULT '' NOT NULL,
+	F21476 numeric(20,0) DEFAULT 0 NOT NULL,
+	F21477 nvarchar(100) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F21478 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable2574 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	RepID int DEFAULT 0 NOT NULL,
+	FillDate datetime DEFAULT '' NOT NULL,
+	ModifyDate datetime DEFAULT '' NOT NULL,
+	DeptID int DEFAULT 0 NOT NULL,
+	OperID int DEFAULT 0 NOT NULL,
+	sDesc nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	bIsFinish char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bLocked char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bCanViewWhenNoFinished char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	OperID2 int DEFAULT '0' NOT NULL,
+	dUpdate2 datetime NULL,
+	F21488 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F21489 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F21490 datetime DEFAULT '' NOT NULL,
+	F21491 datetime DEFAULT '' NOT NULL,
+	F21492 image NULL,
+	F21494 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F21656 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable2575 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	F21495 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F21496 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F21497 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F21498 numeric(20,0) DEFAULT 0 NOT NULL
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable2581 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	F21564 nvarchar(100) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F21565 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F21566 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F21567 datetime DEFAULT '' NOT NULL,
+	F21568 datetime DEFAULT '' NOT NULL,
+	F21569 datetime DEFAULT '' NOT NULL,
+	F21570 datetime DEFAULT '' NOT NULL,
+	F21571 datetime DEFAULT '' NOT NULL,
+	F21572 datetime DEFAULT '' NOT NULL,
+	F21573 datetime DEFAULT '' NOT NULL,
+	F21574 datetime DEFAULT '' NOT NULL,
+	F21575 datetime DEFAULT '' NOT NULL,
+	F21576 datetime DEFAULT '' NOT NULL,
+	F21577 datetime DEFAULT '' NOT NULL,
+	F21578 datetime DEFAULT '' NOT NULL,
+	F21579 datetime DEFAULT '' NOT NULL,
+	F21580 datetime DEFAULT '' NOT NULL,
+	F21581 datetime DEFAULT '' NOT NULL,
+	F21582 datetime DEFAULT '' NOT NULL,
+	F21583 datetime DEFAULT '' NOT NULL,
+	F21584 datetime DEFAULT '' NOT NULL,
+	F21585 datetime DEFAULT '' NOT NULL,
+	F21586 datetime DEFAULT '' NOT NULL,
+	F21587 datetime DEFAULT '' NOT NULL,
+	F21588 datetime DEFAULT '' NOT NULL,
+	F21589 datetime DEFAULT '' NOT NULL,
+	F21590 datetime DEFAULT '' NOT NULL,
+	F21591 datetime DEFAULT '' NOT NULL,
+	F21592 datetime DEFAULT '' NOT NULL
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable2584 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	F21621 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F21622 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F21623 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F21624 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F21625 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F21626 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F21627 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F21629 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F21630 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F21631 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F21632 numeric(20,0) DEFAULT 0 NOT NULL,
+	F21633 numeric(20,0) DEFAULT 0 NOT NULL,
+	F21634 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F21635 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F21636 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F21639 numeric(20,0) DEFAULT 0 NOT NULL,
+	F21642 datetime DEFAULT '' NOT NULL
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable2585 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	RepID int DEFAULT 0 NOT NULL,
+	FillDate datetime DEFAULT '' NOT NULL,
+	ModifyDate datetime DEFAULT '' NOT NULL,
+	DeptID int DEFAULT 0 NOT NULL,
+	OperID int DEFAULT 0 NOT NULL,
+	sDesc nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	bIsFinish char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bLocked char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bCanViewWhenNoFinished char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	OperID2 int DEFAULT '0' NOT NULL,
+	dUpdate2 datetime NULL,
+	F21643 datetime DEFAULT '' NOT NULL
+);
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable2586 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	F21644 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F21645 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F21646 datetime DEFAULT '' NOT NULL
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable2588 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	RepID int DEFAULT 0 NOT NULL,
+	FillDate datetime DEFAULT '' NOT NULL,
+	ModifyDate datetime DEFAULT '' NOT NULL,
+	DeptID int DEFAULT 0 NOT NULL,
+	OperID int DEFAULT 0 NOT NULL,
+	sDesc nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	bIsFinish char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bLocked char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bCanViewWhenNoFinished char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	OperID2 int DEFAULT '0' NOT NULL,
+	dUpdate2 datetime NULL,
+	F21650 datetime DEFAULT '' NOT NULL,
+	F21661 numeric(20,0) DEFAULT 0 NOT NULL,
+	F21662 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F21663 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F21664 nvarchar(200) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable2589 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	F21652 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F21653 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F21654 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F21660 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable2591 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	F21666 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F21667 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F21668 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F21669 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F21670 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F21671 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F21672 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F21673 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F21678 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F21679 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F21680 numeric(20,0) DEFAULT 0 NOT NULL,
+	F21681 datetime DEFAULT '' NOT NULL
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable2592 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	RepID int DEFAULT 0 NOT NULL,
+	FillDate datetime DEFAULT '' NOT NULL,
+	ModifyDate datetime DEFAULT '' NOT NULL,
+	DeptID int DEFAULT 0 NOT NULL,
+	OperID int DEFAULT 0 NOT NULL,
+	sDesc nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	bIsFinish char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bLocked char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bCanViewWhenNoFinished char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	OperID2 int DEFAULT '0' NOT NULL,
+	dUpdate2 datetime NULL,
+	F21682 datetime DEFAULT '' NOT NULL
+);
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable2599 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	F21725 nvarchar(100) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F21726 nvarchar(100) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F21727 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F21728 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F21729 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F21730 datetime DEFAULT '' NOT NULL,
+	F21731 nvarchar(100) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F21758 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable2600 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	RepID int DEFAULT 0 NOT NULL,
+	FillDate datetime DEFAULT '' NOT NULL,
+	ModifyDate datetime DEFAULT '' NOT NULL,
+	DeptID int DEFAULT 0 NOT NULL,
+	OperID int DEFAULT 0 NOT NULL,
+	sDesc nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	bIsFinish char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bLocked char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bCanViewWhenNoFinished char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	OperID2 int DEFAULT '0' NOT NULL,
+	dUpdate2 datetime NULL,
+	F21733 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F21757 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable2601 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	RepID int DEFAULT 0 NOT NULL,
+	FillDate datetime DEFAULT '' NOT NULL,
+	ModifyDate datetime DEFAULT '' NOT NULL,
+	DeptID int DEFAULT 0 NOT NULL,
+	OperID int DEFAULT 0 NOT NULL,
+	sDesc nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	bIsFinish char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bLocked char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bCanViewWhenNoFinished char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	OperID2 int DEFAULT '0' NOT NULL,
+	dUpdate2 datetime NULL,
+	F21734 nvarchar(100) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F21735 nvarchar(100) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F21736 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F21737 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F21738 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F21739 datetime DEFAULT '' NOT NULL,
+	F21740 nvarchar(100) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F21756 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable2606 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	RepID int DEFAULT 0 NOT NULL,
+	FillDate datetime DEFAULT '' NOT NULL,
+	ModifyDate datetime DEFAULT '' NOT NULL,
+	DeptID int DEFAULT 0 NOT NULL,
+	OperID int DEFAULT 0 NOT NULL,
+	sDesc nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	bIsFinish char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bLocked char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bCanViewWhenNoFinished char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	OperID2 int DEFAULT '0' NOT NULL,
+	dUpdate2 datetime NULL,
+	F21789 datetime DEFAULT '' NOT NULL,
+	F22565 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22660 datetime DEFAULT '' NOT NULL,
+	F23382 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29902 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29903 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable2607 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	F21790 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F21791 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F21792 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F21793 nvarchar(100) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F21794 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F21795 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F21796 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F21797 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F21798 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F21799 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F21800 numeric(20,0) DEFAULT 0 NOT NULL,
+	F21801 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F21802 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F21803 numeric(20,0) DEFAULT 0 NOT NULL,
+	F21804 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F21805 numeric(20,2) DEFAULT 0 NOT NULL,
+	F21806 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F21807 numeric(20,2) DEFAULT 0 NOT NULL,
+	F21808 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F21809 numeric(20,0) DEFAULT 0 NOT NULL,
+	F21810 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F21811 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F21812 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F21813 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F21814 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F21815 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F21816 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F21817 nvarchar(500) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F21818 datetime DEFAULT '' NOT NULL,
+	F21819 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F21820 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable2611 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	RepID int DEFAULT 0 NOT NULL,
+	FillDate datetime DEFAULT '' NOT NULL,
+	ModifyDate datetime DEFAULT '' NOT NULL,
+	DeptID int DEFAULT 0 NOT NULL,
+	OperID int DEFAULT 0 NOT NULL,
+	sDesc nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	bIsFinish char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bLocked char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bCanViewWhenNoFinished char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	OperID2 int DEFAULT '0' NOT NULL,
+	dUpdate2 datetime NULL,
+	F21831 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F21832 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F21833 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F21834 nvarchar(100) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F21835 nvarchar(100) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F21836 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F21837 datetime DEFAULT '' NOT NULL
+);
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable2612 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	F21838 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F21839 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F21840 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F21841 nvarchar(100) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F21842 nvarchar(100) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F21843 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F21844 datetime DEFAULT '' NOT NULL
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable2613 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	RepID int DEFAULT 0 NOT NULL,
+	FillDate datetime DEFAULT '' NOT NULL,
+	ModifyDate datetime DEFAULT '' NOT NULL,
+	DeptID int DEFAULT 0 NOT NULL,
+	OperID int DEFAULT 0 NOT NULL,
+	sDesc nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	bIsFinish char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bLocked char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bCanViewWhenNoFinished char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	OperID2 int DEFAULT '0' NOT NULL,
+	dUpdate2 datetime NULL,
+	F21845 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F21846 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable2622 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	RepID int DEFAULT 0 NOT NULL,
+	FillDate datetime DEFAULT '' NOT NULL,
+	ModifyDate datetime DEFAULT '' NOT NULL,
+	DeptID int DEFAULT 0 NOT NULL,
+	OperID int DEFAULT 0 NOT NULL,
+	sDesc nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	bIsFinish char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bLocked char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bCanViewWhenNoFinished char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	OperID2 int DEFAULT '0' NOT NULL,
+	dUpdate2 datetime NULL,
+	F21882 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F21883 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F21884 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F21885 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F21886 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F21887 numeric(20,0) DEFAULT 0 NOT NULL,
+	F22135 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable2623 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	F21888 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable2650 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	RepID int DEFAULT 0 NOT NULL,
+	FillDate datetime DEFAULT '' NOT NULL,
+	ModifyDate datetime DEFAULT '' NOT NULL,
+	DeptID int DEFAULT 0 NOT NULL,
+	OperID int DEFAULT 0 NOT NULL,
+	sDesc nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	bIsFinish char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bLocked char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bCanViewWhenNoFinished char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	OperID2 int DEFAULT '0' NOT NULL,
+	dUpdate2 datetime NULL,
+	F21951 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F21952 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F21953 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F21954 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22049 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable2653 (
+	ID int NOT NULL,
+	F21957 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F21958 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	CONSTRAINT PK__tabDIYTa__3214EC273326321E PRIMARY KEY (ID)
+);
+CREATE TABLE 车体事业部.dbo.tabDIYTable2662 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	F21977 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F21978 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F21979 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F21980 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F21981 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F21982 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable2663 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	RepID int DEFAULT 0 NOT NULL,
+	FillDate datetime DEFAULT '' NOT NULL,
+	ModifyDate datetime DEFAULT '' NOT NULL,
+	DeptID int DEFAULT 0 NOT NULL,
+	OperID int DEFAULT 0 NOT NULL,
+	sDesc nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	bIsFinish char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bLocked char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bCanViewWhenNoFinished char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	OperID2 int DEFAULT '0' NOT NULL,
+	dUpdate2 datetime NULL,
+	F21983 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable2666 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	F21997 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F21998 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F21999 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22000 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22001 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22002 datetime DEFAULT '' NOT NULL,
+	F22003 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22004 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22005 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22006 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22058 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable2667 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	RepID int DEFAULT 0 NOT NULL,
+	FillDate datetime DEFAULT '' NOT NULL,
+	ModifyDate datetime DEFAULT '' NOT NULL,
+	DeptID int DEFAULT 0 NOT NULL,
+	OperID int DEFAULT 0 NOT NULL,
+	sDesc nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	bIsFinish char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bLocked char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bCanViewWhenNoFinished char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	OperID2 int DEFAULT '0' NOT NULL,
+	dUpdate2 datetime NULL,
+	F22007 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22008 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22009 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22010 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22011 datetime DEFAULT '' NOT NULL,
+	F22052 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable2668 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	F22014 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22015 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22016 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22017 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22018 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22019 datetime DEFAULT '' NOT NULL,
+	F22020 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22021 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22022 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22023 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22024 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22025 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22026 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22027 datetime DEFAULT '' NOT NULL
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable2669 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	RepID int DEFAULT 0 NOT NULL,
+	FillDate datetime DEFAULT '' NOT NULL,
+	ModifyDate datetime DEFAULT '' NOT NULL,
+	DeptID int DEFAULT 0 NOT NULL,
+	OperID int DEFAULT 0 NOT NULL,
+	sDesc nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	bIsFinish char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bLocked char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bCanViewWhenNoFinished char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	OperID2 int DEFAULT '0' NOT NULL,
+	dUpdate2 datetime NULL,
+	F22028 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22029 datetime DEFAULT '' NOT NULL,
+	F22030 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22031 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22032 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22033 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22034 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22035 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22036 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22038 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22039 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22040 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22041 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22042 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22043 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22044 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22045 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22046 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22047 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22048 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22050 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable2671 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	RepID int DEFAULT 0 NOT NULL,
+	FillDate datetime DEFAULT '' NOT NULL,
+	ModifyDate datetime DEFAULT '' NOT NULL,
+	DeptID int DEFAULT 0 NOT NULL,
+	OperID int DEFAULT 0 NOT NULL,
+	sDesc nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	bIsFinish char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bLocked char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bCanViewWhenNoFinished char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	OperID2 int DEFAULT '0' NOT NULL,
+	dUpdate2 datetime NULL,
+	F22056 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable2672 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	F22057 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable2674 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	RepID int DEFAULT 0 NOT NULL,
+	FillDate datetime DEFAULT '' NOT NULL,
+	ModifyDate datetime DEFAULT '' NOT NULL,
+	DeptID int DEFAULT 0 NOT NULL,
+	OperID int DEFAULT 0 NOT NULL,
+	sDesc nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	bIsFinish char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bLocked char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bCanViewWhenNoFinished char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	OperID2 int DEFAULT '0' NOT NULL,
+	dUpdate2 datetime NULL,
+	F22082 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22083 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22084 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22085 datetime DEFAULT '' NOT NULL,
+	F22086 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22087 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22088 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22089 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22090 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22091 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22092 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22093 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22094 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22095 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22096 datetime DEFAULT '' NOT NULL,
+	F22097 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22098 datetime DEFAULT '' NOT NULL,
+	F22099 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22100 numeric(20,2) DEFAULT 0 NOT NULL,
+	F22101 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22102 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22103 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable2675 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	RepID int DEFAULT 0 NOT NULL,
+	FillDate datetime DEFAULT '' NOT NULL,
+	ModifyDate datetime DEFAULT '' NOT NULL,
+	DeptID int DEFAULT 0 NOT NULL,
+	OperID int DEFAULT 0 NOT NULL,
+	sDesc nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	bIsFinish char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bLocked char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bCanViewWhenNoFinished char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	OperID2 int DEFAULT '0' NOT NULL,
+	dUpdate2 datetime NULL,
+	F22104 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22105 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22106 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable2676 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	F22107 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22108 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22109 datetime DEFAULT '' NOT NULL,
+	F22110 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable2677 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	RepID int DEFAULT 0 NOT NULL,
+	FillDate datetime DEFAULT '' NOT NULL,
+	ModifyDate datetime DEFAULT '' NOT NULL,
+	DeptID int DEFAULT 0 NOT NULL,
+	OperID int DEFAULT 0 NOT NULL,
+	sDesc nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	bIsFinish char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bLocked char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bCanViewWhenNoFinished char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	OperID2 int DEFAULT '0' NOT NULL,
+	dUpdate2 datetime NULL,
+	F22111 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22112 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22113 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22114 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22115 datetime DEFAULT '' NOT NULL,
+	F22116 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable2678 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	F22117 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22118 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22119 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22120 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22121 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22122 datetime DEFAULT '' NOT NULL,
+	F22123 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22124 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22125 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22126 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22127 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22128 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22129 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22130 datetime DEFAULT '' NOT NULL
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable2679 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	RepID int DEFAULT 0 NOT NULL,
+	FillDate datetime DEFAULT '' NOT NULL,
+	ModifyDate datetime DEFAULT '' NOT NULL,
+	DeptID int DEFAULT 0 NOT NULL,
+	OperID int DEFAULT 0 NOT NULL,
+	sDesc nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	bIsFinish char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bLocked char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bCanViewWhenNoFinished char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	OperID2 int DEFAULT '0' NOT NULL,
+	dUpdate2 datetime NULL,
+	F22131 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22132 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22133 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable2680 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	F22134 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable2681 (
+	ID int NOT NULL,
+	F22136 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22137 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	CONSTRAINT PK__tabDIYTa__3214EC27F11150CB PRIMARY KEY (ID)
+);
+CREATE TABLE 车体事业部.dbo.tabDIYTable2698 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	RepID int DEFAULT 0 NOT NULL,
+	FillDate datetime DEFAULT '' NOT NULL,
+	ModifyDate datetime DEFAULT '' NOT NULL,
+	DeptID int DEFAULT 0 NOT NULL,
+	OperID int DEFAULT 0 NOT NULL,
+	sDesc nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	bIsFinish char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bLocked char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bCanViewWhenNoFinished char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	OperID2 int DEFAULT '0' NOT NULL,
+	dUpdate2 datetime NULL,
+	F22273 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22274 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22275 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22276 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22277 nvarchar(200) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22278 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22279 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22280 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22281 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22282 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22283 datetime DEFAULT '' NOT NULL,
+	F22284 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable2702 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	RepID int DEFAULT 0 NOT NULL,
+	FillDate datetime DEFAULT '' NOT NULL,
+	ModifyDate datetime DEFAULT '' NOT NULL,
+	DeptID int DEFAULT 0 NOT NULL,
+	OperID int DEFAULT 0 NOT NULL,
+	sDesc nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	bIsFinish char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bLocked char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bCanViewWhenNoFinished char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	OperID2 int DEFAULT '0' NOT NULL,
+	dUpdate2 datetime NULL,
+	F22305 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22306 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22307 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22308 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22309 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22310 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22311 datetime DEFAULT '' NOT NULL
+);
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable2703 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	F22312 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22313 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22314 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22315 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22316 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22317 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22318 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22319 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22320 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22321 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22322 datetime DEFAULT '' NOT NULL,
+	F22344 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22981 image NULL
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable2704 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	RepID int DEFAULT 0 NOT NULL,
+	FillDate datetime DEFAULT '' NOT NULL,
+	ModifyDate datetime DEFAULT '' NOT NULL,
+	DeptID int DEFAULT 0 NOT NULL,
+	OperID int DEFAULT 0 NOT NULL,
+	sDesc nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	bIsFinish char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bLocked char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bCanViewWhenNoFinished char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	OperID2 int DEFAULT '0' NOT NULL,
+	dUpdate2 datetime NULL,
+	F22323 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22324 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22325 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22326 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22327 datetime DEFAULT '' NOT NULL,
+	F22328 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable2705 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	F22329 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22330 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22331 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22332 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22333 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22334 datetime DEFAULT '' NOT NULL,
+	F22335 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22336 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22337 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22338 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22339 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22340 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22341 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22342 datetime DEFAULT '' NOT NULL,
+	F22345 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22351 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable2706 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	F22346 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22347 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22348 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22349 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22350 datetime DEFAULT '' NOT NULL
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable2715 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	RepID int DEFAULT 0 NOT NULL,
+	FillDate datetime DEFAULT '' NOT NULL,
+	ModifyDate datetime DEFAULT '' NOT NULL,
+	DeptID int DEFAULT 0 NOT NULL,
+	OperID int DEFAULT 0 NOT NULL,
+	sDesc nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	bIsFinish char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bLocked char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bCanViewWhenNoFinished char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	OperID2 int DEFAULT '0' NOT NULL,
+	dUpdate2 datetime NULL,
+	F22424 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22425 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22426 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22427 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22428 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22429 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22430 datetime DEFAULT '' NOT NULL,
+	F23011 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable2716 (
+	ID int NOT NULL,
+	F22432 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22433 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	CONSTRAINT PK__tabDIYTa__3214EC2731663E7D PRIMARY KEY (ID)
+);
+CREATE TABLE 车体事业部.dbo.tabDIYTable2717 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	F22434 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22435 nvarchar(200) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22436 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22437 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22438 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22439 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22440 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22441 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22442 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23012 datetime DEFAULT '' NOT NULL,
+	F23013 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable2721 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	F22452 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22453 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable2722 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	RepID int DEFAULT 0 NOT NULL,
+	FillDate datetime DEFAULT '' NOT NULL,
+	ModifyDate datetime DEFAULT '' NOT NULL,
+	DeptID int DEFAULT 0 NOT NULL,
+	OperID int DEFAULT 0 NOT NULL,
+	sDesc nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	bIsFinish char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bLocked char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bCanViewWhenNoFinished char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	OperID2 int DEFAULT '0' NOT NULL,
+	dUpdate2 datetime NULL,
+	F22454 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable2723 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	F22455 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22456 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable2724 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	RepID int DEFAULT 0 NOT NULL,
+	FillDate datetime DEFAULT '' NOT NULL,
+	ModifyDate datetime DEFAULT '' NOT NULL,
+	DeptID int DEFAULT 0 NOT NULL,
+	OperID int DEFAULT 0 NOT NULL,
+	sDesc nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	bIsFinish char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bLocked char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bCanViewWhenNoFinished char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	OperID2 int DEFAULT '0' NOT NULL,
+	dUpdate2 datetime NULL,
+	F22457 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable2727 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	RepID int DEFAULT 0 NOT NULL,
+	FillDate datetime DEFAULT '' NOT NULL,
+	ModifyDate datetime DEFAULT '' NOT NULL,
+	DeptID int DEFAULT 0 NOT NULL,
+	OperID int DEFAULT 0 NOT NULL,
+	sDesc nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	bIsFinish char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bLocked char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bCanViewWhenNoFinished char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	OperID2 int DEFAULT '0' NOT NULL,
+	dUpdate2 datetime NULL,
+	F22478 datetime DEFAULT '' NOT NULL,
+	F22479 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22480 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22481 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22482 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22516 numeric(20,0) DEFAULT 0 NOT NULL,
+	F22668 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22669 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22672 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29935 datetime DEFAULT '' NOT NULL
+);
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable2729 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	F22489 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22490 nvarchar(100) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable2730 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	RepID int DEFAULT 0 NOT NULL,
+	FillDate datetime DEFAULT '' NOT NULL,
+	ModifyDate datetime DEFAULT '' NOT NULL,
+	DeptID int DEFAULT 0 NOT NULL,
+	OperID int DEFAULT 0 NOT NULL,
+	sDesc nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	bIsFinish char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bLocked char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bCanViewWhenNoFinished char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	OperID2 int DEFAULT '0' NOT NULL,
+	dUpdate2 datetime NULL,
+	F22491 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable2733 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	F22503 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22504 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22505 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22506 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22507 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22508 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22509 datetime DEFAULT '' NOT NULL,
+	F22510 numeric(20,0) DEFAULT 0 NOT NULL,
+	F22511 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22512 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22513 nvarchar(100) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22514 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22664 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22673 nvarchar(100) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22674 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22675 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22676 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22677 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22678 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29936 datetime DEFAULT '' NOT NULL
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable2734 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	RepID int DEFAULT 0 NOT NULL,
+	FillDate datetime DEFAULT '' NOT NULL,
+	ModifyDate datetime DEFAULT '' NOT NULL,
+	DeptID int DEFAULT 0 NOT NULL,
+	OperID int DEFAULT 0 NOT NULL,
+	sDesc nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	bIsFinish char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bLocked char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bCanViewWhenNoFinished char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	OperID2 int DEFAULT '0' NOT NULL,
+	dUpdate2 datetime NULL,
+	F22515 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable2737 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	F22529 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22530 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22531 datetime DEFAULT '' NOT NULL,
+	F22532 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22533 nvarchar(100) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22534 nvarchar(100) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22535 nvarchar(100) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22639 numeric(20,0) DEFAULT 0 NOT NULL,
+	F22640 numeric(20,0) DEFAULT 0 NOT NULL,
+	F22641 numeric(20,0) DEFAULT 0 NOT NULL,
+	F22647 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26119 nvarchar(100) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable2738 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	RepID int DEFAULT 0 NOT NULL,
+	FillDate datetime DEFAULT '' NOT NULL,
+	ModifyDate datetime DEFAULT '' NOT NULL,
+	DeptID int DEFAULT 0 NOT NULL,
+	OperID int DEFAULT 0 NOT NULL,
+	sDesc nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	bIsFinish char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bLocked char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bCanViewWhenNoFinished char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	OperID2 int DEFAULT '0' NOT NULL,
+	dUpdate2 datetime NULL,
+	F22536 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23801 datetime DEFAULT '' NOT NULL,
+	F23802 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable2741 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	F22549 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22550 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22551 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22552 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22553 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22554 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22670 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22671 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable2742 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	F22555 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22556 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22557 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22558 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22559 datetime DEFAULT '' NOT NULL,
+	F22560 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22561 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22646 datetime DEFAULT '' NOT NULL
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable2744 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	RepID int DEFAULT 0 NOT NULL,
+	FillDate datetime DEFAULT '' NOT NULL,
+	ModifyDate datetime DEFAULT '' NOT NULL,
+	DeptID int DEFAULT 0 NOT NULL,
+	OperID int DEFAULT 0 NOT NULL,
+	sDesc nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	bIsFinish char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bLocked char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bCanViewWhenNoFinished char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	OperID2 int DEFAULT '0' NOT NULL,
+	dUpdate2 datetime NULL,
+	F22564 datetime DEFAULT '' NOT NULL,
+	F22661 numeric(20,0) DEFAULT 0 NOT NULL
+);
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable2746 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	RepID int DEFAULT 0 NOT NULL,
+	FillDate datetime DEFAULT '' NOT NULL,
+	ModifyDate datetime DEFAULT '' NOT NULL,
+	DeptID int DEFAULT 0 NOT NULL,
+	OperID int DEFAULT 0 NOT NULL,
+	sDesc nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	bIsFinish char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bLocked char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bCanViewWhenNoFinished char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	OperID2 int DEFAULT '0' NOT NULL,
+	dUpdate2 datetime NULL,
+	F22573 numeric(20,0) DEFAULT 0 NOT NULL,
+	F22642 numeric(20,0) DEFAULT 0 NOT NULL,
+	F22643 datetime DEFAULT '' NOT NULL
+);
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable2747 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	F22574 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22575 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22576 datetime DEFAULT '' NOT NULL,
+	F22577 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22578 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22645 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable2750 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	RepID int DEFAULT 0 NOT NULL,
+	FillDate datetime DEFAULT '' NOT NULL,
+	ModifyDate datetime DEFAULT '' NOT NULL,
+	DeptID int DEFAULT 0 NOT NULL,
+	OperID int DEFAULT 0 NOT NULL,
+	sDesc nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	bIsFinish char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bLocked char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bCanViewWhenNoFinished char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	OperID2 int DEFAULT '0' NOT NULL,
+	dUpdate2 datetime NULL,
+	F22586 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22587 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22588 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22589 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22644 datetime DEFAULT '' NOT NULL,
+	F29906 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29907 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable2751 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	RepID int DEFAULT 0 NOT NULL,
+	FillDate datetime DEFAULT '' NOT NULL,
+	ModifyDate datetime DEFAULT '' NOT NULL,
+	DeptID int DEFAULT 0 NOT NULL,
+	OperID int DEFAULT 0 NOT NULL,
+	sDesc nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	bIsFinish char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bLocked char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bCanViewWhenNoFinished char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	OperID2 int DEFAULT '0' NOT NULL,
+	dUpdate2 datetime NULL,
+	F22590 datetime DEFAULT '' NOT NULL
+);
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable2752 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	F22592 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22593 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22594 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22595 nvarchar(100) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22596 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22597 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22598 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22599 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22600 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22601 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22602 numeric(20,0) DEFAULT 0 NOT NULL,
+	F22603 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22604 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22605 numeric(20,0) DEFAULT 0 NOT NULL,
+	F22606 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22607 numeric(20,2) DEFAULT 0 NOT NULL,
+	F22608 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22609 numeric(20,2) DEFAULT 0 NOT NULL,
+	F22610 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22611 numeric(20,0) DEFAULT 0 NOT NULL,
+	F22612 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22613 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22614 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22615 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22616 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22617 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22618 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22619 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22620 datetime DEFAULT '' NOT NULL,
+	F22621 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22622 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23383 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29904 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29905 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable2754 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	F22627 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22628 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22629 nvarchar(500) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22630 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable2755 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	RepID int DEFAULT 0 NOT NULL,
+	FillDate datetime DEFAULT '' NOT NULL,
+	ModifyDate datetime DEFAULT '' NOT NULL,
+	DeptID int DEFAULT 0 NOT NULL,
+	OperID int DEFAULT 0 NOT NULL,
+	sDesc nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	bIsFinish char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bLocked char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bCanViewWhenNoFinished char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	OperID2 int DEFAULT '0' NOT NULL,
+	dUpdate2 datetime NULL,
+	F22631 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable2756 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	RepID int DEFAULT 0 NOT NULL,
+	FillDate datetime DEFAULT '' NOT NULL,
+	ModifyDate datetime DEFAULT '' NOT NULL,
+	DeptID int DEFAULT 0 NOT NULL,
+	OperID int DEFAULT 0 NOT NULL,
+	sDesc nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	bIsFinish char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bLocked char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bCanViewWhenNoFinished char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	OperID2 int DEFAULT '0' NOT NULL,
+	dUpdate2 datetime NULL,
+	F22648 numeric(20,0) DEFAULT 0 NOT NULL,
+	F22649 numeric(20,0) DEFAULT 0 NOT NULL,
+	F22650 datetime DEFAULT '' NOT NULL
+);
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable2757 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	F22651 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22652 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22654 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22656 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29908 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29909 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable2758 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	F22665 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22666 nvarchar(100) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable2759 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	RepID int DEFAULT 0 NOT NULL,
+	FillDate datetime DEFAULT '' NOT NULL,
+	ModifyDate datetime DEFAULT '' NOT NULL,
+	DeptID int DEFAULT 0 NOT NULL,
+	OperID int DEFAULT 0 NOT NULL,
+	sDesc nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	bIsFinish char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bLocked char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bCanViewWhenNoFinished char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	OperID2 int DEFAULT '0' NOT NULL,
+	dUpdate2 datetime NULL,
+	F22667 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable2760 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	RepID int DEFAULT 0 NOT NULL,
+	FillDate datetime DEFAULT '' NOT NULL,
+	ModifyDate datetime DEFAULT '' NOT NULL,
+	DeptID int DEFAULT 0 NOT NULL,
+	OperID int DEFAULT 0 NOT NULL,
+	sDesc nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	bIsFinish char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bLocked char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bCanViewWhenNoFinished char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	OperID2 int DEFAULT '0' NOT NULL,
+	dUpdate2 datetime NULL,
+	F22679 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable2761 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	F22680 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22681 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22682 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22683 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22684 datetime DEFAULT '' NOT NULL,
+	F22685 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22686 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22687 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22688 nvarchar(200) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22689 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22690 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22691 numeric(20,0) DEFAULT 0 NOT NULL,
+	F22692 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22693 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22694 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22695 nvarchar(100) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22696 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22697 numeric(20,2) DEFAULT 0 NOT NULL,
+	F22698 numeric(20,2) DEFAULT 0 NOT NULL,
+	F22699 numeric(20,2) DEFAULT 0 NOT NULL,
+	F22700 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22701 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22702 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22703 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable2762 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	RepID int DEFAULT 0 NOT NULL,
+	FillDate datetime DEFAULT '' NOT NULL,
+	ModifyDate datetime DEFAULT '' NOT NULL,
+	DeptID int DEFAULT 0 NOT NULL,
+	OperID int DEFAULT 0 NOT NULL,
+	sDesc nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	bIsFinish char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bLocked char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bCanViewWhenNoFinished char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	OperID2 int DEFAULT '0' NOT NULL,
+	dUpdate2 datetime NULL,
+	F22706 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable2765 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	RepID int DEFAULT 0 NOT NULL,
+	FillDate datetime DEFAULT '' NOT NULL,
+	ModifyDate datetime DEFAULT '' NOT NULL,
+	DeptID int DEFAULT 0 NOT NULL,
+	OperID int DEFAULT 0 NOT NULL,
+	sDesc nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	bIsFinish char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bLocked char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bCanViewWhenNoFinished char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	OperID2 int DEFAULT '0' NOT NULL,
+	dUpdate2 datetime NULL,
+	F22713 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable2766 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	F22714 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22715 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F24518 numeric(20,0) DEFAULT 0 NOT NULL
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable2767 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	F22720 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22721 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22722 nvarchar(1000) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22723 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22724 numeric(20,2) NULL,
+	F22725 numeric(20,2) NULL,
+	F22726 numeric(20,2) NULL,
+	F22727 numeric(20,2) NULL,
+	F22728 numeric(20,2) NULL,
+	F22731 numeric(20,2) NULL,
+	F22732 numeric(20,2) NULL,
+	F22733 numeric(20,2) NULL,
+	F22734 numeric(20,2) NULL,
+	F22735 numeric(20,2) NULL,
+	F22736 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22737 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22738 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22739 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22740 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22984 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23003 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable2768 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	RepID int DEFAULT 0 NOT NULL,
+	FillDate datetime DEFAULT '' NOT NULL,
+	ModifyDate datetime DEFAULT '' NOT NULL,
+	DeptID int DEFAULT 0 NOT NULL,
+	OperID int DEFAULT 0 NOT NULL,
+	sDesc nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	bIsFinish char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bLocked char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bCanViewWhenNoFinished char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	OperID2 int DEFAULT '0' NOT NULL,
+	dUpdate2 datetime NULL,
+	F22743 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22744 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22745 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22746 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22747 datetime DEFAULT '' NOT NULL,
+	F22748 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22750 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23005 nvarchar(100) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23007 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23009 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23010 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F24837 datetime DEFAULT '' NOT NULL,
+	F24838 datetime DEFAULT '' NOT NULL,
+	F24839 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F24840 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26714 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27005 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable2769 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	RepID int DEFAULT 0 NOT NULL,
+	FillDate datetime DEFAULT '' NOT NULL,
+	ModifyDate datetime DEFAULT '' NOT NULL,
+	DeptID int DEFAULT 0 NOT NULL,
+	OperID int DEFAULT 0 NOT NULL,
+	sDesc nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	bIsFinish char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bLocked char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bCanViewWhenNoFinished char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	OperID2 int DEFAULT '0' NOT NULL,
+	dUpdate2 datetime NULL,
+	F22752 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22753 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22754 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22755 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22756 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22757 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22758 datetime DEFAULT '' NOT NULL,
+	F22759 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22760 numeric(20,4) NULL,
+	F22761 numeric(20,4) NULL,
+	F22762 numeric(20,0) NULL,
+	F22763 numeric(20,0) NULL,
+	F22764 numeric(20,0) NULL,
+	F22765 numeric(20,0) NULL,
+	F22766 numeric(20,0) NULL,
+	F22767 numeric(20,0) NULL,
+	F27118 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+ 
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable2770 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	F22769 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22770 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22771 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22772 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22773 numeric(20,2) NULL,
+	F22774 numeric(20,2) NULL,
+	F22775 numeric(20,2) NULL,
+	F22776 numeric(20,2) NULL,
+	F22777 numeric(20,2) NULL,
+	F22778 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22779 nvarchar(100) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22985 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23547 numeric(20,2) NULL,
+	F23548 numeric(20,2) NULL
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable2771 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	RepID int DEFAULT 0 NOT NULL,
+	FillDate datetime DEFAULT '' NOT NULL,
+	ModifyDate datetime DEFAULT '' NOT NULL,
+	DeptID int DEFAULT 0 NOT NULL,
+	OperID int DEFAULT 0 NOT NULL,
+	sDesc nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	bIsFinish char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bLocked char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bCanViewWhenNoFinished char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	OperID2 int DEFAULT '0' NOT NULL,
+	dUpdate2 datetime NULL,
+	F22781 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable2772 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	F22782 numeric(20,0) DEFAULT 0 NOT NULL,
+	F22783 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22784 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22785 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22786 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22787 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22788 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable2773 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	F22789 numeric(20,0) DEFAULT 0 NOT NULL,
+	F22790 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22791 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22792 nvarchar(100) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22793 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22794 nvarchar(100) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22795 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22796 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22797 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22798 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22799 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable2774 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	RepID int DEFAULT 0 NOT NULL,
+	FillDate datetime DEFAULT '' NOT NULL,
+	ModifyDate datetime DEFAULT '' NOT NULL,
+	DeptID int DEFAULT 0 NOT NULL,
+	OperID int DEFAULT 0 NOT NULL,
+	sDesc nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	bIsFinish char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bLocked char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bCanViewWhenNoFinished char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	OperID2 int DEFAULT '0' NOT NULL,
+	dUpdate2 datetime NULL,
+	F22800 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable2777 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	F22817 numeric(20,0) DEFAULT 0 NOT NULL,
+	F22818 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22819 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22820 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22821 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22822 nvarchar(100) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22823 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22824 nvarchar(100) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22825 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22826 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22827 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22828 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22829 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22830 datetime DEFAULT '' NOT NULL
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable2778 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	RepID int DEFAULT 0 NOT NULL,
+	FillDate datetime DEFAULT '' NOT NULL,
+	ModifyDate datetime DEFAULT '' NOT NULL,
+	DeptID int DEFAULT 0 NOT NULL,
+	OperID int DEFAULT 0 NOT NULL,
+	sDesc nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	bIsFinish char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bLocked char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bCanViewWhenNoFinished char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	OperID2 int DEFAULT '0' NOT NULL,
+	dUpdate2 datetime NULL,
+	F22831 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22832 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable2779 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	RepID int DEFAULT 0 NOT NULL,
+	FillDate datetime DEFAULT '' NOT NULL,
+	ModifyDate datetime DEFAULT '' NOT NULL,
+	DeptID int DEFAULT 0 NOT NULL,
+	OperID int DEFAULT 0 NOT NULL,
+	sDesc nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	bIsFinish char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bLocked char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bCanViewWhenNoFinished char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	OperID2 int DEFAULT '0' NOT NULL,
+	dUpdate2 datetime NULL,
+	F22833 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22834 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27008 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable2780 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	F22835 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22836 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22837 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22838 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22839 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22840 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22841 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22842 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23008 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23666 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable2781 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	RepID int DEFAULT 0 NOT NULL,
+	FillDate datetime DEFAULT '' NOT NULL,
+	ModifyDate datetime DEFAULT '' NOT NULL,
+	DeptID int DEFAULT 0 NOT NULL,
+	OperID int DEFAULT 0 NOT NULL,
+	sDesc nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	bIsFinish char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bLocked char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bCanViewWhenNoFinished char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	OperID2 int DEFAULT '0' NOT NULL,
+	dUpdate2 datetime NULL,
+	F22843 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22844 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22845 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22846 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+ 
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable2782 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	F22848 numeric(20,0) NULL,
+	F22849 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22850 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22852 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22853 numeric(20,2) NULL,
+	F22854 numeric(20,2) NULL,
+	F22855 numeric(20,2) NULL,
+	F22856 numeric(20,2) NULL,
+	F22857 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22858 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23004 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable2783 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	RepID int DEFAULT 0 NOT NULL,
+	FillDate datetime DEFAULT '' NOT NULL,
+	ModifyDate datetime DEFAULT '' NOT NULL,
+	DeptID int DEFAULT 0 NOT NULL,
+	OperID int DEFAULT 0 NOT NULL,
+	sDesc nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	bIsFinish char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bLocked char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bCanViewWhenNoFinished char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	OperID2 int DEFAULT '0' NOT NULL,
+	dUpdate2 datetime NULL,
+	F22860 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22861 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22862 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22863 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22864 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22865 datetime DEFAULT '' NOT NULL,
+	F22866 datetime DEFAULT '' NOT NULL
+);
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable2784 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	F22867 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22868 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22869 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22870 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22871 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22872 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22873 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22874 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22875 numeric(20,2) NULL,
+	F22876 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22877 numeric(20,2) NULL,
+	F22878 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22879 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22880 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22881 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22882 datetime DEFAULT '' NOT NULL
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable2789 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	RepID int DEFAULT 0 NOT NULL,
+	FillDate datetime DEFAULT '' NOT NULL,
+	ModifyDate datetime DEFAULT '' NOT NULL,
+	DeptID int DEFAULT 0 NOT NULL,
+	OperID int DEFAULT 0 NOT NULL,
+	sDesc nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	bIsFinish char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bLocked char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bCanViewWhenNoFinished char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	OperID2 int DEFAULT '0' NOT NULL,
+	dUpdate2 datetime NULL,
+	F22934 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22935 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22936 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22937 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22938 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22939 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable2790 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	F22940 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22941 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22942 datetime DEFAULT '' NOT NULL,
+	F22943 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22944 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22945 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22946 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22947 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22948 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable2791 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	RepID int DEFAULT 0 NOT NULL,
+	FillDate datetime DEFAULT '' NOT NULL,
+	ModifyDate datetime DEFAULT '' NOT NULL,
+	DeptID int DEFAULT 0 NOT NULL,
+	OperID int DEFAULT 0 NOT NULL,
+	sDesc nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	bIsFinish char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bLocked char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bCanViewWhenNoFinished char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	OperID2 int DEFAULT '0' NOT NULL,
+	dUpdate2 datetime NULL,
+	F22949 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22950 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22951 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22952 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22953 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22954 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22955 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22956 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22957 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22958 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22959 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22960 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22961 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22962 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22963 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable2792 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	F22964 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22965 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22966 datetime DEFAULT '' NOT NULL,
+	F22967 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22968 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22969 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22970 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22971 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22972 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable2793 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	F22973 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22974 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22975 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22976 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22977 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable2796 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	F22986 numeric(20,0) DEFAULT 0 NOT NULL,
+	F22987 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22988 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22989 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22990 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22991 nvarchar(100) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22995 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22996 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22997 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22998 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F22999 datetime DEFAULT '' NOT NULL
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable2797 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	RepID int DEFAULT 0 NOT NULL,
+	FillDate datetime DEFAULT '' NOT NULL,
+	ModifyDate datetime DEFAULT '' NOT NULL,
+	DeptID int DEFAULT 0 NOT NULL,
+	OperID int DEFAULT 0 NOT NULL,
+	sDesc nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	bIsFinish char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bLocked char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bCanViewWhenNoFinished char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	OperID2 int DEFAULT '0' NOT NULL,
+	dUpdate2 datetime NULL,
+	F23001 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23002 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23014 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23015 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable2800 (
+	ID int NOT NULL,
+	F23049 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23050 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	CONSTRAINT PK__tabDIYTa__3214EC272DECCF95 PRIMARY KEY (ID)
+);
+CREATE TABLE 车体事业部.dbo.tabDIYTable2802 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	RepID int DEFAULT 0 NOT NULL,
+	FillDate datetime DEFAULT '' NOT NULL,
+	ModifyDate datetime DEFAULT '' NOT NULL,
+	DeptID int DEFAULT 0 NOT NULL,
+	OperID int DEFAULT 0 NOT NULL,
+	sDesc nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	bIsFinish char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bLocked char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bCanViewWhenNoFinished char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	OperID2 int DEFAULT '0' NOT NULL,
+	dUpdate2 datetime NULL,
+	F23051 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23052 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23053 nvarchar(100) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23054 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23055 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23056 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23057 datetime DEFAULT '' NOT NULL,
+	F23058 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable2803 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	F23059 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23060 nvarchar(200) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23061 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23062 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23063 datetime DEFAULT '' NOT NULL,
+	F23064 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23065 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23066 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23067 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23068 datetime DEFAULT '' NOT NULL,
+	F23069 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable2805 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	F23077 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable2806 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	F23078 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23079 nvarchar(100) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23080 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23081 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23083 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable2807 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	RepID int DEFAULT 0 NOT NULL,
+	FillDate datetime DEFAULT '' NOT NULL,
+	ModifyDate datetime DEFAULT '' NOT NULL,
+	DeptID int DEFAULT 0 NOT NULL,
+	OperID int DEFAULT 0 NOT NULL,
+	sDesc nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	bIsFinish char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bLocked char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bCanViewWhenNoFinished char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	OperID2 int DEFAULT '0' NOT NULL,
+	dUpdate2 datetime NULL,
+	F23084 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable2808 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	RepID int DEFAULT 0 NOT NULL,
+	FillDate datetime DEFAULT '' NOT NULL,
+	ModifyDate datetime DEFAULT '' NOT NULL,
+	DeptID int DEFAULT 0 NOT NULL,
+	OperID int DEFAULT 0 NOT NULL,
+	sDesc nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	bIsFinish char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bLocked char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bCanViewWhenNoFinished char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	OperID2 int DEFAULT '0' NOT NULL,
+	dUpdate2 datetime NULL,
+	F23086 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23087 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23088 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23089 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+ 
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable2809 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	F23090 numeric(20,0) NULL,
+	F23091 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23092 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23093 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23094 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23095 numeric(20,2) NULL,
+	F23096 numeric(20,2) NULL,
+	F23097 numeric(20,2) NULL,
+	F23098 numeric(20,2) NULL,
+	F23099 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23100 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable2810 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	RepID int DEFAULT 0 NOT NULL,
+	FillDate datetime DEFAULT '' NOT NULL,
+	ModifyDate datetime DEFAULT '' NOT NULL,
+	DeptID int DEFAULT 0 NOT NULL,
+	OperID int DEFAULT 0 NOT NULL,
+	sDesc nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	bIsFinish char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bLocked char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bCanViewWhenNoFinished char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	OperID2 int DEFAULT '0' NOT NULL,
+	dUpdate2 datetime NULL,
+	F23103 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23104 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23105 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23106 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23107 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23108 datetime DEFAULT '' NOT NULL,
+	F23109 datetime DEFAULT '' NOT NULL,
+	F23110 datetime DEFAULT '' NOT NULL,
+	F23111 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23112 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23113 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable2811 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	F23114 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23115 nvarchar(200) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23116 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23117 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23118 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23119 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23120 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23121 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23122 datetime DEFAULT '' NOT NULL,
+	F23123 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23124 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23125 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23148 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F25054 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F25055 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F25056 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F25057 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable2812 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	F23126 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23127 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23128 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23129 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23130 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23131 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23132 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23133 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23134 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23135 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable2813 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	RepID int DEFAULT 0 NOT NULL,
+	FillDate datetime DEFAULT '' NOT NULL,
+	ModifyDate datetime DEFAULT '' NOT NULL,
+	DeptID int DEFAULT 0 NOT NULL,
+	OperID int DEFAULT 0 NOT NULL,
+	sDesc nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	bIsFinish char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bLocked char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bCanViewWhenNoFinished char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	OperID2 int DEFAULT '0' NOT NULL,
+	dUpdate2 datetime NULL,
+	F23136 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23137 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23138 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23139 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23140 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable2828 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	F23317 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23318 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23319 datetime DEFAULT '' NOT NULL,
+	F23320 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23321 nvarchar(100) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23322 nvarchar(100) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23323 nvarchar(100) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23324 numeric(20,0) DEFAULT 0 NOT NULL,
+	F23325 numeric(20,0) DEFAULT 0 NOT NULL,
+	F23326 numeric(20,0) DEFAULT 0 NOT NULL,
+	F23327 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable2829 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	RepID int DEFAULT 0 NOT NULL,
+	FillDate datetime DEFAULT '' NOT NULL,
+	ModifyDate datetime DEFAULT '' NOT NULL,
+	DeptID int DEFAULT 0 NOT NULL,
+	OperID int DEFAULT 0 NOT NULL,
+	sDesc nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	bIsFinish char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bLocked char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bCanViewWhenNoFinished char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	OperID2 int DEFAULT '0' NOT NULL,
+	dUpdate2 datetime NULL,
+	F23328 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable2830 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	RepID int DEFAULT 0 NOT NULL,
+	FillDate datetime DEFAULT '' NOT NULL,
+	ModifyDate datetime DEFAULT '' NOT NULL,
+	DeptID int DEFAULT 0 NOT NULL,
+	OperID int DEFAULT 0 NOT NULL,
+	sDesc nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	bIsFinish char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bLocked char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bCanViewWhenNoFinished char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	OperID2 int DEFAULT '0' NOT NULL,
+	dUpdate2 datetime NULL,
+	F23329 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23330 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23331 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23332 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23333 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23334 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23335 datetime DEFAULT '' NOT NULL,
+	F23336 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable2831 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	F23337 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23338 nvarchar(200) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23339 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23340 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23341 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23342 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23343 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23344 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23345 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23346 datetime DEFAULT '' NOT NULL,
+	F23347 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable2832 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	RepID int DEFAULT 0 NOT NULL,
+	FillDate datetime DEFAULT '' NOT NULL,
+	ModifyDate datetime DEFAULT '' NOT NULL,
+	DeptID int DEFAULT 0 NOT NULL,
+	OperID int DEFAULT 0 NOT NULL,
+	sDesc nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	bIsFinish char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bLocked char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bCanViewWhenNoFinished char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	OperID2 int DEFAULT '0' NOT NULL,
+	dUpdate2 datetime NULL,
+	F23348 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23349 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23350 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23351 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23352 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23353 datetime DEFAULT '' NOT NULL,
+	F23354 datetime DEFAULT '' NOT NULL,
+	F23355 datetime DEFAULT '' NOT NULL,
+	F23356 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23357 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23358 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable2833 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	F23359 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23360 nvarchar(200) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23361 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23362 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23363 datetime DEFAULT '' NOT NULL,
+	F23364 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23365 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23366 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23367 datetime DEFAULT '' NOT NULL,
+	F23368 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23369 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23370 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23371 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F25223 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F25224 nvarchar(100) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F25225 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F25226 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable2837 (
+	ID int NOT NULL,
+	F23375 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23378 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	CONSTRAINT PK__tabDIYTa__3214EC27E3FA7FFE PRIMARY KEY (ID)
+);
+CREATE TABLE 车体事业部.dbo.tabDIYTable2838 (
+	ID int NOT NULL,
+	F23380 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23381 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	CONSTRAINT PK__tabDIYTa__3214EC276F5E1CCB PRIMARY KEY (ID)
+);
+CREATE TABLE 车体事业部.dbo.tabDIYTable2842 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	RepID int DEFAULT 0 NOT NULL,
+	FillDate datetime DEFAULT '' NOT NULL,
+	ModifyDate datetime DEFAULT '' NOT NULL,
+	DeptID int DEFAULT 0 NOT NULL,
+	OperID int DEFAULT 0 NOT NULL,
+	sDesc nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	bIsFinish char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bLocked char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bCanViewWhenNoFinished char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	OperID2 int DEFAULT '0' NOT NULL,
+	dUpdate2 datetime NULL,
+	F23404 datetime DEFAULT '' NOT NULL
+);
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable2843 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	F23395 numeric(20,0) DEFAULT 0 NOT NULL,
+	F23396 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23397 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23398 nvarchar(100) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23399 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23400 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23401 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23402 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23403 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable2848 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	RepID int DEFAULT 0 NOT NULL,
+	FillDate datetime DEFAULT '' NOT NULL,
+	ModifyDate datetime DEFAULT '' NOT NULL,
+	DeptID int DEFAULT 0 NOT NULL,
+	OperID int DEFAULT 0 NOT NULL,
+	sDesc nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	bIsFinish char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bLocked char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bCanViewWhenNoFinished char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	OperID2 int DEFAULT '0' NOT NULL,
+	dUpdate2 datetime NULL,
+	F23419 datetime DEFAULT '' NOT NULL
+);
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable2850 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	F23429 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23430 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23431 nvarchar(100) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23432 nvarchar(100) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23433 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23434 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23435 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23436 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23437 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable2851 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	F23438 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23439 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23440 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23441 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23442 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23443 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23444 nvarchar(1000) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23445 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23446 numeric(20,2) NULL,
+	F23447 numeric(20,2) NULL,
+	F23448 numeric(20,2) NULL,
+	F23449 numeric(20,2) NULL,
+	F23450 numeric(20,2) NULL,
+	F23451 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23452 nvarchar(100) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23453 numeric(20,2) NULL,
+	F23454 numeric(20,2) NULL,
+	F23455 numeric(20,2) NULL,
+	F23456 numeric(20,2) NULL,
+	F23457 numeric(20,2) NULL,
+	F23458 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23459 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23460 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23461 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23462 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23463 nvarchar(200) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23464 nvarchar(200) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable2852 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	RepID int DEFAULT 0 NOT NULL,
+	FillDate datetime DEFAULT '' NOT NULL,
+	ModifyDate datetime DEFAULT '' NOT NULL,
+	DeptID int DEFAULT 0 NOT NULL,
+	OperID int DEFAULT 0 NOT NULL,
+	sDesc nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	bIsFinish char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bLocked char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bCanViewWhenNoFinished char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	OperID2 int DEFAULT '0' NOT NULL,
+	dUpdate2 datetime NULL,
+	F23465 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23466 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23467 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23468 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23469 datetime DEFAULT '' NOT NULL,
+	F23470 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23471 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23472 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23473 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23868 numeric(20,0) NULL
+);
+ 
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable2854 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	F23479 numeric(20,0) DEFAULT 0 NOT NULL,
+	F23480 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23481 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23482 numeric(20,2) DEFAULT 0 NOT NULL
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable2855 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	RepID int DEFAULT 0 NOT NULL,
+	FillDate datetime DEFAULT '' NOT NULL,
+	ModifyDate datetime DEFAULT '' NOT NULL,
+	DeptID int DEFAULT 0 NOT NULL,
+	OperID int DEFAULT 0 NOT NULL,
+	sDesc nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	bIsFinish char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bLocked char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bCanViewWhenNoFinished char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	OperID2 int DEFAULT '0' NOT NULL,
+	dUpdate2 datetime NULL,
+	F23483 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23484 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23485 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23486 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23487 datetime DEFAULT '' NOT NULL,
+	F23544 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23663 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable2858 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	RepID int DEFAULT 0 NOT NULL,
+	FillDate datetime DEFAULT '' NOT NULL,
+	ModifyDate datetime DEFAULT '' NOT NULL,
+	DeptID int DEFAULT 0 NOT NULL,
+	OperID int DEFAULT 0 NOT NULL,
+	sDesc nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	bIsFinish char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bLocked char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bCanViewWhenNoFinished char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	OperID2 int DEFAULT '0' NOT NULL,
+	dUpdate2 datetime NULL,
+	F23497 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable2859 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	RepID int DEFAULT 0 NOT NULL,
+	FillDate datetime DEFAULT '' NOT NULL,
+	ModifyDate datetime DEFAULT '' NOT NULL,
+	DeptID int DEFAULT 0 NOT NULL,
+	OperID int DEFAULT 0 NOT NULL,
+	sDesc nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	bIsFinish char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bLocked char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bCanViewWhenNoFinished char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	OperID2 int DEFAULT '0' NOT NULL,
+	dUpdate2 datetime NULL,
+	F23499 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23500 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23501 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23502 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23503 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23870 numeric(20,0) NULL
+);
+ 
+ 
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable2860 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	F23504 numeric(20,0) NULL,
+	F23505 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23506 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23507 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23508 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23509 numeric(20,2) NULL,
+	F23510 numeric(20,2) NULL,
+	F23511 numeric(20,2) NULL,
+	F23512 numeric(20,2) NULL,
+	F23513 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23514 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23515 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable2861 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	RepID int DEFAULT 0 NOT NULL,
+	FillDate datetime DEFAULT '' NOT NULL,
+	ModifyDate datetime DEFAULT '' NOT NULL,
+	DeptID int DEFAULT 0 NOT NULL,
+	OperID int DEFAULT 0 NOT NULL,
+	sDesc nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	bIsFinish char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bLocked char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bCanViewWhenNoFinished char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	OperID2 int DEFAULT '0' NOT NULL,
+	dUpdate2 datetime NULL,
+	F23516 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23517 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable2862 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	F23518 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23519 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23520 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23521 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23522 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23523 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23524 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23525 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23869 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable2871 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	F23540 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23541 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23542 numeric(20,2) DEFAULT 0 NOT NULL
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable2873 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	F23546 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23664 datetime DEFAULT '' NOT NULL,
+	F23665 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23755 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F24111 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable2874 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	RepID int DEFAULT 0 NOT NULL,
+	FillDate datetime DEFAULT '' NOT NULL,
+	ModifyDate datetime DEFAULT '' NOT NULL,
+	DeptID int DEFAULT 0 NOT NULL,
+	OperID int DEFAULT 0 NOT NULL,
+	sDesc nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	bIsFinish char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bLocked char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bCanViewWhenNoFinished char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	OperID2 int DEFAULT '0' NOT NULL,
+	dUpdate2 datetime NULL,
+	F23549 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23550 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23551 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23552 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23553 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23554 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23555 datetime DEFAULT '' NOT NULL,
+	F23556 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23557 numeric(20,4) NULL,
+	F23558 numeric(20,4) NULL,
+	F23559 numeric(20,0) NULL,
+	F23560 numeric(20,0) NULL,
+	F23561 numeric(20,0) NULL,
+	F23562 numeric(20,0) NULL,
+	F23563 numeric(20,0) NULL,
+	F23564 numeric(20,0) NULL,
+	F23871 numeric(20,0) NULL
+);
+ 
+ 
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable2875 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	F23565 numeric(20,0) NULL,
+	F23566 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23567 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23568 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23569 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23570 numeric(20,2) NULL,
+	F23571 numeric(20,2) NULL,
+	F23572 numeric(20,2) NULL,
+	F23573 numeric(20,2) NULL,
+	F23574 numeric(20,2) NULL,
+	F23575 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23576 nvarchar(100) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23577 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable2876 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	RepID int DEFAULT 0 NOT NULL,
+	FillDate datetime DEFAULT '' NOT NULL,
+	ModifyDate datetime DEFAULT '' NOT NULL,
+	DeptID int DEFAULT 0 NOT NULL,
+	OperID int DEFAULT 0 NOT NULL,
+	sDesc nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	bIsFinish char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bLocked char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bCanViewWhenNoFinished char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	OperID2 int DEFAULT '0' NOT NULL,
+	dUpdate2 datetime NULL,
+	F23578 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23579 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23580 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23581 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23582 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23583 datetime DEFAULT '' NOT NULL,
+	F23584 datetime DEFAULT '' NOT NULL
+);
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable2877 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	F23585 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23586 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23587 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23588 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23589 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23590 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23591 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23592 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23593 numeric(20,2) NULL,
+	F23594 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23595 numeric(20,2) NULL,
+	F23596 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23597 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23598 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23599 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23600 datetime DEFAULT '' NOT NULL,
+	F23872 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable2878 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	RepID int DEFAULT 0 NOT NULL,
+	FillDate datetime DEFAULT '' NOT NULL,
+	ModifyDate datetime DEFAULT '' NOT NULL,
+	DeptID int DEFAULT 0 NOT NULL,
+	OperID int DEFAULT 0 NOT NULL,
+	sDesc nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	bIsFinish char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bLocked char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bCanViewWhenNoFinished char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	OperID2 int DEFAULT '0' NOT NULL,
+	dUpdate2 datetime NULL,
+	F23601 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23602 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23603 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23604 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23605 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23606 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23607 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23608 numeric(20,0) NULL,
+	F23609 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23610 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23611 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23612 datetime DEFAULT '' NOT NULL,
+	F23613 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+ 
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable2879 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	F23614 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23615 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23616 nvarchar(100) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23617 nvarchar(100) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23618 numeric(20,2) NULL,
+	F23619 numeric(20,2) NULL,
+	F23620 numeric(20,2) NULL,
+	F23621 numeric(20,2) NULL,
+	F23622 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23623 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23624 numeric(20,2) NULL,
+	F23625 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable2880 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	RepID int DEFAULT 0 NOT NULL,
+	FillDate datetime DEFAULT '' NOT NULL,
+	ModifyDate datetime DEFAULT '' NOT NULL,
+	DeptID int DEFAULT 0 NOT NULL,
+	OperID int DEFAULT 0 NOT NULL,
+	sDesc nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	bIsFinish char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bLocked char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bCanViewWhenNoFinished char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	OperID2 int DEFAULT '0' NOT NULL,
+	dUpdate2 datetime NULL,
+	F23626 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23627 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23635 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable2881 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	F23628 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23629 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23630 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23632 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23633 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23634 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable2882 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	RepID int DEFAULT 0 NOT NULL,
+	FillDate datetime DEFAULT '' NOT NULL,
+	ModifyDate datetime DEFAULT '' NOT NULL,
+	DeptID int DEFAULT 0 NOT NULL,
+	OperID int DEFAULT 0 NOT NULL,
+	sDesc nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	bIsFinish char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bLocked char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bCanViewWhenNoFinished char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	OperID2 int DEFAULT '0' NOT NULL,
+	dUpdate2 datetime NULL,
+	F23636 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23637 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23638 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23639 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23640 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23641 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23642 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23643 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23644 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23645 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23646 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23647 datetime DEFAULT '' NOT NULL,
+	F23648 numeric(20,0) NULL,
+	F23649 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+ 
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable2883 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	F23650 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23651 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23652 nvarchar(100) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23653 nvarchar(100) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23654 numeric(20,2) NULL,
+	F23655 numeric(20,2) NULL,
+	F23656 numeric(20,2) NULL,
+	F23657 numeric(20,2) NULL,
+	F23658 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23659 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23660 numeric(20,2) NULL,
+	F23661 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable2884 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	RepID int DEFAULT 0 NOT NULL,
+	FillDate datetime DEFAULT '' NOT NULL,
+	ModifyDate datetime DEFAULT '' NOT NULL,
+	DeptID int DEFAULT 0 NOT NULL,
+	OperID int DEFAULT 0 NOT NULL,
+	sDesc nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	bIsFinish char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bLocked char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bCanViewWhenNoFinished char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	OperID2 int DEFAULT '0' NOT NULL,
+	dUpdate2 datetime NULL,
+	F23667 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23668 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23669 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23670 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23671 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23672 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23673 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23674 numeric(20,0) NULL,
+	F23675 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23676 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23677 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23678 datetime DEFAULT '' NOT NULL,
+	F23679 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+ 
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable2885 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	F23680 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23681 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23682 nvarchar(100) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23683 nvarchar(100) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23684 numeric(20,2) NULL,
+	F23685 numeric(20,2) NULL,
+	F23686 numeric(20,2) NULL,
+	F23687 numeric(20,2) NULL,
+	F23688 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23689 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23690 numeric(20,2) NULL,
+	F23691 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable2886 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	F23692 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23693 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23694 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23695 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23696 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23697 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23698 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23699 numeric(20,2) NULL,
+	F23700 numeric(20,2) NULL,
+	F23701 numeric(20,2) NULL,
+	F23702 numeric(20,2) NULL,
+	F23703 numeric(20,2) NULL,
+	F23704 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23705 numeric(20,2) NULL,
+	F23706 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23707 datetime DEFAULT '' NOT NULL
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable2887 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	RepID int DEFAULT 0 NOT NULL,
+	FillDate datetime DEFAULT '' NOT NULL,
+	ModifyDate datetime DEFAULT '' NOT NULL,
+	DeptID int DEFAULT 0 NOT NULL,
+	OperID int DEFAULT 0 NOT NULL,
+	sDesc nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	bIsFinish char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bLocked char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bCanViewWhenNoFinished char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	OperID2 int DEFAULT '0' NOT NULL,
+	dUpdate2 datetime NULL,
+	F23708 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23709 datetime DEFAULT '' NOT NULL,
+	F23710 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable2888 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	RepID int DEFAULT 0 NOT NULL,
+	FillDate datetime DEFAULT '' NOT NULL,
+	ModifyDate datetime DEFAULT '' NOT NULL,
+	DeptID int DEFAULT 0 NOT NULL,
+	OperID int DEFAULT 0 NOT NULL,
+	sDesc nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	bIsFinish char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bLocked char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bCanViewWhenNoFinished char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	OperID2 int DEFAULT '0' NOT NULL,
+	dUpdate2 datetime NULL,
+	F23711 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23712 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23713 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23714 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23716 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable2889 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	F23717 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23718 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23719 datetime DEFAULT '' NOT NULL,
+	F23720 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23721 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23722 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23723 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23724 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23725 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable2890 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	RepID int DEFAULT 0 NOT NULL,
+	FillDate datetime DEFAULT '' NOT NULL,
+	ModifyDate datetime DEFAULT '' NOT NULL,
+	DeptID int DEFAULT 0 NOT NULL,
+	OperID int DEFAULT 0 NOT NULL,
+	sDesc nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	bIsFinish char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bLocked char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bCanViewWhenNoFinished char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	OperID2 int DEFAULT '0' NOT NULL,
+	dUpdate2 datetime NULL,
+	F23726 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23727 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23728 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23729 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23731 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23732 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23733 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23734 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23735 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23736 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23737 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23738 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23739 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23740 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable2891 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	F23741 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23742 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23743 datetime DEFAULT '' NOT NULL,
+	F23744 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23745 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23746 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23747 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23748 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23749 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable2892 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	F23750 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23751 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23752 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23753 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23754 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable2895 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	RepID int DEFAULT 0 NOT NULL,
+	FillDate datetime DEFAULT '' NOT NULL,
+	ModifyDate datetime DEFAULT '' NOT NULL,
+	DeptID int DEFAULT 0 NOT NULL,
+	OperID int DEFAULT 0 NOT NULL,
+	sDesc nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	bIsFinish char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bLocked char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bCanViewWhenNoFinished char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	OperID2 int DEFAULT '0' NOT NULL,
+	dUpdate2 datetime NULL,
+	F23777 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23778 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23779 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23780 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23781 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23782 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23783 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23784 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23785 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23786 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23787 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23788 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23789 nvarchar(2000) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23790 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23791 datetime DEFAULT '' NOT NULL,
+	F23792 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable2896 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	F23793 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23794 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23795 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23796 numeric(20,0) NULL,
+	F23797 numeric(20,1) NULL,
+	F23798 numeric(20,1) NULL,
+	F23799 numeric(20,1) NULL,
+	F23800 numeric(20,1) NULL
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable2898 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	F23813 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23814 datetime DEFAULT '' NOT NULL,
+	F23815 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable2899 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	RepID int DEFAULT 0 NOT NULL,
+	FillDate datetime DEFAULT '' NOT NULL,
+	ModifyDate datetime DEFAULT '' NOT NULL,
+	DeptID int DEFAULT 0 NOT NULL,
+	OperID int DEFAULT 0 NOT NULL,
+	sDesc nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	bIsFinish char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bLocked char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bCanViewWhenNoFinished char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	OperID2 int DEFAULT '0' NOT NULL,
+	dUpdate2 datetime NULL,
+	F23816 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23817 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23818 datetime DEFAULT '' NOT NULL,
+	F23819 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23820 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23821 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23822 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23823 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable2900 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	RepID int DEFAULT 0 NOT NULL,
+	FillDate datetime DEFAULT '' NOT NULL,
+	ModifyDate datetime DEFAULT '' NOT NULL,
+	DeptID int DEFAULT 0 NOT NULL,
+	OperID int DEFAULT 0 NOT NULL,
+	sDesc nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	bIsFinish char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bLocked char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bCanViewWhenNoFinished char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	OperID2 int DEFAULT '0' NOT NULL,
+	dUpdate2 datetime NULL,
+	F23824 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23825 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23826 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23827 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23828 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23829 datetime DEFAULT '' NOT NULL
+);
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable2903 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	RepID int DEFAULT 0 NOT NULL,
+	FillDate datetime DEFAULT '' NOT NULL,
+	ModifyDate datetime DEFAULT '' NOT NULL,
+	DeptID int DEFAULT 0 NOT NULL,
+	OperID int DEFAULT 0 NOT NULL,
+	sDesc nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	bIsFinish char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bLocked char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bCanViewWhenNoFinished char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	OperID2 int DEFAULT '0' NOT NULL,
+	dUpdate2 datetime NULL,
+	F23873 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23874 nvarchar(100) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23875 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23876 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23877 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23878 datetime DEFAULT '' NOT NULL,
+	F23879 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable2904 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	F23880 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23881 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23882 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23883 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23884 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23885 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23886 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23887 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23888 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23889 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23890 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23891 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23892 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23893 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23948 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23949 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23950 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable2908 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	RepID int DEFAULT 0 NOT NULL,
+	FillDate datetime DEFAULT '' NOT NULL,
+	ModifyDate datetime DEFAULT '' NOT NULL,
+	DeptID int DEFAULT 0 NOT NULL,
+	OperID int DEFAULT 0 NOT NULL,
+	sDesc nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	bIsFinish char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bLocked char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bCanViewWhenNoFinished char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	OperID2 int DEFAULT '0' NOT NULL,
+	dUpdate2 datetime NULL,
+	F23906 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23907 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23908 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23909 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23910 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23911 datetime DEFAULT '' NOT NULL,
+	F23912 datetime DEFAULT '' NOT NULL
+);
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable2912 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	F23970 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23971 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23972 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23973 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23974 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23975 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23976 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23977 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23978 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23979 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23980 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23981 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23982 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23983 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23984 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23985 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23986 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23987 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23988 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23989 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23990 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23991 datetime DEFAULT '' NOT NULL,
+	F23992 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable2913 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	F23993 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23994 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23995 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23996 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23997 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23998 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F23999 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F24000 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F24001 datetime DEFAULT '' NOT NULL,
+	F24002 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F24003 datetime DEFAULT '' NOT NULL,
+	F24004 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F24005 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable2915 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	RepID int DEFAULT 0 NOT NULL,
+	FillDate datetime DEFAULT '' NOT NULL,
+	ModifyDate datetime DEFAULT '' NOT NULL,
+	DeptID int DEFAULT 0 NOT NULL,
+	OperID int DEFAULT 0 NOT NULL,
+	sDesc nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	bIsFinish char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bLocked char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bCanViewWhenNoFinished char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	OperID2 int DEFAULT '0' NOT NULL,
+	dUpdate2 datetime NULL,
+	F24009 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F24010 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable2916 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	F24011 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F24012 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F24013 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F24014 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F24015 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F24016 datetime DEFAULT '' NOT NULL,
+	F24017 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F24018 datetime DEFAULT '' NOT NULL,
+	F24019 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F24020 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable2917 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	F24021 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F24022 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F24023 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F24024 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F24025 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F24026 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F24027 nvarchar(1000) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F24029 numeric(20,2) NULL,
+	F24030 numeric(20,2) NULL,
+	F24031 numeric(20,2) NULL
+);
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable2918 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	RepID int DEFAULT 0 NOT NULL,
+	FillDate datetime DEFAULT '' NOT NULL,
+	ModifyDate datetime DEFAULT '' NOT NULL,
+	DeptID int DEFAULT 0 NOT NULL,
+	OperID int DEFAULT 0 NOT NULL,
+	sDesc nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	bIsFinish char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bLocked char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bCanViewWhenNoFinished char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	OperID2 int DEFAULT '0' NOT NULL,
+	dUpdate2 datetime NULL,
+	F24048 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F24049 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F24050 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F24051 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F24052 datetime DEFAULT '' NOT NULL,
+	F24053 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F24057 numeric(20,0) NULL,
+	F24058 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable2919 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	RepID int DEFAULT 0 NOT NULL,
+	FillDate datetime DEFAULT '' NOT NULL,
+	ModifyDate datetime DEFAULT '' NOT NULL,
+	DeptID int DEFAULT 0 NOT NULL,
+	OperID int DEFAULT 0 NOT NULL,
+	sDesc nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	bIsFinish char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bLocked char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bCanViewWhenNoFinished char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	OperID2 int DEFAULT '0' NOT NULL,
+	dUpdate2 datetime NULL,
+	F24059 datetime DEFAULT '' NOT NULL
+);
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable2920 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	F24060 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F24061 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F24062 nvarchar(100) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F24066 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F24068 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable2921 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	RepID int DEFAULT 0 NOT NULL,
+	FillDate datetime DEFAULT '' NOT NULL,
+	ModifyDate datetime DEFAULT '' NOT NULL,
+	DeptID int DEFAULT 0 NOT NULL,
+	OperID int DEFAULT 0 NOT NULL,
+	sDesc nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	bIsFinish char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bLocked char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bCanViewWhenNoFinished char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	OperID2 int DEFAULT '0' NOT NULL,
+	dUpdate2 datetime NULL,
+	F24069 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F24070 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F24071 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F24072 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F24073 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F24074 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F24075 datetime DEFAULT '' NOT NULL,
+	F24076 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F24077 numeric(20,4) NULL,
+	F24078 numeric(20,4) NULL,
+	F24079 numeric(20,0) NULL,
+	F24080 numeric(20,0) NULL,
+	F24081 numeric(20,0) NULL,
+	F24085 numeric(20,0) NULL,
+	F24099 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+ 
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable2922 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	F24086 numeric(20,0) NULL,
+	F24087 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F24088 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F24089 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F24091 numeric(20,2) NULL,
+	F24092 numeric(20,2) NULL,
+	F24093 numeric(20,2) NULL,
+	F24094 numeric(20,2) NULL,
+	F24095 numeric(20,2) NULL,
+	F24096 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F24097 nvarchar(100) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable2923 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	RepID int DEFAULT 0 NOT NULL,
+	FillDate datetime DEFAULT '' NOT NULL,
+	ModifyDate datetime DEFAULT '' NOT NULL,
+	DeptID int DEFAULT 0 NOT NULL,
+	OperID int DEFAULT 0 NOT NULL,
+	sDesc nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	bIsFinish char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bLocked char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bCanViewWhenNoFinished char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	OperID2 int DEFAULT '0' NOT NULL,
+	dUpdate2 datetime NULL,
+	F24100 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F24101 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable2924 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	F24102 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F24103 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F24104 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F24105 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F24106 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F24107 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F24108 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F24109 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F24110 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable2927 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	F24147 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F24148 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F24149 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F24150 numeric(20,0) DEFAULT 0 NOT NULL,
+	F24151 numeric(20,0) DEFAULT 0 NOT NULL,
+	F24152 nvarchar(100) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F24153 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable2928 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	RepID int DEFAULT 0 NOT NULL,
+	FillDate datetime DEFAULT '' NOT NULL,
+	ModifyDate datetime DEFAULT '' NOT NULL,
+	DeptID int DEFAULT 0 NOT NULL,
+	OperID int DEFAULT 0 NOT NULL,
+	sDesc nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	bIsFinish char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bLocked char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bCanViewWhenNoFinished char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	OperID2 int DEFAULT '0' NOT NULL,
+	dUpdate2 datetime NULL,
+	F24154 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F24155 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F24156 nvarchar(100) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F24157 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F24158 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F24159 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F24160 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F24161 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F24162 datetime DEFAULT '' NOT NULL,
+	F24163 datetime DEFAULT '' NOT NULL,
+	F24164 datetime DEFAULT '' NOT NULL,
+	F24225 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable2929 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	RepID int DEFAULT 0 NOT NULL,
+	FillDate datetime DEFAULT '' NOT NULL,
+	ModifyDate datetime DEFAULT '' NOT NULL,
+	DeptID int DEFAULT 0 NOT NULL,
+	OperID int DEFAULT 0 NOT NULL,
+	sDesc nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	bIsFinish char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bLocked char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bCanViewWhenNoFinished char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	OperID2 int DEFAULT '0' NOT NULL,
+	dUpdate2 datetime NULL,
+	F24165 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable2932 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	F24176 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F24177 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F24178 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F24179 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F24226 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F24227 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F24228 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F24229 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F24230 datetime DEFAULT '' NOT NULL
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable2937 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	F24216 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F24217 numeric(20,0) DEFAULT 0 NOT NULL,
+	F24218 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F24219 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F24220 numeric(20,0) DEFAULT 0 NOT NULL,
+	F24221 numeric(20,0) DEFAULT 0 NOT NULL,
+	F24222 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F24223 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F24224 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable2938 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	RepID int DEFAULT 0 NOT NULL,
+	FillDate datetime DEFAULT '' NOT NULL,
+	ModifyDate datetime DEFAULT '' NOT NULL,
+	DeptID int DEFAULT 0 NOT NULL,
+	OperID int DEFAULT 0 NOT NULL,
+	sDesc nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	bIsFinish char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bLocked char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bCanViewWhenNoFinished char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	OperID2 int DEFAULT '0' NOT NULL,
+	dUpdate2 datetime NULL,
+	F24238 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F24239 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F24240 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F24241 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F24242 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F24243 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F24244 datetime DEFAULT '' NOT NULL,
+	F24245 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F24246 numeric(20,4) NULL,
+	F24247 numeric(20,4) NULL,
+	F24248 numeric(20,0) NULL,
+	F24249 numeric(20,0) NULL,
+	F24250 numeric(20,0) NULL,
+	F24251 numeric(20,0) NULL,
+	F24252 numeric(20,0) NULL,
+	F24253 numeric(20,0) NULL
+);
+ 
+ 
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable2939 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	F24254 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F24255 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F24256 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F24257 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F24258 numeric(20,2) NULL,
+	F24259 numeric(20,2) NULL,
+	F24260 numeric(20,2) NULL,
+	F24261 numeric(20,2) NULL,
+	F24262 numeric(20,2) NULL,
+	F24263 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F24264 nvarchar(100) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F24265 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F24266 numeric(20,2) NULL,
+	F24267 numeric(20,2) NULL
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable2940 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	F24288 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F24289 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F24290 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F24291 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F24292 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F24293 numeric(20,0) DEFAULT 0 NOT NULL,
+	F24294 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F24295 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F24296 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F24297 nvarchar(500) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F24298 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F24299 nvarchar(100) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F24300 nvarchar(100) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable2941 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	RepID int DEFAULT 0 NOT NULL,
+	FillDate datetime DEFAULT '' NOT NULL,
+	ModifyDate datetime DEFAULT '' NOT NULL,
+	DeptID int DEFAULT 0 NOT NULL,
+	OperID int DEFAULT 0 NOT NULL,
+	sDesc nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	bIsFinish char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bLocked char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bCanViewWhenNoFinished char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	OperID2 int DEFAULT '0' NOT NULL,
+	dUpdate2 datetime NULL,
+	F24302 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F24303 nvarchar(100) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F24304 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F24305 datetime DEFAULT '' NOT NULL,
+	F24306 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F24307 datetime DEFAULT '' NOT NULL,
+	F24308 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F24309 datetime DEFAULT '' NOT NULL,
+	F24311 numeric(20,2) DEFAULT 0 NOT NULL,
+	F24312 numeric(20,2) DEFAULT 0 NOT NULL
+);
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable2942 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	F24315 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F24316 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F24317 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F24318 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F24320 numeric(20,0) DEFAULT 0 NOT NULL,
+	F24322 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F24324 nvarchar(500) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F24325 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F24326 nvarchar(100) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F24327 nvarchar(100) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F24328 numeric(20,0) DEFAULT 0 NOT NULL
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable2943 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	RepID int DEFAULT 0 NOT NULL,
+	FillDate datetime DEFAULT '' NOT NULL,
+	ModifyDate datetime DEFAULT '' NOT NULL,
+	DeptID int DEFAULT 0 NOT NULL,
+	OperID int DEFAULT 0 NOT NULL,
+	sDesc nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	bIsFinish char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bLocked char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bCanViewWhenNoFinished char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	OperID2 int DEFAULT '0' NOT NULL,
+	dUpdate2 datetime NULL,
+	F24329 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F24330 nvarchar(100) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F24331 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F24332 datetime DEFAULT '' NOT NULL,
+	F24333 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F24334 datetime DEFAULT '' NOT NULL,
+	F24337 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable2944 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	F24340 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F24341 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F24342 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F24343 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F24344 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F24345 numeric(20,0) DEFAULT 0 NOT NULL,
+	F24346 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F24347 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F24348 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F24349 nvarchar(500) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F24350 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F24351 nvarchar(100) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F24352 nvarchar(100) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable2945 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	RepID int DEFAULT 0 NOT NULL,
+	FillDate datetime DEFAULT '' NOT NULL,
+	ModifyDate datetime DEFAULT '' NOT NULL,
+	DeptID int DEFAULT 0 NOT NULL,
+	OperID int DEFAULT 0 NOT NULL,
+	sDesc nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	bIsFinish char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bLocked char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bCanViewWhenNoFinished char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	OperID2 int DEFAULT '0' NOT NULL,
+	dUpdate2 datetime NULL,
+	F24353 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F24354 nvarchar(100) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F24355 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F24356 datetime DEFAULT '' NOT NULL,
+	F24357 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F24358 datetime DEFAULT '' NOT NULL
+);
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable2946 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	RepID int DEFAULT 0 NOT NULL,
+	FillDate datetime DEFAULT '' NOT NULL,
+	ModifyDate datetime DEFAULT '' NOT NULL,
+	DeptID int DEFAULT 0 NOT NULL,
+	OperID int DEFAULT 0 NOT NULL,
+	sDesc nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	bIsFinish char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bLocked char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bCanViewWhenNoFinished char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	OperID2 int DEFAULT '0' NOT NULL,
+	dUpdate2 datetime NULL,
+	F24363 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F24364 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F24365 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F24366 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F24615 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F24616 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F24617 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F24618 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F24619 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F24922 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F24923 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F24924 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F24925 datetime DEFAULT '' NOT NULL,
+	F24926 datetime DEFAULT '' NOT NULL,
+	F24927 datetime DEFAULT '' NOT NULL
+);
+ 
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable2947 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	F24367 numeric(20,0) NULL,
+	F24368 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F24369 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F24370 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F24371 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F24372 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F24373 numeric(20,2) NULL,
+	F24374 numeric(20,2) NULL,
+	F24375 numeric(20,2) NULL,
+	F24377 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F25617 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F25618 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable2952 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	F24420 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F24421 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F24422 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F24423 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F24424 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F24425 numeric(20,0) DEFAULT 0 NOT NULL,
+	F24426 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F24427 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F24428 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F24429 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F24430 nvarchar(500) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F24431 nvarchar(500) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F24432 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F24433 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F24434 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F24435 numeric(20,0) DEFAULT 0 NOT NULL,
+	F24436 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F24437 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F24438 datetime DEFAULT '' NOT NULL,
+	F24439 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F24440 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F24441 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F24442 numeric(20,0) DEFAULT 0 NOT NULL,
+	F24443 numeric(20,2) DEFAULT 0 NOT NULL,
+	F24444 numeric(20,2) DEFAULT 0 NOT NULL,
+	F24445 numeric(20,1) DEFAULT 0 NOT NULL,
+	F24446 numeric(20,2) DEFAULT 0 NOT NULL,
+	F24447 numeric(20,2) DEFAULT 0 NOT NULL,
+	F24448 numeric(20,1) DEFAULT 0 NOT NULL,
+	F24449 numeric(20,1) DEFAULT 0 NOT NULL,
+	F24450 numeric(20,1) DEFAULT 0 NOT NULL,
+	F24451 numeric(20,1) DEFAULT 0 NOT NULL,
+	F24452 numeric(20,2) DEFAULT 0 NOT NULL,
+	F24453 numeric(20,2) DEFAULT 0 NOT NULL,
+	F24454 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F24455 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F24456 numeric(20,2) DEFAULT 0 NOT NULL,
+	F24457 datetime DEFAULT '' NOT NULL,
+	F24458 datetime DEFAULT '' NOT NULL,
+	F24459 datetime DEFAULT '' NOT NULL,
+	F24460 numeric(20,2) DEFAULT 0 NOT NULL,
+	F24461 datetime DEFAULT '' NOT NULL,
+	F24462 numeric(20,2) DEFAULT 0 NOT NULL,
+	F24516 numeric(20,2) DEFAULT 0 NOT NULL,
+	F25458 datetime DEFAULT '' NOT NULL
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable2953 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	RepID int DEFAULT 0 NOT NULL,
+	FillDate datetime DEFAULT '' NOT NULL,
+	ModifyDate datetime DEFAULT '' NOT NULL,
+	DeptID int DEFAULT 0 NOT NULL,
+	OperID int DEFAULT 0 NOT NULL,
+	sDesc nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	bIsFinish char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bLocked char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bCanViewWhenNoFinished char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	OperID2 int DEFAULT '0' NOT NULL,
+	dUpdate2 datetime NULL,
+	F24463 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable2954 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	RepID int DEFAULT 0 NOT NULL,
+	FillDate datetime DEFAULT '' NOT NULL,
+	ModifyDate datetime DEFAULT '' NOT NULL,
+	DeptID int DEFAULT 0 NOT NULL,
+	OperID int DEFAULT 0 NOT NULL,
+	sDesc nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	bIsFinish char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bLocked char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bCanViewWhenNoFinished char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	OperID2 int DEFAULT '0' NOT NULL,
+	dUpdate2 datetime NULL,
+	F24465 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F24466 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F24467 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F24468 numeric(20,0) NULL,
+	F24469 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F24470 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F24471 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F24472 nvarchar(500) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F24464 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F24473 nvarchar(500) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F24474 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F24475 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F24476 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F24477 numeric(20,0) NULL,
+	F24478 datetime DEFAULT '' NOT NULL,
+	F24479 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F24480 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F24481 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F24482 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F24483 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F24484 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F24485 numeric(20,2) NULL,
+	F24486 numeric(20,2) NULL,
+	F24487 numeric(20,0) NULL,
+	F24488 numeric(20,1) NULL,
+	F24489 numeric(20,1) NULL,
+	F24490 numeric(20,2) NULL,
+	F24491 numeric(20,1) NULL,
+	F24492 numeric(20,2) NULL,
+	F24493 numeric(20,2) NULL,
+	F24494 numeric(20,2) NULL,
+	F24497 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F24502 numeric(20,2) NULL,
+	F24505 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F24506 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F24507 datetime DEFAULT '' NOT NULL,
+	F24514 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F24515 numeric(20,2) NULL,
+	F24517 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable2957 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	F24511 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F24512 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable2958 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	RepID int DEFAULT 0 NOT NULL,
+	FillDate datetime DEFAULT '' NOT NULL,
+	ModifyDate datetime DEFAULT '' NOT NULL,
+	DeptID int DEFAULT 0 NOT NULL,
+	OperID int DEFAULT 0 NOT NULL,
+	sDesc nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	bIsFinish char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bLocked char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bCanViewWhenNoFinished char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	OperID2 int DEFAULT '0' NOT NULL,
+	dUpdate2 datetime NULL,
+	F24513 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable2961 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	RepID int DEFAULT 0 NOT NULL,
+	FillDate datetime DEFAULT '' NOT NULL,
+	ModifyDate datetime DEFAULT '' NOT NULL,
+	DeptID int DEFAULT 0 NOT NULL,
+	OperID int DEFAULT 0 NOT NULL,
+	sDesc nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	bIsFinish char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bLocked char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bCanViewWhenNoFinished char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	OperID2 int DEFAULT '0' NOT NULL,
+	dUpdate2 datetime NULL,
+	F24592 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F24593 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F24594 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F24595 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F24596 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F24597 numeric(20,0) DEFAULT 0 NOT NULL,
+	F24598 datetime DEFAULT '' NOT NULL,
+	F24599 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F24600 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F24601 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F24602 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F24603 nvarchar(200) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F24604 numeric(20,1) DEFAULT 0 NOT NULL,
+	F24605 numeric(20,1) DEFAULT 0 NOT NULL,
+	F24606 numeric(20,1) DEFAULT 0 NOT NULL,
+	F24607 numeric(20,2) DEFAULT 0 NOT NULL,
+	F24608 numeric(20,1) DEFAULT 0 NOT NULL,
+	F24609 numeric(20,1) DEFAULT 0 NOT NULL,
+	F24610 numeric(20,1) DEFAULT 0 NOT NULL,
+	F24611 numeric(20,2) DEFAULT 0 NOT NULL,
+	F24612 numeric(20,2) DEFAULT 0 NOT NULL,
+	F24613 numeric(20,2) DEFAULT 0 NOT NULL,
+	F24614 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable2963 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	RepID int DEFAULT 0 NOT NULL,
+	FillDate datetime DEFAULT '' NOT NULL,
+	ModifyDate datetime DEFAULT '' NOT NULL,
+	DeptID int DEFAULT 0 NOT NULL,
+	OperID int DEFAULT 0 NOT NULL,
+	sDesc nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	bIsFinish char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bLocked char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bCanViewWhenNoFinished char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	OperID2 int DEFAULT '0' NOT NULL,
+	dUpdate2 datetime NULL,
+	F24641 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F24642 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F24643 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F24646 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F24647 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F24648 nvarchar(100) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F24649 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F24650 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F24651 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F24769 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F24833 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F24834 datetime DEFAULT '' NOT NULL,
+	F24841 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F24842 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F24843 datetime DEFAULT '' NOT NULL,
+	F24844 datetime DEFAULT '' NOT NULL,
+	F26713 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27006 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable2965 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	RepID int DEFAULT 0 NOT NULL,
+	FillDate datetime DEFAULT '' NOT NULL,
+	ModifyDate datetime DEFAULT '' NOT NULL,
+	DeptID int DEFAULT 0 NOT NULL,
+	OperID int DEFAULT 0 NOT NULL,
+	sDesc nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	bIsFinish char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bLocked char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bCanViewWhenNoFinished char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	OperID2 int DEFAULT '0' NOT NULL,
+	dUpdate2 datetime NULL,
+	F24659 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F24660 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F24661 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F24662 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F24663 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F24664 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F24665 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F24666 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F24836 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F24907 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F24908 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F24909 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F24915 datetime DEFAULT '' NOT NULL,
+	F24916 datetime DEFAULT '' NOT NULL,
+	F24917 datetime DEFAULT '' NOT NULL
+);
+ 
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable2967 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	F24678 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F24679 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F24680 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F24681 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F24682 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F24683 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable2968 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	F24684 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F24685 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F24686 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F24687 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F24688 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F24689 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F24690 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F25423 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable2969 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	F24691 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F24692 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F24693 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable2971 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	F24698 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F24699 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F24700 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F24701 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F24702 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F24703 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F24704 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F25424 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable2973 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	F24713 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F24714 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F24715 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F24723 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F24724 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F24725 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F24726 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F24727 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable2974 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	F24729 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F24730 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F24731 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F24766 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F24767 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable2976 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	F24734 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F24735 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F24928 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable2977 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	F24736 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F24737 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F24739 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F24740 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F24741 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F25061 numeric(20,2) NULL
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable2978 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	F24742 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F24743 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F24745 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F24746 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F24747 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F25143 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable2979 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	F24748 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F24749 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F24750 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F24751 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F25145 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26527 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26528 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable2980 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	F24757 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F24758 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F24759 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F24763 numeric(20,2) NULL,
+	F24764 numeric(20,2) NULL,
+	F24765 numeric(20,2) NULL,
+	F26524 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26525 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26526 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable2990 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	RepID int DEFAULT 0 NOT NULL,
+	FillDate datetime DEFAULT '' NOT NULL,
+	ModifyDate datetime DEFAULT '' NOT NULL,
+	DeptID int DEFAULT 0 NOT NULL,
+	OperID int DEFAULT 0 NOT NULL,
+	sDesc nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	bIsFinish char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bLocked char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bCanViewWhenNoFinished char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	OperID2 int DEFAULT '0' NOT NULL,
+	dUpdate2 datetime NULL,
+	F24819 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F24820 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable2991 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	RepID int DEFAULT 0 NOT NULL,
+	FillDate datetime DEFAULT '' NOT NULL,
+	ModifyDate datetime DEFAULT '' NOT NULL,
+	DeptID int DEFAULT 0 NOT NULL,
+	OperID int DEFAULT 0 NOT NULL,
+	sDesc nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	bIsFinish char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bLocked char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bCanViewWhenNoFinished char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	OperID2 int DEFAULT '0' NOT NULL,
+	dUpdate2 datetime NULL,
+	F24821 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F24822 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27009 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable2992 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	F24823 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F24824 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F24825 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F24826 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F24827 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F24828 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F24829 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F24830 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F24831 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F24832 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F24835 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable3001 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	F24929 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F24930 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F24931 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable3002 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	F24934 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F24935 nvarchar(100) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F24936 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F24937 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F24938 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F24939 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F24940 datetime DEFAULT '' NOT NULL
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable3003 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	F24942 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F24943 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F24944 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F24945 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F24946 numeric(20,2) NULL,
+	F24947 numeric(20,2) NULL,
+	F24948 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F24949 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F24950 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F25297 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable3005 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	RepID int DEFAULT 0 NOT NULL,
+	FillDate datetime DEFAULT '' NOT NULL,
+	ModifyDate datetime DEFAULT '' NOT NULL,
+	DeptID int DEFAULT 0 NOT NULL,
+	OperID int DEFAULT 0 NOT NULL,
+	sDesc nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	bIsFinish char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bLocked char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bCanViewWhenNoFinished char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	OperID2 int DEFAULT '0' NOT NULL,
+	dUpdate2 datetime NULL,
+	F24962 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable3007 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	RepID int DEFAULT 0 NOT NULL,
+	FillDate datetime DEFAULT '' NOT NULL,
+	ModifyDate datetime DEFAULT '' NOT NULL,
+	DeptID int DEFAULT 0 NOT NULL,
+	OperID int DEFAULT 0 NOT NULL,
+	sDesc nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	bIsFinish char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bLocked char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bCanViewWhenNoFinished char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	OperID2 int DEFAULT '0' NOT NULL,
+	dUpdate2 datetime NULL,
+	F25004 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F25005 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F25007 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F25011 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F25012 datetime DEFAULT '' NOT NULL,
+	F25059 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F25062 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F25082 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable3008 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	F25013 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F25014 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F25015 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F25016 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F25017 datetime DEFAULT '' NOT NULL,
+	F25018 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F25019 nvarchar(500) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F25020 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F25021 datetime DEFAULT '' NOT NULL,
+	F25022 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F25025 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F25060 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F25092 numeric(20,0) DEFAULT 0 NOT NULL,
+	F25093 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F25094 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable3009 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	RepID int DEFAULT 0 NOT NULL,
+	FillDate datetime DEFAULT '' NOT NULL,
+	ModifyDate datetime DEFAULT '' NOT NULL,
+	DeptID int DEFAULT 0 NOT NULL,
+	OperID int DEFAULT 0 NOT NULL,
+	sDesc nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	bIsFinish char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bLocked char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bCanViewWhenNoFinished char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	OperID2 int DEFAULT '0' NOT NULL,
+	dUpdate2 datetime NULL,
+	F25026 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F25027 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F25028 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F25029 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F25030 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F25031 datetime DEFAULT '' NOT NULL,
+	F25032 datetime DEFAULT '' NOT NULL,
+	F25033 datetime DEFAULT '' NOT NULL,
+	F25034 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F25035 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F25036 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable3010 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	F25037 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F25038 nvarchar(200) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F25039 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F25040 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F25041 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F25042 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F25043 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F25044 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F25045 datetime DEFAULT '' NOT NULL,
+	F25046 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F25047 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F25048 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F25049 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable3013 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	F25076 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F25077 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F25078 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F25079 datetime DEFAULT '' NOT NULL,
+	F25080 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F25081 nvarchar(1000) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable3014 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	F25083 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F25084 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F25085 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F25086 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F25087 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F25088 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F25089 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F25090 datetime DEFAULT '' NOT NULL
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable3015 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	RepID int DEFAULT 0 NOT NULL,
+	FillDate datetime DEFAULT '' NOT NULL,
+	ModifyDate datetime DEFAULT '' NOT NULL,
+	DeptID int DEFAULT 0 NOT NULL,
+	OperID int DEFAULT 0 NOT NULL,
+	sDesc nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	bIsFinish char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bLocked char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bCanViewWhenNoFinished char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	OperID2 int DEFAULT '0' NOT NULL,
+	dUpdate2 datetime NULL,
+	F25091 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable3018 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	F25109 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F25110 datetime DEFAULT '' NOT NULL,
+	F25111 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F25112 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F25113 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F25114 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable3019 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	RepID int DEFAULT 0 NOT NULL,
+	FillDate datetime DEFAULT '' NOT NULL,
+	ModifyDate datetime DEFAULT '' NOT NULL,
+	DeptID int DEFAULT 0 NOT NULL,
+	OperID int DEFAULT 0 NOT NULL,
+	sDesc nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	bIsFinish char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bLocked char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bCanViewWhenNoFinished char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	OperID2 int DEFAULT '0' NOT NULL,
+	dUpdate2 datetime NULL,
+	F25115 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F25116 datetime DEFAULT '' NOT NULL
+);
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable3023 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	RepID int DEFAULT 0 NOT NULL,
+	FillDate datetime DEFAULT '' NOT NULL,
+	ModifyDate datetime DEFAULT '' NOT NULL,
+	DeptID int DEFAULT 0 NOT NULL,
+	OperID int DEFAULT 0 NOT NULL,
+	sDesc nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	bIsFinish char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bLocked char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bCanViewWhenNoFinished char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	OperID2 int DEFAULT '0' NOT NULL,
+	dUpdate2 datetime NULL,
+	F25125 numeric(20,1) DEFAULT 0 NOT NULL,
+	F25126 numeric(20,1) DEFAULT 0 NOT NULL,
+	F25127 numeric(20,1) DEFAULT 0 NOT NULL,
+	F25128 numeric(20,1) DEFAULT 0 NOT NULL,
+	F25129 numeric(20,1) DEFAULT 0 NOT NULL,
+	F25130 numeric(20,1) DEFAULT 0 NOT NULL,
+	F25131 numeric(20,1) DEFAULT 0 NOT NULL,
+	F25132 numeric(20,1) DEFAULT 0 NOT NULL,
+	F25133 numeric(20,1) DEFAULT 0 NOT NULL,
+	F25134 numeric(20,1) DEFAULT 0 NOT NULL,
+	F25135 numeric(20,1) DEFAULT 0 NOT NULL,
+	F25136 numeric(20,1) DEFAULT 0 NOT NULL,
+	F25137 numeric(20,1) DEFAULT 0 NOT NULL,
+	F25138 numeric(20,1) DEFAULT 0 NOT NULL,
+	F25139 numeric(20,1) DEFAULT 0 NOT NULL,
+	F25140 numeric(20,1) DEFAULT 0 NOT NULL,
+	F25141 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F25142 datetime DEFAULT '' NOT NULL,
+	F25194 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable3026 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	RepID int DEFAULT 0 NOT NULL,
+	FillDate datetime DEFAULT '' NOT NULL,
+	ModifyDate datetime DEFAULT '' NOT NULL,
+	DeptID int DEFAULT 0 NOT NULL,
+	OperID int DEFAULT 0 NOT NULL,
+	sDesc nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	bIsFinish char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bLocked char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bCanViewWhenNoFinished char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	OperID2 int DEFAULT '0' NOT NULL,
+	dUpdate2 datetime NULL,
+	F25160 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F25161 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F25162 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F25163 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F25164 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F25165 numeric(20,0) DEFAULT 0 NOT NULL,
+	F25166 datetime DEFAULT '' NOT NULL,
+	F25167 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F25168 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F25169 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F25170 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F25171 nvarchar(200) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F25172 numeric(20,1) DEFAULT 0 NOT NULL,
+	F25173 numeric(20,1) DEFAULT 0 NOT NULL,
+	F25174 numeric(20,1) DEFAULT 0 NOT NULL,
+	F25175 numeric(20,2) DEFAULT 0 NOT NULL,
+	F25176 numeric(20,1) DEFAULT 0 NOT NULL,
+	F25177 numeric(20,1) DEFAULT 0 NOT NULL,
+	F25178 numeric(20,1) DEFAULT 0 NOT NULL,
+	F25179 numeric(20,2) DEFAULT 0 NOT NULL,
+	F25180 numeric(20,2) DEFAULT 0 NOT NULL,
+	F25181 numeric(20,2) DEFAULT 0 NOT NULL,
+	F25182 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable3031 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	F25195 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable3033 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	F25215 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F25256 numeric(20,1) DEFAULT 0 NOT NULL
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable3034 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	RepID int DEFAULT 0 NOT NULL,
+	FillDate datetime DEFAULT '' NOT NULL,
+	ModifyDate datetime DEFAULT '' NOT NULL,
+	DeptID int DEFAULT 0 NOT NULL,
+	OperID int DEFAULT 0 NOT NULL,
+	sDesc nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	bIsFinish char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bLocked char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bCanViewWhenNoFinished char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	OperID2 int DEFAULT '0' NOT NULL,
+	dUpdate2 datetime NULL,
+	F25217 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F25218 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable3035 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	RepID int DEFAULT 0 NOT NULL,
+	FillDate datetime DEFAULT '' NOT NULL,
+	ModifyDate datetime DEFAULT '' NOT NULL,
+	DeptID int DEFAULT 0 NOT NULL,
+	OperID int DEFAULT 0 NOT NULL,
+	sDesc nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	bIsFinish char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bLocked char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bCanViewWhenNoFinished char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	OperID2 int DEFAULT '0' NOT NULL,
+	dUpdate2 datetime NULL,
+	F25219 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F25262 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable3036 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	F25220 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F25221 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F25222 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable3040 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	F25248 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F25249 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F25250 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F25251 datetime DEFAULT '' NOT NULL,
+	F25252 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F25253 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F25254 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable3041 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	RepID int DEFAULT 0 NOT NULL,
+	FillDate datetime DEFAULT '' NOT NULL,
+	ModifyDate datetime DEFAULT '' NOT NULL,
+	DeptID int DEFAULT 0 NOT NULL,
+	OperID int DEFAULT 0 NOT NULL,
+	sDesc nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	bIsFinish char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bLocked char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bCanViewWhenNoFinished char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	OperID2 int DEFAULT '0' NOT NULL,
+	dUpdate2 datetime NULL,
+	F25255 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable3042 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	F25257 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable3043 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	RepID int DEFAULT 0 NOT NULL,
+	FillDate datetime DEFAULT '' NOT NULL,
+	ModifyDate datetime DEFAULT '' NOT NULL,
+	DeptID int DEFAULT 0 NOT NULL,
+	OperID int DEFAULT 0 NOT NULL,
+	sDesc nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	bIsFinish char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bLocked char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bCanViewWhenNoFinished char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	OperID2 int DEFAULT '0' NOT NULL,
+	dUpdate2 datetime NULL,
+	F25258 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable3045 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	F25263 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F25264 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F25265 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable3046 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	F25266 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F25267 datetime DEFAULT '' NOT NULL,
+	F25268 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F25269 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F25270 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F25271 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable3047 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	RepID int DEFAULT 0 NOT NULL,
+	FillDate datetime DEFAULT '' NOT NULL,
+	ModifyDate datetime DEFAULT '' NOT NULL,
+	DeptID int DEFAULT 0 NOT NULL,
+	OperID int DEFAULT 0 NOT NULL,
+	sDesc nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	bIsFinish char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bLocked char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bCanViewWhenNoFinished char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	OperID2 int DEFAULT '0' NOT NULL,
+	dUpdate2 datetime NULL,
+	F25272 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F25273 datetime DEFAULT '' NOT NULL
+);
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable3049 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	RepID int DEFAULT 0 NOT NULL,
+	FillDate datetime DEFAULT '' NOT NULL,
+	ModifyDate datetime DEFAULT '' NOT NULL,
+	DeptID int DEFAULT 0 NOT NULL,
+	OperID int DEFAULT 0 NOT NULL,
+	sDesc nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	bIsFinish char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bLocked char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bCanViewWhenNoFinished char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	OperID2 int DEFAULT '0' NOT NULL,
+	dUpdate2 datetime NULL,
+	F25276 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F25277 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable3050 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	F25278 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable3051 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	RepID int DEFAULT 0 NOT NULL,
+	FillDate datetime DEFAULT '' NOT NULL,
+	ModifyDate datetime DEFAULT '' NOT NULL,
+	DeptID int DEFAULT 0 NOT NULL,
+	OperID int DEFAULT 0 NOT NULL,
+	sDesc nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	bIsFinish char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bLocked char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bCanViewWhenNoFinished char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	OperID2 int DEFAULT '0' NOT NULL,
+	dUpdate2 datetime NULL,
+	F25279 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable3053 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	F25283 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F25284 numeric(20,0) DEFAULT 0 NOT NULL
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable3054 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	F25285 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F25286 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F25287 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable3057 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	RepID int DEFAULT 0 NOT NULL,
+	FillDate datetime DEFAULT '' NOT NULL,
+	ModifyDate datetime DEFAULT '' NOT NULL,
+	DeptID int DEFAULT 0 NOT NULL,
+	OperID int DEFAULT 0 NOT NULL,
+	sDesc nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	bIsFinish char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bLocked char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bCanViewWhenNoFinished char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	OperID2 int DEFAULT '0' NOT NULL,
+	dUpdate2 datetime NULL,
+	F25298 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F25299 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F25300 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F25301 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F25302 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F25303 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F25304 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F25305 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F25306 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F25307 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F25308 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F25309 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F25310 datetime DEFAULT '' NOT NULL,
+	F25311 datetime DEFAULT '' NOT NULL,
+	F25312 datetime DEFAULT '' NOT NULL,
+	F25330 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F25331 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+ 
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable3058 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	F25313 numeric(20,0) NULL,
+	F25314 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F25315 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F25316 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F25317 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F25318 numeric(20,2) NULL,
+	F25319 numeric(20,2) NULL,
+	F25320 numeric(20,2) NULL,
+	F25321 numeric(20,2) NULL,
+	F25322 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable3059 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	F25323 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F25324 nvarchar(100) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F25325 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F25328 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F25329 datetime DEFAULT '' NOT NULL
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable3062 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	RepID int DEFAULT 0 NOT NULL,
+	FillDate datetime DEFAULT '' NOT NULL,
+	ModifyDate datetime DEFAULT '' NOT NULL,
+	DeptID int DEFAULT 0 NOT NULL,
+	OperID int DEFAULT 0 NOT NULL,
+	sDesc nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	bIsFinish char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bLocked char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bCanViewWhenNoFinished char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	OperID2 int DEFAULT '0' NOT NULL,
+	dUpdate2 datetime NULL,
+	F25346 datetime DEFAULT '' NOT NULL
+);
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable3065 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	F25383 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F25384 datetime DEFAULT '' NOT NULL,
+	F25385 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F25386 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F25387 nvarchar(100) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F25388 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F25389 datetime DEFAULT '' NOT NULL
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable3066 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	RepID int DEFAULT 0 NOT NULL,
+	FillDate datetime DEFAULT '' NOT NULL,
+	ModifyDate datetime DEFAULT '' NOT NULL,
+	DeptID int DEFAULT 0 NOT NULL,
+	OperID int DEFAULT 0 NOT NULL,
+	sDesc nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	bIsFinish char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bLocked char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bCanViewWhenNoFinished char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	OperID2 int DEFAULT '0' NOT NULL,
+	dUpdate2 datetime NULL,
+	F25390 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F25391 datetime DEFAULT '' NOT NULL,
+	F25392 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F25393 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F25394 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F25395 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F25405 nvarchar(500) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F25422 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F25456 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F25457 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F25520 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable3067 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	F25396 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F25397 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F25398 numeric(20,0) DEFAULT 0 NOT NULL,
+	F25399 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F25400 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F25401 numeric(20,0) DEFAULT 0 NOT NULL,
+	F25402 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F25403 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F25404 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F25425 numeric(20,0) DEFAULT 0 NOT NULL
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable3070 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	F25426 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F25427 datetime DEFAULT '' NOT NULL,
+	F25428 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F25429 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F25430 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F25431 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F25445 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F25446 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F25447 numeric(20,0) DEFAULT 0 NOT NULL,
+	F25448 numeric(20,0) DEFAULT 0 NOT NULL,
+	F25449 numeric(20,0) DEFAULT 0 NOT NULL,
+	F25450 numeric(20,0) DEFAULT 0 NOT NULL,
+	F25451 nvarchar(200) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F25452 numeric(20,1) DEFAULT 0 NOT NULL,
+	F25453 numeric(20,0) DEFAULT 0 NOT NULL,
+	F25454 numeric(20,1) DEFAULT 0 NOT NULL,
+	F25455 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable3071 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	RepID int DEFAULT 0 NOT NULL,
+	FillDate datetime DEFAULT '' NOT NULL,
+	ModifyDate datetime DEFAULT '' NOT NULL,
+	DeptID int DEFAULT 0 NOT NULL,
+	OperID int DEFAULT 0 NOT NULL,
+	sDesc nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	bIsFinish char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bLocked char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bCanViewWhenNoFinished char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	OperID2 int DEFAULT '0' NOT NULL,
+	dUpdate2 datetime NULL,
+	F25434 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F25435 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F25436 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F25437 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F25438 datetime DEFAULT '' NOT NULL,
+	F25439 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F25440 datetime DEFAULT '' NOT NULL,
+	F25441 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F25442 datetime DEFAULT '' NOT NULL,
+	F25443 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F25444 datetime DEFAULT '' NOT NULL,
+	F25490 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F25521 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable3074 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	RepID int DEFAULT 0 NOT NULL,
+	FillDate datetime DEFAULT '' NOT NULL,
+	ModifyDate datetime DEFAULT '' NOT NULL,
+	DeptID int DEFAULT 0 NOT NULL,
+	OperID int DEFAULT 0 NOT NULL,
+	sDesc nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	bIsFinish char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bLocked char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bCanViewWhenNoFinished char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	OperID2 int DEFAULT '0' NOT NULL,
+	dUpdate2 datetime NULL,
+	F25474 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F25475 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F25476 datetime DEFAULT '' NOT NULL,
+	F25477 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F25478 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F25479 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F25491 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F25522 datetime DEFAULT '' NOT NULL,
+	F25523 datetime DEFAULT '' NOT NULL
+);
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable3075 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	F25480 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F25481 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F25482 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F25483 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F25484 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F25485 numeric(20,0) NULL,
+	F25486 nvarchar(500) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F25487 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F25488 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F25489 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable3078 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	RepID int DEFAULT 0 NOT NULL,
+	FillDate datetime DEFAULT '' NOT NULL,
+	ModifyDate datetime DEFAULT '' NOT NULL,
+	DeptID int DEFAULT 0 NOT NULL,
+	OperID int DEFAULT 0 NOT NULL,
+	sDesc nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	bIsFinish char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bLocked char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bCanViewWhenNoFinished char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	OperID2 int DEFAULT '0' NOT NULL,
+	dUpdate2 datetime NULL,
+	F25508 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable3079 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	F25509 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F25510 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F25511 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F25512 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F25513 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F25514 datetime DEFAULT '' NOT NULL,
+	F25515 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F25516 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F25517 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F25518 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F25519 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable3084 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	RepID int DEFAULT 0 NOT NULL,
+	FillDate datetime DEFAULT '' NOT NULL,
+	ModifyDate datetime DEFAULT '' NOT NULL,
+	DeptID int DEFAULT 0 NOT NULL,
+	OperID int DEFAULT 0 NOT NULL,
+	sDesc nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	bIsFinish char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bLocked char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bCanViewWhenNoFinished char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	OperID2 int DEFAULT '0' NOT NULL,
+	dUpdate2 datetime NULL,
+	F25573 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F25574 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F25575 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F25576 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F25577 nvarchar(100) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F25578 nvarchar(1000) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F25579 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F25580 nvarchar(200) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F25619 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F25620 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F25621 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F25622 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F25623 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F25624 datetime DEFAULT '' NOT NULL,
+	F25625 datetime DEFAULT '' NOT NULL,
+	F25626 datetime DEFAULT '' NOT NULL,
+	F25920 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F25921 datetime DEFAULT '' NOT NULL
+);
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable3085 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	RepID int DEFAULT 0 NOT NULL,
+	FillDate datetime DEFAULT '' NOT NULL,
+	ModifyDate datetime DEFAULT '' NOT NULL,
+	DeptID int DEFAULT 0 NOT NULL,
+	OperID int DEFAULT 0 NOT NULL,
+	sDesc nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	bIsFinish char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bLocked char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bCanViewWhenNoFinished char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	OperID2 int DEFAULT '0' NOT NULL,
+	dUpdate2 datetime NULL,
+	F25584 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F25585 datetime DEFAULT '' NOT NULL,
+	F25586 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F25587 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F25588 nvarchar(500) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F25627 datetime DEFAULT '' NOT NULL,
+	F25628 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F25629 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F25630 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F25631 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F25632 nvarchar(200) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable3086 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	RepID int DEFAULT 0 NOT NULL,
+	FillDate datetime DEFAULT '' NOT NULL,
+	ModifyDate datetime DEFAULT '' NOT NULL,
+	DeptID int DEFAULT 0 NOT NULL,
+	OperID int DEFAULT 0 NOT NULL,
+	sDesc nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	bIsFinish char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bLocked char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bCanViewWhenNoFinished char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	OperID2 int DEFAULT '0' NOT NULL,
+	dUpdate2 datetime NULL,
+	F25589 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F25590 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F25591 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F25592 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F25593 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F25594 datetime DEFAULT '' NOT NULL,
+	F25595 datetime DEFAULT '' NOT NULL,
+	F25596 datetime DEFAULT '' NOT NULL,
+	F25597 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F25598 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F25599 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable3087 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	F25600 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F25601 nvarchar(200) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F25602 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F25603 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F25604 datetime DEFAULT '' NOT NULL,
+	F25605 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F25606 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F25607 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F25608 datetime DEFAULT '' NOT NULL,
+	F25609 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F25610 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F25611 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F25612 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F25613 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F25614 nvarchar(100) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F25615 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F25616 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable3088 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	F25633 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F25634 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F25640 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F25641 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F25642 numeric(20,0) DEFAULT 0 NOT NULL,
+	F25643 numeric(20,2) DEFAULT 0 NOT NULL,
+	F25644 numeric(20,2) DEFAULT 0 NOT NULL,
+	F25668 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F25669 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F25670 nvarchar(100) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F25671 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F25672 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F25675 datetime DEFAULT '' NOT NULL,
+	F25676 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F25677 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F25678 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F25679 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F25680 nvarchar(100) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F25682 nvarchar(200) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F25683 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29552 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29553 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29554 nvarchar(200) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29555 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable3089 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	RepID int DEFAULT 0 NOT NULL,
+	FillDate datetime DEFAULT '' NOT NULL,
+	ModifyDate datetime DEFAULT '' NOT NULL,
+	DeptID int DEFAULT 0 NOT NULL,
+	OperID int DEFAULT 0 NOT NULL,
+	sDesc nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	bIsFinish char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bLocked char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bCanViewWhenNoFinished char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	OperID2 int DEFAULT '0' NOT NULL,
+	dUpdate2 datetime NULL,
+	F25654 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F25656 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F25657 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F25659 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F25660 numeric(20,2) DEFAULT 0 NOT NULL,
+	F25684 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F25685 datetime DEFAULT '' NOT NULL,
+	F25686 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F25687 datetime DEFAULT '' NOT NULL,
+	F25688 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F25689 datetime DEFAULT '' NOT NULL,
+	F26024 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29769 datetime DEFAULT '' NOT NULL,
+	F29770 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable3090 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	F25690 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F25691 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F25692 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F25693 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F25694 numeric(20,1) DEFAULT 0 NOT NULL,
+	F25695 numeric(20,2) DEFAULT 0 NOT NULL,
+	F25696 numeric(20,2) DEFAULT 0 NOT NULL,
+	F25697 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F25698 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F25699 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F25700 numeric(20,0) DEFAULT 0 NOT NULL,
+	F25701 numeric(20,0) DEFAULT 0 NOT NULL,
+	F25702 nvarchar(100) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F25703 nvarchar(200) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F25704 datetime DEFAULT '' NOT NULL,
+	F25705 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F25706 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F25707 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F25708 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F25709 nvarchar(100) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F25710 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F25711 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable3091 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	RepID int DEFAULT 0 NOT NULL,
+	FillDate datetime DEFAULT '' NOT NULL,
+	ModifyDate datetime DEFAULT '' NOT NULL,
+	DeptID int DEFAULT 0 NOT NULL,
+	OperID int DEFAULT 0 NOT NULL,
+	sDesc nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	bIsFinish char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bLocked char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bCanViewWhenNoFinished char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	OperID2 int DEFAULT '0' NOT NULL,
+	dUpdate2 datetime NULL,
+	F25712 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F25714 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F25715 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F25717 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F25718 numeric(20,2) DEFAULT 0 NOT NULL,
+	F25719 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F25720 datetime DEFAULT '' NOT NULL,
+	F25721 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F25722 datetime DEFAULT '' NOT NULL,
+	F25723 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F25724 datetime DEFAULT '' NOT NULL,
+	F25725 datetime DEFAULT '' NOT NULL,
+	F25726 datetime DEFAULT '' NOT NULL
+);
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable3094 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	F25758 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F25759 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F25760 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F25761 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F25762 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F25763 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F25764 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F25765 numeric(20,0) DEFAULT 0 NOT NULL,
+	F25766 numeric(20,2) DEFAULT 0 NOT NULL,
+	F25767 numeric(20,2) DEFAULT 0 NOT NULL,
+	F25768 numeric(20,0) DEFAULT 0 NOT NULL,
+	F25769 numeric(20,0) DEFAULT 0 NOT NULL,
+	F25772 datetime DEFAULT '' NOT NULL,
+	F25773 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F25774 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F25775 numeric(20,2) DEFAULT 0 NOT NULL,
+	F25776 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F25777 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26028 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable3095 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	RepID int DEFAULT 0 NOT NULL,
+	FillDate datetime DEFAULT '' NOT NULL,
+	ModifyDate datetime DEFAULT '' NOT NULL,
+	DeptID int DEFAULT 0 NOT NULL,
+	OperID int DEFAULT 0 NOT NULL,
+	sDesc nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	bIsFinish char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bLocked char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bCanViewWhenNoFinished char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	OperID2 int DEFAULT '0' NOT NULL,
+	dUpdate2 datetime NULL,
+	F25778 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F25779 datetime DEFAULT '' NOT NULL,
+	F25780 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F25781 datetime DEFAULT '' NOT NULL,
+	F25782 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F25783 datetime DEFAULT '' NOT NULL,
+	F25784 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F25785 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F25786 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable3100 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	F25855 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F25856 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F25857 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F25858 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F25859 numeric(20,1) DEFAULT 0 NOT NULL,
+	F25860 numeric(20,2) DEFAULT 0 NOT NULL,
+	F25861 numeric(20,2) DEFAULT 0 NOT NULL,
+	F25862 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F25863 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F25864 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F25865 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F25866 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29560 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29561 nvarchar(200) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29562 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29564 datetime DEFAULT '' NOT NULL,
+	F29565 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29566 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29567 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29568 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29569 nvarchar(200) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29570 nvarchar(200) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29571 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29572 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29577 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable3101 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	RepID int DEFAULT 0 NOT NULL,
+	FillDate datetime DEFAULT '' NOT NULL,
+	ModifyDate datetime DEFAULT '' NOT NULL,
+	DeptID int DEFAULT 0 NOT NULL,
+	OperID int DEFAULT 0 NOT NULL,
+	sDesc nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	bIsFinish char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bLocked char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bCanViewWhenNoFinished char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	OperID2 int DEFAULT '0' NOT NULL,
+	dUpdate2 datetime NULL,
+	F25879 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F25880 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F25881 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F25882 numeric(20,2) DEFAULT 0 NOT NULL,
+	F25883 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F25884 datetime DEFAULT '' NOT NULL,
+	F25885 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F25886 datetime DEFAULT '' NOT NULL,
+	F25887 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F25888 datetime DEFAULT '' NOT NULL,
+	F25889 datetime DEFAULT '' NOT NULL,
+	F25890 datetime DEFAULT '' NOT NULL,
+	F26025 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable3102 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	F25891 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F25892 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F25893 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F25894 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F25895 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F25896 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F25897 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F25898 numeric(20,0) DEFAULT 0 NOT NULL,
+	F25899 numeric(20,2) DEFAULT 0 NOT NULL,
+	F25900 numeric(20,2) DEFAULT 0 NOT NULL,
+	F25901 numeric(20,0) DEFAULT 0 NOT NULL,
+	F25902 numeric(20,0) DEFAULT 0 NOT NULL,
+	F25905 datetime DEFAULT '' NOT NULL,
+	F25906 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F25907 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F25908 numeric(20,2) DEFAULT 0 NOT NULL,
+	F25909 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29578 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29579 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29580 nvarchar(200) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29581 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29582 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable3103 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	RepID int DEFAULT 0 NOT NULL,
+	FillDate datetime DEFAULT '' NOT NULL,
+	ModifyDate datetime DEFAULT '' NOT NULL,
+	DeptID int DEFAULT 0 NOT NULL,
+	OperID int DEFAULT 0 NOT NULL,
+	sDesc nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	bIsFinish char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bLocked char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bCanViewWhenNoFinished char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	OperID2 int DEFAULT '0' NOT NULL,
+	dUpdate2 datetime NULL,
+	F25911 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F25912 datetime DEFAULT '' NOT NULL,
+	F25913 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F25914 datetime DEFAULT '' NOT NULL,
+	F25915 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F25916 datetime DEFAULT '' NOT NULL,
+	F25917 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable3106 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	RepID int DEFAULT 0 NOT NULL,
+	FillDate datetime DEFAULT '' NOT NULL,
+	ModifyDate datetime DEFAULT '' NOT NULL,
+	DeptID int DEFAULT 0 NOT NULL,
+	OperID int DEFAULT 0 NOT NULL,
+	sDesc nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	bIsFinish char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bLocked char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bCanViewWhenNoFinished char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	OperID2 int DEFAULT '0' NOT NULL,
+	dUpdate2 datetime NULL,
+	F25934 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable3107 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	F25935 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F25936 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F25937 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F25938 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F25939 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F25940 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F25941 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F25942 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F25943 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F25944 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F25945 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable3112 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	F25970 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F25971 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F25972 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F25973 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F25974 datetime DEFAULT '' NOT NULL,
+	F25975 datetime DEFAULT '' NOT NULL,
+	F25976 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F25977 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F25978 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F25979 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26022 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable3113 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	RepID int DEFAULT 0 NOT NULL,
+	FillDate datetime DEFAULT '' NOT NULL,
+	ModifyDate datetime DEFAULT '' NOT NULL,
+	DeptID int DEFAULT 0 NOT NULL,
+	OperID int DEFAULT 0 NOT NULL,
+	sDesc nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	bIsFinish char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bLocked char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bCanViewWhenNoFinished char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	OperID2 int DEFAULT '0' NOT NULL,
+	dUpdate2 datetime NULL,
+	F25980 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable3114 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	F25982 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F25983 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F25984 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F25985 numeric(20,0) DEFAULT 0 NOT NULL,
+	F25986 numeric(20,2) DEFAULT 0 NOT NULL,
+	F25987 numeric(20,2) DEFAULT 0 NOT NULL,
+	F25988 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F25989 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F25990 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F25991 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F25992 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F25995 datetime DEFAULT '' NOT NULL,
+	F25996 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F25997 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F25998 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F25999 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26000 nvarchar(100) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26001 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26002 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26018 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26019 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26020 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26021 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26023 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26065 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable3116 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	RepID int DEFAULT 0 NOT NULL,
+	FillDate datetime DEFAULT '' NOT NULL,
+	ModifyDate datetime DEFAULT '' NOT NULL,
+	DeptID int DEFAULT 0 NOT NULL,
+	OperID int DEFAULT 0 NOT NULL,
+	sDesc nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	bIsFinish char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bLocked char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bCanViewWhenNoFinished char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	OperID2 int DEFAULT '0' NOT NULL,
+	dUpdate2 datetime NULL,
+	F26014 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable3117 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	F26030 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26031 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26032 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26033 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26034 numeric(20,1) DEFAULT 0 NOT NULL,
+	F26035 numeric(20,2) DEFAULT 0 NOT NULL,
+	F26036 numeric(20,2) DEFAULT 0 NOT NULL,
+	F26037 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26038 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26039 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26040 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26041 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26042 datetime DEFAULT '' NOT NULL,
+	F26043 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26044 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26045 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26046 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26047 nvarchar(100) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26048 nvarchar(200) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26049 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26050 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26554 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable3118 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	RepID int DEFAULT 0 NOT NULL,
+	FillDate datetime DEFAULT '' NOT NULL,
+	ModifyDate datetime DEFAULT '' NOT NULL,
+	DeptID int DEFAULT 0 NOT NULL,
+	OperID int DEFAULT 0 NOT NULL,
+	sDesc nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	bIsFinish char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bLocked char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bCanViewWhenNoFinished char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	OperID2 int DEFAULT '0' NOT NULL,
+	dUpdate2 datetime NULL,
+	F26052 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26053 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26054 numeric(20,2) DEFAULT 0 NOT NULL,
+	F26055 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26056 datetime DEFAULT '' NOT NULL,
+	F26057 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26058 datetime DEFAULT '' NOT NULL,
+	F26059 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26060 datetime DEFAULT '' NOT NULL,
+	F26061 datetime DEFAULT '' NOT NULL,
+	F26062 datetime DEFAULT '' NOT NULL,
+	F26063 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26064 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable3122 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	F26096 datetime DEFAULT '' NOT NULL,
+	F26097 datetime DEFAULT '' NOT NULL,
+	F26098 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26099 nvarchar(100) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26101 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26102 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26117 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26455 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable3123 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	RepID int DEFAULT 0 NOT NULL,
+	FillDate datetime DEFAULT '' NOT NULL,
+	ModifyDate datetime DEFAULT '' NOT NULL,
+	DeptID int DEFAULT 0 NOT NULL,
+	OperID int DEFAULT 0 NOT NULL,
+	sDesc nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	bIsFinish char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bLocked char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bCanViewWhenNoFinished char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	OperID2 int DEFAULT '0' NOT NULL,
+	dUpdate2 datetime NULL,
+	F26100 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26115 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26116 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable3126 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	RepID int DEFAULT 0 NOT NULL,
+	FillDate datetime DEFAULT '' NOT NULL,
+	ModifyDate datetime DEFAULT '' NOT NULL,
+	DeptID int DEFAULT 0 NOT NULL,
+	OperID int DEFAULT 0 NOT NULL,
+	sDesc nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	bIsFinish char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bLocked char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bCanViewWhenNoFinished char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	OperID2 int DEFAULT '0' NOT NULL,
+	dUpdate2 datetime NULL,
+	F26120 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26121 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable3127 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	F26122 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26123 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26124 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26125 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26126 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26127 datetime DEFAULT '' NOT NULL,
+	F26128 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26129 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26130 datetime DEFAULT '' NOT NULL
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable3128 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	F26132 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26133 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26134 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26135 nvarchar(100) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26136 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26137 datetime DEFAULT '' NOT NULL,
+	F26140 datetime DEFAULT '' NOT NULL,
+	F26251 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26252 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26299 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26300 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26301 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26302 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable3143 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	RepID int DEFAULT 0 NOT NULL,
+	FillDate datetime DEFAULT '' NOT NULL,
+	ModifyDate datetime DEFAULT '' NOT NULL,
+	DeptID int DEFAULT 0 NOT NULL,
+	OperID int DEFAULT 0 NOT NULL,
+	sDesc nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	bIsFinish char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bLocked char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bCanViewWhenNoFinished char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	OperID2 int DEFAULT '0' NOT NULL,
+	dUpdate2 datetime NULL,
+	F26245 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26246 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26247 numeric(20,0) NULL,
+	F26248 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26249 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26255 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26261 nvarchar(500) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26289 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26290 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26291 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26292 datetime DEFAULT '' NOT NULL,
+	F26293 datetime DEFAULT '' NOT NULL,
+	F26294 datetime DEFAULT '' NOT NULL,
+	F26338 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26443 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable3144 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	F26256 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26257 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26258 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26259 nvarchar(500) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26260 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable3145 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	F26262 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26263 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26264 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26265 nvarchar(1000) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26266 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable3146 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	F26267 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26268 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26269 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26270 numeric(20,0) NULL,
+	F26271 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26272 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26273 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26274 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26275 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable3147 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	F26276 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26277 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26278 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26279 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26280 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26281 numeric(20,0) NULL,
+	F26282 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26283 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable3148 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	F26284 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26285 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26286 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26287 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26288 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable3149 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	RepID int DEFAULT 0 NOT NULL,
+	FillDate datetime DEFAULT '' NOT NULL,
+	ModifyDate datetime DEFAULT '' NOT NULL,
+	DeptID int DEFAULT 0 NOT NULL,
+	OperID int DEFAULT 0 NOT NULL,
+	sDesc nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	bIsFinish char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bLocked char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bCanViewWhenNoFinished char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	OperID2 int DEFAULT '0' NOT NULL,
+	dUpdate2 datetime NULL,
+	F26295 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable3150 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	F26296 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26297 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable3152 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	F26305 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26306 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26307 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26308 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26309 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26310 datetime DEFAULT '' NOT NULL,
+	F26311 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26312 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26313 datetime DEFAULT '' NOT NULL
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable3154 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	RepID int DEFAULT 0 NOT NULL,
+	FillDate datetime DEFAULT '' NOT NULL,
+	ModifyDate datetime DEFAULT '' NOT NULL,
+	DeptID int DEFAULT 0 NOT NULL,
+	OperID int DEFAULT 0 NOT NULL,
+	sDesc nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	bIsFinish char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bLocked char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bCanViewWhenNoFinished char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	OperID2 int DEFAULT '0' NOT NULL,
+	dUpdate2 datetime NULL,
+	F26327 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable3155 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	F26328 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26329 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26330 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26331 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26332 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26333 datetime DEFAULT '' NOT NULL,
+	F26334 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26335 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26336 datetime DEFAULT '' NOT NULL,
+	F26423 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable3156 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	RepID int DEFAULT 0 NOT NULL,
+	FillDate datetime DEFAULT '' NOT NULL,
+	ModifyDate datetime DEFAULT '' NOT NULL,
+	DeptID int DEFAULT 0 NOT NULL,
+	OperID int DEFAULT 0 NOT NULL,
+	sDesc nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	bIsFinish char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bLocked char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bCanViewWhenNoFinished char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	OperID2 int DEFAULT '0' NOT NULL,
+	dUpdate2 datetime NULL,
+	F26337 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable3157 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	F26339 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26340 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26341 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26342 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26343 datetime DEFAULT '' NOT NULL,
+	F26344 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26345 nvarchar(100) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26346 nvarchar(100) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26347 numeric(20,1) DEFAULT 0 NOT NULL,
+	F26348 numeric(20,1) DEFAULT 0 NOT NULL,
+	F26349 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26350 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26351 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable3158 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	RepID int DEFAULT 0 NOT NULL,
+	FillDate datetime DEFAULT '' NOT NULL,
+	ModifyDate datetime DEFAULT '' NOT NULL,
+	DeptID int DEFAULT 0 NOT NULL,
+	OperID int DEFAULT 0 NOT NULL,
+	sDesc nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	bIsFinish char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bLocked char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bCanViewWhenNoFinished char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	OperID2 int DEFAULT '0' NOT NULL,
+	dUpdate2 datetime NULL,
+	F26352 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable3165 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	RepID int DEFAULT 0 NOT NULL,
+	FillDate datetime DEFAULT '' NOT NULL,
+	ModifyDate datetime DEFAULT '' NOT NULL,
+	DeptID int DEFAULT 0 NOT NULL,
+	OperID int DEFAULT 0 NOT NULL,
+	sDesc nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	bIsFinish char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bLocked char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bCanViewWhenNoFinished char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	OperID2 int DEFAULT '0' NOT NULL,
+	dUpdate2 datetime NULL,
+	F26399 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26400 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable3166 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	F26401 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26402 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26403 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26404 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26405 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26406 datetime DEFAULT '' NOT NULL,
+	F26407 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26408 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26409 datetime DEFAULT '' NOT NULL
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable3167 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	F26410 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26411 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26412 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26413 nvarchar(100) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26414 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26415 datetime DEFAULT '' NOT NULL,
+	F26416 datetime DEFAULT '' NOT NULL,
+	F26417 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26418 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26419 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26420 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26421 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26422 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable3168 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	F26424 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26425 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26426 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26427 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26433 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26435 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26439 datetime DEFAULT '' NOT NULL,
+	F26440 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26441 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26442 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable3170 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	RepID int DEFAULT 0 NOT NULL,
+	FillDate datetime DEFAULT '' NOT NULL,
+	ModifyDate datetime DEFAULT '' NOT NULL,
+	DeptID int DEFAULT 0 NOT NULL,
+	OperID int DEFAULT 0 NOT NULL,
+	sDesc nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	bIsFinish char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bLocked char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bCanViewWhenNoFinished char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	OperID2 int DEFAULT '0' NOT NULL,
+	dUpdate2 datetime NULL,
+	F26436 datetime DEFAULT '' NOT NULL,
+	F26437 datetime DEFAULT '' NOT NULL,
+	F26438 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable3171 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	F26444 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26445 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26446 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26447 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26448 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26449 datetime DEFAULT '' NOT NULL,
+	F26450 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26451 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26452 datetime DEFAULT '' NOT NULL,
+	F26456 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26457 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable3172 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	RepID int DEFAULT 0 NOT NULL,
+	FillDate datetime DEFAULT '' NOT NULL,
+	ModifyDate datetime DEFAULT '' NOT NULL,
+	DeptID int DEFAULT 0 NOT NULL,
+	OperID int DEFAULT 0 NOT NULL,
+	sDesc nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	bIsFinish char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bLocked char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bCanViewWhenNoFinished char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	OperID2 int DEFAULT '0' NOT NULL,
+	dUpdate2 datetime NULL,
+	F26454 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable3174 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	RepID int DEFAULT 0 NOT NULL,
+	FillDate datetime DEFAULT '' NOT NULL,
+	ModifyDate datetime DEFAULT '' NOT NULL,
+	DeptID int DEFAULT 0 NOT NULL,
+	OperID int DEFAULT 0 NOT NULL,
+	sDesc nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	bIsFinish char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bLocked char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bCanViewWhenNoFinished char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	OperID2 int DEFAULT '0' NOT NULL,
+	dUpdate2 datetime NULL,
+	F26466 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26467 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26476 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable3175 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	F26469 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26470 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26471 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26472 datetime DEFAULT '' NOT NULL,
+	F26473 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26474 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26475 datetime DEFAULT '' NOT NULL
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable3176 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	RepID int DEFAULT 0 NOT NULL,
+	FillDate datetime DEFAULT '' NOT NULL,
+	ModifyDate datetime DEFAULT '' NOT NULL,
+	DeptID int DEFAULT 0 NOT NULL,
+	OperID int DEFAULT 0 NOT NULL,
+	sDesc nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	bIsFinish char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bLocked char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bCanViewWhenNoFinished char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	OperID2 int DEFAULT '0' NOT NULL,
+	dUpdate2 datetime NULL,
+	F26477 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26478 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26479 numeric(20,0) NULL,
+	F26480 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26481 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26482 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26483 nvarchar(500) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26484 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26485 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26486 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26487 datetime DEFAULT '' NOT NULL,
+	F26488 datetime DEFAULT '' NOT NULL,
+	F26489 datetime DEFAULT '' NOT NULL,
+	F26490 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26491 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable3177 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	F26492 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26493 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26494 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26495 nvarchar(500) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26496 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable3178 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	F26497 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26498 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26499 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26500 nvarchar(1000) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26501 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable3179 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	F26502 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26503 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26504 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26505 numeric(20,0) NULL,
+	F26506 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26507 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26508 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26509 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26510 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable3180 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	F26511 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26512 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26513 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26514 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26515 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26516 numeric(20,0) NULL,
+	F26517 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26518 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable3181 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	F26519 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26520 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26521 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26522 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26523 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable3184 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	F26544 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26545 datetime DEFAULT '' NOT NULL,
+	F26546 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26547 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable3185 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	F26548 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26549 datetime DEFAULT '' NOT NULL,
+	F26550 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26551 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable3187 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	F26555 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26556 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26557 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26558 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26559 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26560 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26561 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26562 numeric(20,0) DEFAULT 0 NOT NULL,
+	F26563 numeric(20,2) DEFAULT 0 NOT NULL,
+	F26564 numeric(20,2) DEFAULT 0 NOT NULL,
+	F26565 numeric(20,0) DEFAULT 0 NOT NULL,
+	F26566 numeric(20,0) DEFAULT 0 NOT NULL,
+	F26567 datetime DEFAULT '' NOT NULL,
+	F26568 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26569 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26570 numeric(20,2) DEFAULT 0 NOT NULL,
+	F26571 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26572 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26573 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F28122 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable3188 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	RepID int DEFAULT 0 NOT NULL,
+	FillDate datetime DEFAULT '' NOT NULL,
+	ModifyDate datetime DEFAULT '' NOT NULL,
+	DeptID int DEFAULT 0 NOT NULL,
+	OperID int DEFAULT 0 NOT NULL,
+	sDesc nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	bIsFinish char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bLocked char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bCanViewWhenNoFinished char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	OperID2 int DEFAULT '0' NOT NULL,
+	dUpdate2 datetime NULL,
+	F26574 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26575 datetime DEFAULT '' NOT NULL,
+	F26576 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26577 datetime DEFAULT '' NOT NULL,
+	F26578 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26579 datetime DEFAULT '' NOT NULL,
+	F26580 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26581 nvarchar(100) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable3192 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	RepID int DEFAULT 0 NOT NULL,
+	FillDate datetime DEFAULT '' NOT NULL,
+	ModifyDate datetime DEFAULT '' NOT NULL,
+	DeptID int DEFAULT 0 NOT NULL,
+	OperID int DEFAULT 0 NOT NULL,
+	sDesc nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	bIsFinish char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bLocked char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bCanViewWhenNoFinished char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	OperID2 int DEFAULT '0' NOT NULL,
+	dUpdate2 datetime NULL,
+	F26602 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26603 datetime DEFAULT '' NOT NULL,
+	F26604 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26605 datetime DEFAULT '' NOT NULL,
+	F26606 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable3193 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	F26607 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26608 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26609 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26610 numeric(20,0) DEFAULT 0 NOT NULL
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable3195 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	RepID int DEFAULT 0 NOT NULL,
+	FillDate datetime DEFAULT '' NOT NULL,
+	ModifyDate datetime DEFAULT '' NOT NULL,
+	DeptID int DEFAULT 0 NOT NULL,
+	OperID int DEFAULT 0 NOT NULL,
+	sDesc nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	bIsFinish char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bLocked char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bCanViewWhenNoFinished char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	OperID2 int DEFAULT '0' NOT NULL,
+	dUpdate2 datetime NULL,
+	F26632 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26634 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26635 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26636 datetime DEFAULT '' NOT NULL,
+	F26640 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26641 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26642 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27403 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27894 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable3202 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	RepID int DEFAULT 0 NOT NULL,
+	FillDate datetime DEFAULT '' NOT NULL,
+	ModifyDate datetime DEFAULT '' NOT NULL,
+	DeptID int DEFAULT 0 NOT NULL,
+	OperID int DEFAULT 0 NOT NULL,
+	sDesc nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	bIsFinish char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bLocked char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bCanViewWhenNoFinished char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	OperID2 int DEFAULT '0' NOT NULL,
+	dUpdate2 datetime NULL,
+	F26684 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26685 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26686 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26687 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26746 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26747 datetime DEFAULT '' NOT NULL
+);
+ 
+ 
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable3204 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	RepID int DEFAULT 0 NOT NULL,
+	FillDate datetime DEFAULT '' NOT NULL,
+	ModifyDate datetime DEFAULT '' NOT NULL,
+	DeptID int DEFAULT 0 NOT NULL,
+	OperID int DEFAULT 0 NOT NULL,
+	sDesc nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	bIsFinish char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bLocked char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bCanViewWhenNoFinished char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	OperID2 int DEFAULT '0' NOT NULL,
+	dUpdate2 datetime NULL,
+	F26699 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26700 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable3205 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	F26701 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26702 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26703 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26704 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26705 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26706 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26707 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26709 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26710 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26738 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable3206 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	F26715 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26716 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26717 nvarchar(100) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26718 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26719 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26720 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26721 nvarchar(100) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26722 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26723 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable3207 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	RepID int DEFAULT 0 NOT NULL,
+	FillDate datetime DEFAULT '' NOT NULL,
+	ModifyDate datetime DEFAULT '' NOT NULL,
+	DeptID int DEFAULT 0 NOT NULL,
+	OperID int DEFAULT 0 NOT NULL,
+	sDesc nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	bIsFinish char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bLocked char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bCanViewWhenNoFinished char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	OperID2 int DEFAULT '0' NOT NULL,
+	dUpdate2 datetime NULL,
+	F26724 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable3208 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	F26726 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26727 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26728 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26729 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26733 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26735 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable3209 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	F26739 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26740 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26741 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26742 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26743 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26744 nvarchar(200) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26745 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable3210 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	RepID int DEFAULT 0 NOT NULL,
+	FillDate datetime DEFAULT '' NOT NULL,
+	ModifyDate datetime DEFAULT '' NOT NULL,
+	DeptID int DEFAULT 0 NOT NULL,
+	OperID int DEFAULT 0 NOT NULL,
+	sDesc nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	bIsFinish char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bLocked char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bCanViewWhenNoFinished char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	OperID2 int DEFAULT '0' NOT NULL,
+	dUpdate2 datetime NULL,
+	F26748 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable3211 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	F26749 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26750 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26751 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26752 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26753 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26754 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26755 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26756 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26757 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26758 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26759 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable3212 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	F26760 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26761 datetime DEFAULT '' NOT NULL,
+	F26762 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26763 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26764 datetime DEFAULT '' NOT NULL,
+	F26765 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26766 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26767 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26768 nvarchar(100) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26769 nvarchar(2000) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26770 nvarchar(2000) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26771 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26772 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26773 datetime DEFAULT '' NOT NULL,
+	F26774 datetime DEFAULT '' NOT NULL,
+	F26775 nvarchar(100) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26776 datetime DEFAULT '' NOT NULL,
+	F26966 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable3213 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	F26777 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26778 datetime DEFAULT '' NOT NULL,
+	F26779 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26782 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26783 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26785 nvarchar(100) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26786 nvarchar(2000) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26787 nvarchar(2000) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26789 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26790 datetime DEFAULT '' NOT NULL,
+	F26791 datetime DEFAULT '' NOT NULL,
+	F26792 nvarchar(100) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26814 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26883 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26884 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26885 datetime DEFAULT '' NOT NULL,
+	F26906 datetime DEFAULT '' NOT NULL,
+	F26965 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27120 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable3214 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	F26794 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26795 datetime DEFAULT '' NOT NULL,
+	F26796 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26797 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26798 datetime DEFAULT '' NOT NULL,
+	F26799 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26800 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26801 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26802 nvarchar(100) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26805 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26806 datetime DEFAULT '' NOT NULL,
+	F26807 datetime DEFAULT '' NOT NULL,
+	F26808 nvarchar(100) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26816 datetime DEFAULT '' NOT NULL,
+	F26817 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26995 nvarchar(2000) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable3215 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	RepID int DEFAULT 0 NOT NULL,
+	FillDate datetime DEFAULT '' NOT NULL,
+	ModifyDate datetime DEFAULT '' NOT NULL,
+	DeptID int DEFAULT 0 NOT NULL,
+	OperID int DEFAULT 0 NOT NULL,
+	sDesc nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	bIsFinish char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bLocked char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bCanViewWhenNoFinished char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	OperID2 int DEFAULT '0' NOT NULL,
+	dUpdate2 datetime NULL,
+	F26809 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26810 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27119 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable3216 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	RepID int DEFAULT 0 NOT NULL,
+	FillDate datetime DEFAULT '' NOT NULL,
+	ModifyDate datetime DEFAULT '' NOT NULL,
+	DeptID int DEFAULT 0 NOT NULL,
+	OperID int DEFAULT 0 NOT NULL,
+	sDesc nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	bIsFinish char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bLocked char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bCanViewWhenNoFinished char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	OperID2 int DEFAULT '0' NOT NULL,
+	dUpdate2 datetime NULL,
+	F26811 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26812 datetime DEFAULT '' NOT NULL,
+	F26813 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26815 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable3221 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	RepID int DEFAULT 0 NOT NULL,
+	FillDate datetime DEFAULT '' NOT NULL,
+	ModifyDate datetime DEFAULT '' NOT NULL,
+	DeptID int DEFAULT 0 NOT NULL,
+	OperID int DEFAULT 0 NOT NULL,
+	sDesc nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	bIsFinish char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bLocked char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bCanViewWhenNoFinished char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	OperID2 int DEFAULT '0' NOT NULL,
+	dUpdate2 datetime NULL,
+	F26852 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26853 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26854 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26855 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26856 datetime DEFAULT '' NOT NULL,
+	F26857 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26858 nvarchar(500) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26859 nvarchar(2000) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26860 datetime DEFAULT '' NOT NULL,
+	F26861 nvarchar(100) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26862 datetime DEFAULT '' NOT NULL,
+	F26863 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26864 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26890 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable3222 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	RepID int DEFAULT 0 NOT NULL,
+	FillDate datetime DEFAULT '' NOT NULL,
+	ModifyDate datetime DEFAULT '' NOT NULL,
+	DeptID int DEFAULT 0 NOT NULL,
+	OperID int DEFAULT 0 NOT NULL,
+	sDesc nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	bIsFinish char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bLocked char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bCanViewWhenNoFinished char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	OperID2 int DEFAULT '0' NOT NULL,
+	dUpdate2 datetime NULL,
+	F26865 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable3223 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	F26866 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26867 datetime DEFAULT '' NOT NULL,
+	F26868 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26869 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26870 datetime DEFAULT '' NOT NULL,
+	F26872 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26873 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26874 nvarchar(100) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26875 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26876 datetime DEFAULT '' NOT NULL,
+	F26877 datetime DEFAULT '' NOT NULL,
+	F26879 datetime DEFAULT '' NOT NULL,
+	F26880 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26887 nvarchar(500) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26888 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26889 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26967 nvarchar(1000) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26968 nvarchar(1000) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable3225 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	RepID int DEFAULT 0 NOT NULL,
+	FillDate datetime DEFAULT '' NOT NULL,
+	ModifyDate datetime DEFAULT '' NOT NULL,
+	DeptID int DEFAULT 0 NOT NULL,
+	OperID int DEFAULT 0 NOT NULL,
+	sDesc nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	bIsFinish char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bLocked char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bCanViewWhenNoFinished char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	OperID2 int DEFAULT '0' NOT NULL,
+	dUpdate2 datetime NULL,
+	F26886 datetime DEFAULT '' NOT NULL,
+	F26969 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable3227 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	F26907 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26909 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26910 datetime DEFAULT '' NOT NULL,
+	F26911 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26912 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26913 datetime DEFAULT '' NOT NULL,
+	F26914 nvarchar(100) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26915 nvarchar(500) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26916 nvarchar(500) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26917 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26918 datetime DEFAULT '' NOT NULL,
+	F26921 nvarchar(100) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26922 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable3228 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	RepID int DEFAULT 0 NOT NULL,
+	FillDate datetime DEFAULT '' NOT NULL,
+	ModifyDate datetime DEFAULT '' NOT NULL,
+	DeptID int DEFAULT 0 NOT NULL,
+	OperID int DEFAULT 0 NOT NULL,
+	sDesc nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	bIsFinish char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bLocked char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bCanViewWhenNoFinished char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	OperID2 int DEFAULT '0' NOT NULL,
+	dUpdate2 datetime NULL,
+	F26920 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable323 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	RepID int DEFAULT 0 NOT NULL,
+	FillDate datetime DEFAULT '' NOT NULL,
+	ModifyDate datetime DEFAULT '' NOT NULL,
+	DeptID int DEFAULT 0 NOT NULL,
+	OperID int DEFAULT 0 NOT NULL,
+	sDesc nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	bIsFinish char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bLocked char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bCanViewWhenNoFinished char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	OperID2 int DEFAULT '0' NOT NULL,
+	dUpdate2 datetime NULL,
+	F16092 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F16093 datetime DEFAULT '' NOT NULL
+);
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable3232 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	F26938 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26939 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26940 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26941 numeric(20,0) DEFAULT 0 NOT NULL,
+	F26942 numeric(20,0) DEFAULT 0 NOT NULL,
+	F26943 datetime DEFAULT '' NOT NULL,
+	F26944 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable3233 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	RepID int DEFAULT 0 NOT NULL,
+	FillDate datetime DEFAULT '' NOT NULL,
+	ModifyDate datetime DEFAULT '' NOT NULL,
+	DeptID int DEFAULT 0 NOT NULL,
+	OperID int DEFAULT 0 NOT NULL,
+	sDesc nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	bIsFinish char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bLocked char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bCanViewWhenNoFinished char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	OperID2 int DEFAULT '0' NOT NULL,
+	dUpdate2 datetime NULL,
+	F26945 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26946 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26947 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26948 datetime DEFAULT '' NOT NULL,
+	F26949 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable3234 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	RepID int DEFAULT 0 NOT NULL,
+	FillDate datetime DEFAULT '' NOT NULL,
+	ModifyDate datetime DEFAULT '' NOT NULL,
+	DeptID int DEFAULT 0 NOT NULL,
+	OperID int DEFAULT 0 NOT NULL,
+	sDesc nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	bIsFinish char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bLocked char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bCanViewWhenNoFinished char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	OperID2 int DEFAULT '0' NOT NULL,
+	dUpdate2 datetime NULL,
+	F26950 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26951 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26952 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26953 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26954 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26955 datetime DEFAULT '' NOT NULL
+);
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable3236 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	F26957 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26958 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26959 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26960 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26961 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26962 datetime DEFAULT '' NOT NULL,
+	F26963 nvarchar(100) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26964 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27451 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable3237 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	RepID int DEFAULT 0 NOT NULL,
+	FillDate datetime DEFAULT '' NOT NULL,
+	ModifyDate datetime DEFAULT '' NOT NULL,
+	DeptID int DEFAULT 0 NOT NULL,
+	OperID int DEFAULT 0 NOT NULL,
+	sDesc nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	bIsFinish char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bLocked char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bCanViewWhenNoFinished char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	OperID2 int DEFAULT '0' NOT NULL,
+	dUpdate2 datetime NULL,
+	F27445 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable3238 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	F26972 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26973 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26974 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26981 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27405 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27895 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable3239 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	RepID int DEFAULT 0 NOT NULL,
+	FillDate datetime DEFAULT '' NOT NULL,
+	ModifyDate datetime DEFAULT '' NOT NULL,
+	DeptID int DEFAULT 0 NOT NULL,
+	OperID int DEFAULT 0 NOT NULL,
+	sDesc nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	bIsFinish char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bLocked char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bCanViewWhenNoFinished char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	OperID2 int DEFAULT '0' NOT NULL,
+	dUpdate2 datetime NULL,
+	F26983 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26984 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26996 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26997 datetime DEFAULT '' NOT NULL,
+	F27404 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable324 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	F2545 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F2546 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F2547 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F2548 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F2549 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F2661 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F2662 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F16091 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable3240 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	F26988 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26989 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26990 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26991 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26992 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26993 nvarchar(200) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F26994 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable3241 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	RepID int DEFAULT 0 NOT NULL,
+	FillDate datetime DEFAULT '' NOT NULL,
+	ModifyDate datetime DEFAULT '' NOT NULL,
+	DeptID int DEFAULT 0 NOT NULL,
+	OperID int DEFAULT 0 NOT NULL,
+	sDesc nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	bIsFinish char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bLocked char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bCanViewWhenNoFinished char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	OperID2 int DEFAULT '0' NOT NULL,
+	dUpdate2 datetime NULL,
+	F26998 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable3242 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	F26999 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27000 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27001 numeric(20,0) DEFAULT 0 NOT NULL
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable3245 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	F27010 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27011 datetime DEFAULT '' NOT NULL,
+	F27012 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27013 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27014 datetime DEFAULT '' NOT NULL,
+	F27015 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27016 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27017 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27018 nvarchar(100) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27019 nvarchar(200) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27020 nvarchar(200) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27021 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27022 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27023 datetime DEFAULT '' NOT NULL,
+	F27024 datetime DEFAULT '' NOT NULL,
+	F27025 nvarchar(100) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27026 datetime DEFAULT '' NOT NULL,
+	F27027 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable3246 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	RepID int DEFAULT 0 NOT NULL,
+	FillDate datetime DEFAULT '' NOT NULL,
+	ModifyDate datetime DEFAULT '' NOT NULL,
+	DeptID int DEFAULT 0 NOT NULL,
+	OperID int DEFAULT 0 NOT NULL,
+	sDesc nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	bIsFinish char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bLocked char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bCanViewWhenNoFinished char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	OperID2 int DEFAULT '0' NOT NULL,
+	dUpdate2 datetime NULL,
+	F27028 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable3247 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	F27029 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27030 datetime DEFAULT '' NOT NULL,
+	F27031 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27032 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27033 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27034 nvarchar(100) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27035 nvarchar(200) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27036 nvarchar(200) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27037 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27038 datetime DEFAULT '' NOT NULL,
+	F27039 datetime DEFAULT '' NOT NULL,
+	F27040 nvarchar(100) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27041 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27042 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27043 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27044 datetime DEFAULT '' NOT NULL,
+	F27045 datetime DEFAULT '' NOT NULL,
+	F27046 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable3248 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	RepID int DEFAULT 0 NOT NULL,
+	FillDate datetime DEFAULT '' NOT NULL,
+	ModifyDate datetime DEFAULT '' NOT NULL,
+	DeptID int DEFAULT 0 NOT NULL,
+	OperID int DEFAULT 0 NOT NULL,
+	sDesc nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	bIsFinish char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bLocked char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bCanViewWhenNoFinished char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	OperID2 int DEFAULT '0' NOT NULL,
+	dUpdate2 datetime NULL,
+	F27047 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27048 datetime DEFAULT '' NOT NULL,
+	F27049 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27050 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable3249 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	F27051 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27052 datetime DEFAULT '' NOT NULL,
+	F27053 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27054 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27055 datetime DEFAULT '' NOT NULL,
+	F27056 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27057 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27058 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27059 nvarchar(100) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27060 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27061 datetime DEFAULT '' NOT NULL,
+	F27062 datetime DEFAULT '' NOT NULL,
+	F27063 nvarchar(100) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27064 datetime DEFAULT '' NOT NULL,
+	F27065 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27066 nvarchar(1000) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable3250 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	RepID int DEFAULT 0 NOT NULL,
+	FillDate datetime DEFAULT '' NOT NULL,
+	ModifyDate datetime DEFAULT '' NOT NULL,
+	DeptID int DEFAULT 0 NOT NULL,
+	OperID int DEFAULT 0 NOT NULL,
+	sDesc nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	bIsFinish char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bLocked char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bCanViewWhenNoFinished char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	OperID2 int DEFAULT '0' NOT NULL,
+	dUpdate2 datetime NULL,
+	F27067 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27068 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable3251 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	RepID int DEFAULT 0 NOT NULL,
+	FillDate datetime DEFAULT '' NOT NULL,
+	ModifyDate datetime DEFAULT '' NOT NULL,
+	DeptID int DEFAULT 0 NOT NULL,
+	OperID int DEFAULT 0 NOT NULL,
+	sDesc nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	bIsFinish char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bLocked char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bCanViewWhenNoFinished char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	OperID2 int DEFAULT '0' NOT NULL,
+	dUpdate2 datetime NULL,
+	F27069 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27070 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27071 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27072 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27073 datetime DEFAULT '' NOT NULL,
+	F27074 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27075 nvarchar(500) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27076 nvarchar(500) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27077 datetime DEFAULT '' NOT NULL,
+	F27078 nvarchar(100) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27079 datetime DEFAULT '' NOT NULL,
+	F27080 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27081 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27082 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable3252 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	F27083 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27084 datetime DEFAULT '' NOT NULL,
+	F27085 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27086 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27087 datetime DEFAULT '' NOT NULL,
+	F27088 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27089 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27090 nvarchar(100) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27091 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27092 datetime DEFAULT '' NOT NULL,
+	F27093 datetime DEFAULT '' NOT NULL,
+	F27094 datetime DEFAULT '' NOT NULL,
+	F27095 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27096 nvarchar(500) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27097 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27098 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27099 nvarchar(1000) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27100 nvarchar(1000) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable3253 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	RepID int DEFAULT 0 NOT NULL,
+	FillDate datetime DEFAULT '' NOT NULL,
+	ModifyDate datetime DEFAULT '' NOT NULL,
+	DeptID int DEFAULT 0 NOT NULL,
+	OperID int DEFAULT 0 NOT NULL,
+	sDesc nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	bIsFinish char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bLocked char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bCanViewWhenNoFinished char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	OperID2 int DEFAULT '0' NOT NULL,
+	dUpdate2 datetime NULL,
+	F27101 datetime DEFAULT '' NOT NULL,
+	F27102 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable3254 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	F27103 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27104 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27105 datetime DEFAULT '' NOT NULL,
+	F27106 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27107 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27108 datetime DEFAULT '' NOT NULL,
+	F27109 nvarchar(100) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27110 nvarchar(500) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27111 nvarchar(500) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27112 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27113 datetime DEFAULT '' NOT NULL,
+	F27114 nvarchar(100) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27115 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable3255 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	RepID int DEFAULT 0 NOT NULL,
+	FillDate datetime DEFAULT '' NOT NULL,
+	ModifyDate datetime DEFAULT '' NOT NULL,
+	DeptID int DEFAULT 0 NOT NULL,
+	OperID int DEFAULT 0 NOT NULL,
+	sDesc nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	bIsFinish char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bLocked char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bCanViewWhenNoFinished char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	OperID2 int DEFAULT '0' NOT NULL,
+	dUpdate2 datetime NULL,
+	F27116 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable3264 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	RepID int DEFAULT 0 NOT NULL,
+	FillDate datetime DEFAULT '' NOT NULL,
+	ModifyDate datetime DEFAULT '' NOT NULL,
+	DeptID int DEFAULT 0 NOT NULL,
+	OperID int DEFAULT 0 NOT NULL,
+	sDesc nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	bIsFinish char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bLocked char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bCanViewWhenNoFinished char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	OperID2 int DEFAULT '0' NOT NULL,
+	dUpdate2 datetime NULL,
+	F27247 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27248 nvarchar(500) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27249 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27250 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27251 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27252 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27253 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27254 nvarchar(100) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27255 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27256 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27257 datetime DEFAULT '' NOT NULL,
+	F27258 nvarchar(200) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27259 nvarchar(100) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27260 nvarchar(100) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27261 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27262 datetime DEFAULT '' NOT NULL,
+	F27263 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27264 datetime DEFAULT '' NOT NULL,
+	F27265 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27266 datetime DEFAULT '' NOT NULL,
+	F27267 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27268 datetime DEFAULT '' NOT NULL,
+	F27269 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27270 datetime DEFAULT '' NOT NULL,
+	F27271 numeric(20,0) DEFAULT 0 NOT NULL,
+	F27272 datetime DEFAULT '' NOT NULL,
+	F27273 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27274 datetime DEFAULT '' NOT NULL,
+	F27275 nvarchar(200) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27276 datetime DEFAULT '' NOT NULL,
+	F27277 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27278 nvarchar(500) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27279 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27280 nvarchar(200) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27281 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27282 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27283 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27284 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27285 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27286 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27287 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27288 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27289 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27290 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27304 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27305 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27306 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27307 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27308 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27309 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27310 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27311 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27312 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable3265 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	F27291 nvarchar(200) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27292 nvarchar(500) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27293 nvarchar(500) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27294 datetime DEFAULT '' NOT NULL,
+	F27295 nvarchar(500) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27296 nvarchar(500) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable3266 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	F27297 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27298 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27299 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27300 datetime DEFAULT '' NOT NULL,
+	F27301 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27302 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27303 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable3269 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	RepID int DEFAULT 0 NOT NULL,
+	FillDate datetime DEFAULT '' NOT NULL,
+	ModifyDate datetime DEFAULT '' NOT NULL,
+	DeptID int DEFAULT 0 NOT NULL,
+	OperID int DEFAULT 0 NOT NULL,
+	sDesc nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	bIsFinish char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bLocked char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bCanViewWhenNoFinished char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	OperID2 int DEFAULT '0' NOT NULL,
+	dUpdate2 datetime NULL,
+	F27355 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27356 datetime DEFAULT '' NOT NULL,
+	F27357 datetime DEFAULT '' NOT NULL
+);
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable3270 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	F27358 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27359 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27360 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27361 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27362 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27363 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27364 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27365 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27366 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27367 datetime DEFAULT '' NOT NULL,
+	F27368 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27369 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27370 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27371 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27372 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27373 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27374 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27375 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27376 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27377 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27378 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27379 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27380 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27381 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27382 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27383 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27384 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27385 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27386 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27387 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27388 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27389 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27390 nvarchar(500) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27391 nvarchar(200) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27392 nvarchar(200) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27393 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27394 numeric(20,0) DEFAULT 0 NOT NULL,
+	F27395 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27396 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable3272 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	RepID int DEFAULT 0 NOT NULL,
+	FillDate datetime DEFAULT '' NOT NULL,
+	ModifyDate datetime DEFAULT '' NOT NULL,
+	DeptID int DEFAULT 0 NOT NULL,
+	OperID int DEFAULT 0 NOT NULL,
+	sDesc nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	bIsFinish char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bLocked char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bCanViewWhenNoFinished char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	OperID2 int DEFAULT '0' NOT NULL,
+	dUpdate2 datetime NULL,
+	F27400 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27401 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27402 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable3273 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	F27406 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27407 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27408 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27409 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27410 datetime DEFAULT '' NOT NULL,
+	F27411 datetime DEFAULT '' NOT NULL,
+	F27412 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27413 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27414 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27415 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27416 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable3274 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	RepID int DEFAULT 0 NOT NULL,
+	FillDate datetime DEFAULT '' NOT NULL,
+	ModifyDate datetime DEFAULT '' NOT NULL,
+	DeptID int DEFAULT 0 NOT NULL,
+	OperID int DEFAULT 0 NOT NULL,
+	sDesc nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	bIsFinish char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bLocked char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bCanViewWhenNoFinished char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	OperID2 int DEFAULT '0' NOT NULL,
+	dUpdate2 datetime NULL,
+	F27417 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable3275 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	F27418 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27419 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27420 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27421 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27422 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27423 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27424 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27425 numeric(20,0) DEFAULT 0 NOT NULL,
+	F27426 numeric(20,2) DEFAULT 0 NOT NULL,
+	F27427 numeric(20,2) DEFAULT 0 NOT NULL,
+	F27428 numeric(20,0) DEFAULT 0 NOT NULL,
+	F27429 numeric(20,0) DEFAULT 0 NOT NULL,
+	F27430 datetime DEFAULT '' NOT NULL,
+	F27431 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27432 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27433 numeric(20,2) DEFAULT 0 NOT NULL,
+	F27434 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27435 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27436 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F28123 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29573 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29574 nvarchar(100) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29575 nvarchar(200) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29576 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable3276 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	RepID int DEFAULT 0 NOT NULL,
+	FillDate datetime DEFAULT '' NOT NULL,
+	ModifyDate datetime DEFAULT '' NOT NULL,
+	DeptID int DEFAULT 0 NOT NULL,
+	OperID int DEFAULT 0 NOT NULL,
+	sDesc nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	bIsFinish char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bLocked char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bCanViewWhenNoFinished char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	OperID2 int DEFAULT '0' NOT NULL,
+	dUpdate2 datetime NULL,
+	F27437 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27438 datetime DEFAULT '' NOT NULL,
+	F27439 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27440 datetime DEFAULT '' NOT NULL,
+	F27441 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27442 datetime DEFAULT '' NOT NULL,
+	F27443 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27444 nvarchar(100) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable3280 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	RepID int DEFAULT 0 NOT NULL,
+	FillDate datetime DEFAULT '' NOT NULL,
+	ModifyDate datetime DEFAULT '' NOT NULL,
+	DeptID int DEFAULT 0 NOT NULL,
+	OperID int DEFAULT 0 NOT NULL,
+	sDesc nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	bIsFinish char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bLocked char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bCanViewWhenNoFinished char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	OperID2 int DEFAULT '0' NOT NULL,
+	dUpdate2 datetime NULL,
+	F27458 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27459 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27460 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27461 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27462 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27463 datetime DEFAULT '' NOT NULL
+);
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable3288 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	RepID int DEFAULT 0 NOT NULL,
+	FillDate datetime DEFAULT '' NOT NULL,
+	ModifyDate datetime DEFAULT '' NOT NULL,
+	DeptID int DEFAULT 0 NOT NULL,
+	OperID int DEFAULT 0 NOT NULL,
+	sDesc nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	bIsFinish char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bLocked char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bCanViewWhenNoFinished char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	OperID2 int DEFAULT '0' NOT NULL,
+	dUpdate2 datetime NULL,
+	F27496 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27497 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27498 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27499 numeric(20,0) DEFAULT 0 NOT NULL,
+	F27500 numeric(20,0) DEFAULT 0 NOT NULL
+);
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable3290 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	F27503 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27504 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27505 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27513 nvarchar(200) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27514 nvarchar(1000) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27515 datetime DEFAULT '' NOT NULL,
+	F27516 datetime DEFAULT '' NOT NULL,
+	F27517 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27518 nvarchar(1000) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable3293 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	F27523 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27524 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27525 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27526 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27527 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27528 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27529 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27530 datetime DEFAULT '' NOT NULL,
+	F27531 datetime DEFAULT '' NOT NULL
+);
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable3294 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	F27532 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27533 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27534 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27535 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27536 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27537 datetime DEFAULT '' NOT NULL,
+	F27538 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable3295 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	RepID int DEFAULT 0 NOT NULL,
+	FillDate datetime DEFAULT '' NOT NULL,
+	ModifyDate datetime DEFAULT '' NOT NULL,
+	DeptID int DEFAULT 0 NOT NULL,
+	OperID int DEFAULT 0 NOT NULL,
+	sDesc nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	bIsFinish char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bLocked char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bCanViewWhenNoFinished char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	OperID2 int DEFAULT '0' NOT NULL,
+	dUpdate2 datetime NULL,
+	F27539 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27540 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27541 numeric(20,2) DEFAULT 0 NOT NULL,
+	F27542 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27543 numeric(20,0) DEFAULT 0 NOT NULL
+);
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable3296 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	RepID int DEFAULT 0 NOT NULL,
+	FillDate datetime DEFAULT '' NOT NULL,
+	ModifyDate datetime DEFAULT '' NOT NULL,
+	DeptID int DEFAULT 0 NOT NULL,
+	OperID int DEFAULT 0 NOT NULL,
+	sDesc nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	bIsFinish char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bLocked char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bCanViewWhenNoFinished char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	OperID2 int DEFAULT '0' NOT NULL,
+	dUpdate2 datetime NULL,
+	F27544 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27545 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27546 numeric(20,2) DEFAULT 0 NOT NULL,
+	F27547 numeric(20,0) DEFAULT 0 NOT NULL,
+	F27548 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable3297 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	F27549 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27550 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27551 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27552 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27553 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27554 numeric(20,0) DEFAULT 0 NOT NULL,
+	F27555 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27556 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27557 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable3298 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	RepID int DEFAULT 0 NOT NULL,
+	FillDate datetime DEFAULT '' NOT NULL,
+	ModifyDate datetime DEFAULT '' NOT NULL,
+	DeptID int DEFAULT 0 NOT NULL,
+	OperID int DEFAULT 0 NOT NULL,
+	sDesc nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	bIsFinish char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bLocked char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bCanViewWhenNoFinished char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	OperID2 int DEFAULT '0' NOT NULL,
+	dUpdate2 datetime NULL,
+	F27558 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27559 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27560 numeric(20,2) DEFAULT 0 NOT NULL,
+	F27561 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27562 numeric(20,0) DEFAULT 0 NOT NULL
+);
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable3299 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	RepID int DEFAULT 0 NOT NULL,
+	FillDate datetime DEFAULT '' NOT NULL,
+	ModifyDate datetime DEFAULT '' NOT NULL,
+	DeptID int DEFAULT 0 NOT NULL,
+	OperID int DEFAULT 0 NOT NULL,
+	sDesc nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	bIsFinish char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bLocked char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bCanViewWhenNoFinished char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	OperID2 int DEFAULT '0' NOT NULL,
+	dUpdate2 datetime NULL,
+	F27563 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27564 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27565 numeric(20,2) DEFAULT 0 NOT NULL,
+	F27566 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27567 numeric(20,0) DEFAULT 0 NOT NULL
+);
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable3300 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	F27568 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27569 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27570 nvarchar(100) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27571 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27572 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27573 datetime DEFAULT '' NOT NULL,
+	F27574 nvarchar(100) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable3301 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	RepID int DEFAULT 0 NOT NULL,
+	FillDate datetime DEFAULT '' NOT NULL,
+	ModifyDate datetime DEFAULT '' NOT NULL,
+	DeptID int DEFAULT 0 NOT NULL,
+	OperID int DEFAULT 0 NOT NULL,
+	sDesc nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	bIsFinish char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bLocked char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bCanViewWhenNoFinished char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	OperID2 int DEFAULT '0' NOT NULL,
+	dUpdate2 datetime NULL,
+	F27575 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27576 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27577 numeric(20,2) DEFAULT 0 NOT NULL,
+	F27578 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27579 numeric(20,0) DEFAULT 0 NOT NULL
+);
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable3302 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	F27580 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27581 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27582 nvarchar(100) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27583 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27584 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27585 datetime DEFAULT '' NOT NULL,
+	F27586 nvarchar(100) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27587 datetime DEFAULT '' NOT NULL,
+	F27588 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27589 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27590 numeric(20,2) DEFAULT 0 NOT NULL
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable3303 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	RepID int DEFAULT 0 NOT NULL,
+	FillDate datetime DEFAULT '' NOT NULL,
+	ModifyDate datetime DEFAULT '' NOT NULL,
+	DeptID int DEFAULT 0 NOT NULL,
+	OperID int DEFAULT 0 NOT NULL,
+	sDesc nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	bIsFinish char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bLocked char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bCanViewWhenNoFinished char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	OperID2 int DEFAULT '0' NOT NULL,
+	dUpdate2 datetime NULL,
+	F27591 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27592 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27593 numeric(20,2) DEFAULT 0 NOT NULL,
+	F27594 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27595 numeric(20,0) DEFAULT 0 NOT NULL
+);
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable3304 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	F27596 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27597 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27598 nvarchar(100) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27599 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27600 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27601 datetime DEFAULT '' NOT NULL,
+	F27602 nvarchar(100) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27607 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27608 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27609 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27610 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable3307 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	RepID int DEFAULT 0 NOT NULL,
+	FillDate datetime DEFAULT '' NOT NULL,
+	ModifyDate datetime DEFAULT '' NOT NULL,
+	DeptID int DEFAULT 0 NOT NULL,
+	OperID int DEFAULT 0 NOT NULL,
+	sDesc nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	bIsFinish char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bLocked char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bCanViewWhenNoFinished char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	OperID2 int DEFAULT '0' NOT NULL,
+	dUpdate2 datetime NULL,
+	F27623 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27624 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27625 numeric(20,2) DEFAULT 0 NOT NULL,
+	F27626 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27627 numeric(20,0) DEFAULT 0 NOT NULL
+);
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable3308 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	F27628 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27629 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27630 numeric(20,0) DEFAULT 0 NOT NULL,
+	F27631 numeric(20,0) DEFAULT 0 NOT NULL,
+	F27632 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable3311 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	RepID int DEFAULT 0 NOT NULL,
+	FillDate datetime DEFAULT '' NOT NULL,
+	ModifyDate datetime DEFAULT '' NOT NULL,
+	DeptID int DEFAULT 0 NOT NULL,
+	OperID int DEFAULT 0 NOT NULL,
+	sDesc nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	bIsFinish char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bLocked char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bCanViewWhenNoFinished char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	OperID2 int DEFAULT '0' NOT NULL,
+	dUpdate2 datetime NULL,
+	F27645 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27646 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27647 numeric(20,2) DEFAULT 0 NOT NULL,
+	F27648 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27649 numeric(20,0) DEFAULT 0 NOT NULL
+);
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable3312 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	F27650 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27651 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27652 image NULL,
+	F27653 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27654 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27655 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27656 numeric(20,0) DEFAULT 0 NOT NULL,
+	F27657 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27658 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27659 datetime DEFAULT '' NOT NULL,
+	F27660 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27661 image NULL,
+	F27662 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27663 datetime DEFAULT '' NOT NULL,
+	F27664 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable3315 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	RepID int DEFAULT 0 NOT NULL,
+	FillDate datetime DEFAULT '' NOT NULL,
+	ModifyDate datetime DEFAULT '' NOT NULL,
+	DeptID int DEFAULT 0 NOT NULL,
+	OperID int DEFAULT 0 NOT NULL,
+	sDesc nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	bIsFinish char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bLocked char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bCanViewWhenNoFinished char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	OperID2 int DEFAULT '0' NOT NULL,
+	dUpdate2 datetime NULL,
+	F27677 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27678 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27679 numeric(20,2) DEFAULT 0 NOT NULL,
+	F27680 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27681 numeric(20,0) DEFAULT 0 NOT NULL
+);
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable3316 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	F27682 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27683 nvarchar(100) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27684 nvarchar(100) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27685 nvarchar(100) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27686 image NULL,
+	F27687 numeric(20,0) DEFAULT 0 NOT NULL,
+	F27688 numeric(20,0) DEFAULT 0 NOT NULL,
+	F27689 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable3319 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	RepID int DEFAULT 0 NOT NULL,
+	FillDate datetime DEFAULT '' NOT NULL,
+	ModifyDate datetime DEFAULT '' NOT NULL,
+	DeptID int DEFAULT 0 NOT NULL,
+	OperID int DEFAULT 0 NOT NULL,
+	sDesc nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	bIsFinish char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bLocked char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bCanViewWhenNoFinished char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	OperID2 int DEFAULT '0' NOT NULL,
+	dUpdate2 datetime NULL,
+	F27702 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27703 numeric(20,0) DEFAULT 0 NOT NULL,
+	F27704 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27705 numeric(20,2) DEFAULT 0 NOT NULL,
+	F27706 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable3320 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	F27707 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27708 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27709 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27710 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27711 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27712 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27713 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27714 image NULL,
+	F27715 nvarchar(100) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27716 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27717 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27718 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27719 nvarchar(100) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27720 numeric(20,0) DEFAULT 0 NOT NULL,
+	F27721 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27722 nvarchar(100) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27723 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27724 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27725 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable3324 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	F27743 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27744 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27745 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27746 nvarchar(100) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27747 image NULL,
+	F27748 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable3325 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	RepID int DEFAULT 0 NOT NULL,
+	FillDate datetime DEFAULT '' NOT NULL,
+	ModifyDate datetime DEFAULT '' NOT NULL,
+	DeptID int DEFAULT 0 NOT NULL,
+	OperID int DEFAULT 0 NOT NULL,
+	sDesc nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	bIsFinish char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bLocked char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bCanViewWhenNoFinished char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	OperID2 int DEFAULT '0' NOT NULL,
+	dUpdate2 datetime NULL,
+	F27749 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27750 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27751 numeric(20,2) DEFAULT 0 NOT NULL,
+	F27752 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27753 numeric(20,0) DEFAULT 0 NOT NULL
+);
+ 
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable3329 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	RepID int DEFAULT 0 NOT NULL,
+	FillDate datetime DEFAULT '' NOT NULL,
+	ModifyDate datetime DEFAULT '' NOT NULL,
+	DeptID int DEFAULT 0 NOT NULL,
+	OperID int DEFAULT 0 NOT NULL,
+	sDesc nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	bIsFinish char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bLocked char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bCanViewWhenNoFinished char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	OperID2 int DEFAULT '0' NOT NULL,
+	dUpdate2 datetime NULL,
+	F27771 numeric(20,2) DEFAULT 0 NOT NULL,
+	F27772 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27773 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27774 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27775 numeric(20,0) DEFAULT 0 NOT NULL
+);
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable3330 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	F27776 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27777 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27778 nvarchar(100) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27779 datetime DEFAULT '' NOT NULL,
+	F27780 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable3337 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	RepID int DEFAULT 0 NOT NULL,
+	FillDate datetime DEFAULT '' NOT NULL,
+	ModifyDate datetime DEFAULT '' NOT NULL,
+	DeptID int DEFAULT 0 NOT NULL,
+	OperID int DEFAULT 0 NOT NULL,
+	sDesc nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	bIsFinish char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bLocked char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bCanViewWhenNoFinished char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	OperID2 int DEFAULT '0' NOT NULL,
+	dUpdate2 datetime NULL,
+	F27817 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27818 numeric(20,0) DEFAULT 0 NOT NULL,
+	F27819 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27820 numeric(20,2) DEFAULT 0 NOT NULL,
+	F27821 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable3338 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	F27822 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27823 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27824 datetime DEFAULT '' NOT NULL,
+	F27825 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27826 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27827 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27828 image NULL,
+	F27829 numeric(20,0) DEFAULT 0 NOT NULL,
+	F27830 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27831 datetime DEFAULT '' NOT NULL,
+	F27832 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27833 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable3339 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	RepID int DEFAULT 0 NOT NULL,
+	FillDate datetime DEFAULT '' NOT NULL,
+	ModifyDate datetime DEFAULT '' NOT NULL,
+	DeptID int DEFAULT 0 NOT NULL,
+	OperID int DEFAULT 0 NOT NULL,
+	sDesc nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	bIsFinish char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bLocked char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bCanViewWhenNoFinished char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	OperID2 int DEFAULT '0' NOT NULL,
+	dUpdate2 datetime NULL,
+	F27834 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27835 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27836 numeric(20,2) DEFAULT 0 NOT NULL,
+	F27837 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27838 numeric(20,0) DEFAULT 0 NOT NULL
+);
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable3340 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	F27839 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27840 nvarchar(100) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27841 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27842 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27843 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27844 datetime DEFAULT '' NOT NULL,
+	F27845 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27846 numeric(20,0) DEFAULT 0 NOT NULL
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable3343 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	RepID int DEFAULT 0 NOT NULL,
+	FillDate datetime DEFAULT '' NOT NULL,
+	ModifyDate datetime DEFAULT '' NOT NULL,
+	DeptID int DEFAULT 0 NOT NULL,
+	OperID int DEFAULT 0 NOT NULL,
+	sDesc nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	bIsFinish char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bLocked char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bCanViewWhenNoFinished char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	OperID2 int DEFAULT '0' NOT NULL,
+	dUpdate2 datetime NULL,
+	F27859 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27860 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27861 numeric(20,2) DEFAULT 0 NOT NULL,
+	F27862 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27863 numeric(20,0) DEFAULT 0 NOT NULL
+);
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable3344 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	F27864 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27865 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27866 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27867 numeric(20,0) DEFAULT 0 NOT NULL,
+	F27868 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27869 numeric(20,0) DEFAULT 0 NOT NULL,
+	F27870 numeric(20,0) DEFAULT 0 NOT NULL,
+	F27871 numeric(20,0) DEFAULT 0 NOT NULL,
+	F27872 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27873 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable3345 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	F27874 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27875 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27876 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27877 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27878 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27879 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27880 nvarchar(100) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27881 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable3346 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	RepID int DEFAULT 0 NOT NULL,
+	FillDate datetime DEFAULT '' NOT NULL,
+	ModifyDate datetime DEFAULT '' NOT NULL,
+	DeptID int DEFAULT 0 NOT NULL,
+	OperID int DEFAULT 0 NOT NULL,
+	sDesc nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	bIsFinish char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bLocked char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bCanViewWhenNoFinished char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	OperID2 int DEFAULT '0' NOT NULL,
+	dUpdate2 datetime NULL,
+	F27882 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27883 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27884 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27885 datetime DEFAULT '' NOT NULL,
+	F27886 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable3347 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	F27887 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27888 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27889 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27890 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27892 nvarchar(200) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27893 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable3348 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	RepID int DEFAULT 0 NOT NULL,
+	FillDate datetime DEFAULT '' NOT NULL,
+	ModifyDate datetime DEFAULT '' NOT NULL,
+	DeptID int DEFAULT 0 NOT NULL,
+	OperID int DEFAULT 0 NOT NULL,
+	sDesc nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	bIsFinish char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bLocked char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bCanViewWhenNoFinished char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	OperID2 int DEFAULT '0' NOT NULL,
+	dUpdate2 datetime NULL,
+	F27896 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable3349 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	F27897 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27898 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27899 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27900 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27901 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27902 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable3350 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	F27903 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27904 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27905 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27906 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27907 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27908 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable3351 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	F27909 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27910 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27911 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable3352 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	F27912 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27913 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27914 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27915 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27916 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27917 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable3353 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	F27918 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27919 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27920 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable3357 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	RepID int DEFAULT 0 NOT NULL,
+	FillDate datetime DEFAULT '' NOT NULL,
+	ModifyDate datetime DEFAULT '' NOT NULL,
+	DeptID int DEFAULT 0 NOT NULL,
+	OperID int DEFAULT 0 NOT NULL,
+	sDesc nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	bIsFinish char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bLocked char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bCanViewWhenNoFinished char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	OperID2 int DEFAULT '0' NOT NULL,
+	dUpdate2 datetime NULL,
+	F27940 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable3359 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	F27943 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27944 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable3360 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	RepID int DEFAULT 0 NOT NULL,
+	FillDate datetime DEFAULT '' NOT NULL,
+	ModifyDate datetime DEFAULT '' NOT NULL,
+	DeptID int DEFAULT 0 NOT NULL,
+	OperID int DEFAULT 0 NOT NULL,
+	sDesc nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	bIsFinish char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bLocked char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bCanViewWhenNoFinished char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	OperID2 int DEFAULT '0' NOT NULL,
+	dUpdate2 datetime NULL,
+	F27945 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27973 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable3361 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	F27946 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27947 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27948 datetime DEFAULT '' NOT NULL,
+	F27949 nvarchar(200) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27950 image NULL,
+	F27951 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27952 datetime DEFAULT '' NOT NULL,
+	F27953 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27954 datetime DEFAULT '' NOT NULL,
+	F27971 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable3363 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	RepID int DEFAULT 0 NOT NULL,
+	FillDate datetime DEFAULT '' NOT NULL,
+	ModifyDate datetime DEFAULT '' NOT NULL,
+	DeptID int DEFAULT 0 NOT NULL,
+	OperID int DEFAULT 0 NOT NULL,
+	sDesc nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	bIsFinish char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bLocked char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bCanViewWhenNoFinished char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	OperID2 int DEFAULT '0' NOT NULL,
+	dUpdate2 datetime NULL,
+	F27961 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27962 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27963 datetime DEFAULT '' NOT NULL,
+	F27964 nvarchar(500) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27965 image NULL,
+	F27966 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27967 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27968 datetime DEFAULT '' NOT NULL,
+	F27969 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27970 datetime DEFAULT '' NOT NULL
+);
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable3364 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	RepID int DEFAULT 0 NOT NULL,
+	FillDate datetime DEFAULT '' NOT NULL,
+	ModifyDate datetime DEFAULT '' NOT NULL,
+	DeptID int DEFAULT 0 NOT NULL,
+	OperID int DEFAULT 0 NOT NULL,
+	sDesc nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	bIsFinish char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bLocked char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bCanViewWhenNoFinished char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	OperID2 int DEFAULT '0' NOT NULL,
+	dUpdate2 datetime NULL,
+	F27988 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27989 datetime DEFAULT '' NOT NULL
+);
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable3366 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	F27990 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27991 datetime DEFAULT '' NOT NULL,
+	F27992 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27993 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27994 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27995 nvarchar(500) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27996 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27997 image NULL,
+	F27998 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F27999 image NULL,
+	F28000 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F28001 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable3367 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	RepID int DEFAULT 0 NOT NULL,
+	FillDate datetime DEFAULT '' NOT NULL,
+	ModifyDate datetime DEFAULT '' NOT NULL,
+	DeptID int DEFAULT 0 NOT NULL,
+	OperID int DEFAULT 0 NOT NULL,
+	sDesc nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	bIsFinish char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bLocked char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bCanViewWhenNoFinished char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	OperID2 int DEFAULT '0' NOT NULL,
+	dUpdate2 datetime NULL,
+	F28016 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable3368 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	F28004 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F28005 datetime DEFAULT '' NOT NULL,
+	F28006 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F28007 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F28008 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F28009 nvarchar(500) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F28010 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F28011 image NULL,
+	F28012 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F28013 image NULL,
+	F28014 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F28015 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable3371 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	RepID int DEFAULT 0 NOT NULL,
+	FillDate datetime DEFAULT '' NOT NULL,
+	ModifyDate datetime DEFAULT '' NOT NULL,
+	DeptID int DEFAULT 0 NOT NULL,
+	OperID int DEFAULT 0 NOT NULL,
+	sDesc nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	bIsFinish char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bLocked char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bCanViewWhenNoFinished char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	OperID2 int DEFAULT '0' NOT NULL,
+	dUpdate2 datetime NULL,
+	F28031 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F28032 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F28033 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F28034 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F28035 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F28036 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F28037 nvarchar(500) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F28038 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F28039 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F28040 datetime DEFAULT '' NOT NULL,
+	F28041 image NULL,
+	F28042 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F28043 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F28070 nvarchar(200) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F28071 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F28072 nvarchar(200) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F28073 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F28084 nvarchar(200) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F28085 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F28086 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable3372 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	RepID int DEFAULT 0 NOT NULL,
+	FillDate datetime DEFAULT '' NOT NULL,
+	ModifyDate datetime DEFAULT '' NOT NULL,
+	DeptID int DEFAULT 0 NOT NULL,
+	OperID int DEFAULT 0 NOT NULL,
+	sDesc nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	bIsFinish char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bLocked char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bCanViewWhenNoFinished char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	OperID2 int DEFAULT '0' NOT NULL,
+	dUpdate2 datetime NULL,
+	F28044 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable3374 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	F28057 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F28058 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F28059 nvarchar(100) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F28060 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F28061 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F28062 nvarchar(500) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F28063 image NULL,
+	F28064 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F28065 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F28066 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F28067 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F28068 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F28069 datetime DEFAULT '' NOT NULL
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable3377 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	F28080 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F28081 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F28083 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable3378 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	RepID int DEFAULT 0 NOT NULL,
+	FillDate datetime DEFAULT '' NOT NULL,
+	ModifyDate datetime DEFAULT '' NOT NULL,
+	DeptID int DEFAULT 0 NOT NULL,
+	OperID int DEFAULT 0 NOT NULL,
+	sDesc nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	bIsFinish char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bLocked char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bCanViewWhenNoFinished char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	OperID2 int DEFAULT '0' NOT NULL,
+	dUpdate2 datetime NULL,
+	F28082 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable3380 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	RepID int DEFAULT 0 NOT NULL,
+	FillDate datetime DEFAULT '' NOT NULL,
+	ModifyDate datetime DEFAULT '' NOT NULL,
+	DeptID int DEFAULT 0 NOT NULL,
+	OperID int DEFAULT 0 NOT NULL,
+	sDesc nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	bIsFinish char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bLocked char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bCanViewWhenNoFinished char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	OperID2 int DEFAULT '0' NOT NULL,
+	dUpdate2 datetime NULL,
+	F28107 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F28119 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable3381 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	F28109 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F28110 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F28111 datetime DEFAULT '' NOT NULL,
+	F28112 nvarchar(200) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F28113 image NULL,
+	F28114 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F28115 datetime DEFAULT '' NOT NULL,
+	F28116 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F28117 datetime DEFAULT '' NOT NULL,
+	F28118 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable3382 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	F28124 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F28125 datetime DEFAULT '' NOT NULL,
+	F28126 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F28127 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F28128 datetime DEFAULT '' NOT NULL,
+	F28129 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F28130 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F28131 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F28132 nvarchar(100) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F28133 nvarchar(200) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F28134 nvarchar(200) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F28135 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F28136 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F28137 datetime DEFAULT '' NOT NULL,
+	F28138 datetime DEFAULT '' NOT NULL,
+	F28139 nvarchar(100) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F28140 datetime DEFAULT '' NOT NULL,
+	F28141 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F28143 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable3383 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	RepID int DEFAULT 0 NOT NULL,
+	FillDate datetime DEFAULT '' NOT NULL,
+	ModifyDate datetime DEFAULT '' NOT NULL,
+	DeptID int DEFAULT 0 NOT NULL,
+	OperID int DEFAULT 0 NOT NULL,
+	sDesc nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	bIsFinish char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bLocked char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bCanViewWhenNoFinished char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	OperID2 int DEFAULT '0' NOT NULL,
+	dUpdate2 datetime NULL,
+	F28142 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable3384 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	F28144 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F28145 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F28146 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F28147 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F28148 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F28149 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F28150 nvarchar(500) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F28151 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F28152 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F28153 numeric(20,1) DEFAULT 0 NOT NULL,
+	F28154 numeric(20,2) DEFAULT 0 NOT NULL,
+	F28155 numeric(20,2) DEFAULT 0 NOT NULL,
+	F28156 datetime DEFAULT '' NOT NULL,
+	F28157 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F28158 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F28159 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F28160 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F28161 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F28162 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F28163 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable3385 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	RepID int DEFAULT 0 NOT NULL,
+	FillDate datetime DEFAULT '' NOT NULL,
+	ModifyDate datetime DEFAULT '' NOT NULL,
+	DeptID int DEFAULT 0 NOT NULL,
+	OperID int DEFAULT 0 NOT NULL,
+	sDesc nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	bIsFinish char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bLocked char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bCanViewWhenNoFinished char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	OperID2 int DEFAULT '0' NOT NULL,
+	dUpdate2 datetime NULL,
+	F28164 nvarchar(100) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F28165 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F28166 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F28167 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F28168 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F28169 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F28170 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F28171 numeric(20,2) DEFAULT 0 NOT NULL,
+	F28172 nvarchar(200) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F28173 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F28174 datetime DEFAULT '' NOT NULL,
+	F28175 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F28176 datetime DEFAULT '' NOT NULL,
+	F28177 datetime DEFAULT '' NOT NULL,
+	F28178 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable34 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	F149 varchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F150 varchar(200) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F151 varchar(200) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F152 varchar(200) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F153 varchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F154 varchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F155 varchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F189 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F190 datetime DEFAULT '' NOT NULL,
+	F191 datetime DEFAULT '' NOT NULL,
+	F276 datetime DEFAULT '' NOT NULL,
+	F277 datetime DEFAULT '' NOT NULL,
+	F548 datetime DEFAULT '' NOT NULL,
+	F562 datetime DEFAULT '' NOT NULL,
+	F563 datetime DEFAULT '' NOT NULL,
+	F564 datetime DEFAULT '' NOT NULL,
+	F565 varchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F566 varchar(3000) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F663 datetime DEFAULT '' NOT NULL,
+	F664 datetime DEFAULT '' NOT NULL,
+	F665 datetime DEFAULT '' NOT NULL,
+	F666 datetime DEFAULT '' NOT NULL,
+	F667 datetime DEFAULT '' NOT NULL,
+	F668 datetime DEFAULT '' NOT NULL,
+	F669 varchar(3000) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F670 datetime DEFAULT '' NOT NULL,
+	RepID int NOT NULL,
+	FillDate datetime NOT NULL,
+	ModifyDate datetime NOT NULL,
+	DeptID int NOT NULL,
+	OperID int NOT NULL,
+	sDesc varchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	bIsFinish char(1) COLLATE Chinese_PRC_CI_AS NOT NULL,
+	bLocked char(1) COLLATE Chinese_PRC_CI_AS NOT NULL,
+	bCanViewWhenNoFinished char(1) COLLATE Chinese_PRC_CI_AS NOT NULL,
+	OperID2 int NOT NULL,
+	dUpdate2 datetime NULL,
+	F1660 nvarchar(100) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F1784 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F2581 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F2658 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F2659 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F3912 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F7211 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F7212 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F7338 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F7464 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F7467 numeric(20,0) DEFAULT 0 NOT NULL,
+	F15640 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F16113 numeric(20,0) DEFAULT 0 NOT NULL,
+	F17789 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F17790 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F17791 nvarchar(100) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+ 
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable3430 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	RepID int DEFAULT 0 NOT NULL,
+	FillDate datetime DEFAULT '' NOT NULL,
+	ModifyDate datetime DEFAULT '' NOT NULL,
+	DeptID int DEFAULT 0 NOT NULL,
+	OperID int DEFAULT 0 NOT NULL,
+	sDesc nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	bIsFinish char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bLocked char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bCanViewWhenNoFinished char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	OperID2 int DEFAULT '0' NOT NULL,
+	dUpdate2 datetime NULL,
+	F28855 nvarchar(100) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F28856 datetime DEFAULT '' NOT NULL,
+	F28857 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F28886 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F28887 nvarchar(100) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable3431 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	F28858 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F28859 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F28860 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F28861 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F28862 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F28863 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F28864 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F28865 nvarchar(100) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F28866 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F28867 numeric(20,0) DEFAULT 0 NOT NULL,
+	F28868 numeric(20,0) DEFAULT 0 NOT NULL,
+	F28869 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F28870 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F28871 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F28872 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F28873 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F28874 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F28875 datetime DEFAULT '' NOT NULL,
+	F28876 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F28877 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F28878 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F28879 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F28880 numeric(20,0) DEFAULT 0 NOT NULL,
+	F28881 datetime DEFAULT '' NOT NULL,
+	F28882 datetime DEFAULT '' NOT NULL,
+	F28883 numeric(20,0) DEFAULT 0 NOT NULL,
+	F28884 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F28885 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F28888 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F28889 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable3432 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	RepID int DEFAULT 0 NOT NULL,
+	FillDate datetime DEFAULT '' NOT NULL,
+	ModifyDate datetime DEFAULT '' NOT NULL,
+	DeptID int DEFAULT 0 NOT NULL,
+	OperID int DEFAULT 0 NOT NULL,
+	sDesc nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	bIsFinish char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bLocked char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bCanViewWhenNoFinished char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	OperID2 int DEFAULT '0' NOT NULL,
+	dUpdate2 datetime NULL,
+	F28890 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F28891 datetime DEFAULT '' NOT NULL,
+	F28892 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F28893 datetime DEFAULT '' NOT NULL,
+	F28894 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F28895 datetime DEFAULT '' NOT NULL,
+	F28896 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F28897 datetime DEFAULT '' NOT NULL,
+	F28898 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F28899 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F28900 numeric(20,0) DEFAULT 0 NOT NULL,
+	F28901 numeric(20,2) DEFAULT 0 NOT NULL,
+	F28902 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F28903 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F28904 nvarchar(100) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F28924 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable3433 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	F28905 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F28906 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F28907 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F28908 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F28909 numeric(20,0) DEFAULT 0 NOT NULL,
+	F28910 numeric(20,2) DEFAULT 0 NOT NULL,
+	F28911 numeric(20,2) DEFAULT 0 NOT NULL,
+	F28912 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F28913 datetime DEFAULT '' NOT NULL,
+	F28914 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F28915 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F28916 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F28917 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F28918 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F28919 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F28920 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F28921 numeric(20,0) DEFAULT 0 NOT NULL,
+	F28922 image NULL,
+	F28923 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F28925 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F28926 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable3434 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	RepID int DEFAULT 0 NOT NULL,
+	FillDate datetime DEFAULT '' NOT NULL,
+	ModifyDate datetime DEFAULT '' NOT NULL,
+	DeptID int DEFAULT 0 NOT NULL,
+	OperID int DEFAULT 0 NOT NULL,
+	sDesc nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	bIsFinish char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bLocked char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bCanViewWhenNoFinished char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	OperID2 int DEFAULT '0' NOT NULL,
+	dUpdate2 datetime NULL,
+	F28927 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F28928 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F28929 nvarchar(200) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F28930 nvarchar(200) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F28931 numeric(20,0) DEFAULT 0 NOT NULL,
+	F28932 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable3435 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	F28933 numeric(20,0) DEFAULT 0 NOT NULL,
+	F28934 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F28935 datetime DEFAULT '' NOT NULL,
+	F28936 datetime DEFAULT '' NOT NULL,
+	F28937 datetime DEFAULT '' NOT NULL,
+	F28938 datetime DEFAULT '' NOT NULL,
+	F28939 datetime DEFAULT '' NOT NULL,
+	F28940 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F28941 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F28942 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable3436 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	RepID int DEFAULT 0 NOT NULL,
+	FillDate datetime DEFAULT '' NOT NULL,
+	ModifyDate datetime DEFAULT '' NOT NULL,
+	DeptID int DEFAULT 0 NOT NULL,
+	OperID int DEFAULT 0 NOT NULL,
+	sDesc nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	bIsFinish char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bLocked char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bCanViewWhenNoFinished char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	OperID2 int DEFAULT '0' NOT NULL,
+	dUpdate2 datetime NULL,
+	F28943 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable3437 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	F28944 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F28945 numeric(20,0) DEFAULT 0 NOT NULL,
+	F28946 numeric(20,0) DEFAULT 0 NOT NULL
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable3438 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	F28947 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F28948 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F28949 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F28950 numeric(20,0) DEFAULT 0 NOT NULL,
+	F28951 numeric(20,0) DEFAULT 0 NOT NULL,
+	F28952 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F28953 datetime DEFAULT '' NOT NULL,
+	F28954 numeric(20,0) DEFAULT 0 NOT NULL
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable3439 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	F28955 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F28956 numeric(20,0) DEFAULT 0 NOT NULL,
+	F28957 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F28958 datetime DEFAULT '' NOT NULL,
+	F28959 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F28960 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F28961 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F28962 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F28963 datetime DEFAULT '' NOT NULL
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable3440 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	RepID int DEFAULT 0 NOT NULL,
+	FillDate datetime DEFAULT '' NOT NULL,
+	ModifyDate datetime DEFAULT '' NOT NULL,
+	DeptID int DEFAULT 0 NOT NULL,
+	OperID int DEFAULT 0 NOT NULL,
+	sDesc nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	bIsFinish char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bLocked char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bCanViewWhenNoFinished char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	OperID2 int DEFAULT '0' NOT NULL,
+	dUpdate2 datetime NULL,
+	F28964 datetime DEFAULT '' NOT NULL,
+	F28965 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F28966 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F28967 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F28968 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F28986 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable3441 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	F28969 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F28970 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F28971 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F28972 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F28973 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F28974 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F28975 nvarchar(200) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F28976 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F28977 nvarchar(200) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F28978 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F28979 numeric(20,0) DEFAULT 0 NOT NULL,
+	F28980 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F28981 datetime DEFAULT '' NOT NULL,
+	F28982 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F28983 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F28984 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F28985 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable3442 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	RepID int DEFAULT 0 NOT NULL,
+	FillDate datetime DEFAULT '' NOT NULL,
+	ModifyDate datetime DEFAULT '' NOT NULL,
+	DeptID int DEFAULT 0 NOT NULL,
+	OperID int DEFAULT 0 NOT NULL,
+	sDesc nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	bIsFinish char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bLocked char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bCanViewWhenNoFinished char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	OperID2 int DEFAULT '0' NOT NULL,
+	dUpdate2 datetime NULL,
+	F28987 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F28988 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F28989 datetime DEFAULT '' NOT NULL,
+	F28990 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F28991 datetime DEFAULT '' NOT NULL,
+	F28992 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F28993 datetime DEFAULT '' NOT NULL,
+	F28994 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F28995 datetime DEFAULT '' NOT NULL,
+	F28996 nvarchar(100) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F28997 nvarchar(100) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F28998 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F28999 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29000 nvarchar(100) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29025 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29026 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29027 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable3443 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	F29001 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29002 nvarchar(200) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29003 datetime DEFAULT '' NOT NULL,
+	F29004 numeric(20,2) DEFAULT 0 NOT NULL,
+	F29005 numeric(20,2) DEFAULT 0 NOT NULL,
+	F29006 datetime DEFAULT '' NOT NULL,
+	F29007 datetime DEFAULT '' NOT NULL,
+	F29008 datetime DEFAULT '' NOT NULL,
+	F29009 nvarchar(100) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29010 numeric(20,2) DEFAULT 0 NOT NULL,
+	F29011 numeric(20,2) DEFAULT 0 NOT NULL,
+	F29012 datetime DEFAULT '' NOT NULL,
+	F29013 nvarchar(100) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29014 datetime DEFAULT '' NOT NULL,
+	F29015 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29016 nvarchar(100) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29017 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29018 numeric(20,0) DEFAULT 0 NOT NULL,
+	F29019 numeric(20,2) DEFAULT 0 NOT NULL,
+	F29020 numeric(20,2) DEFAULT 0 NOT NULL,
+	F29021 datetime DEFAULT '' NOT NULL,
+	F29022 nvarchar(500) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29023 nvarchar(200) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29024 nvarchar(200) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29028 nvarchar(200) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29029 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29030 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29031 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29032 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29033 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable3444 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	RepID int DEFAULT 0 NOT NULL,
+	FillDate datetime DEFAULT '' NOT NULL,
+	ModifyDate datetime DEFAULT '' NOT NULL,
+	DeptID int DEFAULT 0 NOT NULL,
+	OperID int DEFAULT 0 NOT NULL,
+	sDesc nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	bIsFinish char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bLocked char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bCanViewWhenNoFinished char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	OperID2 int DEFAULT '0' NOT NULL,
+	dUpdate2 datetime NULL,
+	F29034 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29035 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29036 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29037 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29038 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29039 datetime DEFAULT '' NOT NULL
+);
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable3445 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	F29040 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29041 nvarchar(100) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29042 nvarchar(100) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29043 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29044 datetime DEFAULT '' NOT NULL,
+	F29045 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29046 numeric(20,0) DEFAULT 0 NOT NULL,
+	F29047 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29048 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29049 nvarchar(500) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29050 nvarchar(500) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable3446 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	F29051 datetime DEFAULT '' NOT NULL,
+	F29052 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29053 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29054 nvarchar(200) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29055 nvarchar(200) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29056 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29057 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29058 numeric(20,0) DEFAULT 0 NOT NULL,
+	F29059 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29060 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29061 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29062 nvarchar(500) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29063 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29064 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29065 nvarchar(500) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29066 numeric(20,2) DEFAULT 0 NOT NULL,
+	F29067 datetime DEFAULT '' NOT NULL,
+	F29068 datetime DEFAULT '' NOT NULL,
+	F29069 numeric(20,2) DEFAULT 0 NOT NULL,
+	F29070 numeric(20,2) DEFAULT 0 NOT NULL,
+	F29071 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29074 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29075 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29076 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable3447 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	RepID int DEFAULT 0 NOT NULL,
+	FillDate datetime DEFAULT '' NOT NULL,
+	ModifyDate datetime DEFAULT '' NOT NULL,
+	DeptID int DEFAULT 0 NOT NULL,
+	OperID int DEFAULT 0 NOT NULL,
+	sDesc nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	bIsFinish char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bLocked char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bCanViewWhenNoFinished char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	OperID2 int DEFAULT '0' NOT NULL,
+	dUpdate2 datetime NULL,
+	F29072 datetime DEFAULT '' NOT NULL,
+	F29073 datetime DEFAULT '' NOT NULL
+);
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable3448 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	F29077 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29078 datetime DEFAULT '' NOT NULL,
+	F29079 nvarchar(500) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29080 nvarchar(500) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29081 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29082 numeric(20,0) DEFAULT 0 NOT NULL,
+	F29083 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29084 nvarchar(500) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29085 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29086 numeric(20,2) DEFAULT 0 NOT NULL,
+	F29087 datetime DEFAULT '' NOT NULL,
+	F29088 datetime DEFAULT '' NOT NULL,
+	F29089 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29090 numeric(20,2) DEFAULT 0 NOT NULL,
+	F29091 numeric(20,2) DEFAULT 0 NOT NULL,
+	F29092 datetime DEFAULT '' NOT NULL,
+	F29093 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29094 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29095 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29096 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29097 nvarchar(1500) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29098 nvarchar(500) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29101 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29102 nvarchar(100) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29103 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29104 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29105 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29106 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29107 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29108 nvarchar(100) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable3449 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	RepID int DEFAULT 0 NOT NULL,
+	FillDate datetime DEFAULT '' NOT NULL,
+	ModifyDate datetime DEFAULT '' NOT NULL,
+	DeptID int DEFAULT 0 NOT NULL,
+	OperID int DEFAULT 0 NOT NULL,
+	sDesc nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	bIsFinish char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bLocked char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bCanViewWhenNoFinished char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	OperID2 int DEFAULT '0' NOT NULL,
+	dUpdate2 datetime NULL,
+	F29099 datetime DEFAULT '' NOT NULL,
+	F29100 datetime DEFAULT '' NOT NULL
+);
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable3450 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	RepID int DEFAULT 0 NOT NULL,
+	FillDate datetime DEFAULT '' NOT NULL,
+	ModifyDate datetime DEFAULT '' NOT NULL,
+	DeptID int DEFAULT 0 NOT NULL,
+	OperID int DEFAULT 0 NOT NULL,
+	sDesc nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	bIsFinish char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bLocked char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bCanViewWhenNoFinished char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	OperID2 int DEFAULT '0' NOT NULL,
+	dUpdate2 datetime NULL,
+	F29109 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29110 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29111 nvarchar(100) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable3451 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	F29112 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29113 datetime DEFAULT '' NOT NULL,
+	F29114 nvarchar(500) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29115 nvarchar(500) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29116 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29117 numeric(20,0) DEFAULT 0 NOT NULL,
+	F29118 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29119 nvarchar(500) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29120 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29121 numeric(20,2) DEFAULT 0 NOT NULL,
+	F29122 datetime DEFAULT '' NOT NULL,
+	F29123 datetime DEFAULT '' NOT NULL,
+	F29124 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29125 numeric(20,2) DEFAULT 0 NOT NULL,
+	F29126 numeric(20,2) DEFAULT 0 NOT NULL,
+	F29127 datetime DEFAULT '' NOT NULL,
+	F29128 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29129 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29130 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29131 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29132 nvarchar(1500) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29133 numeric(20,2) DEFAULT 0 NOT NULL,
+	F29136 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29137 nvarchar(100) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29138 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29139 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29140 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29141 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29142 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29143 nvarchar(100) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable3452 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	RepID int DEFAULT 0 NOT NULL,
+	FillDate datetime DEFAULT '' NOT NULL,
+	ModifyDate datetime DEFAULT '' NOT NULL,
+	DeptID int DEFAULT 0 NOT NULL,
+	OperID int DEFAULT 0 NOT NULL,
+	sDesc nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	bIsFinish char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bLocked char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bCanViewWhenNoFinished char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	OperID2 int DEFAULT '0' NOT NULL,
+	dUpdate2 datetime NULL,
+	F29134 datetime DEFAULT '' NOT NULL,
+	F29135 datetime DEFAULT '' NOT NULL
+);
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable3453 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	RepID int DEFAULT 0 NOT NULL,
+	FillDate datetime DEFAULT '' NOT NULL,
+	ModifyDate datetime DEFAULT '' NOT NULL,
+	DeptID int DEFAULT 0 NOT NULL,
+	OperID int DEFAULT 0 NOT NULL,
+	sDesc nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	bIsFinish char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bLocked char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bCanViewWhenNoFinished char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	OperID2 int DEFAULT '0' NOT NULL,
+	dUpdate2 datetime NULL,
+	F29144 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29145 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29146 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29147 datetime DEFAULT '' NOT NULL,
+	F29148 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29149 datetime DEFAULT '' NOT NULL,
+	F29150 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29151 datetime DEFAULT '' NOT NULL,
+	F29152 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29153 datetime DEFAULT '' NOT NULL,
+	F29154 nvarchar(100) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29155 nvarchar(100) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29156 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29157 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29158 nvarchar(100) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29187 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29188 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29189 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29190 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable3454 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	F29159 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29160 nvarchar(200) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29161 nvarchar(200) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29162 nvarchar(200) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29163 nvarchar(200) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29164 nvarchar(200) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29165 nvarchar(200) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29166 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29167 numeric(20,0) DEFAULT 0 NOT NULL,
+	F29168 nvarchar(200) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29169 datetime DEFAULT '' NOT NULL,
+	F29170 nvarchar(200) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29171 datetime DEFAULT '' NOT NULL,
+	F29172 numeric(20,2) DEFAULT 0 NOT NULL,
+	F29173 numeric(20,2) DEFAULT 0 NOT NULL,
+	F29174 datetime DEFAULT '' NOT NULL,
+	F29175 datetime DEFAULT '' NOT NULL,
+	F29176 datetime DEFAULT '' NOT NULL,
+	F29177 nvarchar(100) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29178 numeric(20,2) DEFAULT 0 NOT NULL,
+	F29179 numeric(20,2) DEFAULT 0 NOT NULL,
+	F29180 datetime DEFAULT '' NOT NULL,
+	F29181 nvarchar(100) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29182 datetime DEFAULT '' NOT NULL,
+	F29183 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29184 nvarchar(100) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29185 nvarchar(100) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29186 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29191 nvarchar(200) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29192 nvarchar(200) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29193 nvarchar(200) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29194 nvarchar(200) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29195 nvarchar(200) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable3455 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	F29196 datetime DEFAULT '' NOT NULL,
+	F29197 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29198 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29199 nvarchar(200) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29200 nvarchar(200) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29201 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29202 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29203 numeric(20,0) DEFAULT 0 NOT NULL,
+	F29204 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29205 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29206 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29207 nvarchar(500) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29208 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29209 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29210 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29211 numeric(20,2) DEFAULT 0 NOT NULL,
+	F29212 datetime DEFAULT '' NOT NULL,
+	F29213 datetime DEFAULT '' NOT NULL,
+	F29214 numeric(20,2) DEFAULT 0 NOT NULL,
+	F29215 numeric(20,2) DEFAULT 0 NOT NULL,
+	F29216 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29219 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29220 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29221 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable3456 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	RepID int DEFAULT 0 NOT NULL,
+	FillDate datetime DEFAULT '' NOT NULL,
+	ModifyDate datetime DEFAULT '' NOT NULL,
+	DeptID int DEFAULT 0 NOT NULL,
+	OperID int DEFAULT 0 NOT NULL,
+	sDesc nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	bIsFinish char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bLocked char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bCanViewWhenNoFinished char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	OperID2 int DEFAULT '0' NOT NULL,
+	dUpdate2 datetime NULL,
+	F29217 datetime DEFAULT '' NOT NULL,
+	F29218 datetime DEFAULT '' NOT NULL
+);
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable3458 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	RepID int DEFAULT 0 NOT NULL,
+	FillDate datetime DEFAULT '' NOT NULL,
+	ModifyDate datetime DEFAULT '' NOT NULL,
+	DeptID int DEFAULT 0 NOT NULL,
+	OperID int DEFAULT 0 NOT NULL,
+	sDesc nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	bIsFinish char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bLocked char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bCanViewWhenNoFinished char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	OperID2 int DEFAULT '0' NOT NULL,
+	dUpdate2 datetime NULL,
+	F29264 datetime DEFAULT '' NOT NULL,
+	F29265 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29266 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29267 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29268 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable3459 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	F29269 nvarchar(100) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29270 nvarchar(100) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29271 nvarchar(100) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29272 nvarchar(100) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29273 nvarchar(100) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29274 nvarchar(100) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29275 nvarchar(100) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29276 nvarchar(100) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29277 nvarchar(100) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29278 nvarchar(100) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29279 nvarchar(100) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29280 nvarchar(100) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29281 nvarchar(100) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29282 nvarchar(100) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29283 nvarchar(100) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29284 nvarchar(100) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29285 nvarchar(100) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29286 nvarchar(100) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29287 nvarchar(100) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29288 nvarchar(100) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29289 nvarchar(100) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29290 nvarchar(100) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29291 nvarchar(100) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29292 nvarchar(100) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29293 nvarchar(100) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29294 nvarchar(100) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29295 nvarchar(100) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29296 nvarchar(100) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29297 nvarchar(100) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29298 nvarchar(100) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29299 nvarchar(100) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29300 nvarchar(100) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29301 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29302 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29303 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29304 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29305 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29306 nvarchar(100) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29307 image NULL,
+	F29308 nvarchar(100) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable3462 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	RepID int DEFAULT 0 NOT NULL,
+	FillDate datetime DEFAULT '' NOT NULL,
+	ModifyDate datetime DEFAULT '' NOT NULL,
+	DeptID int DEFAULT 0 NOT NULL,
+	OperID int DEFAULT 0 NOT NULL,
+	sDesc nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	bIsFinish char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bLocked char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bCanViewWhenNoFinished char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	OperID2 int DEFAULT '0' NOT NULL,
+	dUpdate2 datetime NULL,
+	F29348 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable3463 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	F29349 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29350 nvarchar(100) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29351 nvarchar(100) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable3464 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	RepID int DEFAULT 0 NOT NULL,
+	FillDate datetime DEFAULT '' NOT NULL,
+	ModifyDate datetime DEFAULT '' NOT NULL,
+	DeptID int DEFAULT 0 NOT NULL,
+	OperID int DEFAULT 0 NOT NULL,
+	sDesc nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	bIsFinish char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bLocked char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bCanViewWhenNoFinished char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	OperID2 int DEFAULT '0' NOT NULL,
+	dUpdate2 datetime NULL,
+	F29352 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable3465 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	F29353 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29354 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29355 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29356 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29357 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29358 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29359 nvarchar(100) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29360 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29361 numeric(20,0) DEFAULT 0 NOT NULL,
+	F29362 numeric(20,0) DEFAULT 0 NOT NULL,
+	F29363 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29364 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29365 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29366 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29367 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29368 datetime DEFAULT '' NOT NULL,
+	F29369 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29370 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29371 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29372 numeric(20,0) DEFAULT 0 NOT NULL,
+	F29373 datetime DEFAULT '' NOT NULL,
+	F29374 datetime DEFAULT '' NOT NULL,
+	F29375 numeric(20,2) DEFAULT 0 NOT NULL,
+	F29376 numeric(20,2) DEFAULT 0 NOT NULL,
+	F29377 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29378 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29379 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29380 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29381 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29382 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable3466 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	RepID int DEFAULT 0 NOT NULL,
+	FillDate datetime DEFAULT '' NOT NULL,
+	ModifyDate datetime DEFAULT '' NOT NULL,
+	DeptID int DEFAULT 0 NOT NULL,
+	OperID int DEFAULT 0 NOT NULL,
+	sDesc nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	bIsFinish char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bLocked char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bCanViewWhenNoFinished char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	OperID2 int DEFAULT '0' NOT NULL,
+	dUpdate2 datetime NULL,
+	F29383 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29384 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29385 datetime DEFAULT '' NOT NULL,
+	F29386 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29387 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29388 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29389 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29390 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29418 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable3467 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	F29391 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29392 nvarchar(200) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29393 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29394 numeric(20,0) DEFAULT 0 NOT NULL,
+	F29395 numeric(20,0) DEFAULT 0 NOT NULL,
+	F29396 numeric(20,0) DEFAULT 0 NOT NULL,
+	F29397 numeric(20,0) DEFAULT 0 NOT NULL,
+	F29398 nvarchar(200) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29399 nvarchar(200) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29400 nvarchar(200) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29401 numeric(20,2) DEFAULT 0 NOT NULL,
+	F29402 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29403 nvarchar(200) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29404 numeric(20,2) DEFAULT 0 NOT NULL,
+	F29405 nvarchar(200) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29406 datetime DEFAULT '' NOT NULL,
+	F29407 datetime DEFAULT '' NOT NULL,
+	F29408 datetime DEFAULT '' NOT NULL,
+	F29409 datetime DEFAULT '' NOT NULL,
+	F29410 datetime DEFAULT '' NOT NULL,
+	F29411 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29412 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29413 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29414 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29415 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29416 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29417 numeric(20,2) DEFAULT 0 NOT NULL,
+	F29419 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29420 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29421 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable3468 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	F29422 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29423 datetime DEFAULT '' NOT NULL,
+	F29424 nvarchar(500) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29425 nvarchar(500) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29426 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29427 numeric(20,0) DEFAULT 0 NOT NULL,
+	F29428 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29429 nvarchar(500) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29430 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29431 numeric(20,2) DEFAULT 0 NOT NULL,
+	F29432 datetime DEFAULT '' NOT NULL,
+	F29433 datetime DEFAULT '' NOT NULL,
+	F29434 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29435 numeric(20,2) DEFAULT 0 NOT NULL,
+	F29436 numeric(20,2) DEFAULT 0 NOT NULL,
+	F29437 datetime DEFAULT '' NOT NULL,
+	F29438 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29439 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29440 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29441 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29442 nvarchar(1500) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29443 numeric(20,2) DEFAULT 0 NOT NULL,
+	F29444 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29445 nvarchar(100) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29446 nvarchar(100) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29447 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29448 numeric(20,0) DEFAULT 0 NOT NULL,
+	F29451 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29452 nvarchar(100) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29453 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29454 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29455 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29456 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29457 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29458 nvarchar(100) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable3469 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	RepID int DEFAULT 0 NOT NULL,
+	FillDate datetime DEFAULT '' NOT NULL,
+	ModifyDate datetime DEFAULT '' NOT NULL,
+	DeptID int DEFAULT 0 NOT NULL,
+	OperID int DEFAULT 0 NOT NULL,
+	sDesc nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	bIsFinish char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bLocked char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bCanViewWhenNoFinished char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	OperID2 int DEFAULT '0' NOT NULL,
+	dUpdate2 datetime NULL,
+	F29449 datetime DEFAULT '' NOT NULL,
+	F29450 datetime DEFAULT '' NOT NULL
+);
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable3474 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	RepID int DEFAULT 0 NOT NULL,
+	FillDate datetime DEFAULT '' NOT NULL,
+	ModifyDate datetime DEFAULT '' NOT NULL,
+	DeptID int DEFAULT 0 NOT NULL,
+	OperID int DEFAULT 0 NOT NULL,
+	sDesc nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	bIsFinish char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bLocked char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bCanViewWhenNoFinished char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	OperID2 int DEFAULT '0' NOT NULL,
+	dUpdate2 datetime NULL,
+	F29507 nvarchar(100) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29508 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29509 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable3475 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	RepID int DEFAULT 0 NOT NULL,
+	FillDate datetime DEFAULT '' NOT NULL,
+	ModifyDate datetime DEFAULT '' NOT NULL,
+	DeptID int DEFAULT 0 NOT NULL,
+	OperID int DEFAULT 0 NOT NULL,
+	sDesc nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	bIsFinish char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bLocked char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bCanViewWhenNoFinished char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	OperID2 int DEFAULT '0' NOT NULL,
+	dUpdate2 datetime NULL,
+	F29510 nvarchar(100) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29511 nvarchar(100) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29512 numeric(20,0) DEFAULT 0 NOT NULL,
+	F29513 nvarchar(100) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29514 nvarchar(100) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29515 nvarchar(100) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29516 nvarchar(100) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29517 nvarchar(100) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29518 nvarchar(100) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29519 nvarchar(100) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29520 nvarchar(100) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29521 nvarchar(100) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29522 nvarchar(100) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29523 nvarchar(100) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29524 nvarchar(100) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29525 nvarchar(100) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29526 nvarchar(100) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29527 nvarchar(100) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29528 nvarchar(100) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29529 nvarchar(100) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29530 nvarchar(100) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29531 nvarchar(100) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29532 nvarchar(100) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29533 nvarchar(100) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29534 nvarchar(100) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29535 nvarchar(100) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29536 nvarchar(100) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29537 nvarchar(100) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29538 nvarchar(100) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29539 nvarchar(100) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29540 nvarchar(100) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29541 nvarchar(100) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29542 nvarchar(100) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29543 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29544 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29545 nvarchar(100) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29546 datetime DEFAULT '' NOT NULL,
+	F29547 nvarchar(500) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29548 nvarchar(100) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29549 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29550 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29551 image NULL
+);
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable3476 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	RepID int DEFAULT 0 NOT NULL,
+	FillDate datetime DEFAULT '' NOT NULL,
+	ModifyDate datetime DEFAULT '' NOT NULL,
+	DeptID int DEFAULT 0 NOT NULL,
+	OperID int DEFAULT 0 NOT NULL,
+	sDesc nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	bIsFinish char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bLocked char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bCanViewWhenNoFinished char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	OperID2 int DEFAULT '0' NOT NULL,
+	dUpdate2 datetime NULL,
+	F29584 datetime DEFAULT '' NOT NULL,
+	F29585 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29586 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29587 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29588 nvarchar(200) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29589 nvarchar(200) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29590 nvarchar(1000) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29591 datetime DEFAULT '' NOT NULL,
+	F29592 nvarchar(500) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29593 nvarchar(100) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29594 nvarchar(100) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable3478 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	F29599 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29600 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29601 nvarchar(100) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29602 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29603 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29604 datetime DEFAULT '' NOT NULL,
+	F29605 nvarchar(200) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29606 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29607 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29608 datetime DEFAULT '' NOT NULL,
+	F29609 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable3479 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	RepID int DEFAULT 0 NOT NULL,
+	FillDate datetime DEFAULT '' NOT NULL,
+	ModifyDate datetime DEFAULT '' NOT NULL,
+	DeptID int DEFAULT 0 NOT NULL,
+	OperID int DEFAULT 0 NOT NULL,
+	sDesc nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	bIsFinish char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bLocked char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bCanViewWhenNoFinished char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	OperID2 int DEFAULT '0' NOT NULL,
+	dUpdate2 datetime NULL,
+	F29610 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable3480 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	RepID int DEFAULT 0 NOT NULL,
+	FillDate datetime DEFAULT '' NOT NULL,
+	ModifyDate datetime DEFAULT '' NOT NULL,
+	DeptID int DEFAULT 0 NOT NULL,
+	OperID int DEFAULT 0 NOT NULL,
+	sDesc nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	bIsFinish char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bLocked char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bCanViewWhenNoFinished char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	OperID2 int DEFAULT '0' NOT NULL,
+	dUpdate2 datetime NULL,
+	F29611 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29612 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29613 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29614 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29615 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29616 numeric(20,0) NULL
+);
+ 
+ 
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable3481 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	F29617 numeric(20,0) NULL,
+	F29618 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29619 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29620 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29621 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29622 numeric(20,2) NULL,
+	F29623 numeric(20,2) NULL,
+	F29624 numeric(20,2) NULL,
+	F29625 numeric(20,2) NULL,
+	F29626 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29627 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29628 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable3485 (
+	ID int NOT NULL,
+	F29633 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29634 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	CONSTRAINT PK__tabDIYTa__3214EC2718CA1D7C PRIMARY KEY (ID)
+);
+CREATE TABLE 车体事业部.dbo.tabDIYTable3486 (
+	ID int NOT NULL,
+	F29636 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29637 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	CONSTRAINT PK__tabDIYTa__3214EC27D4DB89A5 PRIMARY KEY (ID)
+);
+CREATE TABLE 车体事业部.dbo.tabDIYTable3487 (
+	ID int NOT NULL,
+	F29638 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29639 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	CONSTRAINT PK__tabDIYTa__3214EC277E5E5EBF PRIMARY KEY (ID)
+);
+CREATE TABLE 车体事业部.dbo.tabDIYTable3490 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	F29657 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29658 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29659 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29660 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29661 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29662 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29663 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29664 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29665 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29666 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29667 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29668 datetime DEFAULT '' NOT NULL,
+	F29669 datetime DEFAULT '' NOT NULL,
+	F29670 datetime DEFAULT '' NOT NULL,
+	F29671 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29672 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable3491 (
+	ID int NOT NULL,
+	F29673 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29674 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	CONSTRAINT PK__tabDIYTa__3214EC27C7A0071F PRIMARY KEY (ID)
+);
+CREATE TABLE 车体事业部.dbo.tabDIYTable3492 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	RepID int DEFAULT 0 NOT NULL,
+	FillDate datetime DEFAULT '' NOT NULL,
+	ModifyDate datetime DEFAULT '' NOT NULL,
+	DeptID int DEFAULT 0 NOT NULL,
+	OperID int DEFAULT 0 NOT NULL,
+	sDesc nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	bIsFinish char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bLocked char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bCanViewWhenNoFinished char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	OperID2 int DEFAULT '0' NOT NULL,
+	dUpdate2 datetime NULL,
+	F29675 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29676 datetime DEFAULT '' NOT NULL
+);
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable3496 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	RepID int DEFAULT 0 NOT NULL,
+	FillDate datetime DEFAULT '' NOT NULL,
+	ModifyDate datetime DEFAULT '' NOT NULL,
+	DeptID int DEFAULT 0 NOT NULL,
+	OperID int DEFAULT 0 NOT NULL,
+	sDesc nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	bIsFinish char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bLocked char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bCanViewWhenNoFinished char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	OperID2 int DEFAULT '0' NOT NULL,
+	dUpdate2 datetime NULL,
+	F29688 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29689 datetime DEFAULT '' NOT NULL
+);
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable3497 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	F29691 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29692 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29693 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29694 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29695 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29696 datetime DEFAULT '' NOT NULL,
+	F29697 datetime DEFAULT '' NOT NULL,
+	F29698 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29699 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable3500 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	RepID int DEFAULT 0 NOT NULL,
+	FillDate datetime DEFAULT '' NOT NULL,
+	ModifyDate datetime DEFAULT '' NOT NULL,
+	DeptID int DEFAULT 0 NOT NULL,
+	OperID int DEFAULT 0 NOT NULL,
+	sDesc nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	bIsFinish char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bLocked char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bCanViewWhenNoFinished char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	OperID2 int DEFAULT '0' NOT NULL,
+	dUpdate2 datetime NULL,
+	F29716 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29717 datetime DEFAULT '' NOT NULL
+);
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable3503 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	RepID int DEFAULT 0 NOT NULL,
+	FillDate datetime DEFAULT '' NOT NULL,
+	ModifyDate datetime DEFAULT '' NOT NULL,
+	DeptID int DEFAULT 0 NOT NULL,
+	OperID int DEFAULT 0 NOT NULL,
+	sDesc nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	bIsFinish char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bLocked char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bCanViewWhenNoFinished char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	OperID2 int DEFAULT '0' NOT NULL,
+	dUpdate2 datetime NULL,
+	F29721 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29722 datetime DEFAULT '' NOT NULL,
+	F29754 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable3504 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	F29723 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29724 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29725 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29726 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29727 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29728 datetime DEFAULT '' NOT NULL,
+	F29729 datetime DEFAULT '' NOT NULL,
+	F29730 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29731 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29749 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29750 nvarchar(200) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable3505 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	F29733 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29734 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29735 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29736 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29737 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29738 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29739 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29740 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29741 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29742 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29743 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29744 datetime DEFAULT '' NOT NULL,
+	F29745 datetime DEFAULT '' NOT NULL,
+	F29746 datetime DEFAULT '' NOT NULL,
+	F29747 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29748 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29910 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable3506 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	RepID int DEFAULT 0 NOT NULL,
+	FillDate datetime DEFAULT '' NOT NULL,
+	ModifyDate datetime DEFAULT '' NOT NULL,
+	DeptID int DEFAULT 0 NOT NULL,
+	OperID int DEFAULT 0 NOT NULL,
+	sDesc nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	bIsFinish char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bLocked char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bCanViewWhenNoFinished char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	OperID2 int DEFAULT '0' NOT NULL,
+	dUpdate2 datetime NULL,
+	F29755 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29756 datetime DEFAULT '' NOT NULL,
+	F29757 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable3507 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	F29758 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29759 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29760 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29761 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29762 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29763 datetime DEFAULT '' NOT NULL,
+	F29764 datetime DEFAULT '' NOT NULL,
+	F29765 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29766 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29767 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29768 nvarchar(200) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable3508 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	RepID int DEFAULT 0 NOT NULL,
+	FillDate datetime DEFAULT '' NOT NULL,
+	ModifyDate datetime DEFAULT '' NOT NULL,
+	DeptID int DEFAULT 0 NOT NULL,
+	OperID int DEFAULT 0 NOT NULL,
+	sDesc nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	bIsFinish char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bLocked char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bCanViewWhenNoFinished char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	OperID2 int DEFAULT '0' NOT NULL,
+	dUpdate2 datetime NULL,
+	F29771 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29772 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29773 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29774 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29775 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29776 numeric(20,0) NULL
+);
+ 
+ 
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable3509 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	F29777 numeric(20,0) NULL,
+	F29778 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29779 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29780 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29781 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29782 numeric(20,2) NULL,
+	F29783 numeric(20,2) NULL,
+	F29784 numeric(20,2) NULL,
+	F29785 numeric(20,2) NULL,
+	F29786 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29787 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29788 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable3510 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	F29789 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29790 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable3513 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	RepID int DEFAULT 0 NOT NULL,
+	FillDate datetime DEFAULT '' NOT NULL,
+	ModifyDate datetime DEFAULT '' NOT NULL,
+	DeptID int DEFAULT 0 NOT NULL,
+	OperID int DEFAULT 0 NOT NULL,
+	sDesc nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	bIsFinish char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bLocked char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bCanViewWhenNoFinished char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	OperID2 int DEFAULT '0' NOT NULL,
+	dUpdate2 datetime NULL,
+	F29795 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable3514 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	F29796 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29797 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable3519 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	RepID int DEFAULT 0 NOT NULL,
+	FillDate datetime DEFAULT '' NOT NULL,
+	ModifyDate datetime DEFAULT '' NOT NULL,
+	DeptID int DEFAULT 0 NOT NULL,
+	OperID int DEFAULT 0 NOT NULL,
+	sDesc nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	bIsFinish char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bLocked char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bCanViewWhenNoFinished char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	OperID2 int DEFAULT '0' NOT NULL,
+	dUpdate2 datetime NULL,
+	F29804 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable3520 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	F29805 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29806 nvarchar(100) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29807 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable3521 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	RepID int DEFAULT 0 NOT NULL,
+	FillDate datetime DEFAULT '' NOT NULL,
+	ModifyDate datetime DEFAULT '' NOT NULL,
+	DeptID int DEFAULT 0 NOT NULL,
+	OperID int DEFAULT 0 NOT NULL,
+	sDesc nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	bIsFinish char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bLocked char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bCanViewWhenNoFinished char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	OperID2 int DEFAULT '0' NOT NULL,
+	dUpdate2 datetime NULL,
+	F29829 datetime DEFAULT '' NOT NULL
+);
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable3522 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	F29809 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29810 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29811 nvarchar(100) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29812 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29813 numeric(20,0) DEFAULT 0 NOT NULL,
+	F29814 numeric(20,0) DEFAULT 0 NOT NULL,
+	F29815 numeric(20,0) DEFAULT 0 NOT NULL,
+	F29816 numeric(20,0) DEFAULT 0 NOT NULL
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable3529 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	RepID int DEFAULT 0 NOT NULL,
+	FillDate datetime DEFAULT '' NOT NULL,
+	ModifyDate datetime DEFAULT '' NOT NULL,
+	DeptID int DEFAULT 0 NOT NULL,
+	OperID int DEFAULT 0 NOT NULL,
+	sDesc nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	bIsFinish char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bLocked char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bCanViewWhenNoFinished char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	OperID2 int DEFAULT '0' NOT NULL,
+	dUpdate2 datetime NULL,
+	F29871 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29872 datetime DEFAULT '' NOT NULL
+);
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable3530 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	F29873 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29874 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29875 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29876 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29877 numeric(20,0) DEFAULT 0 NOT NULL,
+	F29878 numeric(20,0) DEFAULT 0 NOT NULL,
+	F29879 numeric(20,0) DEFAULT 0 NOT NULL,
+	F29880 numeric(20,0) DEFAULT 0 NOT NULL
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable3531 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	F29881 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29882 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29883 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29884 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29885 numeric(20,0) DEFAULT 0 NOT NULL,
+	F29886 numeric(20,0) DEFAULT 0 NOT NULL,
+	F29887 numeric(20,0) DEFAULT 0 NOT NULL,
+	F29888 numeric(20,0) DEFAULT 0 NOT NULL,
+	F29889 datetime DEFAULT '' NOT NULL
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable3533 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	RepID int DEFAULT 0 NOT NULL,
+	FillDate datetime DEFAULT '' NOT NULL,
+	ModifyDate datetime DEFAULT '' NOT NULL,
+	DeptID int DEFAULT 0 NOT NULL,
+	OperID int DEFAULT 0 NOT NULL,
+	sDesc nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	bIsFinish char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bLocked char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bCanViewWhenNoFinished char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	OperID2 int DEFAULT '0' NOT NULL,
+	dUpdate2 datetime NULL,
+	F29892 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable3534 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	RepID int DEFAULT 0 NOT NULL,
+	FillDate datetime DEFAULT '' NOT NULL,
+	ModifyDate datetime DEFAULT '' NOT NULL,
+	DeptID int DEFAULT 0 NOT NULL,
+	OperID int DEFAULT 0 NOT NULL,
+	sDesc nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	bIsFinish char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bLocked char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bCanViewWhenNoFinished char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	OperID2 int DEFAULT '0' NOT NULL,
+	dUpdate2 datetime NULL,
+	F29893 datetime DEFAULT '' NOT NULL
+);
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable3535 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	F29894 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29895 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29896 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29897 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29898 numeric(20,0) DEFAULT 0 NOT NULL,
+	F29899 numeric(20,0) DEFAULT 0 NOT NULL,
+	F29900 numeric(20,0) DEFAULT 0 NOT NULL,
+	F29901 numeric(20,0) DEFAULT 0 NOT NULL
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable3536 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	RepID int DEFAULT 0 NOT NULL,
+	FillDate datetime DEFAULT '' NOT NULL,
+	ModifyDate datetime DEFAULT '' NOT NULL,
+	DeptID int DEFAULT 0 NOT NULL,
+	OperID int DEFAULT 0 NOT NULL,
+	sDesc nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	bIsFinish char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bLocked char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bCanViewWhenNoFinished char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	OperID2 int DEFAULT '0' NOT NULL,
+	dUpdate2 datetime NULL,
+	F29911 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29912 datetime DEFAULT '' NOT NULL
+);
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable3537 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	F29913 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29914 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29915 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29916 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29917 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29918 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29919 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29920 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29921 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29922 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29923 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29924 datetime DEFAULT '' NOT NULL,
+	F29925 datetime DEFAULT '' NOT NULL,
+	F29926 datetime DEFAULT '' NOT NULL,
+	F29927 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29928 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29929 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable3540 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	F29937 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29938 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable3541 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	RepID int DEFAULT 0 NOT NULL,
+	FillDate datetime DEFAULT '' NOT NULL,
+	ModifyDate datetime DEFAULT '' NOT NULL,
+	DeptID int DEFAULT 0 NOT NULL,
+	OperID int DEFAULT 0 NOT NULL,
+	sDesc nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	bIsFinish char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bLocked char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bCanViewWhenNoFinished char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	OperID2 int DEFAULT '0' NOT NULL,
+	dUpdate2 datetime NULL,
+	F29939 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29940 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29941 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29942 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29943 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29944 numeric(20,0) NULL
+);
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable3542 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	F29945 numeric(20,0) NULL,
+	F29946 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29947 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29948 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29949 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29950 numeric(20,2) NULL,
+	F29951 numeric(20,2) NULL,
+	F29952 numeric(20,2) NULL,
+	F29953 numeric(20,2) NULL,
+	F29954 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29955 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29956 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable3544 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	RepID int DEFAULT 0 NOT NULL,
+	FillDate datetime DEFAULT '' NOT NULL,
+	ModifyDate datetime DEFAULT '' NOT NULL,
+	DeptID int DEFAULT 0 NOT NULL,
+	OperID int DEFAULT 0 NOT NULL,
+	sDesc nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	bIsFinish char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bLocked char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bCanViewWhenNoFinished char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	OperID2 int DEFAULT '0' NOT NULL,
+	dUpdate2 datetime NULL,
+	F29961 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29963 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29964 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29965 datetime DEFAULT '' NOT NULL,
+	F29966 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable3545 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	RepID int DEFAULT 0 NOT NULL,
+	FillDate datetime DEFAULT '' NOT NULL,
+	ModifyDate datetime DEFAULT '' NOT NULL,
+	DeptID int DEFAULT 0 NOT NULL,
+	OperID int DEFAULT 0 NOT NULL,
+	sDesc nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	bIsFinish char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bLocked char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bCanViewWhenNoFinished char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	OperID2 int DEFAULT '0' NOT NULL,
+	dUpdate2 datetime NULL,
+	F29968 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable3546 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	F29969 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29970 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29971 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29972 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29973 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29974 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29975 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29976 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable3548 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	RepID int DEFAULT 0 NOT NULL,
+	FillDate datetime DEFAULT '' NOT NULL,
+	ModifyDate datetime DEFAULT '' NOT NULL,
+	DeptID int DEFAULT 0 NOT NULL,
+	OperID int DEFAULT 0 NOT NULL,
+	sDesc nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	bIsFinish char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bLocked char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bCanViewWhenNoFinished char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	OperID2 int DEFAULT '0' NOT NULL,
+	dUpdate2 datetime NULL,
+	F29981 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29983 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29984 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29985 datetime DEFAULT '' NOT NULL,
+	F29988 numeric(20,4) DEFAULT 0 NOT NULL,
+	F29989 numeric(20,4) DEFAULT 0 NOT NULL
+);
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable3549 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	F29998 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F29999 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F30000 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F30001 numeric(20,0) DEFAULT 0 NOT NULL,
+	F30002 numeric(20,2) DEFAULT 0 NOT NULL,
+	F30003 numeric(20,2) DEFAULT 0 NOT NULL
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable3550 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	F30004 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F30005 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F30006 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F30007 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F30008 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F30009 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F30010 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F30011 numeric(20,0) DEFAULT 0 NOT NULL,
+	F30012 numeric(20,2) DEFAULT 0 NOT NULL,
+	F30013 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F30014 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F30015 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F30016 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F30017 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F30018 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable61 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	F287 varchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F288 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F290 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F367 varchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	RepID int NOT NULL,
+	FillDate datetime NOT NULL,
+	ModifyDate datetime NOT NULL,
+	DeptID int NOT NULL,
+	OperID int NOT NULL,
+	sDesc varchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	bIsFinish char(1) COLLATE Chinese_PRC_CI_AS NOT NULL,
+	bLocked char(1) COLLATE Chinese_PRC_CI_AS NOT NULL,
+	bCanViewWhenNoFinished char(1) COLLATE Chinese_PRC_CI_AS NOT NULL,
+	OperID2 int NOT NULL,
+	dUpdate2 datetime NULL,
+	F1772 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F1773 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F1774 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F1779 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F6243 numeric(20,0) DEFAULT 0 NOT NULL
+);
+ 
+ 
+ 
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable713 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	F5663 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F9596 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable777 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	F6245 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F9597 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable852 (
+	ID int NOT NULL,
+	iOrd int NOT NULL,
+	F6794 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F6795 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F6796 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	F6797 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL
+);
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTable999998011 (
+	ID int NOT NULL,
+	F999991001 varchar(3000) COLLATE Chinese_PRC_CI_AS NULL,
+	F999991002 nvarchar(1500) COLLATE Chinese_PRC_CI_AS NULL,
+	SendedDate datetime DEFAULT '' NOT NULL,
+	F999991003 int DEFAULT 0 NOT NULL,
+	F999991005 nvarchar(500) COLLATE Chinese_PRC_CI_AS NULL
+);
+CREATE TABLE 车体事业部.dbo.tabDIYTable999998012 (
+	ID int NOT NULL,
+	F999991011 varchar(200) COLLATE Chinese_PRC_CI_AS NULL,
+	F999991012 nvarchar(200) COLLATE Chinese_PRC_CI_AS NULL,
+	F999991013 nvarchar(1500) COLLATE Chinese_PRC_CI_AS NULL,
+	F999991015 nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	F999991016 int DEFAULT 0 NOT NULL,
+	F999991017 nvarchar(500) COLLATE Chinese_PRC_CI_AS NULL
+);
+CREATE TABLE 车体事业部.dbo.tabDIYTable999998036 (
+	ID int NOT NULL,
+	F999991166 nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	F999991168 nvarchar(500) COLLATE Chinese_PRC_CI_AS NULL
+);
+CREATE TABLE 车体事业部.dbo.tabDIYTable999998038 (
+	iID int NULL,
+	F999991126 nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	F999991128 nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	F999991132 nvarchar(1000) COLLATE Chinese_PRC_CI_AS NULL,
+	F999991136 datetime NULL,
+	F999991138 datetime NULL,
+	F999991137 int DEFAULT 0 NOT NULL,
+	F999991139 nvarchar(500) COLLATE Chinese_PRC_CI_AS NULL
+);
+CREATE TABLE 车体事业部.dbo.tabDIYTableField (
+	tabID int NOT NULL,
+	fieldID int NOT NULL,
+	fieldName nvarchar(50) COLLATE Chinese_PRC_CI_AS NOT NULL,
+	iRow int NULL,
+	iCol int NULL,
+	TypeID int NOT NULL,
+	bUnique char(1) COLLATE Chinese_PRC_CI_AS NOT NULL,
+	bRequire char(1) COLLATE Chinese_PRC_CI_AS NOT NULL,
+	bComboUnique char(1) COLLATE Chinese_PRC_CI_AS NOT NULL,
+	DataRule int NOT NULL,
+	ParameterField varchar(500) COLLATE Chinese_PRC_CI_AS NULL,
+	bNoClearData char(1) COLLATE Chinese_PRC_CI_AS NOT NULL,
+	iOrd int NOT NULL,
+	sOriFieldName nvarchar(50) COLLATE Chinese_PRC_CI_AS NULL,
+	sOriFieldType varchar(50) COLLATE Chinese_PRC_CI_AS NULL,
+	NoDisplay char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bCanKeyInput char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bCanSelAtRule char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '1' NOT NULL,
+	bCanModifyAtFillDataWithFormula char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '1' NOT NULL,
+	bCanSelAtFillDataWithFormula char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '1' NOT NULL,
+	ExFillField varchar(800) COLLATE Chinese_PRC_CI_AS NULL,
+	bCanModifyExcelFormula char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	sLinkRepData ntext COLLATE Chinese_PRC_CI_AS NULL,
+	sHintUnique nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	sHintEmpty nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	bAlwaysShowSelWin char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bMerge char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	sPicFileCon varchar(50) COLLATE Chinese_PRC_CI_AS NULL,
+	bNF char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	sCHK varchar(20) COLLATE Chinese_PRC_CI_AS NULL,
+	sName2 nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	sReferF int DEFAULT 0 NOT NULL,
+	CONSTRAINT PK__tabDIYTa__F0AC27FE224B023A PRIMARY KEY (fieldID)
+);
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTableFieldM (
+	NaviID int NOT NULL,
+	ItemID int NOT NULL,
+	tabID int NOT NULL,
+	FieldID int NOT NULL,
+	FieldName nvarchar(50) COLLATE Chinese_PRC_CI_AS NOT NULL,
+	sGroup nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	bDisp int NOT NULL,
+	bDigest int NOT NULL,
+	iRowCount int NOT NULL,
+	iOrd int NOT NULL,
+	iOrd2 int NOT NULL,
+	iColWidth int NULL
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabDIYTableFieldMW (
+	NaviID int NOT NULL,
+	ItemID int NOT NULL,
+	tabID int NOT NULL,
+	iObjType int NOT NULL,
+	FieldID int NOT NULL,
+	FieldName nvarchar(500) COLLATE Chinese_PRC_CI_AS NULL,
+	sGroup nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	bDisp int NOT NULL,
+	bDigest int NOT NULL,
+	iRowCount varchar(10) COLLATE Chinese_PRC_CI_AS NOT NULL,
+	iMargin int NOT NULL,
+	iRow int NOT NULL,
+	iRWidth int NOT NULL,
+	iRMargin int NOT NULL,
+	iLabPos int NOT NULL,
+	sLabWidth varchar(10) COLLATE Chinese_PRC_CI_AS NULL,
+	sHint nvarchar(500) COLLATE Chinese_PRC_CI_AS NULL,
+	iTouch int NULL,
+	sParam nvarchar(500) COLLATE Chinese_PRC_CI_AS NULL,
+	iOrd int NOT NULL,
+	iOrd2 int NOT NULL,
+	sTotal nvarchar(30) COLLATE Chinese_PRC_CI_AS NULL,
+	iColWidth int NULL,
+	iCard int DEFAULT 0 NULL,
+	iNC int DEFAULT 0 NULL
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabDV (
+	iID int NULL,
+	sName nvarchar(50) COLLATE Chinese_PRC_CI_AS NOT NULL,
+	iOperType int NOT NULL,
+	iObjType int NOT NULL,
+	iObjID int NOT NULL,
+	iRepID int NOT NULL,
+	iCreator int NOT NULL,
+	iUser int NOT NULL,
+	bDefault char(1) COLLATE Chinese_PRC_CI_AS NULL,
+	bCanEdit char(1) COLLATE Chinese_PRC_CI_AS NOT NULL,
+	iOrd int NOT NULL
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabDVs (
+	iID int NOT NULL,
+	iUser int NOT NULL,
+	TabID int NOT NULL,
+	FieldID varchar(30) COLLATE Chinese_PRC_CI_AS NOT NULL,
+	bVisible char(1) COLLATE Chinese_PRC_CI_AS NOT NULL,
+	iWidth int NOT NULL,
+	sTotal nvarchar(30) COLLATE Chinese_PRC_CI_AS NULL,
+	bSys char(1) COLLATE Chinese_PRC_CI_AS NOT NULL,
+	iOrd int NOT NULL
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabDataRule (
+	RuleID int NOT NULL,
+	RuleName nvarchar(60) COLLATE Chinese_PRC_CI_AS NOT NULL,
+	RuleType int NOT NULL,
+	DataSrc char(1) COLLATE Chinese_PRC_CI_AS NOT NULL,
+	MultiSel char(1) COLLATE Chinese_PRC_CI_AS NOT NULL,
+	OnlyLeaf char(1) COLLATE Chinese_PRC_CI_AS NOT NULL,
+	NotUsed char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bOrigin char(1) COLLATE Chinese_PRC_CI_AS NOT NULL,
+	sDesc nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	bUnique char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bReFresh char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bMayNULL char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bNoAutoFit char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	iCreator int DEFAULT 0 NOT NULL,
+	bNMOther char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bFOBO char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	sSize varchar(20) COLLATE Chinese_PRC_CI_AS NULL,
+	bQuery char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	sDisN varchar(40) COLLATE Chinese_PRC_CI_AS NULL,
+	sOther varchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	iOrd int DEFAULT 0 NULL,
+	CONSTRAINT PK__tabDataR__110458C2269AB60B PRIMARY KEY (RuleID)
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabDataRuleCategory (
+	CatID int NOT NULL,
+	sName nvarchar(25) COLLATE Chinese_PRC_CI_AS NOT NULL,
+	SJ int NOT NULL,
+	sNameB nvarchar(25) COLLATE Chinese_PRC_CI_AS NULL,
+	sNameC nvarchar(25) COLLATE Chinese_PRC_CI_AS NULL,
+	CONSTRAINT PK__tabDataR__6A1C8ADA33F4B129 PRIMARY KEY (CatID)
+);
+CREATE TABLE 车体事业部.dbo.tabDataRules1 (
+	RuleID int NOT NULL,
+	ValueID int NOT NULL,
+	SubValue nvarchar(50) COLLATE Chinese_PRC_CI_AS NOT NULL,
+	LevelValue varchar(30) COLLATE Chinese_PRC_CI_AS NULL,
+	iOrd int NOT NULL,
+	NotUsed char(1) COLLATE Chinese_PRC_CI_AS NOT NULL
+);
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabDataRules2 (
+	RuleID int NOT NULL,
+	tabIDName varchar(50) COLLATE Chinese_PRC_CI_AS NOT NULL,
+	DisplayField varchar(500) COLLATE Chinese_PRC_CI_AS NOT NULL,
+	ConditionNames ntext COLLATE Chinese_PRC_CI_AS NULL,
+	LevelField nvarchar(200) COLLATE Chinese_PRC_CI_AS NULL,
+	LevelLen varchar(30) COLLATE Chinese_PRC_CI_AS NULL,
+	OrdField varchar(150) COLLATE Chinese_PRC_CI_AS NULL,
+	bIsDESC varchar(50) COLLATE Chinese_PRC_CI_AS NOT NULL,
+	ValueFieldIndex int DEFAULT 0 NOT NULL,
+	sCategory varchar(200) COLLATE Chinese_PRC_CI_AS NULL,
+	sTree3 varchar(200) COLLATE Chinese_PRC_CI_AS NULL,
+	NDispF varchar(500) COLLATE Chinese_PRC_CI_AS NULL,
+	sOther varchar(300) COLLATE Chinese_PRC_CI_AS NULL,
+	ConditionIDs ntext COLLATE Chinese_PRC_CI_AS NULL
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabDataRules3 (
+	RuleID int NOT NULL,
+	HeadTitle nvarchar(20) COLLATE Chinese_PRC_CI_AS NULL,
+	DateFormat varchar(8) COLLATE Chinese_PRC_CI_AS NULL,
+	SerialLen int NULL,
+	StartValue int NULL,
+	ResetAfterDateChange char(1) COLLATE Chinese_PRC_CI_AS NOT NULL,
+	DateValue varchar(8) COLLATE Chinese_PRC_CI_AS NULL,
+	SerialValue int NULL,
+	ActionAfterSave char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	ReuseType char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	TitleAfterDate varchar(20) COLLATE Chinese_PRC_CI_AS NULL,
+	sFormat nvarchar(100) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	sFormatSetting nvarchar(150) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	NFN char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabDataSrcOther (
+	srcID int NOT NULL,
+	srcName nvarchar(50) COLLATE Chinese_PRC_CI_AS NOT NULL,
+	sAccessPrefix nvarchar(100) COLLATE Chinese_PRC_CI_AS NOT NULL,
+	sProvider varchar(50) COLLATE Chinese_PRC_CI_AS NULL,
+	sDataSrc nvarchar(50) COLLATE Chinese_PRC_CI_AS NULL,
+	sDBName nvarchar(50) COLLATE Chinese_PRC_CI_AS NULL,
+	sLoginUser nvarchar(50) COLLATE Chinese_PRC_CI_AS NULL,
+	sPassword varchar(30) COLLATE Chinese_PRC_CI_AS NULL,
+	bCanModify char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	CONSTRAINT PK__tabDataS__5DD08E2F405A880E PRIMARY KEY (srcID)
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabDataType (
+	TypeID int NOT NULL,
+	TypeName nvarchar(20) COLLATE Chinese_PRC_CI_AS NOT NULL,
+	OriginType varchar(20) COLLATE Chinese_PRC_CI_AS NOT NULL,
+	iLen int NOT NULL,
+	iXSLen int NULL,
+	sDefault varchar(20) COLLATE Chinese_PRC_CI_AS NULL,
+	MatchWord nvarchar(50) COLLATE Chinese_PRC_CI_AS NULL,
+	sDesc nvarchar(200) COLLATE Chinese_PRC_CI_AS NULL,
+	iOrd int DEFAULT 0 NULL,
+	CONSTRAINT PK__tabDataT__516F0395451F3D2B PRIMARY KEY (TypeID)
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabDepartment (
+	DeptID int NOT NULL,
+	sName nvarchar(50) COLLATE Chinese_PRC_CI_AS NOT NULL,
+	BM nvarchar(30) COLLATE Chinese_PRC_CI_AS NOT NULL,
+	SJ int NOT NULL,
+	FZJG char(1) COLLATE Chinese_PRC_CI_AS NOT NULL,
+	NotUsed char(1) COLLATE Chinese_PRC_CI_AS NOT NULL,
+	CONSTRAINT PK__tabDepar__0148818E49E3F248 PRIMARY KEY (DeptID)
+);
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabEMAILSended (
+	iID int NOT NULL,
+	dSendDT datetime NULL,
+	sAddress varchar(200) COLLATE Chinese_PRC_CI_AS NULL,
+	sSubject nvarchar(200) COLLATE Chinese_PRC_CI_AS NULL,
+	sContent nvarchar(1500) COLLATE Chinese_PRC_CI_AS NULL,
+	sAttchFile nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	CONSTRAINT PK__tabEMAIL__DC512D72628FA481 PRIMARY KEY (iID)
+);
+CREATE TABLE 车体事业部.dbo.tabEntFlow (
+	EntFlowID int NOT NULL,
+	bUse char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	date1 datetime NOT NULL,
+	date2 datetime NOT NULL,
+	iAfter int DEFAULT 0 NOT NULL,
+	FlowID varchar(500) COLLATE Chinese_PRC_CI_AS NULL,
+	OperID1 int NOT NULL,
+	OperID2 varchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	CONSTRAINT PK__tabEntFl__DCE624BD6A30C649 PRIMARY KEY (EntFlowID)
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabEnterprise (
+	EnterID int NOT NULL,
+	sName nvarchar(50) COLLATE Chinese_PRC_CI_AS NOT NULL,
+	Address nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	PostNo varchar(20) COLLATE Chinese_PRC_CI_AS NULL,
+	Tel varchar(20) COLLATE Chinese_PRC_CI_AS NULL,
+	Fex varchar(20) COLLATE Chinese_PRC_CI_AS NULL,
+	email varchar(30) COLLATE Chinese_PRC_CI_AS NULL,
+	www varchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	Bank nvarchar(60) COLLATE Chinese_PRC_CI_AS NULL,
+	CountNo varchar(30) COLLATE Chinese_PRC_CI_AS NULL,
+	TaxNo varchar(30) COLLATE Chinese_PRC_CI_AS NULL,
+	CheckDay int NULL,
+	CONSTRAINT PK__tabEnter__74B398142FA4FD58 PRIMARY KEY (EnterID)
+);
+CREATE TABLE 车体事业部.dbo.tabFTPPicFile (
+	RepID int NOT NULL,
+	DataID int NOT NULL,
+	sFileName nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL
+);
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabFillRule (
+	FormulaID int NOT NULL,
+	TabID int NOT NULL,
+	SrcFieldSQL nvarchar(1000) COLLATE Chinese_PRC_CI_AS NULL,
+	SrcFieldSM nvarchar(2000) COLLATE Chinese_PRC_CI_AS NULL,
+	FillType int NOT NULL,
+	TargetFieldID int NOT NULL,
+	iOrd int NOT NULL,
+	sQryFName nvarchar(50) COLLATE Chinese_PRC_CI_AS NULL,
+	sFlag char(1) COLLATE Chinese_PRC_CI_AS NULL,
+	sTotal nvarchar(30) COLLATE Chinese_PRC_CI_AS NULL,
+	iOrd2 int DEFAULT 0 NULL
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabFlow (
+	flowID int NOT NULL,
+	RepID int NOT NULL,
+	flowCaption nvarchar(50) COLLATE Chinese_PRC_CI_AS NOT NULL,
+	bValidate char(1) COLLATE Chinese_PRC_CI_AS NOT NULL,
+	chart image NOT NULL,
+	sDesc nvarchar(200) COLLATE Chinese_PRC_CI_AS NULL,
+	PauseField varchar(20) COLLATE Chinese_PRC_CI_AS NULL,
+	[NoLock] char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	sSubject nvarchar(500) COLLATE Chinese_PRC_CI_AS NULL,
+	sFormula varchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	sOther varchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	bNotInNoF int DEFAULT 0 NOT NULL,
+	CONSTRAINT PK__tabFlow__A94CE37D3469B275 PRIMARY KEY (flowID)
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabFlowLink (
+	FlowID int NOT NULL,
+	LinkID varchar(30) COLLATE Chinese_PRC_CI_AS NOT NULL,
+	BeginTaskID int NOT NULL,
+	EndTaskID int NOT NULL,
+	bNewRep char(1) COLLATE Chinese_PRC_CI_AS NOT NULL,
+	NewRepID int NULL,
+	ConditionType char(1) COLLATE Chinese_PRC_CI_AS NOT NULL,
+	ConditionsSQL ntext COLLATE Chinese_PRC_CI_AS NULL,
+	ConditionsSM ntext COLLATE Chinese_PRC_CI_AS NULL,
+	lstFormulaID varchar(500) COLLATE Chinese_PRC_CI_AS NULL,
+	sHint nvarchar(500) COLLATE Chinese_PRC_CI_AS NULL,
+	NewRepFirstDoUser varchar(200) COLLATE Chinese_PRC_CI_AS DEFAULT '0,0' NOT NULL,
+	sClearFieldP varchar(1000) COLLATE Chinese_PRC_CI_AS NULL,
+	sClearFieldB varchar(1000) COLLATE Chinese_PRC_CI_AS NULL,
+	sFillField varchar(1000) COLLATE Chinese_PRC_CI_AS NULL,
+	bAsBack char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	DoUser char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '1' NOT NULL,
+	lstDeptID varchar(500) COLLATE Chinese_PRC_CI_AS NULL,
+	lstRoleID varchar(500) COLLATE Chinese_PRC_CI_AS NULL
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabFlowMS (
+	FlowID int NULL,
+	FlowPostID int NULL,
+	DataID int NULL,
+	taskID int NULL,
+	iOrd numeric(13,4) NULL,
+	ToDoUsers varchar(1000) COLLATE Chinese_PRC_CI_AS NULL,
+	ToDoDepts varchar(1000) COLLATE Chinese_PRC_CI_AS NULL,
+	ToDoRoles varchar(1000) COLLATE Chinese_PRC_CI_AS NULL,
+	sDesc nvarchar(1000) COLLATE Chinese_PRC_CI_AS NULL,
+	sSubject nvarchar(600) COLLATE Chinese_PRC_CI_AS NULL,
+	HasHintTime datetime NULL,
+	sSubject2 nvarchar(300) COLLATE Chinese_PRC_CI_AS NULL
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabFlowPost (
+	RepID int NOT NULL,
+	FlowID int NOT NULL,
+	FlowPostID int NOT NULL,
+	DataID int NOT NULL,
+	taskID int NOT NULL,
+	DoTime datetime NOT NULL,
+	DoUser int NOT NULL,
+	iOrd numeric(20,4) NOT NULL,
+	iState smallint NOT NULL,
+	DoingUser int NOT NULL,
+	ToDoUsers varchar(1000) COLLATE Chinese_PRC_CI_AS NULL,
+	ToDoDepts varchar(1000) COLLATE Chinese_PRC_CI_AS NULL,
+	ToDoRoles varchar(1000) COLLATE Chinese_PRC_CI_AS NULL,
+	sDesc nvarchar(500) COLLATE Chinese_PRC_CI_AS NULL,
+	iHA int DEFAULT 0 NOT NULL,
+	iHAValues nvarchar(500) COLLATE Chinese_PRC_CI_AS NULL,
+	HasHintTime datetime NULL,
+	sSubject nvarchar(300) COLLATE Chinese_PRC_CI_AS NULL,
+	iDoLevel char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	iSub int DEFAULT 0 NOT NULL,
+	DoTime1 datetime DEFAULT '0' NOT NULL,
+	sSubject2 nvarchar(300) COLLATE Chinese_PRC_CI_AS NULL
+);
+ 
+ 
+ 
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabFlowPostF (
+	RepID int NOT NULL,
+	FlowID int NOT NULL,
+	FlowPostID int NOT NULL,
+	DataID int NOT NULL,
+	taskID int NOT NULL,
+	DoTime datetime NOT NULL,
+	DoUser int NOT NULL,
+	iOrd numeric(20,4) NOT NULL,
+	iState smallint NOT NULL,
+	DoingUser int NOT NULL,
+	ToDoUsers varchar(1000) COLLATE Chinese_PRC_CI_AS NULL,
+	ToDoDepts varchar(1000) COLLATE Chinese_PRC_CI_AS NULL,
+	ToDoRoles varchar(1000) COLLATE Chinese_PRC_CI_AS NULL,
+	sDesc nvarchar(500) COLLATE Chinese_PRC_CI_AS NULL,
+	iHA int DEFAULT 0 NOT NULL,
+	iHAValues nvarchar(500) COLLATE Chinese_PRC_CI_AS NULL,
+	HasHintTime datetime NULL,
+	sSubject nvarchar(300) COLLATE Chinese_PRC_CI_AS NULL,
+	iDoLevel char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	iSub int DEFAULT 0 NOT NULL,
+	DoTime1 datetime DEFAULT '0' NOT NULL,
+	sSubject2 nvarchar(300) COLLATE Chinese_PRC_CI_AS NULL
+);
+ 
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabFlowPostS (
+	RepID int NOT NULL,
+	FlowID int NOT NULL,
+	FlowPostID int NOT NULL,
+	DataID int NOT NULL,
+	taskID int NOT NULL,
+	DoTime datetime NOT NULL,
+	DoUser int NOT NULL,
+	iOrd numeric(20,4) NOT NULL,
+	iState smallint NOT NULL,
+	DoingUser int NOT NULL,
+	ToDoUsers varchar(1000) COLLATE Chinese_PRC_CI_AS NULL,
+	ToDoDepts varchar(1000) COLLATE Chinese_PRC_CI_AS NULL,
+	ToDoRoles varchar(1000) COLLATE Chinese_PRC_CI_AS NULL,
+	sDesc nvarchar(500) COLLATE Chinese_PRC_CI_AS NULL,
+	iHA int DEFAULT 0 NOT NULL,
+	iHAValues nvarchar(500) COLLATE Chinese_PRC_CI_AS NULL,
+	HasHintTime datetime NULL,
+	sSubject nvarchar(300) COLLATE Chinese_PRC_CI_AS NULL,
+	iDoLevel char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	iSub int DEFAULT 0 NOT NULL,
+	DoTime1 datetime DEFAULT '0' NOT NULL,
+	sSubject2 nvarchar(300) COLLATE Chinese_PRC_CI_AS NULL
+);
+ 
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabFlowTask (
+	flowID int NOT NULL,
+	taskID int NOT NULL,
+	taskCaption nvarchar(50) COLLATE Chinese_PRC_CI_AS NOT NULL,
+	bSaveDataAfterFinish char(1) COLLATE Chinese_PRC_CI_AS NOT NULL,
+	bIsMustDoBeforeTime char(1) COLLATE Chinese_PRC_CI_AS NOT NULL,
+	MustDoBeforeTime int NOT NULL,
+	TimeUnit char(1) COLLATE Chinese_PRC_CI_AS NOT NULL,
+	DoUser varchar(3) COLLATE Chinese_PRC_CI_AS NULL,
+	ExeType char(1) COLLATE Chinese_PRC_CI_AS NOT NULL,
+	lstFormulaID varchar(500) COLLATE Chinese_PRC_CI_AS NULL,
+	FillArea varchar(3500) COLLATE Chinese_PRC_CI_AS NULL,
+	lstDeptID varchar(500) COLLATE Chinese_PRC_CI_AS NULL,
+	lstRoleID varchar(500) COLLATE Chinese_PRC_CI_AS NULL,
+	bCanViewAfterDo char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	sHintSet varchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	bUseEMail char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bUseSMS char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	NoVisiArea varchar(1500) COLLATE Chinese_PRC_CI_AS NULL,
+	NoPause char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	NoPrior varchar(20) COLLATE Chinese_PRC_CI_AS NOT NULL,
+	NoCancel char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bNoCheck char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bCanTran varchar(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	sOther varchar(500) COLLATE Chinese_PRC_CI_AS NULL
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabFlowTaskHAL (
+	FlowID int NOT NULL,
+	FlowPostID int NOT NULL,
+	iTime int NOT NULL
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabFlowTaskRuleForNewRepFlow (
+	FlowID int NOT NULL,
+	LinkID varchar(30) COLLATE Chinese_PRC_CI_AS NOT NULL,
+	srcRepTable int NOT NULL,
+	srcFieldID int NOT NULL,
+	FillType varchar(10) COLLATE Chinese_PRC_CI_AS NOT NULL,
+	destRepTable int NOT NULL,
+	destFieldID int NOT NULL
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabFormula (
+	RepID int NOT NULL,
+	FormulaID int NOT NULL,
+	FormulaName nvarchar(100) COLLATE Chinese_PRC_CI_AS NOT NULL,
+	FormulaType int NOT NULL,
+	ExeTime varchar(30) COLLATE Chinese_PRC_CI_AS NOT NULL,
+	iOrd int NOT NULL,
+	UseShortCut char(1) COLLATE Chinese_PRC_CI_AS NOT NULL,
+	ClearFillRange char(1) COLLATE Chinese_PRC_CI_AS NOT NULL,
+	ResultIsUnique char(1) COLLATE Chinese_PRC_CI_AS NOT NULL,
+	OrdType char(1) COLLATE Chinese_PRC_CI_AS NOT NULL,
+	SrcTabID varchar(50) COLLATE Chinese_PRC_CI_AS NOT NULL,
+	SelTemp char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NULL,
+	bSomeData char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	SomeRecords int DEFAULT 0 NOT NULL,
+	bAppendData char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	sWhereSQL2 nvarchar(1000) COLLATE Chinese_PRC_CI_AS NULL,
+	sWhereSM2 nvarchar(1000) COLLATE Chinese_PRC_CI_AS NULL,
+	bIncludeNoFinished char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	sHintYes nvarchar(200) COLLATE Chinese_PRC_CI_AS NULL,
+	sHintNo nvarchar(200) COLLATE Chinese_PRC_CI_AS NULL,
+	ResultAction char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bNoDisplayTextWhenApply char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bDelNullRowAfterExecute char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	sToDoUser varchar(200) COLLATE Chinese_PRC_CI_AS NULL,
+	bReFreshSheet char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bNoCheckRelation char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bAppendWhenNoMatch char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	sOrderAfterExec varchar(30) COLLATE Chinese_PRC_CI_AS NULL,
+	sMergeField varchar(1000) COLLATE Chinese_PRC_CI_AS NULL,
+	bUnMerge char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bNoFill0 char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bShowWait char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	ReserveRowCol int DEFAULT 0 NOT NULL,
+	iVer int DEFAULT 0 NOT NULL,
+	sSysRule varchar(200) COLLATE Chinese_PRC_CI_AS NULL,
+	bDSOther char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	iMPP char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bNoAuto char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	sOther varchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	sWhereSQL3 ntext COLLATE Chinese_PRC_CI_AS NULL,
+	sWhereSM3 ntext COLLATE Chinese_PRC_CI_AS NULL,
+	FormulaSM ntext COLLATE Chinese_PRC_CI_AS NULL,
+	sWhereSQL ntext COLLATE Chinese_PRC_CI_AS NULL,
+	sWhereSM ntext COLLATE Chinese_PRC_CI_AS NULL
+);
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabFormulaGrid (
+	FID int NOT NULL,
+	iRow int NOT NULL,
+	iCol int NOT NULL
+);
+CREATE TABLE 车体事业部.dbo.tabFormulaWithSSFunction (
+	FID int NOT NULL,
+	iRow int NOT NULL,
+	iCol int NOT NULL,
+	sFormula nvarchar(500) COLLATE Chinese_PRC_CI_AS NOT NULL,
+	SheetName nvarchar(80) COLLATE Chinese_PRC_CI_AS NOT NULL
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabFunction (
+	CatID int NOT NULL,
+	CatName nvarchar(100) COLLATE Chinese_PRC_CI_AS NOT NULL,
+	Flag char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	iOrd int NULL,
+	CONSTRAINT PK__tabFunct__9C61AB272F9B81FC PRIMARY KEY (CatName)
+);
+CREATE TABLE 车体事业部.dbo.tabFunctions (
+	CatID int NOT NULL,
+	FuncName nvarchar(100) COLLATE Chinese_PRC_CI_AS NOT NULL,
+	FuncSQL varchar(130) COLLATE Chinese_PRC_CI_AS NOT NULL,
+	sDesc nvarchar(200) COLLATE Chinese_PRC_CI_AS NULL,
+	iOrd int NOT NULL,
+	CONSTRAINT PK__tabFunct__10105C8023954D6B PRIMARY KEY (FuncName)
+);
+CREATE TABLE 车体事业部.dbo.tabGVar (
+	iID int NOT NULL,
+	sVarName nvarchar(50) COLLATE Chinese_PRC_CI_AS NOT NULL,
+	sVarValue nvarchar(200) COLLATE Chinese_PRC_CI_AS NOT NULL
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabGridFormat (
+	RepID int NOT NULL,
+	DataID int NOT NULL,
+	tabID int NOT NULL,
+	FieldID int NOT NULL,
+	iRow int DEFAULT 0 NOT NULL,
+	iCol int DEFAULT 0 NOT NULL,
+	iRowCount int DEFAULT 0 NOT NULL,
+	iColCount int DEFAULT 0 NOT NULL,
+	sSetting nvarchar(300) COLLATE Chinese_PRC_CI_AS NULL,
+	sName nvarchar(100) COLLATE Chinese_PRC_CI_AS NOT NULL
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabGridTextOfFormat (
+	FID int NOT NULL,
+	iRow int NOT NULL,
+	iCol int NOT NULL,
+	sText nvarchar(500) COLLATE Chinese_PRC_CI_AS NOT NULL,
+	SheetName nvarchar(80) COLLATE Chinese_PRC_CI_AS NOT NULL
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabHyperLinks (
+	RepID int NOT NULL,
+	DataID int NOT NULL,
+	TabID int NOT NULL,
+	FieldID int NOT NULL,
+	iRelativeRow int NOT NULL,
+	iRelativeCol int NOT NULL,
+	sFileName nvarchar(200) COLLATE Chinese_PRC_CI_AS NOT NULL,
+	fFile image NOT NULL,
+	sLinkNo varchar(20) COLLATE Chinese_PRC_CI_AS NULL,
+	bFTP char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL
+);
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabInnerTableCode (
+	iTabID int NOT NULL,
+	sCode text COLLATE Chinese_PRC_CI_AS NULL,
+	iFormulaID int NOT NULL
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabLockRepDataFormula (
+	RepID int NOT NULL,
+	sFormulaSM nvarchar(1000) COLLATE Chinese_PRC_CI_AS NOT NULL,
+	sFormulaSQL nvarchar(1000) COLLATE Chinese_PRC_CI_AS NOT NULL,
+	bUnLock char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bOnlyThis char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	CONSTRAINT PK__tabLockR__2F6FA9AB6AC5C326 PRIMARY KEY (RepID)
+);
+CREATE TABLE 车体事业部.dbo.tabLog (
+	OperUserName nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	OperTime varchar(30) COLLATE Chinese_PRC_CI_AS NOT NULL,
+	sIP nvarchar(150) COLLATE Chinese_PRC_CI_AS NOT NULL,
+	FuncName nvarchar(30) COLLATE Chinese_PRC_CI_AS NOT NULL,
+	SM nvarchar(100) COLLATE Chinese_PRC_CI_AS NOT NULL
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabLoginByOther (
+	bActived char(1) COLLATE Chinese_PRC_CI_AS NULL,
+	sURL nvarchar(200) COLLATE Chinese_PRC_CI_AS NULL,
+	sUser nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	sPwd varchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	sResult nvarchar(50) COLLATE Chinese_PRC_CI_AS NULL,
+	sResultValue nvarchar(20) COLLATE Chinese_PRC_CI_AS NULL,
+	sMsg nvarchar(200) COLLATE Chinese_PRC_CI_AS NULL
+);
+CREATE TABLE 车体事业部.dbo.tabLoginInfo (
+	sLoginUser varchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	sLoginName nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	sLoginIP nvarchar(150) COLLATE Chinese_PRC_CI_AS NULL,
+	tLoginTime datetime NULL,
+	iOnlineMinute int NULL,
+	InterLoginID varchar(20) COLLATE Chinese_PRC_CI_AS NULL,
+	sDBName nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	sLocalIPAndName nvarchar(150) COLLATE Chinese_PRC_CI_AS NULL,
+	sLoginUser2 nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabLoginLog (
+	OperID int NOT NULL,
+	ChPWDateTime datetime NULL,
+	LockTime datetime NULL,
+	sLastPW text COLLATE Chinese_PRC_CI_AS NULL,
+	sPWErrLog ntext COLLATE Chinese_PRC_CI_AS NULL,
+	CONSTRAINT PK__tabLogin__F288E41D3E1D39E1 PRIMARY KEY (OperID)
+);
+CREATE TABLE 车体事业部.dbo.tabMFValues (
+	RepID int NOT NULL,
+	DataID int NOT NULL,
+	TabID int NOT NULL,
+	FieldID int NOT NULL,
+	iOrd int NOT NULL,
+	sValue nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabNULL (
+	a1 char(1) COLLATE Chinese_PRC_CI_AS NULL
+);
+CREATE TABLE 车体事业部.dbo.tabNaviItem (
+	ItemID int NOT NULL,
+	NaviID int NOT NULL,
+	sCaption nvarchar(50) COLLATE Chinese_PRC_CI_AS NOT NULL,
+	iAction int NOT NULL,
+	iObj int NOT NULL,
+	iOrd int NOT NULL,
+	imgIcon image NULL,
+	sOther varchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	iFlowID int DEFAULT 0 NULL,
+	CONSTRAINT PK__tabNaviI__727E83EB763775D2 PRIMARY KEY (ItemID)
+);
+CREATE TABLE 车体事业部.dbo.tabNaviM (
+	NaviID int NOT NULL,
+	NaviCaption nvarchar(50) COLLATE Chinese_PRC_CI_AS NOT NULL,
+	iOrd int NOT NULL,
+	iFlag int DEFAULT 0 NOT NULL,
+	sVer varchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	NaviBM varchar(20) COLLATE Chinese_PRC_CI_AS NULL,
+	CONSTRAINT PK__tabNaviM__2F08BDA87A0806B6 PRIMARY KEY (NaviID)
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabNavigate (
+	NaviID int NOT NULL,
+	NaviBM nvarchar(20) COLLATE Chinese_PRC_CI_AS NULL,
+	NaviCaption nvarchar(80) COLLATE Chinese_PRC_CI_AS NULL,
+	NaviVer varchar(20) COLLATE Chinese_PRC_CI_AS NULL,
+	DisTab varchar(1) COLLATE Chinese_PRC_CI_AS NOT NULL,
+	NaviPic image NULL,
+	NaviIcon image NULL,
+	TopTab char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bCheckQX char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	sOther varchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	CONSTRAINT PK__tabNavig__2F08BDA8707E9C7C PRIMARY KEY (NaviID)
+);
+CREATE TABLE 车体事业部.dbo.tabNoVF (
+	FID int NOT NULL,
+	dtID int NOT NULL,
+	FieldID int NOT NULL,
+	iRow int NOT NULL,
+	iCol int NOT NULL,
+	iEndRow int NOT NULL,
+	iEndCol int NOT NULL,
+	iLayoutType int NOT NULL,
+	SheetName nvarchar(20) COLLATE Chinese_PRC_CI_AS NOT NULL
+);
+CREATE TABLE 车体事业部.dbo.tabObjDoing (
+	iObjType int NULL,
+	iObjID int NULL,
+	iOperID int NULL,
+	sOperName nvarchar(50) COLLATE Chinese_PRC_CI_AS NULL,
+	dOperDate datetime NULL
+);
+CREATE TABLE 车体事业部.dbo.tabOperator (
+	OperID int NOT NULL,
+	sName nvarchar(100) COLLATE Chinese_PRC_CI_AS NOT NULL,
+	DeptID int NOT NULL,
+	LoginName nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	LoginPassword varchar(200) COLLATE Chinese_PRC_CI_AS NULL,
+	Mobile varchar(20) COLLATE Chinese_PRC_CI_AS NULL,
+	email varchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	SJType int NOT NULL,
+	SJDepartment int NULL,
+	SJRole int NULL,
+	SJOperator int NULL,
+	BZ1 char(1) COLLATE Chinese_PRC_CI_AS NOT NULL,
+	NotUsed char(1) COLLATE Chinese_PRC_CI_AS NOT NULL,
+	SM nvarchar(200) COLLATE Chinese_PRC_CI_AS NULL,
+	sIP varchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	bLock char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	sDeptAdmin varchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	bMLog char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bNoChPW char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	sLogF varchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	sOther varchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	sOrd nvarchar(50) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	CONSTRAINT PK__tabOpera__F288E41D01A9287E PRIMARY KEY (OperID)
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabOption (
+	OperID int NOT NULL,
+	OptionName varchar(30) COLLATE Chinese_PRC_CI_AS NOT NULL,
+	OptionValue varchar(30) COLLATE Chinese_PRC_CI_AS NULL
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabOtherSrcTable (
+	tabID int NOT NULL,
+	sPrefix nvarchar(50) COLLATE Chinese_PRC_CI_AS NULL,
+	sStruct ntext COLLATE Chinese_PRC_CI_AS NULL,
+	CONSTRAINT PK__tabOther__50656ECA7773527C PRIMARY KEY (tabID)
+);
+CREATE TABLE 车体事业部.dbo.tabPZ (
+	RepID int NOT NULL,
+	DataID int NOT NULL,
+	tabID int NOT NULL,
+	FieldID int NOT NULL,
+	iRow int NULL,
+	iCol int NULL,
+	sPZ nvarchar(500) COLLATE Chinese_PRC_CI_AS NULL
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabPrintSetting (
+	RepID int NOT NULL,
+	bSave char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bFinish char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bConField char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	sField varchar(20) COLLATE Chinese_PRC_CI_AS NULL,
+	sMsg nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	iPrtTimes int DEFAULT 0 NOT NULL,
+	sMsgT nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	CONSTRAINT PK__tabPrint__2F6FA9AB0A3E6E7F PRIMARY KEY (RepID)
+);
+CREATE TABLE 车体事业部.dbo.tabPrtLog (
+	RepID int NULL,
+	DataID int NULL,
+	sLoginName nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	sName nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	sDateTime datetime NULL
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabQX (
+	ObjID int NOT NULL,
+	lstDeptID varchar(3000) COLLATE Chinese_PRC_CI_AS NULL,
+	lstRoleID varchar(1000) COLLATE Chinese_PRC_CI_AS NULL,
+	lstOperID varchar(1000) COLLATE Chinese_PRC_CI_AS NULL,
+	QXType int NOT NULL,
+	ObjType char(1) COLLATE Chinese_PRC_CI_AS NOT NULL
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabQX1 (
+	QXID int NOT NULL,
+	ObjID int NOT NULL,
+	iDeptID int NOT NULL,
+	iRoleID int NOT NULL,
+	iOperID int NOT NULL,
+	QXType int NOT NULL,
+	ObjType char(1) COLLATE Chinese_PRC_CI_AS NOT NULL,
+	NoVisibleFieldIDs varchar(3000) COLLATE Chinese_PRC_CI_AS NULL,
+	QXTypeByContent char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	QXField varchar(20) COLLATE Chinese_PRC_CI_AS NULL,
+	QXType2 int DEFAULT 0 NOT NULL,
+	QXConst nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	sWhereSQL nvarchar(500) COLLATE Chinese_PRC_CI_AS NULL,
+	sWhereSM nvarchar(500) COLLATE Chinese_PRC_CI_AS NULL,
+	sWhereSQL2 nvarchar(700) COLLATE Chinese_PRC_CI_AS NULL,
+	CONSTRAINT PK__tabQX1__F530AB3F1D5142F3 PRIMARY KEY (QXID)
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabQX2 (
+	QXID int NOT NULL,
+	RepID int NOT NULL,
+	TabID int NOT NULL,
+	iDeptID int NOT NULL,
+	iRoleID int NOT NULL,
+	iOperID int NOT NULL,
+	CONSTRAINT PK__tabQX2__F530AB3F230A1C49 PRIMARY KEY (QXID)
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabQX3 (
+	QXID int NOT NULL,
+	ObjID int NOT NULL,
+	iDeptID int NOT NULL,
+	iRoleID int NOT NULL,
+	QXType int NOT NULL,
+	ManageType char(1) COLLATE Chinese_PRC_CI_AS NOT NULL,
+	CONSTRAINT PK__tabQX3__F530AB3F26DAAD2D PRIMARY KEY (QXID)
+);
+CREATE TABLE 车体事业部.dbo.tabQXEdit (
+	QXID int NOT NULL,
+	ObjID int NOT NULL,
+	bOnlyMe char(1) COLLATE Chinese_PRC_CI_AS NOT NULL,
+	bMe char(1) COLLATE Chinese_PRC_CI_AS NOT NULL,
+	bNoMe char(1) COLLATE Chinese_PRC_CI_AS NOT NULL,
+	bOther char(1) COLLATE Chinese_PRC_CI_AS NOT NULL,
+	slstOtherOper varchar(1000) COLLATE Chinese_PRC_CI_AS NULL,
+	ObjType char(1) COLLATE Chinese_PRC_CI_AS NOT NULL,
+	slstDept varchar(2000) COLLATE Chinese_PRC_CI_AS NULL,
+	slstRole varchar(500) COLLATE Chinese_PRC_CI_AS NULL,
+	CONSTRAINT PK__tabQXEdi__F530AB3F2AAB3E11 PRIMARY KEY (QXID)
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabQXFormat (
+	QXID int NOT NULL,
+	RepID int NOT NULL,
+	slstOper varchar(1000) COLLATE Chinese_PRC_CI_AS NULL,
+	CONSTRAINT PK__tabQXFor__F530AB3F2E7BCEF5 PRIMARY KEY (QXID)
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabQueryFA (
+	sFAName nvarchar(50) COLLATE Chinese_PRC_CI_AS NULL,
+	iFAID int NOT NULL,
+	iOrd int NOT NULL,
+	iRepID int NOT NULL,
+	iTabID int NOT NULL,
+	iTabType char(1) COLLATE Chinese_PRC_CI_AS NOT NULL,
+	sWhereSQL nvarchar(1000) COLLATE Chinese_PRC_CI_AS NOT NULL,
+	sWhereSM nvarchar(1000) COLLATE Chinese_PRC_CI_AS NOT NULL,
+	sQuerySQL nvarchar(1000) COLLATE Chinese_PRC_CI_AS NOT NULL,
+	sAdditionalWhereValue nvarchar(200) COLLATE Chinese_PRC_CI_AS NULL,
+	sAdditionalWhereSM nvarchar(200) COLLATE Chinese_PRC_CI_AS NULL,
+	sAdditionalQuerySQL nvarchar(200) COLLATE Chinese_PRC_CI_AS NULL,
+	bPrivate char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	iCreator int DEFAULT 0 NOT NULL,
+	bForRep char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bCount char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL
+);
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabQuerySQL (
+	QueryID int NOT NULL,
+	sSQL text COLLATE Chinese_PRC_CI_AS NULL,
+	CONSTRAINT PK__tabQuery__5967F7FB188C8DD6 PRIMARY KEY (QueryID)
+);
+CREATE TABLE 车体事业部.dbo.tabRLSetting (
+	RepID int NULL,
+	FlowID int NULL,
+	TaskID int NULL,
+	TabID int NULL,
+	ConditionsSQL nvarchar(1000) COLLATE Chinese_PRC_CI_AS NULL,
+	ConditionsSM nvarchar(1000) COLLATE Chinese_PRC_CI_AS NULL
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabRepData (
+	DataID int NOT NULL,
+	RepID int NOT NULL,
+	FillDate datetime NOT NULL,
+	ModifyDate datetime NOT NULL,
+	DeptID int NOT NULL,
+	OperID int NOT NULL,
+	sDesc nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	iEndRow int NULL,
+	iEndCol int NULL,
+	bIsFinish char(1) COLLATE Chinese_PRC_CI_AS NOT NULL,
+	bLocked char(1) COLLATE Chinese_PRC_CI_AS NOT NULL,
+	bCanViewWhenNoFinished char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	iEditting varchar(50) COLLATE Chinese_PRC_CI_AS NULL,
+	OperID2 int DEFAULT '0' NOT NULL,
+	dUpdate2 datetime NULL,
+	CONSTRAINT PK__tabRepDa__9D05305D0697FACD PRIMARY KEY (DataID)
+);
+CREATE TABLE 车体事业部.dbo.tabRepDataB (
+	DataID int NOT NULL,
+	BomID int NOT NULL,
+	dDate datetime NOT NULL,
+	DeptID int NOT NULL,
+	OperID int NOT NULL,
+	sBM nvarchar(50) COLLATE Chinese_PRC_CI_AS NOT NULL,
+	sName nvarchar(100) COLLATE Chinese_PRC_CI_AS NOT NULL,
+	bLocked char(1) COLLATE Chinese_PRC_CI_AS NULL,
+	iEditting varchar(50) COLLATE Chinese_PRC_CI_AS NULL,
+	F999991056 nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	F999991055 nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	F999991057 nvarchar(50) COLLATE Chinese_PRC_CI_AS NULL,
+	F999991058 nvarchar(50) COLLATE Chinese_PRC_CI_AS NULL,
+	F999991059 nvarchar(1000) COLLATE Chinese_PRC_CI_AS NULL,
+	CONSTRAINT PK__tabRepDa__9D05305D324C5FD9 PRIMARY KEY (DataID)
+);
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabRepData_Cross (
+	RepID int NOT NULL,
+	DataID int NOT NULL,
+	tabID int NOT NULL,
+	iEndRow int NOT NULL,
+	iEndCol int NOT NULL
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabRepDetailTable (
+	RepID int NOT NULL,
+	dtID int NOT NULL,
+	tType char(1) COLLATE Chinese_PRC_CI_AS NOT NULL,
+	sheetName varchar(20) COLLATE Chinese_PRC_CI_AS NOT NULL,
+	ExpandDown char(1) COLLATE Chinese_PRC_CI_AS NOT NULL,
+	ExpandRight char(1) COLLATE Chinese_PRC_CI_AS NOT NULL,
+	FlagForMulti char(1) COLLATE Chinese_PRC_CI_AS NULL,
+	NoSaveData char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	NoProtectSheet char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	sUniqueHint nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	iOrd int DEFAULT 0 NOT NULL,
+	QuickFill char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	AUI char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	NoDis char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bNoNull char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabRepFormat (
+	RepID int NOT NULL,
+	FID int NOT NULL,
+	BeginDateTime datetime NOT NULL,
+	EndDateTime datetime NOT NULL,
+	RepFormat image NOT NULL,
+	sSheetNames nvarchar(500) COLLATE Chinese_PRC_CI_AS NULL,
+	sOther varchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	CONSTRAINT PK__tabRepFo__C1BEA5A23DBE1285 PRIMARY KEY (FID)
+);
+CREATE TABLE 车体事业部.dbo.tabRepGrid (
+	FID int NOT NULL,
+	dtID int NOT NULL,
+	FieldID int NOT NULL,
+	iRow int NOT NULL,
+	iCol int NOT NULL,
+	iEndRow int NOT NULL,
+	iEndCol int NOT NULL,
+	iLayoutType int NOT NULL,
+	SheetName varchar(20) COLLATE Chinese_PRC_CI_AS NOT NULL
+);
+ 
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabRepPublish (
+	RepID int NOT NULL,
+	DataID int NOT NULL,
+	sCaption nvarchar(100) COLLATE Chinese_PRC_CI_AS NOT NULL,
+	sURL nvarchar(200) COLLATE Chinese_PRC_CI_AS NOT NULL,
+	pubDate datetime NOT NULL,
+	pubUser nvarchar(30) COLLATE Chinese_PRC_CI_AS NOT NULL
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabRepToolBtn (
+	RepID int NOT NULL,
+	sFuncID varchar(20) COLLATE Chinese_PRC_CI_AS NULL,
+	sName1 nvarchar(200) COLLATE Chinese_PRC_CI_AS NULL,
+	sName2 nvarchar(200) COLLATE Chinese_PRC_CI_AS NULL,
+	sName3 nvarchar(200) COLLATE Chinese_PRC_CI_AS NULL,
+	bFill int NULL,
+	bEdit int NULL,
+	bPost int NULL,
+	bView int NULL,
+	sMacro nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	iOrd int NULL,
+	sFlag varchar(20) COLLATE Chinese_PRC_CI_AS NULL,
+	iBeginGroup int NULL,
+	iDIY int NULL
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabRepToolBtnT (
+	sFuncID varchar(20) COLLATE Chinese_PRC_CI_AS NULL,
+	sName1 nvarchar(200) COLLATE Chinese_PRC_CI_AS NULL,
+	sName2 nvarchar(200) COLLATE Chinese_PRC_CI_AS NULL,
+	sName3 nvarchar(200) COLLATE Chinese_PRC_CI_AS NULL,
+	bFill int NULL,
+	bEdit int NULL,
+	bPost int NULL,
+	bView int NULL,
+	sMacro nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	iOrd int NULL,
+	sFlag varchar(20) COLLATE Chinese_PRC_CI_AS NULL,
+	iBeginGroup int NULL,
+	iDIY int NULL
+);
+CREATE TABLE 车体事业部.dbo.tabReport (
+	RepID int NOT NULL,
+	FID int NOT NULL,
+	BM nvarchar(20) COLLATE Chinese_PRC_CI_AS NOT NULL,
+	sName nvarchar(100) COLLATE Chinese_PRC_CI_AS NOT NULL,
+	CatID int NOT NULL,
+	DetailTableID varchar(200) COLLATE Chinese_PRC_CI_AS NULL,
+	bSaveData char(1) COLLATE Chinese_PRC_CI_AS NOT NULL,
+	bSaveFile char(1) COLLATE Chinese_PRC_CI_AS NOT NULL,
+	bRepShortcut char(1) COLLATE Chinese_PRC_CI_AS NOT NULL,
+	FillType char(1) COLLATE Chinese_PRC_CI_AS NOT NULL,
+	CreateUser int NOT NULL,
+	bCanSelAtView char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bSelExcelFormula char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bLocked char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bOpenInputAfterLogin char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bDelDataNoConfirm char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bMayResize char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '1' NOT NULL,
+	bMayFormat char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bRuleCol char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '1' NOT NULL,
+	bNoUsed char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bNoXSDetail char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bCanNull char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	bMenu char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	CONSTRAINT PK__tabRepor__2F6FA9AB4282C7A2 PRIMARY KEY (RepID)
+);
+ 
+ 
+CREATE TABLE 车体事业部.dbo.tabReuseAutoBM (
+	RuleID int NOT NULL,
+	getUser varchar(50) COLLATE Chinese_PRC_CI_AS NOT NULL,
+	getDate datetime NULL,
+	sValue nvarchar(100) COLLATE Chinese_PRC_CI_AS NOT NULL,
+	iDataID int DEFAULT 0 NOT NULL,
+	iFlag int DEFAULT 0 NOT NULL
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabRole (
+	RoleID int NOT NULL,
+	sName nvarchar(30) COLLATE Chinese_PRC_CI_AS NOT NULL,
+	sDesc nvarchar(200) COLLATE Chinese_PRC_CI_AS NULL,
+	NotUsed char(1) COLLATE Chinese_PRC_CI_AS NOT NULL,
+	sBM nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	bSel char(1) COLLATE Chinese_PRC_CI_AS NULL,
+	CONSTRAINT PK__tabRole__8AFACE3A5689C04F PRIMARY KEY (RoleID)
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabRoleOper (
+	RoleID int NOT NULL,
+	OperID int NOT NULL,
+	DeptID varchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	iFlag char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabSMSRecv (
+	iID int NOT NULL,
+	sPhone varchar(20) COLLATE Chinese_PRC_CI_AS NULL,
+	sSMS nvarchar(500) COLLATE Chinese_PRC_CI_AS NULL,
+	sFlag char(1) COLLATE Chinese_PRC_CI_AS NULL,
+	bSended char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL,
+	dRecvDate datetime NULL,
+	CONSTRAINT PK__tabSMSRe__DC512D7239237A9A PRIMARY KEY (iID)
+);
+CREATE TABLE 车体事业部.dbo.tabSMSSended (
+	iID int NOT NULL,
+	dSendDT datetime NULL,
+	sPhone varchar(15) COLLATE Chinese_PRC_CI_AS NULL,
+	sContent nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	CONSTRAINT PK__tabSMSSe__DC512D723DE82FB7 PRIMARY KEY (iID)
+);
+CREATE TABLE 车体事业部.dbo.tabSendOther (
+	iID int NOT NULL,
+	sURL varchar(200) COLLATE Chinese_PRC_CI_AS NULL,
+	sData nvarchar(2000) COLLATE Chinese_PRC_CI_AS NULL,
+	dDate datetime NULL,
+	CONSTRAINT PK__tabSendO__DC512D72D8933B3B PRIMARY KEY (iID)
+);
+CREATE TABLE 车体事业部.dbo.tabSessionM (
+	sLoginUser varchar(50) COLLATE Chinese_PRC_CI_AS NOT NULL,
+	sOperLoginID varchar(50) COLLATE Chinese_PRC_CI_AS NULL,
+	sValues nvarchar(1000) COLLATE Chinese_PRC_CI_AS NULL,
+	CONSTRAINT PK__tabSessi__7F09644A18A17CE2 PRIMARY KEY (sLoginUser)
+);
+CREATE TABLE 车体事业部.dbo.tabSheetNameCode (
+	RepID int NULL,
+	sSheetName nvarchar(100) COLLATE Chinese_PRC_CI_AS NOT NULL,
+	sSheetCode varchar(30) COLLATE Chinese_PRC_CI_AS NOT NULL
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabSrcTabRelation (
+	FormulaID int NOT NULL,
+	TabID1 int NOT NULL,
+	FieldID1 varchar(20) COLLATE Chinese_PRC_CI_AS NOT NULL,
+	LogicFlag varchar(20) COLLATE Chinese_PRC_CI_AS NOT NULL,
+	TabID2 int NOT NULL,
+	FieldID2 varchar(20) COLLATE Chinese_PRC_CI_AS NOT NULL,
+	Flag char(1) COLLATE Chinese_PRC_CI_AS DEFAULT '0' NOT NULL
+);
+ 
+CREATE TABLE 车体事业部.dbo.tabWX (
+	sOpenID varchar(100) COLLATE Chinese_PRC_CI_AS NOT NULL,
+	OperID int NOT NULL,
+	LoginName nvarchar(200) COLLATE Chinese_PRC_CI_AS NOT NULL,
+	sPWD varchar(200) COLLATE Chinese_PRC_CI_AS NOT NULL,
+	sDB nvarchar(50) COLLATE Chinese_PRC_CI_AS NOT NULL,
+	dDate datetime NULL,
+	CONSTRAINT PK__tabWX__A68D68740DCE5408 PRIMARY KEY (sOpenID)
+);
+CREATE TABLE 车体事业部.dbo.tabWxMsgSended (
+	iID int NULL,
+	F999991126 varchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	F999991128 varchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	F999991132 nvarchar(1000) COLLATE Chinese_PRC_CI_AS NULL,
+	F999991136 datetime NULL,
+	F999991138 datetime NULL
+);
+CREATE TABLE 车体事业部.dbo.tabXTCS (
+	CSMC varchar(30) COLLATE Chinese_PRC_CI_AS NOT NULL,
+	CSZ varchar(20) COLLATE Chinese_PRC_CI_AS NULL,
+	SM varchar(30) COLLATE Chinese_PRC_CI_AS NULL,
+	CONSTRAINT PK__tabXTCS__F5F078D560132A89 PRIMARY KEY (CSMC)
+);
+CREATE TABLE 车体事业部.dbo.tabXTOtherSetting (
+	iID int NOT NULL,
+	sName nvarchar(30) COLLATE Chinese_PRC_CI_AS NULL,
+	sSetting nvarchar(200) COLLATE Chinese_PRC_CI_AS NULL,
+	iOrd int NULL,
+	sNameB nvarchar(30) COLLATE Chinese_PRC_CI_AS NULL,
+	sNameC nvarchar(30) COLLATE Chinese_PRC_CI_AS NULL,
+	CONSTRAINT PK__tabXTOth__DC512D7263E3BB6D PRIMARY KEY (iID)
+);
+CREATE TABLE 车体事业部.dbo.tabXTPIC (
+	iFlag char(1) COLLATE Chinese_PRC_CI_AS NOT NULL,
+	sUID varchar(30) COLLATE Chinese_PRC_CI_AS NULL,
+	PicID int NULL,
+	PicFile image NULL,
+	CONSTRAINT PK__tabXTPIC__4C63E60967B44C51 PRIMARY KEY (iFlag)
+);
+CREATE TABLE 车体事业部.dbo.tabXTPUBFMT (
+	fmt image NULL
+);
+CREATE TABLE 车体事业部.dbo.tabXTSM (
+	SM nvarchar(1000) COLLATE Chinese_PRC_CI_AS NULL,
+	sSetting varchar(300) COLLATE Chinese_PRC_CI_AS NULL
+);
+CREATE TABLE 车体事业部.dbo.temptabDIYTable1 (
+	ID int NOT NULL,
+	F1 nvarchar(20) COLLATE Chinese_PRC_CI_AS DEFAULT '' NOT NULL,
+	CONSTRAINT PK__tabDIYTa__3214EC274D94879B PRIMARY KEY (ID)
+);
+CREATE TABLE 车体事业部.dbo.temptabDIYTableFieldM (
+	NaviID int NOT NULL,
+	ItemID int NOT NULL,
+	tabID int NOT NULL,
+	FieldID int NOT NULL,
+	FieldName nvarchar(50) COLLATE Chinese_PRC_CI_AS NOT NULL,
+	sGroup nvarchar(100) COLLATE Chinese_PRC_CI_AS NULL,
+	bDisp int NOT NULL,
+	bDigest int NOT NULL,
+	iRowCount int NOT NULL,
+	iOrd int NOT NULL,
+	iOrd2 int NOT NULL
+);
+ 
+

@@ -1,8 +1,17 @@
-FROM mysql:9.3.0-oraclelinux9
+# 使用官方 MySQL 镜像作为基础
+FROM mysql:8.0.26
 
+# 设置 MySQL root 用户密码
 ENV MYSQL_ROOT_PASSWORD=Swq8855830.
 
-COPY 0_init.sql /docker-entrypoint-initdb.d/
-COPY 1_data.sql /docker-entrypoint-initdb.d/
+# 安装必要的工具（如 mysql-client）
+# RUN apt-get update && apt-get install -y mysql-client
 
-EXPOSE 3306
+# 将 SQL 初始化脚本复制到镜像中的适当位置
+COPY *.sql /docker-entrypoint-initdb.d/
+COPY table/*.sql /docker-entrypoint-initdb.d/
+
+# 启动 MySQL 服务并执行 SQL 脚本，然后停止服务
+RUN mysql -u root -p${MYSQL_ROOT_PASSWORD} < /docker-entrypoint-initdb.d/*.sql && \
+    mysql -u root -p${MYSQL_ROOT_PASSWORD} < /docker-entrypoint-initdb.d/table/*.sql && \
+    service mysql stop

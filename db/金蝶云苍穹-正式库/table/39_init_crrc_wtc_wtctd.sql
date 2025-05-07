@@ -1,0 +1,281 @@
+﻿USE crrc_wtc_wtctd;
+
+
+-- crrc_wtc_wtctd.t_pktemp_meta definition
+
+CREATE TABLE `t_pktemp_meta` (
+  `ftable_name` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `fcreate_time` datetime NOT NULL,
+  PRIMARY KEY (`ftable_name`),
+  KEY `IX_T_PKTEMP_META_FCREATE_TIME` (`fcreate_time`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_wtc_wtctd.t_wtdtd_attrecord definition
+
+CREATE TABLE `t_wtdtd_attrecord` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FPERSONID` bigint NOT NULL DEFAULT '0',
+  `FORGID` bigint NOT NULL DEFAULT '0',
+  `FOWNDATE` datetime DEFAULT NULL,
+  `FDATETYPE` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FATTITEMID` bigint NOT NULL DEFAULT '0',
+  `FATTITEMTYPE` varchar(2) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FVALUESECOND` decimal(19,6) NOT NULL DEFAULT '0.000000',
+  `FVALUE` decimal(19,6) NOT NULL DEFAULT '0.000000',
+  `FVALUESTRING` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FSHFITID` bigint NOT NULL DEFAULT '0',
+  `FCOMPANYID` bigint NOT NULL DEFAULT '0',
+  `FDEPARTMENTID` bigint NOT NULL DEFAULT '0',
+  `FPOSITIONID` bigint NOT NULL DEFAULT '0',
+  `FJOBID` bigint NOT NULL DEFAULT '0',
+  `FMODE` varchar(2) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FVERSIONID` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FATTFILEID` bigint NOT NULL DEFAULT '0',
+  `FSOURCEATTITEMIDS` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FCREATORID` bigint NOT NULL DEFAULT '0',
+  `FCREATETIME` datetime DEFAULT NULL,
+  `FMODIFIERID` bigint NOT NULL DEFAULT '0',
+  `FMODIFYTIME` datetime DEFAULT NULL,
+  `FCALCULATEDATE` datetime DEFAULT NULL,
+  `FPERATTPERIODID` bigint NOT NULL DEFAULT '0',
+  `FVALUELONG` decimal(19,6) NOT NULL DEFAULT '0.000000',
+  `FATTPERATTPERIODID` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FPERPERIODBEGINDATE` datetime DEFAULT NULL,
+  `FPERPERIODENDDATE` datetime DEFAULT NULL,
+  `FATTITEMVID` bigint NOT NULL DEFAULT '0',
+  `FSHIFTVID` bigint NOT NULL DEFAULT '0',
+  `FCOMPANYVID` bigint NOT NULL DEFAULT '0',
+  `FDEPARTMENTVID` bigint NOT NULL DEFAULT '0',
+  `FPOSITIONVID` bigint NOT NULL DEFAULT '0',
+  `FJOBVID` bigint NOT NULL DEFAULT '0',
+  `FCOMPUTMANID` bigint NOT NULL DEFAULT '0',
+  `FATTFILEVID` bigint NOT NULL DEFAULT '0',
+  `FMANAGESCOPEID` bigint NOT NULL DEFAULT '0',
+  `FMANAGESCOPEVID` bigint NOT NULL DEFAULT '0',
+  `FAFFILIATEADMINORGID` bigint NOT NULL DEFAULT '0',
+  `FAFFILIATEADMINORGVID` bigint NOT NULL DEFAULT '0',
+  `FEMPGROUPID` bigint NOT NULL DEFAULT '0',
+  `FDEPENDENCYID` bigint NOT NULL DEFAULT '0',
+  `FDEPENDENCYTYPEID` bigint NOT NULL DEFAULT '0',
+  `FAGREEDWORKPLACEID` bigint NOT NULL DEFAULT '0',
+  `FWORKPLACEID` bigint NOT NULL DEFAULT '0',
+  `FTIMEAFFID` bigint NOT NULL DEFAULT '0',
+  `FRECKONERID` bigint NOT NULL DEFAULT '0',
+  `FMANAGINGSCOPEID` bigint NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FID`),
+  KEY `IDX_WTDTD_ATTRECORD_1` (`FOWNDATE` DESC,`FATTFILEID`,`FATTITEMID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_wtc_wtctd.t_wtdtd_attrecord_r3 definition
+
+CREATE TABLE `t_wtdtd_attrecord_r3` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FRefStatus` char(1) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_wtc_wtctd.t_wtdtd_attrecordbase definition
+
+CREATE TABLE `t_wtdtd_attrecordbase` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FCALCULATEDATE` datetime DEFAULT NULL,
+  `FRECKONERID` bigint NOT NULL DEFAULT '0',
+  `FPERSONID` bigint NOT NULL DEFAULT '0',
+  `FORGID` bigint NOT NULL DEFAULT '0',
+  `FOWNDATE` datetime DEFAULT NULL,
+  `FDATETYPE` bigint NOT NULL DEFAULT '0',
+  `FSHIFTVID` bigint NOT NULL DEFAULT '0',
+  `FSHFITID` bigint NOT NULL DEFAULT '0',
+  `FDEPARTMENTVID` bigint NOT NULL DEFAULT '0',
+  `FCOMPANYVID` bigint NOT NULL DEFAULT '0',
+  `FPOSITIONVID` bigint NOT NULL DEFAULT '0',
+  `FJOBVID` bigint NOT NULL DEFAULT '0',
+  `FMODE` varchar(10) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FVERSIONID` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FPERATTPERIODID` bigint NOT NULL DEFAULT '0',
+  `FPERPERIODENDDATE` datetime DEFAULT NULL,
+  `FPERPERIODBEGINDATE` datetime DEFAULT NULL,
+  `FATTPERATTPERIODID` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FMANAGESCOPEVID` bigint NOT NULL DEFAULT '0',
+  `FAFFILIATEADMINORGVID` bigint NOT NULL DEFAULT '0',
+  `FATTFILEID` bigint NOT NULL DEFAULT '0',
+  `FATTFILEVID` bigint NOT NULL DEFAULT '0',
+  `FDATEATTR` bigint NOT NULL DEFAULT '0',
+  `FCREATETIME` datetime DEFAULT NULL,
+  `FATTPERATTPERIODPK` bigint NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FID`),
+  KEY `IDX_WTDTD_ATTRECORDBASE` (`FOWNDATE`,`FATTFILEID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_wtc_wtctd.t_wtdtd_attrecordbase_r3 definition
+
+CREATE TABLE `t_wtdtd_attrecordbase_r3` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FRefStatus` char(1) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_wtc_wtctd.t_wtdtd_attrecordbaseh_r3 definition
+
+CREATE TABLE `t_wtdtd_attrecordbaseh_r3` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FRefStatus` char(1) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_wtc_wtctd.t_wtdtd_attrecordbasehis definition
+
+CREATE TABLE `t_wtdtd_attrecordbasehis` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FCALCULATEDATE` datetime DEFAULT NULL,
+  `FRECKONERID` bigint NOT NULL DEFAULT '0',
+  `FPERSONID` bigint NOT NULL DEFAULT '0',
+  `FORGID` bigint NOT NULL DEFAULT '0',
+  `FOWNDATE` datetime DEFAULT NULL,
+  `FDATETYPE` bigint NOT NULL DEFAULT '0',
+  `FDATEATTR` bigint NOT NULL DEFAULT '0',
+  `FSHIFTVID` bigint NOT NULL DEFAULT '0',
+  `FSHFITID` bigint NOT NULL DEFAULT '0',
+  `FDEPARTMENTVID` bigint NOT NULL DEFAULT '0',
+  `FCOMPANYVID` bigint NOT NULL DEFAULT '0',
+  `FPOSITIONVID` bigint NOT NULL DEFAULT '0',
+  `FJOBVID` bigint NOT NULL DEFAULT '0',
+  `FMODE` varchar(10) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FVERSIONID` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FPERATTPERIODID` bigint NOT NULL DEFAULT '0',
+  `FPERPERIODENDDATE` datetime DEFAULT NULL,
+  `FPERPERIODBEGINDATE` datetime DEFAULT NULL,
+  `FATTPERATTPERIODID` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FMANAGESCOPEVID` bigint NOT NULL DEFAULT '0',
+  `FAFFILIATEADMINORGVID` bigint NOT NULL DEFAULT '0',
+  `FATTFILEID` bigint NOT NULL DEFAULT '0',
+  `FATTFILEVID` bigint NOT NULL DEFAULT '0',
+  `FCREATETIME` datetime DEFAULT NULL,
+  `FATTPERATTPERIODPK` bigint NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FID`),
+  KEY `IDX_WTDTD_ATTRECORDBASEHIS` (`FOWNDATE`,`FATTFILEID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_wtc_wtctd.t_wtdtd_attrecorddehis definition
+
+CREATE TABLE `t_wtdtd_attrecorddehis` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FOWNDATE` datetime DEFAULT NULL,
+  `FATTITEMTYPE` varchar(10) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FATTITEMVID` bigint NOT NULL DEFAULT '0',
+  `FATTITEMID` bigint NOT NULL DEFAULT '0',
+  `FVALUE` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FVALUESECOND` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FVALUESTRING` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FVALUELONG` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FSOURCEATTITEMIDS` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FMID` bigint NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FID`),
+  KEY `IDX_WTDTD_ATTRECORDDEHIS` (`FOWNDATE`,`FMID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_wtc_wtctd.t_wtdtd_attrecorddehis_r3 definition
+
+CREATE TABLE `t_wtdtd_attrecorddehis_r3` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FRefStatus` char(1) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_wtc_wtctd.t_wtdtd_attrecorddetai_r3 definition
+
+CREATE TABLE `t_wtdtd_attrecorddetai_r3` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FRefStatus` char(1) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_wtc_wtctd.t_wtdtd_attrecorddetail definition
+
+CREATE TABLE `t_wtdtd_attrecorddetail` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FOWNDATE` datetime DEFAULT NULL,
+  `FATTITEMTYPE` varchar(10) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FATTITEMVID` bigint NOT NULL DEFAULT '0',
+  `FATTITEMID` bigint NOT NULL DEFAULT '0',
+  `FVALUE` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FVALUESECOND` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FVALUESTRING` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FVALUELONG` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FSOURCEATTITEMIDS` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FMID` bigint NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FID`),
+  KEY `IDX_WTDTD_ATTRECORDDETAIL` (`FOWNDATE`,`FMID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_wtc_wtctd.t_wtdtd_attrecordhis definition
+
+CREATE TABLE `t_wtdtd_attrecordhis` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FPERSONID` bigint NOT NULL DEFAULT '0',
+  `FORGID` bigint NOT NULL DEFAULT '0',
+  `FOWNDATE` datetime DEFAULT NULL,
+  `FDATETYPE` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FATTITEMID` bigint NOT NULL DEFAULT '0',
+  `FATTITEMTYPE` varchar(2) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FVALUESECOND` decimal(19,6) NOT NULL DEFAULT '0.000000',
+  `FVALUE` decimal(19,6) NOT NULL DEFAULT '0.000000',
+  `FVALUESTRING` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FSHFITID` bigint NOT NULL DEFAULT '0',
+  `FCOMPANYID` bigint NOT NULL DEFAULT '0',
+  `FDEPARTMENTID` bigint NOT NULL DEFAULT '0',
+  `FPOSITIONID` bigint NOT NULL DEFAULT '0',
+  `FJOBID` bigint NOT NULL DEFAULT '0',
+  `FMODE` varchar(2) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FVERSIONID` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FATTFILEID` bigint NOT NULL DEFAULT '0',
+  `FSOURCEATTITEMIDS` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FCREATORID` bigint NOT NULL DEFAULT '0',
+  `FCREATETIME` datetime DEFAULT NULL,
+  `FMODIFIERID` bigint NOT NULL DEFAULT '0',
+  `FMODIFYTIME` datetime DEFAULT NULL,
+  `FCALCULATEDATE` datetime DEFAULT NULL,
+  `FPERATTPERIODID` bigint NOT NULL DEFAULT '0',
+  `FATTITEMVID` bigint NOT NULL DEFAULT '0',
+  `FSHIFTVID` bigint NOT NULL DEFAULT '0',
+  `FCOMPANYVID` bigint NOT NULL DEFAULT '0',
+  `FDEPARTMENTVID` bigint NOT NULL DEFAULT '0',
+  `FPOSITIONVID` bigint NOT NULL DEFAULT '0',
+  `FJOBVID` bigint NOT NULL DEFAULT '0',
+  `FCOMPUTMANID` bigint NOT NULL DEFAULT '0',
+  `FATTFILEVID` bigint NOT NULL DEFAULT '0',
+  `FMANAGESCOPEID` bigint NOT NULL DEFAULT '0',
+  `FMANAGESCOPEVID` bigint NOT NULL DEFAULT '0',
+  `FAFFILIATEADMINORGID` bigint NOT NULL DEFAULT '0',
+  `FAFFILIATEADMINORGVID` bigint NOT NULL DEFAULT '0',
+  `FEMPGROUPID` bigint NOT NULL DEFAULT '0',
+  `FDEPENDENCYID` bigint NOT NULL DEFAULT '0',
+  `FDEPENDENCYTYPEID` bigint NOT NULL DEFAULT '0',
+  `FAGREEDWORKPLACEID` bigint NOT NULL DEFAULT '0',
+  `FWORKPLACEID` bigint NOT NULL DEFAULT '0',
+  `FTIMEAFFID` bigint NOT NULL DEFAULT '0',
+  `FRECKONERID` bigint NOT NULL DEFAULT '0',
+  `FMANAGINGSCOPEID` bigint NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FID`),
+  KEY `IDX_WTDTD_ATTRECORDHIS` (`FOWNDATE`,`FATTFILEID`,`FATTITEMID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_wtc_wtctd.t_wtdtd_attrecordhis_r3 definition
+
+CREATE TABLE `t_wtdtd_attrecordhis_r3` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FRefStatus` char(1) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
