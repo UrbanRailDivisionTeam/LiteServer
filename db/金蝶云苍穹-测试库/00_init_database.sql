@@ -1,0 +1,131 @@
+DROP DATABASE IF EXISTS crrc_bdai;
+CREATE DATABASE crrc_bdai CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+
+DROP DATABASE IF EXISTS crrc_cal;
+CREATE DATABASE crrc_cal CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+
+DROP DATABASE IF EXISTS crrc_cpc;
+CREATE DATABASE crrc_cpc CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+
+DROP DATABASE IF EXISTS crrc_cpcfias;
+CREATE DATABASE crrc_cpcfias CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+
+DROP DATABASE IF EXISTS crrc_cpcqmc;
+CREATE DATABASE crrc_cpcqmc CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+
+DROP DATABASE IF EXISTS crrc_cr;
+CREATE DATABASE crrc_cr CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+
+DROP DATABASE IF EXISTS crrc_de;
+CREATE DATABASE crrc_de CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+
+DROP DATABASE IF EXISTS crrc_drp;
+CREATE DATABASE crrc_drp CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+
+DROP DATABASE IF EXISTS crrc_ebg;
+CREATE DATABASE crrc_ebg CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+
+DROP DATABASE IF EXISTS crrc_eip;
+CREATE DATABASE crrc_eip CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+
+DROP DATABASE IF EXISTS crrc_epm;
+CREATE DATABASE crrc_epm CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+
+DROP DATABASE IF EXISTS crrc_fi;
+CREATE DATABASE crrc_fi CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+
+DROP DATABASE IF EXISTS crrc_hdtc;
+CREATE DATABASE crrc_hdtc CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+
+DROP DATABASE IF EXISTS crrc_hmp;
+CREATE DATABASE crrc_hmp CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+
+DROP DATABASE IF EXISTS crrc_hpdi;
+CREATE DATABASE crrc_hpdi CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+
+DROP DATABASE IF EXISTS crrc_hr;
+CREATE DATABASE crrc_hr CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+
+DROP DATABASE IF EXISTS crrc_hrb;
+CREATE DATABASE crrc_hrb CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+
+DROP DATABASE IF EXISTS crrc_hros;
+CREATE DATABASE crrc_hros CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+
+DROP DATABASE IF EXISTS crrc_hspp;
+CREATE DATABASE crrc_hspp CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+
+DROP DATABASE IF EXISTS crrc_imc;
+CREATE DATABASE crrc_imc CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+
+DROP DATABASE IF EXISTS crrc_imsc;
+CREATE DATABASE crrc_imsc CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+
+DROP DATABASE IF EXISTS crrc_log;
+CREATE DATABASE crrc_log CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+
+DROP DATABASE IF EXISTS crrc_mbr;
+CREATE DATABASE crrc_mbr CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+
+DROP DATABASE IF EXISTS crrc_phm;
+CREATE DATABASE crrc_phm CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+
+DROP DATABASE IF EXISTS crrc_qmc;
+CREATE DATABASE crrc_qmc CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+
+DROP DATABASE IF EXISTS crrc_scm;
+CREATE DATABASE crrc_scm CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+
+DROP DATABASE IF EXISTS crrc_scmsys;
+CREATE DATABASE crrc_scmsys CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+
+DROP DATABASE IF EXISTS crrc_secd;
+CREATE DATABASE crrc_secd CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+
+DROP DATABASE IF EXISTS crrc_sit;
+CREATE DATABASE crrc_sit CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+
+DROP DATABASE IF EXISTS crrc_swc;
+CREATE DATABASE crrc_swc CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+
+DROP DATABASE IF EXISTS crrc_sys;
+CREATE DATABASE crrc_sys CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+
+DROP DATABASE IF EXISTS crrc_taxc;
+CREATE DATABASE crrc_taxc CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+
+DROP DATABASE IF EXISTS crrc_tdc;
+CREATE DATABASE crrc_tdc CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+
+DROP DATABASE IF EXISTS crrc_tmc;
+CREATE DATABASE crrc_tmc CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+
+DROP DATABASE IF EXISTS crrc_tsc;
+CREATE DATABASE crrc_tsc CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+
+DROP DATABASE IF EXISTS crrc_tsci;
+CREATE DATABASE crrc_tsci CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+
+DROP DATABASE IF EXISTS crrc_wfs;
+CREATE DATABASE crrc_wfs CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+
+DROP DATABASE IF EXISTS crrc_wtc;
+CREATE DATABASE crrc_wtc CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+
+DROP DATABASE IF EXISTS crrc_wtc_wtctd;
+CREATE DATABASE crrc_wtc_wtctd CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+
+DROP DATABASE IF EXISTS crrc_wtc_wtdtd;
+CREATE DATABASE crrc_wtc_wtdtd CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+
+DROP DATABASE IF EXISTS crrc_wtc_wtis;
+CREATE DATABASE crrc_wtc_wtis CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+
+DROP DATABASE IF EXISTS crrc_wtc_wtpd;
+CREATE DATABASE crrc_wtc_wtpd CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+
+DROP DATABASE IF EXISTS crrc_wtc_wtpm;
+CREATE DATABASE crrc_wtc_wtpm CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+
+DROP DATABASE IF EXISTS crrc_wtc_wtte;
+CREATE DATABASE crrc_wtc_wtte CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;

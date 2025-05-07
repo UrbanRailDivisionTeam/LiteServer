@@ -1,7 +1,7 @@
 # 设置参数
 $TEMP_CONTAINERS = "temp_mysql_0"
-$TEMP_IMAGE = "cheakf/custom-mysql:latest"
-$FINAL_IMAGE = "cheakf/production_support_systems:latest"
+$TEMP_IMAGE = "cheakf/custom-mysql_0:latest"
+$FINAL_IMAGE = "cheakf/gold_butterfly_cloud:latest"
 
 # 构建自定义镜像
 docker stop $TEMP_CONTAINERS

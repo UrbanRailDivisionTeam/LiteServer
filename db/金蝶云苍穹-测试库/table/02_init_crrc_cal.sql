@@ -1,0 +1,18589 @@
+USE crrc_cal;
+
+-- crrc_cal.t_aca_attmfgplanfeeentry definition
+
+CREATE TABLE `t_aca_attmfgplanfeeentry` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FENTRYID` bigint NOT NULL DEFAULT '0',
+  `FSEQ` bigint NOT NULL DEFAULT '0',
+  `FATTELEMENTID` bigint NOT NULL DEFAULT '0',
+  `FATTSUBELEMENTID` bigint NOT NULL DEFAULT '0',
+  `FATTRATE` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  PRIMARY KEY (`FENTRYID`),
+  KEY `IDX_ACA_ATTMFGPLANFEEENTRY` (`FID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_aca_calcdetailentry definition
+
+CREATE TABLE `t_aca_calcdetailentry` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FENTRYID` bigint NOT NULL DEFAULT '0',
+  `FSEQ` bigint NOT NULL DEFAULT '0',
+  `FENTRYCOSTCENTERID` bigint NOT NULL DEFAULT '0',
+  `FCHECKDETAIL` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FSTATUS` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`FENTRYID`),
+  KEY `IDX_ACA_CALCDETAILENTRY` (`FID`,`FENTRYCOSTCENTERID`,`FCHECKDETAIL`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_aca_calcparam definition
+
+CREATE TABLE `t_aca_calcparam` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FORGID` bigint NOT NULL DEFAULT '0',
+  `FCOSTACCOUNTID` bigint NOT NULL DEFAULT '0',
+  `FSTATUS` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  `FRETURNPRORULE` varchar(60) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FRETURNPROCOSTTYPEID` bigint NOT NULL DEFAULT '0',
+  `FCOPRODUCTRULE` varchar(60) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FCOPROCOSTTYPEID` bigint NOT NULL DEFAULT '0',
+  `FENDWIPRULE` varchar(60) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`FID`),
+  KEY `IDX_ACA_CALCPARAM` (`FORGID`,`FCOSTACCOUNTID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_aca_calcparam_l definition
+
+CREATE TABLE `t_aca_calcparam_l` (
+  `FPKID` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FLOCALEID` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`FPKID`),
+  KEY `IDX_ACA_CALCPARAM_L` (`FID`,`FLOCALEID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_aca_calcparam_r3 definition
+
+CREATE TABLE `t_aca_calcparam_r3` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FRefStatus` char(1) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_aca_calcreport definition
+
+CREATE TABLE `t_aca_calcreport` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FBILLNO` varchar(60) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FBILLSTATUS` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FCREATORID` bigint NOT NULL DEFAULT '0',
+  `FMODIFIERID` bigint NOT NULL DEFAULT '0',
+  `FAUDITORID` bigint NOT NULL DEFAULT '0',
+  `FAUDITDATE` datetime DEFAULT NULL,
+  `FMODIFYTIME` datetime DEFAULT NULL,
+  `FCREATETIME` datetime DEFAULT NULL,
+  `FORGID` bigint NOT NULL DEFAULT '0',
+  `FCOSTACCOUNTID` bigint NOT NULL DEFAULT '0',
+  `FPERIODID` bigint NOT NULL DEFAULT '0',
+  `FTASKID` bigint NOT NULL DEFAULT '0',
+  `FEXECUTOR` bigint NOT NULL DEFAULT '0',
+  `FCALCDATE` datetime DEFAULT NULL,
+  `FBILLTYPE` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FEXECUTORID` bigint NOT NULL DEFAULT '0',
+  `FUSETIME` bigint NOT NULL DEFAULT '0',
+  `FPROGRESS` bigint NOT NULL DEFAULT '0',
+  `FTYPE` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FCALSCHEMEID` bigint NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FID`),
+  KEY `IDX_ACA_CALCREPORT` (`FORGID`,`FCOSTACCOUNTID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_aca_calcreportdetail definition
+
+CREATE TABLE `t_aca_calcreportdetail` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FCOSTACCOUNTID` bigint NOT NULL DEFAULT '0',
+  `FPERIODID` bigint NOT NULL DEFAULT '0',
+  `FCURRENCYID` bigint NOT NULL DEFAULT '0',
+  `FITEMID` bigint NOT NULL DEFAULT '0',
+  `FCALCDATE` datetime DEFAULT NULL,
+  `FTASKID` bigint NOT NULL DEFAULT '0',
+  `FCHECKDESC` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FCHECKITEMDESC` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FORGID` bigint NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FID`),
+  KEY `IDX_ACA_CALCREPORTDETAIL` (`FCOSTACCOUNTID`,`FCHECKITEMDESC`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_aca_calcreportentry definition
+
+CREATE TABLE `t_aca_calcreportentry` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FENTRYID` bigint NOT NULL DEFAULT '0',
+  `FSEQ` bigint NOT NULL DEFAULT '0',
+  `FITEM` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FRESULT` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FCNSMTIME` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT '0',
+  `FCHECKDESC` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FSUBNEXTENTITY` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FSUBPARAM` varchar(4000) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FBIGTEXT` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FBIGTEXT_TAG` longtext COLLATE utf8mb4_unicode_ci,
+  PRIMARY KEY (`FENTRYID`),
+  KEY `IDX_ACA_CALCREPORTENTRY` (`FID`,`FSEQ`,`FCHECKDESC`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_aca_calcreportentry_l definition
+
+CREATE TABLE `t_aca_calcreportentry_l` (
+  `FPKID` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FENTRYID` bigint NOT NULL DEFAULT '0',
+  `FLOCALEID` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FRESULTDESC` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FPARAM` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`FPKID`),
+  KEY `IDX_ACA_CALCREPORTENTRY_L` (`FENTRYID`,`FLOCALEID`,`FPARAM`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_aca_calcresult definition
+
+CREATE TABLE `t_aca_calcresult` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FBILLNO` varchar(60) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FBILLSTATUS` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FCREATORID` bigint NOT NULL DEFAULT '0',
+  `FMODIFIERID` bigint NOT NULL DEFAULT '0',
+  `FAUDITORID` bigint NOT NULL DEFAULT '0',
+  `FAUDITDATE` datetime DEFAULT NULL,
+  `FMODIFYTIME` datetime DEFAULT NULL,
+  `FCREATETIME` datetime DEFAULT NULL,
+  `FORGID` bigint NOT NULL DEFAULT '0',
+  `FBIZDATE` datetime DEFAULT NULL,
+  `FCOSTCENTERID` bigint NOT NULL DEFAULT '0',
+  `FCOSTACCOUNTID` bigint NOT NULL DEFAULT '0',
+  `FCURRENCYID` bigint NOT NULL DEFAULT '0',
+  `FCOSTOBJECTID` bigint NOT NULL DEFAULT '0',
+  `FPERIODID` bigint NOT NULL DEFAULT '0',
+  `FCALCREPORTID` bigint NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FID`),
+  KEY `IDX_ACA_CALCRESULT` (`FCREATETIME`,`FCOSTACCOUNTID`),
+  KEY `IDX_ACA_CALCRESULT_O_C_P` (`FORGID`,`FCOSTACCOUNTID`,`FPERIODID`),
+  KEY `IDX_ACA_CALCRESULT_COB` (`FCOSTOBJECTID`),
+  KEY `IDX_ACA_CALCRESULT_CENTER` (`FCOSTCENTERID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_aca_calcresultconventry definition
+
+CREATE TABLE `t_aca_calcresultconventry` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FENTRYID` bigint NOT NULL DEFAULT '0',
+  `FSEQ` bigint NOT NULL DEFAULT '0',
+  `FCONVPRODUCTTYPE` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FCONVCOSTOBJECTID` bigint NOT NULL DEFAULT '0',
+  `FCONVOUTSOURCETYPE` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FCONVELEMENTID` bigint NOT NULL DEFAULT '0',
+  `FCONVSUBELEMENTID` bigint NOT NULL DEFAULT '0',
+  `FCONVSUBMATID` bigint NOT NULL DEFAULT '0',
+  `FCONVSUBMATVERID` bigint NOT NULL DEFAULT '0',
+  `FCONVSUBAUXPTYID` bigint NOT NULL DEFAULT '0',
+  `FCONVQTY` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FCONVAMT` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FCONVSRCBILLID` bigint NOT NULL DEFAULT '0',
+  `FCONVSRCBILLENTRYID` bigint NOT NULL DEFAULT '0',
+  `FCONVPROQTY` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FCONVGROUPFIELD` varchar(60) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FCONVGROUPCATEGORYID` bigint NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FENTRYID`),
+  KEY `IDX_ACA_CALCRESULTCONVENTRY_FK` (`FID`),
+  KEY `IDX_ACA_CALCRESCONVET_COSTO` (`FCONVCOSTOBJECTID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_aca_calcresultentry definition
+
+CREATE TABLE `t_aca_calcresultentry` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FENTRYID` bigint NOT NULL DEFAULT '0',
+  `FSEQ` bigint NOT NULL DEFAULT '0',
+  `FSUBELEMENTID` bigint NOT NULL DEFAULT '0',
+  `FELEMENTID` bigint NOT NULL DEFAULT '0',
+  `FMATERIALID` bigint NOT NULL DEFAULT '0',
+  `FAUXPTYID` bigint NOT NULL DEFAULT '0',
+  `FMATVERSIONID` bigint NOT NULL DEFAULT '0',
+  `FPDSTARTQTY` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FPDSTARTAMOUNT` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FPDCURRQTY` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FPDCURRAMOUNT` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FPDSUMQTY` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FPDSUMAMOUNT` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FPDENDQTY` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FPDENDAMOUNT` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FCURRCOMQTY` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FCURRCOMUSE` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FCURRCOMUNITCOST` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FCURRCOMAMOUNT` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FSUMCOMQTY` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FSUMCOMUSE` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FSUMCOMUNITCOST` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FSUMCOMAMOUNT` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FSUBMATERIALID` bigint NOT NULL DEFAULT '0',
+  `FSUBMATVERSIONID` bigint NOT NULL DEFAULT '0',
+  `FSUBAUXPTY` bigint NOT NULL DEFAULT '0',
+  `FTYPE` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FFEETYPE` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FYEARPDSUMQTY` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FYEARPDSUMAMOUNT` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FYEARSUMCOMQTY` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FYEARSUMCOMUSE` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FYEARSUMCOMUNITCOST` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FYEARSUMCOMAMOUNT` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FSTARTADJQTY` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FSTARTADJAMT` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FENDADJQTY` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FENDADJAMT` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FOUTSOURCETYPE` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FRELACOSTOBJECTID` bigint NOT NULL DEFAULT '0',
+  `FRELAPRODUCTTYPE` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`FENTRYID`),
+  KEY `IDX_ACA_CALCRESULTENTRY` (`FSUBELEMENTID`,`FMATERIALID`),
+  KEY `IDX_ACA_CALCRESULTENTRY_FID` (`FID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_aca_calcresultinventry definition
+
+CREATE TABLE `t_aca_calcresultinventry` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FENTRYID` bigint NOT NULL DEFAULT '0',
+  `FSEQ` bigint NOT NULL DEFAULT '0',
+  `FSOURCEBILLENTRYID` bigint NOT NULL DEFAULT '0',
+  `FSOURCEBILLID` bigint NOT NULL DEFAULT '0',
+  `FINVENTORYAMOUNT` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FINVENTORYQTY` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FINVENTORYSUBELEID` bigint NOT NULL DEFAULT '0',
+  `FINVCOSTOBJECTID` bigint NOT NULL DEFAULT '0',
+  `FINVPRODUCTTYPE` varchar(2) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'C',
+  `FINVOUTSOURCETYPE` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FGROUPFIELD` varchar(60) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FGROUPCATEGORYID` bigint NOT NULL DEFAULT '0',
+  `FCARRYTYPE` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`FENTRYID`),
+  KEY `IDX_ACA_CALCRESULTINVENTRY` (`FID`,`FINVENTORYSUBELEID`),
+  KEY `IDX_ACA_RESULTINVENTRY_FID` (`FID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_aca_calcresultsubentry definition
+
+CREATE TABLE `t_aca_calcresultsubentry` (
+  `FENTRYID` bigint NOT NULL DEFAULT '0',
+  `FDETAILID` bigint NOT NULL DEFAULT '0',
+  `FSEQ` bigint NOT NULL DEFAULT '0',
+  `FSELEMENTID` bigint NOT NULL DEFAULT '0',
+  `FSSUBELEMENTID` bigint NOT NULL DEFAULT '0',
+  `FSPDSTARTAMT` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FSPDSTARTADJAMT` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FSPDCURRAMT` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FSPDCOMAMT` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FSPDENDAMT` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FSPDENDADJAMT` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FSPDYEARSUMAMT` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FSPDSUMAMT` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FSPDSUMCOMAMT` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FSPDYEARCOMAMT` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  PRIMARY KEY (`FDETAILID`),
+  KEY `IDK_ACA_CALCRESULTSUBENTRY` (`FENTRYID`,`FSEQ`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_aca_calctaskrecord_r3 definition
+
+CREATE TABLE `t_aca_calctaskrecord_r3` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FRefStatus` char(1) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_aca_checksetting definition
+
+CREATE TABLE `t_aca_checksetting` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FORGID` bigint NOT NULL DEFAULT '0',
+  `FCHECKCAL` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'inputout',
+  `FCHECKTYPE` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'qty',
+  PRIMARY KEY (`FID`),
+  KEY `IDX_ACA_TCHECKSETTING_ORG` (`FORGID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_aca_checksetting_r3 definition
+
+CREATE TABLE `t_aca_checksetting_r3` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FRefStatus` char(1) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_aca_closeaccount definition
+
+CREATE TABLE `t_aca_closeaccount` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FCALORGID` bigint NOT NULL DEFAULT '0',
+  `FMANUORGID` bigint NOT NULL DEFAULT '0',
+  `FCOSTACCOUNTID` bigint NOT NULL DEFAULT '0',
+  `FCLOSEPERIODID` bigint NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FID`),
+  KEY `IDX_T_ACA_CLOSEACCOUNT` (`FCALORGID`,`FMANUORGID`,`FCOSTACCOUNTID`,`FCLOSEPERIODID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_aca_entitydetail definition
+
+CREATE TABLE `t_aca_entitydetail` (
+  `FENTRYID` bigint NOT NULL DEFAULT '0',
+  `FSEQ` bigint NOT NULL DEFAULT '0',
+  `FDETAILID` bigint NOT NULL DEFAULT '0',
+  `FDETAILVALEN` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FELEMENTID` bigint NOT NULL DEFAULT '0',
+  `FSUBELEMENTID` bigint NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FDETAILID`),
+  KEY `IDX_T_ACA_ENTITYDETAIL` (`FENTRYID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_aca_equivalent definition
+
+CREATE TABLE `t_aca_equivalent` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FBILLNO` varchar(80) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FBILLSTATUS` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FORGID` bigint NOT NULL DEFAULT '0',
+  `FMANUORGID` bigint NOT NULL DEFAULT '0',
+  `FCREATORID` bigint NOT NULL DEFAULT '0',
+  `FCREATETIME` datetime DEFAULT NULL,
+  `FMODIFIERID` bigint NOT NULL DEFAULT '0',
+  `FMODIFYTIME` datetime DEFAULT NULL,
+  `FAUDITDATE` datetime DEFAULT NULL,
+  `FAUDITORID` bigint NOT NULL DEFAULT '0',
+  `FCOSTACCOUNTID` bigint NOT NULL DEFAULT '0',
+  `FMAKEUSERID` bigint NOT NULL DEFAULT '0',
+  `FMAKETIME` datetime DEFAULT NULL,
+  `FPERIODID` bigint NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FID`),
+  KEY `IDX_T_ACA_EQUIVALENT` (`FORGID`,`FCOSTACCOUNTID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_aca_equivalententry definition
+
+CREATE TABLE `t_aca_equivalententry` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FENTRYID` bigint NOT NULL DEFAULT '0',
+  `FSEQ` bigint NOT NULL DEFAULT '0',
+  `FCOSTCENTERID` bigint NOT NULL DEFAULT '0',
+  `FTOTALVALEN` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FCOSTOBJECTID` bigint NOT NULL DEFAULT '0',
+  `FMATERIALID` bigint NOT NULL DEFAULT '0',
+  `FAUXPTY` bigint NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FENTRYID`),
+  KEY `IDX_T_ACA_EQUIVALENTENTRY` (`FID`,`FCOSTCENTERID`),
+  KEY `IDX_EQVAENTRY_COSTAOBJ` (`FCOSTOBJECTID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_aca_ewipenter definition
+
+CREATE TABLE `t_aca_ewipenter` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FBILLNO` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FBILLSTATUS` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FCREATORID` bigint NOT NULL DEFAULT '0',
+  `FMODIFIERID` bigint NOT NULL DEFAULT '0',
+  `FAUDITORID` bigint NOT NULL DEFAULT '0',
+  `FAUDITDATE` datetime DEFAULT NULL,
+  `FMODIFYTIME` datetime DEFAULT NULL,
+  `FCREATETIME` datetime DEFAULT NULL,
+  `FORGID` bigint NOT NULL DEFAULT '0',
+  `FCOSTACCOUNTID` bigint NOT NULL DEFAULT '0',
+  `FCOSTCENTERID` bigint NOT NULL DEFAULT '0',
+  `FCOSTOBJECTID` bigint NOT NULL DEFAULT '0',
+  `FCURRENCYID` bigint NOT NULL DEFAULT '0',
+  `FASSIGNEDPRODUCTID` bigint NOT NULL DEFAULT '0',
+  `FAUXPTYID` bigint NOT NULL DEFAULT '0',
+  `FBASEUNIT` bigint NOT NULL DEFAULT '0',
+  `FMANUORGID` bigint NOT NULL DEFAULT '0',
+  `FSOURCE` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FPERIODID` bigint NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FID`),
+  KEY `IDX_ACA_EWIPENTER` (`FORGID`,`FCOSTCENTERID`),
+  KEY `IDX_EWIPCOSTI_COSTA` (`FCOSTACCOUNTID`),
+  KEY `IDX_EWIPCOSTI_COSTC` (`FCOSTCENTERID`),
+  KEY `IDX_EWIPCOSTI_COSTOBJ` (`FCOSTOBJECTID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_aca_ewipenter_l definition
+
+CREATE TABLE `t_aca_ewipenter_l` (
+  `FPKID` varchar(36) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FLOCALEID` varchar(10) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FREMARK` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`FPKID`),
+  KEY `IDX_ACA_EWIPENTER_L` (`FID`,`FLOCALEID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_aca_ewipenterentry definition
+
+CREATE TABLE `t_aca_ewipenterentry` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FENTRYID` bigint NOT NULL DEFAULT '0',
+  `FSEQ` bigint NOT NULL DEFAULT '0',
+  `FELEMENTID` bigint NOT NULL DEFAULT '0',
+  `FSUBELEMENTID` bigint NOT NULL DEFAULT '0',
+  `FAMOUNT` decimal(23,10) DEFAULT NULL,
+  `FOUTSOURCETYPE` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`FENTRYID`),
+  KEY `IDX_ACA_EWIPENTERENTRY` (`FID`,`FSUBELEMENTID`),
+  KEY `IDX_ACA_EWIPENTERENTRY_FK` (`FID`),
+  KEY `IDX_EWIPCOIEN_SUBE` (`FSUBELEMENTID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_aca_ewipentersubentry definition
+
+CREATE TABLE `t_aca_ewipentersubentry` (
+  `FENTRYID` bigint NOT NULL DEFAULT '0',
+  `FDETAILID` bigint NOT NULL DEFAULT '0',
+  `FSEQ` bigint NOT NULL DEFAULT '0',
+  `FSUBMATERIELID` bigint NOT NULL DEFAULT '0',
+  `FSUBQTY` decimal(23,10) DEFAULT NULL,
+  `FSUBAMOUNT` decimal(23,10) DEFAULT NULL,
+  `FAUXPTYID` bigint NOT NULL DEFAULT '0',
+  `FMATVERSIONID` bigint NOT NULL DEFAULT '0',
+  `FSUBBASEUNIT` bigint NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FDETAILID`),
+  KEY `IDX_ACA_EWIPENTERSUBENTRY_FK` (`FENTRYID`),
+  KEY `IDX_ACA_EWIPENTERSUBENTRY` (`FSUBMATERIELID`,`FSUBAMOUNT`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_aca_feeallocsubentry definition
+
+CREATE TABLE `t_aca_feeallocsubentry` (
+  `FENTRYID` bigint NOT NULL DEFAULT '0',
+  `FSEQ` bigint NOT NULL DEFAULT '0',
+  `FDETAILID` bigint NOT NULL DEFAULT '0',
+  `FSUBELEMENTGROUPID` bigint NOT NULL DEFAULT '0',
+  `FMATERIALGROUPID` bigint NOT NULL DEFAULT '0',
+  `FALLOCAMTGROUP` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FALLOCVALUEGROUP` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FELEMENTGROUPID` bigint NOT NULL DEFAULT '0',
+  `FCOSTOBJECTGROUPID` bigint NOT NULL DEFAULT '0',
+  `FAUXPTYGROUPID` bigint NOT NULL DEFAULT '0',
+  `FPRODUCTTYPEGROUP` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`FDETAILID`),
+  KEY `IDX_ACA_FEEALLOCSUBENTRY` (`FENTRYID`,`FCOSTOBJECTGROUPID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_aca_finishcost_entry definition
+
+CREATE TABLE `t_aca_finishcost_entry` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FENTRYID` bigint NOT NULL DEFAULT '0',
+  `FSEQ` bigint NOT NULL DEFAULT '0',
+  `FMATERIALID` bigint NOT NULL DEFAULT '0',
+  `FMVERSIONID` bigint NOT NULL DEFAULT '0',
+  `FAUXPTYID` bigint NOT NULL DEFAULT '0',
+  `FOWNERID` bigint NOT NULL DEFAULT '0',
+  `FCONFIGUREDCODEID` bigint NOT NULL DEFAULT '0',
+  `FTRACKNUMBERID` bigint NOT NULL DEFAULT '0',
+  `FBASEUNIT` bigint NOT NULL DEFAULT '0',
+  `FBASEQTY` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FUNITACTUALCOST` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FACTUALCOST` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FWAREHOUSEID` bigint NOT NULL DEFAULT '0',
+  `FLOCATIONID` bigint NOT NULL DEFAULT '0',
+  `FINVTYPEID` bigint NOT NULL DEFAULT '0',
+  `FINVSTATUSID` bigint NOT NULL DEFAULT '0',
+  `FOWNERTYPE` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FLOT` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FCALRANGEID` bigint NOT NULL DEFAULT '0',
+  `FACCOUNTTYPE` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FINVOUTSOURCETYPE` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FCALDIMENSIONID` bigint NOT NULL DEFAULT '0',
+  `FCOSTCENTERID` bigint NOT NULL DEFAULT '0',
+  `frelacostobjectid` bigint NOT NULL DEFAULT '0',
+  `fsourcebillentryid` bigint NOT NULL DEFAULT '0',
+  `FSRCCOSTCENTER` bigint NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FENTRYID`),
+  KEY `IDX_ACA_FINISHCOSTENTRY_FID` (`FID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_aca_finishcost_sonentry definition
+
+CREATE TABLE `t_aca_finishcost_sonentry` (
+  `FENTRYID` bigint NOT NULL DEFAULT '0',
+  `FSEQ` bigint NOT NULL DEFAULT '0',
+  `FDETAILID` bigint NOT NULL DEFAULT '0',
+  `FELEMENTID` bigint NOT NULL DEFAULT '0',
+  `FSUBELEMENTID` bigint NOT NULL DEFAULT '0',
+  `FSUBMATERIALID` bigint NOT NULL DEFAULT '0',
+  `FBASEUNITID` bigint NOT NULL DEFAULT '0',
+  `FSUBBASEQTY` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FSUBACTUALCOST` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FSUBCURRENCYID` bigint NOT NULL DEFAULT '0',
+  `FINVOUTSOURCETYPE` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FSUBUNITACTUALCOST` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  PRIMARY KEY (`FDETAILID`),
+  KEY `IDX_ACA_FINISHCOSTSONENTRY` (`FENTRYID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_aca_finishcosttranfer definition
+
+CREATE TABLE `t_aca_finishcosttranfer` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FCREATORID` bigint NOT NULL DEFAULT '0',
+  `FBILLNO` varchar(80) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FBILLSTATUS` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'C',
+  `FCREATETIME` datetime DEFAULT NULL,
+  `FORGID` bigint NOT NULL DEFAULT '0',
+  `FPERIODID` bigint NOT NULL DEFAULT '0',
+  `FCOSTACCOUNTID` bigint NOT NULL DEFAULT '0',
+  `FCALBILLTYPE` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FBILLTYPEID` bigint NOT NULL DEFAULT '0',
+  `FBIZTYPEID` bigint NOT NULL DEFAULT '0',
+  `FINVSCHEMEID` bigint NOT NULL DEFAULT '0',
+  `FLOCALCURRENCYID` bigint NOT NULL DEFAULT '0',
+  `FBOOKDATE` datetime DEFAULT NULL,
+  `FADMINORGID` bigint NOT NULL DEFAULT '0',
+  `FSOURCEVOUCHER` char(1) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  `FCREATVOUCHER` char(1) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  `FVOUCHERNUM` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FBIZDATE` datetime DEFAULT NULL,
+  `FSOURCECALID` bigint NOT NULL DEFAULT '0',
+  `FCOSTOBJECTID` bigint NOT NULL DEFAULT '0',
+  `fsourcebillid` bigint NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FID`),
+  KEY `IDX_ACA_FINISHCOST_CPV` (`FPERIODID`,`FCOSTACCOUNTID`,`FVOUCHERNUM`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_aca_mfgallocrecord definition
+
+CREATE TABLE `t_aca_mfgallocrecord` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FBILLNO` varchar(80) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FBILLSTATUS` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FORGID` bigint NOT NULL DEFAULT '0',
+  `FCREATORID` bigint NOT NULL DEFAULT '0',
+  `FCREATETIME` datetime DEFAULT NULL,
+  `FMODIFIERID` bigint NOT NULL DEFAULT '0',
+  `FMODIFYTIME` datetime DEFAULT NULL,
+  `FAUDITDATE` datetime DEFAULT NULL,
+  `FAUDITORID` bigint NOT NULL DEFAULT '0',
+  `FUNIT` bigint NOT NULL DEFAULT '0',
+  `FMFGALLOCBILLNO` varchar(60) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FTOTALAMOUNT` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FTOTALSTDVALUE` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  PRIMARY KEY (`FID`),
+  KEY `IDX_ACA_MFGALLOCRECORD` (`FORGID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_aca_mfgallocrecordentry definition
+
+CREATE TABLE `t_aca_mfgallocrecordentry` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FENTRYID` bigint NOT NULL DEFAULT '0',
+  `FSEQ` bigint NOT NULL DEFAULT '0',
+  `FBENEFITCOSTCENTERID` bigint NOT NULL DEFAULT '0',
+  `FSTDVALUE` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FAMOUNT` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FMFGFEESTDBILLNO` varchar(60) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`FENTRYID`),
+  KEY `IDX_ACA_MFGALLOCRECORDENTRY` (`FID`,`FBENEFITCOSTCENTERID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_aca_mfgallocrecordsub definition
+
+CREATE TABLE `t_aca_mfgallocrecordsub` (
+  `FENTRYID` bigint NOT NULL DEFAULT '0',
+  `FSEQ` bigint NOT NULL DEFAULT '0',
+  `FDETAILID` bigint NOT NULL DEFAULT '0',
+  `FBENEFITCOSTCENTERID` bigint NOT NULL DEFAULT '0',
+  `FSTDVALUE` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FAMOUNT` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FMFGFEESTDBILLNO` varchar(60) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`FDETAILID`),
+  KEY `IDX_ACA_MFGALLOCRECORDSUB` (`FENTRYID`,`FBENEFITCOSTCENTERID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_aca_mfgfeealloccc definition
+
+CREATE TABLE `t_aca_mfgfeealloccc` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FBILLNO` varchar(60) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FBILLSTATUS` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FORGID` bigint NOT NULL DEFAULT '0',
+  `FCOSTACCOUNTID` bigint NOT NULL DEFAULT '0',
+  `FCOSTCENTERID` bigint NOT NULL DEFAULT '0',
+  `FPERIODID` bigint NOT NULL DEFAULT '0',
+  `FBIZDATE` datetime DEFAULT NULL,
+  `FEXPENSEITEMID` bigint NOT NULL DEFAULT '0',
+  `FCURRENCYID` bigint NOT NULL DEFAULT '0',
+  `FAMOUNT` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FCOSTDRIVERID` bigint NOT NULL DEFAULT '0',
+  `FALLOCSTATUS` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FALLOCTYPE` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FUSETYPE` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FALLOCTIME` datetime DEFAULT NULL,
+  `FALLOCORID` bigint NOT NULL DEFAULT '0',
+  `FSRCBILLID` bigint NOT NULL DEFAULT '0',
+  `FVOUCHERNUM` varchar(60) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FCREATORID` bigint NOT NULL DEFAULT '0',
+  `FCREATETIME` datetime DEFAULT NULL,
+  `FBASEUNITID` bigint NOT NULL DEFAULT '0',
+  `FALLOCMOLD` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FSOURCE` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FMODIFIERID` bigint NOT NULL DEFAULT '0',
+  `FAUDITORID` bigint NOT NULL DEFAULT '0',
+  `FAUDITDATE` datetime DEFAULT NULL,
+  `FMODIFYTIME` datetime DEFAULT NULL,
+  PRIMARY KEY (`FID`),
+  KEY `IDX_ACA_MFGFEEALLOCCC` (`FORGID`,`FCOSTCENTERID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_aca_mfgfeealloccc_dapn definition
+
+CREATE TABLE `t_aca_mfgfeealloccc_dapn` (
+  `fid` bigint NOT NULL DEFAULT '0',
+  `fcreatetime` datetime DEFAULT NULL,
+  `fsourcebillid` bigint NOT NULL DEFAULT '0',
+  `fsourcebillno` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `forgid` bigint NOT NULL DEFAULT '0',
+  `fcreatorid` bigint NOT NULL DEFAULT '0',
+  `fbilltype` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`fid`),
+  KEY `IDXt_aca_mfgfeealloccc_DAPN_BINDEX` (`fsourcebillid`,`fbilltype`),
+  KEY `IDXt_aca_mfgfeealloccc_DAPN_T_BINDEX` (`fbilltype`,`forgid`,`fcreatetime`,`fsourcebillno`,`fcreatorid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_aca_mfgfeealloccc_dapw definition
+
+CREATE TABLE `t_aca_mfgfeealloccc_dapw` (
+  `fid` bigint NOT NULL DEFAULT '0',
+  `fcreatetime` datetime DEFAULT NULL,
+  `fsourcebillid` bigint NOT NULL DEFAULT '0',
+  `forgid` bigint NOT NULL DEFAULT '0',
+  `fbilltype` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `foper` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`fid`),
+  KEY `IDXt_aca_mfgfeealloccc_DAPW_WINDEX` (`fsourcebillid`,`fbilltype`,`foper`),
+  KEY `IDXt_aca_mfgfeealloccc_DAPW_T_WINDEX` (`fsourcebillid`,`fbilltype`,`foper`,`forgid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_aca_mfgfeealloccc_l definition
+
+CREATE TABLE `t_aca_mfgfeealloccc_l` (
+  `FPKID` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FLOCALEID` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FREMARK` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`FPKID`),
+  KEY `IDX_ACA_MFGFEEALLOCCC_L` (`FID`,`FLOCALEID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_aca_mfgfeeallocccentry definition
+
+CREATE TABLE `t_aca_mfgfeeallocccentry` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FENTRYID` bigint NOT NULL DEFAULT '0',
+  `FSEQ` bigint NOT NULL DEFAULT '0',
+  `FSUBELEMENTID` bigint NOT NULL DEFAULT '0',
+  `FBENEFCOSTCENTERID` bigint NOT NULL DEFAULT '0',
+  `FALLOCAMT` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FALLOCVALUE` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FELEMENTID` bigint NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FENTRYID`),
+  KEY `IDX_ACA_MFGFEEALLOCCCENTRY` (`FID`,`FSUBELEMENTID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_aca_mfgfeeallocco definition
+
+CREATE TABLE `t_aca_mfgfeeallocco` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FBILLNO` varchar(60) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FBILLSTATUS` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FORGID` bigint NOT NULL DEFAULT '0',
+  `FCOSTACCOUNTID` bigint NOT NULL DEFAULT '0',
+  `FBENEFCOSTCENTERID` bigint NOT NULL DEFAULT '0',
+  `FPERIODID` bigint NOT NULL DEFAULT '0',
+  `FBIZDATE` datetime DEFAULT NULL,
+  `FEXPENSEITEMID` bigint NOT NULL DEFAULT '0',
+  `FCURRENCYID` bigint NOT NULL DEFAULT '0',
+  `FAMOUNT` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FCOSTDRIVERID` bigint NOT NULL DEFAULT '0',
+  `FALLOCSTATUS` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FALLOCTYPE` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FUSETYPE` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FALLOCTIME` datetime DEFAULT NULL,
+  `FALLOCORID` bigint NOT NULL DEFAULT '0',
+  `FSRCBILLID` bigint NOT NULL DEFAULT '0',
+  `FVOUCHERNUM` varchar(60) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FCREATORID` bigint NOT NULL DEFAULT '0',
+  `FCREATETIME` datetime DEFAULT NULL,
+  `FBASEUNITID` bigint NOT NULL DEFAULT '0',
+  `FALLOCMOLD` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FSOURCE` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FPRODUCTGROUPID` bigint NOT NULL DEFAULT '0',
+  `FMODIFIERID` bigint NOT NULL DEFAULT '0',
+  `FAUDITORID` bigint NOT NULL DEFAULT '0',
+  `FAUDITDATE` datetime DEFAULT NULL,
+  `FMODIFYTIME` datetime DEFAULT NULL,
+  PRIMARY KEY (`FID`),
+  KEY `IDX_ACA_MFGFEEALLOCCO` (`FORGID`,`FBENEFCOSTCENTERID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_aca_mfgfeeallocco_dapn definition
+
+CREATE TABLE `t_aca_mfgfeeallocco_dapn` (
+  `fid` bigint NOT NULL DEFAULT '0',
+  `fcreatetime` datetime DEFAULT NULL,
+  `fsourcebillid` bigint NOT NULL DEFAULT '0',
+  `fsourcebillno` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `forgid` bigint NOT NULL DEFAULT '0',
+  `fcreatorid` bigint NOT NULL DEFAULT '0',
+  `fbilltype` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`fid`),
+  KEY `IDXt_aca_mfgfeeallocco_DAPN_BINDEX` (`fsourcebillid`,`fbilltype`),
+  KEY `IDXt_aca_mfgfeeallocco_DAPN_T_BINDEX` (`fbilltype`,`forgid`,`fcreatetime`,`fsourcebillno`,`fcreatorid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_aca_mfgfeeallocco_dapw definition
+
+CREATE TABLE `t_aca_mfgfeeallocco_dapw` (
+  `fid` bigint NOT NULL DEFAULT '0',
+  `fcreatetime` datetime DEFAULT NULL,
+  `fsourcebillid` bigint NOT NULL DEFAULT '0',
+  `forgid` bigint NOT NULL DEFAULT '0',
+  `fbilltype` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `foper` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`fid`),
+  KEY `IDXt_aca_mfgfeeallocco_DAPW_WINDEX` (`fsourcebillid`,`fbilltype`,`foper`),
+  KEY `IDXt_aca_mfgfeeallocco_DAPW_T_WINDEX` (`fsourcebillid`,`fbilltype`,`foper`,`forgid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_aca_mfgfeeallocco_l definition
+
+CREATE TABLE `t_aca_mfgfeeallocco_l` (
+  `FPKID` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FLOCALEID` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FREMARK` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`FPKID`),
+  KEY `IDX_ACA_MFGFEEALLOCCO_L` (`FID`,`FLOCALEID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_aca_mfgfeealloccoentry definition
+
+CREATE TABLE `t_aca_mfgfeealloccoentry` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FENTRYID` bigint NOT NULL DEFAULT '0',
+  `FSEQ` bigint NOT NULL DEFAULT '0',
+  `FSUBELEMENTID` bigint NOT NULL DEFAULT '0',
+  `FMATERIALID` bigint NOT NULL DEFAULT '0',
+  `FALLOCAMT` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FALLOCVALUE` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FELEMENTID` bigint NOT NULL DEFAULT '0',
+  `FCOSTOBJECTID` bigint NOT NULL DEFAULT '0',
+  `FAUXPTYID` bigint NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FENTRYID`),
+  KEY `IDX_ACA_MFGFEEALLOCCOENTRY` (`FID`,`FCOSTOBJECTID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_aca_mfgfeeallocstd definition
+
+CREATE TABLE `t_aca_mfgfeeallocstd` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FBILLNO` varchar(80) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FBILLSTATUS` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FORGID` bigint NOT NULL DEFAULT '0',
+  `FCOSTCENTERID` bigint NOT NULL DEFAULT '0',
+  `FCREATORID` bigint NOT NULL DEFAULT '0',
+  `FCREATETIME` datetime DEFAULT NULL,
+  `FMODIFIERID` bigint NOT NULL DEFAULT '0',
+  `FMODIFYTIME` datetime DEFAULT NULL,
+  `FAUDITDATE` datetime DEFAULT NULL,
+  `FAUDITORID` bigint NOT NULL DEFAULT '0',
+  `FALLOCMOLD` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`FID`),
+  KEY `IDX_ACA_MFGFEEALLOCSTD` (`FORGID`,`FCOSTCENTERID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_aca_mfgfeeallocstd_l definition
+
+CREATE TABLE `t_aca_mfgfeeallocstd_l` (
+  `FPKID` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FLOCALEID` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FREMARK` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`FPKID`),
+  KEY `IDX_ACA_MFGFEEALLOCSTD_L` (`FID`,`FLOCALEID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_aca_mfgfeeallocstdentry definition
+
+CREATE TABLE `t_aca_mfgfeeallocstdentry` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FENTRYID` bigint NOT NULL DEFAULT '0',
+  `FSEQ` bigint NOT NULL DEFAULT '0',
+  `FEXPENSEITEMID` bigint NOT NULL DEFAULT '0',
+  `FCOSTDRIVERID` bigint NOT NULL DEFAULT '0',
+  `FPRODUCTGROUPID` bigint NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FENTRYID`),
+  KEY `IDX_ACA_MFGFEEALLOCSTDENTRY` (`FID`,`FCOSTDRIVERID`,`FEXPENSEITEMID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_aca_mfgfeeallocstdsuben definition
+
+CREATE TABLE `t_aca_mfgfeeallocstdsuben` (
+  `FENTRYID` bigint NOT NULL DEFAULT '0',
+  `FSEQ` bigint NOT NULL DEFAULT '0',
+  `FBENEFCOSTCENTERID` bigint NOT NULL DEFAULT '0',
+  `FDETAILID` bigint NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FDETAILID`),
+  KEY `IDX_ACA_MFGFEEALLOCSTDSUBEN` (`FENTRYID`,`FBENEFCOSTCENTERID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_aca_mfgfeecollc definition
+
+CREATE TABLE `t_aca_mfgfeecollc` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FBILLNO` varchar(60) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FBILLSTATUS` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FCREATORID` bigint NOT NULL DEFAULT '0',
+  `FMODIFIERID` bigint NOT NULL DEFAULT '0',
+  `FAUDITORID` bigint NOT NULL DEFAULT '0',
+  `FAUDITDATE` datetime DEFAULT NULL,
+  `FMODIFYTIME` datetime DEFAULT NULL,
+  `FCREATETIME` datetime DEFAULT NULL,
+  `FORGID` bigint NOT NULL DEFAULT '0',
+  `FBIZDATE` datetime DEFAULT NULL,
+  `FCOSTCENTERID` bigint NOT NULL DEFAULT '0',
+  `FSOURCE` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FCOSTACCOUNTID` bigint NOT NULL DEFAULT '0',
+  `FPERIODID` bigint NOT NULL DEFAULT '0',
+  `FEXPENSEITEMID` bigint NOT NULL DEFAULT '0',
+  `FTOTALAMOUNT` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FCURRENCYID` bigint NOT NULL DEFAULT '0',
+  `FSRCSYSID` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FSRCBILLNUM` varchar(60) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FIMPSCHID` bigint NOT NULL DEFAULT '0',
+  `FALLOCMOLD` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FPRODUCTGROUPID` bigint NOT NULL DEFAULT '0',
+  `FSRCBILLID` bigint NOT NULL DEFAULT '0',
+  `FMANUORGID` bigint NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FID`),
+  KEY `IDX_ACA_MFGFEECOLLC` (`FORGID`,`FCOSTCENTERID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_aca_mfgfeecollc_l definition
+
+CREATE TABLE `t_aca_mfgfeecollc_l` (
+  `FPKID` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FLOCALEID` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FREMARK` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`FPKID`),
+  KEY `IDX_ACA_MFGFEECOLLC_L` (`FID`,`FLOCALEID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_aca_mfgfeecollcentry definition
+
+CREATE TABLE `t_aca_mfgfeecollcentry` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FENTRYID` bigint NOT NULL DEFAULT '0',
+  `FSEQ` bigint NOT NULL DEFAULT '0',
+  `FSUBELEMENTID` bigint NOT NULL DEFAULT '0',
+  `FAMOUNT` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FCOSTOBJECTID` bigint NOT NULL DEFAULT '0',
+  `FELEMENTID` bigint NOT NULL DEFAULT '0',
+  `FVOUCHERENTRYID` bigint NOT NULL DEFAULT '0',
+  `FBENEFCOSTCENTERID` bigint NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FENTRYID`),
+  KEY `IDX_ACA_MFGFEECOLLCENTRY` (`FID`,`FSUBELEMENTID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_aca_mfgplanfeerate definition
+
+CREATE TABLE `t_aca_mfgplanfeerate` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FBILLNO` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FBILLSTATUS` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FCREATORID` bigint NOT NULL DEFAULT '0',
+  `FMODIFIERID` bigint NOT NULL DEFAULT '0',
+  `FAUDITORID` bigint NOT NULL DEFAULT '0',
+  `FAUDITDATE` datetime DEFAULT NULL,
+  `FMODIFYTIME` datetime DEFAULT NULL,
+  `FCREATETIME` datetime DEFAULT NULL,
+  `FORGID` bigint NOT NULL DEFAULT '0',
+  `FCOSTACCOUNTID` bigint NOT NULL DEFAULT '0',
+  `FCURRENCYID` bigint NOT NULL DEFAULT '0',
+  `FCOSTCENTERID` bigint NOT NULL DEFAULT '0',
+  `FCALCTYPE` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FEFFECTDATE` datetime DEFAULT NULL,
+  `FEXPDATE` datetime DEFAULT NULL,
+  `FREMARK` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FEFFECTSTATUS` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`FID`),
+  KEY `IDK_ACA_MFGPLANFEERATE_OC` (`FORGID`,`FCOSTACCOUNTID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_aca_mfgplanfeerate_l definition
+
+CREATE TABLE `t_aca_mfgplanfeerate_l` (
+  `FPKID` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FLOCALEID` varchar(10) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FREMARK` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`FPKID`),
+  KEY `IDX_ACA_MFGPLANFEERATE_L` (`FID`,`FLOCALEID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_aca_mfgplanfeerateentry definition
+
+CREATE TABLE `t_aca_mfgplanfeerateentry` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FENTRYID` bigint NOT NULL DEFAULT '0',
+  `FSEQ` bigint NOT NULL DEFAULT '0',
+  `FRESOURCEID` bigint NOT NULL DEFAULT '0',
+  `FRESOURCENAME` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FUNITID` bigint NOT NULL DEFAULT '0',
+  `FMATERIALID` bigint NOT NULL DEFAULT '0',
+  `FMATERIALNAME` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FEXPENSEITEMID` bigint NOT NULL DEFAULT '0',
+  `FEXPENSEITEMNAME` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FELEMENTID` bigint NOT NULL DEFAULT '0',
+  `FSUBELEMENTID` bigint NOT NULL DEFAULT '0',
+  `FRATE` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  PRIMARY KEY (`FENTRYID`),
+  KEY `IDX_ACA_MFGPLANFEERATEENTRY` (`FID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_aca_mfgplanfeeresult definition
+
+CREATE TABLE `t_aca_mfgplanfeeresult` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FBILLNO` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FBILLSTATUS` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FCREATORID` bigint NOT NULL DEFAULT '0',
+  `FMODIFIERID` bigint NOT NULL DEFAULT '0',
+  `FAUDITORID` bigint NOT NULL DEFAULT '0',
+  `FAUDITDATE` datetime DEFAULT NULL,
+  `FMODIFYTIME` datetime DEFAULT NULL,
+  `FCREATETIME` datetime DEFAULT NULL,
+  `FELEMENTID` bigint NOT NULL DEFAULT '0',
+  `FSUBELEMENTID` bigint NOT NULL DEFAULT '0',
+  `FORGID` bigint NOT NULL DEFAULT '0',
+  `FCOSTACCOUNTID` bigint NOT NULL DEFAULT '0',
+  `FCOSTCENTERID` bigint NOT NULL DEFAULT '0',
+  `FEXPENSEITEMID` bigint NOT NULL DEFAULT '0',
+  `FCOSTOBJECTID` bigint NOT NULL DEFAULT '0',
+  `FCURRENCYID` bigint NOT NULL DEFAULT '0',
+  `FAMOUNT` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FPLANRATEID` bigint NOT NULL DEFAULT '0',
+  `FCALCTYPE` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FSOURCEBILLNO` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FSOURCEBILLID` bigint NOT NULL DEFAULT '0',
+  `FSYNCAUDITDATE` datetime DEFAULT NULL,
+  `FSOURCEBILLENTRYID` bigint NOT NULL DEFAULT '0',
+  `FRESOURCEID` bigint NOT NULL DEFAULT '0',
+  `FPERIODID` bigint NOT NULL DEFAULT '0',
+  `FBOOKDATE` datetime DEFAULT NULL,
+  PRIMARY KEY (`FID`),
+  KEY `IDK_ACA_MFGPLANFEERESULT_OCP` (`FORGID`,`FCOSTACCOUNTID`,`FPERIODID`),
+  KEY `IDK_ACA_MFGPLANFEERESULT_COB` (`FCOSTOBJECTID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_aca_proallocstd definition
+
+CREATE TABLE `t_aca_proallocstd` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FBILLNO` varchar(60) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FBILLSTATUS` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FCREATORID` bigint NOT NULL DEFAULT '0',
+  `FMODIFIERID` bigint NOT NULL DEFAULT '0',
+  `FAUDITORID` bigint NOT NULL DEFAULT '0',
+  `FAUDITDATE` datetime DEFAULT NULL,
+  `FMODIFYTIME` datetime DEFAULT NULL,
+  `FCREATETIME` datetime DEFAULT NULL,
+  `FORGID` bigint NOT NULL DEFAULT '0',
+  `FCOSTACCOUNTID` bigint NOT NULL DEFAULT '0',
+  `FEFFECTDATE` datetime DEFAULT NULL,
+  `FEXPDATE` datetime DEFAULT NULL,
+  `FAPPNUM` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FEFFECTSTATUS` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '1',
+  `FSOURCEID` bigint NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FID`),
+  KEY `IDK_ACA_PROALLOCSTD` (`FORGID`,`FCOSTACCOUNTID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_aca_proallocstdentry definition
+
+CREATE TABLE `t_aca_proallocstdentry` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FENTRYID` bigint NOT NULL DEFAULT '0',
+  `FSEQ` bigint NOT NULL DEFAULT '0',
+  `FCOSTCENTERID` bigint NOT NULL DEFAULT '0',
+  `FCOSTDRIVER` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FCOSTAGENTID` bigint NOT NULL DEFAULT '0',
+  `FCALMETHOD` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`FENTRYID`),
+  KEY `IDK_ACA_PROALLOCSTDENTRY` (`FID`,`FSEQ`),
+  KEY `IDX_PASENTRY_COSTC` (`FCOSTCENTERID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_aca_proallocstdsubentry definition
+
+CREATE TABLE `t_aca_proallocstdsubentry` (
+  `FENTRYID` bigint NOT NULL DEFAULT '0',
+  `FDETAILID` bigint NOT NULL DEFAULT '0',
+  `FSEQ` bigint NOT NULL DEFAULT '0',
+  `FELEMENTID` bigint NOT NULL DEFAULT '0',
+  `FSUBELEMENTID` bigint NOT NULL DEFAULT '0',
+  `FCOSTDRIVERDETAIL` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FCOSTTYPEID` bigint NOT NULL DEFAULT '0',
+  `fcalmethoddetail` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FCOSTAGENTDETAILID` bigint NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FDETAILID`),
+  KEY `IDK_ACA_PROALLOCSTDSUBENTRY` (`FENTRYID`,`FSEQ`),
+  KEY `IDX_PASSUBE_SUBE` (`FSUBELEMENTID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_aca_productgroup_detail definition
+
+CREATE TABLE `t_aca_productgroup_detail` (
+  `FENTRYID` bigint NOT NULL DEFAULT '0',
+  `FDETAILID` bigint NOT NULL DEFAULT '0',
+  `FSEQ` bigint NOT NULL DEFAULT '0',
+  `FELEMENTID` bigint NOT NULL DEFAULT '0',
+  `FSUBELEMENTID` bigint NOT NULL DEFAULT '0',
+  `FALLOCWEIGHT` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  PRIMARY KEY (`FDETAILID`),
+  KEY `IDX_T_ACA_PRODUCTGROUP_DETAIL` (`FELEMENTID`,`FSUBELEMENTID`),
+  KEY `IDX_PROGROUPDE_SUBE` (`FSUBELEMENTID`),
+  KEY `IDX_ACA_PRODUCTGROUPD_FENTRYID` (`FENTRYID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_aca_productgroupentry definition
+
+CREATE TABLE `t_aca_productgroupentry` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FENTRYID` bigint NOT NULL DEFAULT '0',
+  `FSEQ` bigint NOT NULL DEFAULT '0',
+  `FMATERIAL` bigint NOT NULL DEFAULT '0',
+  `FMATVERSIONID` bigint NOT NULL DEFAULT '0',
+  `FAUXPTYID` bigint NOT NULL DEFAULT '0',
+  `FPRODUCTTYPE` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FSTOCKTYPE` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FALLOCTYPE` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FWEIGHT` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FMATERIALID` bigint NOT NULL DEFAULT '0',
+  `FIMPORTTYPE` varchar(1) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FGROUPCATEGORYID` bigint NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FENTRYID`),
+  KEY `IDX_ACA_PRODUCTGROUPENTRY` (`FID`,`FSEQ`),
+  KEY `IDX_PROGROUPEN_MAT` (`FMATERIALID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_aca_productintogroup definition
+
+CREATE TABLE `t_aca_productintogroup` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FNUMBER` varchar(80) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FSTATUS` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  `FCREATORID` bigint NOT NULL DEFAULT '0',
+  `FMODIFIERID` bigint NOT NULL DEFAULT '0',
+  `FENABLE` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  `FCREATETIME` datetime DEFAULT NULL,
+  `FMODIFYTIME` datetime DEFAULT NULL,
+  `FMASTERID` bigint NOT NULL DEFAULT '0',
+  `FORGID` bigint NOT NULL DEFAULT '0',
+  `FGROUPTYPE` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FCTRLSTRATEGY` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FCREATEORGID` bigint NOT NULL DEFAULT '0',
+  `FSOURCEDATAID` bigint NOT NULL DEFAULT '0',
+  `FBITINDEX` int NOT NULL DEFAULT '0',
+  `FSOURCEBITINDEX` int NOT NULL DEFAULT '0',
+  `FCALORGID` bigint NOT NULL DEFAULT '0',
+  `FUNAUDITFLAG` varchar(1) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FEFFECTDATE` datetime DEFAULT NULL,
+  `FEXPDATE` datetime DEFAULT NULL,
+  `FGROUPFIELD` varchar(60) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FSOURCE` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FSRCFIELD` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`FID`),
+  KEY `IDK_ACA_PRODUCTINTOGROUP` (`FCREATETIME`,`FORGID`),
+  KEY `IDX_T_ACA_PRODUCTINTOGROUP_CREATEORG` (`FCREATEORGID`),
+  KEY `IDX_T_ACA_PRODUCTINTOGROUP_MASTER` (`FMASTERID`),
+  KEY `IDX_PROGROUP_ORG` (`FCALORGID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_aca_productintogroup_bit definition
+
+CREATE TABLE `t_aca_productintogroup_bit` (
+  `FORGID` bigint NOT NULL,
+  `FDATA` longblob NOT NULL,
+  PRIMARY KEY (`FORGID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_aca_productintogroup_l definition
+
+CREATE TABLE `t_aca_productintogroup_l` (
+  `FPKID` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FLOCALEID` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'zh_CN',
+  `FNAME` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT ' ',
+  `FDESC` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`FPKID`),
+  KEY `IDX_ACA_PRODUCTINTOGROUP_L` (`FID`,`FLOCALEID`,`FNAME`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_aca_productintogroup_m definition
+
+CREATE TABLE `t_aca_productintogroup_m` (
+  `FORGID` bigint NOT NULL,
+  `FDATA` longblob NOT NULL,
+  PRIMARY KEY (`FORGID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_aca_productintogroup_r3 definition
+
+CREATE TABLE `t_aca_productintogroup_r3` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FRefStatus` char(1) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_aca_productintogroup_u definition
+
+CREATE TABLE `t_aca_productintogroup_u` (
+  `FDataID` bigint NOT NULL,
+  `FCreateOrgID` bigint DEFAULT NULL,
+  `FUseOrgID` bigint NOT NULL,
+  PRIMARY KEY (`FDataID`,`FUseOrgID`),
+  KEY `IDX_t_aca_productintogroup_U_UO` (`FUseOrgID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_aca_productintogroupexc definition
+
+CREATE TABLE `t_aca_productintogroupexc` (
+  `FDataID` bigint NOT NULL,
+  `FCreateOrgID` bigint DEFAULT NULL,
+  `FUseOrgID` bigint NOT NULL,
+  `FNEWDATAID` bigint NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FDataID`,`FUseOrgID`),
+  KEY `IDX_t_aca_productintogroupExc_UO` (`FUseOrgID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_aca_productintogroupusereg definition
+
+CREATE TABLE `t_aca_productintogroupusereg` (
+  `FUseOrgID` bigint NOT NULL,
+  `FDataID` bigint NOT NULL,
+  `FCreateOrgID` bigint DEFAULT NULL,
+  `FAdminOrgID` bigint DEFAULT NULL,
+  `FCtrlStrategy` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `FIsAssign` char(1) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `FAssignOrgID` bigint DEFAULT NULL,
+  `FMASTERID` bigint NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FUseOrgID`,`FDataID`),
+  KEY `IDX_T_ACA_PRODUCTINTOGROUPUSEREG_D` (`FDataID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_aca_proextraprice definition
+
+CREATE TABLE `t_aca_proextraprice` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FCALORGID` bigint NOT NULL DEFAULT '0',
+  `FCOSTACCOUNTID` bigint NOT NULL DEFAULT '0',
+  `FCURRENCYID` bigint NOT NULL DEFAULT '0',
+  `FMATERIALID` bigint NOT NULL DEFAULT '0',
+  `FMATVERSIONID` bigint NOT NULL DEFAULT '0',
+  `FAUXPTYID` bigint NOT NULL DEFAULT '0',
+  `FAMOUNT` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FCREATORID` bigint NOT NULL DEFAULT '0',
+  `FMODIFIERID` bigint NOT NULL DEFAULT '0',
+  `FSTARTPERIODID` bigint NOT NULL DEFAULT '0',
+  `FENDPERIODID` bigint NOT NULL DEFAULT '0',
+  `FMODIFYTIME` datetime DEFAULT NULL,
+  `FCREATETIME` datetime DEFAULT NULL,
+  `FSTARTDATE` datetime DEFAULT NULL,
+  `FENDDATE` datetime DEFAULT NULL,
+  `FORGID` bigint NOT NULL DEFAULT '0',
+  `FSOURCE` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FDATASRC` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FBILLNO` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FBILLSTATUS` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FMANUORGID` bigint NOT NULL DEFAULT '0',
+  `FCOSTCENTERID` bigint NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FID`),
+  KEY `IDX_T_ACA_PROEXTRAPRICE` (`FCALORGID`,`FCOSTACCOUNTID`),
+  KEY `IDX_T_ACA_PROEXTRAPRICE2` (`FMATERIALID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_aca_proextraprice_l definition
+
+CREATE TABLE `t_aca_proextraprice_l` (
+  `FPKID` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FLOCALEID` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FREMARK` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`FPKID`),
+  KEY `IDX_T_ACA_PROEXTRAPRICE_L` (`FID`,`FLOCALEID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_aca_proextrapriceentry definition
+
+CREATE TABLE `t_aca_proextrapriceentry` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FENTRYID` bigint NOT NULL DEFAULT '0',
+  `FSEQ` bigint NOT NULL DEFAULT '0',
+  `FELEMENTID` bigint NOT NULL DEFAULT '0',
+  `FSUBELEMENTID` bigint NOT NULL DEFAULT '0',
+  `FPRICE` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  PRIMARY KEY (`FENTRYID`),
+  KEY `IDX_T_ACA_PROEXTRAPRICEENTRY` (`FID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_aca_realtimecalclog definition
+
+CREATE TABLE `t_aca_realtimecalclog` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FORGID` bigint NOT NULL DEFAULT '0',
+  `FBILLSTATUS` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FCOSTACCOUNTID` bigint NOT NULL DEFAULT '0',
+  `FCREATORID` bigint NOT NULL DEFAULT '0',
+  `FPERIODID` bigint NOT NULL DEFAULT '0',
+  `FCALCTYPE` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FTRACEID` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FCREATETIME` datetime DEFAULT NULL,
+  `FCALCDATE` datetime DEFAULT NULL,
+  `FCNSMTIME` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FCHECKDESC` varchar(2000) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FERRORINFO` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FERRORINFO_TAG` longtext COLLATE utf8mb4_unicode_ci,
+  `FDEBUGINFO` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FDEBUGINFO_TAG` longtext COLLATE utf8mb4_unicode_ci,
+  PRIMARY KEY (`FID`),
+  KEY `IDK_ACA_REALTIMECALCLOG_OCP` (`FORGID`,`FCOSTACCOUNTID`,`FPERIODID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_aca_realtimeparam definition
+
+CREATE TABLE `t_aca_realtimeparam` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FBILLNO` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FORGID` bigint NOT NULL DEFAULT '0',
+  `FBILLSTATUS` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FCREATORID` bigint NOT NULL DEFAULT '0',
+  `FCREATETIME` datetime DEFAULT NULL,
+  `FMODIFIERID` bigint NOT NULL DEFAULT '0',
+  `FMODIFYTIME` datetime DEFAULT NULL,
+  `FAUDITORID` bigint NOT NULL DEFAULT '0',
+  `FAUDITDATE` datetime DEFAULT NULL,
+  `FCALCTYPE` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FMATCOSTCALCTYPE` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FMFGCOSTCALCTYPE` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FCALCDEALTYPE` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FMATCOSTTYPE` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FREMARK` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`FID`),
+  KEY `IDK_ACA_REALTIMEPARAM_ORG` (`FORGID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_aca_realtimeparam_l definition
+
+CREATE TABLE `t_aca_realtimeparam_l` (
+  `FPKID` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FLOCALEID` varchar(10) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FREMARK` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`FPKID`),
+  KEY `IDX_ACA_REALTIMEPARAM_L` (`FID`,`FLOCALEID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_aca_rtcalclogentry definition
+
+CREATE TABLE `t_aca_rtcalclogentry` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FENTRYID` bigint NOT NULL DEFAULT '0',
+  `FSEQ` bigint NOT NULL DEFAULT '0',
+  `FENTRYCOSTCENTERID` bigint NOT NULL DEFAULT '0',
+  `FENTRYCOSTCENTERNAME` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FSTATUS` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FCHECKDETAIL` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`FENTRYID`),
+  KEY `IDX_ACA_RTCALCLOGENTRY` (`FID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_aca_rtcalcresult definition
+
+CREATE TABLE `t_aca_rtcalcresult` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FBILLNO` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FBILLSTATUS` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FCREATORID` bigint NOT NULL DEFAULT '0',
+  `FMODIFIERID` bigint NOT NULL DEFAULT '0',
+  `FAUDITORID` bigint NOT NULL DEFAULT '0',
+  `FAUDITDATE` datetime DEFAULT NULL,
+  `FMODIFYTIME` datetime DEFAULT NULL,
+  `FCREATETIME` datetime DEFAULT NULL,
+  `FORGID` bigint NOT NULL DEFAULT '0',
+  `FCOSTACCOUNTID` bigint NOT NULL DEFAULT '0',
+  `FPERIODID` bigint NOT NULL DEFAULT '0',
+  `FCURRENCYID` bigint NOT NULL DEFAULT '0',
+  `FBIZDATE` datetime DEFAULT NULL,
+  `FCOSTOBJECTID` bigint NOT NULL DEFAULT '0',
+  `FCOSTCENTERID` bigint NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FID`),
+  KEY `IDK_ACA_RTCALCRESULT_OCP` (`FORGID`,`FCOSTACCOUNTID`,`FPERIODID`),
+  KEY `IDK_ACA_RTCALCRESULT_COB` (`FCOSTOBJECTID`),
+  KEY `IDK_ACA_RTCALCRESULT_CENTER` (`FCOSTCENTERID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_aca_rtresultconventry definition
+
+CREATE TABLE `t_aca_rtresultconventry` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FENTRYID` bigint NOT NULL DEFAULT '0',
+  `FSEQ` bigint NOT NULL DEFAULT '0',
+  `FCONVSRCBILLID` bigint NOT NULL DEFAULT '0',
+  `FCONVSRCBILLENTRYID` bigint NOT NULL DEFAULT '0',
+  `FCONVCOSTOBJECTID` bigint NOT NULL DEFAULT '0',
+  `FCONVPRODUCTTYPE` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FCONVGROUPFIELD` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FCONVGROUPCATEGORYID` bigint NOT NULL DEFAULT '0',
+  `FCONVELEMENTID` bigint NOT NULL DEFAULT '0',
+  `FCONVSUBELEMENTID` bigint NOT NULL DEFAULT '0',
+  `FCONVOUTSOURCETYPE` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FCONVSUBMATID` bigint NOT NULL DEFAULT '0',
+  `FCONVSUBMATVERID` bigint NOT NULL DEFAULT '0',
+  `FCONVSUBAUXPTYID` bigint NOT NULL DEFAULT '0',
+  `FCONVPROQTY` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FCONVQTY` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FCONVAMT` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FCONVSUBRESOURCEID` bigint NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FENTRYID`),
+  KEY `IDX_ACA_RTRESULTCONVENTRY` (`FID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_aca_rtresultentry definition
+
+CREATE TABLE `t_aca_rtresultentry` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FENTRYID` bigint NOT NULL DEFAULT '0',
+  `FSEQ` bigint NOT NULL DEFAULT '0',
+  `FTYPE` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FRELACOSTOBJECTID` bigint NOT NULL DEFAULT '0',
+  `FRELAPRODUCTTYPE` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FMATERIALID` bigint NOT NULL DEFAULT '0',
+  `FAUXPTYID` bigint NOT NULL DEFAULT '0',
+  `FMATVERSIONID` bigint NOT NULL DEFAULT '0',
+  `FFEETYPE` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FOUTSOURCETYPE` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FELEMENTID` bigint NOT NULL DEFAULT '0',
+  `FSUBELEMENTID` bigint NOT NULL DEFAULT '0',
+  `FSUBMATERIALID` bigint NOT NULL DEFAULT '0',
+  `FSUBMATVERSIONID` bigint NOT NULL DEFAULT '0',
+  `FSUBAUXPTY` bigint NOT NULL DEFAULT '0',
+  `FPDCURRQTY` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FPDCURRAMOUNT` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FPDENDQTY` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FPDENDAMOUNT` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FCURRCOMQTY` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FCURRCOMAMOUNT` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FSYNCAUDITDATE` datetime DEFAULT NULL,
+  `FSRCBILLNO` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FSRCBILLID` bigint NOT NULL DEFAULT '0',
+  `FSRCBILLENTRYID` bigint NOT NULL DEFAULT '0',
+  `FRESOURCEID` bigint NOT NULL DEFAULT '0',
+  `FPDSTARTQTY` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FPDSTARTAMOUNT` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FCALCDATE` datetime DEFAULT NULL,
+  PRIMARY KEY (`FENTRYID`),
+  KEY `IDX_ACA_RTRESULTENTRY` (`FID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_aca_rtresultinventry definition
+
+CREATE TABLE `t_aca_rtresultinventry` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FENTRYID` bigint NOT NULL DEFAULT '0',
+  `FSEQ` bigint NOT NULL DEFAULT '0',
+  `FCARRYTYPE` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FSOURCEBILLID` bigint NOT NULL DEFAULT '0',
+  `FSOURCEBILLENTRYID` bigint NOT NULL DEFAULT '0',
+  `FINVCOSTOBJECTID` bigint NOT NULL DEFAULT '0',
+  `FINVPRODUCTTYPE` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FGROUPFIELD` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FGROUPCATEGORYID` bigint NOT NULL DEFAULT '0',
+  `FINVENTORYSUBELEID` bigint NOT NULL DEFAULT '0',
+  `FINVOUTSOURCETYPE` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FINVENTORYQTY` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FINVENTORYAMOUNT` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  PRIMARY KEY (`FENTRYID`),
+  KEY `IDX_ACA_RTRESULTINVENTRY` (`FID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_aca_rtresultplanentry definition
+
+CREATE TABLE `t_aca_rtresultplanentry` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FENTRYID` bigint NOT NULL DEFAULT '0',
+  `FSEQ` bigint NOT NULL DEFAULT '0',
+  `FPLANSRCBILLENTRY` bigint NOT NULL DEFAULT '0',
+  `FPLANBILLNO` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`FENTRYID`),
+  KEY `IDX_ACA_RTRESULTPLANENTRY` (`FID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_aca_subeleandmat_entry definition
+
+CREATE TABLE `t_aca_subeleandmat_entry` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FENTRYID` bigint NOT NULL DEFAULT '0',
+  `FSEQ` bigint NOT NULL DEFAULT '0',
+  `FMATERIALID` bigint NOT NULL DEFAULT '0',
+  `FMATVERSIONID` bigint NOT NULL DEFAULT '0',
+  `FAUXPTYID` bigint NOT NULL DEFAULT '0',
+  `FMATERIALGROUPID` bigint NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FENTRYID`),
+  KEY `IDX_ACA_SUBELEANDMAT_ENTRY` (`FID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_aca_subelementandmat definition
+
+CREATE TABLE `t_aca_subelementandmat` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FNUMBER` varchar(60) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FSTATUS` char(1) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'A',
+  `FORGID` bigint NOT NULL DEFAULT '0',
+  `FMANUORGID` bigint NOT NULL DEFAULT '0',
+  `FSUBELEMENTID` bigint NOT NULL DEFAULT '0',
+  `FCREATORID` bigint NOT NULL DEFAULT '0',
+  `FCREATETIME` datetime DEFAULT NULL,
+  `FAUDITORID` bigint NOT NULL DEFAULT '0',
+  `FAUDITDATE` datetime DEFAULT NULL,
+  `FEFFECTDATE` datetime DEFAULT NULL,
+  `FEXPDATE` datetime DEFAULT NULL,
+  `FMASTERID` bigint NOT NULL DEFAULT '0',
+  `FSOURCEID` bigint NOT NULL DEFAULT '0',
+  `FENABLE` varchar(10) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FGROUPSTANDARDID` bigint NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FID`),
+  KEY `IDX_T_ACA_SUBELEMENTANDMAT` (`FORGID`,`FMANUORGID`,`FSUBELEMENTID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_aca_subelementandmat_l definition
+
+CREATE TABLE `t_aca_subelementandmat_l` (
+  `FPKID` varchar(60) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FLOCALEID` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'zh_CN',
+  `FREMARK` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`FPKID`),
+  KEY `IDX_T_ACA_SUBELEMENTANDMAT_L` (`FID`,`FLOCALEID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_aca_subelementandmat_r3 definition
+
+CREATE TABLE `t_aca_subelementandmat_r3` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FRefStatus` char(1) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_aca_subelementandmatentry definition
+
+CREATE TABLE `t_aca_subelementandmatentry` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FENTRYID` bigint NOT NULL DEFAULT '0',
+  `FSEQ` bigint NOT NULL DEFAULT '0',
+  `FMATERIALID` bigint NOT NULL DEFAULT '0',
+  `FMATVERSIONID` bigint NOT NULL DEFAULT '0',
+  `FAUXPTYID` bigint NOT NULL DEFAULT '0',
+  `FMATERIALGROUPID` bigint NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FENTRYID`),
+  KEY `IDX_ACA_SUBELEMENTANDMATENTRY` (`FID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_aca_taskexecutelog_r3 definition
+
+CREATE TABLE `t_aca_taskexecutelog_r3` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FRefStatus` char(1) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_aca_terminalwipmatallco definition
+
+CREATE TABLE `t_aca_terminalwipmatallco` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FORGID` bigint NOT NULL DEFAULT '0',
+  `FCOSTACCOUNTID` bigint NOT NULL DEFAULT '0',
+  `FSRCBILLNUMBER` varchar(80) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FCOSTCENTERID` bigint NOT NULL DEFAULT '0',
+  `FCURRENCYID` bigint NOT NULL DEFAULT '0',
+  `FPERIODID` bigint NOT NULL DEFAULT '0',
+  `FMODIFIERID` bigint NOT NULL DEFAULT '0',
+  `FMODIFYTIME` datetime DEFAULT NULL,
+  `FMATERIALID` bigint NOT NULL DEFAULT '0',
+  `FMVERSIONID` bigint NOT NULL DEFAULT '0',
+  `FAUXPTYID` bigint NOT NULL DEFAULT '0',
+  `FSRCBILLROW` bigint NOT NULL DEFAULT '0',
+  `FENTRYID` bigint NOT NULL DEFAULT '0',
+  `FUNIT` bigint NOT NULL DEFAULT '0',
+  `FQTY` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FAMOUNT` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FCALQTY` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FSOURCE` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'hand',
+  `FCOSTOBJECTID` bigint NOT NULL DEFAULT '0',
+  `FCHECKTYPE` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`FID`),
+  KEY `IDX_ACA_TERWIPMATALL_OCPC` (`FORGID`,`FCOSTACCOUNTID`,`FCOSTCENTERID`,`FPERIODID`),
+  KEY `IDX_ACA_TERWIPMATALL_ENTRYID` (`FENTRYID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_aca_terminalwipmatcheck definition
+
+CREATE TABLE `t_aca_terminalwipmatcheck` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FBILLNO` varchar(80) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FBILLSTATUS` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'A',
+  `FORGID` bigint NOT NULL DEFAULT '0',
+  `FCOSTACCOUNTID` bigint NOT NULL DEFAULT '0',
+  `FCOSTCENTERID` bigint NOT NULL DEFAULT '0',
+  `FCURRENCYID` bigint NOT NULL DEFAULT '0',
+  `FBOOKDATE` datetime DEFAULT NULL,
+  `FPERIODID` bigint NOT NULL DEFAULT '0',
+  `FREMARK` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FCREATORID` bigint NOT NULL DEFAULT '0',
+  `FMODIFIERID` bigint NOT NULL DEFAULT '0',
+  `FAUDITORID` bigint NOT NULL DEFAULT '0',
+  `FAUDITDATE` datetime DEFAULT NULL,
+  `FMODIFYTIME` datetime DEFAULT NULL,
+  `FCREATETIME` datetime DEFAULT NULL,
+  PRIMARY KEY (`FID`),
+  KEY `IDX_ACA_TERWIPMAT_OCPC` (`FORGID`,`FCOSTACCOUNTID`,`FCOSTCENTERID`,`FPERIODID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_aca_terminalwipmatcheck_l definition
+
+CREATE TABLE `t_aca_terminalwipmatcheck_l` (
+  `FPKID` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FLOCALEID` varchar(10) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FREMARK` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`FPKID`),
+  KEY `IDX_ACA_TERMINALWIPMC_L` (`FID`,`FLOCALEID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_aca_wipadjustbill definition
+
+CREATE TABLE `t_aca_wipadjustbill` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FBILLNO` varchar(60) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FBILLSTATUS` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FCREATORID` bigint NOT NULL DEFAULT '0',
+  `FMODIFIERID` bigint NOT NULL DEFAULT '0',
+  `FAUDITORID` bigint NOT NULL DEFAULT '0',
+  `FCREATETIME` datetime DEFAULT NULL,
+  `FMODIFYTIME` datetime DEFAULT NULL,
+  `FAUDITDATE` datetime DEFAULT NULL,
+  `FADJUSTTYPE` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FORGID` bigint NOT NULL DEFAULT '0',
+  `FMANUORGID` bigint NOT NULL DEFAULT '0',
+  `FCOSTCENTERID` bigint NOT NULL DEFAULT '0',
+  `FCOSTACCOUNTID` bigint NOT NULL DEFAULT '0',
+  `FPERIODID` bigint NOT NULL DEFAULT '0',
+  `FBOOKDATE` datetime DEFAULT NULL,
+  `FCOSTOBJECTID` bigint NOT NULL DEFAULT '0',
+  `FWIPQTY` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FADJUSTQTY` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FCURRENCYID` bigint NOT NULL DEFAULT '0',
+  `FADJUSTBILLID` bigint NOT NULL DEFAULT '0',
+  `FADJUSTBILLNO` varchar(60) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FMATERIALID` bigint NOT NULL DEFAULT '0',
+  `FUNITID` bigint NOT NULL DEFAULT '0',
+  `FMATAUXPTYID` bigint NOT NULL DEFAULT '0',
+  `FVOUCHERNUM` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`FID`),
+  KEY `IDX_T_ACA_WIPADJUSTBILL` (`FORGID`,`FMANUORGID`,`FCOSTCENTERID`,`FCOSTACCOUNTID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_aca_wipadjustbill_l definition
+
+CREATE TABLE `t_aca_wipadjustbill_l` (
+  `FPKID` varchar(60) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FLOCALEID` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'zh_CN',
+  `FREMARK` varchar(2000) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`FPKID`),
+  KEY `IDX_T_ACA_WIPADJUSTBILL_L` (`FID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_aca_wipadjustbilldetail definition
+
+CREATE TABLE `t_aca_wipadjustbilldetail` (
+  `FENTRYID` bigint NOT NULL DEFAULT '0',
+  `FDETAILID` bigint NOT NULL DEFAULT '0',
+  `FSEQ` bigint NOT NULL DEFAULT '0',
+  `FSUBMATERIALID` bigint NOT NULL DEFAULT '0',
+  `FVERSIONID` bigint NOT NULL DEFAULT '0',
+  `FAUXPTYID` bigint NOT NULL DEFAULT '0',
+  `FBASEUNITID` bigint NOT NULL DEFAULT '0',
+  `FSUBMATQTY` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FSUBMATADJQTY` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FSUBMATAMT` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FSUBMATADJAMT` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FSUBSUBELEMENTID` bigint NOT NULL DEFAULT '0',
+  `FSUBITEMJSON` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FSUBITEMJSON_TAG` longtext COLLATE utf8mb4_unicode_ci,
+  PRIMARY KEY (`FDETAILID`),
+  KEY `IDX_T_ACA_WIPADJUSTBILLDETAIL` (`FENTRYID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_aca_wipadjustbillentry definition
+
+CREATE TABLE `t_aca_wipadjustbillentry` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FENTRYID` bigint NOT NULL DEFAULT '0',
+  `FSEQ` bigint NOT NULL DEFAULT '0',
+  `FELEMENTID` bigint NOT NULL DEFAULT '0',
+  `FSUBELEMENTID` bigint NOT NULL DEFAULT '0',
+  `FWIPAMT` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FADJUSTAMT` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FOUTSOURCETYPE` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FSUBADJUSTID` bigint NOT NULL DEFAULT '0',
+  `FSUBADJUSTBILLNO` varchar(60) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`FENTRYID`),
+  KEY `IDX_T_ACA_WIPADJUSTBILLENTRY` (`FID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_aca_wipadjustitementry definition
+
+CREATE TABLE `t_aca_wipadjustitementry` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FENTRYID` bigint NOT NULL DEFAULT '0',
+  `FSEQ` bigint NOT NULL DEFAULT '0',
+  `FSITEMELEMENTID` bigint NOT NULL DEFAULT '0',
+  `FSITEMSUBELEMENTID` bigint NOT NULL DEFAULT '0',
+  `FSITEMWIPAMT` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FSITEMADJAMT` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FSITEMAFTERADJAMT` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FSITEMADJUSTID` bigint NOT NULL DEFAULT '0',
+  `FSITEMADJUSTBILLNO` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FSITEMOUTSOURCETYPE` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`FENTRYID`),
+  KEY `IDX_ACA_WIPADJUSTITEMENTRY` (`FID`,`FSEQ`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_aca_wipcostchecksave definition
+
+CREATE TABLE `t_aca_wipcostchecksave` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FORGID` bigint NOT NULL DEFAULT '0',
+  `FMANUORGID` bigint NOT NULL DEFAULT '0',
+  `FCOSTCENTERID` bigint NOT NULL DEFAULT '0',
+  `FCOSTACCOUNTID` bigint NOT NULL DEFAULT '0',
+  `FPERIODID` bigint NOT NULL DEFAULT '0',
+  `FCOSTOBJECTID` bigint NOT NULL DEFAULT '0',
+  `FCHECKNUM` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FMODIFIERID` bigint NOT NULL DEFAULT '0',
+  `FMODIFYTIME` datetime DEFAULT NULL,
+  `FFINADJUSTQTY` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  PRIMARY KEY (`FID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_aca_wipcostinit definition
+
+CREATE TABLE `t_aca_wipcostinit` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FBILLNO` varchar(60) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FBILLSTATUS` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FCREATORID` bigint NOT NULL DEFAULT '0',
+  `FMODIFIERID` bigint NOT NULL DEFAULT '0',
+  `FAUDITORID` bigint NOT NULL DEFAULT '0',
+  `FAUDITDATE` datetime DEFAULT NULL,
+  `FMODIFYTIME` datetime DEFAULT NULL,
+  `FCREATETIME` datetime DEFAULT NULL,
+  `FORGID` bigint NOT NULL DEFAULT '0',
+  `FCOSTCENTERID` bigint NOT NULL DEFAULT '0',
+  `FCOSTACCOUNTID` bigint NOT NULL DEFAULT '0',
+  `FCOSTOBJECTID` bigint NOT NULL DEFAULT '0',
+  `FCURRENCYID` bigint NOT NULL DEFAULT '0',
+  `FINITAMT` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FINITQTY` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FASSIGNEDPRODUCTID` bigint NOT NULL DEFAULT '0',
+  `FAUXPTYID` bigint NOT NULL DEFAULT '0',
+  `FBASEUNIT` bigint NOT NULL DEFAULT '0',
+  `FYEARINPUTQTY` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FYEARFINISHQTY` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FMANUORGID` bigint NOT NULL DEFAULT '0',
+  `FSOURCE` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FID`),
+  KEY `IDX_ACA_WIPCOSTINIT` (`FORGID`,`FCOSTCENTERID`),
+  KEY `IDX_AWIPCOSTI_COSTA` (`FCOSTACCOUNTID`),
+  KEY `IDX_AWIPCOSTI_COSTC` (`FCOSTCENTERID`),
+  KEY `IDX_AWIPCOSTI_COSTOBJ` (`FCOSTOBJECTID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_aca_wipcostinit_l definition
+
+CREATE TABLE `t_aca_wipcostinit_l` (
+  `FPKID` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FLOCALEID` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'zh_CN',
+  `FREMARK` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`FPKID`),
+  KEY `IDX_ACA_WIPCOSTINIT_L` (`FID`,`FLOCALEID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_aca_wipcostinitentry definition
+
+CREATE TABLE `t_aca_wipcostinitentry` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FENTRYID` bigint NOT NULL DEFAULT '0',
+  `FSEQ` bigint NOT NULL DEFAULT '0',
+  `FSUBELEMENTID` bigint NOT NULL DEFAULT '0',
+  `FAMOUNT` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FELEMENTID` bigint NOT NULL DEFAULT '0',
+  `FYEARINPUTAMT` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FYEARFINISHAMT` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FIMPORTTYPE` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  `FOUTSOURCETYPE` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`FENTRYID`),
+  KEY `IDX_ACA_WIPCOSTINITENTRY` (`FID`,`FSUBELEMENTID`),
+  KEY `IDX_AWIPCOIEN_SUBE` (`FSUBELEMENTID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_aca_wipcostinitsubentry definition
+
+CREATE TABLE `t_aca_wipcostinitsubentry` (
+  `FENTRYID` bigint NOT NULL DEFAULT '0',
+  `FSEQ` bigint NOT NULL DEFAULT '0',
+  `FDETAILID` bigint NOT NULL DEFAULT '0',
+  `FSUBBASEUNIT` bigint NOT NULL DEFAULT '0',
+  `FAUXPTYID` bigint NOT NULL DEFAULT '0',
+  `FMATVERSIONID` bigint NOT NULL DEFAULT '0',
+  `FSUBMATERIELID` bigint NOT NULL DEFAULT '0',
+  `FSUBQTY` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FSUBAMOUNT` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FMATYEARINPUTQTY` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FMATYEARINPUTAMT` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FMATYEARFINISHQTY` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FMATYEARFINISHAMT` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FSUBITEMJSON` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FSUBITEMJSON_TAG` longtext COLLATE utf8mb4_unicode_ci,
+  PRIMARY KEY (`FDETAILID`),
+  KEY `IDX_ACA_WIPCOSTINITSUBENTRY` (`FSUBMATERIELID`,`FSUBAMOUNT`),
+  KEY `IDX_ACA_WIPCOSTINITSUBEN_FENTRYID` (`FENTRYID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_aca_wipmatcheck_entry definition
+
+CREATE TABLE `t_aca_wipmatcheck_entry` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FENTRYID` bigint NOT NULL DEFAULT '0',
+  `FSEQ` bigint NOT NULL DEFAULT '0',
+  `FMATERIALID` bigint NOT NULL DEFAULT '0',
+  `FMVERSIONID` bigint NOT NULL DEFAULT '0',
+  `FAUXPTYID` bigint NOT NULL DEFAULT '0',
+  `FQTY` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FAMOUNT` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FBATCHNO` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FUNIT` bigint NOT NULL DEFAULT '0',
+  `FCOSTOBJECTID` bigint NOT NULL DEFAULT '0',
+  `FALLOCSTATUS` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  `FSOURCE` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'hand',
+  `FCOSTMATERIALID` bigint NOT NULL DEFAULT '0',
+  `FCOSTAUXPTYID` bigint NOT NULL DEFAULT '0',
+  `FLOTID` bigint NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FENTRYID`),
+  KEY `IDX_WIPMATCHECK_ENTRY` (`FID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_bd_matcostinfo definition
+
+CREATE TABLE `t_bd_matcostinfo` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FSTATUS` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FCREATORID` bigint NOT NULL DEFAULT '0',
+  `FMODIFIERID` bigint NOT NULL DEFAULT '0',
+  `FENABLE` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FCREATETIME` datetime DEFAULT NULL,
+  `FMODIFYTIME` datetime DEFAULT NULL,
+  `FMASTERID` bigint NOT NULL DEFAULT '0',
+  `FMATERIALID` bigint NOT NULL DEFAULT '0',
+  `FCOSTTYPEID` bigint NOT NULL DEFAULT '0',
+  `FAUDITORID` bigint NOT NULL DEFAULT '0',
+  `FAUDITTIME` datetime DEFAULT NULL,
+  `FDISABLERID` bigint NOT NULL DEFAULT '0',
+  `FDISABLEDATE` datetime DEFAULT NULL,
+  `FCURRENCYID` bigint NOT NULL DEFAULT '0',
+  `FCONSIDERYIELDRATE` char(1) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  `FCONSIDERSUBMATERIALLOSS` char(1) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  `FCONSIDERPREPARETIME` char(1) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  `FCONSIDERVALIDPERIOD` char(1) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  `FAUXPTYID` bigint NOT NULL DEFAULT '0',
+  `FMATVERSIONID` bigint NOT NULL DEFAULT '0',
+  `FBOMTYPEID` bigint NOT NULL DEFAULT '0',
+  `FBOMID` bigint NOT NULL DEFAULT '0',
+  `FPROCESSROUTEID` bigint NOT NULL DEFAULT '0',
+  `FEFFECTDATE` datetime DEFAULT NULL,
+  `FEXPDATE` datetime DEFAULT NULL,
+  `FSOURCE` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FISCITED` char(1) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  `FDATASOURCE` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FISCALCCURLEVEL` char(1) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  `FLOT` varchar(80) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FCONFIGUREDCODEID` bigint NOT NULL DEFAULT '0',
+  `FTRACKNUMBERID` bigint NOT NULL DEFAULT '0',
+  `FPROJECTID` bigint NOT NULL DEFAULT '0',
+  `FKEYCOL` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FKEYCOLID` bigint NOT NULL DEFAULT '0',
+  `FSRCKEYCOL` varchar(80) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`FID`),
+  KEY `IDX_BD_MATCOSTINFO_ID` (`FMATERIALID`,`FCOSTTYPEID`),
+  KEY `IX_BD_MATCOSTINFO_KEYCOL` (`FCOSTTYPEID`,`FKEYCOL`),
+  KEY `IDX_BD_MATCOSTINFO_KCID` (`FKEYCOLID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_bd_matcostinfo_l definition
+
+CREATE TABLE `t_bd_matcostinfo_l` (
+  `FPKID` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FLOCALEID` varchar(10) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FREMARK` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`FPKID`),
+  KEY `IX_BD_MATCOST_L_ID` (`FLOCALEID`,`FID`),
+  KEY `IDX_BD_MATCOSTINFOL_ID` (`FID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_bd_matcostinfo_r3 definition
+
+CREATE TABLE `t_bd_matcostinfo_r3` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FRefStatus` char(1) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_bd_matcostinfoentry definition
+
+CREATE TABLE `t_bd_matcostinfoentry` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FENTRYID` bigint NOT NULL DEFAULT '0',
+  `FSEQ` bigint NOT NULL DEFAULT '0',
+  `FSUBELEMENTID` bigint NOT NULL DEFAULT '0',
+  `FELEMENTID` bigint NOT NULL DEFAULT '0',
+  `FSTANDARDCOST` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FSTEPAMT` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  PRIMARY KEY (`FENTRYID`),
+  KEY `IX_BD_MATCTEN_FSUBELETID` (`FID`,`FELEMENTID`,`FSUBELEMENTID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cad_alloccalcreport definition
+
+CREATE TABLE `t_cad_alloccalcreport` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FORGID` bigint NOT NULL DEFAULT '0',
+  `FCOSTACCOUNTID` bigint NOT NULL DEFAULT '0',
+  `FMANUORGID` bigint NOT NULL DEFAULT '0',
+  `FPERIODID` bigint NOT NULL DEFAULT '0',
+  `FCOSTCENTERID` bigint NOT NULL DEFAULT '0',
+  `FALLOCBILLNO` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FCOSTDRIVERID` bigint NOT NULL DEFAULT '0',
+  `FALLOCTIME` datetime DEFAULT NULL,
+  `FAPPNUM` varchar(10) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FBASEUNITID` bigint NOT NULL DEFAULT '0',
+  `FISCALCDATA` char(1) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FID`),
+  KEY `IDX_CAD_ALLOCCALCREPORT_OCP` (`FORGID`,`FCOSTACCOUNTID`,`FPERIODID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cad_alloccreportentry definition
+
+CREATE TABLE `t_cad_alloccreportentry` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FENTRYID` bigint NOT NULL DEFAULT '0',
+  `FSEQ` bigint NOT NULL DEFAULT '0',
+  `FCOSTOBJECTID` bigint NOT NULL DEFAULT '0',
+  `FBIZBILLID` bigint NOT NULL DEFAULT '0',
+  `FBILLTYPENUM` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FBILLTYPE` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FBILLNUMBER` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FALLOCVALUE` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FCALCRESULT` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FBENEFCOSTCENTERID` bigint NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FENTRYID`),
+  KEY `IDX_CAD_ALLOCCREPORTENTRY_FID` (`FID`),
+  KEY `IDX_CAD_ALLOCCREPORTENTRY_CID` (`FCOSTOBJECTID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cad_allocreport definition
+
+CREATE TABLE `t_cad_allocreport` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FBILLNO` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FBILLSTATUS` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FORGID` bigint NOT NULL DEFAULT '0',
+  `FMANUORGID` bigint NOT NULL DEFAULT '0',
+  `FCOSTCENTERID` bigint NOT NULL DEFAULT '0',
+  `FCOSTACCOUNTID` bigint NOT NULL DEFAULT '0',
+  `FPERIODID` bigint NOT NULL DEFAULT '0',
+  `FCURRENCYID` bigint NOT NULL DEFAULT '0',
+  `FTASKNAME` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FEXECUTORID` bigint NOT NULL DEFAULT '0',
+  `FREPORTTYPE` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FSTATUS` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FSRCBILL` bigint NOT NULL DEFAULT '0',
+  `FUSETIME` bigint NOT NULL DEFAULT '0',
+  `FSTARTTIME` datetime DEFAULT NULL,
+  `FPROGRESS` bigint NOT NULL DEFAULT '0',
+  `FPAGEPARAM` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FCREATORID` bigint NOT NULL DEFAULT '0',
+  `FMODIFIERID` bigint NOT NULL DEFAULT '0',
+  `FAUDITORID` bigint NOT NULL DEFAULT '0',
+  `FAUDITDATE` datetime DEFAULT NULL,
+  `FMODIFYTIME` datetime DEFAULT NULL,
+  `FCREATETIME` datetime DEFAULT NULL,
+  `FAPPNUM` varchar(10) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FREMARK` varchar(2000) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FREMARK_TAG` longtext COLLATE utf8mb4_unicode_ci,
+  PRIMARY KEY (`FID`),
+  KEY `IDX_T_CAD_ALLOCREPORT` (`FORGID`,`FMANUORGID`,`FCOSTCENTERID`,`FCOSTACCOUNTID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cad_allocreportdetail definition
+
+CREATE TABLE `t_cad_allocreportdetail` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FORGID` bigint NOT NULL DEFAULT '0',
+  `FMANUORGID` bigint NOT NULL DEFAULT '0',
+  `FCOSTCENTERID` bigint NOT NULL DEFAULT '0',
+  `FCOSTACCOUNTID` bigint NOT NULL DEFAULT '0',
+  `FPERIODID` bigint NOT NULL DEFAULT '0',
+  `FSTARTTIME` datetime DEFAULT NULL,
+  `FCHECKITEMDESC` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`FID`),
+  KEY `IDX_T_CAD_ALLOCREPORTDETAIL` (`FORGID`,`FMANUORGID`,`FCOSTACCOUNTID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cad_allocreportentry definition
+
+CREATE TABLE `t_cad_allocreportentry` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FENTRYID` bigint NOT NULL DEFAULT '0',
+  `FSEQ` bigint NOT NULL DEFAULT '0',
+  `FCHECKITEM` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT ' ',
+  `FCHECKDETAIL` varchar(1000) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FALLOCRESULT` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`FENTRYID`),
+  KEY `IDX_T_CAD_ALLOCREPORTENTRY` (`FID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cad_alloreptdetailentry definition
+
+CREATE TABLE `t_cad_alloreptdetailentry` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FENTRYID` bigint NOT NULL DEFAULT '0',
+  `FSEQ` bigint NOT NULL DEFAULT '0',
+  `FSUBCOSTCENTERNUM` bigint NOT NULL DEFAULT '0',
+  `FCHECKDETAIL` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`FENTRYID`),
+  KEY `IDX_T_CAD_ALLOREPTDETAILENTRY` (`FID`,`FSEQ`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cad_autoexecruleentry definition
+
+CREATE TABLE `t_cad_autoexecruleentry` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FENTRYID` bigint NOT NULL DEFAULT '0',
+  `FSEQ` bigint NOT NULL DEFAULT '0',
+  `FMATGROUPSTDID` bigint NOT NULL DEFAULT '0',
+  `FMATGROUPID` bigint NOT NULL DEFAULT '0',
+  `FSOURCEORGID` bigint NOT NULL DEFAULT '0',
+  `FSOURCEMANUORGID` bigint NOT NULL DEFAULT '0',
+  `FREFRESHNEWMAT` char(1) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  `FREFRESHMATATTR` char(1) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FENTRYID`),
+  KEY `IDX_CAD_AUTOEXECRULEENTRY` (`FID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cad_autoexecrulesetting definition
+
+CREATE TABLE `t_cad_autoexecrulesetting` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FBILLNO` varchar(80) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FCREATORID` bigint NOT NULL DEFAULT '0',
+  `FAUTOEXECORGID` bigint NOT NULL DEFAULT '0',
+  `FNAME` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FMODIFIERID` bigint NOT NULL DEFAULT '0',
+  `FCREATETIME` datetime DEFAULT NULL,
+  `FMODIFYTIME` datetime DEFAULT NULL,
+  `FCOSTTYPEID` bigint NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FID`),
+  KEY `IDX_CAD_AUTOEXECRULE_ORG` (`FAUTOEXECORGID`),
+  KEY `IDX_CAD_AUTOEXECRULE_CT` (`FCOSTTYPEID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cad_autoexecrulesetting_l definition
+
+CREATE TABLE `t_cad_autoexecrulesetting_l` (
+  `FPKID` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FLOCALEID` varchar(10) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FNAME` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`FPKID`),
+  KEY `IDX_CAD_AUTOEXECRULESET_L` (`FID`,`FLOCALEID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cad_auxpcomentry definition
+
+CREATE TABLE `t_cad_auxpcomentry` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FENTRYID` bigint NOT NULL DEFAULT '0',
+  `FSEQ` bigint NOT NULL DEFAULT '0',
+  `FALLOCAMOUNT` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FEXPENSEITEMID` bigint NOT NULL DEFAULT '0',
+  `FCOSTDRIVERID` bigint NOT NULL DEFAULT '0',
+  `FBASEUNIT` bigint NOT NULL DEFAULT '0',
+  `FCOSTDRIVERQTY` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FACTUALINRATE` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FACTUALOUTRATE` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FACTUALRATE` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FALLOCSUM` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  PRIMARY KEY (`FENTRYID`),
+  KEY `IDX_T_CAD_AUXPCOMENTRY` (`FID`,`FSEQ`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cad_auxpcomsubentry definition
+
+CREATE TABLE `t_cad_auxpcomsubentry` (
+  `FENTRYID` bigint NOT NULL DEFAULT '0',
+  `FDETAILID` bigint NOT NULL DEFAULT '0',
+  `FSEQ` bigint NOT NULL DEFAULT '0',
+  `FSUBEXPENSEITEMID` bigint NOT NULL DEFAULT '0',
+  `FSUBCOSTDRIVERID` bigint NOT NULL DEFAULT '0',
+  `FSUBBASEUNIT` bigint NOT NULL DEFAULT '0',
+  `FSUBINQTY` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FSUBOUTQTY` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FSUBQTY` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FSUBAMT` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FSUBCOSTCENTERID` bigint NOT NULL DEFAULT '0',
+  `FSUBINAMT` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FSUBOUTAMT` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  PRIMARY KEY (`FDETAILID`),
+  KEY `IDX_T_CAD_AUXPCOMSUBENTRY` (`FENTRYID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cad_auxpparentry definition
+
+CREATE TABLE `t_cad_auxpparentry` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FENTRYID` bigint NOT NULL DEFAULT '0',
+  `FPARENTENTRYID` bigint NOT NULL DEFAULT '0',
+  `FSEQ` bigint NOT NULL DEFAULT '0',
+  `FPARALLOCAMOUNT` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FPAREXPENSEITEMID` bigint NOT NULL DEFAULT '0',
+  `FPARCOSTDRIVERID` bigint NOT NULL DEFAULT '0',
+  `FPARBASEUNIT` bigint NOT NULL DEFAULT '0',
+  `FPARCOSTDRIVERQTY` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FPARACTUALINRATE` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FPARACTUALOUTRATE` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FPARACTUALRATE` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FPARALLOCSUM` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  PRIMARY KEY (`FENTRYID`),
+  KEY `IDX_T_CAD_AUXPPARENTRY` (`FID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cad_auxpparsubentry definition
+
+CREATE TABLE `t_cad_auxpparsubentry` (
+  `FENTRYID` bigint NOT NULL DEFAULT '0',
+  `FDETAILID` bigint NOT NULL DEFAULT '0',
+  `FSEQ` bigint NOT NULL DEFAULT '0',
+  `FPARSUBEXPENSEITEMID` bigint NOT NULL DEFAULT '0',
+  `FPARSUBCOSTDRIVERID` bigint NOT NULL DEFAULT '0',
+  `FPARSUBBASEUNIT` bigint NOT NULL DEFAULT '0',
+  `FPARSUBINQTY` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FPARSUBOUTQTY` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FPARSUBQTY` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FPARSUBAMT` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FPARSUBCOSTCENTERID` bigint NOT NULL DEFAULT '0',
+  `FPARSUBINAMT` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FPARSUBOUTAMT` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FCOMSUBENTRYID` bigint NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FDETAILID`),
+  KEY `IDX_T_CAD_AUXPPARSUBENTRY` (`FENTRYID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cad_auxprodalloc definition
+
+CREATE TABLE `t_cad_auxprodalloc` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FBILLNO` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FBILLSTATUS` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FCREATORID` bigint NOT NULL DEFAULT '0',
+  `FMODIFIERID` bigint NOT NULL DEFAULT '0',
+  `FAUDITORID` bigint NOT NULL DEFAULT '0',
+  `FAUDITDATE` datetime DEFAULT NULL,
+  `FMODIFYTIME` datetime DEFAULT NULL,
+  `FCREATETIME` datetime DEFAULT NULL,
+  `FORGID` bigint NOT NULL DEFAULT '0',
+  `FMANUORGID` bigint NOT NULL DEFAULT '0',
+  `FCOSTCENTERID` bigint NOT NULL DEFAULT '0',
+  `FCOSTACCOUNTID` bigint NOT NULL DEFAULT '0',
+  `FPERIODID` bigint NOT NULL DEFAULT '0',
+  `FCURRENCYID` bigint NOT NULL DEFAULT '0',
+  `FALLOCORID` bigint NOT NULL DEFAULT '0',
+  `FALLOCMOLD` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FALLOCSTATUS` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FALLOCMETHOD` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FVOUCHERNUM` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FALLOCTYPE` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FALLOCTIME` datetime DEFAULT NULL,
+  `FPUBLICAUX` char(1) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  `FAPPNUM` varchar(10) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`FID`),
+  KEY `IDX_T_CAD_AUXPRODALLOC` (`FORGID`,`FMANUORGID`,`FCOSTCENTERID`,`FCOSTACCOUNTID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cad_auxprodalloc_l definition
+
+CREATE TABLE `t_cad_auxprodalloc_l` (
+  `FPKID` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FLOCALEID` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FREMARK` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`FPKID`),
+  UNIQUE KEY `IDX_T_CAD_AUXPRODALLOC_L` (`FID`,`FLOCALEID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cad_auxpsrcbillentry definition
+
+CREATE TABLE `t_cad_auxpsrcbillentry` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FENTRYID` bigint NOT NULL DEFAULT '0',
+  `FSEQ` bigint NOT NULL DEFAULT '0',
+  `FSRCBILLID` bigint NOT NULL DEFAULT '0',
+  `FTYPE` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`FENTRYID`),
+  KEY `IDX_T_CAD_AUXPSRCBILLENTRY` (`FID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cad_basicalloc definition
+
+CREATE TABLE `t_cad_basicalloc` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FBILLNO` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FBILLSTATUS` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FCREATORID` bigint NOT NULL DEFAULT '0',
+  `FMODIFIERID` bigint NOT NULL DEFAULT '0',
+  `FAUDITORID` bigint NOT NULL DEFAULT '0',
+  `FAUDITDATE` datetime DEFAULT NULL,
+  `FMODIFYTIME` datetime DEFAULT NULL,
+  `FCREATETIME` datetime DEFAULT NULL,
+  `FORGID` bigint NOT NULL DEFAULT '0',
+  `FMANUORGID` bigint NOT NULL DEFAULT '0',
+  `FCOSTCENTERID` bigint NOT NULL DEFAULT '0',
+  `FEXPENSEITEMID` bigint NOT NULL DEFAULT '0',
+  `FCOSTACCOUNTID` bigint NOT NULL DEFAULT '0',
+  `FPERIODID` bigint NOT NULL DEFAULT '0',
+  `FCOSTDRIVERID` bigint NOT NULL DEFAULT '0',
+  `FTOTALAMOUNT` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FCURRENCYID` bigint NOT NULL DEFAULT '0',
+  `FREMARK` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FALLOCORID` bigint NOT NULL DEFAULT '0',
+  `FALLOCMOLD` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FALLOCSTATUS` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FSCRBILLTYPE` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FVOUCHERNUM` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FALLOCTYPE` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FALLOCTIME` datetime DEFAULT NULL,
+  `FAMOUNT` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FSOURCETYPE` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FAPPNUM` varchar(10) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FPRODUCTGROUPID` bigint NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FID`),
+  KEY `IDX_T_CAD_BASICALLOC` (`FORGID`,`FMANUORGID`,`FCOSTCENTERID`,`FCOSTACCOUNTID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cad_basicalloc_l definition
+
+CREATE TABLE `t_cad_basicalloc_l` (
+  `FPKID` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FLOCALEID` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FREMARK` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`FPKID`),
+  UNIQUE KEY `IDX_T_CAD_BASICALLOC_L` (`FID`,`FLOCALEID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cad_basicallocentry definition
+
+CREATE TABLE `t_cad_basicallocentry` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FENTRYID` bigint NOT NULL DEFAULT '0',
+  `FSEQ` bigint NOT NULL DEFAULT '0',
+  `FENTRYCOSTCENTERID` bigint NOT NULL DEFAULT '0',
+  `FENTRYEXPENSEITEMID` bigint NOT NULL DEFAULT '0',
+  `FENTRYCOSTDRIVERID` bigint NOT NULL DEFAULT '0',
+  `FENTRYBASEUNITID` bigint NOT NULL DEFAULT '0',
+  `FENTRYQTY` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FENTRYAMOUNT` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  PRIMARY KEY (`FENTRYID`),
+  KEY `IDX_T_CAD_BASICALLOCENTRY` (`FENTRYCOSTCENTERID`,`FENTRYEXPENSEITEMID`,`FENTRYCOSTDRIVERID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cad_basicpcomentry definition
+
+CREATE TABLE `t_cad_basicpcomentry` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FENTRYID` bigint NOT NULL DEFAULT '0',
+  `FSEQ` bigint NOT NULL DEFAULT '0',
+  `FALLOCAMOUNT` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FCOMEXPENSEITEMID` bigint NOT NULL DEFAULT '0',
+  `FCOMCOSTDRIVERID` bigint NOT NULL DEFAULT '0',
+  `FBASEUNITID` bigint NOT NULL DEFAULT '0',
+  `FCOSTDRIVERQTY` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FALLOCSUM` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  PRIMARY KEY (`FENTRYID`),
+  KEY `IDX_T_CAD_BASICPCOMENTRY` (`FID`,`FCOMEXPENSEITEMID`,`FCOMCOSTDRIVERID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cad_basicpcomsubentry definition
+
+CREATE TABLE `t_cad_basicpcomsubentry` (
+  `FENTRYID` bigint NOT NULL DEFAULT '0',
+  `FDETAILID` bigint NOT NULL DEFAULT '0',
+  `FSEQ` bigint NOT NULL DEFAULT '0',
+  `FSUBCOSTCENTERID` bigint NOT NULL DEFAULT '0',
+  `FCOMSUBEXPENSEITEMID` bigint NOT NULL DEFAULT '0',
+  `FCOMSUBCOSTDRIVERID` bigint NOT NULL DEFAULT '0',
+  `FSUBBASEUNITID` bigint NOT NULL DEFAULT '0',
+  `FSUBQTY` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FSUBAMT` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  PRIMARY KEY (`FDETAILID`),
+  KEY `IDX_T_CAD_BASICPCOMSUBENTRY` (`FENTRYID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cad_basicpparentry definition
+
+CREATE TABLE `t_cad_basicpparentry` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FENTRYID` bigint NOT NULL DEFAULT '0',
+  `FSEQ` bigint NOT NULL DEFAULT '0',
+  `FPAREXPENSEITEMID` bigint NOT NULL DEFAULT '0',
+  `FPARCOSTDRIVERID` bigint NOT NULL DEFAULT '0',
+  `FPARBASEUNITID` bigint NOT NULL DEFAULT '0',
+  `FPARALLOCAMOUNT` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FPARCOSTDRIVERQTY` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FPARACTUALRATE` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FPARALLOCSUM` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FCOMPAREXPITEMID` bigint NOT NULL DEFAULT '0',
+  `FPARENTENTRYID` bigint NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FENTRYID`),
+  KEY `IDX_T_CAD_BASICPPARENTRY` (`FID`,`FPAREXPENSEITEMID`,`FPARCOSTDRIVERID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cad_basicpparsubentry definition
+
+CREATE TABLE `t_cad_basicpparsubentry` (
+  `FENTRYID` bigint NOT NULL DEFAULT '0',
+  `FDETAILID` bigint NOT NULL DEFAULT '0',
+  `FSEQ` bigint NOT NULL DEFAULT '0',
+  `FPARSUBCOSTCENTERID` bigint NOT NULL DEFAULT '0',
+  `FPARSUBEXPENSEITEMID` bigint NOT NULL DEFAULT '0',
+  `FPARSUBCOSTDRIVERID` bigint NOT NULL DEFAULT '0',
+  `FPARSUBBASEUNITID` bigint NOT NULL DEFAULT '0',
+  `FPARSUBQTY` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FPARSUBAMT` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  PRIMARY KEY (`FDETAILID`),
+  KEY `IDX_T_CAD_BASICPPARSUBENTRY` (`FENTRYID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cad_basicpsrcbillentry definition
+
+CREATE TABLE `t_cad_basicpsrcbillentry` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FENTRYID` bigint NOT NULL DEFAULT '0',
+  `FSEQ` bigint NOT NULL DEFAULT '0',
+  `FSRCBILLID` bigint NOT NULL DEFAULT '0',
+  `FTYPE` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`FENTRYID`),
+  UNIQUE KEY `IDX_T_CAD_BASICPSRCBILLENTRY` (`FSRCBILLID`,`FTYPE`,`FID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cad_batmodifyprice definition
+
+CREATE TABLE `t_cad_batmodifyprice` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FORGID` bigint NOT NULL DEFAULT '0',
+  `FSTORAGEORGID` bigint NOT NULL DEFAULT '0',
+  `FCOSTACCOUNTID` bigint NOT NULL DEFAULT '0',
+  `FCURRENCYID` bigint NOT NULL DEFAULT '0',
+  `FCOSTTYPEID` bigint NOT NULL DEFAULT '0',
+  `FUPDATEBILLID` bigint NOT NULL DEFAULT '0',
+  `FMATERIALID` bigint NOT NULL DEFAULT '0',
+  `FLOT` varchar(80) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FAUXPTYID` bigint NOT NULL DEFAULT '0',
+  `FCONFIGUREDCODEID` bigint NOT NULL DEFAULT '0',
+  `FTRACKNUMBERID` bigint NOT NULL DEFAULT '0',
+  `FPROJECTID` bigint NOT NULL DEFAULT '0',
+  `FKEYCOL` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FKEYCOLID` bigint NOT NULL DEFAULT '0',
+  `FDATASRC` varchar(80) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FSOURCE` varchar(80) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FISUPDATE` char(1) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  `FPRICERULEID` bigint NOT NULL DEFAULT '0',
+  `FAMOUNT` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FCREATETIME` datetime DEFAULT NULL,
+  PRIMARY KEY (`FID`),
+  KEY `IDX_CAD_BATMODIFYPRICE_UP` (`FISUPDATE`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cad_batmodifypriceentry definition
+
+CREATE TABLE `t_cad_batmodifypriceentry` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FENTRYID` bigint NOT NULL DEFAULT '0',
+  `FSEQ` bigint NOT NULL DEFAULT '0',
+  `FELEMENTID` bigint NOT NULL DEFAULT '0',
+  `FSUBELEMENTID` bigint NOT NULL DEFAULT '0',
+  `FOLDPRICE` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FPRICE` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FNODEID` bigint NOT NULL DEFAULT '0',
+  `FPARENTNODEID` bigint NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FENTRYID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cad_bgparam definition
+
+CREATE TABLE `t_cad_bgparam` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FORGID` bigint NOT NULL DEFAULT '0',
+  `FVALUE` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FKEY` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`FID`),
+  KEY `IDX_CAD_BGPARAM` (`FORGID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cad_bgparam_r3 definition
+
+CREATE TABLE `t_cad_bgparam_r3` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FRefStatus` char(1) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cad_bomentry definition
+
+CREATE TABLE `t_cad_bomentry` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FENTRYID` bigint NOT NULL DEFAULT '0',
+  `FSEQ` bigint NOT NULL DEFAULT '0',
+  `FTYPE` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FMATERIALID` bigint NOT NULL DEFAULT '0',
+  `FOWNERTYPE` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FQTY` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FUNITID` bigint NOT NULL DEFAULT '0',
+  `FVERSIONID` bigint NOT NULL DEFAULT '0',
+  `FQTYTYPE` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FQTYNUMERATOR` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FQTYDENOMINATOR` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FFIXSCRAP` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FSCRAPRATE` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FVALIDDATE` datetime DEFAULT NULL,
+  `FINVALIDDATE` datetime DEFAULT NULL,
+  `FAUXPROPERTYID` bigint NOT NULL DEFAULT '0',
+  `FOWNERID` bigint NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FENTRYID`),
+  KEY `INDEX_CAD_BOMENTRY` (`FMATERIALID`,`FVERSIONID`,`FAUXPROPERTYID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cad_bomruleorderentry definition
+
+CREATE TABLE `t_cad_bomruleorderentry` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FENTRYID` bigint NOT NULL DEFAULT '0',
+  `FSEQ` bigint NOT NULL DEFAULT '0',
+  `FSRCFIELD` varchar(60) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FSRCFIELDNAME` varchar(60) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FSEQUENCE` varchar(10) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'desc',
+  PRIMARY KEY (`FENTRYID`),
+  KEY `IDX_CAD_BOMRULESETENTRY` (`FID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cad_bomrulesetting definition
+
+CREATE TABLE `t_cad_bomrulesetting` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FNUMBER` varchar(60) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FCOSTTYPEID` bigint NOT NULL DEFAULT '0',
+  `FNAME` varchar(80) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FSRCBOM` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'cad_costbom',
+  `FREMARK` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FCONSIDERYIELDRATE` char(1) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  `FCONSIDERSUBMATERIALLOSS` char(1) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  `FCONSIDERVALIDPERIOD` char(1) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  `FISJUMPLEVEL` char(1) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  `FISPURPRICES` char(1) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  `FMATPROPSRC` varchar(10) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  `FLOSSRATEFORMULA` varchar(10) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '1',
+  `FDEFAULT` char(1) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  `FCREATORID` bigint NOT NULL DEFAULT '0',
+  `FMODIFIERID` bigint NOT NULL DEFAULT '0',
+  `FCREATETIME` datetime DEFAULT NULL,
+  `FMODIFYTIME` datetime DEFAULT NULL,
+  `FENABLE` varchar(10) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '1',
+  `FSTATUS` varchar(10) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'C',
+  `FMASTERID` bigint NOT NULL DEFAULT '0',
+  `FFILTER` varchar(2000) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FFILTER_TAG` longtext COLLATE utf8mb4_unicode_ci,
+  `FBOMPRIORITISATION` varchar(10) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FFINISHRATECALCFORMULA` varchar(10) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FBYPRODUCTPRICERULE` varchar(10) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FPRIORPRODUCTVERSION` char(1) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '1',
+  `FCONSIDERBULKPART` char(1) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FID`),
+  KEY `IDX_CAD_BOMRULESET_CT` (`FCOSTTYPEID`),
+  KEY `IDX_CAD_BOMRULESET_DF` (`FDEFAULT`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cad_bomrulesetting_l definition
+
+CREATE TABLE `t_cad_bomrulesetting_l` (
+  `FPKID` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FLOCALEID` varchar(10) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FREMARK` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FNAME` varchar(80) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`FPKID`),
+  KEY `IDX_CAD_BOMRULESETL` (`FID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cad_bomrulesetting_r3 definition
+
+CREATE TABLE `t_cad_bomrulesetting_r3` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FRefStatus` char(1) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cad_bomsetting definition
+
+CREATE TABLE `t_cad_bomsetting` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FNUMBER` varchar(60) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FSTATUS` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FCREATORID` bigint NOT NULL DEFAULT '0',
+  `FMODIFIERID` bigint NOT NULL DEFAULT '0',
+  `FENABLE` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FCREATETIME` datetime DEFAULT NULL,
+  `FMODIFYTIME` datetime DEFAULT NULL,
+  `FMASTERID` bigint NOT NULL DEFAULT '0',
+  `FAUDITID` bigint NOT NULL DEFAULT '0',
+  `FAUDITDATE` datetime DEFAULT NULL,
+  `FFORBIDDERID` bigint NOT NULL DEFAULT '0',
+  `FFORBIDDDATE` datetime DEFAULT NULL,
+  `FCOSTTYPEID` bigint NOT NULL DEFAULT '0',
+  `FMATERIALID` bigint NOT NULL DEFAULT '0',
+  `FBOMVERSIONID` bigint NOT NULL DEFAULT '0',
+  `FAUXPROPID` bigint NOT NULL DEFAULT '0',
+  `FBOMTYPEID` bigint NOT NULL DEFAULT '0',
+  `FBOMID` bigint NOT NULL DEFAULT '0',
+  `FCONSIDERYIELDRATE` char(1) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '1',
+  `FCONSIDERSUBMATERIALLOSS` char(1) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '1',
+  `FCONSIDERVALIDPERIOD` char(1) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '1',
+  `FLOSSRATEFORMULA` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '1',
+  `FCHARGEDEFSUBELEMENT` bigint NOT NULL DEFAULT '0',
+  `FCHARGESTDRATE` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FISTOUPDATE` char(1) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  `FAUDITORID` bigint NOT NULL DEFAULT '0',
+  `FISDOWNCALC` char(1) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '1',
+  `FEXPDATE` datetime DEFAULT NULL,
+  `FEFFECTDATE` datetime DEFAULT NULL,
+  `FMATCALCPROP` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FCONFIGUREDCODEID` bigint NOT NULL DEFAULT '0',
+  `FTRACKNUMBERID` bigint NOT NULL DEFAULT '0',
+  `FKEYCOL` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FKEYCOLID` bigint NOT NULL DEFAULT '0',
+  `FLOT` varchar(80) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FPROJECTID` bigint NOT NULL DEFAULT '0',
+  `FISPURPRICES` char(1) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FID`),
+  KEY `INDEX_CAD_BOMSETTING_DF` (`FCOSTTYPEID`,`FMATERIALID`,`FBOMVERSIONID`,`FAUXPROPID`),
+  KEY `IDX_CAD_BOMSETTING_KC` (`FKEYCOL`),
+  KEY `IDX_CAD_BOMSETTING_DIM` (`FKEYCOLID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cad_bomsetting_l definition
+
+CREATE TABLE `t_cad_bomsetting_l` (
+  `FPKID` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FLOCALEID` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FREMARK` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`FPKID`),
+  KEY `INDEX_CAD_BOMSETTING_L_ID` (`FID`,`FLOCALEID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cad_bomsetting_r3 definition
+
+CREATE TABLE `t_cad_bomsetting_r3` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FRefStatus` char(1) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cad_bomsetupentry definition
+
+CREATE TABLE `t_cad_bomsetupentry` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FENTRYID` bigint NOT NULL DEFAULT '0',
+  `FSEQ` bigint NOT NULL DEFAULT '0',
+  `FTYPE` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FMATERIALID` bigint NOT NULL DEFAULT '0',
+  `FOWNERTYPE` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FQTY` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FUNITID` bigint NOT NULL DEFAULT '0',
+  `FVERSIONID` bigint NOT NULL DEFAULT '0',
+  `FQTYTYPE` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FQTYNUMERATOR` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FQTYDENOMINATOR` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FFIXSCRAP` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FSCRAPRATE` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FVALIDDATE` datetime DEFAULT NULL,
+  `FINVALIDDATE` datetime DEFAULT NULL,
+  `FAUXPROPERTYID` bigint NOT NULL DEFAULT '0',
+  `FOWNERID` bigint NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FENTRYID`),
+  KEY `INDEX_CAD_BOMSETUPENTRY` (`FID`,`FMATERIALID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cad_calccheckdtresult definition
+
+CREATE TABLE `t_cad_calccheckdtresult` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FENTRYID` bigint NOT NULL DEFAULT '0',
+  `FSEQ` bigint NOT NULL DEFAULT '0',
+  `FERRORDESC` varchar(2000) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FSUGGEST` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FPAGEID` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FBIZID` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`FENTRYID`),
+  KEY `INDEX_CAD_CALCCHECKRSDT_DF` (`FID`,`FSEQ`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cad_calccheckiteminf_r3 definition
+
+CREATE TABLE `t_cad_calccheckiteminf_r3` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FRefStatus` char(1) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cad_calccheckiteminfos definition
+
+CREATE TABLE `t_cad_calccheckiteminfos` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FPOLICYCLASS` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FTYPE` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FENABLE` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FURL` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FSORT` bigint NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FID`),
+  KEY `INDEX_CAD_CALCCHKITEMS_FID` (`FPOLICYCLASS`,`FTYPE`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cad_calccheckiteminfos_l definition
+
+CREATE TABLE `t_cad_calccheckiteminfos_l` (
+  `FPKID` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FLOCALEID` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `FSUGGEST` varchar(100) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT ' ',
+  `FERRORDESC` varchar(1000) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FNAME` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`FPKID`),
+  KEY `INDEX_CAD_CALCCHECKITEMS_L_ID` (`FID`,`FLOCALEID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cad_calccheckiteminfos_r3 definition
+
+CREATE TABLE `t_cad_calccheckiteminfos_r3` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FRefStatus` char(1) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cad_calccheckresult definition
+
+CREATE TABLE `t_cad_calccheckresult` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FCOSTTYPEID` bigint NOT NULL DEFAULT '0',
+  `FCALCTASKRECORDID` bigint NOT NULL DEFAULT '0',
+  `FCHECKITEMID` bigint NOT NULL DEFAULT '0',
+  `FCHECKRESULT` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FCREATETIME` datetime DEFAULT NULL,
+  `FMAINORGID` bigint NOT NULL DEFAULT '0',
+  `FCALCTIME` datetime DEFAULT NULL,
+  `FCNSMTIME` bigint NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FID`),
+  KEY `INDEX_CAD_CALCCHECKRESULT_DF` (`FCOSTTYPEID`,`FCALCTASKRECORDID`,`FCREATETIME`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cad_calccheckresult_l definition
+
+CREATE TABLE `t_cad_calccheckresult_l` (
+  `FPKID` varchar(18) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FLOCALEID` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FCHECKRESULTDESC` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`FPKID`),
+  KEY `INDEX_CAD_CALCCHECKRS_L_ID` (`FID`,`FLOCALEID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cad_calcdimension definition
+
+CREATE TABLE `t_cad_calcdimension` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FNUMBER` varchar(60) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FNAME` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FSTATUS` varchar(10) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'A',
+  `FCREATORID` bigint NOT NULL DEFAULT '0',
+  `FMODIFIERID` bigint NOT NULL DEFAULT '0',
+  `FCREATETIME` datetime DEFAULT NULL,
+  `FENABLE` varchar(10) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '1',
+  `FMODIFYTIME` datetime DEFAULT NULL,
+  `FMASTERID` bigint NOT NULL DEFAULT '0',
+  `FDIMENSION` varchar(80) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FPRESET` char(1) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FID`),
+  KEY `IDX_CAD_CALCDIMENSION_DIM` (`FDIMENSION`),
+  KEY `IDX_CAD_CALCDIMENSION_NUM` (`FNUMBER`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cad_calcdimension_l definition
+
+CREATE TABLE `t_cad_calcdimension_l` (
+  `FPKID` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FLOCALEID` varchar(10) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FNAME` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`FPKID`),
+  KEY `IDX_CAD_CALCDIMENSION_L` (`FID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cad_calcdimension_r3 definition
+
+CREATE TABLE `t_cad_calcdimension_r3` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FRefStatus` char(1) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cad_calcdimensionentry definition
+
+CREATE TABLE `t_cad_calcdimensionentry` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FENTRYID` bigint NOT NULL DEFAULT '0',
+  `FSEQ` bigint NOT NULL DEFAULT '0',
+  `FFIELDNAME` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FFIELD` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`FENTRYID`),
+  KEY `IDX_CAD_CALCDIMENENTRY` (`FID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cad_calceffectiveresult definition
+
+CREATE TABLE `t_cad_calceffectiveresult` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FEFFECTDATE` datetime DEFAULT NULL,
+  `FCOSTTYPEID` bigint NOT NULL DEFAULT '0',
+  `FLEVEL` bigint NOT NULL DEFAULT '0',
+  `FMATERIALID` bigint NOT NULL DEFAULT '0',
+  `FAUXPROPERTY` bigint NOT NULL DEFAULT '0',
+  `FMATVERS` bigint NOT NULL DEFAULT '0',
+  `FBOMID` bigint NOT NULL DEFAULT '0',
+  `FPROCESSROUTEID` bigint NOT NULL DEFAULT '0',
+  `FELEMENTID` bigint NOT NULL DEFAULT '0',
+  `FSUBELEMENTID` bigint NOT NULL DEFAULT '0',
+  `FQTY` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FPRICE` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FSTDPRICE` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FTREEPATH` varchar(1000) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FISLEAF` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FRESERVEDIM1` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FRESERVEDIM2` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FISCURRLEVEL` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FROOTNODE` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FISPUBMAT` bigint NOT NULL DEFAULT '0',
+  `FEXPDATE` datetime DEFAULT NULL,
+  `FISMAINDATA` bigint NOT NULL DEFAULT '0',
+  `FRESOURCEID` bigint NOT NULL DEFAULT '0',
+  `FMATCOSTID` bigint NOT NULL DEFAULT '0',
+  `FLOT` varchar(80) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FCONFIGUREDCODEID` bigint NOT NULL DEFAULT '0',
+  `FTRACKNUMBERID` bigint NOT NULL DEFAULT '0',
+  `FPROJECTID` bigint NOT NULL DEFAULT '0',
+  `FKEYCOL` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FCALCDIMENSIONID` bigint NOT NULL DEFAULT '0',
+  `FKEYCOLID` bigint NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FID`),
+  KEY `INDEX_CAD_CALCEFFECTIVERST_DF` (`FCOSTTYPEID`,`FMATERIALID`,`FELEMENTID`,`FSUBELEMENTID`),
+  KEY `IDX_CAD_CALCEFFECTIVERST_DIM` (`FCALCDIMENSIONID`),
+  KEY `IDX_CAD_CALCEFFECTIVERST_KC` (`FKEYCOL`),
+  KEY `IDX_CAD_CALCEFFECTIVERST_MC` (`FMATCOSTID`),
+  KEY `IDX_CAD_CALCEFFECTIVERST_KCID` (`FKEYCOLID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cad_calceffectrsentry definition
+
+CREATE TABLE `t_cad_calceffectrsentry` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FENTRYID` bigint NOT NULL DEFAULT '0',
+  `FSEQ` bigint NOT NULL DEFAULT '0',
+  `FELEMENTID` bigint NOT NULL DEFAULT '0',
+  `FSUBELEMENTID` bigint NOT NULL DEFAULT '0',
+  `FPRICE` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FSTDPRICE` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FSUBMATERIALID` bigint NOT NULL DEFAULT '0',
+  `FDATATYPE` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FQTY` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FSUBMATVERS` bigint NOT NULL DEFAULT '0',
+  `FSUBAUXPROPERTY` bigint NOT NULL DEFAULT '0',
+  `FACTIVITYID` bigint NOT NULL DEFAULT '0',
+  `FCALCBASIS` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FRESOURCEID` bigint NOT NULL DEFAULT '0',
+  `FSUBLOT` varchar(80) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FSUBCONFIGUREDCODEID` bigint NOT NULL DEFAULT '0',
+  `FSUBTRACKNUMBERID` bigint NOT NULL DEFAULT '0',
+  `FSUBPROJECTID` bigint NOT NULL DEFAULT '0',
+  `FSUBKEYCOL` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FSUBCALCDIMENSIONID` bigint NOT NULL DEFAULT '0',
+  `FSUBKEYCOLID` bigint NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FENTRYID`),
+  KEY `INDEXCAD_CALCEFFECTRSENTRY` (`FELEMENTID`,`FSUBELEMENTID`,`FSUBMATERIALID`),
+  KEY `IDX_CAD_CALCEFFECTRSENTRY` (`FID`,`FRESOURCEID`),
+  KEY `IDX_CAD_CALCEFFECTRSENTRY_DIM` (`FSUBCALCDIMENSIONID`),
+  KEY `IDX_CAD_CALCEFFECTRSENTRY_KC` (`FSUBKEYCOL`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cad_calchangerecord definition
+
+CREATE TABLE `t_cad_calchangerecord` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FMATERIALID` bigint NOT NULL DEFAULT '0',
+  `FBILLNO` varchar(80) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FBILLSTATUS` char(1) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `FCREATORID` bigint NOT NULL DEFAULT '0',
+  `FMODIFIERID` bigint NOT NULL DEFAULT '0',
+  `FMODIFYTIME` datetime DEFAULT NULL,
+  `FSTATUS` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FAUDITORID` bigint NOT NULL DEFAULT '0',
+  `FAUDITTIME` datetime DEFAULT NULL,
+  `FCREATETIME` datetime DEFAULT NULL,
+  `FCOSTTYPEID` bigint NOT NULL DEFAULT '0',
+  `FAUXPROPERTYID` bigint NOT NULL DEFAULT '0',
+  `FMATVERSID` bigint NOT NULL DEFAULT '0',
+  `FSRCBILLNO` varchar(80) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FBUSINESSBILL` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FCHANGEOP` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FKEYCOL` varchar(200) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FKEYCOLID` bigint NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FID`),
+  KEY `INDEX_CAD_CALCHANGE_ID` (`FMATERIALID`,`FCOSTTYPEID`),
+  KEY `INDEX_CAD_CALCHANGE_TIME` (`FSTATUS`,`FCREATETIME`),
+  KEY `IDX_CALCHANGERECORD_KEYCOL` (`FKEYCOL`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cad_calcparameter definition
+
+CREATE TABLE `t_cad_calcparameter` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FCREATETIME` datetime DEFAULT NULL,
+  `FCOSTTYPEID` bigint NOT NULL DEFAULT '0',
+  `FCALCDATE` datetime DEFAULT NULL,
+  `FISSELECTEDMAT` char(1) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  `FSELEMATMODLE` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FISSELECTEDBOM` char(1) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  `FISCURLEVEL` char(1) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  `FISYIELD` char(1) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `FISLOSSRATE` char(1) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  `FISPREPARHOUR` char(1) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  `FISMATEFFECDATE` char(1) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  `FTASKID` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`FID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cad_calcparammat definition
+
+CREATE TABLE `t_cad_calcparammat` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FENTRYID` bigint NOT NULL DEFAULT '0',
+  `FSEQ` bigint NOT NULL DEFAULT '0',
+  `FMATERIALID` bigint NOT NULL DEFAULT '0',
+  `FMATVERS` bigint NOT NULL DEFAULT '0',
+  `FAUXPROPERTYID` bigint NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FENTRYID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cad_calcparammatgroup definition
+
+CREATE TABLE `t_cad_calcparammatgroup` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FENTRYID` bigint NOT NULL DEFAULT '0',
+  `FSEQ` bigint NOT NULL DEFAULT '0',
+  `FMATERIALGROUPID` bigint NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FENTRYID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cad_calcpurprices definition
+
+CREATE TABLE `t_cad_calcpurprices` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FBILLNO` varchar(60) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FBILLSTATUS` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FCREATORID` bigint NOT NULL DEFAULT '0',
+  `FMODIFIERID` bigint NOT NULL DEFAULT '0',
+  `FAUDITORID` bigint NOT NULL DEFAULT '0',
+  `FAUDITDATE` datetime DEFAULT NULL,
+  `FMODIFYTIME` datetime DEFAULT NULL,
+  `FCREATETIME` datetime DEFAULT NULL,
+  `FCOSTTYPEID` bigint NOT NULL DEFAULT '0',
+  `FMATERIALID` bigint NOT NULL DEFAULT '0',
+  `FAUXPTYID` bigint NOT NULL DEFAULT '0',
+  `FCURRENCYID` bigint NOT NULL DEFAULT '0',
+  `FMATVERSIONID` bigint NOT NULL DEFAULT '0',
+  `FAMOUNT` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FISTOUPDATE` char(1) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  `FDATASRC` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FCONFIGUREDCODEID` bigint NOT NULL DEFAULT '0',
+  `FTRACKNUMBERID` bigint NOT NULL DEFAULT '0',
+  `FLOT` varchar(80) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FPROJECTID` bigint NOT NULL DEFAULT '0',
+  `FKEYCOL` varchar(200) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FKEYCOLID` bigint NOT NULL DEFAULT '0',
+  `FPRICERULEID` bigint NOT NULL DEFAULT '0',
+  `FCALCDATE` datetime DEFAULT NULL,
+  `FCALCRECORDID` bigint NOT NULL DEFAULT '0',
+  `FTASKID` bigint NOT NULL DEFAULT '0',
+  `FPRICEID` bigint NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FID`),
+  KEY `IDX_CAD_CALCPURPRICES_CT` (`FCOSTTYPEID`),
+  KEY `IDX_CAD_CALCPURPRICES_MAT` (`FMATERIALID`),
+  KEY `IDX_CAD_CALCPURPRIBN` (`FBILLNO`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cad_calcpurprices_l definition
+
+CREATE TABLE `t_cad_calcpurprices_l` (
+  `FPKID` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FLOCALEID` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FREMARK` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`FPKID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cad_calcpurpricesentry definition
+
+CREATE TABLE `t_cad_calcpurpricesentry` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FENTRYID` bigint NOT NULL DEFAULT '0',
+  `FSEQ` bigint NOT NULL DEFAULT '0',
+  `FELEMENTID` bigint NOT NULL DEFAULT '0',
+  `FSUBELEMENTID` bigint NOT NULL DEFAULT '0',
+  `FPRICE` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FRATE` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  PRIMARY KEY (`FENTRYID`),
+  KEY `IDX_CAD_CALCPURPRICESENTRY` (`FID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cad_calcrule definition
+
+CREATE TABLE `t_cad_calcrule` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FNUMBER` varchar(80) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FNAME` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT ' ',
+  `FBINDBILL` varchar(10) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FSTARTYEARS` varchar(10) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FENDYEARS` varchar(10) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FSTARTPRICETIME` varchar(10) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FENDPRICETIME` varchar(10) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FMANUALSPECIFIED` char(1) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  `FPRESET` char(1) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  `FPLUGIN` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FREMARK` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FCREATORID` bigint NOT NULL DEFAULT '0',
+  `FCREATETIME` datetime DEFAULT NULL,
+  `FMODIFIERID` bigint NOT NULL DEFAULT '0',
+  `FMODIFYTIME` datetime DEFAULT NULL,
+  `FSTATUS` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FMASTERID` bigint NOT NULL DEFAULT '0',
+  `FENABLE` varchar(10) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FINVALIDPRICE` char(1) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '1',
+  `FISRELATEDTRANSACTION` char(1) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  `FQUOTEDAY` bigint NOT NULL DEFAULT '0',
+  `FSOURCEBILLLID` varchar(60) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT ' ',
+  `FSOURCEID` bigint NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cad_calcrule_l definition
+
+CREATE TABLE `t_cad_calcrule_l` (
+  `FPKID` varchar(18) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FLOCALEID` varchar(10) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FREMARK` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FNAME` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`FPKID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cad_calcrule_r3 definition
+
+CREATE TABLE `t_cad_calcrule_r3` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FRefStatus` char(1) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cad_calcruleentry definition
+
+CREATE TABLE `t_cad_calcruleentry` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FENTRYID` bigint NOT NULL DEFAULT '0',
+  `FSEQ` bigint NOT NULL DEFAULT '0',
+  `FELEMENTID` bigint NOT NULL DEFAULT '0',
+  `FSOURCEBILLFIELDSET` varchar(2000) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FSOURCEBILLFIELDSETJSON` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FSOURCEBILLFIELDSETJSON_TAG` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
+  `FPRICELISTTYPE` bigint NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FENTRYID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cad_calcruleplan definition
+
+CREATE TABLE `t_cad_calcruleplan` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FCOSTTYPEID` bigint NOT NULL DEFAULT '0',
+  `FNUMBER` varchar(80) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FNAME` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FREMARK` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FPRESET` char(1) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  `FDEFAULT` char(1) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  `FCREATORID` bigint NOT NULL DEFAULT '0',
+  `FCREATETIME` datetime DEFAULT NULL,
+  `FMODIFIERID` bigint NOT NULL DEFAULT '0',
+  `FMODIFYTIME` datetime DEFAULT NULL,
+  `FSTATUS` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FMASTERID` bigint NOT NULL DEFAULT '0',
+  `FENABLE` varchar(10) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`FID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cad_calcruleplan_l definition
+
+CREATE TABLE `t_cad_calcruleplan_l` (
+  `FPKID` varchar(18) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FLOCALEID` varchar(10) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FREMARK` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FNAME` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`FPKID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cad_calcruleplan_r3 definition
+
+CREATE TABLE `t_cad_calcruleplan_r3` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FRefStatus` char(1) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cad_calcsimtreeentry definition
+
+CREATE TABLE `t_cad_calcsimtreeentry` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FENTRYID` bigint NOT NULL DEFAULT '0',
+  `FSEQ` bigint NOT NULL DEFAULT '0',
+  `FSUBCOSTTYPEID` bigint NOT NULL DEFAULT '0',
+  `FSUBROOT` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FSUBTREEPATH` varchar(1200) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FSUBCALCDATE` datetime DEFAULT NULL,
+  PRIMARY KEY (`FENTRYID`),
+  KEY `IDX_CAD_CALCSIMTREEENTRY` (`FID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cad_calcsimulars definition
+
+CREATE TABLE `t_cad_calcsimulars` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FCOSTTYPEID` bigint NOT NULL DEFAULT '0',
+  `FLEVEL` bigint NOT NULL DEFAULT '0',
+  `FMATERIELID` bigint NOT NULL DEFAULT '0',
+  `FAUXPROPERTY` bigint NOT NULL DEFAULT '0',
+  `FMATVERS` bigint NOT NULL DEFAULT '0',
+  `FBOMID` bigint NOT NULL DEFAULT '0',
+  `FPROCESSROUTEID` bigint NOT NULL DEFAULT '0',
+  `FROOTNODE` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FTREEPATH` varchar(1200) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FRESERVEDIM1` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FRESERVEDIM2` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FCALCDATE` datetime DEFAULT NULL,
+  `FISLEAF` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FISPUBMAT` bigint NOT NULL DEFAULT '0',
+  `FISMAINDATA` bigint NOT NULL DEFAULT '0',
+  `FTASKID` bigint NOT NULL DEFAULT '0',
+  `FISCALCCURLEVEL` int NOT NULL DEFAULT '0',
+  `FLOT` varchar(80) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FCONFIGUREDCODEID` bigint NOT NULL DEFAULT '0',
+  `FTRACKNUMBERID` bigint NOT NULL DEFAULT '0',
+  `FPROJECTID` bigint NOT NULL DEFAULT '0',
+  `FKEYCOL` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FCALCDIMENSIONID` bigint NOT NULL DEFAULT '0',
+  `FKEYCOLID` bigint NOT NULL DEFAULT '0',
+  `FCALCRECORDID` bigint NOT NULL DEFAULT '0',
+  `FPRICEPLANID` bigint NOT NULL DEFAULT '0',
+  `FMATERIALATTR` varchar(10) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`FID`),
+  KEY `IDX_CAD_CALCSIMULARS_DF` (`FCOSTTYPEID`,`FMATERIELID`,`FAUXPROPERTY`,`FMATVERS`),
+  KEY `IDX_CAD_CALCSIMULARS_DIM` (`FCALCDIMENSIONID`),
+  KEY `IDX_CAD_CALCSIMULARS_KC` (`FKEYCOL`),
+  KEY `IDX_CAD_CALCSIMULARS_REC` (`FCALCRECORDID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cad_calcsimularsentry definition
+
+CREATE TABLE `t_cad_calcsimularsentry` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FENTRYID` bigint NOT NULL DEFAULT '0',
+  `FSEQ` bigint NOT NULL DEFAULT '0',
+  `FELEMENTID` bigint NOT NULL DEFAULT '0',
+  `FSUBELEMENTID` bigint NOT NULL DEFAULT '0',
+  `FSUBMATERIALID` bigint NOT NULL DEFAULT '0',
+  `FPRICE` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FSTDPRICE` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FDATATYPE` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FQTY` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FSUBAUXPROPERTY` bigint NOT NULL DEFAULT '0',
+  `FSUBMATVERS` bigint NOT NULL DEFAULT '0',
+  `FACTIVITYID` bigint NOT NULL DEFAULT '0',
+  `FCALCBASIS` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FRESOURCEID` bigint NOT NULL DEFAULT '0',
+  `FSUBLOT` varchar(80) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FSUBCONFIGUREDCODEID` bigint NOT NULL DEFAULT '0',
+  `FSUBTRACKNUMBERID` bigint NOT NULL DEFAULT '0',
+  `FSUBPROJECTID` bigint NOT NULL DEFAULT '0',
+  `FSUBKEYCOL` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FSUBCALCDIMENSIONID` bigint NOT NULL DEFAULT '0',
+  `FSUBKEYCOLID` bigint NOT NULL DEFAULT '0',
+  `FRESOURCETYPE` varchar(10) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FPRICERULEID` bigint NOT NULL DEFAULT '0',
+  `FPRICEID` bigint NOT NULL DEFAULT '0',
+  `FOPERATIONID` bigint NOT NULL DEFAULT '0',
+  `FWORKCENTERID` bigint NOT NULL DEFAULT '0',
+  `FOPERATIONDESC` varchar(80) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`FENTRYID`),
+  KEY `INDEX_CAD_CALCSIMULARSET_DF` (`FELEMENTID`,`FSUBELEMENTID`,`FSUBMATERIALID`),
+  KEY `IDX_CAD_CALCSIMULARSENTRY` (`FID`,`FRESOURCEID`),
+  KEY `IDX_CAD_CALCSIMULARSENTRY_KC` (`FSUBKEYCOL`),
+  KEY `IDX_CAD_CALCSIMULARSENTRY_DIM` (`FSUBCALCDIMENSIONID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cad_calcsuccessrecor_r3 definition
+
+CREATE TABLE `t_cad_calcsuccessrecor_r3` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FRefStatus` char(1) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cad_calcsuccessrecord definition
+
+CREATE TABLE `t_cad_calcsuccessrecord` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FCALCTASKID` bigint NOT NULL DEFAULT '0',
+  `FSUCCESSMATCOUNT` bigint NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FID`),
+  KEY `IDX_CAD_CALCSUCCESSRECORD` (`FCALCTASKID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cad_calctaskrecord definition
+
+CREATE TABLE `t_cad_calctaskrecord` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FSTATUS` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FNAME` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FTIME` bigint NOT NULL DEFAULT '0',
+  `FFINISHEDSTEPS` bigint NOT NULL DEFAULT '0',
+  `FTOTALSTEPS` bigint NOT NULL DEFAULT '0',
+  `FEXECUTOR` bigint NOT NULL DEFAULT '0',
+  `FSTARTTIME` datetime DEFAULT NULL,
+  `FPROGRESS` bigint NOT NULL DEFAULT '0',
+  `FCACHEID` varchar(60) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FREMARK` bigint NOT NULL DEFAULT '0',
+  `FCOSTTYPEID` bigint NOT NULL DEFAULT '0',
+  `FMAINORG` bigint NOT NULL DEFAULT '0',
+  `FNEXTPAGEPARA` varchar(1000) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FCALCDATE` datetime DEFAULT NULL,
+  `FMATGROUPSTDID` bigint NOT NULL DEFAULT '0',
+  `FRULEPLANID` bigint NOT NULL DEFAULT '0',
+  `FBOMRULEID` bigint NOT NULL DEFAULT '0',
+  `FROUTERULEID` bigint NOT NULL DEFAULT '0',
+  `FISCALCCURLEVEL` char(1) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  `FRECORDNAME` varchar(80) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FISSAVERECORD` char(1) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  `FISAUTOREPLACERECORD` char(1) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  `FISCONFIGCALC` char(1) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  `FSCOPETYPE` varchar(10) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FUPDATEBILLNO` varchar(80) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FSRCCOSTTYPEID` bigint NOT NULL DEFAULT '0',
+  `FISSPECIFYMATERIAL` char(1) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  `FISUPDATECURLEVEL` char(1) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  `FISQUICKUPDATE` char(1) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  `FCHECKTASKID` bigint NOT NULL DEFAULT '0',
+  `FFAILKEYCOLID` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FFAILKEYCOLID_TAG` longtext COLLATE utf8mb4_unicode_ci,
+  PRIMARY KEY (`FID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cad_calctaskrecord_l definition
+
+CREATE TABLE `t_cad_calctaskrecord_l` (
+  `FPKID` varchar(18) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FLOCALEID` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`FPKID`),
+  KEY `INDEX_CAD_CALCTASKRECORD_L` (`FID`,`FLOCALEID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cad_calctaskrecord_r3 definition
+
+CREATE TABLE `t_cad_calctaskrecord_r3` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FRefStatus` char(1) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cad_calctaskrecordentry definition
+
+CREATE TABLE `t_cad_calctaskrecordentry` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FENTRYID` bigint NOT NULL DEFAULT '0',
+  `FSEQ` bigint NOT NULL DEFAULT '0',
+  `FLOT` varchar(80) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FMATERIALID` bigint NOT NULL DEFAULT '0',
+  `FTRACKNUMBERID` bigint NOT NULL DEFAULT '0',
+  `FPROJECTID` bigint NOT NULL DEFAULT '0',
+  `FCONFIGUREDCODEID` bigint NOT NULL DEFAULT '0',
+  `FMATCALCPROP` varchar(10) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FMATGROUPID` bigint NOT NULL DEFAULT '0',
+  `FAUXPTYID` bigint NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FENTRYID`),
+  KEY `IDX_CAD_CALCTASKRECORDENTRY` (`FID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cad_calprocessroutecost definition
+
+CREATE TABLE `t_cad_calprocessroutecost` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FBILLSTATUS` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FCOSTTYPEID` bigint NOT NULL DEFAULT '0',
+  `FROUTERID` bigint NOT NULL DEFAULT '0',
+  `FRESOURCEID` bigint NOT NULL DEFAULT '0',
+  `FELEMENTID` bigint NOT NULL DEFAULT '0',
+  `FSUBELEMENTID` bigint NOT NULL DEFAULT '0',
+  `FACTIVITYID` bigint NOT NULL DEFAULT '0',
+  `FQTY` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FPRICE` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FCOST` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FCALCBASIS` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FTASKID` bigint NOT NULL DEFAULT '0',
+  `FRESOURCETYPE` varchar(10) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FWORKCENTERID` bigint NOT NULL DEFAULT '0',
+  `FMATERIALID` bigint NOT NULL DEFAULT '0',
+  `FAUXPTYID` bigint NOT NULL DEFAULT '0',
+  `FOPERATIONID` bigint NOT NULL DEFAULT '0',
+  `FOPERATIONDESC` varchar(80) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FCREATETIME` datetime DEFAULT NULL,
+  PRIMARY KEY (`FID`),
+  KEY `IDX_CAD_CALPROCESSROUTECOST` (`FCOSTTYPEID`,`FROUTERID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cad_ccbizentrybiztype definition
+
+CREATE TABLE `t_cad_ccbizentrybiztype` (
+  `FENTRYID` bigint NOT NULL DEFAULT '0',
+  `FPKID` bigint NOT NULL DEFAULT '0',
+  `FBASEDATAID` bigint NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FPKID`),
+  KEY `IDX_CAD_CCBIZENTRYBIZTYPE` (`FENTRYID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cad_ccbizentryinvscheme definition
+
+CREATE TABLE `t_cad_ccbizentryinvscheme` (
+  `FENTRYID` bigint NOT NULL DEFAULT '0',
+  `FPKID` bigint NOT NULL DEFAULT '0',
+  `FBASEDATAID` bigint NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FPKID`),
+  KEY `IDX_CAD_CCBIZENTRYINVSCHEME` (`FENTRYID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cad_ccbizentrytranstype definition
+
+CREATE TABLE `t_cad_ccbizentrytranstype` (
+  `FENTRYID` bigint NOT NULL DEFAULT '0',
+  `FPKID` bigint NOT NULL DEFAULT '0',
+  `FBASEDATAID` bigint NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FPKID`),
+  KEY `IDX_CAD_CCBIZENTRYTRANSTYPE` (`FENTRYID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cad_centermanuorg definition
+
+CREATE TABLE `t_cad_centermanuorg` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FBILLNO` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FORGID` bigint NOT NULL DEFAULT '0',
+  `FMANUORGID` bigint NOT NULL DEFAULT '0',
+  `FEFFECTDATE` datetime DEFAULT NULL,
+  `FEXPDATE` datetime DEFAULT NULL,
+  `FREMARK` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FBILLSTATUS` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FAPPNUM` varchar(10) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FCREATETIME` datetime DEFAULT NULL,
+  `FCREATORID` bigint NOT NULL DEFAULT '0',
+  `FMODIFIERID` bigint NOT NULL DEFAULT '0',
+  `FAUDITORID` bigint NOT NULL DEFAULT '0',
+  `FAUDITDATE` datetime DEFAULT NULL,
+  `FMODIFYTIME` datetime DEFAULT NULL,
+  PRIMARY KEY (`FID`),
+  KEY `IDX_CAD_CENTERMANUORG_MBS` (`FORGID`,`FMANUORGID`,`FBILLSTATUS`,`FEFFECTDATE`,`FEXPDATE`,`FAPPNUM`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cad_centermanuorg_l definition
+
+CREATE TABLE `t_cad_centermanuorg_l` (
+  `FPKID` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FLOCALEID` varchar(10) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FREMARK` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`FPKID`),
+  KEY `IDX_CAD_CENTERMANUORGL_RM` (`FID`,`FLOCALEID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cad_centermanuorgentry definition
+
+CREATE TABLE `t_cad_centermanuorgentry` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FENTRYID` bigint NOT NULL DEFAULT '0',
+  `FSEQ` bigint NOT NULL DEFAULT '0',
+  `FCOSTCENTERID` bigint NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FENTRYID`),
+  KEY `IDX_CAD_CMENTRY_ID` (`FID`),
+  KEY `IDX_CAD_CMENTRY_CC` (`FCOSTCENTERID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cad_checkitem definition
+
+CREATE TABLE `t_cad_checkitem` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FNUMBER` varchar(60) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FCHECKMODE` char(1) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'A',
+  `FPLUGIN` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FISPRESET` char(1) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  `FBIZOBJECTID` varchar(80) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FCUSTOMFILTERTEXT` varchar(2000) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FCUSTOMFILTER` varchar(2000) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FCUSTOMFILTER_TAG` longtext COLLATE utf8mb4_unicode_ci,
+  `FNAME` varchar(1000) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FDESCRIPTION` varchar(2000) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FERRORLOG` varchar(2000) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FOPSUGGESTION` varchar(2000) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FAPPNUM` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'sca',
+  PRIMARY KEY (`FID`),
+  KEY `IDX_CAD_CHECKITEM_NUM` (`FNUMBER`),
+  KEY `IDX_CAD_CHECKITEM_APP` (`FAPPNUM`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cad_checkitem_l definition
+
+CREATE TABLE `t_cad_checkitem_l` (
+  `FPKID` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FLOCALEID` varchar(10) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FNAME` varchar(1000) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FDESCRIPTION` varchar(2000) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FERRORLOG` varchar(2000) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FOPSUGGESTION` varchar(2000) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`FPKID`),
+  KEY `IDX_CAD_CHECKITEM_L` (`FID`,`FLOCALEID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cad_checkitem_r3 definition
+
+CREATE TABLE `t_cad_checkitem_r3` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FRefStatus` char(1) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cad_checktask definition
+
+CREATE TABLE `t_cad_checktask` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FCALTYPE` varchar(80) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FISPRESET` char(1) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  `FDESCRIPTION` varchar(2000) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FAPPNUM` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'sca',
+  PRIMARY KEY (`FID`),
+  KEY `IDX_CAD_CHECKTASK` (`FCALTYPE`,`FAPPNUM`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cad_checktask_l definition
+
+CREATE TABLE `t_cad_checktask_l` (
+  `FPKID` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FLOCALEID` varchar(10) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FDESCRIPTION` varchar(2000) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`FPKID`),
+  KEY `IDX_CAD_CHECKTASK_L` (`FID`,`FLOCALEID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cad_checktask_r3 definition
+
+CREATE TABLE `t_cad_checktask_r3` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FRefStatus` char(1) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cad_checktaskentry definition
+
+CREATE TABLE `t_cad_checktaskentry` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FENTRYID` bigint NOT NULL DEFAULT '0',
+  `FSEQ` bigint NOT NULL DEFAULT '0',
+  `FCHECKITEMID` bigint NOT NULL DEFAULT '0',
+  `FISENABLE` char(1) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '1',
+  `FISCHANGE` char(1) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '1',
+  `FLEVEL` char(1) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  PRIMARY KEY (`FENTRYID`),
+  KEY `IDX_CAD_CHECKTASKENTRY` (`FID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cad_collogobjag definition
+
+CREATE TABLE `t_cad_collogobjag` (
+  `FPKID` bigint NOT NULL DEFAULT '0',
+  `FENTRYID` bigint NOT NULL DEFAULT '0',
+  `FBASEDATAID` bigint NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FPKID`),
+  KEY `IDX_CAD_COLLOGOBJAG` (`FENTRYID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cad_collogobjorg definition
+
+CREATE TABLE `t_cad_collogobjorg` (
+  `FPKID` bigint NOT NULL DEFAULT '0',
+  `FENTRYID` bigint NOT NULL DEFAULT '0',
+  `FBASEDATAID` bigint NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FPKID`),
+  KEY `IDX_CAD_COLLOGOBJORG` (`FENTRYID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cad_collogobjwc definition
+
+CREATE TABLE `t_cad_collogobjwc` (
+  `FPKID` bigint NOT NULL DEFAULT '0',
+  `FENTRYID` bigint NOT NULL DEFAULT '0',
+  `FBASEDATAID` bigint NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FPKID`),
+  KEY `IDX_CAD_COLLOGOBJWC` (`FENTRYID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cad_colreport definition
+
+CREATE TABLE `t_cad_colreport` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FBILLNO` varchar(60) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FORGID` bigint NOT NULL DEFAULT '0',
+  `FCOLDATE` datetime DEFAULT NULL,
+  `FDATERANGE` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FCREATORID` bigint NOT NULL DEFAULT '0',
+  `FERROR` char(1) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  `FCOLOBJ` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FAUDITORID` bigint DEFAULT '0',
+  `FBILLSTATUS` varchar(10) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'A',
+  `FAUDITDATE` datetime DEFAULT NULL,
+  `FCREATETIME` datetime DEFAULT NULL,
+  `FMODIFYTIME` datetime DEFAULT NULL,
+  `FMODIFIERID` bigint DEFAULT '0',
+  `FAPPNUM` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`FID`),
+  KEY `IDX_CAD_COLREPORT_BILLNO` (`FBILLNO`),
+  KEY `IDX_CAD_COLREPORT_ORG` (`FORGID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cad_colreport_biztype definition
+
+CREATE TABLE `t_cad_colreport_biztype` (
+  `FPKID` bigint NOT NULL DEFAULT '0',
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FBASEDATAID` bigint NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FPKID`),
+  KEY `IDX_CAD_COLREPORT_BIZTYPE` (`FID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cad_colreport_invscheme definition
+
+CREATE TABLE `t_cad_colreport_invscheme` (
+  `FPKID` bigint NOT NULL DEFAULT '0',
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FBASEDATAID` bigint NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FPKID`),
+  KEY `IDX_CAD_COLREPORT_INV` (`FID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cad_colreport_tran definition
+
+CREATE TABLE `t_cad_colreport_tran` (
+  `FPKID` bigint NOT NULL DEFAULT '0',
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FBASEDATAID` bigint NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FPKID`),
+  KEY `IDX_CAD_COLREPORT_TRAN` (`FID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cad_colreportdiffentry definition
+
+CREATE TABLE `t_cad_colreportdiffentry` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FENTRYID` bigint NOT NULL DEFAULT '0',
+  `FSEQ` bigint NOT NULL DEFAULT '0',
+  `FSRCBILLNO` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FSRCSEQ` bigint NOT NULL DEFAULT '0',
+  `FBILLTYPE` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FREASON` varchar(2000) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FCOMPAREDATE` datetime DEFAULT NULL,
+  `FSRCBILLTYPE` varchar(80) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`FENTRYID`),
+  KEY `IDX_CAD_COLREPORTDIFFENTRY_FID` (`FID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cad_colreportentry definition
+
+CREATE TABLE `t_cad_colreportentry` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FENTRYID` bigint NOT NULL DEFAULT '0',
+  `FSEQ` bigint NOT NULL DEFAULT '0',
+  `FSTEP` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FRESULT` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FCOSTIME` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FCHECKDESC` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FTIP` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FTIP_TAG` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
+  PRIMARY KEY (`FENTRYID`),
+  KEY `IDX_CAD_COLREPORTENTRY_FID` (`FID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cad_colrptconfigentry definition
+
+CREATE TABLE `t_cad_colrptconfigentry` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FENTRYID` bigint NOT NULL DEFAULT '0',
+  `FSEQ` bigint NOT NULL DEFAULT '0',
+  `FCOSTCENTER` bigint NOT NULL DEFAULT '0',
+  `FCOLRANGE` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FCALTYPE` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`FENTRYID`),
+  KEY `IDX_CAD_COLRPTCONFIGENTRY_FID` (`FID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cad_configbilllog definition
+
+CREATE TABLE `t_cad_configbilllog` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FBILLNO` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FBILLSTATUS` varchar(10) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FCOUNT` bigint NOT NULL DEFAULT '0',
+  `FORGID` bigint NOT NULL DEFAULT '0',
+  `FCREATORID` bigint NOT NULL DEFAULT '0',
+  `FMODIFIERID` bigint NOT NULL DEFAULT '0',
+  `FAUDITORID` bigint NOT NULL DEFAULT '0',
+  `FCREATETIME` datetime DEFAULT NULL,
+  `FMODIFYTIME` datetime DEFAULT NULL,
+  `FAUDITDATE` datetime DEFAULT NULL,
+  `FAPPNUM` varchar(10) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FCOSTBILLID` varchar(80) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FSOURCEBILL` varchar(80) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FBEFOREFILTER` varchar(2000) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FBEFOREFILTER_TAG` longtext COLLATE utf8mb4_unicode_ci,
+  `FAFTERFILTER` varchar(2000) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FAFTERFILTER_TAG` longtext COLLATE utf8mb4_unicode_ci,
+  PRIMARY KEY (`FID`),
+  KEY `IDX_CAD_CONFIGBILLLOG` (`FBILLNO`,`FORGID`,`FAPPNUM`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cad_configinfoentity definition
+
+CREATE TABLE `t_cad_configinfoentity` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FENTRYID` bigint NOT NULL DEFAULT '0',
+  `FSEQ` bigint NOT NULL DEFAULT '0',
+  `FCOSTCONFIGID` bigint NOT NULL DEFAULT '0',
+  `FSOURCEBILLID` varchar(80) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FUSESTATUS` varchar(10) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`FENTRYID`),
+  KEY `IDX_CAD_CONFIGINFOENTITY` (`FID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cad_configlog_mapentry definition
+
+CREATE TABLE `t_cad_configlog_mapentry` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FENTRYID` bigint NOT NULL DEFAULT '0',
+  `FSEQ` bigint NOT NULL DEFAULT '0',
+  `FCHANGETYPE` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FCOSTFIELD` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FVALUETYPE` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FCHANGEDVALUE` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`FENTRYID`),
+  KEY `IDX_CAD_CLOGMAPENTRY` (`FID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cad_configlog_ruleentry definition
+
+CREATE TABLE `t_cad_configlog_ruleentry` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FENTRYID` bigint NOT NULL DEFAULT '0',
+  `FSEQ` bigint NOT NULL DEFAULT '0',
+  `FCOSTBOJECTFIELD` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FOBJCHANGEFIELD` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`FENTRYID`),
+  KEY `IDX_CAD_CLOGRULEENTRY` (`FID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cad_coscentergroup definition
+
+CREATE TABLE `t_cad_coscentergroup` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FNUMBER` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FNAME` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FORGID` bigint NOT NULL DEFAULT '0',
+  `FMANUORGID` bigint NOT NULL DEFAULT '0',
+  `FEFFECTDATE` datetime DEFAULT NULL,
+  `FEXPDATE` datetime DEFAULT NULL,
+  `FREMARK` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FCREATORID` bigint NOT NULL DEFAULT '0',
+  `FMODIFIERID` bigint NOT NULL DEFAULT '0',
+  `FAUDITORID` bigint NOT NULL DEFAULT '0',
+  `FAUDITDATE` datetime DEFAULT NULL,
+  `FMODIFYTIME` datetime DEFAULT NULL,
+  `FCREATETIME` datetime DEFAULT NULL,
+  `FSTATUS` varchar(10) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'A',
+  `FENABLE` varchar(10) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '1',
+  `FMASTERID` bigint NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FID`),
+  KEY `IDX_CAD_COSCENTERGROUP_ORG` (`FORGID`),
+  KEY `IDX_CAD_COSCENTERGROUP_MORG` (`FMANUORGID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cad_coscentergroup_l definition
+
+CREATE TABLE `t_cad_coscentergroup_l` (
+  `FPKID` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FLOCALEID` varchar(10) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FREMARK` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FNAME` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`FPKID`),
+  KEY `IDX_CAD_COSCENTERGROUPL_LID` (`FID`,`FLOCALEID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cad_coscentergroup_r3 definition
+
+CREATE TABLE `t_cad_coscentergroup_r3` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FRefStatus` char(1) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cad_coscentergroupentry definition
+
+CREATE TABLE `t_cad_coscentergroupentry` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FENTRYID` bigint NOT NULL DEFAULT '0',
+  `FSEQ` bigint NOT NULL DEFAULT '0',
+  `FCOSTCENTERID` bigint NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FENTRYID`),
+  KEY `IDX_CAD_CGENTRY_ID` (`FID`),
+  KEY `IDX_CAD_CGENTRY_CC` (`FCOSTCENTERID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cad_costbom definition
+
+CREATE TABLE `t_cad_costbom` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FNUMBER` varchar(80) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FTYPEID` bigint NOT NULL DEFAULT '0',
+  `FGROUPID` bigint NOT NULL DEFAULT '0',
+  `FCREATEORGID` bigint NOT NULL DEFAULT '0',
+  `FSTATUS` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FENABLE` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FCTRLSTRATEGY` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FMATERIALID` bigint NOT NULL DEFAULT '0',
+  `FVERSIONID` bigint NOT NULL DEFAULT '0',
+  `FREPLACENOID` bigint NOT NULL DEFAULT '0',
+  `FYIELDRATE` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FAUXPROPERTYID` bigint NOT NULL DEFAULT '0',
+  `FISCOPRODUCT` char(1) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  `FMODIFIERID` bigint NOT NULL DEFAULT '0',
+  `FMODIFYTIME` datetime DEFAULT NULL,
+  `FORGID` bigint NOT NULL DEFAULT '0',
+  `FMASTERID` bigint NOT NULL DEFAULT '0',
+  `FCREATORID` bigint NOT NULL DEFAULT '0',
+  `FCREATETIME` datetime DEFAULT NULL,
+  `FAUDITORID` bigint NOT NULL DEFAULT '0',
+  `FAUDITDATE` datetime DEFAULT NULL,
+  `FDISABLEUSERID` bigint NOT NULL DEFAULT '0',
+  `FDISABLEDATE` datetime DEFAULT NULL,
+  `FENABLEUSERID` bigint NOT NULL DEFAULT '0',
+  `FENABLEDATE` datetime DEFAULT NULL,
+  PRIMARY KEY (`FID`),
+  KEY `INDEXD_CAD_COSTBOM` (`FMATERIALID`,`FORGID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cad_costbom_l definition
+
+CREATE TABLE `t_cad_costbom_l` (
+  `FPKID` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FLOCALEID` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FNAME` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`FPKID`),
+  KEY `INDEX_CAD_COSTBOM_L` (`FID`,`FLOCALEID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cad_costbom_r3 definition
+
+CREATE TABLE `t_cad_costbom_r3` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FRefStatus` char(1) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cad_costbom_u definition
+
+CREATE TABLE `t_cad_costbom_u` (
+  `FDataID` bigint NOT NULL,
+  `FCreateOrgID` bigint DEFAULT NULL,
+  `FUseOrgID` bigint NOT NULL,
+  PRIMARY KEY (`FDataID`,`FUseOrgID`),
+  KEY `IDX_t_cad_costbom_U_UO` (`FUseOrgID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cad_costbomexc definition
+
+CREATE TABLE `t_cad_costbomexc` (
+  `FDataID` bigint NOT NULL,
+  `FCreateOrgID` bigint DEFAULT NULL,
+  `FUseOrgID` bigint NOT NULL,
+  PRIMARY KEY (`FDataID`,`FUseOrgID`),
+  KEY `IDX_t_cad_costbomExc_UO` (`FUseOrgID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cad_costbomusereg definition
+
+CREATE TABLE `t_cad_costbomusereg` (
+  `FUseOrgID` bigint NOT NULL,
+  `FDataID` bigint NOT NULL,
+  `FCreateOrgID` bigint DEFAULT NULL,
+  `FAdminOrgID` bigint DEFAULT NULL,
+  `FCtrlStrategy` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `FIsAssign` char(1) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `FAssignOrgID` bigint DEFAULT NULL,
+  PRIMARY KEY (`FUseOrgID`,`FDataID`),
+  KEY `IDX_T_CAD_COSTBOMUSEREG_D` (`FDataID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cad_costcalcdimensio_r3 definition
+
+CREATE TABLE `t_cad_costcalcdimensio_r3` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FRefStatus` char(1) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cad_costcalcdimension definition
+
+CREATE TABLE `t_cad_costcalcdimension` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FNUMBER` varchar(60) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FNAME` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FSTATUS` varchar(10) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'A',
+  `FCREATORID` bigint NOT NULL DEFAULT '0',
+  `FMODIFIERID` bigint NOT NULL DEFAULT '0',
+  `FCREATETIME` datetime DEFAULT NULL,
+  `FENABLE` varchar(10) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '1',
+  `FMODIFYTIME` datetime DEFAULT NULL,
+  `FMASTERID` bigint NOT NULL DEFAULT '0',
+  `FCALCRULE` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FLEVEL` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '1',
+  `FPRESET` char(1) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FID`),
+  KEY `IDX_CAD_COSTCALCDIMENSION_0` (`FSTATUS`),
+  KEY `IDX_CAD_COSTCALCDIMENSION` (`FPRESET`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cad_costcalcdimension_l definition
+
+CREATE TABLE `t_cad_costcalcdimension_l` (
+  `FPKID` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FLOCALEID` varchar(10) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FNAME` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`FPKID`),
+  KEY `IDX_CAD_COSTCALCDIMENSION_L` (`FID`,`FLOCALEID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cad_costcollectconfi_r3 definition
+
+CREATE TABLE `t_cad_costcollectconfi_r3` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FRefStatus` char(1) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cad_costcollectconfig definition
+
+CREATE TABLE `t_cad_costcollectconfig` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FNUMBER` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FNAME` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FORGID` bigint NOT NULL DEFAULT '0',
+  `FSOURCEBILLID` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FCOSTBILLID` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FCALMETHOD` varchar(10) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FCOSTCALCDIMENSIONID` bigint NOT NULL DEFAULT '0',
+  `FCREATORID` bigint NOT NULL DEFAULT '0',
+  `FMODIFIERID` bigint NOT NULL DEFAULT '0',
+  `FCREATETIME` datetime DEFAULT NULL,
+  `FENABLE` varchar(10) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '1',
+  `FMODIFYTIME` datetime DEFAULT NULL,
+  `FMASTERID` bigint NOT NULL DEFAULT '0',
+  `FPRESET` char(1) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  `FSTATUS` varchar(10) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'A',
+  `FAPPNUM` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT ' ',
+  `FFILTER` varchar(2000) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FFILTER_TAG` longtext COLLATE utf8mb4_unicode_ci,
+  `FAUTOGENERATEOBJ` char(1) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  `FMATCHCOSTOBJ` char(1) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  `FSRCFIELDID` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FREMARK` varchar(2000) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FPLUGIN` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FCOSTACCOUNTID` bigint NOT NULL DEFAULT '0',
+  `FISMERGESOURCE` char(1) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  `FCOSTDRIVERID` bigint NOT NULL DEFAULT '0',
+  `FWORKACTIVITYID` bigint NOT NULL DEFAULT '0',
+  `FMATERIALGROUPSTDID` bigint NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FID`),
+  KEY `IDX_CAD_COLLECTCONFIG` (`FENABLE`,`FPRESET`,`FAPPNUM`),
+  KEY `IDX_CAD_COLLECTCONFIG_ORG` (`FORGID`),
+  KEY `IDX_CAD_COLLECTCONFIG_DIME` (`FCOSTCALCDIMENSIONID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cad_costcollectconfig_l definition
+
+CREATE TABLE `t_cad_costcollectconfig_l` (
+  `FPKID` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FLOCALEID` varchar(10) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FNAME` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FREMARK` varchar(2000) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`FPKID`),
+  KEY `IDX_CAD_COLLECTCONFIG_L` (`FID`,`FLOCALEID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cad_costcollectsetting definition
+
+CREATE TABLE `t_cad_costcollectsetting` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FBILLNO` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FORGID` bigint NOT NULL DEFAULT '0',
+  `FBILLSTATUS` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'A',
+  `FCREATORID` bigint NOT NULL DEFAULT '0',
+  `FMODIFIERID` bigint NOT NULL DEFAULT '0',
+  `FAUDITORID` bigint NOT NULL DEFAULT '0',
+  `FAUDITDATE` datetime DEFAULT NULL,
+  `FMODIFYTIME` datetime DEFAULT NULL,
+  `FCREATETIME` datetime DEFAULT NULL,
+  `FAPPNUM` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`FID`),
+  KEY `IDX_CAD_CCSETTING_OA` (`FORGID`,`FAPPNUM`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cad_costcollectsetting_l definition
+
+CREATE TABLE `t_cad_costcollectsetting_l` (
+  `FPKID` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FLOCALEID` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FREMARK` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`FPKID`),
+  KEY `IDX_CAD_CCSETTING_ID` (`FID`,`FLOCALEID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cad_costcollsetbizentry definition
+
+CREATE TABLE `t_cad_costcollsetbizentry` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FENTRYID` bigint NOT NULL DEFAULT '0',
+  `FSEQ` bigint NOT NULL DEFAULT '0',
+  `FCOLLECTIONBILLID` varchar(80) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FSOURCEBILLID` varchar(80) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`FENTRYID`),
+  KEY `IDX_CAD_CCSETBIZENTRY_COLL` (`FID`,`FCOLLECTIONBILLID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cad_costconfigplan definition
+
+CREATE TABLE `t_cad_costconfigplan` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FNUMBER` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FNAME` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FPRESET` char(1) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  `FORGID` bigint NOT NULL DEFAULT '0',
+  `FCOSTBILLID` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FCALMETHOD` varchar(10) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FCOSTCALCDIMENSIONID` bigint NOT NULL DEFAULT '0',
+  `FCREATORID` bigint NOT NULL DEFAULT '0',
+  `FMODIFIERID` bigint NOT NULL DEFAULT '0',
+  `FCREATETIME` datetime DEFAULT NULL,
+  `FENABLE` varchar(10) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '1',
+  `FMODIFYTIME` datetime DEFAULT NULL,
+  `FMASTERID` bigint NOT NULL DEFAULT '0',
+  `FSTATUS` varchar(10) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'A',
+  `FAPPNUM` varchar(10) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FREMARK` varchar(2000) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FCOSTACCOUNTID` bigint NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FID`),
+  KEY `IDX_CAD_COSTCONFIGPLAN` (`FAPPNUM`,`FENABLE`,`FCALMETHOD`),
+  KEY `IDX_CAD_COSTCONFIGPLAN_ORG` (`FORGID`),
+  KEY `IDX_CAD_COSTCONFIGPLAN_DIM` (`FCOSTCALCDIMENSIONID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cad_costconfigplan_l definition
+
+CREATE TABLE `t_cad_costconfigplan_l` (
+  `FPKID` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FLOCALEID` varchar(10) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FNAME` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FREMARK` varchar(2000) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`FPKID`),
+  KEY `IDX_CAD_CCONFIGPLAN_L` (`FID`,`FLOCALEID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cad_costconfigplan_r3 definition
+
+CREATE TABLE `t_cad_costconfigplan_r3` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FRefStatus` char(1) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cad_costdimentry definition
+
+CREATE TABLE `t_cad_costdimentry` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FENTRYID` bigint NOT NULL DEFAULT '0',
+  `FSEQ` bigint NOT NULL DEFAULT '0',
+  `FFIELDNAME` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FFIELD` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`FENTRYID`),
+  KEY `IDX_CAD_COSTDIMENTRY` (`FID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cad_costdriver definition
+
+CREATE TABLE `t_cad_costdriver` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FNUMBER` varchar(80) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FSTATUS` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  `FCREATORID` bigint NOT NULL DEFAULT '0',
+  `FMODIFIERID` bigint NOT NULL DEFAULT '0',
+  `FENABLE` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  `FCREATETIME` datetime DEFAULT NULL,
+  `FMODIFYTIME` datetime DEFAULT NULL,
+  `FMASTERID` bigint NOT NULL DEFAULT '0',
+  `FUNITID` bigint NOT NULL DEFAULT '0',
+  `FAPPLICATION` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FISCOMPLEXCD` char(1) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  `FFORMULA` varchar(2000) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FISSYS` char(1) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  `FCREATEORGID` bigint NOT NULL DEFAULT '0',
+  `FCTRLSTRATEGY` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FALLOCCLASS` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FORGID` bigint NOT NULL DEFAULT '0',
+  `FISRELATEDWORK` char(1) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  `FWORKACTIVITYID` bigint NOT NULL DEFAULT '0',
+  `FFORMULASTR` varchar(2000) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FAPPNUM` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FAUDITORID` bigint NOT NULL DEFAULT '0',
+  `FAUDITDATE` datetime DEFAULT NULL,
+  `FSOURCEDATAID` bigint NOT NULL DEFAULT '0',
+  `FBITINDEX` int NOT NULL DEFAULT '0',
+  `FSOURCEBITINDEX` int NOT NULL DEFAULT '0',
+  `FELEMENTID` bigint NOT NULL DEFAULT '0',
+  `FSUBELEMENTID` bigint NOT NULL DEFAULT '0',
+  `FISLINKRESOURCE` char(1) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  `FMATCHPATTERN` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'resource',
+  `FRESOURCETYPE` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FMATCHREPORT` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'total',
+  `FREMARK` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FNAME` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FCOSTTYPEID` bigint NOT NULL DEFAULT '0',
+  `FISMATGROUPCAL` char(1) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FID`),
+  UNIQUE KEY `INDEX_CAD_COSTDRIVER` (`FMASTERID`),
+  KEY `IDX_T_CAD_COSTDRIVER_CREATEORG` (`FCREATEORGID`),
+  KEY `IDX_T_CAD_COSTDRIVER_MASTER` (`FMASTERID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cad_costdriver_bit definition
+
+CREATE TABLE `t_cad_costdriver_bit` (
+  `FORGID` bigint NOT NULL,
+  `FDATA` longblob NOT NULL,
+  PRIMARY KEY (`FORGID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cad_costdriver_l definition
+
+CREATE TABLE `t_cad_costdriver_l` (
+  `FPKID` varchar(18) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT ' ',
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FLOCALEID` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FNAME` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FREMARK` varchar(510) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`FPKID`),
+  KEY `INDEX_CAD_COSTDRIVER_L` (`FID`,`FLOCALEID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cad_costdriver_m definition
+
+CREATE TABLE `t_cad_costdriver_m` (
+  `FORGID` bigint NOT NULL,
+  `FDATA` longblob NOT NULL,
+  PRIMARY KEY (`FORGID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cad_costdriver_r3 definition
+
+CREATE TABLE `t_cad_costdriver_r3` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FRefStatus` char(1) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cad_costdriver_resource definition
+
+CREATE TABLE `t_cad_costdriver_resource` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FPKID` bigint NOT NULL DEFAULT '0',
+  `FBASEDATAID` bigint NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FPKID`),
+  UNIQUE KEY `IDX_T_CAD_COSTDRIVER_RESOURCE` (`FID`,`FPKID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cad_costdriver_u definition
+
+CREATE TABLE `t_cad_costdriver_u` (
+  `FDataID` bigint NOT NULL,
+  `FCreateOrgID` bigint DEFAULT NULL,
+  `FUseOrgID` bigint NOT NULL,
+  PRIMARY KEY (`FDataID`,`FUseOrgID`),
+  KEY `IDX_t_cad_costdriver_U_UO` (`FUseOrgID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cad_costdriverexc definition
+
+CREATE TABLE `t_cad_costdriverexc` (
+  `FDataID` bigint NOT NULL,
+  `FCreateOrgID` bigint DEFAULT NULL,
+  `FUseOrgID` bigint NOT NULL,
+  `FNEWDATAID` bigint NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FDataID`,`FUseOrgID`),
+  KEY `IDX_t_cad_costdriverExc_UO` (`FUseOrgID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cad_costdriverusereg definition
+
+CREATE TABLE `t_cad_costdriverusereg` (
+  `FUseOrgID` bigint NOT NULL,
+  `FDataID` bigint NOT NULL,
+  `FCreateOrgID` bigint DEFAULT NULL,
+  `FAdminOrgID` bigint DEFAULT NULL,
+  `FCtrlStrategy` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `FIsAssign` char(1) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `FAssignOrgID` bigint DEFAULT NULL,
+  `FMASTERID` bigint NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FUseOrgID`,`FDataID`),
+  KEY `IDX_T_CAD_COSTDRIVERUSEREG_D` (`FDataID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cad_costelesubject definition
+
+CREATE TABLE `t_cad_costelesubject` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FNUMBER` varchar(80) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FCOSTTYPEID` bigint NOT NULL DEFAULT '0',
+  `FNAME` varchar(200) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FCREATORID` bigint NOT NULL DEFAULT '0',
+  `FMODIFIERID` bigint NOT NULL DEFAULT '0',
+  `FCREATETIME` datetime DEFAULT NULL,
+  `FMODIFYTIME` datetime DEFAULT NULL,
+  `FENABLE` varchar(10) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '1',
+  `FSTATUS` varchar(10) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'A',
+  `FMASTERID` bigint NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FID`),
+  KEY `IDX_CAD_COSTELESUBJECT` (`FCOSTTYPEID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cad_costelesubject_l definition
+
+CREATE TABLE `t_cad_costelesubject_l` (
+  `FPKID` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FLOCALEID` varchar(10) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FNAME` varchar(80) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`FPKID`),
+  KEY `IDX_CAD_COSTELESUBJECT_L` (`FID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cad_costelesubject_r3 definition
+
+CREATE TABLE `t_cad_costelesubject_r3` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FRefStatus` char(1) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cad_costelesubjectentry definition
+
+CREATE TABLE `t_cad_costelesubjectentry` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FENTRYID` bigint NOT NULL DEFAULT '0',
+  `FSEQ` bigint NOT NULL DEFAULT '0',
+  `FELEMENTID` bigint NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FENTRYID`),
+  KEY `IDX_CAD_COSTELESUBJENTRY` (`FID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cad_costinfofixtemp definition
+
+CREATE TABLE `t_cad_costinfofixtemp` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FBILLNO` varchar(80) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FBILLSTATUS` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FCREATORID` bigint NOT NULL DEFAULT '0',
+  `FCREATETIME` datetime DEFAULT NULL,
+  `FCOSTTYPE` bigint NOT NULL DEFAULT '0',
+  `FMATCOSTINFOFID` bigint NOT NULL DEFAULT '0',
+  `FMATERIAL` bigint NOT NULL DEFAULT '0',
+  `FNOWEFFECTDATE` datetime DEFAULT NULL,
+  `FEXPECTEDEFFECTDATE` datetime DEFAULT NULL,
+  PRIMARY KEY (`FID`),
+  KEY `IDX_CAD_COSTINFOFIXTEMP` (`FCOSTTYPE`,`FMATERIAL`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cad_costobj_mpcc definition
+
+CREATE TABLE `t_cad_costobj_mpcc` (
+  `FPKID` bigint NOT NULL DEFAULT '0',
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FBASEDATAID` bigint NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FPKID`),
+  UNIQUE KEY `INDEX_UK_CAD_COSTOBJ_MPCC` (`FID`,`FBASEDATAID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cad_costobject definition
+
+CREATE TABLE `t_cad_costobject` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FBILLNO` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FORGID` bigint NOT NULL DEFAULT '0',
+  `FCOSTCENTERID` bigint NOT NULL DEFAULT '0',
+  `FBIZSTATUS` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FSOTYPE` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FSRCBILLROW` bigint NOT NULL DEFAULT '0',
+  `FMATERIALID` bigint NOT NULL DEFAULT '0',
+  `FBOMVERSIONID` bigint NOT NULL DEFAULT '0',
+  `FORIGINYPE` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FSRCBILLNUMBER` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FBIZTYPE` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FRULE` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FCREATETIME` datetime DEFAULT NULL,
+  `FCOSTOBJECTRULEID` bigint NOT NULL DEFAULT '0',
+  `FBILLSTATUS` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FCREATORID` bigint NOT NULL DEFAULT '0',
+  `FMODIFIERID` bigint NOT NULL DEFAULT '0',
+  `FAUDITORID` bigint NOT NULL DEFAULT '0',
+  `FAUDITDATE` datetime DEFAULT NULL,
+  `FMODIFYTIME` datetime DEFAULT NULL,
+  `FAUXPTYID` bigint NOT NULL DEFAULT '0',
+  `FPROBILLID` bigint NOT NULL DEFAULT '0',
+  `FPNO` bigint NOT NULL DEFAULT '0',
+  `FPRODUCTGROUPID` bigint NOT NULL DEFAULT '0',
+  `FPRODUCTTYPE` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FWEIGHT` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FMANUORGID` bigint NOT NULL DEFAULT '0',
+  `FISOUTSOURCE` char(1) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  `FCONFIGUREDCODEID` bigint NOT NULL DEFAULT '0',
+  `FTRACKNUMBERID` bigint NOT NULL DEFAULT '0',
+  `FISREWORK` char(1) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  `FBOOKDATE` datetime DEFAULT NULL,
+  `FPROJECTNUMBERID` bigint NOT NULL DEFAULT '0',
+  `FCOLLCONFIGID` bigint NOT NULL DEFAULT '0',
+  `FPRODUCENUM` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FMAINPROOBJID` bigint NOT NULL DEFAULT '0',
+  `FSRCBILLTYPE` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FLOT` varchar(80) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`FID`),
+  KEY `INDEX_CAD_COSTOBJECT` (`FORGID`,`FCOSTCENTERID`,`FMATERIALID`,`FPROBILLID`),
+  KEY `IDX_T_CAD_COSTOBJECT2` (`FBILLNO`),
+  KEY `IDX_COSTOBJ_COSTC` (`FCOSTCENTERID`),
+  KEY `IDX_COSTOBJ_SRCIDENTRY` (`FPROBILLID`),
+  KEY `IDX_COSTOBJ_MATPRONUM` (`FMATERIALID`),
+  KEY `IDX_COSTOBJ_CONTRACK` (`FTRACKNUMBERID`,`FCONFIGUREDCODEID`),
+  KEY `IDX_COSTOBJ_ISOUTSOURCE` (`FISOUTSOURCE`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cad_costobject_l definition
+
+CREATE TABLE `t_cad_costobject_l` (
+  `FPKID` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FLOCALEID` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FNAME` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FREMARK` varchar(510) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`FPKID`),
+  KEY `INDEX_CAD_COSTOBJECT_L` (`FID`,`FLOCALEID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cad_costobject_r3 definition
+
+CREATE TABLE `t_cad_costobject_r3` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FRefStatus` char(1) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cad_costobjectaccount definition
+
+CREATE TABLE `t_cad_costobjectaccount` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FCOSTOBJECTID` bigint NOT NULL DEFAULT '0',
+  `FCOSTACCOUNTID` bigint NOT NULL DEFAULT '0',
+  `FBIZSTATUS` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'A',
+  `FCREATORID` bigint NOT NULL DEFAULT '0',
+  `FCREATETIME` datetime DEFAULT NULL,
+  PRIMARY KEY (`FID`),
+  KEY `IDX_CAD_COSTOBJECTACCOUNT` (`FCOSTOBJECTID`,`FCOSTACCOUNTID`,`FBIZSTATUS`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cad_costobjectrule definition
+
+CREATE TABLE `t_cad_costobjectrule` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FNUMBER` varchar(60) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FSTATUS` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FCREATORID` bigint NOT NULL DEFAULT '0',
+  `FMODIFIERID` bigint NOT NULL DEFAULT '0',
+  `FENABLE` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FCREATETIME` datetime DEFAULT NULL,
+  `FMODIFYTIME` datetime DEFAULT NULL,
+  `FMASTERID` bigint NOT NULL DEFAULT '0',
+  `FACCOUNTORGID` bigint NOT NULL DEFAULT '0',
+  `FCOSTCENTERID` bigint NOT NULL DEFAULT '0',
+  `FBIZTYPE` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FRULE` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FSOTYPE` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FOBJRULEASS` varchar(60) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FOBGRULENAMEASS` varchar(60) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FOBJRULE` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FOBJRULENAME` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FPNORULEASS` varchar(60) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FPNORULE` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FAUDITORID` bigint NOT NULL DEFAULT '0',
+  `FAUDITDATE` datetime DEFAULT NULL,
+  `FRULENUMBEREXT` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FRULENAMEEXT` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FCOSTCALCDIMENSIONID` bigint NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FID`),
+  KEY `INDEX_CAD_COSTOBJECTRULE` (`FMASTERID`,`FACCOUNTORGID`,`FCOSTCENTERID`),
+  KEY `IDX_COSTOBJR_NUMBER` (`FNUMBER`),
+  KEY `IDX_COSTOBJR_ORGCOSTC` (`FACCOUNTORGID`,`FCOSTCENTERID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cad_costobjectrule_l definition
+
+CREATE TABLE `t_cad_costobjectrule_l` (
+  `FPKID` varchar(18) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT ' ',
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FLOCALEID` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FNAME` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FREMARK` varchar(510) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`FPKID`),
+  KEY `INDEX_CAD_COSTOBJECTRULE_L` (`FID`,`FLOCALEID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cad_costobjectrule_r3 definition
+
+CREATE TABLE `t_cad_costobjectrule_r3` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FRefStatus` char(1) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cad_costrenewaldif definition
+
+CREATE TABLE `t_cad_costrenewaldif` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FBILLNO` varchar(80) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FRENEWREQNO` varchar(80) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FEFFECTTIME` datetime DEFAULT NULL,
+  `FPERIOD` bigint NOT NULL DEFAULT '0',
+  `FORG` bigint NOT NULL DEFAULT '0',
+  `FCOSTACCOUNTBOOK` bigint NOT NULL DEFAULT '0',
+  `FCURRENCY` bigint NOT NULL DEFAULT '0',
+  `FBILLSTATUS` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FCREATORID` bigint NOT NULL DEFAULT '0',
+  `FMODIFIERID` bigint NOT NULL DEFAULT '0',
+  `FMODIFYTIME` datetime DEFAULT NULL,
+  `FCREATETIME` datetime DEFAULT NULL,
+  `FCOSTCENTER` bigint NOT NULL DEFAULT '0',
+  `FAUDITORID` bigint NOT NULL DEFAULT '0',
+  `FAUDITDATE` datetime DEFAULT NULL,
+  `FMANBUILD` varchar(1) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FID`),
+  KEY `IDX_CAD_COSTRENEWALDIF` (`FRENEWREQNO`,`FCOSTACCOUNTBOOK`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cad_costruleinfoentity definition
+
+CREATE TABLE `t_cad_costruleinfoentity` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FENTRYID` bigint NOT NULL DEFAULT '0',
+  `FSEQ` bigint NOT NULL DEFAULT '0',
+  `FCOSTOBJNAME` varchar(60) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FCOSTOBJFIELD` varchar(60) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FSRCBILLNAME` varchar(60) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FSRCBILLFIELD` varchar(60) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FPARSEFIELD` char(1) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FENTRYID`),
+  KEY `IDX_CAD_RULEINFOENTITY` (`FID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cad_costupdatebill definition
+
+CREATE TABLE `t_cad_costupdatebill` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FBILLNO` varchar(60) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FBILLSTATUS` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FCREATORID` bigint NOT NULL DEFAULT '0',
+  `FMODIFIERID` bigint NOT NULL DEFAULT '0',
+  `FAUDITORID` bigint NOT NULL DEFAULT '0',
+  `FAUDITDATE` datetime DEFAULT NULL,
+  `FMODIFYTIME` datetime DEFAULT NULL,
+  `FCREATETIME` datetime DEFAULT NULL,
+  `FEFFECTDATE` datetime DEFAULT NULL,
+  `FSRCCOSTTYPEID` bigint NOT NULL DEFAULT '0',
+  `FISSRCYIELD` char(1) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  `FISSRCLOSSRATE` char(1) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  `FISSRCMATEFFECDATE` char(1) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  `FISSRCPREPARHOUR` char(1) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  `FISSRCAUXPROPERTY` char(1) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  `FISSRCMATVERS` char(1) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  `FTARCOSTTYPEID` bigint NOT NULL DEFAULT '0',
+  `FISTARMATVERS` char(1) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  `FISTARAUXPROPERTY` char(1) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  `FISTARPREPARHOUR` char(1) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  `FISTARMATEFFECDATE` char(1) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  `FISTARLOSSRATE` char(1) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  `FISTARYIELD` char(1) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  `FTEXTAREAFIELD` varchar(510) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FTEXTAREAFIELD1` varchar(510) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`FID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cad_costupdatebill_l definition
+
+CREATE TABLE `t_cad_costupdatebill_l` (
+  `FPKID` varchar(18) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FLOCALEID` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FMULILANGTEXTFIELD` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`FPKID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cad_costupdatematerials definition
+
+CREATE TABLE `t_cad_costupdatematerials` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FENTRYID` bigint NOT NULL DEFAULT '0',
+  `FSEQ` bigint NOT NULL DEFAULT '0',
+  `FMATERIALID` bigint NOT NULL DEFAULT '0',
+  `FMATVERSION` bigint NOT NULL DEFAULT '0',
+  `FAUXPROP` bigint NOT NULL DEFAULT '0',
+  `FMATGRPID` bigint NOT NULL DEFAULT '0',
+  `FCONFIGUREDCODEID` bigint NOT NULL DEFAULT '0',
+  `FTRACKNUMBERID` bigint NOT NULL DEFAULT '0',
+  `FLOT` varchar(80) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FPROJECTID` bigint NOT NULL DEFAULT '0',
+  `FSALCALCLOGID` bigint NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FENTRYID`),
+  KEY `INDEX_CAD_COSTUPDATEMATS_DF` (`FMATERIALID`,`FMATVERSION`,`FAUXPROP`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cad_costupdatemultype definition
+
+CREATE TABLE `t_cad_costupdatemultype` (
+  `FPKID` bigint NOT NULL DEFAULT '0',
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FBASEDATAID` bigint NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FPKID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cad_costupdatenew definition
+
+CREATE TABLE `t_cad_costupdatenew` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FBILLNO` varchar(80) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FBILLSTATUS` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FCREATORID` bigint NOT NULL DEFAULT '0',
+  `FMODIFIERID` bigint NOT NULL DEFAULT '0',
+  `FAUDITORID` bigint NOT NULL DEFAULT '0',
+  `FAUDITDATE` datetime DEFAULT NULL,
+  `FMODIFYTIME` datetime DEFAULT NULL,
+  `FCREATETIME` datetime DEFAULT NULL,
+  `FSRCCOSTTYPE` bigint NOT NULL DEFAULT '0',
+  `FTARGETCOSTTYPE` bigint NOT NULL DEFAULT '0',
+  `FISSPECIFYMATERIAL` char(1) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  `FUPDATETIME` datetime DEFAULT NULL,
+  `FUPDATESTATUS` varchar(80) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FUPDATEBILLNO` varchar(80) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FEFFECTTIME` datetime DEFAULT NULL,
+  `FUPDATEBILLID` bigint NOT NULL DEFAULT '0',
+  `FISCALCCURLEVEL` char(1) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  `FRESBYNOREF_TAG` longtext COLLATE utf8mb4_unicode_ci,
+  `FSOURCEPAGE` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FRESBYNOREF` varchar(2000) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FRESMATBYUSEAUXPT` varchar(2000) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FRESMATBYUSEAUXPT_TAG` longtext COLLATE utf8mb4_unicode_ci,
+  `FPERIODID` bigint NOT NULL DEFAULT '0',
+  `FMATGRPSTDID` bigint NOT NULL DEFAULT '0',
+  `FISALLUPDATE` char(1) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  `FCALCRECORDID` bigint NOT NULL DEFAULT '0',
+  `FISQUICKUPDATE` char(1) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FID`),
+  KEY `INDEX_CAD_COSTUPDATENEW_DF` (`FSRCCOSTTYPE`,`FTARGETCOSTTYPE`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cad_costupdatenew_r3 definition
+
+CREATE TABLE `t_cad_costupdatenew_r3` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FRefStatus` char(1) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cad_costupestbish definition
+
+CREATE TABLE `t_cad_costupestbish` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FNUMBER` varchar(80) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FSTATUS` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FSRCCOSTTYPEID` bigint NOT NULL DEFAULT '0',
+  `FTARGETCOSTTYPEID` bigint NOT NULL DEFAULT '0',
+  `FCURRENCYID` bigint NOT NULL DEFAULT '0',
+  `FEFFECTTIME` datetime DEFAULT NULL,
+  `FENABLE` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FPERIODID` bigint NOT NULL DEFAULT '0',
+  `FISOFFICIALDATA` char(1) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '1',
+  PRIMARY KEY (`FID`),
+  KEY `INDEX_CAD_COSTUPESTBISH` (`FSRCCOSTTYPEID`,`FEFFECTTIME`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cad_costupestbish_acct definition
+
+CREATE TABLE `t_cad_costupestbish_acct` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FENTRYID` bigint NOT NULL DEFAULT '0',
+  `FSEQ` bigint NOT NULL DEFAULT '0',
+  `FACCTACCOUNTORGID` bigint NOT NULL DEFAULT '0',
+  `FACCTCOSTACCOUNTID` bigint NOT NULL DEFAULT '0',
+  `FACCTMATERIALID` bigint NOT NULL DEFAULT '0',
+  `FACCTBASEUNITID` bigint NOT NULL DEFAULT '0',
+  `FACCTMATVERSIONID` bigint NOT NULL DEFAULT '0',
+  `FACCTAUXPROP` bigint NOT NULL DEFAULT '0',
+  `FACCTELEMENTID` bigint NOT NULL DEFAULT '0',
+  `FACCTSUBELEMENTID` bigint NOT NULL DEFAULT '0',
+  `FACCTOLDPRICE` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FACCTNEWPRICE` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FACCTQTY` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FACCTOLDCOST` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FACCTNEWCOST` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FACCTDIFFCOST` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FACCTKEYCOLID` bigint NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FENTRYID`),
+  KEY `INDEX_CAD_COSTUPESTBISH_AT` (`FACCTACCOUNTORGID`,`FACCTCOSTACCOUNTID`,`FACCTMATERIALID`),
+  KEY `IDX_CAD_COSTUPESTBISH_ACCT` (`FID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cad_costupestbish_cost definition
+
+CREATE TABLE `t_cad_costupestbish_cost` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FENTRYID` bigint NOT NULL DEFAULT '0',
+  `FSEQ` bigint NOT NULL DEFAULT '0',
+  `FMATERIALID` bigint NOT NULL DEFAULT '0',
+  `FMATVERSIONID` bigint NOT NULL DEFAULT '0',
+  `FAUXPROP` bigint NOT NULL DEFAULT '0',
+  `FOLDPRICE` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FNEWPRICE` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FDIFFPRICE` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FSRCTYPE` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FELEMENTID` bigint NOT NULL DEFAULT '0',
+  `FSUBELEMENTID` bigint NOT NULL DEFAULT '0',
+  `FRESOURCEBAK` bigint NOT NULL DEFAULT '0',
+  `FSUBMATERIALBAK` bigint NOT NULL DEFAULT '0',
+  `FSUBMATVERSBAK` bigint NOT NULL DEFAULT '0',
+  `FSUBAUXPROPERTYBAK` bigint NOT NULL DEFAULT '0',
+  `FKEYCOLID` bigint NOT NULL DEFAULT '0',
+  `FCOSTTYPEID` bigint NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FENTRYID`),
+  KEY `INDEX_CAD_COSTUPESTBISH_CT` (`FID`,`FMATERIALID`,`FELEMENTID`,`FSUBELEMENTID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cad_costupestbish_prod definition
+
+CREATE TABLE `t_cad_costupestbish_prod` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FENTRYID` bigint NOT NULL DEFAULT '0',
+  `FSEQ` bigint NOT NULL DEFAULT '0',
+  `FPERIODID` bigint NOT NULL DEFAULT '0',
+  `FORGID` bigint NOT NULL DEFAULT '0',
+  `FCOSTCENTERID` bigint NOT NULL DEFAULT '0',
+  `FCOSTOBJECTID` bigint NOT NULL DEFAULT '0',
+  `FCOSTACCOUNTID` bigint NOT NULL DEFAULT '0',
+  `FELEMENTID` bigint NOT NULL DEFAULT '0',
+  `FSUBELEMENTID` bigint NOT NULL DEFAULT '0',
+  `FPRODUCTCOST` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FUPDATEDCOST` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FUPDATEDIFF` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FPROSUBMATERIALID` bigint NOT NULL DEFAULT '0',
+  `FRESOURCEID` bigint NOT NULL DEFAULT '0',
+  `FCALCBASIS` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FPROMATVERSIONID` bigint NOT NULL DEFAULT '0',
+  `FPROAUXPTYID` bigint NOT NULL DEFAULT '0',
+  `FCOSTLEVEL` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FPROKEYCOLID` bigint NOT NULL DEFAULT '0',
+  `FMANUORGID` bigint NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FENTRYID`),
+  KEY `INDEX_CAD_COSTUPE_PROD` (`FORGID`,`FCOSTCENTERID`,`FCOSTOBJECTID`),
+  KEY `IDX_CAD_COSTUPESTBISH_PROD` (`FID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cad_costupestbish_r3 definition
+
+CREATE TABLE `t_cad_costupestbish_r3` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FRefStatus` char(1) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cad_costupestbish_stor definition
+
+CREATE TABLE `t_cad_costupestbish_stor` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FENTRYID` bigint NOT NULL DEFAULT '0',
+  `FSEQ` bigint NOT NULL DEFAULT '0',
+  `FACCOUNTORGID` bigint NOT NULL DEFAULT '0',
+  `FWAREHOUSEID` bigint NOT NULL DEFAULT '0',
+  `FMATERIALID` bigint NOT NULL DEFAULT '0',
+  `FSTORMATVERISOIN` bigint NOT NULL DEFAULT '0',
+  `FSTORAUXPROP` bigint NOT NULL DEFAULT '0',
+  `FQTY` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FSTORBASEUNITID` bigint NOT NULL DEFAULT '0',
+  `FOLDCOST` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FNEWCOST` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FDIFFCOST` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FSTOROLDPRICE` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FSTORNEWPRICE` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FCOSTACCOUNTID` bigint NOT NULL DEFAULT '0',
+  `FSOTRELEMENTID` bigint NOT NULL DEFAULT '0',
+  `FSTORSUBELEMENTID` bigint NOT NULL DEFAULT '0',
+  `FSTORKEYCOLID` bigint NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FENTRYID`),
+  KEY `INDEX_CAD_COSTUPESTBISH_ST` (`FID`,`FACCOUNTORGID`,`FCOSTACCOUNTID`,`FWAREHOUSEID`,`FMATERIALID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cad_costupestbismultype definition
+
+CREATE TABLE `t_cad_costupestbismultype` (
+  `FPKID` bigint NOT NULL DEFAULT '0',
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FBASEDATAID` bigint NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FPKID`),
+  KEY `IDX_CAD_COSTUPMULTYPE_ID` (`FID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cad_debugsetting definition
+
+CREATE TABLE `t_cad_debugsetting` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FMOD` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FISENABLE` char(1) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  `FKEYWORD` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FLOGMOD` varchar(10) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' A',
+  `FREMARK` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`FID`),
+  KEY `IDX_T_CAD_DEBUGSETTING` (`FMOD`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cad_difdtlentry definition
+
+CREATE TABLE `t_cad_difdtlentry` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FENTRYID` bigint NOT NULL DEFAULT '0',
+  `FSEQ` bigint NOT NULL DEFAULT '0',
+  `FCOSTOBJECT` bigint NOT NULL DEFAULT '0',
+  `FUPDATEDIFF` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FMATERIALAMT` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FMATERIALFEE` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FRESOURCEAMT` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FMAKEAMT` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FADDITIONAMT` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FAUXPTY` bigint NOT NULL DEFAULT '0',
+  `FMATERIELCODE` bigint NOT NULL DEFAULT '0',
+  `FPROCSUBELEMENT` bigint NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FENTRYID`),
+  KEY `IDX_CAD_DIFDTLENTRY` (`FID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cad_factnedoutcost definition
+
+CREATE TABLE `t_cad_factnedoutcost` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FENTRYID` bigint NOT NULL DEFAULT '0',
+  `FSEQ` bigint NOT NULL DEFAULT '0',
+  `FCOSTACCOUNTID` bigint NOT NULL DEFAULT '0',
+  `FPERIODID` bigint NOT NULL DEFAULT '0',
+  `FCOSTTYPEID` bigint NOT NULL DEFAULT '0',
+  `FELEMENTID` bigint NOT NULL DEFAULT '0',
+  `FSUBELEMENTID` bigint NOT NULL DEFAULT '0',
+  `FSTDPRICE` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FAMOUNT` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FSRCSYNCDATE` datetime DEFAULT NULL,
+  `FCURRENCYID` bigint NOT NULL DEFAULT '0',
+  `FENTRYKEYCOL` varchar(200) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FENTRYKEYCOLID` bigint NOT NULL DEFAULT '0',
+  `FMATCOSTID` bigint NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FENTRYID`),
+  KEY `IDX_CAD_FACTNEDOUTCOST` (`FID`,`FENTRYID`),
+  KEY `IDX_FINISHC_COTYPESUBE` (`FCOSTTYPEID`,`FSUBELEMENTID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cad_factnedoutputbill definition
+
+CREATE TABLE `t_cad_factnedoutputbill` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FBILLNO` varchar(225) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FBILLSTATUS` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FCREATORID` bigint NOT NULL DEFAULT '0',
+  `FMODIFIERID` bigint NOT NULL DEFAULT '0',
+  `FAUDITORID` bigint NOT NULL DEFAULT '0',
+  `FAUDITDATE` datetime DEFAULT NULL,
+  `FMODIFYTIME` datetime DEFAULT NULL,
+  `FCREATETIME` datetime DEFAULT NULL,
+  `FORGID` bigint NOT NULL DEFAULT '0',
+  `FBIZDATE` datetime DEFAULT NULL,
+  `FCOSTCENTERID` bigint NOT NULL DEFAULT '0',
+  `FCOMPLETEQTY` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FWAREHOUSEID` bigint NOT NULL DEFAULT '0',
+  `FBASEUNIT` bigint NOT NULL DEFAULT '0',
+  `FLOCATIONID` bigint NOT NULL DEFAULT '0',
+  `FWAREINORGID` bigint NOT NULL DEFAULT '0',
+  `FMATERIALID` bigint NOT NULL DEFAULT '0',
+  `FVERSIONID` bigint NOT NULL DEFAULT '0',
+  `FAUXPTYID` bigint NOT NULL DEFAULT '0',
+  `FCOMPLETETYPE` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FBATCHID` varchar(60) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT ' ',
+  `FSOURCEBILLID` bigint NOT NULL DEFAULT '0',
+  `FAPPNUM` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FPRODUCTTYPE` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FQUALITYSTATUS` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FSOURCEBILLENTRYID` bigint NOT NULL DEFAULT '0',
+  `FSRCAUDITDATE` datetime DEFAULT NULL,
+  `FSOURCEBIZTIME` datetime DEFAULT NULL,
+  `FMANUORGID` bigint NOT NULL DEFAULT '0',
+  `FBOOKDATE` datetime DEFAULT NULL,
+  `FNSRCAUDITDATE` datetime DEFAULT NULL,
+  `FSRCAUXPTYID` bigint NOT NULL DEFAULT '0',
+  `FINVTYPEID` bigint NOT NULL DEFAULT '0',
+  `FGRADEPRODGROUPID` bigint NOT NULL DEFAULT '0',
+  `FCOLLCONFIGID` bigint NOT NULL DEFAULT '0',
+  `FSRCBILLTYPE` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FKEYCOLID` bigint NOT NULL DEFAULT '0',
+  `FKEYCOL` varchar(200) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FCONFIGUREDCODEID` bigint NOT NULL DEFAULT '0',
+  `FTRACKNUMBERID` bigint NOT NULL DEFAULT '0',
+  `FPROJECTID` bigint NOT NULL DEFAULT '0',
+  `FLOT` varchar(80) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FVOUCHERTYPE` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FINVORGID` bigint NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FID`),
+  KEY `INDEX_CAD_FACTNEDOUTPUTBILL` (`FORGID`,`FCOSTCENTERID`,`FMATERIALID`),
+  KEY `IDX_FINISH_BOOKDATE` (`FBOOKDATE`),
+  KEY `IDX_FINISH_COSTC` (`FCOSTCENTERID`),
+  KEY `IDX_FINISH_MAT` (`FMATERIALID`),
+  KEY `IDX_FINISH_KEYCOL` (`FKEYCOL`),
+  KEY `IDX_CAD_FACT_BILLNO` (`FBILLNO`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cad_factnedoutputentry definition
+
+CREATE TABLE `t_cad_factnedoutputentry` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FENTRYID` bigint NOT NULL DEFAULT '0',
+  `FSEQ` bigint NOT NULL DEFAULT '0',
+  `FPLANNEDOUTPUTID` bigint NOT NULL DEFAULT '0',
+  `FLASTQTY` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FQTY` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FCOSTOBJECTID` bigint NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FENTRYID`),
+  KEY `INDEX_CAD_FACTOUTPUTENTRY` (`FID`,`FSEQ`),
+  KEY `IDX_FINISH_COSTOBJ` (`FCOSTOBJECTID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cad_fieldmapentity definition
+
+CREATE TABLE `t_cad_fieldmapentity` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FENTRYID` bigint NOT NULL DEFAULT '0',
+  `FSEQ` bigint NOT NULL DEFAULT '0',
+  `FCOSTFIELDNAME` varchar(60) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FCOSTFIELD` varchar(60) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FSOURCEFIELDNAME` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FSOURCEFIELD` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FSELECTVALUE` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FFORMULADESC` varchar(2000) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FSOURCETYPE` varchar(200) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FSOURCEDATAID` bigint NOT NULL DEFAULT '0',
+  `FFORMULA` varchar(2000) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`FENTRYID`),
+  KEY `IDX_CAD_FIELDMAPENTITY` (`FID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cad_inproallocstdval definition
+
+CREATE TABLE `t_cad_inproallocstdval` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FBILLNO` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FBILLSTATUS` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FCREATORID` bigint NOT NULL DEFAULT '0',
+  `FMODIFIERID` bigint NOT NULL DEFAULT '0',
+  `FAUDITORID` bigint NOT NULL DEFAULT '0',
+  `FAUDITDATE` datetime DEFAULT NULL,
+  `FPERIODID` bigint NOT NULL DEFAULT '0',
+  `FMODIFYTIME` datetime DEFAULT NULL,
+  `FCREATETIME` datetime DEFAULT NULL,
+  `FORGID` bigint NOT NULL DEFAULT '0',
+  `FCALMETHOD` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FCOSTOBJECTID` bigint NOT NULL DEFAULT '0',
+  `FSOURCETYPE` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FALLOCVALUE` decimal(23,10) DEFAULT NULL,
+  `FCOSTCENTERID` bigint NOT NULL DEFAULT '0',
+  `FCOSTACCOUNTID` bigint NOT NULL DEFAULT '0',
+  `FCOSTDRIVERID` bigint NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FID`),
+  KEY `IDX_CAD_INPROALLOCSTDVAL` (`FORGID`,`FCOSTACCOUNTID`,`FPERIODID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cad_keycol definition
+
+CREATE TABLE `t_cad_keycol` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FKEYCOL` varchar(200) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FMATERIELID` bigint NOT NULL DEFAULT '0',
+  `FMATVERS` bigint NOT NULL DEFAULT '0',
+  `FAUXPROPERTY` bigint NOT NULL DEFAULT '0',
+  `FPROJECTID` bigint NOT NULL DEFAULT '0',
+  `FTRACKNUMBERID` bigint NOT NULL DEFAULT '0',
+  `FCONFIGUREDCODEID` bigint NOT NULL DEFAULT '0',
+  `FLOT` varchar(80) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FCREATETIME` datetime DEFAULT NULL,
+  PRIMARY KEY (`FID`),
+  UNIQUE KEY `IDX_CAD_KEYCOL` (`FKEYCOL`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cad_keycol_r3 definition
+
+CREATE TABLE `t_cad_keycol_r3` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FRefStatus` char(1) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cad_log definition
+
+CREATE TABLE `t_cad_log` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FTASKNAME` varchar(60) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FTASKID` bigint NOT NULL DEFAULT '0',
+  `FLOG` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FLOG_TAG` longtext COLLATE utf8mb4_unicode_ci,
+  PRIMARY KEY (`FID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cad_matcalcseting definition
+
+CREATE TABLE `t_cad_matcalcseting` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FNUMBER` varchar(60) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FNAME` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FSTATUS` varchar(10) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'A',
+  `FCREATORID` bigint NOT NULL DEFAULT '0',
+  `FMODIFIERID` bigint NOT NULL DEFAULT '0',
+  `FCREATETIME` datetime DEFAULT NULL,
+  `FMODIFYTIME` datetime DEFAULT NULL,
+  `FMASTERID` bigint NOT NULL DEFAULT '0',
+  `FENABLE` varchar(10) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '1',
+  `FCOSTTYPEID` bigint NOT NULL DEFAULT '0',
+  `FMATERIALGRPSTDID` bigint NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FID`),
+  KEY `IDX_CAD_MATCALCSETING_CT` (`FCOSTTYPEID`),
+  KEY `IDX_CAD_MATCALCSETING_NU` (`FNUMBER`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cad_matcalcseting_l definition
+
+CREATE TABLE `t_cad_matcalcseting_l` (
+  `FPKID` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FLOCALEID` varchar(10) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FNAME` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`FPKID`),
+  KEY `IDX_CAD_MATCALCSETING_L` (`FID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cad_matcalcseting_r3 definition
+
+CREATE TABLE `t_cad_matcalcseting_r3` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FRefStatus` char(1) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cad_matcalcsetingentry definition
+
+CREATE TABLE `t_cad_matcalcsetingentry` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FENTRYID` bigint NOT NULL DEFAULT '0',
+  `FSEQ` bigint NOT NULL DEFAULT '0',
+  `FMATERIALID` bigint NOT NULL DEFAULT '0',
+  `FMATERIALGROUPID` bigint NOT NULL DEFAULT '0',
+  `FCALCDIMENSIONID` bigint NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FENTRYID`),
+  KEY `IDX_CAD_MATCALCSETENTRY` (`FID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cad_matcostinfo definition
+
+CREATE TABLE `t_cad_matcostinfo` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FSTATUS` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FCREATORID` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FMODIFIERID` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FENABLE` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FCREATETIME` datetime DEFAULT NULL,
+  `FMODIFYTIME` datetime DEFAULT NULL,
+  `FMASTERID` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FMATERIALID` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FCOSTTYPEID` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FAUXPTYID` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FAUDITORID` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FAUDITTIME` datetime DEFAULT NULL,
+  `FDISABLERID` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FDISABLEDATE` datetime DEFAULT NULL,
+  `FCURRENCYID` bigint NOT NULL DEFAULT '0',
+  `FCONSIDERYIELDRATE` char(1) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  `FCONSIDERSUBMATERIALLOSS` char(1) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  `FCONSIDERPREPARETIME` char(1) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  `FCONSIDERVALIDPERIOD` char(1) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  `FMATVERSIONID` bigint NOT NULL DEFAULT '0',
+  `FBOMTYPEID` bigint NOT NULL DEFAULT '0',
+  `FBOMID` bigint NOT NULL DEFAULT '0',
+  `FPROCESSROUTEID` bigint NOT NULL DEFAULT '0',
+  `FEFFECTDATE` datetime DEFAULT NULL,
+  `FEXPDATE` datetime DEFAULT NULL,
+  `FSOURCE` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`FID`),
+  KEY `INDEX_CAD_MATCOSTINFO_FID` (`FMATERIALID`,`FCOSTTYPEID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cad_matcostinfo_l definition
+
+CREATE TABLE `t_cad_matcostinfo_l` (
+  `FPKID` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FLOCALEID` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `FREMARK` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`FPKID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cad_matcostinfo_r3 definition
+
+CREATE TABLE `t_cad_matcostinfo_r3` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FRefStatus` char(1) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cad_matcostinfoentry definition
+
+CREATE TABLE `t_cad_matcostinfoentry` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FENTRYID` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FSEQ` bigint NOT NULL DEFAULT '0',
+  `FSUBELEMENTID` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FELEMENTID` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FSTANDARDCOST` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  PRIMARY KEY (`FENTRYID`),
+  KEY `INDEX_CAD_MATCTEN_FSUBELETID` (`FSUBELEMENTID`,`FID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cad_mfgfee_configentry definition
+
+CREATE TABLE `t_cad_mfgfee_configentry` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FENTRYID` bigint NOT NULL DEFAULT '0',
+  `FSEQ` bigint NOT NULL DEFAULT '0',
+  `FACCOUNTORGID` bigint NOT NULL DEFAULT '0',
+  `FPERIODID` bigint DEFAULT '0',
+  `FACCOUNTBOOK` bigint DEFAULT '0',
+  `FSRCBILL` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`FENTRYID`),
+  KEY `IDX_CAD_MFGFEE_CONFIGENTRY_FID` (`FID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cad_mfgfee_report definition
+
+CREATE TABLE `t_cad_mfgfee_report` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FBILLNO` varchar(60) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FORGID` bigint NOT NULL DEFAULT '0',
+  `FCREATORID` bigint NOT NULL DEFAULT '0',
+  `FERROR` char(1) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  `FAUDITORID` bigint DEFAULT '0',
+  `FBILLSTATUS` varchar(10) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'A',
+  `FAUDITDATE` datetime DEFAULT NULL,
+  `FCREATETIME` datetime DEFAULT NULL,
+  `FMODIFYTIME` datetime DEFAULT NULL,
+  `FMODIFIERID` bigint DEFAULT '0',
+  `FAPPNUM` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`FID`),
+  KEY `IDX_CAD_MFGFEE_REPORT_FORGID` (`FORGID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cad_mfgfee_stepentry definition
+
+CREATE TABLE `t_cad_mfgfee_stepentry` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FENTRYID` bigint NOT NULL DEFAULT '0',
+  `FSEQ` bigint NOT NULL DEFAULT '0',
+  `FSTEP` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FRESULT` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FCOSTIME` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FCHECKDESC` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FTIP` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FTIP_TAG` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
+  PRIMARY KEY (`FENTRYID`),
+  KEY `IDX_CAD_MFGFEE_STEPENTRY_FID` (`FID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cad_mfgfeeallocco definition
+
+CREATE TABLE `t_cad_mfgfeeallocco` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FBILLNO` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FBILLSTATUS` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FCREATORID` bigint NOT NULL DEFAULT '0',
+  `FMODIFIERID` bigint NOT NULL DEFAULT '0',
+  `FAUDITORID` bigint NOT NULL DEFAULT '0',
+  `FAUDITDATE` datetime DEFAULT NULL,
+  `FMODIFYTIME` datetime DEFAULT NULL,
+  `FCREATETIME` datetime DEFAULT NULL,
+  `FORGID` bigint NOT NULL DEFAULT '0',
+  `FMANUORGID` bigint NOT NULL DEFAULT '0',
+  `FCOSTCENTERID` bigint NOT NULL DEFAULT '0',
+  `FCOSTACCOUNTID` bigint NOT NULL DEFAULT '0',
+  `FPERIODID` bigint NOT NULL DEFAULT '0',
+  `FCOSTDRIVERID` bigint NOT NULL DEFAULT '0',
+  `FAMOUNT` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FCURRENCYID` bigint NOT NULL DEFAULT '0',
+  `FALLOCORID` bigint NOT NULL DEFAULT '0',
+  `FALLOCMOLD` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FALLOCSTATUS` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FDIRECTALLOC` char(1) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  `FVOUCHERNUM` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FALLOCTYPE` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FALLOCTIME` datetime DEFAULT NULL,
+  `FBASEUNITID` bigint NOT NULL DEFAULT '0',
+  `FCOSTDRIVERQTY` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FACTUALRATE` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FSUBELEMENTID` bigint NOT NULL DEFAULT '0',
+  `FELEMENTID` bigint NOT NULL DEFAULT '0',
+  `FBENEFCOSTCENTERID` bigint NOT NULL DEFAULT '0',
+  `FAPPNUM` varchar(10) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FPRODUCTGROUPID` bigint NOT NULL DEFAULT '0',
+  `FALLOCEXPENSEITEMID` bigint NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FID`),
+  KEY `IDX_T_CAD_MFGFEEALLOCCO` (`FORGID`,`FMANUORGID`,`FCOSTCENTERID`,`FCOSTACCOUNTID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cad_mfgfeeallocco_l definition
+
+CREATE TABLE `t_cad_mfgfeeallocco_l` (
+  `FPKID` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FLOCALEID` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FREMARK` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`FPKID`),
+  UNIQUE KEY `IDX_T_CAD_MFGFEEALLOCCO_L` (`FID`,`FLOCALEID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cad_mfgfeealloccoentry definition
+
+CREATE TABLE `t_cad_mfgfeealloccoentry` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FENTRYID` bigint NOT NULL DEFAULT '0',
+  `FSEQ` bigint NOT NULL DEFAULT '0',
+  `FMATERIALID` bigint NOT NULL DEFAULT '0',
+  `FCOSTOBJECTID` bigint NOT NULL DEFAULT '0',
+  `FALLOCVALUE` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FALLOCAMT` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FAUXPTYID` bigint NOT NULL DEFAULT '0',
+  `FOUTSOURCETYPE` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`FENTRYID`),
+  KEY `IDX_T_CAD_MFGFEEALLOCCOENTRY` (`FID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cad_mfgfeecocomexpentry definition
+
+CREATE TABLE `t_cad_mfgfeecocomexpentry` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FENTRYID` bigint NOT NULL DEFAULT '0',
+  `FSEQ` bigint NOT NULL DEFAULT '0',
+  `FSRCEXPENSEITEMID` bigint NOT NULL DEFAULT '0',
+  `FSRCAMT` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FCOLSRCTYPE` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`FENTRYID`),
+  KEY `IDX_T_CAD_MFGFEECOCOMEXPENTRY` (`FID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cad_mfgfeecoexpentry definition
+
+CREATE TABLE `t_cad_mfgfeecoexpentry` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FENTRYID` bigint NOT NULL DEFAULT '0',
+  `FSEQ` bigint NOT NULL DEFAULT '0',
+  `FEXPENSEITEMID` bigint NOT NULL DEFAULT '0',
+  `FCOLAMT` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FSRCTYPE` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FEXPBILLID` bigint NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FENTRYID`),
+  KEY `IDX_T_CAD_MFGFEECOEXPENTRY` (`FID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cad_mfgfeecollc definition
+
+CREATE TABLE `t_cad_mfgfeecollc` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FBILLNO` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FBILLSTATUS` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FCREATORID` bigint NOT NULL DEFAULT '0',
+  `FMODIFIERID` bigint NOT NULL DEFAULT '0',
+  `FAUDITORID` bigint NOT NULL DEFAULT '0',
+  `FAUDITDATE` datetime DEFAULT NULL,
+  `FMODIFYTIME` datetime DEFAULT NULL,
+  `FCREATETIME` datetime DEFAULT NULL,
+  `FORGID` bigint NOT NULL DEFAULT '0',
+  `FCOSTCENTERID` bigint NOT NULL DEFAULT '0',
+  `FEXPENSEITEMID` bigint NOT NULL DEFAULT '0',
+  `FCOSTACCOUNTID` bigint NOT NULL DEFAULT '0',
+  `FPERIODID` bigint NOT NULL DEFAULT '0',
+  `FTOTALAMOUNT` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FCURRENCYID` bigint NOT NULL DEFAULT '0',
+  `FFCOSTOBJECTID` bigint NOT NULL DEFAULT '0',
+  `FSOURCE` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FREMARK` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FSRCBILLID` varchar(2000) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FIMPSCHID` varchar(2000) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FSRCBILLNUM` varchar(2000) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FPRODUCTGROUP` bigint NOT NULL DEFAULT '0',
+  `FALLOCMOLD` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FSRCSYSID` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FVOUCHERENTRYID` varchar(2000) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FMANUORGID` bigint NOT NULL DEFAULT '0',
+  `FCOSTOBJECTID` bigint NOT NULL DEFAULT '0',
+  `FREFERIDENTITY` char(1) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  `FSOURCETYPE` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FAPPNUM` varchar(10) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FBOOKDATE` datetime DEFAULT NULL,
+  `FOUTSOURCETYPE` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FSRCBILLTYPE` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`FID`),
+  KEY `IDX_T_CAD_MFGFEECOLLC` (`FORGID`,`FCOSTACCOUNTID`,`FPERIODID`),
+  KEY `IDX_CAD_MFGFEECOLLC_B` (`FBILLNO`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cad_mfgfeecollc_l definition
+
+CREATE TABLE `t_cad_mfgfeecollc_l` (
+  `FPKID` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FLOCALEID` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FREMARK` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`FPKID`),
+  UNIQUE KEY `IDX_T_CAD_MFGFEECOLLC_L` (`FID`,`FLOCALEID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cad_mfgfeecollc_srcsys definition
+
+CREATE TABLE `t_cad_mfgfeecollc_srcsys` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FPKID` bigint NOT NULL DEFAULT '0',
+  `FBASEDATAID` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`FPKID`),
+  KEY `IDX_T_CAD_MFGFEECOLLC_SRCSYS` (`FID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cad_mfgfeecosrcbentry definition
+
+CREATE TABLE `t_cad_mfgfeecosrcbentry` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FENTRYID` bigint NOT NULL DEFAULT '0',
+  `FSEQ` bigint NOT NULL DEFAULT '0',
+  `FSRCBILLID` bigint NOT NULL DEFAULT '0',
+  `FTYPE` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`FENTRYID`),
+  KEY `IDX_T_CAD_MFGFEECOSRCBENTRY` (`FID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cad_mulsubjecttype definition
+
+CREATE TABLE `t_cad_mulsubjecttype` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FPKID` bigint NOT NULL DEFAULT '0',
+  `FBASEDATAID` bigint NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FPKID`),
+  KEY `IDX_CAD_MULSUBJECTTYPE` (`FID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cad_nonprodalloc definition
+
+CREATE TABLE `t_cad_nonprodalloc` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FBILLNO` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FBILLSTATUS` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FCREATORID` bigint NOT NULL DEFAULT '0',
+  `FMODIFIERID` bigint NOT NULL DEFAULT '0',
+  `FAUDITORID` bigint NOT NULL DEFAULT '0',
+  `FAUDITDATE` datetime DEFAULT NULL,
+  `FMODIFYTIME` datetime DEFAULT NULL,
+  `FCREATETIME` datetime DEFAULT NULL,
+  `FORGID` bigint NOT NULL DEFAULT '0',
+  `FMANUORGID` bigint NOT NULL DEFAULT '0',
+  `FCOSTCENTERID` bigint NOT NULL DEFAULT '0',
+  `FEXPENSEITEMID` bigint NOT NULL DEFAULT '0',
+  `FCOSTACCOUNTID` bigint NOT NULL DEFAULT '0',
+  `FPERIODID` bigint NOT NULL DEFAULT '0',
+  `FCOSTDRIVERID` bigint NOT NULL DEFAULT '0',
+  `FAMOUNT` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FCURRENCYID` bigint NOT NULL DEFAULT '0',
+  `FREMARK` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FALLOCORID` bigint NOT NULL DEFAULT '0',
+  `FALLOCMOLD` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FALLOCSTATUS` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FVOUCHERNUM` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FALLOCTYPE` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FALLOCTIME` datetime DEFAULT NULL,
+  `FBASEUNITID` bigint NOT NULL DEFAULT '0',
+  `FAPPNUM` varchar(10) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`FID`),
+  KEY `IDX_T_CAD_NONPRODALLOC` (`FORGID`,`FMANUORGID`,`FCOSTCENTERID`,`FCOSTACCOUNTID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cad_nonprodalloc_l definition
+
+CREATE TABLE `t_cad_nonprodalloc_l` (
+  `FPKID` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FLOCALEID` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FREMARK` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`FPKID`),
+  UNIQUE KEY `IDX_T_CAD_NONPRODALLOC_L` (`FID`,`FLOCALEID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cad_nonprodallocentry definition
+
+CREATE TABLE `t_cad_nonprodallocentry` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FENTRYID` bigint NOT NULL DEFAULT '0',
+  `FSEQ` bigint NOT NULL DEFAULT '0',
+  `FBENEFCOSTCENTERID` bigint NOT NULL DEFAULT '0',
+  `FALLOCVALUE` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FALLOCAMT` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  PRIMARY KEY (`FENTRYID`),
+  KEY `IDX_T_CAD_NONPRODALLOCENTRY` (`FID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cad_nonprodsrcbillentry definition
+
+CREATE TABLE `t_cad_nonprodsrcbillentry` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FENTRYID` bigint NOT NULL DEFAULT '0',
+  `FSEQ` bigint NOT NULL DEFAULT '0',
+  `FSRCBILLID` bigint NOT NULL DEFAULT '0',
+  `FTYPE` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`FENTRYID`),
+  KEY `IDX_T_CAD_NONPRODSRCBILLENTRY` (`FID`,`FSEQ`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cad_outpriceentry definition
+
+CREATE TABLE `t_cad_outpriceentry` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FENTRYID` bigint NOT NULL DEFAULT '0',
+  `FSEQ` bigint NOT NULL DEFAULT '0',
+  `FOUTPRILEVEL` bigint NOT NULL DEFAULT '0',
+  `FOUTPRIRULEID` bigint NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FENTRYID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cad_outprocessesprice definition
+
+CREATE TABLE `t_cad_outprocessesprice` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FBILLNO` varchar(60) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FBILLSTATUS` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FCREATORID` bigint NOT NULL DEFAULT '0',
+  `FMODIFIERID` bigint NOT NULL DEFAULT '0',
+  `FAUDITORID` bigint NOT NULL DEFAULT '0',
+  `FAUDITDATE` datetime DEFAULT NULL,
+  `FMODIFYTIME` datetime DEFAULT NULL,
+  `FCREATETIME` datetime DEFAULT NULL,
+  `FCOSTTYPEID` bigint NOT NULL DEFAULT '0',
+  `FDISABLEDPERSON` bigint NOT NULL DEFAULT '0',
+  `FDISABLEDDATE` datetime DEFAULT NULL,
+  `FCURRENCYID` bigint NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FID`),
+  KEY `INDEX_CAD_OUTPROCESSESPRICE` (`FCOSTTYPEID`,`FCURRENCYID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cad_outprocessesprice_l definition
+
+CREATE TABLE `t_cad_outprocessesprice_l` (
+  `FPKID` varchar(18) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FLOCALEID` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FREMARK` varchar(510) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`FPKID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cad_outresourceentry definition
+
+CREATE TABLE `t_cad_outresourceentry` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FENTRYID` bigint NOT NULL DEFAULT '0',
+  `FSEQ` bigint NOT NULL DEFAULT '0',
+  `FOUTRESLEVEL` bigint NOT NULL DEFAULT '0',
+  `FOUTRESRULEID` bigint NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FENTRYID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cad_outsourceprice definition
+
+CREATE TABLE `t_cad_outsourceprice` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FBILLNO` varchar(60) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FBILLSTATUS` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FCREATORID` bigint NOT NULL DEFAULT '0',
+  `FMODIFIERID` bigint NOT NULL DEFAULT '0',
+  `FAUDITORID` bigint NOT NULL DEFAULT '0',
+  `FAUDITDATE` datetime DEFAULT NULL,
+  `FMODIFYTIME` datetime DEFAULT NULL,
+  `FCREATETIME` datetime DEFAULT NULL,
+  `FCOSTTYPEID` bigint NOT NULL DEFAULT '0',
+  `FCURRENCYID` bigint NOT NULL DEFAULT '0',
+  `FMATERIALID` bigint NOT NULL DEFAULT '0',
+  `FVERSIONID` bigint NOT NULL DEFAULT '0',
+  `FAUXPTYID` bigint NOT NULL DEFAULT '0',
+  `FBISINESSCTRL` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FBAT` bigint NOT NULL DEFAULT '0',
+  `FELEMENTID` bigint NOT NULL DEFAULT '0',
+  `FSUBELEMENTID` bigint NOT NULL DEFAULT '0',
+  `FPRICE` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FMATVERSIONID` bigint NOT NULL DEFAULT '0',
+  `FEXPDATE` datetime DEFAULT NULL,
+  `FEFFECTDATE` datetime DEFAULT NULL,
+  `FLOT` varchar(80) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FCONFIGUREDCODEID` bigint NOT NULL DEFAULT '0',
+  `FTRACKNUMBERID` bigint NOT NULL DEFAULT '0',
+  `FPROJECTID` bigint NOT NULL DEFAULT '0',
+  `FKEYCOL` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FKEYCOLID` bigint NOT NULL DEFAULT '0',
+  `FPRICERULEID` bigint NOT NULL DEFAULT '0',
+  `FISUPDATE` char(1) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FID`),
+  KEY `INDEX_CAD_OUTSOURCEPRICE_DF` (`FCOSTTYPEID`,`FMATERIALID`,`FELEMENTID`,`FSUBELEMENTID`),
+  KEY `IDX_CAD_OUTSOURCEPRICE_KC` (`FKEYCOL`),
+  KEY `IDX_CAD_OUTPRI_PRICERULE` (`FPRICERULEID`),
+  KEY `IDX_CAD_OUTSOURCEPRICE_DIM` (`FKEYCOLID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cad_outsourceprice_l definition
+
+CREATE TABLE `t_cad_outsourceprice_l` (
+  `FPKID` varchar(18) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FLOCALEID` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FREMARK` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`FPKID`),
+  KEY `INDEX_CAD_OUTSOURCEPRICE_L_DF` (`FID`,`FLOCALEID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cad_outsourcepriceentry definition
+
+CREATE TABLE `t_cad_outsourcepriceentry` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FENTRYID` bigint NOT NULL DEFAULT '0',
+  `FSEQ` bigint NOT NULL DEFAULT '0',
+  `FEXTELEMENTID` bigint NOT NULL DEFAULT '0',
+  `FEXTSUBELEMENTID` bigint NOT NULL DEFAULT '0',
+  `FAMOUNT` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  PRIMARY KEY (`FENTRYID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cad_outsupentry definition
+
+CREATE TABLE `t_cad_outsupentry` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FENTRYID` bigint NOT NULL DEFAULT '0',
+  `FSEQ` bigint NOT NULL DEFAULT '0',
+  `FSUPPLIERID` bigint NOT NULL DEFAULT '0',
+  `FQUOTARATIO` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FUNITPRICE` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FMANUALPRICE` char(1) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  `FCURRENCYID` bigint NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FENTRYID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cad_plancostentry definition
+
+CREATE TABLE `t_cad_plancostentry` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FENTRYID` bigint NOT NULL DEFAULT '0',
+  `FSEQ` bigint NOT NULL DEFAULT '0',
+  `FISPLANCOST` char(1) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '1',
+  PRIMARY KEY (`FENTRYID`),
+  KEY `IDX_CAD_PLANCOSTENTRY` (`FID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cad_plancostsetting definition
+
+CREATE TABLE `t_cad_plancostsetting` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FBILLNO` varchar(60) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FORGID` bigint NOT NULL DEFAULT '0',
+  `FBILLSTATUS` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'A',
+  `FCREATORID` bigint NOT NULL DEFAULT '0',
+  `FMODIFIERID` bigint NOT NULL DEFAULT '0',
+  `FAUDITORID` bigint NOT NULL DEFAULT '0',
+  `FCREATETIME` datetime DEFAULT NULL,
+  `FMODIFYTIME` datetime DEFAULT NULL,
+  `FAUDITDATE` datetime DEFAULT NULL,
+  `FENABLE` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '1',
+  `FREMARK` varchar(2000) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FREMARK_TAG` longtext COLLATE utf8mb4_unicode_ci,
+  `FFILTER` varchar(2000) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FFILTER_TAG` longtext COLLATE utf8mb4_unicode_ci,
+  `FISPLANCOST` char(1) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FID`),
+  KEY `IDX_PLANCOSTSETTING` (`FORGID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cad_plancostsetting_l definition
+
+CREATE TABLE `t_cad_plancostsetting_l` (
+  `FPKID` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FLOCALEID` varchar(10) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FREMARK` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`FPKID`),
+  KEY `IDX_PLANCOSTSETTING_L` (`FID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cad_plannedoutputbil_r3 definition
+
+CREATE TABLE `t_cad_plannedoutputbil_r3` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FRefStatus` char(1) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cad_plannedoutputbill definition
+
+CREATE TABLE `t_cad_plannedoutputbill` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FBILLNO` varchar(225) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FBILLSTATUS` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'A',
+  `FCREATORID` bigint NOT NULL DEFAULT '0',
+  `FMODIFIERID` bigint NOT NULL DEFAULT '0',
+  `FAUDITORID` bigint NOT NULL DEFAULT '0',
+  `FAUDITDATE` datetime DEFAULT NULL,
+  `FMODIFYTIME` datetime DEFAULT NULL,
+  `FCREATETIME` datetime DEFAULT NULL,
+  `FBIZDATE` datetime DEFAULT NULL,
+  `FPLANNEDDATE` datetime DEFAULT NULL,
+  `FCOSTCENTERID` bigint NOT NULL DEFAULT '0',
+  `FACCOUNTORGID` bigint NOT NULL DEFAULT '0',
+  `FMATERIALID` bigint NOT NULL DEFAULT '0',
+  `FQTY` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FCOSTOBJECTID` bigint NOT NULL DEFAULT '0',
+  `FCLOSEUSERID` bigint NOT NULL DEFAULT '0',
+  `FCLOSEDATETIME` datetime DEFAULT NULL,
+  `FCLOSESTYLE` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FCLOSESTATU` char(1) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  `FBASEUNIT` bigint NOT NULL DEFAULT '0',
+  `FAUXPTYID` bigint NOT NULL DEFAULT '0',
+  `FSOURCE` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  `FTOTALINQTY` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FWIPQTY` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FSOURCEBILLID` bigint NOT NULL DEFAULT '0',
+  `FAPPNUM` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FSOURCEBILLENTRYID` bigint NOT NULL DEFAULT '0',
+  `FSOURCEBIZTIME` datetime DEFAULT NULL,
+  `FMANUORGID` bigint NOT NULL DEFAULT '0',
+  `FFROMLOGID` bigint NOT NULL DEFAULT '0',
+  `FSRCTRANSMITTIME` datetime DEFAULT NULL,
+  `FISMODIFYBIZDATE` char(1) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  `FCOLLCONFIGID` bigint NOT NULL DEFAULT '0',
+  `FSRCBILLTYPE` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`FID`,`FAPPNUM`),
+  KEY `IDX_CAD_PLANOUTPUTBILL_DF` (`FCOSTCENTERID`,`FMATERIALID`,`FCOSTOBJECTID`,`FAPPNUM`),
+  KEY `IDX_CAD_PLANNEDOUTPUTBILL2` (`FACCOUNTORGID`,`FCOSTOBJECTID`),
+  KEY `IDX_PLAN_COSTOBJ` (`FCOSTOBJECTID`),
+  KEY `IDX_PLAN_MAT` (`FMATERIALID`),
+  KEY `IDX_CAD_PLAN_BILLNO` (`FBILLNO`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cad_plannedoutputbill_r3 definition
+
+CREATE TABLE `t_cad_plannedoutputbill_r3` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FRefStatus` char(1) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cad_planpurpricesentry definition
+
+CREATE TABLE `t_cad_planpurpricesentry` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FENTRYID` bigint NOT NULL DEFAULT '0',
+  `FSEQ` bigint NOT NULL DEFAULT '0',
+  `FPURLEVEL` bigint NOT NULL DEFAULT '0',
+  `FPURRULEID` bigint NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FENTRYID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cad_price_billtypecon definition
+
+CREATE TABLE `t_cad_price_billtypecon` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FPKID` bigint NOT NULL DEFAULT '0',
+  `FBASEDATAID` bigint NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FPKID`),
+  KEY `IDX_CAD_PRICE_BILLTYPECON` (`FID`,`FBASEDATAID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cad_price_billtypeorder definition
+
+CREATE TABLE `t_cad_price_billtypeorder` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FPKID` bigint NOT NULL DEFAULT '0',
+  `FBASEDATAID` bigint NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FPKID`),
+  KEY `IDX_CAD_PRICE_BILLTYPEORDER` (`FID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cad_price_purorgcon definition
+
+CREATE TABLE `t_cad_price_purorgcon` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FPKID` bigint NOT NULL DEFAULT '0',
+  `FBASEDATAID` bigint NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FPKID`),
+  KEY `IDX_CAD_PRICE_PURORGCON` (`FID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cad_price_purorgorder definition
+
+CREATE TABLE `t_cad_price_purorgorder` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FPKID` bigint NOT NULL DEFAULT '0',
+  `FBASEDATAID` bigint NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FPKID`),
+  KEY `IDX_CAD_PRICE_PURORGORDER` (`FID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cad_pricelisttype definition
+
+CREATE TABLE `t_cad_pricelisttype` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FPKID` bigint NOT NULL DEFAULT '0',
+  `FBASEDATAID` bigint NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FPKID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cad_processseqentry definition
+
+CREATE TABLE `t_cad_processseqentry` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FENTRYID` bigint NOT NULL DEFAULT '0',
+  `FSEQ` bigint NOT NULL DEFAULT '0',
+  `FPROCESSSEQ` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FPROCESSSEQNAME` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FPROCESSSEQTYPE` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FPROCESSSEQREMARK` varchar(510) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`FENTRYID`),
+  KEY `INDEX_CAD_PROCESSSEQENTRY` (`FID`,`FPROCESSSEQ`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cad_proseqrelation definition
+
+CREATE TABLE `t_cad_proseqrelation` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FENTRYID` bigint NOT NULL DEFAULT '0',
+  `FSEQ` bigint NOT NULL DEFAULT '0',
+  `FSEQRELATIONSEQ` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FSEQRELATIONNAME` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FSEQRELATIONPARSEQ` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FSEQRELATIONPARNAME` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FTRANSFERPROCESSNO` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FTRANSFERPROCESSNAME` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FTURNOUTPROCESSNO` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FTURNOUTPROCESSNAME` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FPARALLELRATION` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`FENTRYID`),
+  KEY `INDEX_CAD_PROSEQRELATION` (`FID`,`FSEQRELATIONSEQ`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cad_purpricedatasrc definition
+
+CREATE TABLE `t_cad_purpricedatasrc` (
+  `FBILLNO` varchar(60) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FPURORGID` bigint NOT NULL DEFAULT '0',
+  `FSUPPLIERID` bigint NOT NULL DEFAULT '0',
+  `FMATERIALID` bigint NOT NULL DEFAULT '0',
+  `FMATVERSIONID` bigint NOT NULL DEFAULT '0',
+  `FAUXPTYID` bigint NOT NULL DEFAULT '0',
+  `FPRICE` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FAMOUNT` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FQTY` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FUNITID` bigint NOT NULL DEFAULT '0',
+  `FBILLSOURCE` varchar(60) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FSETTLECURRENCY` bigint NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FID`),
+  KEY `IDX_CAD_PURPRICEDATASRC` (`FPURORGID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cad_purprices definition
+
+CREATE TABLE `t_cad_purprices` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FBILLNO` varchar(60) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FBILLSTATUS` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FCREATORID` bigint NOT NULL DEFAULT '0',
+  `FMODIFIERID` bigint NOT NULL DEFAULT '0',
+  `FAUDITORID` bigint NOT NULL DEFAULT '0',
+  `FAUDITDATE` datetime DEFAULT NULL,
+  `FMODIFYTIME` datetime DEFAULT NULL,
+  `FCREATETIME` datetime DEFAULT NULL,
+  `FCOSTTYPEID` bigint NOT NULL DEFAULT '0',
+  `FMATERIALID` bigint NOT NULL DEFAULT '0',
+  `FAUXPTYID` bigint NOT NULL DEFAULT '0',
+  `FAMOUNT` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FCURRENCYID` bigint NOT NULL DEFAULT '0',
+  `FBOMVERSIONID` bigint NOT NULL DEFAULT '0',
+  `FBUSINESSCTRL` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FMATVERSIONID` bigint NOT NULL DEFAULT '0',
+  `FISTOUPDATE` char(1) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  `FDATASRC` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'manual',
+  `FEXPDATE` datetime DEFAULT NULL,
+  `FEFFECTDATE` datetime DEFAULT NULL,
+  `FMATCOSTID` bigint NOT NULL DEFAULT '0',
+  `FLOT` varchar(80) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FCONFIGUREDCODEID` bigint NOT NULL DEFAULT '0',
+  `FTRACKNUMBERID` bigint NOT NULL DEFAULT '0',
+  `FPROJECTID` bigint NOT NULL DEFAULT '0',
+  `FKEYCOL` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FKEYCOLID` bigint NOT NULL DEFAULT '0',
+  `FPRICERULEID` bigint NOT NULL DEFAULT '0',
+  `FISUPDATE` char(1) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  `FPRICELISTTYPEID` bigint NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FID`),
+  KEY `INDEX_CAD_PURPRICES_DF` (`FCOSTTYPEID`,`FMATERIALID`,`FAUXPTYID`,`FMATVERSIONID`),
+  KEY `IDX_CAD_PURPRICES_KC` (`FKEYCOL`),
+  KEY `IDX_CAD_PURPRICES_PRICERULE` (`FPRICERULEID`),
+  KEY `IDX_CAD_PURPRICES_DIM` (`FKEYCOLID`),
+  KEY `IDX_CAD_PURPRICES_BILLNO` (`FBILLNO`),
+  KEY `IDX_CAD_PURPRICES_MC` (`FMATCOSTID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cad_purprices_l definition
+
+CREATE TABLE `t_cad_purprices_l` (
+  `FPKID` varchar(18) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FLOCALEID` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FREMARK` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`FPKID`),
+  KEY `INDEX_CAD_PURPRICES_L_DF` (`FID`,`FLOCALEID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cad_purpricesentry definition
+
+CREATE TABLE `t_cad_purpricesentry` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FENTRYID` bigint NOT NULL DEFAULT '0',
+  `FSEQ` bigint NOT NULL DEFAULT '0',
+  `FELEMENTID` bigint NOT NULL DEFAULT '0',
+  `FSUBELEMENTID` bigint NOT NULL DEFAULT '0',
+  `FPRICE` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FRATE` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  PRIMARY KEY (`FENTRYID`),
+  KEY `INDEX_CAD_PURPRICESENTRY` (`FID`,`FELEMENTID`,`FSUBELEMENTID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cad_purpricingrule definition
+
+CREATE TABLE `t_cad_purpricingrule` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FCOSTTYPEID` bigint NOT NULL DEFAULT '0',
+  `FUSERID` bigint NOT NULL DEFAULT '0',
+  `FORGCONID` bigint NOT NULL DEFAULT '0',
+  `FISPRICINGCON` char(1) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `FLEVELCON` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FTYPECONID` bigint NOT NULL DEFAULT '0',
+  `FISWITHCOMPCON` char(1) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `FPRICINGVALUECON` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FISPRICINGORDER` char(1) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `FLEVELORDER` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FPRICINGVALUEORDER` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FISWITHCOMPORDER` char(1) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `FPRICINGQTYORDER` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FPRICINGDAYORDER` int NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FID`),
+  KEY `IDX_CAD_PURPRICINGRULE` (`FCOSTTYPEID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cad_purpricingrule_r3 definition
+
+CREATE TABLE `t_cad_purpricingrule_r3` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FRefStatus` char(1) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cad_purpricingrulere_r3 definition
+
+CREATE TABLE `t_cad_purpricingrulere_r3` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FRefStatus` char(1) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cad_purpricingruleres definition
+
+CREATE TABLE `t_cad_purpricingruleres` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FCOSTTYPEID` bigint NOT NULL DEFAULT '0',
+  `FUSERID` bigint NOT NULL DEFAULT '0',
+  `FPRICINGVALUEORDER` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FPRICINGQTYORDER` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FISWITHCOMPORDER` char(1) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `FPRICINGDAYORDER` int NOT NULL DEFAULT '0',
+  `FSUBELEMENTID` bigint NOT NULL DEFAULT '0',
+  `FCALCBASIS` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FRESMAT` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FRESMATVERSION` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FRESAUXPTY` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FORGORDERID` bigint NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FID`),
+  KEY `IDX_CAD_PURPRICINGRULERES` (`FCOSTTYPEID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cad_pursupentry definition
+
+CREATE TABLE `t_cad_pursupentry` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FENTRYID` bigint NOT NULL DEFAULT '0',
+  `FSEQ` bigint NOT NULL DEFAULT '0',
+  `FSUPPLIERID` bigint NOT NULL DEFAULT '0',
+  `FQUOTARATIO` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FUNITPRICE` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FMANUALPRICE` char(1) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  `FPRICETYPEID` bigint NOT NULL DEFAULT '0',
+  `FCURRENCYID` bigint NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FENTRYID`),
+  KEY `INDEX_CAD_PURSUPENTRY` (`FID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cad_refreshbomrecord definition
+
+CREATE TABLE `t_cad_refreshbomrecord` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FCALORGID` bigint NOT NULL DEFAULT '0',
+  `FMANUORGID` bigint NOT NULL DEFAULT '0',
+  `FBIZTYPE` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FUSERID` bigint NOT NULL DEFAULT '0',
+  `FREFRESHNEWMAT` char(1) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FID`),
+  KEY `IDX_T_CAD_REFRESHBOMRECORD` (`FCALORGID`,`FUSERID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cad_res_billtypeorder definition
+
+CREATE TABLE `t_cad_res_billtypeorder` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FPKID` bigint NOT NULL DEFAULT '0',
+  `FBASEDATAID` bigint NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FPKID`),
+  KEY `IDX_CAD_RES_BILLTYPEORDER` (`FID`,`FBASEDATAID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cad_res_purorg definition
+
+CREATE TABLE `t_cad_res_purorg` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FPKID` bigint NOT NULL DEFAULT '0',
+  `FBASEDATAID` bigint NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FPKID`),
+  KEY `IDX_CAD_RES_PURORG` (`FID`,`FBASEDATAID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cad_resourceout definition
+
+CREATE TABLE `t_cad_resourceout` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FCOSTTYPEID` bigint NOT NULL DEFAULT '0',
+  `FCURRENCYID` bigint NOT NULL DEFAULT '0',
+  `FBILLNO` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FREMARK` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FDATASRC` varchar(10) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FEFFECTDATE` datetime DEFAULT NULL,
+  `FEXPDATE` datetime DEFAULT NULL,
+  `FBILLSTATUS` varchar(10) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FMATERIALID` bigint NOT NULL DEFAULT '0',
+  `FRESOURCEID` bigint NOT NULL DEFAULT '0',
+  `FELEMENTID` bigint NOT NULL DEFAULT '0',
+  `FSUBELEMENTID` bigint NOT NULL DEFAULT '0',
+  `FPRICERULEID` bigint NOT NULL DEFAULT '0',
+  `FCALCBASIS` varchar(10) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FRESOURCEUNITID` bigint NOT NULL DEFAULT '0',
+  `FQTY` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FAMOUNT` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FCREATORID` bigint NOT NULL DEFAULT '0',
+  `FCREATETIME` datetime DEFAULT NULL,
+  `FMODIFIERID` bigint NOT NULL DEFAULT '0',
+  `FMODIFYTIME` datetime DEFAULT NULL,
+  `FAUDITORID` bigint NOT NULL DEFAULT '0',
+  `FAUDITDATE` datetime DEFAULT NULL,
+  `FKEYCOL` varchar(200) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FKEYCOLID` bigint NOT NULL DEFAULT '0',
+  `FAUXPTYID` bigint NOT NULL DEFAULT '0',
+  `FISUPDATE` char(1) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FID`),
+  KEY `IDX_RESOURCEOUT_COSTTYPE` (`FCOSTTYPEID`),
+  KEY `IDX_RESOURCEOUT_MATERIAL` (`FMATERIALID`),
+  KEY `IDX_RESOURCEOUT_RESOURCE` (`FRESOURCEID`),
+  KEY `IDX_CAD_RESOURCEOUT_KC` (`FKEYCOL`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cad_resourceout_l definition
+
+CREATE TABLE `t_cad_resourceout_l` (
+  `FPKID` varchar(18) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FLOCALEID` varchar(10) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FREMARK` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`FPKID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cad_resourceoutentry definition
+
+CREATE TABLE `t_cad_resourceoutentry` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FENTRYID` bigint NOT NULL DEFAULT '0',
+  `FSEQ` bigint NOT NULL DEFAULT '0',
+  `FATTAELEID` bigint NOT NULL DEFAULT '0',
+  `FATTASUBELEID` bigint NOT NULL DEFAULT '0',
+  `FATTAQTY` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FATTAAMT` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  PRIMARY KEY (`FENTRYID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cad_resourcerate definition
+
+CREATE TABLE `t_cad_resourcerate` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FBILLNO` varchar(60) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FBILLSTATUS` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FCREATORID` bigint NOT NULL DEFAULT '0',
+  `FMODIFIERID` bigint NOT NULL DEFAULT '0',
+  `FAUDITORID` bigint NOT NULL DEFAULT '0',
+  `FAUDITDATE` datetime DEFAULT NULL,
+  `FMODIFYTIME` datetime DEFAULT NULL,
+  `FCREATETIME` datetime DEFAULT NULL,
+  `FCOSTTYPEID` bigint NOT NULL DEFAULT '0',
+  `FCURRENCYID` bigint NOT NULL DEFAULT '0',
+  `FRESOURCETYPEID` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FRESOURCEID` bigint NOT NULL DEFAULT '0',
+  `FWORKHOURUNIT` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FELEMENTID` bigint NOT NULL DEFAULT '0',
+  `FSUBELEMENTID` bigint NOT NULL DEFAULT '0',
+  `FPREWORKHOURPRICE` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FREALWORKHOURPRICE` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FBASEDATAFIELD` bigint NOT NULL DEFAULT '0',
+  `FWORKHOURUNITID` bigint NOT NULL DEFAULT '0',
+  `FQTY` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FAMOUNT` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FCALCBASIS` varchar(10) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  `FRESOURCEUNITID` bigint NOT NULL DEFAULT '0',
+  `FVALUE` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FDATASRC` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'manual',
+  `FEXPDATE` datetime DEFAULT NULL,
+  `FEFFECTDATE` datetime DEFAULT NULL,
+  `FPRICERULEID` bigint NOT NULL DEFAULT '0',
+  `FWORKCENTERID` bigint NOT NULL DEFAULT '0',
+  `FISUPDATE` char(1) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FID`),
+  KEY `INDEX_CAD_RESOURCERATE_DF` (`FCOSTTYPEID`,`FRESOURCEID`),
+  KEY `IDX_CAD_RESRATE_PRICERULE` (`FPRICERULEID`),
+  KEY `IDX_CAD_RESRATE_WORKCENTER` (`FWORKCENTERID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cad_resourcerate_l definition
+
+CREATE TABLE `t_cad_resourcerate_l` (
+  `FPKID` varchar(18) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FLOCALEID` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FREMARK` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`FPKID`),
+  KEY `INDEX_CAD_RESOURCERATE_L_DF` (`FID`,`FLOCALEID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cad_resourcerateentry definition
+
+CREATE TABLE `t_cad_resourcerateentry` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FENTRYID` bigint NOT NULL DEFAULT '0',
+  `FSEQ` bigint NOT NULL DEFAULT '0',
+  `FATTASUBELEID` bigint NOT NULL DEFAULT '0',
+  `FATTAELEID` bigint NOT NULL DEFAULT '0',
+  `FATTAQTY` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FATTAAMT` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  PRIMARY KEY (`FENTRYID`),
+  KEY `INDEX_CAD_RESOURCERATEENTRY` (`FID`,`FATTASUBELEID`,`FATTAELEID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cad_resourcesupentry definition
+
+CREATE TABLE `t_cad_resourcesupentry` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FENTRYID` bigint NOT NULL DEFAULT '0',
+  `FSEQ` bigint NOT NULL DEFAULT '0',
+  `FSUPPLIERID` bigint NOT NULL DEFAULT '0',
+  `FQUOTARATIO` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FUNITPRICE` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FMANUALPRICE` char(1) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  `FCURRENCYID` bigint NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FENTRYID`),
+  KEY `IDX_CAD_RESSUPENTRY` (`FID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cad_router definition
+
+CREATE TABLE `t_cad_router` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FNUMBER` varchar(80) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FSTATUS` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FCREATORID` bigint NOT NULL DEFAULT '0',
+  `FMODIFIERID` bigint NOT NULL DEFAULT '0',
+  `FENABLE` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FCREATETIME` datetime DEFAULT NULL,
+  `FMODIFYTIME` datetime DEFAULT NULL,
+  `FMASTERID` bigint NOT NULL DEFAULT '0',
+  `FGROUPID` bigint NOT NULL DEFAULT '0',
+  `FORGID` bigint NOT NULL DEFAULT '0',
+  `FCREATEORGID` bigint NOT NULL DEFAULT '0',
+  `FCTRLSTRATEGY` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FVERSIONID` bigint NOT NULL DEFAULT '0',
+  `FROUTEREPLACE` bigint NOT NULL DEFAULT '0',
+  `FISMAINPROCESS` char(1) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '1',
+  `FPROCESSTYPE` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FMATERIALGROUPID` bigint NOT NULL DEFAULT '0',
+  `FMATERIALID` bigint NOT NULL DEFAULT '0',
+  `FUNITID` bigint NOT NULL DEFAULT '0',
+  `FAUXPROPERTYID` bigint NOT NULL DEFAULT '0',
+  `FBOMVERSIONID` bigint NOT NULL DEFAULT '0',
+  `FREMARK` varchar(510) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FAUDITORID` bigint NOT NULL DEFAULT '0',
+  `FAUDITTIME` datetime DEFAULT NULL,
+  `FCANCELERID` bigint NOT NULL DEFAULT '0',
+  `FCANCELTIME` datetime DEFAULT NULL,
+  PRIMARY KEY (`FID`),
+  KEY `INDEX_CAD_ROUTER` (`FCREATEORGID`,`FPROCESSTYPE`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cad_router_l definition
+
+CREATE TABLE `t_cad_router_l` (
+  `FPKID` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FLOCALEID` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FNAME` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`FPKID`),
+  KEY `INDEX_CAD_ROUTER_L` (`FID`,`FLOCALEID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cad_router_r3 definition
+
+CREATE TABLE `t_cad_router_r3` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FRefStatus` char(1) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cad_router_u definition
+
+CREATE TABLE `t_cad_router_u` (
+  `FDataID` bigint NOT NULL,
+  `FCreateOrgID` bigint DEFAULT NULL,
+  `FUseOrgID` bigint NOT NULL,
+  PRIMARY KEY (`FDataID`,`FUseOrgID`),
+  KEY `IDX_t_cad_router_U_UO` (`FUseOrgID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cad_routeractentry definition
+
+CREATE TABLE `t_cad_routeractentry` (
+  `FENTRYID` bigint NOT NULL DEFAULT '0',
+  `FDETAILID` bigint NOT NULL DEFAULT '0',
+  `FSEQ` bigint NOT NULL DEFAULT '0',
+  `FPROCESSNO` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FOPERATIONNUMBER` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FBIZTYPE` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FPROCESSSTAGE` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FACTIVITYID` bigint NOT NULL DEFAULT '0',
+  `FBASEQTY` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FSTANDARDFORMULAID` bigint NOT NULL DEFAULT '0',
+  `FMINFORMULAID` bigint NOT NULL DEFAULT '0',
+  `FSTANDARDFORMULA1ID` bigint NOT NULL DEFAULT '0',
+  `FMINFORMULA1ID` bigint NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FDETAILID`),
+  KEY `INDEX_CAD_ROUTERACTETY` (`FENTRYID`,`FOPERATIONNUMBER`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cad_routerexc definition
+
+CREATE TABLE `t_cad_routerexc` (
+  `FDataID` bigint NOT NULL,
+  `FCreateOrgID` bigint DEFAULT NULL,
+  `FUseOrgID` bigint NOT NULL,
+  PRIMARY KEY (`FDataID`,`FUseOrgID`),
+  KEY `IDX_t_cad_routerExc_UO` (`FUseOrgID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cad_routerprocessentry definition
+
+CREATE TABLE `t_cad_routerprocessentry` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FENTRYID` bigint NOT NULL DEFAULT '0',
+  `FSEQ` bigint NOT NULL DEFAULT '0',
+  `FPARENTID` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FOPERATIONNO` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FMACHININGTYPE` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FPRODUCTIONORGID` bigint NOT NULL DEFAULT '0',
+  `FWORKCENTERID` bigint NOT NULL DEFAULT '0',
+  `FPURCHASEORGID` bigint NOT NULL DEFAULT '0',
+  `FPRODUCTIONWORKSHOPID` bigint NOT NULL DEFAULT '0',
+  `FOPERATIONID` bigint NOT NULL DEFAULT '0',
+  `FOPRCTRLSTRATEGY` bigint NOT NULL DEFAULT '0',
+  `FREMARK` varchar(510) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FUPPERRATIO` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FFLOORRATIO` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FBASEBATCHQTY` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FHEADQTY` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FHEADUNITID` bigint NOT NULL DEFAULT '0',
+  `FOPERATIONQTY` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FOPERATIONUNITID` bigint NOT NULL DEFAULT '0',
+  `FISSPLIT` char(1) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `FISPROCESSOVERLAP` char(1) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `FSPLITQTY` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FMINWORKTIME` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FTIMEUNIT` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FMINOVERLAPTIME` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FOVERLAPTIMEUNIT` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FOVERLAPQTY` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FOVERLAPUNITID` bigint NOT NULL DEFAULT '0',
+  `FPURCHASEGROUPID` bigint NOT NULL DEFAULT '0',
+  `FPURCHASEPERSONID` bigint NOT NULL DEFAULT '0',
+  `FSUPPLIERID` bigint NOT NULL DEFAULT '0',
+  `FCURRENCYFIELD` bigint NOT NULL DEFAULT '0',
+  `FTAXRATE` bigint NOT NULL DEFAULT '0',
+  `FTAXPRICE` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FPRICE` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FSETTLEMENTUNITID` bigint NOT NULL DEFAULT '0',
+  `FSETTLEMENTCOEFFICIENT` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FENTRYMATERIALID` bigint NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FENTRYID`),
+  KEY `INDEX_CAD_RUTPROCESSET` (`FID`,`FPARENTID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cad_routersetting definition
+
+CREATE TABLE `t_cad_routersetting` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FNUMBER` varchar(60) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FSTATUS` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FCREATORID` bigint NOT NULL DEFAULT '0',
+  `FMODIFIERID` bigint NOT NULL DEFAULT '0',
+  `FENABLE` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FCREATETIME` datetime DEFAULT NULL,
+  `FMODIFYTIME` datetime DEFAULT NULL,
+  `FMASTERID` bigint NOT NULL DEFAULT '0',
+  `FAUDITID` bigint NOT NULL DEFAULT '0',
+  `FAUDITDATE` datetime DEFAULT NULL,
+  `FFORBIDDERID` bigint NOT NULL DEFAULT '0',
+  `FFORBIDDDATE` datetime DEFAULT NULL,
+  `FCOSTTYPEID` bigint NOT NULL DEFAULT '0',
+  `FROUTERID` bigint NOT NULL DEFAULT '0',
+  `FROUTERTYPE` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FCONSIDERPREPARETIME` char(1) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '1',
+  `FAUDITORID` bigint NOT NULL DEFAULT '0',
+  `FEXPDATE` datetime DEFAULT NULL,
+  `FEFFECTDATE` datetime DEFAULT NULL,
+  PRIMARY KEY (`FID`),
+  KEY `INDEX_CAD_ROUTERSETTING` (`FCOSTTYPEID`,`FROUTERID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cad_routersetting_entry definition
+
+CREATE TABLE `t_cad_routersetting_entry` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FENTRYID` bigint NOT NULL DEFAULT '0',
+  `FSEQ` bigint NOT NULL DEFAULT '0',
+  `FMATERIALID` bigint NOT NULL DEFAULT '0',
+  `FAUXPTYID` bigint NOT NULL DEFAULT '0',
+  `FCONFIGUREDCODEID` bigint NOT NULL DEFAULT '0',
+  `FTRACKNUMBERID` bigint NOT NULL DEFAULT '0',
+  `FKEYCOL` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FKEYCOLID` bigint NOT NULL DEFAULT '0',
+  `FLOT` varchar(80) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FPROJECTID` bigint NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FENTRYID`),
+  KEY `INDEX_CAD_ROUTERSETTINGEN_ID` (`FID`,`FMATERIALID`),
+  KEY `IDX_CAD_ROUTERSETTINGEN_KC` (`FKEYCOL`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cad_routersetting_l definition
+
+CREATE TABLE `t_cad_routersetting_l` (
+  `FPKID` varchar(18) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FLOCALEID` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FREMARK` varchar(510) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`FPKID`),
+  KEY `INDEX_CAD_ROUTERSETTING_L` (`FID`,`FLOCALEID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cad_routersetting_r3 definition
+
+CREATE TABLE `t_cad_routersetting_r3` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FRefStatus` char(1) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cad_routersubentry definition
+
+CREATE TABLE `t_cad_routersubentry` (
+  `FENTRYID` bigint NOT NULL DEFAULT '0',
+  `FDETAILID` bigint NOT NULL DEFAULT '0',
+  `FSEQ` bigint NOT NULL DEFAULT '0',
+  `FRESOURCEID` bigint NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FDETAILID`),
+  KEY `INDEX_CAD_ROUTERSUBENTRY` (`FENTRYID`,`FRESOURCEID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cad_routeruleorderentry definition
+
+CREATE TABLE `t_cad_routeruleorderentry` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FENTRYID` bigint NOT NULL DEFAULT '0',
+  `FSEQ` bigint NOT NULL DEFAULT '0',
+  `FSRCFIELD` varchar(60) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FSRCFIELDNAME` varchar(60) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FSEQUENCE` varchar(10) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'desc',
+  PRIMARY KEY (`FENTRYID`),
+  KEY `IDX_CAD_ROUTERULESETENTRY` (`FID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cad_routerulesetting definition
+
+CREATE TABLE `t_cad_routerulesetting` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FNUMBER` varchar(60) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FCOSTTYPEID` bigint NOT NULL DEFAULT '0',
+  `FNAME` varchar(80) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FSRCROUTE` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'cad_router',
+  `FREMARK` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FCONSIDERPREPARETIME` char(1) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  `FPRODUCTROUTE` char(1) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  `FMAINROUTE` char(1) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  `FCOMMONROUTE` char(1) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  `FDEFAULT` char(1) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  `FCREATORID` bigint NOT NULL DEFAULT '0',
+  `FMODIFIERID` bigint NOT NULL DEFAULT '0',
+  `FCREATETIME` datetime DEFAULT NULL,
+  `FMODIFYTIME` datetime DEFAULT NULL,
+  `FENABLE` varchar(10) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '1',
+  `FSTATUS` varchar(10) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'C',
+  `FMASTERID` bigint NOT NULL DEFAULT '0',
+  `FFILTER` varchar(2000) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FFILTER_TAG` longtext COLLATE utf8mb4_unicode_ci,
+  `FROUTEPRIORITISATION` varchar(10) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`FID`),
+  KEY `IDX_CAD_ROUTERULESET_CT` (`FCOSTTYPEID`),
+  KEY `IDX_CAD_ROUTERULESET_DF` (`FDEFAULT`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cad_routerulesetting_l definition
+
+CREATE TABLE `t_cad_routerulesetting_l` (
+  `FPKID` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FLOCALEID` varchar(10) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FREMARK` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FNAME` varchar(80) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`FPKID`),
+  KEY `IDX_CAD_ROUTERULESETL` (`FID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cad_routerulesetting_r3 definition
+
+CREATE TABLE `t_cad_routerulesetting_r3` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FRefStatus` char(1) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cad_routerusereg definition
+
+CREATE TABLE `t_cad_routerusereg` (
+  `FUseOrgID` bigint NOT NULL,
+  `FDataID` bigint NOT NULL,
+  `FCreateOrgID` bigint DEFAULT NULL,
+  `FAdminOrgID` bigint DEFAULT NULL,
+  `FCtrlStrategy` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `FIsAssign` char(1) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `FAssignOrgID` bigint DEFAULT NULL,
+  PRIMARY KEY (`FUseOrgID`,`FDataID`),
+  KEY `IDX_T_CAD_ROUTERUSEREG_D` (`FDataID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cad_selfresourceentry definition
+
+CREATE TABLE `t_cad_selfresourceentry` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FENTRYID` bigint NOT NULL DEFAULT '0',
+  `FSEQ` bigint NOT NULL DEFAULT '0',
+  `FSERESLEVEL` bigint NOT NULL DEFAULT '0',
+  `FSERESRULEID` bigint NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FENTRYID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cad_stdcalbatchsizep_r3 definition
+
+CREATE TABLE `t_cad_stdcalbatchsizep_r3` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FRefStatus` char(1) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cad_stdcalbatchsizepara definition
+
+CREATE TABLE `t_cad_stdcalbatchsizepara` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FBATCHSIZE` bigint NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FID`),
+  KEY `IDX_CAD_STDCALBATCHSIZEPARA` (`FBATCHSIZE`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cad_stdcalcmatfiltersv definition
+
+CREATE TABLE `t_cad_stdcalcmatfiltersv` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FUSERID` bigint NOT NULL DEFAULT '0',
+  `FMATFILTER` varchar(2000) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FMATFILTER_TAG` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `FISSTDCOSTMAT` char(1) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '1',
+  PRIMARY KEY (`FID`),
+  KEY `IDX_CAD_STDCALCMATFILTERSV` (`FUSERID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cad_stdcalcrecord definition
+
+CREATE TABLE `t_cad_stdcalcrecord` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FNUMBER` varchar(80) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FNAME` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FCOSTTYPEID` bigint NOT NULL DEFAULT '0',
+  `FMATERIALID` bigint NOT NULL DEFAULT '0',
+  `FAUXPTYID` bigint NOT NULL DEFAULT '0',
+  `FCONFIGUREDCODEID` bigint NOT NULL DEFAULT '0',
+  `FTRACKNUMBERID` bigint NOT NULL DEFAULT '0',
+  `FPROJECTID` bigint NOT NULL DEFAULT '0',
+  `FLOT` varchar(80) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FKEYCOL` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FKEYCOLID` bigint NOT NULL DEFAULT '0',
+  `FCREATETIME` datetime DEFAULT NULL,
+  `FCREATORID` bigint NOT NULL DEFAULT '0',
+  `FMODIFIERID` bigint NOT NULL DEFAULT '0',
+  `FMODIFYTIME` datetime DEFAULT NULL,
+  `FCALCDATE` datetime DEFAULT NULL,
+  PRIMARY KEY (`FID`),
+  KEY `IDX_CAD_CALCRECORD_NAME` (`FNAME`),
+  KEY `IDX_CAD_CALCRECORD_KC` (`FKEYCOL`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cad_stdcalcrecord_l definition
+
+CREATE TABLE `t_cad_stdcalcrecord_l` (
+  `FPKID` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FLOCALEID` varchar(10) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FNAME` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`FPKID`),
+  KEY `IDX_CAD_STDCALCRECORD_L` (`FID`,`FLOCALEID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cad_stdcalcrecord_r3 definition
+
+CREATE TABLE `t_cad_stdcalcrecord_r3` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FRefStatus` char(1) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cad_stdratesetting definition
+
+CREATE TABLE `t_cad_stdratesetting` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FCOSTTYPEID` bigint NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FID`),
+  KEY `INDEX_CAD_STDRATESETTING` (`FCOSTTYPEID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cad_stdratesettingentry definition
+
+CREATE TABLE `t_cad_stdratesettingentry` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FENTRYID` bigint NOT NULL DEFAULT '0',
+  `FSEQ` bigint NOT NULL DEFAULT '0',
+  `FELEMENTID` bigint NOT NULL DEFAULT '0',
+  `FSUBELEMENTID` bigint NOT NULL DEFAULT '0',
+  `FSTDRATE` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  PRIMARY KEY (`FENTRYID`),
+  KEY `INDEX_CAD_STDRATESETENTRY` (`FID`,`FELEMENTID`,`FSUBELEMENTID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cad_subelement_material definition
+
+CREATE TABLE `t_cad_subelement_material` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FSUBELEMENTID` bigint NOT NULL DEFAULT '0',
+  `FMATERIALID` bigint NOT NULL DEFAULT '0',
+  `FCOSTTYPEID` bigint NOT NULL DEFAULT '0',
+  `FCREATERID` bigint NOT NULL DEFAULT '0',
+  `FCREATEDATE` datetime DEFAULT NULL,
+  `FMODIFIERID` bigint NOT NULL DEFAULT '0',
+  `FMODIFYDATE` datetime DEFAULT NULL,
+  PRIMARY KEY (`FID`),
+  KEY `INDEX_MACC_SUBELEMAT_FSBELEID` (`FSUBELEMENTID`,`FMATERIALID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cad_subelement_material_r3 definition
+
+CREATE TABLE `t_cad_subelement_material_r3` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FRefStatus` char(1) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cad_subelemententry definition
+
+CREATE TABLE `t_cad_subelemententry` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FCREATERID` bigint NOT NULL DEFAULT '0',
+  `FCREATEDATE` datetime DEFAULT NULL,
+  `FMODIFIERID` bigint NOT NULL DEFAULT '0',
+  `FMODIFYDATE` datetime DEFAULT NULL,
+  `FSUBELEMENTID` bigint NOT NULL DEFAULT '0',
+  `FCOSTTYPEID` bigint NOT NULL DEFAULT '0',
+  `FEXPENSEITEMID` bigint NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FID`),
+  KEY `INDEX_CAD_SUBELEMENTENTRY` (`FSUBELEMENTID`,`FCOSTTYPEID`,`FEXPENSEITEMID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cad_subelemententry_r3 definition
+
+CREATE TABLE `t_cad_subelemententry_r3` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FRefStatus` char(1) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cad_subelementexpens_r3 definition
+
+CREATE TABLE `t_cad_subelementexpens_r3` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FRefStatus` char(1) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cad_subelementexpense definition
+
+CREATE TABLE `t_cad_subelementexpense` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FCREATERID` bigint NOT NULL DEFAULT '0',
+  `FCREATEDATE` datetime DEFAULT NULL,
+  `FMODIFIERID` bigint NOT NULL DEFAULT '0',
+  `FMODIFYDATE` datetime DEFAULT NULL,
+  `FSUBELEMENTID` bigint NOT NULL DEFAULT '0',
+  `FORGID` bigint NOT NULL DEFAULT '0',
+  `FEXPENSEITEMID` bigint NOT NULL DEFAULT '0',
+  `FELEMENTID` bigint NOT NULL DEFAULT '0',
+  `FAPPNUM` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`FID`),
+  KEY `IDX_T_CAD_SUBELEMENTEXPENSE` (`FSUBELEMENTID`,`FORGID`,`FEXPENSEITEMID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cad_syncbom_log definition
+
+CREATE TABLE `t_cad_syncbom_log` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FCREATER` bigint NOT NULL DEFAULT '0',
+  `FSYNCTIME` datetime DEFAULT NULL,
+  `FPRODUCTBOM` bigint NOT NULL DEFAULT '0',
+  `FMSG` varchar(2000) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`FID`),
+  KEY `IDX_CAD_SYNCBOMLOG_BOM` (`FPRODUCTBOM`),
+  KEY `IDX_CAD_SYNCBOMLOG_TIME` (`FSYNCTIME` DESC)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cad_syncbom_log_r3 definition
+
+CREATE TABLE `t_cad_syncbom_log_r3` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FRefStatus` char(1) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cad_syncbom_rule definition
+
+CREATE TABLE `t_cad_syncbom_rule` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FNUMBER` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FSYNCUSER` bigint NOT NULL DEFAULT '0',
+  `FCALORG` bigint NOT NULL DEFAULT '0',
+  `FCREATER` bigint NOT NULL DEFAULT '0',
+  `FMODIFIER` bigint NOT NULL DEFAULT '0',
+  `FCREATETIME` datetime DEFAULT NULL,
+  `FMODIFYTIME` datetime DEFAULT NULL,
+  `FFILTER` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FFILTER_TAG` longtext COLLATE utf8mb4_unicode_ci,
+  `FNAME` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FISREPLACE` char(1) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  `FISJUMPLEVEL` char(1) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FID`),
+  UNIQUE KEY `IDX_CAD_SYNCRULE_ORG` (`FCALORG`),
+  KEY `IDX_CAD_SYNCRULE_NO` (`FNUMBER`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cad_syncbom_rule_l definition
+
+CREATE TABLE `t_cad_syncbom_rule_l` (
+  `FPKID` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FLOCALEID` varchar(10) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FNAME` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`FPKID`),
+  KEY `IDX_CAD_SYNCRULEL_FID` (`FID`,`FLOCALEID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cad_syncbom_rule_r3 definition
+
+CREATE TABLE `t_cad_syncbom_rule_r3` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FRefStatus` char(1) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cad_syncrouter_log definition
+
+CREATE TABLE `t_cad_syncrouter_log` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FSYNCTIME` datetime DEFAULT NULL,
+  `FPRODUCTROUTERID` bigint NOT NULL DEFAULT '0',
+  `FMSG` varchar(2000) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FCREATERID` bigint NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FID`),
+  KEY `IDX_CAD_SYNCROUTER_LOG` (`FPRODUCTROUTERID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cad_syncrouter_log_r3 definition
+
+CREATE TABLE `t_cad_syncrouter_log_r3` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FRefStatus` char(1) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cad_syncrouter_rule definition
+
+CREATE TABLE `t_cad_syncrouter_rule` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FNUMBER` varchar(80) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FNAME` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FCALORGID` bigint NOT NULL DEFAULT '0',
+  `FSYNCUSERID` bigint NOT NULL DEFAULT '0',
+  `FCREATERID` bigint NOT NULL DEFAULT '0',
+  `FMODIFIERID` bigint NOT NULL DEFAULT '0',
+  `FCREATEDATE` datetime DEFAULT NULL,
+  `FMODIFYDATE` datetime DEFAULT NULL,
+  `FFILTER` varchar(2000) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FFILTER_TAG` longtext COLLATE utf8mb4_unicode_ci,
+  PRIMARY KEY (`FID`),
+  KEY `IDX_CAD_SYNCROUTER_RULE` (`FCALORGID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cad_syncrouter_rule_l definition
+
+CREATE TABLE `t_cad_syncrouter_rule_l` (
+  `FPKID` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FLOCALEID` varchar(10) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FNAME` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`FPKID`),
+  KEY `INDEX_CAD_SYNCROUTER_RULE_L_DF` (`FID`,`FLOCALEID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cad_syncrouter_rule_r3 definition
+
+CREATE TABLE `t_cad_syncrouter_rule_r3` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FRefStatus` char(1) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cad_sysparam definition
+
+CREATE TABLE `t_cad_sysparam` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FACCOUNTORGID` bigint NOT NULL DEFAULT '0',
+  `FCOSTCENTERID` bigint NOT NULL DEFAULT '0',
+  `FISAUTOUPDATE` char(1) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  `FCOMPLETETYPE` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FMODIFIERID` bigint NOT NULL DEFAULT '0',
+  `FMODIFYDATE` datetime DEFAULT NULL,
+  `FBILLRANGE` varchar(510) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FMATCOLLECTWAY` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FMATCOLLECTRANGE` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FRESOURCEUSETYPE` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'MANUAL',
+  `FMFGFEEBILLTYPE` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT 'MANUAL',
+  `FAPPNUM` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FORGID` bigint NOT NULL DEFAULT '0',
+  `FCOSTACCOUNTID` bigint NOT NULL DEFAULT '0',
+  `FREDUCTSTRATEGY` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FIMPORTTIMESCOPE` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FTAB` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FCOSTINITDATE` datetime DEFAULT NULL,
+  `FNUM` int NOT NULL DEFAULT '0',
+  `FISPREVIOUSONETON` char(1) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  `FACTORGID` bigint NOT NULL DEFAULT '0',
+  `FRESTOREDIMENSION` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'A',
+  `FASSISTANT` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'direct',
+  `FRESOURCERANGE` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'PROCESSREPORT,PROCESSADJUST,MFTORDERREPORT ',
+  `FRESTORECALCRANGE` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FWAREHOUSEPOINT` char(1) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  `FEFFECTCONTROL` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FPLANCOLLECTTYPE` varchar(80) COLLATE utf8mb4_unicode_ci DEFAULT 'OBJECTRULE',
+  `FPLANCOLLECTRANGE` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT 'SCGD',
+  `FISUPDATEBYPERIOD` char(1) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  `FHOUREXPENSE` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FOUTSOURCEPRICE` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'ITEMIZED',
+  `FISALLUPDATE` char(1) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  `FISMERGEBILL` char(1) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '1',
+  `FSTARTBOMROUTERULE` char(1) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  `FIMPORTPERIODSCOPE` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`FID`),
+  KEY `INDEX_CAD_SYSPARAM_DF` (`FACCOUNTORGID`,`FCOSTCENTERID`),
+  KEY `IDX_SYSPARAM_ORGCOSTA` (`FORGID`,`FCOSTACCOUNTID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cad_sysparam_r3 definition
+
+CREATE TABLE `t_cad_sysparam_r3` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FRefStatus` char(1) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cad_sysparamrsrange definition
+
+CREATE TABLE `t_cad_sysparamrsrange` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FPKID` bigint NOT NULL DEFAULT '0',
+  `FBASEDATAID` bigint NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FPKID`),
+  KEY `IDX_T_CAD_SYSPARAMRSRANGE` (`FID`,`FBASEDATAID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cad_sysparamtranstype definition
+
+CREATE TABLE `t_cad_sysparamtranstype` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FPKID` bigint NOT NULL DEFAULT '0',
+  `FBASEDATAID` bigint NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FPKID`),
+  KEY `IDX_CAD_SYSPARAMTRANSTYPE` (`FID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cad_taskdetail definition
+
+CREATE TABLE `t_cad_taskdetail` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FENTRYID` bigint NOT NULL DEFAULT '0',
+  `FSEQ` bigint NOT NULL DEFAULT '0',
+  `FTASKDESC` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FSTTIME` bigint NOT NULL DEFAULT '0',
+  `FTIME` bigint NOT NULL DEFAULT '0',
+  `FDTSTATUS` bigint NOT NULL DEFAULT '0',
+  `FREMARK` varchar(2000) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FREMARK_TAG` longtext COLLATE utf8mb4_unicode_ci,
+  PRIMARY KEY (`FENTRYID`),
+  KEY `INDEX_CAD_TASKDETAIL` (`FID`,`FSTTIME`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cad_taskexecutelog definition
+
+CREATE TABLE `t_cad_taskexecutelog` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FNUMBER` varchar(60) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FSTATUS` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FCREATORID` bigint NOT NULL DEFAULT '0',
+  `FMODIFIERID` bigint NOT NULL DEFAULT '0',
+  `FENABLE` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FCREATETIME` datetime DEFAULT NULL,
+  `FMODIFYTIME` datetime DEFAULT NULL,
+  `FMASTERID` bigint NOT NULL DEFAULT '0',
+  `FSTARTTIME` datetime DEFAULT NULL,
+  `FTIME` bigint NOT NULL DEFAULT '0',
+  `FTIMESTAMP` bigint NOT NULL DEFAULT '0',
+  `FCONTENT` varchar(2000) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FTASKID` bigint NOT NULL DEFAULT '0',
+  `FERRLOG` varchar(2000) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FERRLOG_TAG` longtext COLLATE utf8mb4_unicode_ci,
+  PRIMARY KEY (`FID`),
+  KEY `INDEX_CAD_TASKEXECUTELOG` (`FSTARTTIME`,`FTASKID`),
+  KEY `IDX_CAD_TASKEXECUTELOG2` (`FTASKID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cad_taskexecutelog_l definition
+
+CREATE TABLE `t_cad_taskexecutelog_l` (
+  `FPKID` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FLOCALEID` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `FNAME` varchar(200) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`FPKID`),
+  KEY `INDEX_CAD_TASKEXECUTELOG_L` (`FID`,`FLOCALEID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cad_taskexecutelog_r3 definition
+
+CREATE TABLE `t_cad_taskexecutelog_r3` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FRefStatus` char(1) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cad_trackcalcentry definition
+
+CREATE TABLE `t_cad_trackcalcentry` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FENTRYID` bigint NOT NULL DEFAULT '0',
+  `FSEQ` bigint NOT NULL DEFAULT '0',
+  `FENTRYMATERIALID` bigint NOT NULL DEFAULT '0',
+  `FENTRYAUXPROPERTY` bigint NOT NULL DEFAULT '0',
+  `FENTRYMATVERS` bigint NOT NULL DEFAULT '0',
+  `FENTRYBOMID` bigint NOT NULL DEFAULT '0',
+  `FENTRYPROCESSROUTEID` bigint NOT NULL DEFAULT '0',
+  `FENTRYROOTNODE` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FENTRYTREEPATH` varchar(1200) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FENTRYISLEAF` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  `FISPUBMAT` bigint NOT NULL DEFAULT '0',
+  `FENTRYISMAINDATA` bigint NOT NULL DEFAULT '0',
+  `FENTRYISCALCCURLEVEL` int NOT NULL DEFAULT '0',
+  `FENTRYLOT` varchar(80) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FENTRYCONFIGUREDCODEID` bigint NOT NULL DEFAULT '0',
+  `FENTRYTRACKNUMBERID` bigint NOT NULL DEFAULT '0',
+  `FENTRYPROJECTID` bigint NOT NULL DEFAULT '0',
+  `FENTRYKEYCOL` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FENTRYKEYCOLID` bigint NOT NULL DEFAULT '0',
+  `FENTRYLEVEL` int NOT NULL DEFAULT '0',
+  `FENTRYMATERIALATTR` varchar(10) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FENTRYSTDQTY` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  PRIMARY KEY (`FENTRYID`),
+  KEY `IDX_TRACKCALCENTRY` (`FID`),
+  KEY `IDX_TRACKCALCENTRY_KC` (`FENTRYKEYCOL`),
+  KEY `IDX_TRACKCALCENTRY_LEVEL` (`FENTRYLEVEL`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cad_trackcalcentryal definition
+
+CREATE TABLE `t_cad_trackcalcentryal` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FENTRYID` bigint NOT NULL DEFAULT '0',
+  `FSEQ` bigint NOT NULL DEFAULT '0',
+  `FORIGENTRYMATERIALID` bigint NOT NULL DEFAULT '0',
+  `FORIGENTRYAUXPROPERTY` bigint NOT NULL DEFAULT '0',
+  `FORIGENTRYMATVERS` bigint NOT NULL DEFAULT '0',
+  `FORIGENTRYBOMID` bigint NOT NULL DEFAULT '0',
+  `FORIGENTRYPROCESSROUTEID` bigint NOT NULL DEFAULT '0',
+  `FORIGENTRYROOTNODE` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FORIGENTRYTREEPATH` varchar(1200) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FORIGENTRYISLEAF` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  `FORIGISPUBMAT` bigint NOT NULL DEFAULT '0',
+  `FORIGENTRYISMAINDATA` bigint NOT NULL DEFAULT '0',
+  `FORIGENTRYISCALCCURLEVEL` int NOT NULL DEFAULT '0',
+  `FORIGENTRYLOT` varchar(80) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FORIGENTRYCONFIGURECODEID` bigint NOT NULL DEFAULT '0',
+  `FORIGENTRYTRACKNUMBERID` bigint NOT NULL DEFAULT '0',
+  `FORIGENTRYPROJECTID` bigint NOT NULL DEFAULT '0',
+  `FORIGENTRYKEYCOL` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FORIGENTRYKEYCOLID` bigint NOT NULL DEFAULT '0',
+  `FORIGENTRYLEVEL` int NOT NULL DEFAULT '0',
+  `FORIGENTRYMATERIALATTR` varchar(10) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FORIGENTRYSTDQTY` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  PRIMARY KEY (`FENTRYID`),
+  KEY `IDX_CAD_TRACKCALCENTRYAL` (`FID`),
+  KEY `IDX_CAD_TRACKCALCENTRYAL_KC` (`FORIGENTRYKEYCOL`),
+  KEY `IDX_CAD_TRACKCAENTRYAL_KCID` (`FORIGENTRYKEYCOLID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cad_trackcalcresut definition
+
+CREATE TABLE `t_cad_trackcalcresut` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FCOSTTYPEID` bigint NOT NULL DEFAULT '0',
+  `FMATERIELID` bigint NOT NULL DEFAULT '0',
+  `FAUXPROPERTY` bigint NOT NULL DEFAULT '0',
+  `FMATVERS` bigint NOT NULL DEFAULT '0',
+  `FBOMID` bigint NOT NULL DEFAULT '0',
+  `FPROCESSROUTEID` bigint NOT NULL DEFAULT '0',
+  `FROOTNODE` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FTREEPATH` varchar(1200) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FCALCDATE` datetime DEFAULT NULL,
+  `FISLEAF` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  `FISPUBMAT` bigint NOT NULL DEFAULT '0',
+  `FISMAINDATA` bigint NOT NULL DEFAULT '0',
+  `FTASKID` bigint NOT NULL DEFAULT '0',
+  `FISCALCCURLEVEL` int NOT NULL DEFAULT '0',
+  `FLOT` varchar(80) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FCONFIGUREDCODEID` bigint NOT NULL DEFAULT '0',
+  `FTRACKNUMBERID` bigint NOT NULL DEFAULT '0',
+  `FPROJECTID` bigint NOT NULL DEFAULT '0',
+  `FKEYCOL` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FKEYCOLID` bigint NOT NULL DEFAULT '0',
+  `FMATCOSTID` bigint NOT NULL DEFAULT '0',
+  `FEFFECTDATE` datetime DEFAULT NULL,
+  `FEXPDATE` datetime DEFAULT NULL,
+  `FPRICEPLANID` bigint NOT NULL DEFAULT '0',
+  `FCREATETIME` datetime DEFAULT NULL,
+  PRIMARY KEY (`FID`),
+  KEY `IDX_TRACKCALCRESUT` (`FCOSTTYPEID`,`FMATERIELID`),
+  KEY `IDX_TRACKCALCRESUT_KC` (`FKEYCOL`),
+  KEY `IDX_TRACKCALCRESUT_DATE` (`FEFFECTDATE`,`FEXPDATE`),
+  KEY `IDX_CAD_TRACKCALCRESUT_KCID` (`FKEYCOLID`),
+  KEY `IDX_TRACKCALCRESUT_TASKID` (`FTASKID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cad_trackcalcsubentry definition
+
+CREATE TABLE `t_cad_trackcalcsubentry` (
+  `FENTRYID` bigint NOT NULL DEFAULT '0',
+  `FDETAILID` bigint NOT NULL DEFAULT '0',
+  `FSEQ` bigint NOT NULL DEFAULT '0',
+  `FELEMENTID` bigint NOT NULL DEFAULT '0',
+  `FSUBELEMENTID` bigint NOT NULL DEFAULT '0',
+  `FSUBMATERIALID` bigint NOT NULL DEFAULT '0',
+  `FPRICE` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FSTDPRICE` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FDATATYPE` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  `FQTY` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FSUBAUXPROPERTY` bigint NOT NULL DEFAULT '0',
+  `FSUBMATVERS` bigint NOT NULL DEFAULT '0',
+  `FACTIVITYID` bigint NOT NULL DEFAULT '0',
+  `FCALCBASIS` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FRESOURCEID` bigint NOT NULL DEFAULT '0',
+  `FSUBLOT` varchar(80) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FSUBCONFIGUREDCODEID` bigint NOT NULL DEFAULT '0',
+  `FSUBTRACKNUMBERID` bigint NOT NULL DEFAULT '0',
+  `FSUBPROJECTID` bigint NOT NULL DEFAULT '0',
+  `FSUBKEYCOL` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FSUBKEYCOLID` bigint NOT NULL DEFAULT '0',
+  `FRESOURCETYPE` varchar(10) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FPRICERULEID` bigint NOT NULL DEFAULT '0',
+  `FPRICEID` bigint NOT NULL DEFAULT '0',
+  `FOPERATIONID` bigint NOT NULL DEFAULT '0',
+  `FWORKCENTERID` bigint NOT NULL DEFAULT '0',
+  `FOPERATIONDESC` varchar(80) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`FDETAILID`),
+  KEY `IDX_TRACKCALCSUBENTRY` (`FENTRYID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cad_trackcalcsubentryal definition
+
+CREATE TABLE `t_cad_trackcalcsubentryal` (
+  `FENTRYID` bigint NOT NULL DEFAULT '0',
+  `FDETAILID` bigint NOT NULL DEFAULT '0',
+  `FSEQ` bigint NOT NULL DEFAULT '0',
+  `FORIGELEMENTID` bigint NOT NULL DEFAULT '0',
+  `FORIGSUBELEMENTID` bigint NOT NULL DEFAULT '0',
+  `FORIGSUBMATERIALID` bigint NOT NULL DEFAULT '0',
+  `FORIGPRICE` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FORIGSTDPRICE` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FORIGDATATYPE` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  `FORIGQTY` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FORIGSUBAUXPROPERTY` bigint NOT NULL DEFAULT '0',
+  `FORIGSUBMATVERS` bigint NOT NULL DEFAULT '0',
+  `FORIGACTIVITYID` bigint NOT NULL DEFAULT '0',
+  `FORIGCALCBASIS` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FORIGRESOURCEID` bigint NOT NULL DEFAULT '0',
+  `FORIGSUBLOT` varchar(80) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FORIGSUBCONFIGUREDCODEID` bigint NOT NULL DEFAULT '0',
+  `FORIGSUBTRACKNUMBERID` bigint NOT NULL DEFAULT '0',
+  `FORIGSUBPROJECTID` bigint NOT NULL DEFAULT '0',
+  `FORIGSUBKEYCOL` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FORIGSUBKEYCOLID` bigint NOT NULL DEFAULT '0',
+  `FORIGRESOURCETYPE` varchar(10) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FORIGPRICERULEID` bigint NOT NULL DEFAULT '0',
+  `FORIGPRICEID` bigint NOT NULL DEFAULT '0',
+  `FORIGOPERATIONID` bigint NOT NULL DEFAULT '0',
+  `FORIGOPERATIONDESC` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FORIGWORKCENTERID` bigint NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FDETAILID`),
+  KEY `IDX_CAD_TRACKCALCSUBENTRYAL` (`FENTRYID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cad_trackcostsetting definition
+
+CREATE TABLE `t_cad_trackcostsetting` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FENTRYID` bigint NOT NULL DEFAULT '0',
+  `FSEQ` bigint NOT NULL DEFAULT '0',
+  `FMATGRPID` bigint NOT NULL DEFAULT '0',
+  `FDEFAULTORG` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '供应组织',
+  PRIMARY KEY (`FENTRYID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cad_trackcostsetting_l definition
+
+CREATE TABLE `t_cad_trackcostsetting_l` (
+  `FPKID` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FENTRYID` bigint NOT NULL DEFAULT '0',
+  `FLOCALEID` varchar(10) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FDEFAULTORG` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '供应组织',
+  PRIMARY KEY (`FPKID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cad_tracksetting definition
+
+CREATE TABLE `t_cad_tracksetting` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FBILLNO` varchar(60) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FORGID` bigint NOT NULL DEFAULT '0',
+  `FBILLSTATUS` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'A',
+  `FCREATORID` bigint NOT NULL DEFAULT '0',
+  `FMODIFIERID` bigint NOT NULL DEFAULT '0',
+  `FAUDITORID` bigint NOT NULL DEFAULT '0',
+  `FCREATETIME` datetime DEFAULT NULL,
+  `FMODIFYTIME` datetime DEFAULT NULL,
+  `FAUDITDATE` datetime DEFAULT NULL,
+  `FENABLE` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '1',
+  `FREMARK` varchar(2000) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FREMARK_TAG` longtext COLLATE utf8mb4_unicode_ci,
+  `FCOSTACCOUNTID` bigint NOT NULL DEFAULT '0',
+  `FMATGRPSTDID` bigint NOT NULL DEFAULT '0',
+  `FFILTER` varchar(2000) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FFILTER_TAG` longtext COLLATE utf8mb4_unicode_ci,
+  `FISTRACK` char(1) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  `FTRACKPRIORITY` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`FID`),
+  KEY `IDX_CAD_TRACKSETTING` (`FORGID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cad_tracksetting_l definition
+
+CREATE TABLE `t_cad_tracksetting_l` (
+  `FPKID` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FLOCALEID` varchar(10) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FREMARK` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`FPKID`),
+  KEY `IDX_CAD_TRACKSETTING_L` (`FID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cad_tracksettingattorg definition
+
+CREATE TABLE `t_cad_tracksettingattorg` (
+  `FPKID` bigint NOT NULL DEFAULT '0',
+  `FENTRYID` bigint NOT NULL DEFAULT '0',
+  `FBASEDATAID` bigint NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FPKID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cad_userdatarecord definition
+
+CREATE TABLE `t_cad_userdatarecord` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FMODIFYTIME` datetime DEFAULT NULL,
+  `FUSERID` bigint NOT NULL DEFAULT '0',
+  `FAUDITTOCONFIRM` char(1) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  `FCONFIRMNOTTIP` char(1) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  `FUNCONFIRMNOTTIP` char(1) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  `FFINISHCALWIZARDSRATE` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FAUTOENDPERIODCAL` char(1) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '1',
+  `FCONDITION` varchar(2000) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FCONDITIONFOREND` varchar(2000) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FCONFORCOSTREDUCT` varchar(2000) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`FID`),
+  UNIQUE KEY `INDEX_CAD_USERDATARECORD` (`FUSERID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cad_vicebomentry definition
+
+CREATE TABLE `t_cad_vicebomentry` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FENTRYID` bigint NOT NULL DEFAULT '0',
+  `FSEQ` bigint NOT NULL DEFAULT '0',
+  `FTYPE` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FMATERIALID` bigint NOT NULL DEFAULT '0',
+  `FVERSIONID` bigint NOT NULL DEFAULT '0',
+  `FUNITID` bigint NOT NULL DEFAULT '0',
+  `FQTY` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FOPERATIONID` bigint NOT NULL DEFAULT '0',
+  `FVALIDDATE` datetime DEFAULT NULL,
+  `FINVALIDDATE` datetime DEFAULT NULL,
+  `FAUXPROPERTYID` bigint NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FENTRYID`),
+  KEY `INDEX_CAD_VICEBOMENTRY` (`FID`,`FMATERIALID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cad_workactivity definition
+
+CREATE TABLE `t_cad_workactivity` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FNUMBER` varchar(80) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FSTATUS` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FCREATORID` bigint NOT NULL DEFAULT '0',
+  `FMODIFIERID` bigint NOT NULL DEFAULT '0',
+  `FENABLE` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FCREATETIME` datetime DEFAULT NULL,
+  `FMODIFYTIME` datetime DEFAULT NULL,
+  `FMASTERID` bigint NOT NULL DEFAULT '0',
+  `FUNITID` bigint NOT NULL DEFAULT '0',
+  `FRESOURCEID` bigint NOT NULL DEFAULT '0',
+  `FCREATEORGID` bigint NOT NULL DEFAULT '0',
+  `FORGID` bigint NOT NULL DEFAULT '0',
+  `FCTRLSTRATEGY` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FAUDITORID` bigint NOT NULL DEFAULT '0',
+  `FAUDITDATE` datetime DEFAULT NULL,
+  `FSOURCEDATAID` bigint NOT NULL DEFAULT '0',
+  `FBITINDEX` int NOT NULL DEFAULT '0',
+  `FSOURCEBITINDEX` int NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FID`),
+  KEY `INDEX_CAD_WORKACTIVITY` (`FMASTERID`,`FRESOURCEID`),
+  KEY `IDX_T_CAD_WORKACTIVITY_CREATEORG` (`FCREATEORGID`),
+  KEY `IDX_T_CAD_WORKACTIVITY_MASTER` (`FMASTERID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cad_workactivity_bit definition
+
+CREATE TABLE `t_cad_workactivity_bit` (
+  `FORGID` bigint NOT NULL,
+  `FDATA` longblob NOT NULL,
+  PRIMARY KEY (`FORGID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cad_workactivity_l definition
+
+CREATE TABLE `t_cad_workactivity_l` (
+  `FPKID` varchar(18) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT ' ',
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FLOCALEID` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FNAME` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FREMARKS` varchar(510) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`FPKID`),
+  KEY `INDEX_CAD_WORKACTIVITY_L` (`FID`,`FLOCALEID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cad_workactivity_m definition
+
+CREATE TABLE `t_cad_workactivity_m` (
+  `FORGID` bigint NOT NULL,
+  `FDATA` longblob NOT NULL,
+  PRIMARY KEY (`FORGID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cad_workactivity_r3 definition
+
+CREATE TABLE `t_cad_workactivity_r3` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FRefStatus` char(1) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cad_workactivity_u definition
+
+CREATE TABLE `t_cad_workactivity_u` (
+  `FDataID` bigint NOT NULL,
+  `FCreateOrgID` bigint DEFAULT NULL,
+  `FUseOrgID` bigint NOT NULL,
+  PRIMARY KEY (`FDataID`,`FUseOrgID`),
+  KEY `IDX_t_cad_workactivity_U_UO` (`FUseOrgID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cad_workactivityexc definition
+
+CREATE TABLE `t_cad_workactivityexc` (
+  `FDataID` bigint NOT NULL,
+  `FCreateOrgID` bigint DEFAULT NULL,
+  `FUseOrgID` bigint NOT NULL,
+  `FNEWDATAID` bigint NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FDataID`,`FUseOrgID`),
+  KEY `IDX_t_cad_workactivityExc_UO` (`FUseOrgID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cad_workactivityusereg definition
+
+CREATE TABLE `t_cad_workactivityusereg` (
+  `FUseOrgID` bigint NOT NULL,
+  `FDataID` bigint NOT NULL,
+  `FCreateOrgID` bigint DEFAULT NULL,
+  `FAdminOrgID` bigint DEFAULT NULL,
+  `FCtrlStrategy` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `FIsAssign` char(1) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `FAssignOrgID` bigint DEFAULT NULL,
+  `FMASTERID` bigint NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FUseOrgID`,`FDataID`),
+  KEY `IDX_T_CAD_WORKACTIVITYUSEREG_D` (`FDataID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cal_accountgroupreco_r3 definition
+
+CREATE TABLE `t_cal_accountgroupreco_r3` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FRefStatus` char(1) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cal_accountgrouprecord definition
+
+CREATE TABLE `t_cal_accountgrouprecord` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FGROUPSETTINGID` bigint NOT NULL DEFAULT '0',
+  `FISCOMPLETED` char(1) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  `FCREATETIME` datetime DEFAULT NULL,
+  `FUPDATETIME` datetime DEFAULT NULL,
+  `FBIZGROUPRECORDID` bigint NOT NULL DEFAULT '0',
+  `FCOSTACCOUNTTYPEID` bigint NOT NULL DEFAULT '0',
+  `FGROUPSETTINGTYPE` varchar(80) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'cal_billgroupsetting',
+  `FCOSTFIELDS` varchar(1024) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT ' ',
+  `FCOSTCOLUMN` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FDESTBOOKDATE` datetime DEFAULT NULL,
+  `FGROUPVALUE` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`FID`),
+  KEY `IDX_CAL_AGRECORD_UPDATETIME` (`FUPDATETIME`),
+  KEY `IDX_CAL_AGRECORD_BIZRECORDID` (`FBIZGROUPRECORDID`),
+  KEY `idx_cal_accountgrouprecord_groupvalue` (`FGROUPVALUE`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cal_accountgrouprecord_r3 definition
+
+CREATE TABLE `t_cal_accountgrouprecord_r3` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FRefStatus` char(1) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cal_accounttype definition
+
+CREATE TABLE `t_cal_accounttype` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FNUMBER` varchar(80) NOT NULL DEFAULT ' ',
+  `FSTATUS` varchar(5) NOT NULL DEFAULT ' ',
+  `FCREATORID` bigint NOT NULL DEFAULT '0',
+  `FCALRANGEID` bigint NOT NULL DEFAULT '0',
+  `FENABLE` varchar(5) NOT NULL DEFAULT ' ',
+  `FMASTERID` bigint NOT NULL DEFAULT '0',
+  `FMODIFIERID` bigint NOT NULL DEFAULT '0',
+  `FCREATETIME` datetime DEFAULT NULL,
+  `FMODIFYTIME` datetime DEFAULT NULL,
+  `FCALORGID` bigint NOT NULL DEFAULT '0',
+  `FCALSYSTEMID` bigint NOT NULL DEFAULT '0',
+  `FAPPROVERID` bigint NOT NULL DEFAULT '0',
+  `FAPPROVETIME` datetime DEFAULT NULL,
+  `FREMARK` varchar(255) NOT NULL DEFAULT ' ',
+  `FREMARK_TAG` longtext,
+  `FNAME` varchar(80) NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`FID`),
+  KEY `IDX_CAL_ACCTYPE_CALRANGE` (`FCALRANGEID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+
+
+-- crrc_cal.t_cal_accounttype_l definition
+
+CREATE TABLE `t_cal_accounttype_l` (
+  `FPKID` varchar(36) NOT NULL DEFAULT ' ',
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FLOCALEID` varchar(10) NOT NULL DEFAULT ' ',
+  `FNAME` varchar(100) NOT NULL DEFAULT ' ',
+  `FREMARK` varchar(255) NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`FPKID`),
+  KEY `IDX_CAL_ATL_ID` (`FID`,`FLOCALEID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+
+
+-- crrc_cal.t_cal_accounttype_r3 definition
+
+CREATE TABLE `t_cal_accounttype_r3` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FRefStatus` char(1) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+
+
+-- crrc_cal.t_cal_accounttypeentry definition
+
+CREATE TABLE `t_cal_accounttypeentry` (
+  `FENTRYID` bigint NOT NULL DEFAULT '0',
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FSEQ` bigint NOT NULL DEFAULT '0',
+  `FMATERIALID` bigint NOT NULL DEFAULT '0',
+  `FACCOUNTTYPE` varchar(5) NOT NULL DEFAULT ' ',
+  `FMATERIALGROUPID` bigint NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FENTRYID`),
+  KEY `IDX_CAL_ACCOUNTTYPEENTRY` (`FID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+
+
+-- crrc_cal.t_cal_actionsetting definition
+
+CREATE TABLE `t_cal_actionsetting` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FSETTINGNUM` varchar(80) NOT NULL DEFAULT ' ',
+  `FACTIONNAME` varchar(30) NOT NULL DEFAULT ' ',
+  `FSERVICETYPE` varchar(30) NOT NULL DEFAULT ' ',
+  `FISPRESET` char(1) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+
+
+-- crrc_cal.t_cal_actionsettingentry definition
+
+CREATE TABLE `t_cal_actionsettingentry` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FENTRYID` bigint NOT NULL DEFAULT '0',
+  `FSEQ` bigint NOT NULL DEFAULT '0',
+  `FEXESEQ` bigint NOT NULL DEFAULT '0',
+  `FIMPLCLASS` varchar(255) NOT NULL DEFAULT ' ',
+  `FDESCRIPTION` varchar(255) NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`FENTRYID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+
+
+-- crrc_cal.t_cal_atgrouprecord_entry definition
+
+CREATE TABLE `t_cal_atgrouprecord_entry` (
+  `FENTRYID` bigint NOT NULL DEFAULT '0',
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FSEQ` bigint NOT NULL DEFAULT '0',
+  `FTYPE` char(1) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `FCALENTRYID` bigint NOT NULL DEFAULT '0',
+  `FCOSTRECORDENTRYID` bigint NOT NULL DEFAULT '0',
+  `FCOSTACCOUNTID` bigint NOT NULL DEFAULT '0',
+  `FPERIODID` bigint NOT NULL DEFAULT '0',
+  `FISBEFOREPERIOD` char(1) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  `FMATERIALID` bigint NOT NULL DEFAULT '0',
+  `FWEIGHT` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FOCCUPIEDQTY` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FGROUPNO` bigint NOT NULL DEFAULT '0',
+  `FBIZBILLID` bigint NOT NULL DEFAULT '0',
+  `FCALBILLID` bigint NOT NULL DEFAULT '0',
+  `FBILLNO` varchar(80) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FBOOKDATE` datetime DEFAULT NULL,
+  `FOWNERID` bigint NOT NULL DEFAULT '0',
+  `FBASEQTY` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FISLASTENTRY` char(1) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FENTRYID`),
+  KEY `IDX_CAL_AGRECORDENTRY_FID` (`FID`),
+  KEY `IDX_CAL_AGRECORDENTRY_MAT` (`FMATERIALID`),
+  KEY `IDX_CAL_AGRECORDENTRY_CA` (`FCOSTACCOUNTID`,`FMATERIALID`,`FPERIODID`),
+  KEY `IDX_CAL_ATGROUPRECORDE_BILLNO` (`FBILLNO`),
+  KEY `idx_cal_atgrecordentry_calentryid` (`FCALENTRYID`,`FID`),
+  KEY `idx_atgrouprecord_entry_calbillid` (`FCALBILLID`,`FID`),
+  KEY `IDX_CAL_ACCGE_BIZID` (`FBIZBILLID`,`FID`),
+  KEY `IDX_CAL_AGRECORDENTRY_PCA` (`FPERIODID`,`FCOSTACCOUNTID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cal_bal definition
+
+CREATE TABLE `t_cal_bal` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FKEYCOL` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FCOSTACCOUNTID` bigint NOT NULL DEFAULT '0',
+  `FSTORAGEORGUNITID` bigint NOT NULL DEFAULT '0',
+  `FOWNERTYPE` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FOWNERID` bigint NOT NULL DEFAULT '0',
+  `FMATERIALID` bigint NOT NULL DEFAULT '0',
+  `FMVERSIONID` bigint NOT NULL DEFAULT '0',
+  `FASSISTID` bigint NOT NULL DEFAULT '0',
+  `FLOT` varchar(80) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FWAREHOUSEID` bigint NOT NULL DEFAULT '0',
+  `FLOCATIONID` bigint NOT NULL DEFAULT '0',
+  `FINVTYPEID` bigint NOT NULL DEFAULT '0',
+  `FINVSTATUSID` bigint NOT NULL DEFAULT '0',
+  `FPROJECTID` bigint NOT NULL DEFAULT '0',
+  `FCOSTELEMENTID` bigint NOT NULL DEFAULT '0',
+  `FCOSTSUBELEMENTID` bigint NOT NULL DEFAULT '0',
+  `FCURRENCYID` bigint NOT NULL DEFAULT '0',
+  `FBASEUNITID` bigint NOT NULL DEFAULT '0',
+  `FPERIODID` bigint NOT NULL DEFAULT '0',
+  `FACCSYSID` bigint NOT NULL DEFAULT '0',
+  `FCALORGID` bigint NOT NULL DEFAULT '0',
+  `FCALPOLICYID` bigint NOT NULL DEFAULT '0',
+  `FYEAR` int NOT NULL DEFAULT '0',
+  `FMONTH` int NOT NULL DEFAULT '0',
+  `FBIZDATE` datetime DEFAULT NULL,
+  `FACCOUNTTYPE` char(1) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `FCALRANGEID` bigint NOT NULL DEFAULT '0',
+  `FCALDIMENSIONID` bigint NOT NULL DEFAULT '0',
+  `FSEQNUM` int NOT NULL DEFAULT '0',
+  `FISSTANDARDCOST` char(1) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `FPERIOD` int NOT NULL DEFAULT '0',
+  `FENDPERIOD` int NOT NULL DEFAULT '0',
+  `FBASEQTY` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FSTANDARDCOST` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FCOSTDIFF` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FACTUALCOST` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FBASEQTY_IN` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FSTANDARDCOST_IN` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FCOSTDIFF_IN` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FACTUALCOST_IN` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FBASEQTY_OUT` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FSTANDARDCOST_OUT` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FCOSTDIFF_OUT` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FACTUALCOST_OUT` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FBASEQTY_BAL` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FSTANDARDCOST_BAL` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FCOSTDIFF_BAL` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FACTUALCOST_BAL` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FCONFIGUREDCODEID` bigint NOT NULL DEFAULT '0',
+  `FMODIFYTIME` datetime DEFAULT NULL,
+  `FTRACKNUMBER` bigint NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FID`),
+  KEY `IDX_CAL_BAL_FK` (`FKEYCOL`),
+  KEY `IDX_CAL_BAL_FMT` (`FMATERIALID`),
+  KEY `IDX_CAL_BAL_FCA` (`FCOSTACCOUNTID`),
+  KEY `IDX_CAL_BAL_FCO` (`FCALORGID`),
+  KEY `IDX_CAL_BAL_FWH` (`FWAREHOUSEID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cal_bal_fifo_period definition
+
+CREATE TABLE `t_cal_bal_fifo_period` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FCOSTACCOUNTID` bigint NOT NULL DEFAULT '0',
+  `FCURRENCYID` bigint NOT NULL DEFAULT '0',
+  `FCALORGID` bigint NOT NULL DEFAULT '0',
+  `FOWNERID` bigint NOT NULL DEFAULT '0',
+  `FSTORAGEORGUNITID` bigint NOT NULL DEFAULT '0',
+  `FENDQTY` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FENDCOST` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FWAREHOUSEID` bigint NOT NULL DEFAULT '0',
+  `FLOCATIONID` bigint NOT NULL DEFAULT '0',
+  `FMATERIALID` bigint NOT NULL DEFAULT '0',
+  `FLOT` varchar(80) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FASSISTID` bigint NOT NULL DEFAULT '0',
+  `FBASEUNITID` bigint NOT NULL DEFAULT '0',
+  `FPROJECTID` bigint NOT NULL DEFAULT '0',
+  `FCONFIGUREDCODEID` bigint NOT NULL DEFAULT '0',
+  `FCALRPTID` bigint NOT NULL DEFAULT '0',
+  `FCALRANGEID` bigint NOT NULL DEFAULT '0',
+  `FMVERSIONID` bigint NOT NULL DEFAULT '0',
+  `FCOSTELEMENTID` bigint NOT NULL DEFAULT '0',
+  `FCOSTSUBELEMENTID` bigint NOT NULL DEFAULT '0',
+  `FPERIODID` bigint NOT NULL DEFAULT '0',
+  `FBILLENTRYID` bigint NOT NULL DEFAULT '0',
+  `FBIZDATE` datetime DEFAULT NULL,
+  `FAUDITDATE` datetime DEFAULT NULL,
+  `FBILLNO` varchar(80) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FENTRYSEQ` int NOT NULL DEFAULT '0',
+  `FBEGINQTY` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FBEGINCOST` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FBEGINUNITCOST` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FENDUNITCOST` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FTRACKNUMBER` bigint NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FID`),
+  KEY `IDX_CAL_BALFIFOP_BEIDCE` (`FBILLENTRYID`,`FPERIODID`,`FCOSTSUBELEMENTID`),
+  KEY `IDX_CAL_BALFIFOP_MPC` (`FMATERIALID`,`FPERIODID`,`FCOSTACCOUNTID`),
+  KEY `IDX_CAL_BALFIFOP_CPM` (`FCOSTACCOUNTID`,`FPERIODID`,`FMATERIALID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cal_bal_fifo_period_r3 definition
+
+CREATE TABLE `t_cal_bal_fifo_period_r3` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FRefStatus` char(1) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cal_bal_sp definition
+
+CREATE TABLE `t_cal_bal_sp` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FKEYCOL` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FBILLNAME` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FBILLID` bigint NOT NULL DEFAULT '0',
+  `FENTRYID` bigint NOT NULL DEFAULT '0',
+  `FUPDATETIME` bigint NOT NULL DEFAULT '0',
+  `FISNEW` char(1) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `FSTATUS` char(1) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `FUPDATETYPE` int NOT NULL DEFAULT '0',
+  `FBILLNO` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FENTRYSEQ` int NOT NULL DEFAULT '0',
+  `FUPDATERULEID` varchar(36) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FPERIOD` int NOT NULL DEFAULT '0',
+  `FBASEQTY_SP` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FSTANDARDCOST_SP` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FCOSTDIFF_SP` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FACTUALCOST_SP` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FBASEQTY_IN_SP` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FSTANDARDCOST_IN_SP` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FCOSTDIFF_IN_SP` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FACTUALCOST_IN_SP` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FBASEQTY_OUT_SP` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FSTANDARDCOST_OUT_SP` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FCOSTDIFF_OUT_SP` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FACTUALCOST_OUT_SP` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FBASEQTY_BAL_SP` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FSTANDARDCOST_BAL_SP` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FCOSTDIFF_BAL_SP` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FACTUALCOST_BAL_SP` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FACCOUNTTYPE` char(1) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `FCALRANGEID` bigint NOT NULL DEFAULT '0',
+  `FCALDIMENSIONID` bigint NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FID`),
+  KEY `IDX_CAL_BALSP_FK` (`FKEYCOL`),
+  KEY `IDX_CAL_BALSP_FBID` (`FBILLID`),
+  KEY `IDX_CAL_BALSP_FBEID` (`FENTRYID`),
+  KEY `IDX_CAL_BALSP_FBNO` (`FBILLNO`),
+  KEY `IDX_CAL_BALSP_FUT` (`FUPDATETIME`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cal_bal_tp definition
+
+CREATE TABLE `t_cal_bal_tp` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FKEYCOL` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FBILLNAME` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FBILLID` bigint NOT NULL DEFAULT '0',
+  `FENTRYID` bigint NOT NULL DEFAULT '0',
+  `FUPDATETIME` bigint NOT NULL DEFAULT '0',
+  `FISNEW` char(1) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `FSTATUS` char(1) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `FUPDATETYPE` int NOT NULL DEFAULT '0',
+  `FBILLNO` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FENTRYSEQ` int NOT NULL DEFAULT '0',
+  `FUPDATERULEID` varchar(36) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FPERIOD` int NOT NULL DEFAULT '0',
+  `FBASEQTY_SP` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FSTANDARDCOST_SP` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FCOSTDIFF_SP` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FACTUALCOST_SP` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FBASEQTY_IN_SP` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FSTANDARDCOST_IN_SP` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FCOSTDIFF_IN_SP` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FACTUALCOST_IN_SP` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FBASEQTY_OUT_SP` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FSTANDARDCOST_OUT_SP` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FCOSTDIFF_OUT_SP` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FACTUALCOST_OUT_SP` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FBASEQTY_BAL_SP` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FSTANDARDCOST_BAL_SP` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FCOSTDIFF_BAL_SP` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FACTUALCOST_BAL_SP` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FACCOUNTTYPE` char(1) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `FCALRANGEID` bigint NOT NULL DEFAULT '0',
+  `FCALDIMENSIONID` bigint NOT NULL DEFAULT '0',
+  `FREADTYPE` char(1) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `FMOVETYPE` char(1) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `FSYNC` char(1) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `FCOVERFLAG` char(1) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  PRIMARY KEY (`FID`),
+  KEY `IDX_CAL_BAL_TPKC` (`FKEYCOL`),
+  KEY `IDX_CAL_BAL_TPBID` (`FBILLID`),
+  KEY `IDX_CAL_BAL_TPEID` (`FENTRYID`),
+  KEY `IDX_CAL_BAL_TPBNO` (`FBILLNO`),
+  KEY `IDX_CAL_BAL_TPUT` (`FUPDATETIME`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cal_balance definition
+
+CREATE TABLE `t_cal_balance` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `fmaterialid` bigint NOT NULL DEFAULT '0',
+  `fyear` bigint NOT NULL DEFAULT '0',
+  `fperiod` bigint NOT NULL DEFAULT '0',
+  `FLOT` varchar(100) NOT NULL DEFAULT ' ',
+  `fseqnum` bigint NOT NULL DEFAULT '0',
+  `fperiodbeginqty` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `fperiodendqty` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `fperiodreceiptqty` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `fperiodissueqty` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `fperiodbeginassistqty` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `fperiodendassistqty` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `fperiodreceiptassistqty` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `fperiodissueassistqty` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `fperiodbeginbalance` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `fperiodendbalance` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `fperiodreceiptamount` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `funitid` bigint NOT NULL DEFAULT '0',
+  `fperiodissueamount` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `fperiodbegincostdiff` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `fperiodendcostdiff` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `fperiodreceiptcostdiff` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `fperiodissuecostdiff` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `fyearissueamount` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `fyearreceiptamount` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `fyearreceiptqty` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `fyearissueqty` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `fyearreceiptassistqty` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `fyearissueassistqty` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `fyearreceiptcostdiff` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `fyearissuecostdiff` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `fperiodadjustdiff` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `fexp` datetime DEFAULT NULL,
+  `fperiodbeginactualcost` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `fperiodendactualcost` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `fwarehouseid` bigint NOT NULL DEFAULT '0',
+  `fstorageorgunitid` bigint NOT NULL DEFAULT '0',
+  `flocationid` bigint NOT NULL DEFAULT '0',
+  `FOWNERTYPE` varchar(30) NOT NULL DEFAULT ' ',
+  `fownerid` bigint NOT NULL DEFAULT '0',
+  `faccsysid` bigint NOT NULL DEFAULT '0',
+  `fcalrangeid` bigint NOT NULL DEFAULT '0',
+  `fcalorgid` bigint NOT NULL DEFAULT '0',
+  `fperiodinqty` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `fbeginstandardcost` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `fperiodendstandardcost` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `fperiodinstandardcost` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `fbaseunitid` bigint NOT NULL DEFAULT '0',
+  `fperiodissuestandardcost` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `fperiodincostdiff` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `fyearissuestandradcost` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `fyearinstandradcost` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `fyearinqty` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `fyearincostdiff` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `fcostaccountid` bigint NOT NULL DEFAULT '0',
+  `fcalpolicyid` bigint NOT NULL DEFAULT '0',
+  `fbizdate` datetime DEFAULT NULL,
+  `fassistid` bigint NOT NULL DEFAULT '0',
+  `finvtypeid` bigint NOT NULL DEFAULT '0',
+  `finvstatusid` bigint NOT NULL DEFAULT '0',
+  `fisstandardcost` char(1) NOT NULL DEFAULT '0',
+  `fmonth` bigint NOT NULL DEFAULT '0',
+  `fperiodinactualcost` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `fperiodissueactualcost` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `fyearissueactualcost` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `fyearinactualcost` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FENDPERIOD` int NOT NULL DEFAULT '999999',
+  `FPERIODID` bigint NOT NULL DEFAULT '0',
+  `FPROJECTID` bigint NOT NULL DEFAULT '0',
+  `FMVERSIONID` bigint NOT NULL DEFAULT '0',
+  `FCONFIGUREDCODEID` bigint NOT NULL DEFAULT '0',
+  `FTRACKNUMBER` bigint NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FID`),
+  KEY `IDX_CAL_BALANCE_CALORG` (`fcalorgid`),
+  KEY `IDX_CAL_BALANCE_MATERIAL` (`fmaterialid`),
+  KEY `IDX_CAL_BALANCE_LOTCAMAT` (`FLOT`,`fcostaccountid`,`fmaterialid`),
+  KEY `IDX_CAL_BALANCE_CMP` (`fcostaccountid`,`fmaterialid`,`FPERIODID`,`fstorageorgunitid`,`fwarehouseid`),
+  KEY `IDX_CAL_BALANCE_WH` (`fwarehouseid`),
+  KEY `IDX_CAL_BALANCE_CE` (`FENDPERIOD`,`fcostaccountid`),
+  KEY `IDX_CAL_BALANCE_CP` (`fperiod`,`fcostaccountid`),
+  KEY `IDX_CAL_BALANCE_CPI` (`FPERIODID`,`fcostaccountid`),
+  KEY `IDX_CAL_BALANCE_CPP` (`fcostaccountid`,`fperiod`,`FENDPERIOD`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+
+
+-- crrc_cal.t_cal_balance_a definition
+
+CREATE TABLE `t_cal_balance_a` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FCURRENCYID` bigint NOT NULL DEFAULT '0',
+  `FCALRANGEID` bigint NOT NULL DEFAULT '0',
+  `FCALDIMENSIONID` bigint NOT NULL DEFAULT '0',
+  `FACCOUNTTYPE` char(1) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  PRIMARY KEY (`FID`),
+  KEY `IDX_CAL_BALANCEA_CURRENCY` (`FCURRENCYID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cal_balance_calrange definition
+
+CREATE TABLE `t_cal_balance_calrange` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FCALRANGEID` bigint NOT NULL DEFAULT '0',
+  `FCALDIMENSIONID` bigint NOT NULL DEFAULT '0',
+  `FACCOUNTTYPE` varchar(5) NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`FID`),
+  KEY `IDX_CAL_BALRANGE_RANGE` (`FCALRANGEID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+
+
+-- crrc_cal.t_cal_balance_calrange_r3 definition
+
+CREATE TABLE `t_cal_balance_calrange_r3` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FRefStatus` char(1) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+
+
+-- crrc_cal.t_cal_balance_costadju_r3 definition
+
+CREATE TABLE `t_cal_balance_costadju_r3` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FRefStatus` char(1) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cal_balance_costadjust definition
+
+CREATE TABLE `t_cal_balance_costadjust` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FBALANCEID` bigint NOT NULL DEFAULT '0',
+  `FCOSTADJUSTBILLID` bigint NOT NULL DEFAULT '0',
+  `FCOSTADJUSTBILLNO` varchar(80) NOT NULL DEFAULT ' ',
+  `FEXPORTFLAG` char(1) NOT NULL DEFAULT '0',
+  `FADJUSTAMT` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  PRIMARY KEY (`FID`),
+  KEY `IDX_CAL_BALCOSTAD_BALID` (`FBALANCEID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+
+
+-- crrc_cal.t_cal_balance_costadjust_r3 definition
+
+CREATE TABLE `t_cal_balance_costadjust_r3` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FRefStatus` char(1) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+
+
+-- crrc_cal.t_cal_balance_detail definition
+
+CREATE TABLE `t_cal_balance_detail` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FBALID` bigint NOT NULL DEFAULT '0',
+  `FCOSTELEMENTID` bigint NOT NULL DEFAULT '0',
+  `FCOSTSUBELEMENTID` bigint NOT NULL DEFAULT '0',
+  `FPERIODBEGINQTY` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FBEGINSTANDARDCOST` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FPERIODBEGINCOSTDIFF` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FPERIODBEGINACTUALCOST` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FPERIODINQTY` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FPERIODINSTANDARDCOST` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FPERIODINCOSTDIFF` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FPERIODINACTUALCOST` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FPERIODISSUEQTY` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FPERIODISSUESTANDARDCOST` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FPERIODISSUECOSTDIFF` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FPERIODISSUEACTUALCOST` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FPERIODENDQTY` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FPERIODENDSTANDARDCOST` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FPERIODENDCOSTDIFF` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FPERIODENDACTUALCOST` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FYEARINQTY` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FYEARINSTANDRADCOST` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FYEARINCOSTDIFF` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FYEARINACTUALCOST` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FYEARISSUEQTY` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FYEARISSUESTANDRADCOST` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FYEARISSUECOSTDIFF` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FYEARISSUEACTUALCOST` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FDETAILID` bigint NOT NULL DEFAULT '0',
+  `FSEQ` bigint NOT NULL DEFAULT '0',
+  `FID_BAK` bigint NOT NULL DEFAULT '0',
+  `FBALID_BAK` bigint NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FDETAILID`),
+  KEY `IDX_CAL_BALDETAIL_FID` (`FID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cal_balance_detail_r3 definition
+
+CREATE TABLE `t_cal_balance_detail_r3` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FRefStatus` char(1) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cal_balance_fifo definition
+
+CREATE TABLE `t_cal_balance_fifo` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FCOSTACCOUNTID` bigint NOT NULL DEFAULT '0',
+  `FCURRENCYID` bigint NOT NULL DEFAULT '0',
+  `FCALORGID` bigint NOT NULL DEFAULT '0',
+  `FOWNERID` bigint NOT NULL DEFAULT '0',
+  `FSTORAGEORGUNITID` bigint NOT NULL DEFAULT '0',
+  `FENDQTY` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FENDCOST` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FWAREHOUSEID` bigint NOT NULL DEFAULT '0',
+  `FLOCATIONID` bigint NOT NULL DEFAULT '0',
+  `FMATERIALID` bigint NOT NULL DEFAULT '0',
+  `FLOT` varchar(80) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FASSISTID` bigint NOT NULL DEFAULT '0',
+  `FBASEUNITID` bigint NOT NULL DEFAULT '0',
+  `FPROJECTID` bigint NOT NULL DEFAULT '0',
+  `FCALRPTID` bigint NOT NULL DEFAULT '0',
+  `FCALRANGEID` bigint NOT NULL DEFAULT '0',
+  `FMVERSIONID` bigint NOT NULL DEFAULT '0',
+  `FCOSTELEMENTID` bigint NOT NULL DEFAULT '0',
+  `FCOSTSUBELEMENTID` bigint NOT NULL DEFAULT '0',
+  `FPERIODID` bigint NOT NULL DEFAULT '0',
+  `FBILLENTRYID` bigint NOT NULL DEFAULT '0',
+  `FBIZDATE` datetime DEFAULT NULL,
+  `FAUDITDATE` datetime DEFAULT NULL,
+  `FBILLNO` varchar(80) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FENTRYSEQ` int NOT NULL DEFAULT '0',
+  `FBEGINQTY` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FBEGINCOST` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FBEGINUNITCOST` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FENDUNITCOST` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FCONFIGUREDCODEID` bigint NOT NULL DEFAULT '0',
+  `FTRACKNUMBER` bigint NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FID`),
+  KEY `IDX_CAL_BALFIFO_MPC` (`FMATERIALID`,`FPERIODID`,`FCOSTACCOUNTID`),
+  KEY `IDX_CAL_BALFIFO_BEIDCE` (`FBILLENTRYID`,`FCOSTSUBELEMENTID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cal_balance_fifo_r3 definition
+
+CREATE TABLE `t_cal_balance_fifo_r3` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FRefStatus` char(1) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cal_balance_r3 definition
+
+CREATE TABLE `t_cal_balance_r3` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FRefStatus` char(1) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+
+
+-- crrc_cal.t_cal_balance_sn definition
+
+CREATE TABLE `t_cal_balance_sn` (
+  `FId` bigint NOT NULL,
+  `fbillid` bigint NOT NULL DEFAULT '0',
+  `fbalid` bigint NOT NULL DEFAULT '0',
+  `fsbilltableid` bigint NOT NULL DEFAULT '0',
+  `fsbillid` bigint NOT NULL DEFAULT '0',
+  `ftentrytableid` bigint NOT NULL DEFAULT '0',
+  `fsentrybillid` bigint NOT NULL DEFAULT '0',
+  `fcostaccountid` bigint NOT NULL DEFAULT '0',
+  `faccsysid` bigint NOT NULL DEFAULT '0',
+  `fcalpolicyid` bigint NOT NULL DEFAULT '0',
+  `fperiod` bigint NOT NULL DEFAULT '0',
+  `fendperiod` bigint NOT NULL DEFAULT '0',
+  `fyear` bigint NOT NULL DEFAULT '0',
+  `fmonth` bigint NOT NULL DEFAULT '0',
+  `fbizdate` datetime DEFAULT NULL,
+  `fcalorgid` bigint NOT NULL DEFAULT '0',
+  `fstorageorgunitid` bigint NOT NULL DEFAULT '0',
+  `fownertype` varchar(30) NOT NULL DEFAULT ' ',
+  `fownerid` bigint NOT NULL DEFAULT '0',
+  `fseqnum` bigint NOT NULL DEFAULT '0',
+  `fmaterialid` bigint NOT NULL DEFAULT '0',
+  `fassistid` bigint NOT NULL DEFAULT '0',
+  `flot` varchar(100) NOT NULL DEFAULT ' ',
+  `fwarehouseid` bigint NOT NULL DEFAULT '0',
+  `flocationid` bigint NOT NULL DEFAULT '0',
+  `finvtypeid` bigint NOT NULL DEFAULT '0',
+  `finvstatusid` bigint NOT NULL DEFAULT '0',
+  `fisstandardcost` char(1) NOT NULL DEFAULT '0',
+  `fbaseunitid` bigint NOT NULL DEFAULT '0',
+  `fperiodbeginqty` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `fbeginstandardcost` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `fperiodbegincostdiff` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `fperiodbeginactualcost` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `fperiodinqty` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `fperiodinstandardcost` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `fperiodincostdiff` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `fperiodinactualcost` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `fperiodissueqty` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `fperiodissuestandardcost` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `fperiodissuecostdiff` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `fperiodissueactualcost` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `fperiodendqty` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `fperiodendstandardcost` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `fperiodendcostdiff` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `fperiodendactualcost` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `fyearinqty` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `fyearinstandradcost` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `fyearincostdiff` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `fyearinactualcost` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `fyearissueqty` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `fyearissuestandradcost` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `fyearissuecostdiff` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `fyearissueactualcost` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `fperiodid` bigint NOT NULL DEFAULT '0',
+  `fprojectid` bigint NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FId`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+
+
+-- crrc_cal.t_cal_balance_sp definition
+
+CREATE TABLE `t_cal_balance_sp` (
+  `FId` bigint NOT NULL,
+  `fkeycol` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `fbillname` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `fbillid` bigint DEFAULT NULL,
+  `fentryid` bigint DEFAULT NULL,
+  `fupdatetime` bigint DEFAULT NULL,
+  `fisnew` char(1) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  `fstatus` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `fupdatetype` bigint DEFAULT NULL,
+  `fbillno` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `fentryseq` bigint DEFAULT NULL,
+  `fupdateruleid` varchar(36) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `fperiodbeginqty` decimal(23,10) DEFAULT NULL,
+  `fperiodbeginqty_sp` decimal(23,10) DEFAULT NULL,
+  `fbeginstandardcost` decimal(23,10) DEFAULT NULL,
+  `fbeginstandardcost_sp` decimal(23,10) DEFAULT NULL,
+  `fperiodbegincostdiff` decimal(23,10) DEFAULT NULL,
+  `fperiodbegincostdiff_sp` decimal(23,10) DEFAULT NULL,
+  `fperiodbeginactualcost` decimal(23,10) DEFAULT NULL,
+  `fperiodbeginactualcost_sp` decimal(23,10) DEFAULT NULL,
+  `fperiodinqty` decimal(23,10) DEFAULT NULL,
+  `fperiodinqty_sp` decimal(23,10) DEFAULT NULL,
+  `fperiodinstandardcost` decimal(23,10) DEFAULT NULL,
+  `fperiodinstandardcost_sp` decimal(23,10) DEFAULT NULL,
+  `fperiodincostdiff` decimal(23,10) DEFAULT NULL,
+  `fperiodincostdiff_sp` decimal(23,10) DEFAULT NULL,
+  `fperiodinactualcost` decimal(23,10) DEFAULT NULL,
+  `fperiodinactualcost_sp` decimal(23,10) DEFAULT NULL,
+  `fperiodissueqty` decimal(23,10) DEFAULT NULL,
+  `fperiodissueqty_sp` decimal(23,10) DEFAULT NULL,
+  `fperiodissuestandardcost` decimal(23,10) DEFAULT NULL,
+  `fperiodissuestandardcost_sp` decimal(23,10) DEFAULT NULL,
+  `fperiodissuecostdiff` decimal(23,10) DEFAULT NULL,
+  `fperiodissuecostdiff_sp` decimal(23,10) DEFAULT NULL,
+  `fperiodissueactualcost` decimal(23,10) DEFAULT NULL,
+  `fperiodissueactualcost_sp` decimal(23,10) DEFAULT NULL,
+  `fperiodendqty` decimal(23,10) DEFAULT NULL,
+  `fperiodendqty_sp` decimal(23,10) DEFAULT NULL,
+  `fperiodendstandardcost` decimal(23,10) DEFAULT NULL,
+  `fperiodendstandardcost_sp` decimal(23,10) DEFAULT NULL,
+  `fperiodendcostdiff` decimal(23,10) DEFAULT NULL,
+  `fperiodendcostdiff_sp` decimal(23,10) DEFAULT NULL,
+  `fperiodendactualcost` decimal(23,10) DEFAULT NULL,
+  `fperiodendactualcost_sp` decimal(23,10) DEFAULT NULL,
+  `fyearinqty` decimal(23,10) DEFAULT NULL,
+  `fyearinqty_sp` decimal(23,10) DEFAULT NULL,
+  `fyearinstandradcost` decimal(23,10) DEFAULT NULL,
+  `fyearinstandradcost_sp` decimal(23,10) DEFAULT NULL,
+  `fyearincostdiff` decimal(23,10) DEFAULT NULL,
+  `fyearincostdiff_sp` decimal(23,10) DEFAULT NULL,
+  `fyearinactualcost` decimal(23,10) DEFAULT NULL,
+  `fyearinactualcost_sp` decimal(23,10) DEFAULT NULL,
+  `fyearissueqty` decimal(23,10) DEFAULT NULL,
+  `fyearissueqty_sp` decimal(23,10) DEFAULT NULL,
+  `fyearissuestandradcost` decimal(23,10) DEFAULT NULL,
+  `fyearissuestandradcost_sp` decimal(23,10) DEFAULT NULL,
+  `fyearissuecostdiff` decimal(23,10) DEFAULT NULL,
+  `fyearissuecostdiff_sp` decimal(23,10) DEFAULT NULL,
+  `fyearissueactualcost` decimal(23,10) DEFAULT NULL,
+  `fyearissueactualcost_sp` decimal(23,10) DEFAULT NULL,
+  PRIMARY KEY (`FId`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cal_balancerecord definition
+
+CREATE TABLE `t_cal_balancerecord` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FACTUALCOST` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FUSERID` bigint NOT NULL DEFAULT '0',
+  `FBILLNO` varchar(80) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FSOURCE` char(1) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'A',
+  `FUPDATETIME` datetime DEFAULT NULL,
+  `FCOSTACCOUNTID` bigint NOT NULL DEFAULT '0',
+  `FBILLID` bigint NOT NULL DEFAULT '0',
+  `FBILLENTRYID` bigint NOT NULL DEFAULT '0',
+  `FPERIODID` bigint NOT NULL DEFAULT '0',
+  `FBILLENTITYID` varchar(80) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FSTORAGEORGUNITID` bigint NOT NULL DEFAULT '0',
+  `FOWNERTYPE` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FOWNERID` bigint NOT NULL DEFAULT '0',
+  `FMATERIALID` bigint NOT NULL DEFAULT '0',
+  `FLOT` varchar(80) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FWAREHOUSEID` bigint NOT NULL DEFAULT '0',
+  `FLOCATIONID` bigint NOT NULL DEFAULT '0',
+  `FINVTYPEID` bigint NOT NULL DEFAULT '0',
+  `FINVSTATUSID` bigint NOT NULL DEFAULT '0',
+  `FASSISTID` bigint NOT NULL DEFAULT '0',
+  `FINOROUT` varchar(80) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'IN',
+  `FBASEQTY` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FPROJECTID` bigint NOT NULL DEFAULT '0',
+  `FMVERSIONID` bigint NOT NULL DEFAULT '0',
+  `FCONFIGUREDCODEID` bigint NOT NULL DEFAULT '0',
+  `FTRACKNUMBER` bigint NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FID`),
+  KEY `IDX_CAL_BALANCERECORD_FBILLNO` (`FBILLNO`),
+  KEY `IDX_CAL_BALRECORD_FUPDTIME` (`FUPDATETIME`),
+  KEY `IDX_CAL_BALANCERCD_MW` (`FMATERIALID`,`FWAREHOUSEID`),
+  KEY `IDX_CAL_BALANCERCD_WH` (`FWAREHOUSEID`),
+  KEY `IDX_CAL_BALANCERCD_CMP` (`FCOSTACCOUNTID`,`FMATERIALID`,`FPERIODID`,`FSTORAGEORGUNITID`,`FWAREHOUSEID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cal_balancerecord_r3 definition
+
+CREATE TABLE `t_cal_balancerecord_r3` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FRefStatus` char(1) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cal_balancerecordentry definition
+
+CREATE TABLE `t_cal_balancerecordentry` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FENTRYID` bigint NOT NULL DEFAULT '0',
+  `FCOSTSUBELEMENTID` bigint NOT NULL DEFAULT '0',
+  `FSUBACTUALCOST` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FSEQ` bigint NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FENTRYID`),
+  KEY `IDX_CAL_BALANCERECORDENTRY_FID` (`FID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cal_balanceresult_r3 definition
+
+CREATE TABLE `t_cal_balanceresult_r3` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FRefStatus` char(1) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cal_balsetting definition
+
+CREATE TABLE `t_cal_balsetting` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FDIVIDEBASIS` varchar(255) NOT NULL DEFAULT ' ',
+  `FCALDIMENSION` varchar(255) NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`FID`),
+  KEY `IDX_CAL_BALSET_DIVIDE` (`FDIVIDEBASIS`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+
+
+-- crrc_cal.t_cal_balsetting_r3 definition
+
+CREATE TABLE `t_cal_balsetting_r3` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FRefStatus` char(1) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+
+
+-- crrc_cal.t_cal_billgroupentry definition
+
+CREATE TABLE `t_cal_billgroupentry` (
+  `FENTRYID` bigint NOT NULL DEFAULT '0',
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FSEQ` bigint NOT NULL DEFAULT '0',
+  `FBILLFIELDNAME` varchar(80) NOT NULL DEFAULT ' ',
+  `FBILLFIELD` varchar(80) NOT NULL DEFAULT ' ',
+  `FRBILLFIELDNAME` varchar(80) NOT NULL DEFAULT ' ',
+  `FRBILLFIELD` varchar(80) NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`FENTRYID`),
+  KEY `IDX_CAL_BILLGROUPENTRY` (`FID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+
+
+-- crrc_cal.t_cal_billgrouprecord definition
+
+CREATE TABLE `t_cal_billgrouprecord` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FGROUPNUM` bigint NOT NULL DEFAULT '0',
+  `FSRCBILLID` bigint NOT NULL DEFAULT '0',
+  `FSRCBILLENTRYID` bigint NOT NULL DEFAULT '0',
+  `FDESTBILLID` bigint NOT NULL DEFAULT '0',
+  `FDESTBILLENTRYID` bigint NOT NULL DEFAULT '0',
+  `FDESTBILLQTY` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FSRCBILLQTY` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FSRCBILLNO` varchar(80) NOT NULL DEFAULT ' ',
+  `FDESTBILLNO` varchar(80) NOT NULL DEFAULT ' ',
+  `FSRCDATE` datetime DEFAULT NULL,
+  `FDESTDATE` datetime DEFAULT NULL,
+  `FGROUPSETTINGID` bigint NOT NULL DEFAULT '0',
+  `FJOINEDQTY` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FSRCMATERIALID` bigint NOT NULL DEFAULT '0',
+  `FDESTMATERIALID` bigint NOT NULL DEFAULT '0',
+  `FISLOOP` char(1) NOT NULL DEFAULT '0',
+  `FDESTOWNERID` bigint NOT NULL DEFAULT '0',
+  `FSRCOWNERID` bigint NOT NULL DEFAULT '0',
+  `FCREATEDATETIME` datetime DEFAULT NULL,
+  `FISLASTENTRY` char(1) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FID`),
+  KEY `IDX_CAL_BILLGROUPRECORD_SRC` (`FSRCBILLID`),
+  KEY `IDX_CAL_BILLGROUPRECORD_DEST` (`FDESTBILLID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+
+
+-- crrc_cal.t_cal_billgroupsetting definition
+
+CREATE TABLE `t_cal_billgroupsetting` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FNUMBER` varchar(80) NOT NULL DEFAULT ' ',
+  `FCALORGID` bigint NOT NULL DEFAULT '0',
+  `FCOSTACCOUNTID` bigint NOT NULL DEFAULT '0',
+  `FSTATUS` varchar(5) NOT NULL DEFAULT ' ',
+  `FBILL` varchar(80) NOT NULL DEFAULT ' ',
+  `FRELATIONBILL` varchar(80) NOT NULL DEFAULT ' ',
+  `FMASTERID` bigint NOT NULL DEFAULT '0',
+  `FLEVEL` bigint NOT NULL DEFAULT '0',
+  `FPARENTID` bigint NOT NULL DEFAULT '0',
+  `FENABLE` varchar(5) NOT NULL DEFAULT ' ',
+  `FCREATORID` bigint NOT NULL DEFAULT '0',
+  `FBILLFILTERSTR` varchar(255) DEFAULT NULL,
+  `FBILLFILTERSTR_TAG` longtext,
+  `FRBILLFILTERSTR` varchar(255) DEFAULT NULL,
+  `FRBILLFILTERSTR_TAG` longtext,
+  `FMODIFIERID` bigint NOT NULL DEFAULT '0',
+  `FCREATETIME` datetime DEFAULT NULL,
+  `FMODIFYTIME` datetime DEFAULT NULL,
+  `FLONGNUMBER` varchar(80) NOT NULL DEFAULT ' ',
+  `FISLEAF` char(1) NOT NULL DEFAULT '0',
+  `FBILLPLUGIN` bigint NOT NULL DEFAULT '0',
+  `FRBILLPLUGIN` bigint NOT NULL DEFAULT '0',
+  `FBIZPLUGINID` bigint NOT NULL DEFAULT '0',
+  `FCOSTFIELDS` varchar(1024) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT ' ',
+  `FPRIORITY` int NOT NULL DEFAULT '0',
+  `FISTAILDIFF` char(1) NOT NULL DEFAULT '0',
+  `FENABLEDATE` datetime DEFAULT NULL,
+  `FISPRESET` char(1) NOT NULL DEFAULT '0',
+  `FCOSTDEALTYPE` char(1) NOT NULL DEFAULT 'A',
+  `FNAME` varchar(80) NOT NULL DEFAULT ' ',
+  `FREMARK` varchar(255) NOT NULL DEFAULT ' ',
+  `FFULLNAME` varchar(100) NOT NULL DEFAULT ' ',
+  `FCOSTCOLUMN` varchar(80) NOT NULL DEFAULT 'materialcost',
+  `FTARWEIGHTFIELD` varchar(80) NOT NULL DEFAULT ' ',
+  `FISRETURNBILL` char(1) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FID`),
+  KEY `IDX_CAL_BILLGROUPSET_CALORG` (`FCALORGID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+
+
+-- crrc_cal.t_cal_billgroupsetting_l definition
+
+CREATE TABLE `t_cal_billgroupsetting_l` (
+  `FPKID` varchar(36) NOT NULL DEFAULT ' ',
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FLOCALEID` varchar(10) NOT NULL DEFAULT ' ',
+  `FNAME` varchar(100) NOT NULL DEFAULT ' ',
+  `FFULLNAME` varchar(100) NOT NULL DEFAULT ' ',
+  `FREMARK` varchar(255) NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`FPKID`),
+  KEY `IDX_CAL_BILLGROUPSETTING_L` (`FID`,`FLOCALEID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+
+
+-- crrc_cal.t_cal_billgroupsetting_r3 definition
+
+CREATE TABLE `t_cal_billgroupsetting_r3` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FRefStatus` char(1) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+
+
+-- crrc_cal.t_cal_bufferpool definition
+
+CREATE TABLE `t_cal_bufferpool` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FENTITY` varchar(80) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FBILLID` bigint NOT NULL DEFAULT '0',
+  `FENTRYID` bigint NOT NULL DEFAULT '0',
+  `FMATERIALID` bigint NOT NULL DEFAULT '0',
+  `FISMATERIALTRANS` char(1) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  `FACTIONNAME` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FISSUCESS` char(1) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  `FACTIONTIME` datetime DEFAULT NULL,
+  `FBIZBILLID` bigint NOT NULL DEFAULT '0',
+  `FBIZBILLENTRYID` bigint NOT NULL DEFAULT '0',
+  `FBOOKDATE` datetime DEFAULT NULL,
+  `FISDELETEBILL` char(1) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  `FQUEUETYPE` char(1) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  `FCALTIMES` int NOT NULL DEFAULT '0',
+  `FLASTCALTIME` datetime DEFAULT NULL,
+  PRIMARY KEY (`FID`),
+  UNIQUE KEY `IDX_CAL_BUFFERPOOL_EEA` (`FENTITY`,`FENTRYID`,`FACTIONNAME`),
+  KEY `IDX_CAL_BUFFERPOOL_FMATID` (`FMATERIALID`),
+  KEY `IDX_CAL_BUFFERPOOL_FBEID` (`FBILLID`,`FENTRYID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cal_businesslog definition
+
+CREATE TABLE `t_cal_businesslog` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FBIZENTITYOBJECTID` varchar(80) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FSUCCESS` char(1) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  `FLOG` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FLOG_TAG` longtext COLLATE utf8mb4_unicode_ci,
+  `FACTIONNAME` varchar(80) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FBIZBILLID` bigint NOT NULL DEFAULT '0',
+  `FBIZBILLNUMBER` varchar(80) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FSERVICETYPE` varchar(5) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FPARAMMAP` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FPARAMMAP_TAG` longtext COLLATE utf8mb4_unicode_ci,
+  `FEXETIME` datetime DEFAULT NULL,
+  `FORGID` bigint NOT NULL DEFAULT '0',
+  `FBIZBILLENTRYID` bigint NOT NULL DEFAULT '0',
+  `FENTRYKEY` varchar(80) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FISCLOSE` char(1) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `FCLOSEREASON` varchar(1024) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FTIMES` int NOT NULL DEFAULT '0',
+  `FBIZTIME` datetime DEFAULT NULL,
+  `FBOOKDATE` datetime DEFAULT NULL,
+  `FCALSTATUS` char(1) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'A',
+  PRIMARY KEY (`FID`),
+  KEY `IDX_CAL_BUSINESSLOG_BIZBILLID` (`FBIZBILLID`),
+  KEY `IDX_CAL_BUSINESSLOG_FPARAM` (`FPARAMMAP`),
+  KEY `IDX_CAL_BUSINESSLOG_EBO` (`FEXETIME`,`FBOOKDATE`,`FORGID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cal_businesslog_l definition
+
+CREATE TABLE `t_cal_businesslog_l` (
+  `FPKID` varchar(36) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FLOCALEID` varchar(10) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FCLOSEREASON` varchar(1024) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`FPKID`),
+  KEY `IDX_CAL_BUSINESSLOG_L_ID` (`FID`,`FLOCALEID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cal_businesslog_r3 definition
+
+CREATE TABLE `t_cal_businesslog_r3` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FRefStatus` char(1) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cal_businesslogentry definition
+
+CREATE TABLE `t_cal_businesslogentry` (
+  `FENTRYID` bigint NOT NULL DEFAULT '0',
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FSEQ` int NOT NULL DEFAULT '0',
+  `FCOSTRECORDEID` bigint NOT NULL DEFAULT '0',
+  `FERRORINFO` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FERRORINFO_TAG` longtext COLLATE utf8mb4_unicode_ci,
+  PRIMARY KEY (`FENTRYID`),
+  KEY `IDX_CAL_BUSINESSLOGENTRY_FID` (`FID`),
+  KEY `IDX_CAL_BUSINESSLOGENTRY_FRCEID` (`FCOSTRECORDEID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cal_calbillrule definition
+
+CREATE TABLE `t_cal_calbillrule` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FCALBILLID` varchar(80) NOT NULL DEFAULT ' ',
+  `FSOURCEBILLID` varchar(80) NOT NULL DEFAULT ' ',
+  `FSTATUS` varchar(5) NOT NULL DEFAULT ' ',
+  `FENABLE` varchar(5) NOT NULL DEFAULT ' ',
+  `FFILTER` varchar(255) NOT NULL DEFAULT ' ',
+  `FFILTER_TAG` longtext,
+  `FNUMBER` varchar(80) NOT NULL DEFAULT ' ',
+  `FISPRESET` char(1) NOT NULL DEFAULT '0',
+  `FBIZDIRECTION` varchar(5) NOT NULL DEFAULT ' ',
+  `FCREATETIME` datetime DEFAULT NULL,
+  `FMODIFYTIME` datetime DEFAULT NULL,
+  `FMODIFIERID` bigint NOT NULL DEFAULT '0',
+  `FCREATORID` bigint NOT NULL DEFAULT '0',
+  `FERRORTIP` varchar(255) NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`FID`),
+  KEY `IDX_CAL_CALBILLRULE_CALBILL` (`FCALBILLID`),
+  KEY `IDX_CAL_BILLRULE_SOURCEID` (`FSOURCEBILLID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+
+
+-- crrc_cal.t_cal_calbillrule_l definition
+
+CREATE TABLE `t_cal_calbillrule_l` (
+  `FPKID` varchar(36) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FLOCALEID` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FERRORTIP` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`FPKID`),
+  KEY `IDX_CAL_CALBILLRULE_L` (`FID`,`FLOCALEID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cal_calbillrule_r3 definition
+
+CREATE TABLE `t_cal_calbillrule_r3` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FRefStatus` char(1) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+
+
+-- crrc_cal.t_cal_calcostrecord definition
+
+CREATE TABLE `t_cal_calcostrecord` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FBILLNO` varchar(80) NOT NULL DEFAULT ' ',
+  `FBILLNUMBER` varchar(50) NOT NULL DEFAULT ' ',
+  `FBIZDATE` datetime DEFAULT NULL,
+  `FBILLTYPEID` bigint NOT NULL DEFAULT '0',
+  `FBIZENTITYOBJECTID` varchar(80) NOT NULL DEFAULT ' ',
+  `FBILLSTATUS` varchar(5) NOT NULL DEFAULT ' ',
+  `FCREATORID` bigint NOT NULL DEFAULT '0',
+  `FAUDITORID` bigint NOT NULL DEFAULT '0',
+  `FFIVOUCHERNUM` varchar(80) NOT NULL DEFAULT ' ',
+  `FISFIVOUCHER` char(1) NOT NULL DEFAULT '0',
+  `FTEMPVOUCHERNUM` varchar(80) NOT NULL DEFAULT ' ',
+  `FISTEMPVOUCHER` char(1) NOT NULL DEFAULT '0',
+  `FDISCHARGEVOUCHERNUM` varchar(80) NOT NULL DEFAULT ' ',
+  `FISDISCHARGEVOUCHER` char(1) NOT NULL DEFAULT '0',
+  `FDISCHARGETYPE` varchar(5) NOT NULL DEFAULT ' ',
+  `FWRITEOFFSTATUS` varchar(5) NOT NULL DEFAULT ' ',
+  `FWRITEOFFPERIODID` bigint NOT NULL DEFAULT '0',
+  `FBIZBILLID` bigint NOT NULL DEFAULT '0',
+  `FCALBILLID` bigint NOT NULL DEFAULT '0',
+  `FCOSTACCOUNTID` bigint NOT NULL DEFAULT '0',
+  `FSTORAGEORGID` bigint NOT NULL DEFAULT '0',
+  `FCOSTCENTERORGID` bigint NOT NULL DEFAULT '0',
+  `FPROFITCENTERORGID` bigint NOT NULL DEFAULT '0',
+  `FCURRENCYID` bigint NOT NULL DEFAULT '0',
+  `FLOCALCURRENCYID` bigint NOT NULL DEFAULT '0',
+  `FEXCHANGERATE` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FMODIFIERID` bigint NOT NULL DEFAULT '0',
+  `FAUDITDATE` datetime DEFAULT NULL,
+  `FCREATETIME` datetime DEFAULT NULL,
+  `FMODIFYTIME` datetime DEFAULT NULL,
+  `FVOUCHERTYPE` varchar(5) NOT NULL DEFAULT ' ',
+  `FCALORGID` bigint NOT NULL DEFAULT '0',
+  `FCARRYOVERVOUCHERNUM` varchar(80) NOT NULL DEFAULT ' ',
+  `FWRITEOFFTYPE` varchar(5) NOT NULL DEFAULT ' ',
+  `FWRITEOFFDATE` datetime DEFAULT NULL,
+  `FISSPLIT` char(1) NOT NULL DEFAULT '0',
+  `FISCOSTCARRYOVER` char(1) NOT NULL DEFAULT '0',
+  `FCALBILLTYPE` varchar(5) NOT NULL DEFAULT ' ',
+  `FFIVOUCHERID` bigint NOT NULL DEFAULT '0',
+  `FDISCHARGEVOUCHERID` bigint NOT NULL DEFAULT '0',
+  `FCARRYOVERVOUCHERID` bigint NOT NULL DEFAULT '0',
+  `FTEMPVOUCHERID` bigint NOT NULL DEFAULT '0',
+  `FBIZDIRECTION` varchar(5) NOT NULL DEFAULT ' ',
+  `FPERIODID` bigint NOT NULL DEFAULT '0',
+  `FISSPLITCREATE` char(1) NOT NULL DEFAULT '0',
+  `FFEEVOUCHERID` bigint NOT NULL DEFAULT '0',
+  `FISFEEVOUCHER` char(1) NOT NULL DEFAULT '0',
+  `FFEEVOUCHERNUM` varchar(80) NOT NULL DEFAULT ' ',
+  `FCOMMENT` varchar(512) NOT NULL DEFAULT ' ',
+  `FWRITEOFFENDPERIODID` bigint NOT NULL DEFAULT '0',
+  `FISCHARGEOFFED` char(1) NOT NULL DEFAULT '0',
+  `FISCHARGEOFF` char(1) NOT NULL DEFAULT '0',
+  `FLASTUPDATEUSERID` bigint NOT NULL DEFAULT '0',
+  `FLASTUPDATETIME` datetime DEFAULT NULL,
+  `FCUSTOMERID` bigint NOT NULL DEFAULT '0',
+  `FSUPPLIERID` bigint NOT NULL DEFAULT '0',
+  `FBIZTYPEID` bigint NOT NULL DEFAULT '0',
+  `FISINITBILL` char(1) NOT NULL DEFAULT '0',
+  `FINVSCHEMEID` bigint NOT NULL DEFAULT '0',
+  `FISVIRTUALBILL` char(1) NOT NULL DEFAULT '0',
+  `FISVOUCHER` char(1) NOT NULL DEFAULT '0',
+  `FISSUBBILLINVOICEVERIFY` char(1) NOT NULL DEFAULT '0',
+  `FADMINORGID` bigint NOT NULL DEFAULT '0',
+  `FTRANSTYPE` varchar(5) NOT NULL DEFAULT ' ',
+  `FBOOKDATE` datetime DEFAULT NULL,
+  `FEXRATETABLEID` bigint NOT NULL DEFAULT '0',
+  `FEXRATEDATE` datetime DEFAULT NULL,
+  `FINVORGID` bigint NOT NULL DEFAULT '0',
+  `FCOSTUPDATETIME` datetime DEFAULT NULL,
+  `FCALSTATUS` char(1) NOT NULL DEFAULT 'A',
+  PRIMARY KEY (`FID`),
+  KEY `IDX_CAL_CALRECORD_ORG` (`FCALORGID`),
+  KEY `IDX_CAL_CALRECORD_BIZDATE` (`FBIZDATE`),
+  KEY `IDX_CAL_CALRECORD_PC` (`FPERIODID`,`FCOSTACCOUNTID`),
+  KEY `IDX_CAL_CALRECORD_BIZBILLID` (`FBIZBILLID`),
+  KEY `IDX_CAL_CALRECORD_BIZET` (`FBIZENTITYOBJECTID`),
+  KEY `IDX_CAL_CALRECORD_BILLNO` (`FBILLNO`),
+  KEY `IDX_CAL_CALCOSTRECORD_CALBILLID` (`FCALBILLID`),
+  KEY `IDX_CAL_CALRECORD_BILLNUM` (`FBILLNUMBER`),
+  KEY `IDX_CAL_CALRECORD_CB` (`FCOSTACCOUNTID`,`FBOOKDATE`,`FCALORGID`,`FBIZENTITYOBJECTID`),
+  KEY `IDX_CAL_CALRECORD_BKD` (`FBOOKDATE`),
+  KEY `IDX_CAL_COSTRECORD_CUSTOMERID` (`FCUSTOMERID`),
+  KEY `IDX_CAL_COSTRECORD_SUPPLIERID` (`FSUPPLIERID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+
+
+-- crrc_cal.t_cal_calcostrecord_a definition
+
+CREATE TABLE `t_cal_calcostrecord_a` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FCUSTOMERID` bigint NOT NULL DEFAULT '0',
+  `FSUPPLIERID` bigint NOT NULL DEFAULT '0',
+  `FBIZTYPEID` bigint NOT NULL DEFAULT '0',
+  `FISINITBILL` char(1) NOT NULL DEFAULT '0',
+  `FINVSCHEMEID` bigint NOT NULL DEFAULT '0',
+  `FISVIRTUALBILL` char(1) NOT NULL DEFAULT '0',
+  `FISVOUCHER` char(1) NOT NULL DEFAULT '0',
+  `FBOOKDATE` datetime DEFAULT NULL,
+  `FEXRATETABLEID` bigint NOT NULL DEFAULT '0',
+  `FEXRATEDATE` datetime DEFAULT NULL,
+  `FISSUBBILLINVOICEVERIFY` char(1) NOT NULL DEFAULT '0',
+  `FADMINORGID` bigint NOT NULL DEFAULT '0',
+  `FTRANSTYPE` varchar(5) NOT NULL DEFAULT ' ',
+  `FINVORGID` bigint NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FID`),
+  KEY `IDX_CAL_COSTRECORD_CUST` (`FCUSTOMERID`),
+  KEY `IDX_CAL_COSTRECORD_SUPP` (`FSUPPLIERID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+
+
+-- crrc_cal.t_cal_calcostrecord_dapn definition
+
+CREATE TABLE `t_cal_calcostrecord_dapn` (
+  `fid` bigint NOT NULL DEFAULT '0',
+  `fcreatetime` datetime DEFAULT NULL,
+  `fsourcebillid` bigint NOT NULL DEFAULT '0',
+  `fsourcebillno` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `forgid` bigint NOT NULL DEFAULT '0',
+  `fcreatorid` bigint NOT NULL DEFAULT '0',
+  `fbilltype` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`fid`),
+  KEY `IDXt_cal_calcostrecord_DAPN_BINDEX` (`fsourcebillid`,`fbilltype`),
+  KEY `IDXt_cal_calcostrecord_DAPN_T_BINDEX` (`fbilltype`,`forgid`,`fcreatetime`,`fsourcebillno`,`fcreatorid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cal_calcostrecord_dapw definition
+
+CREATE TABLE `t_cal_calcostrecord_dapw` (
+  `fid` bigint NOT NULL DEFAULT '0',
+  `fcreatetime` datetime DEFAULT NULL,
+  `fsourcebillid` bigint NOT NULL DEFAULT '0',
+  `forgid` bigint NOT NULL DEFAULT '0',
+  `fbilltype` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `foper` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`fid`),
+  KEY `IDXt_cal_calcostrecord_DAPW_WINDEX` (`fsourcebillid`,`fbilltype`,`foper`),
+  KEY `IDXt_cal_calcostrecord_DAPW_T_WINDEX` (`fsourcebillid`,`fbilltype`,`foper`,`forgid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cal_calcostrecord_l definition
+
+CREATE TABLE `t_cal_calcostrecord_l` (
+  `FPKID` varchar(36) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FLOCALEID` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FCOMMENT` varchar(512) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`FPKID`),
+  KEY `IDX_CAL_CALCOSTRECORD_L` (`FID`,`FLOCALEID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cal_calcostrecord_r3 definition
+
+CREATE TABLE `t_cal_calcostrecord_r3` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FRefStatus` char(1) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+
+
+-- crrc_cal.t_cal_calcostrecordent_r3 definition
+
+CREATE TABLE `t_cal_calcostrecordent_r3` (
+  `fentryid` bigint NOT NULL DEFAULT '0',
+  `FRefStatus` char(1) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  PRIMARY KEY (`fentryid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cal_calcostrecordentry definition
+
+CREATE TABLE `t_cal_calcostrecordentry` (
+  `FENTRYID` bigint NOT NULL DEFAULT '0',
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FSEQ` bigint NOT NULL DEFAULT '0',
+  `FCALENTRYID` bigint NOT NULL DEFAULT '0',
+  `FBIZBILLENTRYID` bigint NOT NULL DEFAULT '0',
+  `FMATERIALID` bigint NOT NULL DEFAULT '0',
+  `FASSISTPROPERTYID` bigint NOT NULL DEFAULT '0',
+  `FOWNERTYPE` varchar(30) NOT NULL DEFAULT ' ',
+  `FOWNERID` bigint NOT NULL DEFAULT '0',
+  `FLOT` varchar(50) NOT NULL DEFAULT ' ',
+  `FISPRESENT` char(1) NOT NULL DEFAULT '0',
+  `FBASEUNIT` bigint NOT NULL DEFAULT '0',
+  `FBASEQTY` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FUNITACTUALCOST` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FACTUALCOST` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FUNITSTANDARDCOST` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FSTANDARDCOST` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FUNITMATERIALCOST` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FMATERIALCOST` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FUNITFEE` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FFEE` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FTAXAMT` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FLOCTAXAMT` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FAUDITTIME` datetime DEFAULT NULL,
+  `FTAXRATE` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FTAX` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FLOCALTAX` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FWAREHOUSEID` bigint NOT NULL DEFAULT '0',
+  `FLOCATIONID` bigint NOT NULL DEFAULT '0',
+  `FINVTYPEID` bigint NOT NULL DEFAULT '0',
+  `FINVSTATUSID` bigint NOT NULL DEFAULT '0',
+  `FADJUSTAMOUNT` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FPROJECTID` bigint NOT NULL DEFAULT '0',
+  `FWRITEOFFID` bigint NOT NULL DEFAULT '0',
+  `FCALRANGEID` bigint NOT NULL DEFAULT '0',
+  `FACCOUNTTYPE` varchar(5) NOT NULL DEFAULT ' ',
+  `FTOTALSHAREFEE` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FSRCBILLENTITY` varchar(80) NOT NULL DEFAULT ' ',
+  `FSRCBILLENTRYID` bigint NOT NULL DEFAULT '0',
+  `FSRCBILLID` bigint NOT NULL DEFAULT '0',
+  `FSRCBILLENTRYSEQ` int NOT NULL DEFAULT '0',
+  `FSRCBILLNUMBER` varchar(80) NOT NULL DEFAULT ' ',
+  `FMAINBILLENTITY` varchar(80) NOT NULL DEFAULT ' ',
+  `FMAINBILLNUMBER` varchar(80) NOT NULL DEFAULT ' ',
+  `FMAINBILLID` bigint NOT NULL DEFAULT '0',
+  `FMAINBILLENTRYID` bigint NOT NULL DEFAULT '0',
+  `FMAINBILLENTRYSEQ` int NOT NULL DEFAULT '0',
+  `FPROCESSCOST` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FUNITPROCESSCOST` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FCALDIMENSIONID` bigint NOT NULL DEFAULT '0',
+  `FENTRYSTATUS` char(1) NOT NULL DEFAULT 'C',
+  `FBALANCESUPPLIERID` bigint NOT NULL DEFAULT '0',
+  `FISALLOCATE` char(1) NOT NULL DEFAULT '0',
+  `FMVERSIONID` bigint NOT NULL DEFAULT '0',
+  `FBALANCECUSTOMERID` bigint NOT NULL DEFAULT '0',
+  `FFATHERBILLID` bigint NOT NULL DEFAULT '0',
+  `FANCESTORID` bigint NOT NULL DEFAULT '0',
+  `FFATHERENTRYID` bigint NOT NULL DEFAULT '0',
+  `FANCESTORENTRYID` bigint NOT NULL DEFAULT '0',
+  `FISLASTENTRY` char(1) NOT NULL DEFAULT '0',
+  `FQUEUETYPE` char(1) NOT NULL DEFAULT '0',
+  `FSIGNNUM` int NOT NULL DEFAULT '1',
+  `FUNITMANUFACTURECOST` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FMANUFACTURECOST` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FUNITRESOURCE` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FRESOURCE` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FISCALCULATED` char(1) NOT NULL DEFAULT '0',
+  `FSRCSYSBILLENTRYID` varchar(100) NOT NULL DEFAULT ' ',
+  `FSRCSYSTEM` varchar(100) NOT NULL DEFAULT ' ',
+  `FSRCSYSBILLNO` varchar(100) NOT NULL DEFAULT ' ',
+  `FSRCSYSBILLID` varchar(100) NOT NULL DEFAULT ' ',
+  `FGROUPNUMBER` varchar(100) NOT NULL DEFAULT ' ',
+  `FGROUPSEQ` varchar(100) NOT NULL DEFAULT ' ',
+  `FCONFIGUREDCODEID` bigint NOT NULL DEFAULT '0',
+  `FTRACKNUMBERID` bigint NOT NULL DEFAULT '0',
+  `FISREWORK` char(1) NOT NULL DEFAULT '0',
+  `FPRODUCTNUM` varchar(255) NOT NULL DEFAULT ' ',
+  `FPRODUCTID` bigint NOT NULL DEFAULT '0',
+  `FCOSTSRC` char(1) DEFAULT '',
+  `FECOSTCENTERID` bigint NOT NULL DEFAULT '0',
+  `FCOSTDOMAINKEY` varchar(50) NOT NULL DEFAULT ' ',
+  `FECALSTATUS` char(1) NOT NULL DEFAULT 'A',
+  `FPRODUCTLINE` bigint NOT NULL DEFAULT '0',
+  `FNOUPDATECALFIELDS` varchar(255) NOT NULL DEFAULT ' ',
+  `FMATCOSTID` bigint DEFAULT '0',
+  `FWEIGHT` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FPID` bigint NOT NULL DEFAULT '0',
+  `FDESIGNATEDCOST` char(1) NOT NULL DEFAULT '0',
+  `FCOSTPRICESOURCE` varchar(100) NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`FENTRYID`),
+  KEY `IDX_CAL_CALCOSTRECORDENTRY` (`FID`),
+  KEY `IDX_CAL_COSTRECORDE_CALEID` (`FCALENTRYID`),
+  KEY `IDX_CAL_COSTRECORDE_BIZEID` (`FBIZBILLENTRYID`),
+  KEY `IDX_CAL_COSTRECORDE_WRITEID` (`FWRITEOFFID`),
+  KEY `IDX_CAL_COSTRECORDE_MAT` (`FMATERIALID`,`FID`),
+  KEY `IDX_CAL_COSTRECORDE_CALRID` (`FCALRANGEID`,`FID`),
+  KEY `IDX_CAL_CALRECORDET_WH` (`FWAREHOUSEID`,`FID`),
+  KEY `IDX_CAL_CALRECORDET_OWNER` (`FOWNERID`),
+  KEY `IDX_CAL_COSTRECORDE_BALSUPID` (`FBALANCESUPPLIERID`),
+  KEY `IDX_CAL_COSTREEA_ANCESTORID` (`FANCESTORID`),
+  KEY `IDX_CAL_COSTREEA_ANCESTOREID` (`FANCESTORENTRYID`),
+  KEY `IDX_CAL_COSTRECORDE_CDKEY` (`FCOSTDOMAINKEY`,`FID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+
+
+-- crrc_cal.t_cal_calcostrecordentry_a definition
+
+CREATE TABLE `t_cal_calcostrecordentry_a` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FENTRYID` bigint NOT NULL DEFAULT '0',
+  `FBALANCESUPPLIERID` bigint NOT NULL DEFAULT '0',
+  `FISALLOCATE` char(1) NOT NULL DEFAULT '0',
+  `FMVERSIONID` bigint NOT NULL DEFAULT '0',
+  `FBALANCECUSTOMERID` bigint NOT NULL DEFAULT '0',
+  `FFATHERBILLID` bigint NOT NULL DEFAULT '0',
+  `FANCESTORID` bigint NOT NULL DEFAULT '0',
+  `FFATHERENTRYID` bigint NOT NULL DEFAULT '0',
+  `FANCESTORENTRYID` bigint NOT NULL DEFAULT '0',
+  `FISLASTENTRY` char(1) NOT NULL DEFAULT '0',
+  `FQUEUETYPE` char(1) NOT NULL DEFAULT '0',
+  `FSIGNNUM` int NOT NULL DEFAULT '1',
+  `FUNITMANUFACTURECOST` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FMANUFACTURECOST` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FUNITRESOURCE` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FRESOURCE` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FISCALCULATED` char(1) NOT NULL DEFAULT '0',
+  `FSRCSYSBILLENTRYID` varchar(100) NOT NULL DEFAULT ' ',
+  `FSRCSYSTEM` varchar(100) NOT NULL DEFAULT ' ',
+  `FSRCSYSBILLID` varchar(100) NOT NULL DEFAULT ' ',
+  `FSRCSYSBILLNO` varchar(100) NOT NULL DEFAULT ' ',
+  `FGROUPNUMBER` varchar(100) NOT NULL DEFAULT ' ',
+  `FGROUPSEQ` varchar(100) NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`FENTRYID`),
+  KEY `IDX_CAL_COSTRECORDE_BALSUPP` (`FBALANCESUPPLIERID`),
+  KEY `IDX_CAL_COSTREEA_ID` (`FID`),
+  KEY `IDX_CAL_COSTREEA_ANID` (`FANCESTORID`),
+  KEY `IDX_CAL_COSTREEA_ANEID` (`FANCESTORENTRYID`),
+  KEY `IDX_CAL_COSTREEA_FAID` (`FFATHERBILLID`),
+  KEY `IDX_CAL_COSTREEA_FAEID` (`FFATHERENTRYID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+
+
+-- crrc_cal.t_cal_calcostrecordentry_r3 definition
+
+CREATE TABLE `t_cal_calcostrecordentry_r3` (
+  `fentryid` bigint NOT NULL DEFAULT '0',
+  `FRefStatus` char(1) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`fentryid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+
+
+-- crrc_cal.t_cal_caldimension definition
+
+CREATE TABLE `t_cal_caldimension` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FNUMBER` varchar(80) NOT NULL DEFAULT ' ',
+  `FSTATUS` varchar(5) NOT NULL DEFAULT ' ',
+  `FCREATORID` bigint NOT NULL DEFAULT '0',
+  `FENABLE` varchar(5) NOT NULL DEFAULT ' ',
+  `FMASTERID` bigint NOT NULL DEFAULT '0',
+  `FDISPLAYNAME` varchar(255) NOT NULL DEFAULT ' ',
+  `FMODIFIERID` bigint NOT NULL DEFAULT '0',
+  `FCREATETIME` datetime DEFAULT NULL,
+  `FMODIFYTIME` datetime DEFAULT NULL,
+  `FREMARK` varchar(255) DEFAULT NULL,
+  `FREMARK_TAG` longtext,
+  `FISPRESET` char(1) NOT NULL DEFAULT '0',
+  `FCALDIMENSION` varchar(255) NOT NULL DEFAULT ' ',
+  `FNAME` varchar(80) NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`FID`),
+  KEY `IDX_CAL_CALDIMENSION_NUMBER` (`FNUMBER`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+
+
+-- crrc_cal.t_cal_caldimension_l definition
+
+CREATE TABLE `t_cal_caldimension_l` (
+  `FPKID` varchar(36) NOT NULL DEFAULT ' ',
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FLOCALEID` varchar(10) NOT NULL DEFAULT ' ',
+  `FNAME` varchar(100) NOT NULL DEFAULT ' ',
+  `FREMARK` varchar(255) NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`FPKID`),
+  KEY `IDX_CAL_DIMENSL_ID` (`FID`,`FLOCALEID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+
+
+-- crrc_cal.t_cal_caldimension_r3 definition
+
+CREATE TABLE `t_cal_caldimension_r3` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FRefStatus` char(1) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+
+
+-- crrc_cal.t_cal_caldimensionentry definition
+
+CREATE TABLE `t_cal_caldimensionentry` (
+  `FENTRYID` bigint NOT NULL DEFAULT '0',
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FSEQ` bigint NOT NULL DEFAULT '0',
+  `FMAINFIELD` varchar(80) NOT NULL DEFAULT ' ',
+  `FMAINFIELDNAME` varchar(80) NOT NULL DEFAULT ' ',
+  `FALIASNAME` varchar(80) NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`FENTRYID`),
+  KEY `IDX_CAL_CALDIMENSIONENTRY` (`FID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+
+
+-- crrc_cal.t_cal_calfieldmap definition
+
+CREATE TABLE `t_cal_calfieldmap` (
+  `FENTRYID` bigint NOT NULL DEFAULT '0',
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FSEQ` bigint NOT NULL DEFAULT '0',
+  `FCALFIELDNAME` varchar(50) NOT NULL DEFAULT ' ',
+  `FCALFIELD` varchar(50) NOT NULL DEFAULT ' ',
+  `FSOURCEFIELDNAME` varchar(50) NOT NULL DEFAULT ' ',
+  `FSOURCEFIELD` varchar(50) NOT NULL DEFAULT ' ',
+  `FISORGFIELD` char(1) NOT NULL DEFAULT '0',
+  `FORGTYPE` varchar(5) NOT NULL DEFAULT ' ',
+  `FISEXTENDFIELD` char(1) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FENTRYID`),
+  KEY `IDX_CAL_CALFIELDMAP` (`FID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+
+
+-- crrc_cal.t_cal_caloutprt definition
+
+CREATE TABLE `t_cal_caloutprt` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FCOSTACCOUNTID` bigint NOT NULL DEFAULT '0',
+  `FDIVIDEBASISID` bigint NOT NULL DEFAULT '0',
+  `FCALDIMENSIONID` bigint NOT NULL DEFAULT '0',
+  `FDIVIDEBASISVALUE` varchar(255) NOT NULL DEFAULT ' ',
+  `FCALDIMENSIONVALUE` varchar(255) NOT NULL DEFAULT ' ',
+  `FMATERIALID` bigint NOT NULL DEFAULT '0',
+  `FACCOUNTTYPE` char(1) NOT NULL DEFAULT '',
+  `FPERIODID` bigint NOT NULL DEFAULT '0',
+  `FCALTIME` datetime DEFAULT NULL,
+  `FCALSTATUS` char(1) NOT NULL DEFAULT 'A',
+  `FNEXTSEQ` bigint NOT NULL DEFAULT '0',
+  `FCALORGID` bigint NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FID`),
+  KEY `IDX_CAL_OUTRPT_MATERIAL` (`FMATERIALID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+
+
+-- crrc_cal.t_cal_caloutrpt definition
+
+CREATE TABLE `t_cal_caloutrpt` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FCOSTACCOUNTID` bigint NOT NULL DEFAULT '0',
+  `FDIVIDEBASISID` bigint NOT NULL DEFAULT '0',
+  `FCALDIMENSIONID` bigint NOT NULL DEFAULT '0',
+  `FDIVIDEBASISVALUE` varchar(255) NOT NULL DEFAULT ' ',
+  `FCALDIMENSIONVALUE` varchar(255) NOT NULL DEFAULT ' ',
+  `FMATERIALID` bigint NOT NULL DEFAULT '0',
+  `FACCOUNTTYPE` varchar(5) NOT NULL DEFAULT ' ',
+  `FPERIODID` bigint NOT NULL DEFAULT '0',
+  `FCALTIME` datetime DEFAULT NULL,
+  `FCALSTATUS` varchar(5) NOT NULL DEFAULT ' ',
+  `FNEXTSEQ` int NOT NULL DEFAULT '0',
+  `FCALORGID` bigint NOT NULL DEFAULT '0',
+  `FCALRANGEID` bigint NOT NULL DEFAULT '0',
+  `FLOG` varchar(255) NOT NULL DEFAULT ' ',
+  `FOPERATIONUSERID` bigint NOT NULL DEFAULT '0',
+  `FMATRIX` char(1) NOT NULL DEFAULT '0',
+  `FCOSTATENDDATEENABLE` char(1) NOT NULL DEFAULT '0',
+  `FCOSTATENDDATE` datetime DEFAULT NULL,
+  PRIMARY KEY (`FID`),
+  KEY `IDX_CAL_CALOUTRPT_COSTACC` (`FCOSTACCOUNTID`),
+  KEY `IDX_CAL_CALOUTRPT_CT` (`FCALTIME`),
+  KEY `IDX_CAL_CALOUTRPT_MAT` (`FMATERIALID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+
+
+-- crrc_cal.t_cal_caloutrptentry definition
+
+CREATE TABLE `t_cal_caloutrptentry` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FENTRYID` bigint NOT NULL DEFAULT '0',
+  `FSEQ` int NOT NULL DEFAULT '0',
+  `FBIZBILLID` bigint NOT NULL DEFAULT '0',
+  `FBIZBILLENTRYID` bigint NOT NULL DEFAULT '0',
+  `FBILLTYPENUM` varchar(255) NOT NULL DEFAULT ' ',
+  `FBILLTYPE` varchar(255) NOT NULL DEFAULT ' ',
+  `FBILLNUMBER` varchar(255) NOT NULL DEFAULT ' ',
+  `FINSTR` varchar(500) NOT NULL DEFAULT ' ',
+  `FOUTSTR` varchar(500) NOT NULL DEFAULT ' ',
+  `FBALANCESTR` varchar(500) NOT NULL DEFAULT ' ',
+  `FPARENTENTRYID` bigint NOT NULL DEFAULT '0',
+  `FBIZDATE` datetime DEFAULT NULL,
+  `FAUDITDATE` datetime DEFAULT NULL,
+  `FDESCRIBE` varchar(255) NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`FENTRYID`),
+  KEY `IDX_CAL_CALOUTRPTE_ID` (`FID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+
+
+-- crrc_cal.t_cal_caloutrptentry_l definition
+
+CREATE TABLE `t_cal_caloutrptentry_l` (
+  `FPKID` varchar(36) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FENTRYID` bigint NOT NULL DEFAULT '0',
+  `FLOCALEID` varchar(10) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FBILLTYPE` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`FPKID`),
+  KEY `IDX_CAL_CALOUTRPTENTRY_L` (`FENTRYID`,`FLOCALEID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cal_calpolicy definition
+
+CREATE TABLE `t_cal_calpolicy` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FNUMBER` varchar(80) NOT NULL DEFAULT ' ',
+  `FPERIODTYPEID` bigint NOT NULL DEFAULT '0',
+  `FEXRATETABLEID` bigint NOT NULL DEFAULT '0',
+  `FACCOUNTTABLEID` bigint NOT NULL DEFAULT '0',
+  `FCURRENCYID` bigint NOT NULL DEFAULT '0',
+  `FSTATUS` varchar(5) NOT NULL DEFAULT ' ',
+  `FCREATORID` bigint NOT NULL DEFAULT '0',
+  `FENABLE` varchar(5) NOT NULL DEFAULT ' ',
+  `FMASTERID` bigint NOT NULL DEFAULT '0',
+  `FMODIFIERID` bigint NOT NULL DEFAULT '0',
+  `FCREATETIME` datetime DEFAULT NULL,
+  `FMODIFYTIME` datetime DEFAULT NULL,
+  `FREMARK` varchar(255) NOT NULL DEFAULT ' ',
+  `FREMARK_TAG` longtext,
+  `FISPRESET` char(1) NOT NULL DEFAULT '0',
+  `FFORBIDDENID` bigint NOT NULL DEFAULT '0',
+  `FFORBIDDENTIME` datetime DEFAULT NULL,
+  `FCONVERTMODE` varchar(5) NOT NULL DEFAULT ' ',
+  `FNAME` varchar(80) NOT NULL DEFAULT ' ',
+  `FCALBYCOSTELEMENT` char(1) NOT NULL DEFAULT '0',
+  `FSUPPORTTAXAMT` char(1) NOT NULL DEFAULT '0',
+  `FMULTIFACTORYACCOUNT` char(1) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FID`),
+  KEY `IDX_CAL_CALPOLICY_NUMBER` (`FNUMBER`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+
+
+-- crrc_cal.t_cal_calpolicy_l definition
+
+CREATE TABLE `t_cal_calpolicy_l` (
+  `FPKID` varchar(36) NOT NULL DEFAULT ' ',
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FLOCALEID` varchar(10) NOT NULL DEFAULT ' ',
+  `FNAME` varchar(100) NOT NULL DEFAULT ' ',
+  `FREMARK` varchar(255) NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`FPKID`),
+  KEY `IDX_CAL_POLICYL_ID` (`FID`,`FLOCALEID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+
+
+-- crrc_cal.t_cal_calpolicy_r3 definition
+
+CREATE TABLE `t_cal_calpolicy_r3` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FRefStatus` char(1) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+
+
+-- crrc_cal.t_cal_calrange definition
+
+CREATE TABLE `t_cal_calrange` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FNUMBER` varchar(80) NOT NULL DEFAULT ' ',
+  `FCOSTACCOUNTID` bigint NOT NULL DEFAULT '0',
+  `FDIVIDEBASISID` bigint NOT NULL DEFAULT '0',
+  `FACCOUNTTYPE` varchar(5) NOT NULL DEFAULT ' ',
+  `FCALDIMENSIONID` bigint NOT NULL DEFAULT '0',
+  `FREMARK` varchar(255) NOT NULL DEFAULT ' ',
+  `FREMARK_TAG` longtext,
+  `FSTATUS` varchar(5) NOT NULL DEFAULT ' ',
+  `FCREATORID` bigint NOT NULL DEFAULT '0',
+  `FENABLE` varchar(5) NOT NULL DEFAULT ' ',
+  `FMASTERID` bigint NOT NULL DEFAULT '0',
+  `FMODIFIERID` bigint NOT NULL DEFAULT '0',
+  `FCREATETIME` datetime DEFAULT NULL,
+  `FMODIFYTIME` datetime DEFAULT NULL,
+  `FCALORGID` bigint NOT NULL DEFAULT '0',
+  `FAPPROVERID` bigint NOT NULL DEFAULT '0',
+  `FAPPROVETIME` datetime DEFAULT NULL,
+  `FNAME` varchar(80) NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`FID`),
+  KEY `IDX_CAL_CALRANGE_COSTACC` (`FCOSTACCOUNTID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+
+
+-- crrc_cal.t_cal_calrange_l definition
+
+CREATE TABLE `t_cal_calrange_l` (
+  `FPKID` varchar(36) NOT NULL DEFAULT ' ',
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FLOCALEID` varchar(10) NOT NULL DEFAULT ' ',
+  `FNAME` varchar(100) NOT NULL DEFAULT ' ',
+  `FREMARK` varchar(255) NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`FPKID`),
+  KEY `IDX_CAL_CALRANGE_L` (`FID`,`FLOCALEID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+
+
+-- crrc_cal.t_cal_calrange_r3 definition
+
+CREATE TABLE `t_cal_calrange_r3` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FRefStatus` char(1) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+
+
+-- crrc_cal.t_cal_calrangeentry definition
+
+CREATE TABLE `t_cal_calrangeentry` (
+  `FENTRYID` bigint NOT NULL DEFAULT '0',
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FSEQ` bigint NOT NULL DEFAULT '0',
+  `FOWNERID` bigint NOT NULL DEFAULT '0',
+  `FSTORAGEORGUNITID` bigint NOT NULL DEFAULT '0',
+  `FWAREHOUSEID` bigint NOT NULL DEFAULT '0',
+  `FLOCATIONID` bigint NOT NULL DEFAULT '0',
+  `FCALORGID` bigint NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FENTRYID`),
+  KEY `IDX_CAL_CALRANGEENTRY` (`FID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+
+
+-- crrc_cal.t_cal_check_resultdetail definition
+
+CREATE TABLE `t_cal_check_resultdetail` (
+  `FDETAILID` bigint NOT NULL DEFAULT '0',
+  `FENTRYID` bigint NOT NULL DEFAULT '0',
+  `FSEQ` bigint NOT NULL DEFAULT '0',
+  `FOBJID` bigint NOT NULL DEFAULT '0',
+  `FOBJTYPEID` varchar(36) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FOBJDES` varchar(500) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FEXTRALINFO` varchar(500) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FISREPAIRED` char(1) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  PRIMARY KEY (`FDETAILID`),
+  KEY `IDX_CAL_CHRESULTDE_ENTRYID` (`FENTRYID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cal_check_resultentry definition
+
+CREATE TABLE `t_cal_check_resultentry` (
+  `FENTRYID` bigint NOT NULL DEFAULT '0',
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FSEQ` bigint NOT NULL DEFAULT '0',
+  `FCHECKITEMID` bigint NOT NULL DEFAULT '0',
+  `FENTRYSTATUS` char(1) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `FDESCRIPTION` varchar(225) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FRUNINGSTATUS` char(1) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  PRIMARY KEY (`FENTRYID`),
+  KEY `IDX_CAL_CHRESULTENTRY_FID` (`FID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cal_closeaccount definition
+
+CREATE TABLE `t_cal_closeaccount` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FCLOSEDATE` datetime DEFAULT NULL,
+  `FOWNERID` bigint NOT NULL DEFAULT '0',
+  `FPREVIOUSID` bigint NOT NULL DEFAULT '0',
+  `FISLEAF` char(1) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FID`),
+  KEY `IDX_CAL_CA_LASTID` (`FPREVIOUSID`),
+  KEY `IDX_CAL_CA_CCO` (`FOWNERID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+
+
+-- crrc_cal.t_cal_closelog definition
+
+CREATE TABLE `t_cal_closelog` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FTASKID` bigint NOT NULL DEFAULT '0',
+  `FOPERATIONTIME` datetime DEFAULT NULL,
+  `FDATEMSG` varchar(80) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FOWNERID` bigint NOT NULL DEFAULT '0',
+  `FCHECKRESULT` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FCLOSETYPE` varchar(10) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FSUCCESS` char(1) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  `FLASTDATE` datetime DEFAULT NULL,
+  `FEXPECTDATE` datetime DEFAULT NULL,
+  `FQUERYSCHEMEID` bigint NOT NULL DEFAULT '0',
+  `FORGID` bigint NOT NULL DEFAULT '0',
+  `FOPERATIONUSERID` bigint NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FID`),
+  KEY `IDX_CAL_CALORG` (`FORGID`),
+  KEY `IDX_CAL_OP_TIME` (`FOPERATIONTIME`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cal_costaccount definition
+
+CREATE TABLE `t_cal_costaccount` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FNUMBER` varchar(80) NOT NULL DEFAULT ' ',
+  `FSTATUS` varchar(5) NOT NULL DEFAULT ' ',
+  `FCREATORID` bigint NOT NULL DEFAULT '0',
+  `FENABLE` varchar(5) NOT NULL DEFAULT ' ',
+  `FCALSYSTEMID` bigint NOT NULL DEFAULT '0',
+  `FCALORGID` bigint NOT NULL DEFAULT '0',
+  `FCALPOLICYID` bigint NOT NULL DEFAULT '0',
+  `FMASTERID` bigint NOT NULL DEFAULT '0',
+  `FMODIFIERID` bigint NOT NULL DEFAULT '0',
+  `FCREATETIME` datetime DEFAULT NULL,
+  `FMODIFYTIME` datetime DEFAULT NULL,
+  `FREMARK` varchar(255) DEFAULT NULL,
+  `FREMARK_TAG` longtext,
+  `FDIVIDEBASISID` bigint NOT NULL DEFAULT '0',
+  `FISMAINACCOUNT` char(1) NOT NULL DEFAULT '0',
+  `FENABLESTANDARDCOST` char(1) NOT NULL DEFAULT '0',
+  `FCOSTTYPEID` bigint NOT NULL DEFAULT '0',
+  `FBOOKTYPEID` bigint NOT NULL DEFAULT '0',
+  `FNAME` varchar(80) NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`FID`),
+  KEY `IDX_CAL_COSTACC_CALORG` (`FCALORGID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+
+
+-- crrc_cal.t_cal_costaccount_l definition
+
+CREATE TABLE `t_cal_costaccount_l` (
+  `FPKID` varchar(36) NOT NULL DEFAULT ' ',
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FLOCALEID` varchar(10) NOT NULL DEFAULT ' ',
+  `FNAME` varchar(100) NOT NULL DEFAULT ' ',
+  `FREMARK` varchar(255) NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`FPKID`),
+  KEY `IDX_CAL_COSTACCOUNT_L` (`FID`,`FLOCALEID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+
+
+-- crrc_cal.t_cal_costaccount_r3 definition
+
+CREATE TABLE `t_cal_costaccount_r3` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FRefStatus` char(1) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+
+
+-- crrc_cal.t_cal_costaccount_type definition
+
+CREATE TABLE `t_cal_costaccount_type` (
+  `FPKID` bigint NOT NULL DEFAULT '0',
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FBASEDATAID` bigint NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FPKID`),
+  KEY `IDX_CAL_COSTACCOUNT_TYPE_FID` (`FID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cal_costaccount_type_r3 definition
+
+CREATE TABLE `t_cal_costaccount_type_r3` (
+  `fpkid` bigint NOT NULL DEFAULT '0',
+  `FRefStatus` char(1) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  PRIMARY KEY (`fpkid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cal_costaccounttype definition
+
+CREATE TABLE `t_cal_costaccounttype` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FNUMBER` varchar(80) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FDESCRIPTION` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FISINGROUP` char(1) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  `FNAME` varchar(80) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FISPREV` char(1) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FID`),
+  KEY `IDX_CAL_CATYPE_FNUMBER` (`FNUMBER`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cal_costaccounttype_l definition
+
+CREATE TABLE `t_cal_costaccounttype_l` (
+  `FPKID` varchar(36) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FLOCALEID` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FNAME` varchar(80) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`FPKID`),
+  KEY `IDX_CAL_CATYPE_L_FID` (`FID`,`FLOCALEID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cal_costaccounttype_r3 definition
+
+CREATE TABLE `t_cal_costaccounttype_r3` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FRefStatus` char(1) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cal_costaccparams definition
+
+CREATE TABLE `t_cal_costaccparams` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FNUMBER` varchar(80) NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`FID`),
+  KEY `IDX_CAL_COSTACCPA_NUM` (`FNUMBER`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+
+
+-- crrc_cal.t_cal_costaccparams_r3 definition
+
+CREATE TABLE `t_cal_costaccparams_r3` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FRefStatus` char(1) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+
+
+-- crrc_cal.t_cal_costaccparamsent_r3 definition
+
+CREATE TABLE `t_cal_costaccparamsent_r3` (
+  `fentryid` bigint NOT NULL DEFAULT '0',
+  `FRefStatus` char(1) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  PRIMARY KEY (`fentryid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cal_costaccparamsentry definition
+
+CREATE TABLE `t_cal_costaccparamsentry` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FENTRYID` bigint NOT NULL DEFAULT '0',
+  `FSEQ` int NOT NULL DEFAULT '0',
+  `FCOSTACCOUNTID` bigint NOT NULL DEFAULT '0',
+  `FCHECKORNOT` char(1) NOT NULL DEFAULT '0',
+  `FENDINITCHECK` char(1) NOT NULL DEFAULT '0',
+  `FENDACCOUNTCHECK` char(1) NOT NULL DEFAULT '0',
+  `FENDCALINVCHECK` char(1) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FENTRYID`),
+  KEY `IDX_CAL_COSTACCPAEN_COSTACCID` (`FCOSTACCOUNTID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+
+
+-- crrc_cal.t_cal_costadjust_detai_r3 definition
+
+CREATE TABLE `t_cal_costadjust_detai_r3` (
+  `fdetailid` bigint NOT NULL DEFAULT '0',
+  `FRefStatus` char(1) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  PRIMARY KEY (`fdetailid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cal_costadjust_detail definition
+
+CREATE TABLE `t_cal_costadjust_detail` (
+  `FDETAILID` bigint NOT NULL DEFAULT '0',
+  `FSEQ` int NOT NULL DEFAULT '0',
+  `FENTRYID` bigint NOT NULL DEFAULT '0',
+  `FCOSTELEMENTID` bigint NOT NULL DEFAULT '0',
+  `FCOSTSUBELEMENTID` bigint NOT NULL DEFAULT '0',
+  `FMATERIALID` bigint NOT NULL DEFAULT '0',
+  `FADJUSTAMT` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FCURRENCYID` bigint NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FDETAILID`),
+  KEY `IDX_CAL_CADETAIL_ENTRYID` (`FENTRYID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cal_costadjust_detail_back definition
+
+CREATE TABLE `t_cal_costadjust_detail_back` (
+  `fdetailid` bigint NOT NULL DEFAULT '0',
+  `FADJUSTAMT` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  PRIMARY KEY (`fdetailid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cal_costadjust_detail_r3 definition
+
+CREATE TABLE `t_cal_costadjust_detail_r3` (
+  `fdetailid` bigint NOT NULL DEFAULT '0',
+  `FRefStatus` char(1) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  PRIMARY KEY (`fdetailid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cal_costadjustbill definition
+
+CREATE TABLE `t_cal_costadjustbill` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FBILLNO` varchar(80) NOT NULL DEFAULT ' ',
+  `FBIZDATE` datetime DEFAULT NULL,
+  `FBIZTYPE` varchar(5) NOT NULL DEFAULT ' ',
+  `FCOSTACCOUNT` bigint NOT NULL DEFAULT '0',
+  `FORGID` bigint NOT NULL DEFAULT '0',
+  `FCSTYPEID` varchar(30) NOT NULL DEFAULT ' ',
+  `FCREATORID` bigint NOT NULL DEFAULT '0',
+  `FCUSTSUPPLIERID` bigint NOT NULL DEFAULT '0',
+  `FAUDITORID` bigint NOT NULL DEFAULT '0',
+  `FSRCBILLTYPEID` bigint NOT NULL DEFAULT '0',
+  `FBILLSTATUS` varchar(5) NOT NULL DEFAULT ' ',
+  `FCREATETYPE` varchar(5) NOT NULL DEFAULT ' ',
+  `FCURRENCYID` bigint NOT NULL DEFAULT '0',
+  `FREMARK` varchar(50) NOT NULL DEFAULT ' ',
+  `FAUDITDATE` datetime DEFAULT NULL,
+  `FCREATETIME` datetime DEFAULT NULL,
+  `FMODIFYTIME` datetime DEFAULT NULL,
+  `FMODIFIERID` bigint NOT NULL DEFAULT '0',
+  `FISVOUCHER` char(1) NOT NULL DEFAULT '0',
+  `FVOUCHERNUM` varchar(50) NOT NULL DEFAULT ' ',
+  `FVOUCHERID` bigint NOT NULL DEFAULT '0',
+  `FPERIODID` bigint NOT NULL DEFAULT '0',
+  `FFEESHAREFLAGID` bigint NOT NULL DEFAULT '0',
+  `FCHECKSTRIKEACCOUNT` char(1) NOT NULL DEFAULT '0',
+  `FDIFFTYPE` char(1) NOT NULL DEFAULT 'B',
+  `FADMINORGID` bigint NOT NULL DEFAULT '0',
+  `FBILLSRCTYPE` varchar(30) NOT NULL DEFAULT 'A',
+  `FLASTUPDATEUSERID` bigint NOT NULL DEFAULT '0',
+  `FLASTUPDATETIME` datetime DEFAULT NULL,
+  `FISCHARGEOFFED` char(1) NOT NULL DEFAULT '0',
+  `FISCHARGEOFF` char(1) NOT NULL DEFAULT '0',
+  `FBOOKDATE` datetime DEFAULT NULL,
+  `FCALSTATUS` char(1) NOT NULL DEFAULT 'A',
+  `FISUPDATECOST` char(1) NOT NULL DEFAULT '1',
+  `FSRCSYS` char(1) NOT NULL DEFAULT 'A',
+  PRIMARY KEY (`FID`),
+  KEY `IDX_CAL_COSTADJUSTBILL_ORG` (`FORGID`),
+  KEY `IDX_CAL_COSTADJUST_CB` (`FCOSTACCOUNT`,`FBIZDATE`),
+  KEY `IDX_CAL_COSTADJUST_DATE` (`FBIZDATE`),
+  KEY `IDX_CAL_COSTADJUST_FSID` (`FFEESHAREFLAGID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+
+
+-- crrc_cal.t_cal_costadjustbill_back definition
+
+CREATE TABLE `t_cal_costadjustbill_back` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FCREATETYPE` varchar(5) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FDIFFTYPE` char(1) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'B',
+  PRIMARY KEY (`FID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cal_costadjustbill_dapn definition
+
+CREATE TABLE `t_cal_costadjustbill_dapn` (
+  `fid` bigint NOT NULL DEFAULT '0',
+  `fcreatetime` datetime DEFAULT NULL,
+  `fsourcebillid` bigint NOT NULL DEFAULT '0',
+  `fsourcebillno` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `forgid` bigint NOT NULL DEFAULT '0',
+  `fcreatorid` bigint NOT NULL DEFAULT '0',
+  `fbilltype` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`fid`),
+  KEY `IDXt_cal_costadjustbill_DAPN_BINDEX` (`fsourcebillid`,`fbilltype`),
+  KEY `IDXt_cal_costadjustbill_DAPN_T_BINDEX` (`fbilltype`,`forgid`,`fcreatetime`,`fsourcebillno`,`fcreatorid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cal_costadjustbill_dapw definition
+
+CREATE TABLE `t_cal_costadjustbill_dapw` (
+  `fid` bigint NOT NULL DEFAULT '0',
+  `fcreatetime` datetime DEFAULT NULL,
+  `fsourcebillid` bigint NOT NULL DEFAULT '0',
+  `forgid` bigint NOT NULL DEFAULT '0',
+  `fbilltype` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `foper` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`fid`),
+  KEY `IDXt_cal_costadjustbill_DAPW_WINDEX` (`fsourcebillid`,`fbilltype`,`foper`),
+  KEY `IDXt_cal_costadjustbill_DAPW_T_WINDEX` (`fsourcebillid`,`fbilltype`,`foper`,`forgid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cal_costadjustbill_l definition
+
+CREATE TABLE `t_cal_costadjustbill_l` (
+  `FPKID` varchar(36) NOT NULL DEFAULT ' ',
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FLOCALEID` varchar(100) NOT NULL DEFAULT ' ',
+  `FREMARK` varchar(100) NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`FPKID`),
+  KEY `IDX_CAL_COSTADJUSTBILLL_ID` (`FID`,`FLOCALEID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+
+
+-- crrc_cal.t_cal_costadjustbillentry definition
+
+CREATE TABLE `t_cal_costadjustbillentry` (
+  `FENTRYID` bigint NOT NULL DEFAULT '0',
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FSEQ` bigint NOT NULL DEFAULT '0',
+  `FSTORAGEORGUNITID` bigint NOT NULL DEFAULT '0',
+  `FMATERIALID` bigint NOT NULL DEFAULT '0',
+  `FLOT` varchar(50) NOT NULL DEFAULT ' ',
+  `FADJUSTAMT` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FWAREHSOUSEID` bigint NOT NULL DEFAULT '0',
+  `FLOCATIONID` bigint NOT NULL DEFAULT '0',
+  `FORGFIELD` bigint NOT NULL DEFAULT '0',
+  `FINVBILLTYPE` bigint NOT NULL DEFAULT '0',
+  `FINVBILLNUM` varchar(80) NOT NULL DEFAULT ' ',
+  `FINVENTRYSEQ` bigint NOT NULL DEFAULT '0',
+  `FSRCBILLTYPEID` bigint NOT NULL DEFAULT '0',
+  `FSRCBILLNUM` varchar(80) NOT NULL DEFAULT ' ',
+  `FSRCENTRYSEQ` bigint NOT NULL DEFAULT '0',
+  `FOWNERTYPE` varchar(30) NOT NULL DEFAULT ' ',
+  `FOWNERID` bigint NOT NULL DEFAULT '0',
+  `FAUXPROPERTYID` bigint NOT NULL DEFAULT '0',
+  `FPROJECTID` bigint NOT NULL DEFAULT '0',
+  `FINVSTATUSID` bigint NOT NULL DEFAULT '0',
+  `FINVTYPEID` bigint NOT NULL DEFAULT '0',
+  `FBASEUNITID` bigint NOT NULL DEFAULT '0',
+  `FFEEPROJECTID` bigint NOT NULL DEFAULT '0',
+  `FINVBILLID` bigint NOT NULL DEFAULT '0',
+  `FINVBILLENTRYID` bigint NOT NULL DEFAULT '0',
+  `FSRCBILLID` bigint NOT NULL DEFAULT '0',
+  `FSRCBILLENTRYID` bigint NOT NULL DEFAULT '0',
+  `FCALDIMENSIONID` bigint NOT NULL DEFAULT '0',
+  `FCALRANGEID` bigint NOT NULL DEFAULT '0',
+  `FACCOUNTTYPE` varchar(5) NOT NULL DEFAULT ' ',
+  `FFEESHARETOTALAMT` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FINVBIZENTITYOBJECT` varchar(80) NOT NULL DEFAULT ' ',
+  `FSRCBIZENTITYOBJECT` varchar(80) NOT NULL DEFAULT ' ',
+  `FMVERSIONID` bigint NOT NULL DEFAULT '0',
+  `FQUEUETYPE` char(1) NOT NULL DEFAULT '0',
+  `FSIGNNUM` int NOT NULL DEFAULT '1',
+  `FINVBIZDATE` datetime DEFAULT NULL,
+  `FINVAUDITDATE` datetime DEFAULT NULL,
+  `finvbiztypeid` bigint NOT NULL DEFAULT '0',
+  `ftranstype` char(1) NOT NULL DEFAULT '',
+  `FCONFIGUREDCODEID` bigint NOT NULL DEFAULT '0',
+  `FTRACKNUMBERID` bigint NOT NULL DEFAULT '0',
+  `FCOSTESTIMATEBILLID` bigint NOT NULL DEFAULT '0',
+  `FCOSTESTIMATEBILLENTRYID` bigint NOT NULL DEFAULT '0',
+  `FECOSTCENTERID` bigint NOT NULL DEFAULT '0',
+  `FCOSTDOMAINKEY` varchar(50) NOT NULL DEFAULT ' ',
+  `FENTRYSTATUS` char(1) NOT NULL DEFAULT 'C',
+  `FECALSTATUS` char(1) NOT NULL DEFAULT 'A',
+  `FPRODUCTLINE` bigint NOT NULL DEFAULT '0',
+  `FNOUPDATECALFIELDS` varchar(255) NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`FENTRYID`),
+  KEY `IDX_CAL_COSTADJUSTBILLENTRY` (`FID`),
+  KEY `IDX_CAL_COSTADJUSTENTRY_SRCID` (`FSRCBILLID`),
+  KEY `IDX_CAL_COSTADJUSTENTRY_INVID` (`FINVBILLID`),
+  KEY `IDX_CAL_COSTADJUSTENTRY_COSTESTIMATEBILL` (`FCOSTESTIMATEBILLID`,`FCOSTESTIMATEBILLENTRYID`),
+  KEY `IDX_CAL_COSTADJUSTENTRY_CDKEY` (`FCOSTDOMAINKEY`,`FID`),
+  KEY `IDX_CAL_COSTADJUSTE_MC` (`FMATERIALID`,`FCALRANGEID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+
+
+-- crrc_cal.t_cal_costadjustbillentry_back definition
+
+CREATE TABLE `t_cal_costadjustbillentry_back` (
+  `fentryid` bigint NOT NULL DEFAULT '0',
+  `FADJUSTAMT` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  PRIMARY KEY (`fentryid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cal_costdomain definition
+
+CREATE TABLE `t_cal_costdomain` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FCOSTACCOUNTID` bigint NOT NULL DEFAULT '0',
+  `FPERIODID` bigint NOT NULL DEFAULT '0',
+  `FMATERIALID` bigint NOT NULL DEFAULT '0',
+  `FCALRANGEID` bigint NOT NULL DEFAULT '0',
+  `FDIVIDEBASIS` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FCALDIMENSION` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FACCOUNTTYPE` varchar(1) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FDIVIDEBASISVAL` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FCALDIMENSIONVAL` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FDIMENSIONKEY` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FCALORGID` bigint NOT NULL DEFAULT '0',
+  `FSTORAGEUNITID` bigint NOT NULL DEFAULT '0',
+  `FWAREHOUSEID` bigint NOT NULL DEFAULT '0',
+  `FLOCATIONID` bigint NOT NULL DEFAULT '0',
+  `FASSIT` bigint NOT NULL DEFAULT '0',
+  `FLOT` varchar(80) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FPROJECTID` bigint NOT NULL DEFAULT '0',
+  `FMVERSIONID` bigint NOT NULL DEFAULT '0',
+  `FOWNERID` bigint NOT NULL DEFAULT '0',
+  `FCONFIGUREDCODEID` bigint NOT NULL DEFAULT '0',
+  `FTRACKNUMBER` bigint NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FID`),
+  UNIQUE KEY `IDX_CAL_COSTDOMAIN_DKEY` (`FDIMENSIONKEY`),
+  KEY `IDX_CAL_COSTDOMAIN_CPM` (`FCOSTACCOUNTID`,`FPERIODID`,`FMATERIALID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cal_costdomain_r3 definition
+
+CREATE TABLE `t_cal_costdomain_r3` (
+  `fid` bigint NOT NULL DEFAULT '0',
+  `FRefStatus` char(1) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  PRIMARY KEY (`fid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cal_costdomaingroup definition
+
+CREATE TABLE `t_cal_costdomaingroup` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FSDIMENSIONID` bigint NOT NULL DEFAULT '0',
+  `FTDIMENSIONID` bigint NOT NULL DEFAULT '0',
+  `FSDIMENSIONKEY` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FTDIMENSIONKEY` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FDIMENSIONKEY` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FCOUNT` bigint NOT NULL DEFAULT '0',
+  `FSORTID` bigint NOT NULL DEFAULT '0',
+  `FSMATERIALID` bigint NOT NULL DEFAULT '0',
+  `FTMATERIALID` bigint NOT NULL DEFAULT '0',
+  `FSPERIODID` bigint NOT NULL DEFAULT '0',
+  `FTPERIODID` bigint NOT NULL DEFAULT '0',
+  `FISSAMEMATERIAL` char(1) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '1',
+  `FISDIFFDOMAIN` char(1) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '1',
+  PRIMARY KEY (`FID`),
+  UNIQUE KEY `IDX_CAL_COSTDOMAINGROUP_DK` (`FDIMENSIONKEY`),
+  KEY `IDX_CAL_COSTDOMAINGROUP_STK` (`FSDIMENSIONKEY`,`FTDIMENSIONKEY`),
+  KEY `IDX_CAL_COSTDOMAINGROUP_TK` (`FTDIMENSIONKEY`),
+  KEY `idx_cal_sortresultentry_sortid` (`FSORTID`),
+  KEY `idx_cal_costdomaingroup_fsi` (`FSDIMENSIONID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cal_costdomaingroup_r3 definition
+
+CREATE TABLE `t_cal_costdomaingroup_r3` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FRefStatus` char(1) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cal_costesbillexpense definition
+
+CREATE TABLE `t_cal_costesbillexpense` (
+  `FENTRYID` bigint NOT NULL DEFAULT '0',
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FSEQ` int NOT NULL DEFAULT '0',
+  `FEXPENSEITEMID` bigint NOT NULL DEFAULT '0',
+  `FEXPENSECURRENCYID` bigint NOT NULL DEFAULT '0',
+  `FAMOUNT` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FRATE` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FESTIMATEAMOUNT` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FESTIMATESTANDARD` varchar(30) NOT NULL DEFAULT ' ',
+  `FASSTACTTYPE` varchar(30) NOT NULL DEFAULT 'bd_supplier',
+  `FASSTACTID` bigint NOT NULL DEFAULT '0',
+  `FTAXAMOUNT` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FESTIMATETAXAMOUNT` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FINTERCOSTAMT` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FEXRATEDATE` datetime DEFAULT NULL,
+  `FLOCALCURRENCYID` bigint NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FENTRYID`),
+  KEY `IDX_CAL_COSTESBILLEX_ID` (`FID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+
+
+-- crrc_cal.t_cal_costesbillexpense_lk definition
+
+CREATE TABLE `t_cal_costesbillexpense_lk` (
+  `FEntryId` bigint NOT NULL,
+  `FPKId` bigint NOT NULL,
+  `FSeq` int NOT NULL DEFAULT '0',
+  `FSTableId` bigint NOT NULL DEFAULT '0',
+  `FSBillId` bigint NOT NULL DEFAULT '0',
+  `FSId` bigint NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FPKId`),
+  KEY `idx_cal_costesbillexpense_lk_fk` (`FEntryId`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+
+
+-- crrc_cal.t_cal_costesbillresult definition
+
+CREATE TABLE `t_cal_costesbillresult` (
+  `FENTRYID` bigint NOT NULL DEFAULT '0',
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FSEQ` int NOT NULL DEFAULT '0',
+  `FCOSTDETAILID` bigint NOT NULL DEFAULT '0',
+  `FCURRENCYID` bigint NOT NULL DEFAULT '0',
+  `FSHAREAMT` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FSHAREAMOUNT` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FCREATEDATE` datetime DEFAULT NULL,
+  `FESTIMATEBILLNO` varchar(80) NOT NULL DEFAULT ' ',
+  `FISDIRECT` char(1) NOT NULL DEFAULT '1',
+  `FCALENTRYID` bigint NOT NULL DEFAULT '0',
+  `FSHARETAXAMOUNT` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FSHARETAXAMT` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  PRIMARY KEY (`FENTRYID`),
+  KEY `IDX_CAL_COSTESBILLRES_ID` (`FID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+
+
+-- crrc_cal.t_cal_costesbillresult_r3 definition
+
+CREATE TABLE `t_cal_costesbillresult_r3` (
+  `fentryid` bigint NOT NULL DEFAULT '0',
+  `FRefStatus` char(1) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`fentryid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+
+
+-- crrc_cal.t_cal_costestimatebill definition
+
+CREATE TABLE `t_cal_costestimatebill` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FBILLNO` varchar(80) NOT NULL DEFAULT ' ',
+  `FBILLSTATUS` char(1) NOT NULL DEFAULT 'A',
+  `FCREATORID` bigint NOT NULL DEFAULT '0',
+  `FCREATETIME` datetime DEFAULT NULL,
+  `FESTIMATEDATE` datetime DEFAULT NULL,
+  `FSHARETYPEID` bigint NOT NULL DEFAULT '0',
+  `FMATCHRULEID` bigint NOT NULL DEFAULT '0',
+  `FSTANDARDCURRENCYID` bigint NOT NULL DEFAULT '0',
+  `FCALORGID` bigint NOT NULL DEFAULT '0',
+  `FEXRATETABLEID` bigint NOT NULL DEFAULT '0',
+  `FCONVERTMODE` char(1) NOT NULL DEFAULT '1',
+  `FLASTUPDATEUSERID` bigint NOT NULL DEFAULT '0',
+  `FLASTUPDATETIME` datetime DEFAULT NULL,
+  `FORGID` bigint NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FID`),
+  KEY `IDX_CAL_COSTESTIM_BILLNO` (`FBILLNO`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+
+
+-- crrc_cal.t_cal_costestimatebill_tc definition
+
+CREATE TABLE `t_cal_costestimatebill_tc` (
+  `FId` bigint NOT NULL,
+  `FTBillId` bigint NOT NULL DEFAULT '0',
+  `FTTableId` bigint NOT NULL DEFAULT '0',
+  `FTId` bigint NOT NULL DEFAULT '0',
+  `FSBillId` bigint NOT NULL DEFAULT '0',
+  `FSTableId` bigint NOT NULL DEFAULT '0',
+  `FSId` bigint NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FId`),
+  KEY `IDX_CAL_COSTESTIMATEBILL_TC_TBILL` (`FTBillId`),
+  KEY `IDX_CAL_COSTESTIMATEBILL_TC_TID` (`FTId`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+
+
+-- crrc_cal.t_cal_costestimatebill_wb definition
+
+CREATE TABLE `t_cal_costestimatebill_wb` (
+  `FId` bigint NOT NULL,
+  `FEntryId` bigint NOT NULL,
+  `FSeq` int NOT NULL DEFAULT '0',
+  `FRuleVerId` bigint NOT NULL DEFAULT '0',
+  `FRuleItemId` bigint NOT NULL DEFAULT '0',
+  `FOperate` varchar(30) NOT NULL DEFAULT ' ',
+  `FSTableId` bigint NOT NULL DEFAULT '0',
+  `FSId` bigint NOT NULL DEFAULT '0',
+  `FSBillId` bigint NOT NULL DEFAULT '0',
+  `FWriteValue` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  PRIMARY KEY (`FEntryId`),
+  KEY `idx_cal_costestimatebill_wb_fk` (`FId`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+
+
+-- crrc_cal.t_cal_costprice definition
+
+CREATE TABLE `t_cal_costprice` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FNUMBER` varchar(80) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FNAME` varchar(80) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FPRICELIB` varchar(80) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`FID`),
+  KEY `IDX_CAL_COSTPRICE_NUM` (`FNUMBER`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cal_costprice_l definition
+
+CREATE TABLE `t_cal_costprice_l` (
+  `FPKID` varchar(36) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FLOCALEID` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FNAME` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`FPKID`),
+  KEY `IDX_CAL_COSTPRICE_L` (`FID`,`FLOCALEID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cal_costprice_r3 definition
+
+CREATE TABLE `t_cal_costprice_r3` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FRefStatus` char(1) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cal_costpriceentry definition
+
+CREATE TABLE `t_cal_costpriceentry` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FENTRYID` bigint NOT NULL DEFAULT '0',
+  `FSEQ` int NOT NULL DEFAULT '0',
+  `FPRICENUM` varchar(80) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FPRICENAME` varchar(80) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FENTITYOBJECT` varchar(80) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FBILLFILTERDESC` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FBILLFILTER` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FBILLFILTER_TAG` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `FPRICETRANEXPR` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FPRICEEXP` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FPRICES` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FTYPE` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FPRICEPLUGIN` bigint NOT NULL DEFAULT '0',
+  `FBEFOREPERIOD` int NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FENTRYID`),
+  KEY `IDX_CAL_COSTPRICEE_ID` (`FID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cal_costpriceentry_l definition
+
+CREATE TABLE `t_cal_costpriceentry_l` (
+  `FPKID` varchar(36) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FENTRYID` bigint NOT NULL DEFAULT '0',
+  `FLOCALEID` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FREMARK` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FPRICENAME` varchar(80) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`FPKID`),
+  KEY `IDX_CAL_COSTPRCEEL_EID` (`FENTRYID`,`FLOCALEID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cal_costrecord_detai_r3 definition
+
+CREATE TABLE `t_cal_costrecord_detai_r3` (
+  `fdetailid` bigint NOT NULL DEFAULT '0',
+  `FRefStatus` char(1) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  PRIMARY KEY (`fdetailid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cal_costrecord_detail definition
+
+CREATE TABLE `t_cal_costrecord_detail` (
+  `FDETAILID` bigint NOT NULL DEFAULT '0',
+  `FSEQ` int NOT NULL DEFAULT '0',
+  `FENTRYID` bigint NOT NULL DEFAULT '0',
+  `FCOSTELEMENTID` bigint NOT NULL DEFAULT '0',
+  `FCOSTSUBELEMENTID` bigint NOT NULL DEFAULT '0',
+  `FMATERIALID` bigint NOT NULL DEFAULT '0',
+  `FCURRENCYID` bigint NOT NULL DEFAULT '0',
+  `FBASEUNITID` bigint NOT NULL DEFAULT '0',
+  `FBASEQTY` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FUNITSTANDARDCOST` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FSTANDARDCOST` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FUNITACTUALCOST` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FACTUALCOST` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  PRIMARY KEY (`FDETAILID`),
+  KEY `IDX_CAL_CRDDETAIL_SUBELEMENTID` (`FCOSTSUBELEMENTID`),
+  KEY `IDX_CAL_CRDDETAIL_ELEMENTID` (`FCOSTELEMENTID`),
+  KEY `IDX_CAL_CRDDETAIL_ENTRYID` (`FENTRYID`,`FCOSTSUBELEMENTID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cal_costrecord_detail_r3 definition
+
+CREATE TABLE `t_cal_costrecord_detail_r3` (
+  `fdetailid` bigint NOT NULL DEFAULT '0',
+  `FRefStatus` char(1) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  PRIMARY KEY (`fdetailid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cal_costrpt definition
+
+CREATE TABLE `t_cal_costrpt` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FCALORGID` bigint NOT NULL DEFAULT '0',
+  `FCALSYSTEMID` bigint NOT NULL DEFAULT '0',
+  `FPERIODID` bigint NOT NULL DEFAULT '0',
+  `FMATERIAL` bigint NOT NULL DEFAULT '0',
+  `FCOSTACCOUNT` bigint NOT NULL DEFAULT '0',
+  `FCALTIME` datetime DEFAULT NULL,
+  `FNEXTSEQ` int NOT NULL DEFAULT '0',
+  `FISVALID` char(1) NOT NULL DEFAULT '0',
+  `FCALSTATUS` varchar(5) NOT NULL DEFAULT 'A',
+  PRIMARY KEY (`FID`),
+  KEY `IDX_CAL_COSTRTP_MATERIAL` (`FMATERIAL`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+
+
+-- crrc_cal.t_cal_costrptentry definition
+
+CREATE TABLE `t_cal_costrptentry` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FENTRYID` bigint NOT NULL DEFAULT '0',
+  `FSEQ` int NOT NULL DEFAULT '0',
+  `FDIVIDEBASIS` varchar(100) NOT NULL DEFAULT ' ',
+  `FCALRANGE` varchar(100) NOT NULL DEFAULT ' ',
+  `FCALDIMENSION` varchar(200) NOT NULL DEFAULT ' ',
+  `FWAREHSID` bigint NOT NULL DEFAULT '0',
+  `FLOCATIONID` bigint NOT NULL DEFAULT '0',
+  `FBILLNUMBER` varchar(100) NOT NULL DEFAULT ' ',
+  `FINCOME` varchar(255) NOT NULL DEFAULT ' ',
+  `FPAYOUT` varchar(255) NOT NULL DEFAULT ' ',
+  `FSETTLE` varchar(255) NOT NULL DEFAULT ' ',
+  `FSTORAGEORGID` bigint NOT NULL DEFAULT '0',
+  `FBILLTYPE` varchar(100) NOT NULL DEFAULT ' ',
+  `FACCOUNTTYPE` varchar(100) NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`FENTRYID`),
+  KEY `IDX_CAL_COSTENTRY` (`FID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+
+
+-- crrc_cal.t_cal_costtypeorg definition
+
+CREATE TABLE `t_cal_costtypeorg` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FCOSTACCOUNTID` bigint NOT NULL DEFAULT '0',
+  `FCALORGID` bigint NOT NULL DEFAULT '0',
+  `FCOSTTYPEID` bigint NOT NULL DEFAULT '0',
+  `FBIZSTATUS` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FCONFIRMDATE` datetime DEFAULT NULL,
+  `FEFFECTDATE` datetime DEFAULT NULL,
+  `FINVALIDDATE` datetime DEFAULT NULL,
+  `FSTORAGEORGUNITID` bigint NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FID`),
+  KEY `IDX_CAL_COSTTYPEORG_CCS` (`FCOSTACCOUNTID`,`FCALORGID`,`FSTORAGEORGUNITID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cal_costtypeorg_r3 definition
+
+CREATE TABLE `t_cal_costtypeorg_r3` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FRefStatus` char(1) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cal_costupdateapplybill definition
+
+CREATE TABLE `t_cal_costupdateapplybill` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FBILLNO` varchar(80) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FBILLSTATUS` char(1) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `FCREATORID` bigint NOT NULL DEFAULT '0',
+  `FMODIFIERID` bigint NOT NULL DEFAULT '0',
+  `FAUDITORID` bigint NOT NULL DEFAULT '0',
+  `FCREATETIME` datetime DEFAULT NULL,
+  `FMODIFYTIME` datetime DEFAULT NULL,
+  `FAUDITDATE` datetime DEFAULT NULL,
+  `FCOSTACCOUNTID` bigint NOT NULL DEFAULT '0',
+  `FCALORGID` bigint NOT NULL DEFAULT '0',
+  `FCURRENCYID` bigint NOT NULL DEFAULT '0',
+  `FSRCSYS` char(1) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'A',
+  `FBIZDATE` datetime DEFAULT NULL,
+  `FSUMTYPE` char(1) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'A',
+  `FSRCBILLID` bigint NOT NULL DEFAULT '0',
+  `FSRCBILLENTITY` varchar(80) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FREMARK` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FLASTUPDATEUSERID` bigint NOT NULL DEFAULT '0',
+  `FLASTUPDATETIME` datetime DEFAULT NULL,
+  `FBOOKDATE` datetime DEFAULT NULL,
+  PRIMARY KEY (`FID`),
+  KEY `IDX_CAL_COSTUPDATEBILL_BILLNO` (`FBILLNO`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cal_costupdateapplybill_l definition
+
+CREATE TABLE `t_cal_costupdateapplybill_l` (
+  `FPKID` varchar(36) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FLOCALEID` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FREMARK` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`FPKID`),
+  KEY `IDX_CAL_COSTUPDATEBILLL_LOCAL` (`FID`,`FLOCALEID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cal_costupdateentry definition
+
+CREATE TABLE `t_cal_costupdateentry` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FENTRYID` bigint NOT NULL DEFAULT '0',
+  `FSEQ` bigint NOT NULL DEFAULT '0',
+  `FSTORAGEORGUNITID` bigint NOT NULL DEFAULT '0',
+  `FOWNERTYPE` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FOWNERID` bigint NOT NULL DEFAULT '0',
+  `FMATERIALID` bigint NOT NULL DEFAULT '0',
+  `FMVERSIONID` bigint NOT NULL DEFAULT '0',
+  `FAUXPROPERTYID` bigint NOT NULL DEFAULT '0',
+  `FLOT` varchar(80) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FPROJECTID` bigint NOT NULL DEFAULT '0',
+  `FINVTYPEID` bigint NOT NULL DEFAULT '0',
+  `FINVSTATUSID` bigint NOT NULL DEFAULT '0',
+  `FWAREHSOUSEID` bigint NOT NULL DEFAULT '0',
+  `FLOCATIONID` bigint NOT NULL DEFAULT '0',
+  `FBASEUNITID` bigint NOT NULL DEFAULT '0',
+  `FADMINORGID` bigint NOT NULL DEFAULT '0',
+  `FBASEQTY` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FUNITCOST` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FCOST` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FNEWUNITCOST` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FNEWCOST` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FCOSTDIFF` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FCOSTCENTERORGID` bigint NOT NULL DEFAULT '0',
+  `FCOSTELEMENTID` bigint NOT NULL DEFAULT '0',
+  `FCOSTSUBELEMENTID` bigint NOT NULL DEFAULT '0',
+  `FBALDETAILID` bigint NOT NULL DEFAULT '0',
+  `FCONFIGUREDCODEID` bigint NOT NULL DEFAULT '0',
+  `FTRACKNUMBERID` bigint NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FENTRYID`),
+  KEY `IDX_CAL_COSTUPDATEENTRY_ID` (`FID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cal_cplan_calorg definition
+
+CREATE TABLE `t_cal_cplan_calorg` (
+  `FPKID` bigint NOT NULL DEFAULT '0',
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FBASEDATAID` bigint NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FPKID`),
+  KEY `IDX_CAL_CPLAN_CALORG_FID` (`FID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cal_cplan_costaccount definition
+
+CREATE TABLE `t_cal_cplan_costaccount` (
+  `FPKID` bigint NOT NULL DEFAULT '0',
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FBASEDATAID` bigint NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FPKID`),
+  KEY `IDX_CAL_CPLAN_CACT_FID` (`FID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cal_cplan_invstatus definition
+
+CREATE TABLE `t_cal_cplan_invstatus` (
+  `FPKID` bigint NOT NULL DEFAULT '0',
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FBASEDATAID` bigint NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FPKID`),
+  KEY `IDX_CAL_CPLAN_INVSTATUS_FID` (`FID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cal_cplan_invtype definition
+
+CREATE TABLE `t_cal_cplan_invtype` (
+  `FPKID` bigint NOT NULL DEFAULT '0',
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FBASEDATAID` bigint NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FPKID`),
+  KEY `IDX_CAL_CPLAN_INVTYPE_FID` (`FID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cal_cplan_location definition
+
+CREATE TABLE `t_cal_cplan_location` (
+  `FPKID` bigint NOT NULL DEFAULT '0',
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FBASEDATAID` bigint NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FPKID`),
+  KEY `IDX_CAL_CPLAN_LOCATION_FID` (`FID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cal_cplan_material definition
+
+CREATE TABLE `t_cal_cplan_material` (
+  `FPKID` bigint NOT NULL DEFAULT '0',
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FBASEDATAID` bigint NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FPKID`),
+  KEY `IDX_CAL_CPLAN_MATERIAL_FID` (`FID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cal_cplan_mversion definition
+
+CREATE TABLE `t_cal_cplan_mversion` (
+  `FPKID` bigint NOT NULL DEFAULT '0',
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FBASEDATAID` bigint NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FPKID`),
+  KEY `IDX_CAL_CPLAN_MVERSION_FID` (`FID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cal_cplan_project definition
+
+CREATE TABLE `t_cal_cplan_project` (
+  `FPKID` bigint NOT NULL DEFAULT '0',
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FBASEDATAID` bigint NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FPKID`),
+  KEY `IDX_CAL_CPLAN_PROJECT_FID` (`FID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cal_cplan_storageorg definition
+
+CREATE TABLE `t_cal_cplan_storageorg` (
+  `FPKID` bigint NOT NULL DEFAULT '0',
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FBASEDATAID` bigint NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FPKID`),
+  KEY `IDX_CAL_CPLAN_SORG_FID` (`FID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cal_cplan_warehouse definition
+
+CREATE TABLE `t_cal_cplan_warehouse` (
+  `FPKID` bigint NOT NULL DEFAULT '0',
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FBASEDATAID` bigint NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FPKID`),
+  KEY `IDX_CAL_CPLAN_WHOUSE_FID` (`FID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cal_customer_test definition
+
+CREATE TABLE `t_cal_customer_test` (
+  `FPKID` varchar(30) NOT NULL,
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FLOCALEID` varchar(10) NOT NULL DEFAULT ' ',
+  `FNAME` varchar(50) NOT NULL DEFAULT ' '
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+
+
+-- crrc_cal.t_cal_datacheck_item definition
+
+CREATE TABLE `t_cal_datacheck_item` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FNUMBER` varchar(80) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FPLUGIN` varchar(225) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FISPRESET` char(1) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `FISERRORITEM` char(1) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `FNAME` varchar(80) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FDESCRIPTION` varchar(1000) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FTIPS` varchar(1000) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FCHECKMODE` varchar(5) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FBIZOBJECT` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FCUSTOMFILTERTEXT` varchar(512) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT ' ',
+  `FEXPMSGFIELDS` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FCUSTOMFILTER` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FCUSTOMFILTER_TAG` longtext COLLATE utf8mb4_unicode_ci,
+  PRIMARY KEY (`FID`),
+  KEY `IDX_CAL_CHECKITEM_NO` (`FNUMBER`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cal_datacheck_item_l definition
+
+CREATE TABLE `t_cal_datacheck_item_l` (
+  `FPKID` varchar(36) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FLOCALEID` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FNAME` varchar(512) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FDESCRIPTION` varchar(1000) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FTIPS` varchar(1000) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`FPKID`),
+  KEY `IDX_CAL_CHITEM_L_FID` (`FID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cal_datacheck_item_r3 definition
+
+CREATE TABLE `t_cal_datacheck_item_r3` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FRefStatus` char(1) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cal_datacheck_plan definition
+
+CREATE TABLE `t_cal_datacheck_plan` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FNUMBER` varchar(80) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FJOBID` varchar(36) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FSCHEDULEID` varchar(36) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FCHECKTASKID` bigint NOT NULL DEFAULT '0',
+  `FSTARTTIME` datetime DEFAULT NULL,
+  `FENDTIME` datetime DEFAULT NULL,
+  `FPLAN` varchar(300) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FENABLE` char(1) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '1',
+  `FNAME` varchar(80) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`FID`),
+  KEY `IDX_CAL_CHPLAN_NO` (`FNUMBER`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cal_datacheck_plan_d definition
+
+CREATE TABLE `t_cal_datacheck_plan_d` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FONE` char(1) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `FTWO` char(1) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `FTHREE` char(1) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `FFOUR` char(1) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `FFIVE` char(1) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `FSIX` char(1) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `FSEVEN` char(1) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `FEIGHT` char(1) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `FNINE` char(1) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `FTEN` char(1) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `FELEVEN` char(1) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `FTWELVE` char(1) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `FTHIRTEEN` char(1) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `FFOURTEEN` char(1) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `FFIFTEEN` char(1) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `FSIXTEEN` char(1) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `FSEVENTEEN` char(1) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `FEIGHTEEN` char(1) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `FNINETEEN` char(1) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `FTWENTY` char(1) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `FTWENTYONE` char(1) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `FTWENTYTWO` char(1) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `FTWENTYTHREE` char(1) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `FTWENTYFOUR` char(1) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `FTWENTYFIVE` char(1) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `FTWENTYSIX` char(1) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `FTWENTYSEVEN` char(1) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `FTWENTYEIGHT` char(1) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `FTWENTYNINE` char(1) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `FTHIRTY` char(1) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `FTHIRTYONE` char(1) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `FSTARTDATE` datetime DEFAULT NULL,
+  `FENDDATE` datetime DEFAULT NULL,
+  PRIMARY KEY (`FID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cal_datacheck_plan_l definition
+
+CREATE TABLE `t_cal_datacheck_plan_l` (
+  `FPKID` varchar(36) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FLOCALEID` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FNAME` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`FPKID`),
+  KEY `IDX_CAL_CHPLAN_L_FID` (`FID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cal_datacheck_plan_m definition
+
+CREATE TABLE `t_cal_datacheck_plan_m` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FJAN` char(1) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `FFEB` char(1) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `FMAR` char(1) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `FAPR` char(1) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `FMAY` char(1) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `FJUN` char(1) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `FJUL` char(1) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `FAUG` char(1) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `FSEP` char(1) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `FOCT` char(1) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `FNOV` char(1) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `FDEC` char(1) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `FSUN` char(1) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `FSAT` char(1) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `FFRI` char(1) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `FTHUR` char(1) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `FWED` char(1) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `FTUES` char(1) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `FMON` char(1) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `FBYWEEK` char(1) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `FNO` char(2) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `FNOWEEK` char(2) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `FDESC` varchar(225) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FREPEATMODE` varchar(10) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FCYCLENUM` bigint NOT NULL DEFAULT '0',
+  `FBYDAYORWEEK` char(1) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  PRIMARY KEY (`FID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cal_datacheck_plan_r3 definition
+
+CREATE TABLE `t_cal_datacheck_plan_r3` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FRefStatus` char(1) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cal_datacheck_result definition
+
+CREATE TABLE `t_cal_datacheck_result` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FCHECKPLANID` bigint NOT NULL DEFAULT '0',
+  `FCHECKTASKID` bigint NOT NULL DEFAULT '0',
+  `FUSERID` bigint NOT NULL DEFAULT '0',
+  `FCHECKTIME` datetime DEFAULT NULL,
+  `FSTATUS` char(1) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `FCHECKPLANTYPE` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FPURPOSE` varchar(5) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FCALORG` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FCOSTACCOUNT` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FOWNER` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`FID`),
+  KEY `IDX_CAL_CHRESULT_CHECKTIME` (`FCHECKTIME`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cal_datacheck_result_r3 definition
+
+CREATE TABLE `t_cal_datacheck_result_r3` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FRefStatus` char(1) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cal_datacheck_task definition
+
+CREATE TABLE `t_cal_datacheck_task` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FNUMBER` varchar(80) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FISPRESET` char(1) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `FNAME` varchar(80) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FDESCRIPTION` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FPURPOSE` varchar(5) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'A',
+  PRIMARY KEY (`FID`),
+  KEY `IDX_CAL_CHTASK_NO` (`FNUMBER`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cal_datacheck_task_l definition
+
+CREATE TABLE `t_cal_datacheck_task_l` (
+  `FPKID` varchar(36) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FLOCALEID` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FNAME` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT ' ',
+  `FDESCRIPTION` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`FPKID`),
+  KEY `IDX_CAL_CHTASK_L_FID` (`FID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cal_datacheck_task_r3 definition
+
+CREATE TABLE `t_cal_datacheck_task_r3` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FRefStatus` char(1) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cal_datacheck_taskentry definition
+
+CREATE TABLE `t_cal_datacheck_taskentry` (
+  `FENTRYID` bigint NOT NULL DEFAULT '0',
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FSEQ` bigint NOT NULL DEFAULT '0',
+  `FCHECKITEMID` bigint NOT NULL DEFAULT '0',
+  `FISENABLE` char(1) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `FLEVEL` char(1) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `FISCHANGE` char(1) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  `FISPREITEM` char(1) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FENTRYID`),
+  KEY `IDX_CAL_CHTASKENTRY_FID` (`FID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cal_dblog definition
+
+CREATE TABLE `t_cal_dblog` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FSTARTTIME` datetime DEFAULT NULL,
+  `FENDTIME` datetime DEFAULT NULL,
+  `FCREATER` bigint NOT NULL DEFAULT '0',
+  `FTRACEID` varchar(80) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FLEVEL` char(1) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'A',
+  `FTYPE` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FTIME` bigint NOT NULL DEFAULT '0',
+  `FRUNAT` varchar(80) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FPARAM` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FPARAM_TAG` longtext COLLATE utf8mb4_unicode_ci,
+  `FLOG` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FLOG_TAG` longtext COLLATE utf8mb4_unicode_ci,
+  PRIMARY KEY (`FID`),
+  KEY `IDX_CAL_STTP` (`FSTARTTIME`,`FTYPE`),
+  KEY `IDX_CAL_TRC` (`FTRACEID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cal_dblog_r3 definition
+
+CREATE TABLE `t_cal_dblog_r3` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FRefStatus` char(1) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cal_dbparam definition
+
+CREATE TABLE `t_cal_dbparam` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FORGID` bigint NOT NULL DEFAULT '0',
+  `FKEY` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FVALUE` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`FID`),
+  KEY `IDX_CAL_PARAM_KEY` (`FKEY`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cal_dbparam_r3 definition
+
+CREATE TABLE `t_cal_dbparam_r3` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FRefStatus` char(1) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cal_debuglog definition
+
+CREATE TABLE `t_cal_debuglog` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FTITLE` varchar(255) NOT NULL DEFAULT ' ',
+  `FDATE` datetime DEFAULT NULL,
+  `FCONTENT` varchar(255) NOT NULL DEFAULT ' ',
+  `FCONTENT_TAG` longtext,
+  PRIMARY KEY (`FID`),
+  KEY `IDX_CAL_DEBUGLOG_FTITLE` (`FTITLE`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+
+
+-- crrc_cal.t_cal_diffallocrc definition
+
+CREATE TABLE `t_cal_diffallocrc` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FCREATORID` bigint NOT NULL DEFAULT '0',
+  `FCREATETIME` datetime DEFAULT NULL,
+  `FUSERID` bigint NOT NULL DEFAULT '0',
+  `FSTARTTIME` datetime DEFAULT NULL,
+  `FTIME` bigint NOT NULL DEFAULT '0',
+  `FSTATUS` char(1) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `FALLOCMODEL` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FOPERATION` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FPARAM` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FPARAM_TAG` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `FBILLSTATUS` char(1) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  PRIMARY KEY (`FID`),
+  KEY `IDX_CAL_DIFFALLOCRC_ST` (`FSTARTTIME`),
+  KEY `IDX_CAL_DIFFALLOCRC_USER` (`FUSERID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cal_diffallocrc_l definition
+
+CREATE TABLE `t_cal_diffallocrc_l` (
+  `FPKID` varchar(36) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FLOCALEID` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FOPERATION` varchar(80) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`FPKID`),
+  KEY `IDX_CAL_DIFFALLOCRC_L` (`FID`,`FLOCALEID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cal_diffallocrcentry definition
+
+CREATE TABLE `t_cal_diffallocrcentry` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FENTRYID` bigint NOT NULL DEFAULT '0',
+  `FSEQ` bigint NOT NULL DEFAULT '0',
+  `FDESC` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`FENTRYID`),
+  KEY `IDX_CAL_DDIFFALLOCRCENTRY_ID` (`FID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cal_diffallocrpt definition
+
+CREATE TABLE `t_cal_diffallocrpt` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FCREATORID` bigint NOT NULL DEFAULT '0',
+  `FAUDITORID` bigint NOT NULL DEFAULT '0',
+  `FCREATETIME` datetime DEFAULT NULL,
+  `FALLOCTIME` datetime DEFAULT NULL,
+  `FCOSTACCOUNTID` bigint NOT NULL DEFAULT '0',
+  `FCALORGID` bigint NOT NULL DEFAULT '0',
+  `FCALDIMENSIONID` bigint NOT NULL DEFAULT '0',
+  `FCALRANGEID` bigint NOT NULL DEFAULT '0',
+  `FMATERIALID` bigint NOT NULL DEFAULT '0',
+  `FLOT` varchar(80) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FPROJECTID` bigint NOT NULL DEFAULT '0',
+  `FMVERSIONID` bigint NOT NULL DEFAULT '0',
+  `FWAREHOUSEID` bigint NOT NULL DEFAULT '0',
+  `FLOCATIONID` bigint NOT NULL DEFAULT '0',
+  `FSTORAGEORGUNITID` bigint NOT NULL DEFAULT '0',
+  `FPERIODID` bigint NOT NULL DEFAULT '0',
+  `FALLOCRECORDID` bigint NOT NULL DEFAULT '0',
+  `FDIVIDEBASISVALUE` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FCALDIMENSIONVALUE` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FACCOUNTTYPE` char(1) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `FALLOCMODEL` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FCARRYRULE` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FBILLSTATUS` char(1) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `FDIFFALLOCCOLS` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FDIFFALLOCCOLSVAL` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FASSIST` bigint NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FID`),
+  KEY `IDX_CAL_DIFFALLOCRPT_MAT` (`FMATERIALID`),
+  KEY `IDX_CAL_DIFFALLOCRPT_CA` (`FCOSTACCOUNTID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cal_diffallocrptentry definition
+
+CREATE TABLE `t_cal_diffallocrptentry` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FENTRYID` bigint NOT NULL DEFAULT '0',
+  `FSEQ` bigint NOT NULL DEFAULT '0',
+  `FCREATETYPE` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FSORTSEQ` bigint NOT NULL DEFAULT '0',
+  `FBILLTYPESTR` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FINSTR` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FOUTSTR` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FBALANCESTR` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FOUTAMT` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FSUBELEMENTID` bigint NOT NULL DEFAULT '0',
+  `FELEMENTID` bigint NOT NULL DEFAULT '0',
+  `FBILLTYPEID` bigint NOT NULL DEFAULT '0',
+  `FOUTBILLQTY` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  PRIMARY KEY (`FENTRYID`),
+  KEY `IDX_CAL_DIFFALLOCRPTENTRY_EID` (`FID`),
+  KEY `IDX_CAL_DIFFALLOCRPTENTRY_CT` (`FCREATETYPE`),
+  KEY `IDX_CAL_DIFFALLOCRPTENTRY_SE` (`FSUBELEMENTID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cal_diffallocrptentry_l definition
+
+CREATE TABLE `t_cal_diffallocrptentry_l` (
+  `FPKID` varchar(36) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FENTRYID` bigint NOT NULL DEFAULT '0',
+  `FLOCALEID` varchar(10) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FBILLTYPESTR` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`FPKID`),
+  KEY `IDX_CAL_DIFFALLOCRPTENTRY_L` (`FENTRYID`,`FLOCALEID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cal_diffallocrptentrydt definition
+
+CREATE TABLE `t_cal_diffallocrptentrydt` (
+  `FENTRYID` bigint NOT NULL DEFAULT '0',
+  `FDETAILID` bigint NOT NULL DEFAULT '0',
+  `FSEQ` bigint NOT NULL DEFAULT '0',
+  `FDTOUTSTR` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FDTOUTBILLQTY` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FCOSTADJBILLNO` varchar(80) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`FDETAILID`),
+  KEY `IDX_CAL_DIFFALRPTEDT_EID` (`FENTRYID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cal_diffgroupbill definition
+
+CREATE TABLE `t_cal_diffgroupbill` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FBILLNO` varchar(80) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FORGID` bigint NOT NULL DEFAULT '0',
+  `FCOSTACCOUNT` bigint NOT NULL DEFAULT '0',
+  `FBILLSTATUS` varchar(5) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FPERIODID` bigint NOT NULL DEFAULT '0',
+  `FCREATETYPE` varchar(5) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FBIZTYPE` varchar(5) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FSRCBILLTYPEID` bigint NOT NULL DEFAULT '0',
+  `FCURRENCYID` bigint NOT NULL DEFAULT '0',
+  `FCSTYPEID` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FISVOUCHER` char(1) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  `FVOUCHERID` bigint NOT NULL DEFAULT '0',
+  `FVOUCHERNUM` varchar(80) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FCUSTSUPPLIERID` bigint NOT NULL DEFAULT '0',
+  `FADMINORGID` bigint NOT NULL DEFAULT '0',
+  `FREMARK` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `FREMARK_TAG` longtext COLLATE utf8mb4_unicode_ci,
+  `FSTORAGEORGUNITID` bigint NOT NULL DEFAULT '0',
+  `FMATERIALID` bigint NOT NULL DEFAULT '0',
+  `FBASEUNITID` bigint NOT NULL DEFAULT '0',
+  `FMVERSIONID` bigint NOT NULL DEFAULT '0',
+  `FAUXPROPERTYID` bigint NOT NULL DEFAULT '0',
+  `FLOT` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FCONFIGUREDCODEID` bigint NOT NULL DEFAULT '0',
+  `FTRACKNUMBERID` bigint NOT NULL DEFAULT '0',
+  `FADJUSTAMT` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FDIFF_G` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FDIFF_H` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FDIFF_K` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FDIFF_P` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FDIFF_Q` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FDIFF_R` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FDIFF_M` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FDIFF_S` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FDIFF_T` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FDIFF_C` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FWAREHSOUSEID` bigint NOT NULL DEFAULT '0',
+  `FLOCATIONID` bigint NOT NULL DEFAULT '0',
+  `FINVTYPEID` bigint NOT NULL DEFAULT '0',
+  `FINVSTATUSID` bigint NOT NULL DEFAULT '0',
+  `FOWNERTYPE` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FOWNERID` bigint NOT NULL DEFAULT '0',
+  `FECOSTCENTERID` bigint NOT NULL DEFAULT '0',
+  `FPROJECTID` bigint NOT NULL DEFAULT '0',
+  `FCALRANGEID` bigint NOT NULL DEFAULT '0',
+  `FCALDIMENSIONID` bigint NOT NULL DEFAULT '0',
+  `FACCOUNTTYPE` varchar(5) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FFEEPROJECTID` bigint NOT NULL DEFAULT '0',
+  `finvbiztypeid` bigint NOT NULL DEFAULT '0',
+  `FTRANSTYPE` varchar(5) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FCREATORID` bigint NOT NULL DEFAULT '0',
+  `FCREATETIME` datetime DEFAULT NULL,
+  `FMODIFYTIME` datetime DEFAULT NULL,
+  `FMODIFIERID` bigint NOT NULL DEFAULT '0',
+  `FAUDITORID` bigint NOT NULL DEFAULT '0',
+  `FAUDITDATE` datetime DEFAULT NULL,
+  `FPRODUCTLINEID` bigint NOT NULL DEFAULT '0',
+  `FISUPDATECOST` char(1) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '1',
+  PRIMARY KEY (`FID`),
+  KEY `IDX_CAL_DIFFGROUPBILL_ORG` (`FORGID`),
+  KEY `IDX_CAL_DIFFGROUPBILL_CPM` (`FPERIODID`,`FCOSTACCOUNT`,`FMATERIALID`),
+  KEY `IDX_CAL_DIFFGROUPBILL_MAT` (`FMATERIALID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cal_diffgroupbill_l definition
+
+CREATE TABLE `t_cal_diffgroupbill_l` (
+  `FPKID` varchar(36) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FLOCALEID` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FREMARK` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`FPKID`),
+  KEY `IDX_DIFFGROUPBILL_L` (`FID`,`FLOCALEID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cal_dividebasis definition
+
+CREATE TABLE `t_cal_dividebasis` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FNUMBER` varchar(80) NOT NULL DEFAULT ' ',
+  `FSTATUS` varchar(5) NOT NULL DEFAULT ' ',
+  `FCREATORID` bigint NOT NULL DEFAULT '0',
+  `FENABLE` varchar(5) NOT NULL DEFAULT ' ',
+  `FDISPLAYNAME` varchar(255) NOT NULL DEFAULT ' ',
+  `FMASTERID` bigint NOT NULL DEFAULT '0',
+  `FMODIFIERID` bigint NOT NULL DEFAULT '0',
+  `FCREATETIME` datetime DEFAULT NULL,
+  `FMODIFYTIME` datetime DEFAULT NULL,
+  `FREMARK` varchar(255) NOT NULL DEFAULT ' ',
+  `FREMARK_TAG` longtext,
+  `FISPRESET` char(1) NOT NULL DEFAULT '0',
+  `FFORBIDDENID` bigint NOT NULL DEFAULT '0',
+  `FFORBIDDENTIME` datetime DEFAULT NULL,
+  `FDIVIDEBASIS` varchar(255) NOT NULL DEFAULT ' ',
+  `FNAME` varchar(80) NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`FID`),
+  KEY `IDX_CAL_DIVIDEBASIS_NUMBER` (`FNUMBER`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+
+
+-- crrc_cal.t_cal_dividebasis_l definition
+
+CREATE TABLE `t_cal_dividebasis_l` (
+  `FPKID` varchar(36) NOT NULL DEFAULT ' ',
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FLOCALEID` varchar(10) NOT NULL DEFAULT ' ',
+  `FNAME` varchar(100) NOT NULL DEFAULT ' ',
+  `FREMARK` varchar(255) NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`FPKID`),
+  KEY `IDX_CAL_DIVEDEL_ID` (`FID`,`FLOCALEID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+
+
+-- crrc_cal.t_cal_dividebasis_r3 definition
+
+CREATE TABLE `t_cal_dividebasis_r3` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FRefStatus` char(1) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+
+
+-- crrc_cal.t_cal_dividebasisentry definition
+
+CREATE TABLE `t_cal_dividebasisentry` (
+  `FENTRYID` bigint NOT NULL DEFAULT '0',
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FSEQ` bigint NOT NULL DEFAULT '0',
+  `FMAINFIELD` varchar(50) NOT NULL DEFAULT ' ',
+  `FMAINFIELDNAME` varchar(50) NOT NULL DEFAULT ' ',
+  `FALIASNAME` varchar(50) NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`FENTRYID`),
+  KEY `IDX_CAL_DIVIDEBASISENTRY` (`FID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+
+
+-- crrc_cal.t_cal_domain_bal definition
+
+CREATE TABLE `t_cal_domain_bal` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FCOSTACCOUNTID` bigint NOT NULL DEFAULT '0',
+  `FMATERIALID` bigint NOT NULL DEFAULT '0',
+  `FPERIODID` bigint NOT NULL DEFAULT '0',
+  `FCOSTELEMENTID` bigint NOT NULL DEFAULT '0',
+  `FCOSTSUBELEMENTID` bigint NOT NULL DEFAULT '0',
+  `FCOSTDOMAINKEY` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FINQTY` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FINCOST` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FOUTQTY` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FOUTCOST` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FMODIFYTIME` datetime DEFAULT NULL,
+  `FCURRENCYID` bigint NOT NULL DEFAULT '0',
+  `FBASEUNIT` bigint NOT NULL DEFAULT '0',
+  `FCALRANGEID` bigint NOT NULL DEFAULT '0',
+  `FDIVIDEBASISID` bigint NOT NULL DEFAULT '0',
+  `FCALDIMENSIONID` bigint NOT NULL DEFAULT '0',
+  `FKEYCOL` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`FID`),
+  UNIQUE KEY `IDX_CAL_DBAL_FPK` (`FPERIODID`,`FKEYCOL`),
+  KEY `IDX_CAL_DBAL_FMT` (`FMATERIALID`),
+  KEY `IDX_CAL_DBAL_FCAP` (`FCOSTACCOUNTID`,`FPERIODID`),
+  KEY `IDX_CAL_DBAL_FDK` (`FCOSTDOMAINKEY`),
+  KEY `IDX_CAL_DBAL_FK` (`FKEYCOL`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cal_domain_bal_sp definition
+
+CREATE TABLE `t_cal_domain_bal_sp` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FKEYCOL` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FBILLNAME` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FBILLID` bigint NOT NULL DEFAULT '0',
+  `FENTRYID` bigint NOT NULL DEFAULT '0',
+  `FUPDATETIME` bigint NOT NULL DEFAULT '0',
+  `FISNEW` char(1) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `FSTATUS` char(1) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `FUPDATETYPE` int NOT NULL DEFAULT '0',
+  `FBILLNO` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FENTRYSEQ` int NOT NULL DEFAULT '0',
+  `FUPDATERULEID` varchar(36) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FINQTY_SP` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FINCOST_SP` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FOUTQTY_SP` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FOUTCOST_SP` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FDIVIDEBASISID` bigint NOT NULL DEFAULT '0',
+  `FCALDIMENSIONID` bigint NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FID`),
+  KEY `IDX_CAL_DBALSP_FBID` (`FBILLID`),
+  KEY `IDX_CAL_DBALSP_FBNO` (`FBILLNO`),
+  KEY `IDX_CAL_DBALSP_FUT` (`FUPDATETIME`),
+  KEY `IDX_CAL_DBALSP_FK` (`FKEYCOL`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cal_domain_bal_tp definition
+
+CREATE TABLE `t_cal_domain_bal_tp` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FKEYCOL` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FBILLNAME` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FBILLID` bigint NOT NULL DEFAULT '0',
+  `FENTRYID` bigint NOT NULL DEFAULT '0',
+  `FUPDATETIME` bigint NOT NULL DEFAULT '0',
+  `FISNEW` char(1) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `FSTATUS` char(1) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `FUPDATETYPE` int NOT NULL DEFAULT '0',
+  `FBILLNO` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FENTRYSEQ` int NOT NULL DEFAULT '0',
+  `FUPDATERULEID` varchar(36) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FINQTY_SP` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FINCOST_SP` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FOUTQTY_SP` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FOUTCOST_SP` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FDIVIDEBASISID` bigint NOT NULL DEFAULT '0',
+  `FCALDIMENSIONID` bigint NOT NULL DEFAULT '0',
+  `FREADTYPE` char(1) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  `FMOVETYPE` char(1) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  `FCOVERFLAG` char(1) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  `FSYNC` char(1) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FID`),
+  KEY `IDX_CAL_DBALTP_FBID` (`FBILLID`),
+  KEY `IDX_CAL_DBALTP_FBNO` (`FBILLNO`),
+  KEY `IDX_CAL_DBALTP_FUT` (`FUPDATETIME`),
+  KEY `IDX_CAL_DBALTP_FK` (`FKEYCOL`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cal_esbilldetailentry definition
+
+CREATE TABLE `t_cal_esbilldetailentry` (
+  `FDETAILID` bigint NOT NULL DEFAULT '0',
+  `FENTRYID` bigint NOT NULL DEFAULT '0',
+  `FSEQ` int NOT NULL DEFAULT '0',
+  `FSHAREDETAILEXITEMID` bigint NOT NULL DEFAULT '0',
+  `FSHAREDETAILAMT` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FSHAREDETAILAMOUNT` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FEXITEMSEQ` int NOT NULL DEFAULT '0',
+  `FSHAREDETAILATYPE` varchar(30) NOT NULL DEFAULT 'bd_supplier',
+  `FSHAREDETAILASSTACTID` bigint NOT NULL DEFAULT '0',
+  `FESTIMATEBILLID` bigint NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FDETAILID`),
+  KEY `IDX_CAL_ESBILLDE_CRE` (`FENTRYID`),
+  KEY `IDX_CAL_ESBILLDE_FSRID` (`FESTIMATEBILLID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+
+
+-- crrc_cal.t_cal_esbillresultentry definition
+
+CREATE TABLE `t_cal_esbillresultentry` (
+  `FDETAILID` bigint NOT NULL DEFAULT '0',
+  `FENTRYID` bigint NOT NULL DEFAULT '0',
+  `FSEQ` int NOT NULL DEFAULT '0',
+  `FSHAREDETAILEXITEMID` bigint NOT NULL DEFAULT '0',
+  `FSHAREDETAILAMT` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FSHAREDETAILAMOUNT` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FEXITEMSEQ` int NOT NULL DEFAULT '0',
+  `FSHAREDETAILATYPE` varchar(30) NOT NULL DEFAULT 'bd_supplier',
+  `FSHAREDETAILASSTACTID` bigint NOT NULL DEFAULT '0',
+  `FSHAREDETAILTAXAMT` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FSHAREDETAILTAXAMOUNT` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  PRIMARY KEY (`FDETAILID`),
+  KEY `IDX_CAL_ESBILLRESEN_ENTRYID` (`FENTRYID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+
+
+-- crrc_cal.t_cal_failcostdomain definition
+
+CREATE TABLE `t_cal_failcostdomain` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FFAILCOSTDOMAINKEY` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FTIMES` int NOT NULL DEFAULT '0',
+  `FMATERIALID` bigint NOT NULL DEFAULT '0',
+  `FCALTIME` datetime DEFAULT NULL,
+  PRIMARY KEY (`FID`),
+  KEY `IDX_CAL_FAILCOSTDOMAIN_CDKEY` (`FFAILCOSTDOMAINKEY`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cal_failcostdomain_r3 definition
+
+CREATE TABLE `t_cal_failcostdomain_r3` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FRefStatus` char(1) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cal_fallpricesetentry definition
+
+CREATE TABLE `t_cal_fallpricesetentry` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FENTRYID` bigint NOT NULL DEFAULT '0',
+  `FSEQ` int NOT NULL DEFAULT '0',
+  `FMATERIALID` bigint NOT NULL DEFAULT '0',
+  `FMATERIALGROUPID` bigint NOT NULL DEFAULT '0',
+  `FOWNERTYPE` varchar(80) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'bos_org',
+  `FOWNERID` bigint NOT NULL DEFAULT '0',
+  `FSTORAGEORGUNITID` bigint NOT NULL DEFAULT '0',
+  `FWAREHOUSEID` bigint NOT NULL DEFAULT '0',
+  `FLOCATIONID` bigint NOT NULL DEFAULT '0',
+  `FASSISTID` bigint NOT NULL DEFAULT '0',
+  `FLOT` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FPROJECTID` bigint NOT NULL DEFAULT '0',
+  `FINVTYPEID` bigint NOT NULL DEFAULT '0',
+  `FINVSTATUSID` bigint NOT NULL DEFAULT '0',
+  `FINVAGEFROM` int NOT NULL DEFAULT '0',
+  `FINVAGETO` int NOT NULL DEFAULT '0',
+  `FFALLPRICESCALE` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FUNITREALIZABLEAMOUNT` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FWAREHOUSEGROUPID` bigint NOT NULL DEFAULT '0',
+  `FCONFIGUREDCODEID` bigint NOT NULL DEFAULT '0',
+  `FEXPIRYDATEFROM` int NOT NULL DEFAULT '-999999',
+  `FEXPIRYDATETO` int NOT NULL DEFAULT '999999',
+  PRIMARY KEY (`FENTRYID`),
+  KEY `IDX_CAL_FALLPRICEE_ID` (`FID`),
+  KEY `IDX_CAL_FALLPRICESETE_MAT` (`FMATERIALID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cal_fallpricesetting definition
+
+CREATE TABLE `t_cal_fallpricesetting` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FNUMBER` varchar(80) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FSTATUS` char(1) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `FCREATORID` bigint NOT NULL DEFAULT '0',
+  `FMODIFIERID` bigint NOT NULL DEFAULT '0',
+  `FENABLE` char(1) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '1',
+  `FCREATETIME` datetime DEFAULT NULL,
+  `FMODIFYTIME` datetime DEFAULT NULL,
+  `FMASTERID` bigint NOT NULL DEFAULT '0',
+  `FCALORGID` bigint NOT NULL DEFAULT '0',
+  `FCOSTACCOUNTID` bigint NOT NULL DEFAULT '0',
+  `FACCSYSID` bigint NOT NULL DEFAULT '0',
+  `FCALPOLICYID` bigint NOT NULL DEFAULT '0',
+  `FCURRENCYID` bigint NOT NULL DEFAULT '0',
+  `FPROVISIONWAY` char(1) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'A',
+  `FSETDIMENSION` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'A',
+  `FMAXIMUMAGE` int NOT NULL DEFAULT '0',
+  `FAPPROVERID` bigint NOT NULL DEFAULT '0',
+  `FAPPROVETIME` datetime DEFAULT NULL,
+  `FPROVISIONTOMAT` char(1) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  `FPROVDIMENSION` varchar(1000) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FENABLESHELFLIFE` char(1) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  `FMATERIALGROUPSTANDARD` bigint NOT NULL DEFAULT '0',
+  `FPROVSTRATEGY` char(1) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'A',
+  `FNOTCALAGEBILL` bigint NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FID`),
+  KEY `IDX_CAL_FALLPRICESET_ORG` (`FCALORGID`),
+  KEY `IDX_CAL_FALLPRICESETTING_ACCT` (`FCOSTACCOUNTID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cal_fallpricesetting_l definition
+
+CREATE TABLE `t_cal_fallpricesetting_l` (
+  `FPKID` varchar(36) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FLOCALEID` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FNAME` varchar(80) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FREMARK` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`FPKID`),
+  KEY `IDX_CAL_FALLPRICESETL_LOCAL` (`FID`,`FLOCALEID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cal_fallpricesetting_r3 definition
+
+CREATE TABLE `t_cal_fallpricesetting_r3` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FRefStatus` char(1) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cal_feerecord definition
+
+CREATE TABLE `t_cal_feerecord` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FBILLNO` varchar(80) NOT NULL DEFAULT ' ',
+  `FORGID` bigint NOT NULL DEFAULT '0',
+  `FSHAREDATE` datetime DEFAULT NULL,
+  `FBILLSTATUS` char(1) NOT NULL DEFAULT 'C',
+  `FCREATORID` bigint NOT NULL DEFAULT '0',
+  `FAUDITORID` bigint NOT NULL DEFAULT '0',
+  `FAUDITDATE` datetime DEFAULT NULL,
+  `FCREATETIME` datetime DEFAULT NULL,
+  `FMODIFYTIME` datetime DEFAULT NULL,
+  `FMODIFIERID` bigint NOT NULL DEFAULT '0',
+  `FMAINCURRENCYID` bigint NOT NULL DEFAULT '0',
+  `FSHARESTANDARD` varchar(255) NOT NULL DEFAULT ' ',
+  `FWFSEQ` varchar(50) NOT NULL DEFAULT ' ',
+  `FWRITEOFFTYPEID` bigint NOT NULL DEFAULT '0',
+  `FHEADWFINFO` varchar(255) NOT NULL DEFAULT ' ',
+  `FHEADWFINFO_TAG` longtext,
+  `FSHARETYPE` varchar(30) NOT NULL DEFAULT ' ',
+  `FWFSCHEMEID` bigint NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FID`),
+  KEY `IDX_CAL_FEEREC_BILLNO` (`FBILLNO`),
+  KEY `IDX_CAL_FEEREC_CREATETIME` (`FCREATETIME`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+
+
+-- crrc_cal.t_cal_feerecordentry definition
+
+CREATE TABLE `t_cal_feerecordentry` (
+  `FENTRYID` bigint NOT NULL DEFAULT '0',
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FSEQ` int NOT NULL DEFAULT '0',
+  `FBILLTYPEID` bigint NOT NULL DEFAULT '0',
+  `FBILLID` bigint NOT NULL DEFAULT '0',
+  `FBILLENTRYID` bigint NOT NULL DEFAULT '0',
+  `FBILLNUM` varchar(80) NOT NULL DEFAULT ' ',
+  `FBIZDATE` datetime DEFAULT NULL,
+  `FASSTACTTYPE` varchar(30) NOT NULL DEFAULT ' ',
+  `FASSTACTID` bigint NOT NULL DEFAULT '0',
+  `FBILLSEQ` int NOT NULL DEFAULT '0',
+  `FMATERIALID` bigint NOT NULL DEFAULT '0',
+  `FEXPENSEITEMID` bigint NOT NULL DEFAULT '0',
+  `FCURRENCYID` bigint NOT NULL DEFAULT '0',
+  `FAMOUNT` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FSHARECURRENCYID` bigint NOT NULL DEFAULT '0',
+  `FSHAREAMOUNT` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FSHAREUSERID` bigint NOT NULL DEFAULT '0',
+  `FBIZBILLENTRYID` bigint NOT NULL DEFAULT '0',
+  `FISMIANBILL` char(1) NOT NULL DEFAULT '0',
+  `FCALENTRYID` bigint NOT NULL DEFAULT '0',
+  `FTAXAMOUNT` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FSHARETAXAMOUNT` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FBOOKDATE` datetime DEFAULT NULL,
+  `FWFINFO` varchar(255) NOT NULL DEFAULT ' ',
+  `FWFINFO_TAG` longtext,
+  `FBILLQTY` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FBILLENTITYID` varchar(80) NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`FENTRYID`),
+  KEY `IDX_CAL_FEEREENTRY_ID` (`FID`),
+  KEY `IDX_CAL_FEEREENTRY_BIZENTRYISMID` (`FBIZBILLENTRYID`,`FISMIANBILL`,`FID`),
+  KEY `IDX_CAL_FEEREENTRY_BILLENTRYISMID` (`FBILLENTRYID`,`FISMIANBILL`,`FID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+
+
+-- crrc_cal.t_cal_fieldmapconfig definition
+
+CREATE TABLE `t_cal_fieldmapconfig` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FNUMBER` varchar(80) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FSTATUS` char(1) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'A',
+  `FCREATORID` bigint NOT NULL DEFAULT '0',
+  `FMODIFIERID` bigint NOT NULL DEFAULT '0',
+  `FCREATETIME` datetime DEFAULT NULL,
+  `FMODIFYTIME` datetime DEFAULT NULL,
+  `FENABLE` char(1) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '1',
+  `FMASTERID` bigint NOT NULL DEFAULT '0',
+  `FISPRESET` char(1) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  `FCALFIELD` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FCALFIELDNAME` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`FID`),
+  KEY `IDX_CAL_FIELDMAPCON_CALF` (`FCALFIELD`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cal_fieldmapconfig_l definition
+
+CREATE TABLE `t_cal_fieldmapconfig_l` (
+  `FPKID` varchar(36) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FLOCALEID` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FNAME` varchar(80) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`FPKID`),
+  KEY `IDX_CAL_FIELDMAPCONL_LOCAL` (`FID`,`FLOCALEID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cal_fieldmapconfig_r3 definition
+
+CREATE TABLE `t_cal_fieldmapconfig_r3` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FRefStatus` char(1) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cal_fieldmapentry definition
+
+CREATE TABLE `t_cal_fieldmapentry` (
+  `FENTRYID` bigint NOT NULL DEFAULT '0',
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FSEQ` int NOT NULL DEFAULT '0',
+  `FENTITYOBJECTID` varchar(80) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FBILLFIELDNAME` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FBILLFIELD` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`FENTRYID`),
+  KEY `IDX_CAL_FIELDMAPENTRY_ID` (`FID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cal_filter_config definition
+
+CREATE TABLE `t_cal_filter_config` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FNUMBER` varchar(80) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FNAME` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FENTITYID` varchar(80) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FFILTER` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FFILTER_TAG` longtext COLLATE utf8mb4_unicode_ci,
+  `FUSE` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`FID`),
+  KEY `IDX_CAL_FILTER_NUM` (`FNUMBER`),
+  KEY `IDX_CAL_FILTER_ENTUSE` (`FENTITYID`,`FUSE`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cal_filter_config_r3 definition
+
+CREATE TABLE `t_cal_filter_config_r3` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FRefStatus` char(1) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cal_groupbillrecord definition
+
+CREATE TABLE `t_cal_groupbillrecord` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FGROUPSETTINGID` bigint NOT NULL DEFAULT '0',
+  `FISCOMPLETED` char(1) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  `FCREATETIME` datetime DEFAULT NULL,
+  `FUPDATETIME` datetime DEFAULT NULL,
+  `FGROUPVALUE` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FGROUPSETTINGTYPE` varchar(80) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'cal_billgroupsetting',
+  `FCOSTFIELDS` varchar(1024) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT ' ',
+  `FCOSTCOLUMN` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`FID`),
+  KEY `IDX_CAL_GROUPRE_SETTING` (`FGROUPSETTINGID`),
+  KEY `IDX_CAL_GROUPRE_GVALUE` (`FGROUPVALUE`),
+  KEY `IDX_CAL_GROUPRE_UPDATETIME` (`FUPDATETIME`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cal_groupbillrecord_r3 definition
+
+CREATE TABLE `t_cal_groupbillrecord_r3` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FRefStatus` char(1) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cal_groupdiffentry definition
+
+CREATE TABLE `t_cal_groupdiffentry` (
+  `FENTRYID` bigint NOT NULL DEFAULT '0',
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FSEQ` bigint NOT NULL DEFAULT '0',
+  `FORGID` bigint NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FENTRYID`),
+  KEY `IDX_CAL_GROUPDIFFENTRY` (`FID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cal_groupdiffsetting definition
+
+CREATE TABLE `t_cal_groupdiffsetting` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FNUMBER` varchar(80) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FNAME` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FBIZOBJECTID` varchar(80) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FBIZTYPE` varchar(5) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'A',
+  `FGROUPDIMS` varchar(512) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `FENABLE` varchar(5) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FSTATUS` varchar(5) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FMASTERID` bigint NOT NULL DEFAULT '0',
+  `FCREATORID` bigint NOT NULL DEFAULT '0',
+  `FCREATETIME` datetime DEFAULT NULL,
+  `FMODIFIERID` bigint NOT NULL DEFAULT '0',
+  `FMODIFYTIME` datetime DEFAULT NULL,
+  PRIMARY KEY (`FID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cal_groupdiffsetting_l definition
+
+CREATE TABLE `t_cal_groupdiffsetting_l` (
+  `FPKID` varchar(36) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FLOCALEID` varchar(10) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FNAME` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`FPKID`),
+  KEY `IDX_GROUPDIFFSETTING_L` (`FID`,`FLOCALEID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cal_groupdiffsetting_r3 definition
+
+CREATE TABLE `t_cal_groupdiffsetting_r3` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FRefStatus` char(1) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cal_grouprecordentry definition
+
+CREATE TABLE `t_cal_grouprecordentry` (
+  `FENTRYID` bigint NOT NULL DEFAULT '0',
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FSEQ` int NOT NULL DEFAULT '0',
+  `FTYPE` char(1) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  `FBILLID` bigint NOT NULL DEFAULT '0',
+  `FBILLENTRYID` bigint NOT NULL DEFAULT '0',
+  `FMATERIALID` bigint NOT NULL DEFAULT '0',
+  `FOWNERID` bigint NOT NULL DEFAULT '0',
+  `FBASEQTY` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FBIZDATE` datetime DEFAULT NULL,
+  `FBILLNO` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FBIZBILLID` bigint NOT NULL DEFAULT '0',
+  `FISLASTENTRY` char(1) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  `FOCCUPIEDQTY` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FWEIGHT` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FGROUPNO` bigint NOT NULL DEFAULT '0',
+  `FBOOKDATE` datetime DEFAULT NULL,
+  PRIMARY KEY (`FENTRYID`),
+  KEY `IDX_CAL_GROUPBILLRECORDENTRY` (`FID`),
+  KEY `IDX_CAL_GRECORDENTRY_BILLID` (`FBILLID`),
+  KEY `IDX_CAL_GRECORDENTRY_BIZBILLID` (`FBIZBILLID`),
+  KEY `IDX_CAL_GROUPRECORDENTRY_MAT` (`FMATERIALID`),
+  KEY `IDX_CAL_GRECORD_ENTRYID_ID` (`FBILLENTRYID`,`FID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cal_gs_subelement definition
+
+CREATE TABLE `t_cal_gs_subelement` (
+  `FPKID` bigint NOT NULL DEFAULT '0',
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FBASEDATAID` bigint NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FPKID`),
+  KEY `IDX_CAL_GSSUBELEMENT_FID` (`FID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cal_incalbill definition
+
+CREATE TABLE `t_cal_incalbill` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FBIZBILLNO` varchar(80) NOT NULL DEFAULT ' ',
+  `FBILLNO` varchar(80) NOT NULL DEFAULT ' ',
+  `FBILLSTATUS` varchar(5) NOT NULL DEFAULT ' ',
+  `FCREATORID` bigint NOT NULL DEFAULT '0',
+  `FAUDITORID` bigint NOT NULL DEFAULT '0',
+  `FBIZDATE` datetime DEFAULT NULL,
+  `FBILLDATE` datetime DEFAULT NULL,
+  `FBILLTYPEID` bigint NOT NULL DEFAULT '0',
+  `FORGID` bigint NOT NULL DEFAULT '0',
+  `FADMINORGID` bigint NOT NULL DEFAULT '0',
+  `FCOSTCENTERORGID` bigint NOT NULL DEFAULT '0',
+  `FPROFITCENTERORGID` bigint NOT NULL DEFAULT '0',
+  `FSUPPLIERID` bigint NOT NULL DEFAULT '0',
+  `FCURRENCYID` bigint NOT NULL DEFAULT '0',
+  `FLOCALCURRENCYID` bigint NOT NULL DEFAULT '0',
+  `FEXCHANGERATE` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FBIZBILLID` bigint NOT NULL DEFAULT '0',
+  `FBIZENTITYOBJECTID` varchar(100) NOT NULL DEFAULT ' ',
+  `FAUDITDATE` datetime DEFAULT NULL,
+  `FCREATETIME` datetime DEFAULT NULL,
+  `FMODIFYTIME` datetime DEFAULT NULL,
+  `FMODIFIERID` bigint NOT NULL DEFAULT '0',
+  `FBIZDIRECTION` varchar(5) NOT NULL DEFAULT ' ',
+  `FBIZTYPEID` bigint NOT NULL DEFAULT '0',
+  `FISINITBILL` char(1) NOT NULL DEFAULT '0',
+  `FINVSCHEMEID` bigint NOT NULL DEFAULT '0',
+  `FEXRATETABLEID` bigint NOT NULL DEFAULT '0',
+  `FEXRATEDATE` datetime DEFAULT NULL,
+  `FISVIRTUALBILL` char(1) NOT NULL DEFAULT '0',
+  `FBOOKDATE` datetime DEFAULT NULL,
+  `FTRANSTYPE` varchar(5) NOT NULL DEFAULT ' ',
+  `FINVORGID` bigint NOT NULL DEFAULT '0',
+  `FCOMMENT` varchar(512) NOT NULL DEFAULT ' ',
+  `fcustomerid` bigint NOT NULL DEFAULT '0',
+  `FISCHARGEOFFED` char(1) NOT NULL DEFAULT '0',
+  `FISCHARGEOFF` char(1) NOT NULL DEFAULT '0',
+  `FLASTUPDATEUSERID` bigint NOT NULL DEFAULT '0',
+  `FLASTUPDATETIME` datetime DEFAULT NULL,
+  PRIMARY KEY (`FID`),
+  KEY `IDX_CAL_INCALBILL_ORG` (`FORGID`),
+  KEY `IDX_CAL_INCALBILL_BIZBID` (`FBIZBILLID`),
+  KEY `IDX_CAL_INCALBILL_BIZNO` (`FBIZBILLNO`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+
+
+-- crrc_cal.t_cal_incalbill_l definition
+
+CREATE TABLE `t_cal_incalbill_l` (
+  `FPKID` varchar(36) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FLOCALEID` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FCOMMENT` varchar(512) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`FPKID`),
+  KEY `IDX_CAL_INCALBILL_L` (`FID`,`FLOCALEID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cal_incalentry definition
+
+CREATE TABLE `t_cal_incalentry` (
+  `FENTRYID` bigint NOT NULL DEFAULT '0',
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FSEQ` bigint NOT NULL DEFAULT '0',
+  `FBIZBILLENTRYID` bigint NOT NULL DEFAULT '0',
+  `FMATERIALID` bigint NOT NULL DEFAULT '0',
+  `FASSISTPROPERTYID` bigint NOT NULL DEFAULT '0',
+  `FBASEUNITID` bigint NOT NULL DEFAULT '0',
+  `FBASEQTY` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FOWNERTYPE` varchar(30) NOT NULL DEFAULT ' ',
+  `FOWNERID` bigint NOT NULL DEFAULT '0',
+  `FSTORAGEORGID` bigint NOT NULL DEFAULT '0',
+  `FCOMPANYORGID` bigint NOT NULL DEFAULT '0',
+  `FENTRYADMINORGID` bigint NOT NULL DEFAULT '0',
+  `FENTRYCOSTCENTERORGID` bigint NOT NULL DEFAULT '0',
+  `FENTRYPROFITCENTERORGID` bigint NOT NULL DEFAULT '0',
+  `FWAREHOUSEID` bigint NOT NULL DEFAULT '0',
+  `FLOCATIONID` bigint NOT NULL DEFAULT '0',
+  `FLOT` varchar(50) NOT NULL DEFAULT ' ',
+  `FISPRESENT` char(1) NOT NULL DEFAULT '0',
+  `FBALANCESUPPLIERID` bigint NOT NULL DEFAULT '0',
+  `FAUDITTIME` datetime DEFAULT NULL,
+  `FTAXRATE` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FDISCOUNTRATE` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FPRICE` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FTAXPRICE` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FTAX` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FLOCALTAX` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FAMOUNT` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FLOCALAMOUNT` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FTAXAMOUNT` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FLOCALTAXAMOUNT` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FINVTYPEID` bigint NOT NULL DEFAULT '0',
+  `FINVSTATUSID` bigint NOT NULL DEFAULT '0',
+  `FUNITMATERIALCOST` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FMATERIALCOST` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FUNITFEE` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FFEE` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FUNITPROCESSCOST` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FPROCESSCOST` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FPROJECTID` bigint NOT NULL DEFAULT '0',
+  `FSRCBILLENTITY` varchar(80) NOT NULL DEFAULT ' ',
+  `FSRCBILLENTRYID` bigint NOT NULL DEFAULT '0',
+  `FSRCBILLID` bigint NOT NULL DEFAULT '0',
+  `FSRCBILLENTRYSEQ` int NOT NULL DEFAULT '0',
+  `FSRCBILLNUMBER` varchar(80) NOT NULL DEFAULT ' ',
+  `FMAINBILLENTITY` varchar(80) NOT NULL DEFAULT ' ',
+  `FMAINBILLNUMBER` varchar(80) NOT NULL DEFAULT ' ',
+  `FMAINBILLID` bigint NOT NULL DEFAULT '0',
+  `FMAINBILLENTRYID` bigint NOT NULL DEFAULT '0',
+  `FMAINBILLENTRYSEQ` int NOT NULL DEFAULT '0',
+  `FCONFIGUREDCODEID` bigint NOT NULL DEFAULT '0',
+  `FTRACKNUMBERID` bigint NOT NULL DEFAULT '0',
+  `FPRODUCTNUM` varchar(255) NOT NULL DEFAULT ' ',
+  `FINTERCOSTAMT` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FECOSTCENTERID` bigint NOT NULL DEFAULT '0',
+  `FPRODUCTLINE` bigint NOT NULL DEFAULT '0',
+  `FNOUPDATECALFIELDS` varchar(255) NOT NULL DEFAULT ' ',
+  `FWEIGHT` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FPID` bigint NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FENTRYID`),
+  UNIQUE KEY `IDX_CAL_IN_BIZENTRY` (`FBIZBILLENTRYID`),
+  KEY `IDX_CAL_INCALENTRY` (`FID`),
+  KEY `IDX_CAL_INCALENTRY_SRCID` (`FSRCBILLENTRYID`),
+  KEY `idx_cal_outcalentry_maineid` (`FMAINBILLENTRYID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+
+
+-- crrc_cal.t_cal_incalentry_a definition
+
+CREATE TABLE `t_cal_incalentry_a` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FENTRYID` bigint NOT NULL DEFAULT '0',
+  `FMVERSIONID` bigint NOT NULL DEFAULT '0',
+  `FISLASTENTRY` char(1) NOT NULL DEFAULT '0',
+  `FSRCSYSBILLENTRYID` varchar(100) NOT NULL DEFAULT ' ',
+  `FSRCSYSTEM` varchar(100) NOT NULL DEFAULT ' ',
+  `FSRCSYSBILLID` varchar(100) NOT NULL DEFAULT ' ',
+  `FSRCSYSBILLNO` varchar(100) NOT NULL DEFAULT ' ',
+  `FGROUPNUMBER` varchar(100) NOT NULL DEFAULT ' ',
+  `FGROUPSEQ` varchar(100) NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`FENTRYID`),
+  KEY `IDX_CAL_INCALENTRYA_ID` (`FID`),
+  KEY `idx_cal_incalentry_groupno` (`FGROUPNUMBER`),
+  KEY `IDX_CAL_INCALENTRY_GROUPSEQ` (`FGROUPSEQ`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+
+
+-- crrc_cal.t_cal_initbill definition
+
+CREATE TABLE `t_cal_initbill` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FCREATORID` bigint NOT NULL DEFAULT '0',
+  `FMODIFIERID` bigint NOT NULL DEFAULT '0',
+  `FAUDITORID` bigint NOT NULL DEFAULT '0',
+  `FAUDITDATE` datetime DEFAULT NULL,
+  `FMODIFYTIME` datetime DEFAULT NULL,
+  `FCREATETIME` datetime DEFAULT NULL,
+  `FBILLNO` varchar(80) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FBILLSTATUS` char(1) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'A',
+  `FCOSTACCOUNTID` bigint NOT NULL DEFAULT '0',
+  `FCALORGID` bigint NOT NULL DEFAULT '0',
+  `FBILLTYPEID` bigint NOT NULL DEFAULT '0',
+  `FLOCALCURRENCYID` bigint NOT NULL DEFAULT '0',
+  `FBIZDATE` datetime DEFAULT NULL,
+  `FPERIODID` bigint NOT NULL DEFAULT '0',
+  `FREMARK` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FBIZBILLID` bigint NOT NULL DEFAULT '0',
+  `FBIZENTITYOBJECT` varchar(80) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FLASTUPDATEUSERID` bigint NOT NULL DEFAULT '0',
+  `FLASTUPDATETIME` datetime DEFAULT NULL,
+  `FBOOKDATE` datetime DEFAULT NULL,
+  `FCALSTATUS` char(1) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'A',
+  PRIMARY KEY (`FID`),
+  KEY `IDX_CAL_INITBILL_FBIZDATE` (`FBIZDATE`),
+  KEY `IDX_CAL_INITBILL_CALORG` (`FCALORGID`),
+  KEY `IDX_CAL_INITBILL_ACC` (`FCOSTACCOUNTID`,`FBIZDATE`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cal_initbill_detail definition
+
+CREATE TABLE `t_cal_initbill_detail` (
+  `FENTRYID` bigint NOT NULL DEFAULT '0',
+  `FDETAILID` bigint NOT NULL DEFAULT '0',
+  `FSEQ` int NOT NULL DEFAULT '0',
+  `FCOSTELEMENTID` bigint NOT NULL DEFAULT '0',
+  `FCOSTSUBELEMENTID` bigint NOT NULL DEFAULT '0',
+  `FMATERIALID` bigint NOT NULL DEFAULT '0',
+  `FBASEQTY` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FUNITPRICE` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FAMOUNT` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FCOSTDIFF` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FSUBYEARINQTY` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FSUBYEARINCOST` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FSUBYEARINCOSTDIFF` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FSUBYEARISSUEQTY` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FSUBYEARISSUECOST` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FSUBYEARISSUECOSTDIFF` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FBASEUNITID` bigint NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FDETAILID`),
+  KEY `IDX_CAL_INITDETAIL_FENTRYID` (`FENTRYID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cal_initbill_l definition
+
+CREATE TABLE `t_cal_initbill_l` (
+  `FPKID` varchar(36) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FLOCALEID` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FREMARK` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`FPKID`),
+  KEY `IDX_CAL_INITBILL_L` (`FID`,`FLOCALEID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cal_initbillentry definition
+
+CREATE TABLE `t_cal_initbillentry` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FENTRYID` bigint NOT NULL DEFAULT '0',
+  `FSEQ` int NOT NULL DEFAULT '0',
+  `FSTORAGEORGUNITID` bigint NOT NULL DEFAULT '0',
+  `FMATERIALID` bigint NOT NULL DEFAULT '0',
+  `FMVERSIONID` bigint NOT NULL DEFAULT '0',
+  `FAUXPROPERTYID` bigint NOT NULL DEFAULT '0',
+  `FLOT` varchar(80) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FPROJECTID` bigint NOT NULL DEFAULT '0',
+  `FINVTYPEID` bigint NOT NULL DEFAULT '0',
+  `FINVSTATUSID` bigint NOT NULL DEFAULT '0',
+  `FWAREHSOUSEID` bigint NOT NULL DEFAULT '0',
+  `FLOCATIONID` bigint NOT NULL DEFAULT '0',
+  `FBASEUNITID` bigint NOT NULL DEFAULT '0',
+  `FSIGNNUM` int NOT NULL DEFAULT '0',
+  `FSRCBILLTYPEID` bigint NOT NULL DEFAULT '0',
+  `FSRCBIZENTITYOBJECT` varchar(80) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FSRCBILLENTRYID` bigint NOT NULL DEFAULT '0',
+  `FSRCBILLID` bigint NOT NULL DEFAULT '0',
+  `FSRCENTRYSEQ` int NOT NULL DEFAULT '0',
+  `FSRCBILLNUM` varchar(80) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FACCOUNTTYPE` char(1) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `FCALDIMENSIONID` bigint NOT NULL DEFAULT '0',
+  `FCALRANGEID` bigint NOT NULL DEFAULT '0',
+  `FOWNERTYPE` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FOWNERID` bigint NOT NULL DEFAULT '0',
+  `FBASEQTY` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FUNITPRICE` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FAMOUNT` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FCOSTDIFF` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FREMARK` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FYEARINQTY` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FYEARISSUEQTY` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FYEARINCOST` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FYEARINCOSTDIFF` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FYEARISSUECOST` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FYEARISSUECOSTDIFF` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FBIZBILLENTRYID` bigint NOT NULL DEFAULT '0',
+  `FCREATETYPE` char(1) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `FSTOCKINDATE` datetime DEFAULT NULL,
+  `FCONFIGUREDCODEID` bigint NOT NULL DEFAULT '0',
+  `FTRACKNUMBERID` bigint NOT NULL DEFAULT '0',
+  `FISPRESENT` char(1) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  `FECOSTCENTERID` bigint NOT NULL DEFAULT '0',
+  `FCOSTDOMAINKEY` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FENTRYSTATUS` char(1) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'C',
+  `FECALSTATUS` char(1) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'A',
+  `FNOUPDATECALFIELDS` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`FENTRYID`),
+  KEY `IDX_CAL_INITENTRY_FMATID` (`FMATERIALID`),
+  KEY `IDX_CAL_INITBILLENTRY_FID` (`FID`),
+  KEY `IDX_CAL_INITBILLENTRY_CDKEY` (`FCOSTDOMAINKEY`,`FID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cal_initbillentry_l definition
+
+CREATE TABLE `t_cal_initbillentry_l` (
+  `FPKID` varchar(36) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FENTRYID` bigint NOT NULL DEFAULT '0',
+  `FLOCALEID` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FREMARK` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`FPKID`),
+  KEY `IDX_CAL_INITBILLENTRY_L` (`FENTRYID`,`FLOCALEID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cal_inoutrelation definition
+
+CREATE TABLE `t_cal_inoutrelation` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FINBILLNUNBER` varchar(80) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FINBILLID` bigint NOT NULL DEFAULT '0',
+  `FINBILLDATE` datetime DEFAULT NULL,
+  `FINBILLENTRYID` bigint NOT NULL DEFAULT '0',
+  `FINQTY` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FMATERIALID` bigint NOT NULL DEFAULT '0',
+  `FCOSTACCOUNTID` bigint NOT NULL DEFAULT '0',
+  `FSUMOUTQTY` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  PRIMARY KEY (`FID`),
+  KEY `IDX_CAL_IORELATION_INBILLEID` (`FINBILLENTRYID`),
+  KEY `IDX_CAL_IORELATION_CIM` (`FCOSTACCOUNTID`,`FINBILLDATE`,`FMATERIALID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cal_inoutrelation_r3 definition
+
+CREATE TABLE `t_cal_inoutrelation_r3` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FRefStatus` char(1) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cal_inoutrelationentry definition
+
+CREATE TABLE `t_cal_inoutrelationentry` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FENTRYID` bigint NOT NULL DEFAULT '0',
+  `FSEQ` int NOT NULL DEFAULT '0',
+  `FOUTBILLNUMBER` varchar(80) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FOUTBILLID` bigint NOT NULL DEFAULT '0',
+  `FOUTBILLENTRYID` bigint NOT NULL DEFAULT '0',
+  `FOUTBILLDATE` datetime DEFAULT NULL,
+  `FOUTQTY` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  PRIMARY KEY (`FENTRYID`),
+  KEY `IDX_CAL_IORELATIONE_ID` (`FID`),
+  KEY `IDX_CAL_IORELATIONE_OUTBILLEID` (`FOUTBILLENTRYID`),
+  KEY `IDX_CAL_IORELATIONE_OUTBILLDATE` (`FOUTBILLDATE`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cal_inqueuerecord definition
+
+CREATE TABLE `t_cal_inqueuerecord` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FCALBILLID` bigint NOT NULL DEFAULT '0',
+  `FCALBILLENTRYID` bigint NOT NULL DEFAULT '0',
+  `FMATERIALID` bigint NOT NULL DEFAULT '0',
+  `FBASEUNITID` bigint NOT NULL DEFAULT '0',
+  `FBASEQTY` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FUNITACTUALCOST` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FACTUALCOST` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FAUDITTIME` datetime DEFAULT NULL,
+  `FCOSTACCOUNTID` bigint NOT NULL DEFAULT '0',
+  `FLOT` varchar(100) NOT NULL DEFAULT ' ',
+  `FLOCATIONID` bigint NOT NULL DEFAULT '0',
+  `FWAREHSID` bigint NOT NULL DEFAULT '0',
+  `FSTORAGEORGUNITID` bigint NOT NULL DEFAULT '0',
+  `FBIZBILLID` bigint NOT NULL DEFAULT '0',
+  `FBILLNUMBER` varchar(100) NOT NULL DEFAULT ' ',
+  `FCALORGID` bigint NOT NULL DEFAULT '0',
+  `FBILLTYPE` varchar(100) NOT NULL DEFAULT ' ',
+  `FASSISTPROPERTYID` bigint NOT NULL DEFAULT '0',
+  `FPROJECTID` bigint NOT NULL DEFAULT '0',
+  `FOWNERID` bigint NOT NULL DEFAULT '0',
+  `FBILLTYPENUM` varchar(50) NOT NULL DEFAULT ' ',
+  `FBIZBILLENTRYID` bigint NOT NULL DEFAULT '0',
+  `FCOSTRECORDENTRYID` bigint NOT NULL DEFAULT '0',
+  `FUNITMATERIALCOST` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FMATERIALCOST` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FUNITFEE` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FFEE` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FUNITPROCESSCOST` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FPROCESSCOST` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FLOCALCURRENCYID` bigint NOT NULL DEFAULT '0',
+  `FPERIODID` bigint NOT NULL DEFAULT '0',
+  `FSIGNUM` int NOT NULL DEFAULT '1',
+  `FBIZDATE` datetime DEFAULT NULL,
+  `FMVERSIONID` bigint NOT NULL DEFAULT '0',
+  `FISVOUCHER` char(1) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FID`),
+  KEY `IDX_CAL_INRD_BILLID` (`FCALBILLID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+
+
+-- crrc_cal.t_cal_matchrule definition
+
+CREATE TABLE `t_cal_matchrule` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FNUMBER` varchar(80) NOT NULL DEFAULT ' ',
+  `FSTATUS` varchar(5) NOT NULL DEFAULT ' ',
+  `FCREATORID` bigint NOT NULL DEFAULT '0',
+  `FMODIFIERID` bigint NOT NULL DEFAULT '0',
+  `FENABLE` varchar(5) NOT NULL DEFAULT ' ',
+  `FCREATETIME` datetime DEFAULT NULL,
+  `FMODIFYTIME` datetime DEFAULT NULL,
+  `FMASTERID` bigint NOT NULL DEFAULT '0',
+  `FWRITEOFFTYPEID` bigint NOT NULL DEFAULT '0',
+  `FISSYS` char(1) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FID`),
+  KEY `IDX_CAL_MATCHRULE_NUMBER` (`FNUMBER`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+
+
+-- crrc_cal.t_cal_matchrule_l definition
+
+CREATE TABLE `t_cal_matchrule_l` (
+  `FPKID` varchar(36) NOT NULL DEFAULT ' ',
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FLOCALEID` varchar(10) NOT NULL DEFAULT ' ',
+  `FNAME` varchar(100) NOT NULL DEFAULT ' ',
+  `FREMARK` varchar(100) NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`FPKID`),
+  KEY `IDX_CAL_MATCHRULE_ID` (`FID`,`FLOCALEID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+
+
+-- crrc_cal.t_cal_matchruleentry definition
+
+CREATE TABLE `t_cal_matchruleentry` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FENTRYID` bigint NOT NULL DEFAULT '0',
+  `FSEQ` bigint NOT NULL DEFAULT '0',
+  `FBILLFIELDNAME` varchar(50) NOT NULL DEFAULT ' ',
+  `FBILLFIELD` varchar(50) NOT NULL DEFAULT ' ',
+  `FRBILLFIELDNAME` varchar(50) NOT NULL DEFAULT ' ',
+  `FRBILLFIELD` varchar(50) NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`FENTRYID`),
+  KEY `IDX_CAL_MATCHRULEENTRY` (`FID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+
+
+-- crrc_cal.t_cal_matdimensionentry definition
+
+CREATE TABLE `t_cal_matdimensionentry` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FENTRYID` bigint NOT NULL DEFAULT '0',
+  `FSEQ` bigint NOT NULL DEFAULT '0',
+  `FMATERIALID` bigint NOT NULL DEFAULT '0',
+  `FCALDIMENSIONID` bigint NOT NULL DEFAULT '0',
+  `FMATERIALGROUPID` bigint NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FENTRYID`),
+  KEY `IDX_CAL_MATDISENTRY_ID` (`FID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+
+
+-- crrc_cal.t_cal_materialdimensio_r3 definition
+
+CREATE TABLE `t_cal_materialdimensio_r3` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FRefStatus` char(1) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cal_materialdimension definition
+
+CREATE TABLE `t_cal_materialdimension` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FNUMBER` varchar(80) NOT NULL DEFAULT ' ',
+  `FSTATUS` varchar(30) NOT NULL DEFAULT ' ',
+  `FCREATORID` bigint NOT NULL DEFAULT '0',
+  `FMODIFIERID` bigint NOT NULL DEFAULT '0',
+  `FENABLE` varchar(30) NOT NULL DEFAULT ' ',
+  `FCREATETIME` datetime DEFAULT NULL,
+  `FMODIFYTIME` datetime DEFAULT NULL,
+  `FMASTERID` bigint NOT NULL DEFAULT '0',
+  `FCALRANGEID` bigint NOT NULL DEFAULT '0',
+  `FCALSYSTEMID` bigint NOT NULL DEFAULT '0',
+  `FCALORGID` bigint NOT NULL DEFAULT '0',
+  `FAPPROVERID` bigint NOT NULL DEFAULT '0',
+  `FAPPROVETIME` datetime DEFAULT NULL,
+  `FREMARK` varchar(255) NOT NULL DEFAULT ' ',
+  `FREMARK_TAG` longtext,
+  `FNAME` varchar(80) NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`FID`),
+  KEY `IDX_CAL_MATDIMENSION_NUM` (`FNUMBER`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+
+
+-- crrc_cal.t_cal_materialdimension_l definition
+
+CREATE TABLE `t_cal_materialdimension_l` (
+  `FPKID` varchar(36) NOT NULL DEFAULT ' ',
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FLOCALEID` varchar(10) NOT NULL DEFAULT ' ',
+  `FNAME` varchar(100) NOT NULL DEFAULT ' ',
+  `FREMARK` varchar(255) NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`FPKID`),
+  KEY `IDX_CAL_MATDIS_L_ID` (`FID`,`FLOCALEID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+
+
+-- crrc_cal.t_cal_materialdimension_r3 definition
+
+CREATE TABLE `t_cal_materialdimension_r3` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FRefStatus` char(1) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+
+
+-- crrc_cal.t_cal_mqmutex definition
+
+CREATE TABLE `t_cal_mqmutex` (
+  `FMQKEY` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`FMQKEY`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cal_notcalage definition
+
+CREATE TABLE `t_cal_notcalage` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FNUMBER` varchar(80) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FNAME` varchar(80) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FSTATUS` char(1) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'C',
+  `FENABLE` char(1) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '1',
+  `FCREATORID` bigint NOT NULL DEFAULT '0',
+  `FISPRESET` char(1) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  `FMODIFIERID` bigint NOT NULL DEFAULT '0',
+  `FCREATETIME` datetime DEFAULT NULL,
+  `FMODIFYTIME` datetime DEFAULT NULL,
+  `FMASTERID` bigint NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FID`),
+  KEY `IDX_CAL_NOTCALAGE_NO` (`FNUMBER`),
+  KEY `IDX_CAL_NOTCALAGE_NE` (`FNAME`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cal_notcalage_l definition
+
+CREATE TABLE `t_cal_notcalage_l` (
+  `FPKID` varchar(36) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FLOCALEID` varchar(10) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FNAME` varchar(80) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`FPKID`),
+  KEY `IDX_CAL_NOTCALAGE_LOCAL` (`FID`,`FLOCALEID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cal_notcalage_r3 definition
+
+CREATE TABLE `t_cal_notcalage_r3` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FRefStatus` char(1) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cal_notcalageentry definition
+
+CREATE TABLE `t_cal_notcalageentry` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FENTRYID` bigint NOT NULL DEFAULT '0',
+  `FSEQ` int NOT NULL DEFAULT '0',
+  `FBILLTYPE` bigint NOT NULL DEFAULT '0',
+  `FBIZTYPE` bigint NOT NULL DEFAULT '0',
+  `FINVSCHEME` bigint NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FENTRYID`),
+  KEY `IDX_CAL_NOTCALAGEE_ID` (`FID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cal_outcalbill definition
+
+CREATE TABLE `t_cal_outcalbill` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FBIZBILLNO` varchar(80) NOT NULL DEFAULT ' ',
+  `FBILLNO` varchar(80) NOT NULL DEFAULT ' ',
+  `FBILLSTATUS` varchar(5) NOT NULL DEFAULT ' ',
+  `FCREATORID` bigint NOT NULL DEFAULT '0',
+  `FAUDITORID` bigint NOT NULL DEFAULT '0',
+  `FBIZDATE` datetime DEFAULT NULL,
+  `FBILLDATE` datetime DEFAULT NULL,
+  `FBILLTYPEID` bigint NOT NULL DEFAULT '0',
+  `FORGID` bigint NOT NULL DEFAULT '0',
+  `FADMINORGID` bigint NOT NULL DEFAULT '0',
+  `FCOSTCENTERORGID` bigint NOT NULL DEFAULT '0',
+  `FPROFITCENTERORGID` bigint NOT NULL DEFAULT '0',
+  `FCUSTOMERID` bigint NOT NULL DEFAULT '0',
+  `FCURRENCYID` bigint NOT NULL DEFAULT '0',
+  `FLOCALCURRENCYID` bigint NOT NULL DEFAULT '0',
+  `FEXCHANGERATE` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FBIZBILLID` bigint NOT NULL DEFAULT '0',
+  `FBIZENTITYOBJECTID` varchar(100) NOT NULL DEFAULT ' ',
+  `FAUDITDATE` datetime DEFAULT NULL,
+  `FCREATETIME` datetime DEFAULT NULL,
+  `FMODIFYTIME` datetime DEFAULT NULL,
+  `FMODIFIERID` bigint NOT NULL DEFAULT '0',
+  `FBIZDIRECTION` varchar(5) NOT NULL DEFAULT ' ',
+  `FBIZTYPEID` bigint NOT NULL DEFAULT '0',
+  `FISINITBILL` char(1) NOT NULL DEFAULT '0',
+  `FINVSCHEMEID` bigint NOT NULL DEFAULT '0',
+  `FEXRATETABLEID` bigint NOT NULL DEFAULT '0',
+  `FEXRATEDATE` datetime DEFAULT NULL,
+  `FISVIRTUALBILL` char(1) NOT NULL DEFAULT '0',
+  `FBOOKDATE` datetime DEFAULT NULL,
+  `FTRANSTYPE` varchar(5) NOT NULL DEFAULT ' ',
+  `FINVORGID` bigint NOT NULL DEFAULT '0',
+  `FCOMMENT` varchar(512) NOT NULL DEFAULT ' ',
+  `fsupplierid` bigint NOT NULL DEFAULT '0',
+  `FISCHARGEOFFED` char(1) NOT NULL DEFAULT '0',
+  `FISCHARGEOFF` char(1) NOT NULL DEFAULT '0',
+  `FLASTUPDATEUSERID` bigint NOT NULL DEFAULT '0',
+  `FLASTUPDATETIME` datetime DEFAULT NULL,
+  PRIMARY KEY (`FID`),
+  KEY `IDX_CAL_OUTCALBILL_ORG` (`FORGID`),
+  KEY `IDX_CAL_OUTCALBILL_BIZBID` (`FBIZBILLID`),
+  KEY `IDX_CAL_OUTCALBILL_BIZNO` (`FBIZBILLNO`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+
+
+-- crrc_cal.t_cal_outcalbill_l definition
+
+CREATE TABLE `t_cal_outcalbill_l` (
+  `FPKID` varchar(36) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FLOCALEID` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FCOMMENT` varchar(512) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`FPKID`),
+  KEY `IDX_CAL_OUTCALBILL_L` (`FID`,`FLOCALEID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cal_outcalentry definition
+
+CREATE TABLE `t_cal_outcalentry` (
+  `FENTRYID` bigint NOT NULL DEFAULT '0',
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FSEQ` bigint NOT NULL DEFAULT '0',
+  `FBIZBILLENTRYID` bigint NOT NULL DEFAULT '0',
+  `FMATERIALID` bigint NOT NULL DEFAULT '0',
+  `FASSISTPROPERTYID` bigint NOT NULL DEFAULT '0',
+  `FBASEUNITID` bigint NOT NULL DEFAULT '0',
+  `FBASEQTY` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FOWNERTYPE` varchar(30) NOT NULL DEFAULT ' ',
+  `FOWNERID` bigint NOT NULL DEFAULT '0',
+  `FSTORAGEORGID` bigint NOT NULL DEFAULT '0',
+  `FCOMPANYORGID` bigint NOT NULL DEFAULT '0',
+  `FENTRYADMINORGID` bigint NOT NULL DEFAULT '0',
+  `FENTRYCOSTCENTERORGID` bigint NOT NULL DEFAULT '0',
+  `FENTRYPROFITCENTERORGID` bigint NOT NULL DEFAULT '0',
+  `FWAREHOUSEID` bigint NOT NULL DEFAULT '0',
+  `FLOCATIONID` bigint NOT NULL DEFAULT '0',
+  `FLOT` varchar(50) NOT NULL DEFAULT ' ',
+  `FISPRESENT` char(1) NOT NULL DEFAULT '0',
+  `FTAXRATE` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FAUDITTIME` datetime DEFAULT NULL,
+  `FDISCOUNTRATE` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FPRICE` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FTAXPRICE` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FTAX` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FLOCALTAX` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FAMOUNT` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FLOCALAMOUNT` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FTAXAMOUNT` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FLOCALTAXAMOUNT` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FINVTYPEID` bigint NOT NULL DEFAULT '0',
+  `FINVSTATUSID` bigint NOT NULL DEFAULT '0',
+  `FPROJECTID` bigint NOT NULL DEFAULT '0',
+  `FSRCBILLENTITY` varchar(80) NOT NULL DEFAULT ' ',
+  `FSRCBILLENTRYID` bigint NOT NULL DEFAULT '0',
+  `FSRCBILLID` bigint NOT NULL DEFAULT '0',
+  `FSRCBILLENTRYSEQ` int NOT NULL DEFAULT '0',
+  `FSRCBILLNUMBER` varchar(80) NOT NULL DEFAULT ' ',
+  `FMAINBILLENTITY` varchar(80) NOT NULL DEFAULT ' ',
+  `FMAINBILLNUMBER` varchar(80) NOT NULL DEFAULT ' ',
+  `FMAINBILLID` bigint NOT NULL DEFAULT '0',
+  `FMAINBILLENTRYID` bigint NOT NULL DEFAULT '0',
+  `FMAINBILLENTRYSEQ` int NOT NULL DEFAULT '0',
+  `FMVERSIONID` bigint NOT NULL DEFAULT '0',
+  `FBALANCECUSTOMERID` bigint NOT NULL DEFAULT '0',
+  `FISLASTENTRY` char(1) NOT NULL DEFAULT '0',
+  `FCONFIGUREDCODEID` bigint NOT NULL DEFAULT '0',
+  `FTRACKNUMBERID` bigint NOT NULL DEFAULT '0',
+  `FISREWORK` char(1) NOT NULL DEFAULT '0',
+  `FPRODUCTNUM` varchar(255) NOT NULL DEFAULT ' ',
+  `FPRODUCTID` bigint NOT NULL DEFAULT '0',
+  `FECOSTCENTERID` bigint NOT NULL DEFAULT '0',
+  `FINTERCOSTAMT` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FPRODUCTLINE` bigint NOT NULL DEFAULT '0',
+  `FNOUPDATECALFIELDS` varchar(255) NOT NULL DEFAULT ' ',
+  `FWEIGHT` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FPID` bigint NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FENTRYID`),
+  UNIQUE KEY `IDX_CAL_OUT_BIZENTRY` (`FBIZBILLENTRYID`),
+  KEY `IDX_CAL_OUTCALENTRY` (`FID`),
+  KEY `IDX_CAL_OUTCALET_MATID` (`FMATERIALID`,`FID`),
+  KEY `IDX_CAL_OUTCALET_WHID` (`FWAREHOUSEID`,`FID`),
+  KEY `IDX_CAL_OUTCALENTRY_SRCID` (`FSRCBILLENTRYID`),
+  KEY `IDX_CAL_OUTCALENTRY_OW` (`FOWNERID`),
+  KEY `idx_cal_incalentry_maineid` (`FMAINBILLENTRYID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+
+
+-- crrc_cal.t_cal_outcalentry_a definition
+
+CREATE TABLE `t_cal_outcalentry_a` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FENTRYID` bigint NOT NULL DEFAULT '0',
+  `FUNITMATERIALCOST` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FMATERIALCOST` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FUNITFEE` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FFEE` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FUNITPROCESSCOST` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FPROCESSCOST` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FSRCSYSBILLENTRYID` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FSRCSYSTEM` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FSRCSYSBILLID` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FSRCSYSBILLNO` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FGROUPNUMBER` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FGROUPSEQ` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`FENTRYID`),
+  KEY `IDX_CAL_OUTCALEA_ID` (`FID`),
+  KEY `idx_cal_outcalentry_groupno` (`FGROUPNUMBER`),
+  KEY `IDX_CAL_OUTCALENTEY_GROUPSEQ` (`FGROUPSEQ`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cal_outqueuerecord definition
+
+CREATE TABLE `t_cal_outqueuerecord` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FCALBILLID` bigint NOT NULL DEFAULT '0',
+  `FCALBILLENTRYID` bigint NOT NULL DEFAULT '0',
+  `FUNITACTUALCOST` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FACTUALCOST` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FBASEUNITID` bigint NOT NULL DEFAULT '0',
+  `FMATERIALID` bigint NOT NULL DEFAULT '0',
+  `FAUDITTIME` datetime DEFAULT NULL,
+  `FBASEQTY` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FCOSTACCOUNTID` bigint NOT NULL DEFAULT '0',
+  `FBILLTYPE` varchar(100) NOT NULL DEFAULT ' ',
+  `FCALORGID` bigint NOT NULL DEFAULT '0',
+  `FLOT` varchar(100) NOT NULL DEFAULT ' ',
+  `FBIZBILLID` bigint NOT NULL DEFAULT '0',
+  `FBIZDATE` datetime DEFAULT NULL,
+  `FSTORAGEORGUNITID` bigint NOT NULL DEFAULT '0',
+  `FWAREHSID` bigint NOT NULL DEFAULT '0',
+  `FLOCATIONID` bigint NOT NULL DEFAULT '0',
+  `FBILLNUMBER` varchar(100) NOT NULL DEFAULT ' ',
+  `FASSISTPROPERTYID` bigint NOT NULL DEFAULT '0',
+  `FPROJECTID` bigint NOT NULL DEFAULT '0',
+  `FOWNERID` bigint NOT NULL DEFAULT '0',
+  `FBILLTYPENUM` varchar(50) NOT NULL DEFAULT ' ',
+  `FBIZBILLENTRYID` bigint NOT NULL DEFAULT '0',
+  `FCOSTRECORDENTRYID` bigint NOT NULL DEFAULT '0',
+  `FUNITMATERIALCOST` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FMATERIALCOST` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FUNITFEE` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FFEE` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FUNITPROCESSCOST` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FPROCESSCOST` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FLOCALCURRENCYID` bigint NOT NULL DEFAULT '0',
+  `FPERIODID` bigint NOT NULL DEFAULT '0',
+  `FSIGNUM` int NOT NULL DEFAULT '1',
+  `FMVERSIONID` bigint NOT NULL DEFAULT '0',
+  `FISVOUCHER` char(1) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FID`),
+  KEY `IDX_CAL_OUTRD_BILLID` (`FCALBILLID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+
+
+-- crrc_cal.t_cal_periodsettinglog definition
+
+CREATE TABLE `t_cal_periodsettinglog` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FCALORGID` bigint NOT NULL DEFAULT '0',
+  `FCOSTACCOUNTID` bigint NOT NULL DEFAULT '0',
+  `FOPERATION` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FISSUCCESS` char(1) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  `FOPERATIONTIME` datetime DEFAULT NULL,
+  `FUSERFIELD` bigint NOT NULL DEFAULT '0',
+  `FLOG` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FLOG_TAG` longtext COLLATE utf8mb4_unicode_ci,
+  `FFAILLINK` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FLINKBILLOBJECT` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FLINKIDS` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FLINKIDS_TAG` longtext COLLATE utf8mb4_unicode_ci,
+  `FERRORTYPE` int NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FID`),
+  KEY `INDEX_COSTACCOUNT` (`FCOSTACCOUNTID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cal_periodsettinglog_r3 definition
+
+CREATE TABLE `t_cal_periodsettinglog_r3` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FRefStatus` char(1) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cal_plugin definition
+
+CREATE TABLE `t_cal_plugin` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FNUMBER` varchar(80) NOT NULL DEFAULT ' ',
+  `FSTATUS` char(5) NOT NULL DEFAULT '',
+  `FCREATORID` bigint NOT NULL DEFAULT '0',
+  `FMODIFIERID` bigint NOT NULL DEFAULT '0',
+  `FENABLE` char(5) NOT NULL DEFAULT '',
+  `FCREATETIME` datetime DEFAULT NULL,
+  `FMODIFYTIME` datetime DEFAULT NULL,
+  `FMASTERID` bigint NOT NULL DEFAULT '0',
+  `FPLUGIN` varchar(200) NOT NULL DEFAULT ' ',
+  `FDESCRIPTION` varchar(255) NOT NULL DEFAULT ' ',
+  `FNAME` varchar(80) NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`FID`),
+  KEY `IDX_CAL_PLUGIN_NUM` (`FNUMBER`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+
+
+-- crrc_cal.t_cal_plugin_l definition
+
+CREATE TABLE `t_cal_plugin_l` (
+  `FPKID` varchar(36) NOT NULL DEFAULT ' ',
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FLOCALEID` varchar(10) NOT NULL DEFAULT ' ',
+  `FNAME` varchar(100) NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`FPKID`),
+  KEY `IDX_CAL_PLUGIN_L` (`FID`,`FLOCALEID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+
+
+-- crrc_cal.t_cal_plugin_r3 definition
+
+CREATE TABLE `t_cal_plugin_r3` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FRefStatus` char(1) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+
+
+-- crrc_cal.t_cal_price_provbill definition
+
+CREATE TABLE `t_cal_price_provbill` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FCOSTACCOUNTID` bigint NOT NULL DEFAULT '0',
+  `FORGID` bigint NOT NULL DEFAULT '0',
+  `FBILLNO` varchar(80) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FCREATORID` bigint NOT NULL DEFAULT '0',
+  `FMODIFIERID` bigint NOT NULL DEFAULT '0',
+  `FAUDITORID` bigint NOT NULL DEFAULT '0',
+  `FAUDITDATE` datetime DEFAULT NULL,
+  `FMODIFYTIME` datetime DEFAULT NULL,
+  `FCREATETIME` datetime DEFAULT NULL,
+  `FBILLSTATUS` char(1) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'A',
+  `FPERIODID` bigint NOT NULL DEFAULT '0',
+  `FPERIOD` int NOT NULL DEFAULT '0',
+  `FBIZDATE` datetime DEFAULT NULL,
+  `FACCSETTINGID` bigint NOT NULL DEFAULT '0',
+  `FISINITBILL` char(1) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  `FREMARK` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FCURRENCYID` bigint NOT NULL DEFAULT '0',
+  `FLASTUPDATEUSERID` bigint NOT NULL DEFAULT '0',
+  `FLASTUPDATETIME` datetime DEFAULT NULL,
+  `FBOOKDATE` datetime DEFAULT NULL,
+  PRIMARY KEY (`FID`),
+  KEY `IDX_CAL_PRICE_PROVBILL_COP` (`FCOSTACCOUNTID`,`FORGID`,`FPERIODID`),
+  KEY `IDX_CAL_PRICE_PROVBILL_BD` (`FBOOKDATE`),
+  KEY `IDX_CAL_PRICE_PROVBILL_PD` (`FPERIOD`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cal_price_provbill_l definition
+
+CREATE TABLE `t_cal_price_provbill_l` (
+  `FPKID` varchar(36) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FLOCALEID` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FREMARK` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`FPKID`),
+  KEY `IDX_CAL_PRICE_PROVBILL_L_LOC` (`FLOCALEID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cal_price_proventry definition
+
+CREATE TABLE `t_cal_price_proventry` (
+  `FENTRYID` bigint NOT NULL DEFAULT '0',
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FSEQ` int NOT NULL DEFAULT '0',
+  `FMATERIALID` bigint NOT NULL DEFAULT '0',
+  `FMATERIALGROUPID` bigint NOT NULL DEFAULT '0',
+  `FOWNERTYPE` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'bos_org',
+  `FOWNERID` bigint NOT NULL DEFAULT '0',
+  `FSTORAGEORGUNITID` bigint NOT NULL DEFAULT '0',
+  `FWAREHOUSEID` bigint NOT NULL DEFAULT '0',
+  `FLOCATIONID` bigint NOT NULL DEFAULT '0',
+  `FASSISTID` bigint NOT NULL DEFAULT '0',
+  `FLOT` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FPROJECTID` bigint NOT NULL DEFAULT '0',
+  `FINVTYPEID` bigint NOT NULL DEFAULT '0',
+  `FINVSTATUSID` bigint NOT NULL DEFAULT '0',
+  `FBASEUNITID` bigint NOT NULL DEFAULT '0',
+  `FBASEQTY` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FBASEPRICE` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FAMOUNT` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FFALLPRICESCALE` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FUNITREALIZABLEAMOUNT` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FREALIZABLEAMOUNT` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FREQUIREAMOUNT` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FHASAMOUNT` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `freplenishamount` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `frushbaseqty` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `frushamount` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FENDPERIOD` int NOT NULL DEFAULT '999999',
+  `FINVAGEFROM` int NOT NULL DEFAULT '0',
+  `FINVAGETO` int NOT NULL DEFAULT '0',
+  `FPREENTRYID` bigint NOT NULL DEFAULT '0',
+  `FWAREHOUSEGROUPID` bigint NOT NULL DEFAULT '0',
+  `FCONFIGUREDCODEID` bigint NOT NULL DEFAULT '0',
+  `FEXPIRYDATEFROM` int NOT NULL DEFAULT '-999999',
+  `FEXPIRYDATETO` int NOT NULL DEFAULT '999999',
+  PRIMARY KEY (`FENTRYID`),
+  KEY `IDX_CAL_PRICE_PROVENTRY_EP` (`FENDPERIOD`),
+  KEY `IDX_CAL_PRICE_PROVBILLE_STO` (`FSTORAGEORGUNITID`),
+  KEY `IDX_CAL_PRICE_PROVBILLE_MAT` (`FMATERIALID`),
+  KEY `IDX_CAL_PRICE_PROVBILLE_FID` (`FID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cal_price_revbill definition
+
+CREATE TABLE `t_cal_price_revbill` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FCOSTACCOUNTID` bigint NOT NULL DEFAULT '0',
+  `FORGID` bigint NOT NULL DEFAULT '0',
+  `FCREATORID` bigint NOT NULL DEFAULT '0',
+  `FMODIFIERID` bigint NOT NULL DEFAULT '0',
+  `FAUDITORID` bigint NOT NULL DEFAULT '0',
+  `FAUDITDATE` datetime DEFAULT NULL,
+  `FMODIFYTIME` datetime DEFAULT NULL,
+  `FCREATETIME` datetime DEFAULT NULL,
+  `FBILLNO` varchar(80) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FBILLSTATUS` char(1) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'A',
+  `FPERIODID` bigint NOT NULL DEFAULT '0',
+  `FPERIOD` int NOT NULL DEFAULT '0',
+  `FBIZDATE` datetime DEFAULT NULL,
+  `FACCSETTINGID` bigint NOT NULL DEFAULT '0',
+  `FREMARK` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FCURRENCYID` bigint NOT NULL DEFAULT '0',
+  `FSOURCEBILLID` bigint NOT NULL DEFAULT '0',
+  `FLASTUPDATEUSERID` bigint NOT NULL DEFAULT '0',
+  `FLASTUPDATETIME` datetime DEFAULT NULL,
+  `FBOOKDATE` datetime DEFAULT NULL,
+  PRIMARY KEY (`FID`),
+  KEY `IDX_CAL_PRICE_REVBILL_OPA` (`FORGID`,`FPERIODID`,`FACCSETTINGID`),
+  KEY `IDX_CAL_PRICE_REVBILL_BD` (`FBOOKDATE`),
+  KEY `IDX_CAL_PRICE_REVBILL_PD` (`FPERIOD`),
+  KEY `IDX_CAL_PRICE_REVBILL_ACCT` (`FCOSTACCOUNTID`),
+  KEY `IDX_CAL_PRICE_REVBILL_SID` (`FSOURCEBILLID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cal_price_revbill_l definition
+
+CREATE TABLE `t_cal_price_revbill_l` (
+  `FPKID` varchar(36) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FLOCALEID` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FREMARK` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`FPKID`),
+  KEY `IDX_CAL_PRICE_REVBILL_L_LO` (`FLOCALEID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cal_price_revbill_lk definition
+
+CREATE TABLE `t_cal_price_revbill_lk` (
+  `FId` bigint NOT NULL,
+  `FPKId` bigint NOT NULL,
+  `FSeq` int NOT NULL DEFAULT '0',
+  `FSTABLEID` bigint NOT NULL DEFAULT '0' COMMENT '源单主实体编码',
+  `FSBILLID` bigint NOT NULL DEFAULT '0' COMMENT '源单内码',
+  `FSID` bigint NOT NULL DEFAULT '0' COMMENT '源单主实体内码',
+  PRIMARY KEY (`FPKId`),
+  KEY `idx_cal_price_revbill_lk_fk` (`FId`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cal_price_revbill_tc definition
+
+CREATE TABLE `t_cal_price_revbill_tc` (
+  `FId` bigint NOT NULL,
+  `FTBILLID` bigint NOT NULL DEFAULT '0' COMMENT '目标单单据内码',
+  `FTTABLEID` bigint NOT NULL DEFAULT '0' COMMENT '目标单主实体表格编码',
+  `FTID` bigint NOT NULL DEFAULT '0' COMMENT '目标单主实体内码',
+  `FSBILLID` bigint NOT NULL DEFAULT '0' COMMENT '源单单据内码',
+  `FSTABLEID` bigint NOT NULL DEFAULT '0' COMMENT '源单主实体表格编码',
+  `FSID` bigint NOT NULL DEFAULT '0' COMMENT '源单主实体内码',
+  PRIMARY KEY (`FId`),
+  KEY `IDX_CAL_PRICE_REVBILL_TC_TBILL` (`FTBILLID`),
+  KEY `IDX_CAL_PRICE_REVBILL_TC_TID` (`FTID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cal_price_revbill_wb definition
+
+CREATE TABLE `t_cal_price_revbill_wb` (
+  `FId` bigint NOT NULL,
+  `FEntryId` bigint NOT NULL,
+  `FSeq` int NOT NULL DEFAULT '0',
+  `FRULEVERID` bigint NOT NULL DEFAULT '0' COMMENT '反写规则历史版本标识',
+  `FRULEITEMID` bigint NOT NULL DEFAULT '0' COMMENT '反写条目编码',
+  `FOPERATE` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ' COMMENT '反写操作',
+  `FSTABLEID` bigint NOT NULL DEFAULT '0' COMMENT '反写源单主实体表格编码',
+  `FSID` bigint NOT NULL DEFAULT '0' COMMENT '反写源单主实体内码',
+  `FSBILLID` bigint NOT NULL DEFAULT '0' COMMENT '反写源单内码',
+  `FWRITEVALUE` decimal(23,10) NOT NULL DEFAULT '0.0000000000' COMMENT '反写量',
+  PRIMARY KEY (`FEntryId`),
+  KEY `idx_cal_price_revbill_wb_fk` (`FId`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cal_pricelib definition
+
+CREATE TABLE `t_cal_pricelib` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FNUMBER` varchar(80) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FNAME` varchar(80) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`FID`),
+  KEY `IDX_CAL_PRICELIB_NUM` (`FNUMBER`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cal_pricelib_r3 definition
+
+CREATE TABLE `t_cal_pricelib_r3` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FRefStatus` char(1) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cal_pricelibentry definition
+
+CREATE TABLE `t_cal_pricelibentry` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FENTRYID` bigint NOT NULL DEFAULT '0',
+  `FSEQ` int NOT NULL DEFAULT '0',
+  `FPRICENUM` varchar(80) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FPRICENAME` varchar(80) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FENTITYOBJECT` varchar(80) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FPRICETRANEXPR` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FPRICEEXP` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FPRICEEXP_TAG` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `FPRICEDESC` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FISDETAIL` char(1) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  `FCOSTELEMENTID` bigint NOT NULL DEFAULT '0',
+  `FCOSTSUBELEMENTID` bigint NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FENTRYID`),
+  KEY `IDX_CAL_PRICELIBE_ID` (`FID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cal_pricelibentry_l definition
+
+CREATE TABLE `t_cal_pricelibentry_l` (
+  `FPKID` varchar(36) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FENTRYID` bigint NOT NULL DEFAULT '0',
+  `FLOCALEID` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FPRICENAME` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`FPKID`),
+  KEY `IDX_CAL_PRICELIBENTRY_L` (`FENTRYID`,`FLOCALEID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cal_pricerevbillentry definition
+
+CREATE TABLE `t_cal_pricerevbillentry` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FENTRYID` bigint NOT NULL DEFAULT '0',
+  `FSEQ` int NOT NULL DEFAULT '0',
+  `FMATERIALID` bigint NOT NULL DEFAULT '0',
+  `FMATERIALGROUPID` bigint NOT NULL DEFAULT '0',
+  `FOWNERTYPE` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'bos_org',
+  `FOWNERID` bigint NOT NULL DEFAULT '0',
+  `FSTORAGEORGUNITID` bigint NOT NULL DEFAULT '0',
+  `FWAREHOUSEID` bigint NOT NULL DEFAULT '0',
+  `FLOCATIONID` bigint NOT NULL DEFAULT '0',
+  `FASSISTID` bigint NOT NULL DEFAULT '0',
+  `FLOT` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FPROJECTID` bigint NOT NULL DEFAULT '0',
+  `FINVTYPEID` bigint NOT NULL DEFAULT '0',
+  `FINVSTATUSID` bigint NOT NULL DEFAULT '0',
+  `FBASEUNITID` bigint NOT NULL DEFAULT '0',
+  `FBASEQTY` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FBASEPRICE` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FAMOUNT` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FUNITREALIZABLEAMOUNT` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FREALIZABLEAMOUNT` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FRUSHBASEQTY` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FRUSHAMOUNT` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FCURPERIODOUTQTY` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FCURPERIODRUSHQTY` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FCURPERIODRUSHAMOUNT` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FSOURCEENTRYID` bigint NOT NULL DEFAULT '0',
+  `FINVAGEFROM` int NOT NULL DEFAULT '0',
+  `FINVAGETO` int NOT NULL DEFAULT '0',
+  `FWAREHOUSEGROUPID` bigint NOT NULL DEFAULT '0',
+  `FCONFIGUREDCODEID` bigint NOT NULL DEFAULT '0',
+  `FEXPIRYDATEFROM` int NOT NULL DEFAULT '-999999',
+  `FEXPIRYDATETO` int NOT NULL DEFAULT '999999',
+  PRIMARY KEY (`FENTRYID`),
+  KEY `IDX_CAL_PRICEREVBILLENTRY_EI` (`FID`),
+  KEY `IDX_CAL_PRICEREVBILLE_STO` (`FSTORAGEORGUNITID`),
+  KEY `IDX_CAL_PRICEREVBILLE_MAT` (`FMATERIALID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cal_pricerevbillentry_lk definition
+
+CREATE TABLE `t_cal_pricerevbillentry_lk` (
+  `FEntryId` bigint NOT NULL,
+  `FPKId` bigint NOT NULL,
+  `FSeq` int NOT NULL DEFAULT '0',
+  `FSTABLEID` bigint NOT NULL DEFAULT '0' COMMENT '源单主实体编码',
+  `FSBILLID` bigint NOT NULL DEFAULT '0' COMMENT '源单内码',
+  `FSID` bigint NOT NULL DEFAULT '0' COMMENT '源单主实体内码',
+  PRIMARY KEY (`FPKId`),
+  KEY `idx_cal_pricerevbillentry_lk_fk` (`FEntryId`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cal_pricescheme definition
+
+CREATE TABLE `t_cal_pricescheme` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FNUMBER` varchar(80) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FNAME` varchar(80) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FENTITYOBJECT` varchar(80) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FBILLFILTERDESC` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FBILLFILTER` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FBILLFILTER_TAG` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `FPRICEDIMENSION` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FPRICEOBJECT` char(1) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `FENABLE` char(1) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '1',
+  `FREMARK` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FPRICEREMARK` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FISPRESET` char(1) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FID`),
+  KEY `IDX_CAL_PRICESCHEME_NUM` (`FNUMBER`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cal_pricescheme_l definition
+
+CREATE TABLE `t_cal_pricescheme_l` (
+  `FPKID` varchar(36) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FLOCALEID` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FREMARK` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FNAME` varchar(80) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`FPKID`),
+  KEY `IDX_CAL_PRICESCHEMEL_ID` (`FID`,`FLOCALEID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cal_pricescheme_r3 definition
+
+CREATE TABLE `t_cal_pricescheme_r3` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FRefStatus` char(1) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cal_priceschemeentry definition
+
+CREATE TABLE `t_cal_priceschemeentry` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FENTRYID` bigint NOT NULL DEFAULT '0',
+  `FSEQ` int NOT NULL DEFAULT '0',
+  `FPRICESETTING` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FSRCPRICE` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT ' ',
+  `FDESTPRICE` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT ' ',
+  `FSRCDISPLAY` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT ' ',
+  `FDESTDISPLAY` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT ' ',
+  `FPRICEDISPLAY` varchar(80) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FPRICEREMARK` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`FENTRYID`),
+  KEY `IDX_CAL_PRICESCHEMEE_ID` (`FID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cal_priceschemeentry_l definition
+
+CREATE TABLE `t_cal_priceschemeentry_l` (
+  `FPKID` varchar(36) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FENTRYID` bigint NOT NULL DEFAULT '0',
+  `FLOCALEID` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FPRICEREMARK` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`FPKID`),
+  KEY `IDX_CAL_PRICESCHEMEEL_ID` (`FENTRYID`,`FLOCALEID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cal_progress definition
+
+CREATE TABLE `t_cal_progress` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FTASKID` bigint NOT NULL DEFAULT '0',
+  `FPROGRESS` int NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FID`),
+  KEY `IDX_CAL_PROGRE_TASK` (`FTASKID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cal_progress_r3 definition
+
+CREATE TABLE `t_cal_progress_r3` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FRefStatus` char(1) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cal_progressentry definition
+
+CREATE TABLE `t_cal_progressentry` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FENTRYID` bigint NOT NULL DEFAULT '0',
+  `FSEQ` int NOT NULL DEFAULT '0',
+  `FSTEPID` bigint NOT NULL DEFAULT '0',
+  `FSTATUS` char(1) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `FTIME` bigint NOT NULL DEFAULT '0',
+  `FERRORINFO` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FERRORINFO_TAG` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  PRIMARY KEY (`FENTRYID`),
+  KEY `IDX_CAL_PROGREEN_FID` (`FID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cal_purdiff_detail definition
+
+CREATE TABLE `t_cal_purdiff_detail` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FBALID` bigint NOT NULL DEFAULT '0',
+  `FCOSTELEMENTID` bigint NOT NULL DEFAULT '0',
+  `FCOSTSUBELEMENTID` bigint NOT NULL DEFAULT '0',
+  `FPERIODBEGINCOSTDIFF` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FPERIODINCOSTDIFF` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FPERIODISSUECOSTDIFF` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FPERIODENDCOSTDIFF` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  PRIMARY KEY (`FID`),
+  KEY `IDX_CAL_DIFFBALDET_BALID` (`FBALID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cal_purdiff_detail_r3 definition
+
+CREATE TABLE `t_cal_purdiff_detail_r3` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FRefStatus` char(1) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cal_purpricediff definition
+
+CREATE TABLE `t_cal_purpricediff` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FCOSTACCOUNTID` bigint NOT NULL DEFAULT '0',
+  `FACCSYSID` bigint NOT NULL DEFAULT '0',
+  `FCALORGID` bigint NOT NULL DEFAULT '0',
+  `FCALPOLICYID` bigint NOT NULL DEFAULT '0',
+  `FPERIODID` bigint NOT NULL DEFAULT '0',
+  `FPERIOD` int NOT NULL DEFAULT '0',
+  `FENDPERIOD` int NOT NULL DEFAULT '0',
+  `FYEAR` int NOT NULL DEFAULT '0',
+  `FMONTH` int NOT NULL DEFAULT '0',
+  `FSTORAGEORGUNITID` bigint NOT NULL DEFAULT '0',
+  `FOWNERTYPE` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FOWNERID` bigint NOT NULL DEFAULT '0',
+  `FSEQNUM` bigint NOT NULL DEFAULT '0',
+  `FMATERIALID` bigint NOT NULL DEFAULT '0',
+  `FCOSTELEMENTID` bigint NOT NULL DEFAULT '0',
+  `FCOSTSUBELEMENTID` bigint NOT NULL DEFAULT '0',
+  `FMVERSIONID` bigint NOT NULL DEFAULT '0',
+  `FASSISTID` bigint NOT NULL DEFAULT '0',
+  `FLOT` varchar(80) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FWAREHOUSEID` bigint NOT NULL DEFAULT '0',
+  `FLOCATIONID` bigint NOT NULL DEFAULT '0',
+  `FINVTYPEID` bigint NOT NULL DEFAULT '0',
+  `FINVSTATUSID` bigint NOT NULL DEFAULT '0',
+  `FPROJECTID` bigint NOT NULL DEFAULT '0',
+  `FCREATETYPE` char(1) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `FPERIODBEGINCOSTDIFF` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FPERIODINCOSTDIFF` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FPERIODISSUECOSTDIFF` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FPERIODENDCOSTDIFF` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FCONFIGUREDCODEID` bigint NOT NULL DEFAULT '0',
+  `FTRACKNUMBER` bigint NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FID`),
+  KEY `IDX_CAL_PURPRICEDIFF_MAT` (`FMATERIALID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cal_purpricediff_r3 definition
+
+CREATE TABLE `t_cal_purpricediff_r3` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FRefStatus` char(1) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cal_purpricediff_sp definition
+
+CREATE TABLE `t_cal_purpricediff_sp` (
+  `FId` bigint NOT NULL,
+  `fkeycol` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `fbillname` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `fbillid` bigint NOT NULL DEFAULT '0',
+  `fentryid` bigint NOT NULL DEFAULT '0',
+  `fupdatetime` bigint NOT NULL DEFAULT '0',
+  `fisnew` char(1) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  `fstatus` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `fupdatetype` bigint NOT NULL DEFAULT '0',
+  `fperiodbegincostdiff` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `fperiodbegincostdiff_sp` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `fperiodincostdiff` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `fperiodincostdiff_sp` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `fperiodissuecostdiff` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `fperiodissuecostdiff_sp` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `fperiodendcostdiff` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `fperiodendcostdiff_sp` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `fbillno` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `fentryseq` bigint DEFAULT NULL,
+  `fupdateruleid` varchar(36) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`FId`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cal_query_scheme definition
+
+CREATE TABLE `t_cal_query_scheme` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FNUMBER` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FNAME` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FSTATUS` char(1) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'A',
+  `FCREATORID` bigint NOT NULL DEFAULT '0',
+  `FMODIFIERID` bigint NOT NULL DEFAULT '0',
+  `FENABLE` char(1) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '1',
+  `FCREATETIME` datetime DEFAULT NULL,
+  `FMODIFYTIME` datetime DEFAULT NULL,
+  `FMASTERID` bigint NOT NULL DEFAULT '0',
+  `FORGID` bigint NOT NULL DEFAULT '0',
+  `FSCHEMESTR` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FSCHEMESTR_TAG` longtext COLLATE utf8mb4_unicode_ci,
+  `FISDEFAULT` char(1) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  `FFORMID` varchar(80) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`FID`),
+  KEY `IDX_QUERYSCH_FFORMID` (`FFORMID`),
+  KEY `IDX_QUERYSCH_FCREATOR` (`FCREATORID`),
+  KEY `IDX_CAL_SCHEME_NAME` (`FNAME`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cal_query_scheme_aut_r3 definition
+
+CREATE TABLE `t_cal_query_scheme_aut_r3` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FRefStatus` char(1) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cal_query_scheme_autoop definition
+
+CREATE TABLE `t_cal_query_scheme_autoop` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FNUMBER` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FNAME` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FQUERYSCHEMEID` bigint NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FID`),
+  KEY `IDX_CAL_SCHEME_AUTOOP_SCID` (`FQUERYSCHEMEID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cal_query_scheme_l definition
+
+CREATE TABLE `t_cal_query_scheme_l` (
+  `FPKID` varchar(36) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FLOCALEID` varchar(10) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FNAME` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`FPKID`),
+  KEY `IDX_CAL_QUERYSCH_L_ID` (`FID`,`FLOCALEID`),
+  KEY `IDX_CAL_SCHEME_L_NAME` (`FNAME`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cal_query_scheme_r3 definition
+
+CREATE TABLE `t_cal_query_scheme_r3` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FRefStatus` char(1) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cal_queuesetting definition
+
+CREATE TABLE `t_cal_queuesetting` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FCALORGID` bigint NOT NULL DEFAULT '0',
+  `FCOSTACCOUNTID` bigint NOT NULL DEFAULT '0',
+  `FBILLTYPEID` varchar(80) NOT NULL DEFAULT ' ',
+  `FQUEUETYPE` varchar(5) NOT NULL DEFAULT ' ',
+  `FFILTERSTR` varchar(255) DEFAULT NULL,
+  `FFILTERSTR_TAG` longtext,
+  `FNUMBER` varchar(80) NOT NULL DEFAULT ' ',
+  `FENABLE` varchar(5) NOT NULL DEFAULT ' ',
+  `FSTATUS` varchar(5) NOT NULL DEFAULT ' ',
+  `FBIZPLUGINID` bigint NOT NULL DEFAULT '0',
+  `FNAME` varchar(80) NOT NULL DEFAULT ' ',
+  `FDESCRIPTION` varchar(255) NOT NULL DEFAULT ' ',
+  `FCREATETIME` datetime DEFAULT NULL,
+  `FMODIFYTIME` datetime DEFAULT NULL,
+  `FMODIFIERID` bigint NOT NULL DEFAULT '0',
+  `FCREATORID` bigint NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FID`),
+  KEY `IDX_CAL_QUEUESET_CALORG` (`FCALORGID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+
+
+-- crrc_cal.t_cal_queuesetting_r3 definition
+
+CREATE TABLE `t_cal_queuesetting_r3` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FRefStatus` char(1) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+
+
+-- crrc_cal.t_cal_recal_msg definition
+
+CREATE TABLE `t_cal_recal_msg` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FMSGID` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FTASKNO` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FSTART` datetime DEFAULT NULL,
+  `FBILLNAME` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FRULEID` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FSTATUS` char(1) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `FSTARTID` bigint NOT NULL DEFAULT '0',
+  `FTRUECOUNT` int NOT NULL DEFAULT '0',
+  `FMSGSTART` datetime DEFAULT NULL,
+  `FMSGUSERTIME` int NOT NULL DEFAULT '0',
+  `FBILLFS` varchar(2000) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FBILLFS_VIEW` varchar(2000) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FERRORMSG` varchar(2000) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FBAL` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FCOSTACCOUNT` bigint NOT NULL DEFAULT '0',
+  `FERRORMSG_TAG` longtext COLLATE utf8mb4_unicode_ci,
+  PRIMARY KEY (`FID`),
+  KEY `IDX_CAL_BAL_RE_FTNO` (`FTASKNO`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cal_recal_point definition
+
+CREATE TABLE `t_cal_recal_point` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FRULEID` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FENDID` bigint NOT NULL DEFAULT '0',
+  `FCREATETIME` datetime DEFAULT NULL,
+  `FSTATUS` char(1) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `FCOSTACCOUNT` bigint NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FID`),
+  KEY `IDX_CAL_BAL_RP_RID` (`FRULEID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cal_recal_point_r3 definition
+
+CREATE TABLE `t_cal_recal_point_r3` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FRefStatus` char(1) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cal_recentcost definition
+
+CREATE TABLE `t_cal_recentcost` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FCOSTACCOUNTID` bigint NOT NULL DEFAULT '0',
+  `FCURRENCYID` bigint NOT NULL DEFAULT '0',
+  `FCALORGID` bigint NOT NULL DEFAULT '0',
+  `FOWNERID` bigint NOT NULL DEFAULT '0',
+  `FSTORAGEORGUNITID` bigint NOT NULL DEFAULT '0',
+  `FPRICE` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FRECENTQTY` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FRECENTCOST` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FWAREHOUSEID` bigint NOT NULL DEFAULT '0',
+  `FLOCATIONID` bigint NOT NULL DEFAULT '0',
+  `FMATERIALID` bigint NOT NULL DEFAULT '0',
+  `FLOT` varchar(80) NOT NULL DEFAULT ' ',
+  `FASSISTID` bigint NOT NULL DEFAULT '0',
+  `FBASEUNITID` bigint NOT NULL DEFAULT '0',
+  `FPROJECTID` bigint NOT NULL DEFAULT '0',
+  `FCALRPTID` bigint NOT NULL DEFAULT '0',
+  `FCALRANGEID` bigint NOT NULL DEFAULT '0',
+  `FMVERSIONID` bigint NOT NULL DEFAULT '0',
+  `FCOSTELEMENTID` bigint NOT NULL DEFAULT '0',
+  `FCOSTSUBELEMENTID` bigint NOT NULL DEFAULT '0',
+  `FCONFIGUREDCODEID` bigint NOT NULL DEFAULT '0',
+  `FTRACKNUMBER` bigint NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FID`),
+  KEY `IDX_CAL_RECOST_MA` (`FMATERIALID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+
+
+-- crrc_cal.t_cal_recentcost_r3 definition
+
+CREATE TABLE `t_cal_recentcost_r3` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FRefStatus` char(1) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+
+
+-- crrc_cal.t_cal_sale_feerecord definition
+
+CREATE TABLE `t_cal_sale_feerecord` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FWFNUMBER` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FORGID` bigint NOT NULL DEFAULT '0',
+  `FWFSEQ` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FCREATETIME` datetime DEFAULT NULL,
+  `FSHAREDATE` datetime DEFAULT NULL,
+  `FCREATORID` bigint NOT NULL DEFAULT '0',
+  `FSHARESTANDARD` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FSHARETYPE` varchar(5) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FWRITEOFFTYPEID` bigint NOT NULL DEFAULT '0',
+  `FWFSCHEMEID` bigint NOT NULL DEFAULT '0',
+  `FBILLSTATUS` varchar(5) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FHEADWFINFO` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `FHEADWFINFO_TAG` longtext COLLATE utf8mb4_unicode_ci,
+  PRIMARY KEY (`FID`),
+  KEY `IDX_CAL_SALE_FEEREC_CREATETIME` (`FCREATETIME`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cal_sale_feerecordentry definition
+
+CREATE TABLE `t_cal_sale_feerecordentry` (
+  `FENTRYID` bigint NOT NULL DEFAULT '0',
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FSEQ` bigint NOT NULL DEFAULT '0',
+  `FBILLID` bigint NOT NULL DEFAULT '0',
+  `FBILLENTRYID` bigint NOT NULL DEFAULT '0',
+  `FBILLSEQ` bigint NOT NULL DEFAULT '0',
+  `FBILLTYPE` varchar(80) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FBILLTYPEID` bigint NOT NULL DEFAULT '0',
+  `FBILLNO` varchar(80) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FBIZDATE` datetime DEFAULT NULL,
+  `FBOOKDATE` datetime DEFAULT NULL,
+  `FASSTACTTYPE` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'bd_customer',
+  `FASSTACTID` bigint NOT NULL DEFAULT '0',
+  `FMATERIALID` bigint NOT NULL DEFAULT '0',
+  `FEXPENSEITEMID` bigint NOT NULL DEFAULT '0',
+  `FCURRENCYFIELD` bigint NOT NULL DEFAULT '0',
+  `FAMOUNT` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FCURWFAMOUNT` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FEXCHANGERATE` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FSHAREUSERID` bigint NOT NULL DEFAULT '0',
+  `FWFINFO` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `FWFINFO_TAG` longtext COLLATE utf8mb4_unicode_ci,
+  `FUNITID` bigint NOT NULL DEFAULT '0',
+  `FBASEUNITID` bigint NOT NULL DEFAULT '0',
+  `FQTY` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FBASEQTY` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  PRIMARY KEY (`FENTRYID`),
+  KEY `IDX_CAL_SALE_FEEREC_BILLNO` (`FBILLNO`),
+  KEY `IDX_CAL_SALE_FEEREENTRY_ID` (`FID`),
+  KEY `IDX_CAL_SALE_FEEREENTRY_BILLENTRYID` (`FBILLENTRYID`,`FID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cal_servicelog definition
+
+CREATE TABLE `t_cal_servicelog` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FBIZENTITYOBJECTID` varchar(80) NOT NULL DEFAULT ' ',
+  `FSUCCESS` char(1) NOT NULL DEFAULT '0',
+  `FLOG` varchar(255) NOT NULL DEFAULT ' ',
+  `FLOG_TAG` longtext,
+  `FACTIONNAME` varchar(80) NOT NULL DEFAULT ' ',
+  `FBIZBILLID` bigint NOT NULL DEFAULT '0',
+  `FBIZBILLNUMBER` varchar(80) NOT NULL DEFAULT ' ',
+  `FSERVICETYPE` varchar(80) NOT NULL DEFAULT ' ',
+  `FPARAMMAP` varchar(255) NOT NULL DEFAULT ' ',
+  `FPARAMMAP_TAG` longtext,
+  `FEXETIME` datetime DEFAULT NULL,
+  `FORGID` bigint NOT NULL DEFAULT '0',
+  `FISCLOSE` char(1) NOT NULL DEFAULT '0',
+  `FCLOSEREASON` varchar(255) NOT NULL DEFAULT ' ',
+  `FTIMES` int NOT NULL DEFAULT '0',
+  `FBIZTIME` datetime DEFAULT NULL,
+  `FBOOKDATE` datetime DEFAULT NULL,
+  PRIMARY KEY (`FID`),
+  KEY `IDX_CAL_SERVICELOG_BIZBILLID` (`FBIZBILLID`),
+  KEY `IDX_CAL_SERVICELOG_DAORAC` (`FEXETIME`,`FBOOKDATE`,`FORGID`,`FACTIONNAME`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+
+
+-- crrc_cal.t_cal_servicelog_l definition
+
+CREATE TABLE `t_cal_servicelog_l` (
+  `FPKID` varchar(36) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FLOCALEID` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FCLOSEREASON` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`FPKID`),
+  KEY `IDX_CAL_SERVICELOG_L` (`FID`,`FLOCALEID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cal_servicelog_r3 definition
+
+CREATE TABLE `t_cal_servicelog_r3` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FRefStatus` char(1) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+
+
+-- crrc_cal.t_cal_setting definition
+
+CREATE TABLE `t_cal_setting` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FESSTANDARDS` varchar(255) NOT NULL DEFAULT ' ',
+  `FESCURRENCYID` bigint NOT NULL DEFAULT '0',
+  `FESRATETABLEID` bigint NOT NULL DEFAULT '0',
+  `FESCONVERTMODE` char(1) NOT NULL DEFAULT '1',
+  `FDIVIDEBASIS` varchar(255) NOT NULL DEFAULT ' ',
+  `FCALDIMENSION` varchar(255) NOT NULL DEFAULT ' ',
+  `FBIZTYPE` char(1) NOT NULL DEFAULT '',
+  `FBILLTYPEID` bigint NOT NULL DEFAULT '0',
+  `FENTRYNUM` int NOT NULL DEFAULT '0',
+  `FAUTOESTIMATE` char(1) NOT NULL DEFAULT '0',
+  `FAUTOESSTANDARD` varchar(255) NOT NULL DEFAULT ' ',
+  `FUSENEWPLAN` char(1) NOT NULL DEFAULT '0',
+  `FCOSTRECORDEXTCOLS` varchar(255) NOT NULL DEFAULT ' ',
+  `FCALGROUPCOLS` varchar(255) NOT NULL DEFAULT ',ownertype,owner,storageorgunit,warehouse,location,adminorg,costcenterorg,lot,assist,configuredcode,project,tracknumber,',
+  PRIMARY KEY (`FID`),
+  KEY `IDX_CAL_SETTING_CUR` (`FESCURRENCYID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+
+
+-- crrc_cal.t_cal_setting_r3 definition
+
+CREATE TABLE `t_cal_setting_r3` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FRefStatus` char(1) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+
+
+-- crrc_cal.t_cal_settingbilltype definition
+
+CREATE TABLE `t_cal_settingbilltype` (
+  `FPKID` bigint NOT NULL DEFAULT '0',
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FBASEDATAID` bigint NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FPKID`),
+  KEY `IDX_CAL_SETTINGBILLTYPE_ID` (`FID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+
+
+-- crrc_cal.t_cal_settinginbilltypes definition
+
+CREATE TABLE `t_cal_settinginbilltypes` (
+  `FPKID` bigint NOT NULL DEFAULT '0',
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FBASEDATAID` bigint NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FPKID`),
+  KEY `IDX_CAL_SETINBT_ID` (`FID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+
+
+-- crrc_cal.t_cal_settingoutbilltypes definition
+
+CREATE TABLE `t_cal_settingoutbilltypes` (
+  `FPKID` bigint NOT NULL DEFAULT '0',
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FBASEDATAID` bigint NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FPKID`),
+  KEY `IDX_CAL_SETOUTBT_ID` (`FID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+
+
+-- crrc_cal.t_cal_settlelog definition
+
+CREATE TABLE `t_cal_settlelog` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FOPERATIONTIME` datetime DEFAULT NULL,
+  `FPERIODMSG` varchar(80) NOT NULL DEFAULT ' ',
+  `FCOSTACCOUNTID` bigint NOT NULL DEFAULT '0',
+  `FLOG` varchar(255) NOT NULL DEFAULT ' ',
+  `FLOG_TAG` longtext,
+  `FSETTLETYPE` varchar(10) NOT NULL DEFAULT ' ',
+  `FSUCCESS` char(1) NOT NULL DEFAULT '0',
+  `FCURRENTPERIODID` bigint NOT NULL DEFAULT '0',
+  `FEXPECTPERIODID` bigint NOT NULL DEFAULT '0',
+  `FCHECKRESULT` varchar(255) NOT NULL DEFAULT ' ',
+  `FTASKID` bigint NOT NULL DEFAULT '0',
+  `FQUERYSCHEMEID` bigint NOT NULL DEFAULT '0',
+  `FOPERATIONUSERID` bigint NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FID`),
+  KEY `IDX_CAL_SETLOG_CRID` (`FCOSTACCOUNTID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+
+
+-- crrc_cal.t_cal_sharedetail definition
+
+CREATE TABLE `t_cal_sharedetail` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FCOSTACCOUNTID` bigint NOT NULL DEFAULT '0',
+  `FSHARERCDID` bigint NOT NULL DEFAULT '0',
+  `FCURRENCYID` bigint NOT NULL DEFAULT '0',
+  `FCOSTRECORDID` bigint NOT NULL DEFAULT '0',
+  `FCOSTRECORDENTRYID` bigint NOT NULL DEFAULT '0',
+  `FSHAREAMOUNT` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FEXPENSEITEMID` bigint NOT NULL DEFAULT '0',
+  `FASSTACTTYPE` varchar(30) NOT NULL DEFAULT 'bd_supplier',
+  `FASSTACTID` bigint NOT NULL DEFAULT '0',
+  `FENTRYID` bigint NOT NULL DEFAULT '0',
+  `FDETAILID` bigint NOT NULL DEFAULT '0',
+  `FSEQ` int NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FID`),
+  KEY `IDX_CAL_SHAREDETAIL_SHARECR` (`FSHARERCDID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+
+
+-- crrc_cal.t_cal_sharedetail_r3 definition
+
+CREATE TABLE `t_cal_sharedetail_r3` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FRefStatus` char(1) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+
+
+-- crrc_cal.t_cal_sharedetailentry definition
+
+CREATE TABLE `t_cal_sharedetailentry` (
+  `FDETAILID` bigint NOT NULL DEFAULT '0',
+  `FSEQ` int NOT NULL DEFAULT '0',
+  `FCOSTACCOUNTID` bigint NOT NULL DEFAULT '0',
+  `FSHARERCDID` bigint NOT NULL DEFAULT '0',
+  `FCURRENCYID` bigint NOT NULL DEFAULT '0',
+  `FCOSTRECORDID` bigint NOT NULL DEFAULT '0',
+  `FENTRYID` bigint NOT NULL DEFAULT '0',
+  `FEXPENSEITEMID` bigint NOT NULL DEFAULT '0',
+  `FSHAREAMOUNT` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FASSTACTTYPE` varchar(30) NOT NULL DEFAULT 'bd_supplier',
+  `FASSTACTID` bigint NOT NULL DEFAULT '0',
+  `FREALSHAREAMOUNT` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  PRIMARY KEY (`FDETAILID`),
+  KEY `IDX_CAL_SHAREDE_CRE` (`FENTRYID`),
+  KEY `IDX_CAL_SHAREDE_FSRID` (`FSHARERCDID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+
+
+-- crrc_cal.t_cal_sharedetailentry_r3 definition
+
+CREATE TABLE `t_cal_sharedetailentry_r3` (
+  `fdetailid` bigint NOT NULL DEFAULT '0',
+  `FRefStatus` char(1) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`fdetailid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+
+
+-- crrc_cal.t_cal_snapshootbalance definition
+
+CREATE TABLE `t_cal_snapshootbalance` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FQTY` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FSTANDARDCOST` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FACTUALCOST` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FUNITID` bigint NOT NULL DEFAULT '0',
+  `FMAINID` bigint NOT NULL DEFAULT '0',
+  `FHEADID` bigint NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FID`),
+  KEY `IDX_CAL_BAL_SNAP_CREID` (`FMAINID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+
+
+-- crrc_cal.t_cal_sortloop definition
+
+CREATE TABLE `t_cal_sortloop` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FSORTLISTID` bigint NOT NULL DEFAULT '0',
+  `FLOOPPATH` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FLOOPPATH_TAG` longtext COLLATE utf8mb4_unicode_ci,
+  PRIMARY KEY (`FID`),
+  KEY `IDX_CAL_SORTLOOP_SLID` (`FSORTLISTID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cal_sortloop_r3 definition
+
+CREATE TABLE `t_cal_sortloop_r3` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FRefStatus` char(1) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cal_sortresult definition
+
+CREATE TABLE `t_cal_sortresult` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FMATERIALID` bigint NOT NULL DEFAULT '0',
+  `FHEADCALORGID` bigint NOT NULL DEFAULT '0',
+  `FGROUPNO` bigint NOT NULL DEFAULT '-1',
+  `FGROUPSEQ` bigint NOT NULL DEFAULT '0',
+  `FACCOUNTTYPE` char(1) NOT NULL DEFAULT '',
+  `FCOSTACCOUNTID` bigint NOT NULL DEFAULT '0',
+  `FCALRANGEID` bigint NOT NULL DEFAULT '0',
+  `FPERIODID` bigint NOT NULL DEFAULT '0',
+  `FISLOOP` char(1) NOT NULL DEFAULT '0',
+  `FSORTLISTID` bigint NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FID`),
+  KEY `IDX_CAL_SORTRESULT_CALORG` (`FHEADCALORGID`),
+  KEY `IDX_CAL_SORTRESULT_MATERIAL` (`FMATERIALID`),
+  KEY `IDX_CAL_SORTRESULT_GN` (`FGROUPNO`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+
+
+-- crrc_cal.t_cal_sortresult_r3 definition
+
+CREATE TABLE `t_cal_sortresult_r3` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FRefStatus` char(1) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+
+
+-- crrc_cal.t_cal_sortresultentry definition
+
+CREATE TABLE `t_cal_sortresultentry` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FENTRYID` bigint NOT NULL DEFAULT '0',
+  `FSEQ` bigint NOT NULL DEFAULT '0',
+  `FCALORGID` bigint NOT NULL DEFAULT '0',
+  `FOWNERID` bigint NOT NULL DEFAULT '0',
+  `FSTORAGEORGUNITID` bigint NOT NULL DEFAULT '0',
+  `FWAREHOUSEID` bigint NOT NULL DEFAULT '0',
+  `FLOCATIONID` bigint NOT NULL DEFAULT '0',
+  `FASSISTID` bigint NOT NULL DEFAULT '0',
+  `FLOT` varchar(80) NOT NULL DEFAULT ' ',
+  `FMVERSIONID` bigint NOT NULL DEFAULT '0',
+  `FPROJECTID` bigint NOT NULL DEFAULT '0',
+  `FDIVIDEBASIS` varchar(80) NOT NULL DEFAULT ' ',
+  `FCALDIMENSION` varchar(80) NOT NULL DEFAULT ' ',
+  `FDIVIDEBASISVALUE` varchar(225) NOT NULL DEFAULT ' ',
+  `FCALDIMENSIONVALUE` varchar(225) NOT NULL DEFAULT ' ',
+  `FCONFIGUREDCODEID` bigint NOT NULL DEFAULT '0',
+  `FDIMENSION` bigint NOT NULL DEFAULT '0',
+  `FDIMENSIONKEY` varchar(255) NOT NULL DEFAULT ' ',
+  `FTRACKNUMBER` bigint NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FENTRYID`),
+  KEY `IDX_CAL_SORTRSENTRY_FID` (`FID`),
+  KEY `idx_cal_sortresultentry_dimension` (`FDIMENSION`,`FID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+
+
+-- crrc_cal.t_cal_standcost_bal definition
+
+CREATE TABLE `t_cal_standcost_bal` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FKEYCOL` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FCOSTACCOUNTID` bigint NOT NULL DEFAULT '0',
+  `FSTORAGEORGUNITID` bigint NOT NULL DEFAULT '0',
+  `FOWNERTYPE` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FOWNERID` bigint NOT NULL DEFAULT '0',
+  `FMATERIALID` bigint NOT NULL DEFAULT '0',
+  `FMVERSIONID` bigint NOT NULL DEFAULT '0',
+  `FASSISTID` bigint NOT NULL DEFAULT '0',
+  `FLOT` varchar(80) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FWAREHOUSEID` bigint NOT NULL DEFAULT '0',
+  `FLOCATIONID` bigint NOT NULL DEFAULT '0',
+  `FINVTYPEID` bigint NOT NULL DEFAULT '0',
+  `FINVSTATUSID` bigint NOT NULL DEFAULT '0',
+  `FPROJECTID` bigint NOT NULL DEFAULT '0',
+  `FCREATETYPE` char(1) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `FCOSTELEMENTID` bigint NOT NULL DEFAULT '0',
+  `FCOSTSUBELEMENTID` bigint NOT NULL DEFAULT '0',
+  `FCURRENCYID` bigint NOT NULL DEFAULT '0',
+  `FPERIODID` bigint NOT NULL DEFAULT '0',
+  `FACCSYSID` bigint NOT NULL DEFAULT '0',
+  `FCALORGID` bigint NOT NULL DEFAULT '0',
+  `FCALPOLICYID` bigint NOT NULL DEFAULT '0',
+  `FYEAR` int NOT NULL DEFAULT '0',
+  `FMONTH` int NOT NULL DEFAULT '0',
+  `FSEQNUM` int NOT NULL DEFAULT '0',
+  `FPERIOD` int NOT NULL DEFAULT '0',
+  `FENDPERIOD` int NOT NULL DEFAULT '0',
+  `FCOSTDIFF` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FCOSTDIFF_IN` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FCOSTDIFF_OUT` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FCOSTDIFF_BAL` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FCONFIGUREDCODEID` bigint NOT NULL DEFAULT '0',
+  `FMODIFYTIME` datetime DEFAULT NULL,
+  `FTRACKNUMBER` bigint NOT NULL DEFAULT '0',
+  `FDIFF_G` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FDIFF_H` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FDIFF_K` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FDIFF_P` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FDIFF_Q` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FDIFF_R` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FDIFF_M` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FDIFF_S` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FDIFF_T` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FDIFF_C` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FDIFF_W` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FDIFF_X` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FDIFF_Y` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FDIFF_G_IN` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FDIFF_H_IN` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FDIFF_K_IN` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FDIFF_P_IN` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FDIFF_Q_IN` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FDIFF_R_IN` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FDIFF_M_IN` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FDIFF_S_IN` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FDIFF_T_IN` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FDIFF_C_IN` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FDIFF_W_IN` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FDIFF_X_IN` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FDIFF_Y_IN` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FDIFF_G_OUT` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FDIFF_H_OUT` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FDIFF_K_OUT` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FDIFF_P_OUT` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FDIFF_Q_OUT` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FDIFF_R_OUT` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FDIFF_M_OUT` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FDIFF_S_OUT` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FDIFF_T_OUT` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FDIFF_C_OUT` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FDIFF_W_OUT` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FDIFF_X_OUT` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FDIFF_Y_OUT` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FDIFF_G_BAL` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FDIFF_H_BAL` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FDIFF_K_BAL` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FDIFF_P_BAL` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FDIFF_Q_BAL` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FDIFF_R_BAL` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FDIFF_M_BAL` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FDIFF_S_BAL` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FDIFF_T_BAL` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FDIFF_C_BAL` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FDIFF_W_BAL` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FDIFF_X_BAL` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FDIFF_Y_BAL` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  PRIMARY KEY (`FID`),
+  UNIQUE KEY `IDX_CAL_SDBAL_FPK` (`FPERIOD`,`FKEYCOL`),
+  KEY `IDX_CAL_SDBAL_FK` (`FKEYCOL`),
+  KEY `IDX_CAL_SDBAL_FMT` (`FMATERIALID`),
+  KEY `IDX_CAL_SDBAL_FCA` (`FCOSTACCOUNTID`),
+  KEY `IDX_CAL_SDBAL_FCO` (`FCALORGID`),
+  KEY `IDX_CAL_SDBAL_FWH` (`FWAREHOUSEID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cal_standcost_bal_sp definition
+
+CREATE TABLE `t_cal_standcost_bal_sp` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FKEYCOL` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FBILLNAME` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FBILLID` bigint NOT NULL DEFAULT '0',
+  `FENTRYID` bigint NOT NULL DEFAULT '0',
+  `FUPDATETIME` bigint NOT NULL DEFAULT '0',
+  `FISNEW` char(1) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `FSTATUS` char(1) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `FUPDATETYPE` int NOT NULL DEFAULT '0',
+  `FBILLNO` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FENTRYSEQ` int NOT NULL DEFAULT '0',
+  `FUPDATERULEID` varchar(36) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FPERIOD` int NOT NULL DEFAULT '0',
+  `FCOSTDIFF_SP` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FCOSTDIFF_IN_SP` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FCOSTDIFF_OUT_SP` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FCOSTDIFF_BAL_SP` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FDIFF_G_SP` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FDIFF_H_SP` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FDIFF_K_SP` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FDIFF_P_SP` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FDIFF_Q_SP` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FDIFF_R_SP` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FDIFF_M_SP` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FDIFF_S_SP` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FDIFF_T_SP` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FDIFF_C_SP` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FDIFF_W_SP` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FDIFF_X_SP` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FDIFF_Y_SP` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FDIFF_G_IN_SP` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FDIFF_H_IN_SP` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FDIFF_K_IN_SP` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FDIFF_P_IN_SP` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FDIFF_Q_IN_SP` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FDIFF_R_IN_SP` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FDIFF_M_IN_SP` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FDIFF_S_IN_SP` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FDIFF_T_IN_SP` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FDIFF_C_IN_SP` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FDIFF_W_IN_SP` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FDIFF_X_IN_SP` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FDIFF_Y_IN_SP` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FDIFF_G_OUT_SP` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FDIFF_H_OUT_SP` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FDIFF_K_OUT_SP` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FDIFF_P_OUT_SP` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FDIFF_Q_OUT_SP` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FDIFF_R_OUT_SP` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FDIFF_M_OUT_SP` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FDIFF_S_OUT_SP` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FDIFF_T_OUT_SP` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FDIFF_C_OUT_SP` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FDIFF_W_OUT_SP` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FDIFF_X_OUT_SP` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FDIFF_Y_OUT_SP` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FDIFF_G_BAL_SP` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FDIFF_H_BAL_SP` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FDIFF_K_BAL_SP` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FDIFF_P_BAL_SP` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FDIFF_Q_BAL_SP` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FDIFF_R_BAL_SP` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FDIFF_M_BAL_SP` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FDIFF_S_BAL_SP` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FDIFF_T_BAL_SP` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FDIFF_C_BAL_SP` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FDIFF_W_BAL_SP` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FDIFF_X_BAL_SP` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FDIFF_Y_BAL_SP` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  PRIMARY KEY (`FID`),
+  KEY `IDX_CAL_SDBALSP_FK` (`FKEYCOL`),
+  KEY `IDX_CAL_SDBALSP_FBID` (`FBILLID`),
+  KEY `IDX_CAL_SDBALSP_FBEID` (`FENTRYID`),
+  KEY `IDX_CAL_SDBALSP_FBNO` (`FBILLNO`),
+  KEY `IDX_CAL_SDBALSP_FUT` (`FUPDATETIME`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cal_standcost_bal_tp definition
+
+CREATE TABLE `t_cal_standcost_bal_tp` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FKEYCOL` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FBILLNAME` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FBILLID` bigint NOT NULL DEFAULT '0',
+  `FENTRYID` bigint NOT NULL DEFAULT '0',
+  `FUPDATETIME` bigint NOT NULL DEFAULT '0',
+  `FISNEW` char(1) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `FSTATUS` char(1) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `FUPDATETYPE` int NOT NULL DEFAULT '0',
+  `FBILLNO` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FENTRYSEQ` int NOT NULL DEFAULT '0',
+  `FUPDATERULEID` varchar(36) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FPERIOD` int NOT NULL DEFAULT '0',
+  `FCOSTDIFF_SP` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FCOSTDIFF_IN_SP` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FCOSTDIFF_OUT_SP` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FCOSTDIFF_BAL_SP` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FREADTYPE` char(1) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `FMOVETYPE` char(1) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `FSYNC` char(1) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `FCOVERFLAG` char(1) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `FDIFF_G_SP` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FDIFF_H_SP` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FDIFF_K_SP` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FDIFF_P_SP` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FDIFF_Q_SP` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FDIFF_R_SP` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FDIFF_M_SP` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FDIFF_S_SP` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FDIFF_T_SP` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FDIFF_C_SP` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FDIFF_W_SP` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FDIFF_X_SP` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FDIFF_Y_SP` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FDIFF_G_IN_SP` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FDIFF_H_IN_SP` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FDIFF_K_IN_SP` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FDIFF_P_IN_SP` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FDIFF_Q_IN_SP` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FDIFF_R_IN_SP` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FDIFF_M_IN_SP` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FDIFF_S_IN_SP` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FDIFF_T_IN_SP` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FDIFF_C_IN_SP` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FDIFF_W_IN_SP` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FDIFF_X_IN_SP` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FDIFF_Y_IN_SP` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FDIFF_G_OUT_SP` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FDIFF_H_OUT_SP` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FDIFF_K_OUT_SP` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FDIFF_P_OUT_SP` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FDIFF_Q_OUT_SP` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FDIFF_R_OUT_SP` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FDIFF_M_OUT_SP` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FDIFF_S_OUT_SP` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FDIFF_T_OUT_SP` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FDIFF_C_OUT_SP` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FDIFF_W_OUT_SP` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FDIFF_X_OUT_SP` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FDIFF_Y_OUT_SP` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FDIFF_G_BAL_SP` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FDIFF_H_BAL_SP` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FDIFF_K_BAL_SP` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FDIFF_P_BAL_SP` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FDIFF_Q_BAL_SP` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FDIFF_R_BAL_SP` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FDIFF_M_BAL_SP` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FDIFF_S_BAL_SP` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FDIFF_T_BAL_SP` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FDIFF_C_BAL_SP` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FDIFF_W_BAL_SP` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FDIFF_X_BAL_SP` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FDIFF_Y_BAL_SP` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  PRIMARY KEY (`FID`),
+  KEY `IDX_CAL_STANDCOST_BAL_TPKC` (`FKEYCOL`),
+  KEY `IDX_CAL_STANDCOST_BAL_TPBID` (`FBILLID`),
+  KEY `IDX_CAL_STANDCOST_BAL_TPEID` (`FENTRYID`),
+  KEY `IDX_CAL_STANDCOST_BAL_TPBNO` (`FBILLNO`),
+  KEY `IDX_CAL_STANDCOST_BAL_TPUT` (`FUPDATETIME`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cal_stdcostdiff definition
+
+CREATE TABLE `t_cal_stdcostdiff` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FBILLNO` varchar(80) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT ' ',
+  `FBILLSTATUS` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FCREATORID` bigint NOT NULL DEFAULT '0',
+  `FMODIFIERID` bigint NOT NULL DEFAULT '0',
+  `FAUDITORID` bigint NOT NULL DEFAULT '0',
+  `FAUDITDATE` datetime DEFAULT NULL,
+  `FMODIFYTIME` datetime DEFAULT NULL,
+  `FCREATETIME` datetime DEFAULT NULL,
+  `FBIZDATE` datetime DEFAULT NULL,
+  `FBIZTYPE` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FSRCBILLTYPEID` bigint NOT NULL DEFAULT '0',
+  `FCREATETYPE` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FCURRENCYID` bigint NOT NULL DEFAULT '0',
+  `FCSTYPEID` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FCUSTSUPPLIERID` bigint NOT NULL DEFAULT '0',
+  `FCOSTACCOUNT` bigint NOT NULL DEFAULT '0',
+  `FISVOUCHER` char(1) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  `FVOUCHERNUM` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FVOUCHERID` bigint NOT NULL DEFAULT '0',
+  `FPERIODID` bigint NOT NULL DEFAULT '0',
+  `FFEESHAREFLAGID` bigint NOT NULL DEFAULT '0',
+  `FORGID` bigint NOT NULL DEFAULT '0',
+  `FCHECKSTRIKEACCOUNT` char(1) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  `FADMINORGID` bigint NOT NULL DEFAULT '0',
+  `FBILLSRCTYPE` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FLASTUPDATEUSERID` bigint NOT NULL DEFAULT '0',
+  `FLASTUPDATETIME` datetime DEFAULT NULL,
+  `FISCHARGEOFFED` char(1) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  `FISCHARGEOFF` char(1) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  `FBOOKDATE` datetime DEFAULT NULL,
+  `FCALSTATUS` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FISUPDATECOST` char(1) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '1',
+  `FSRCSYS` char(1) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'A',
+  PRIMARY KEY (`FID`),
+  KEY `IDX_CAL_STDCOSTDIFF_ORG` (`FCOSTACCOUNT`,`FBOOKDATE`),
+  KEY `IDX_CAL_STDCOSTDIFF_CB` (`FID`,`FORGID`),
+  KEY `IDX_CAL_STDCOSTDIFF_BOOKDATE` (`FBOOKDATE`),
+  KEY `IDX_CAL_STDCOSTDIFF_FSID` (`FFEESHAREFLAGID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cal_stdcostdiff_detail definition
+
+CREATE TABLE `t_cal_stdcostdiff_detail` (
+  `FENTRYID` bigint NOT NULL DEFAULT '0',
+  `FDETAILID` bigint NOT NULL DEFAULT '0',
+  `FSEQ` bigint NOT NULL DEFAULT '0',
+  `FMATERIALID` bigint NOT NULL DEFAULT '0',
+  `FCURRENCYID` bigint NOT NULL DEFAULT '0',
+  `FADJUSTAMT` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FDDIFF_G` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FDDIFF_H` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FDDIFF_K` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FDDIFF_P` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FDDIFF_Q` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FDDIFF_R` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FDDIFF_M` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FDDIFF_S` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FDDIFF_T` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FDDIFF_X` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FDDIFF_W` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FDDIFF_Y` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FDDIFF_C` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FCOSTELEMENTID` bigint NOT NULL DEFAULT '0',
+  `FCOSTSUBELEMENTID` bigint NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FDETAILID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cal_stdcostdiff_l definition
+
+CREATE TABLE `t_cal_stdcostdiff_l` (
+  `FPKID` varchar(36) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FLOCALEID` varchar(10) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FREMARK` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`FPKID`),
+  KEY `IDX_CAL_STDCOSTDIFF_L` (`FID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cal_stdcostdiffentry definition
+
+CREATE TABLE `t_cal_stdcostdiffentry` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FENTRYID` bigint NOT NULL DEFAULT '0',
+  `FSEQ` bigint NOT NULL DEFAULT '0',
+  `FMATERIALID` bigint NOT NULL DEFAULT '0',
+  `FSTORAGEORGUNITID` bigint NOT NULL DEFAULT '0',
+  `FLOT` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FADJUSTAMT` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FWAREHSOUSEID` bigint NOT NULL DEFAULT '0',
+  `FINVBILLTYPE` bigint NOT NULL DEFAULT '0',
+  `FINVBILLNUM` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FSRCBILLTYPEID` bigint NOT NULL DEFAULT '0',
+  `FSRCBILLNUM` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FSRCENTRYSEQ` bigint NOT NULL DEFAULT '0',
+  `FINVENTRYSEQ` bigint NOT NULL DEFAULT '0',
+  `FOWNERTYPE` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FOWNERID` bigint NOT NULL DEFAULT '0',
+  `FAUXPROPERTYID` bigint NOT NULL DEFAULT '0',
+  `FPROJECTID` bigint NOT NULL DEFAULT '0',
+  `FINVTYPEID` bigint NOT NULL DEFAULT '0',
+  `FINVSTATUSID` bigint NOT NULL DEFAULT '0',
+  `FBASEUNITID` bigint NOT NULL DEFAULT '0',
+  `FLOCATIONID` bigint NOT NULL DEFAULT '0',
+  `FFEEPROJECTID` bigint NOT NULL DEFAULT '0',
+  `FINVBILLID` bigint NOT NULL DEFAULT '0',
+  `FINVBILLENTRYID` bigint NOT NULL DEFAULT '0',
+  `FSRCBILLID` bigint NOT NULL DEFAULT '0',
+  `FSRCBILLENTRYID` bigint NOT NULL DEFAULT '0',
+  `FACCOUNTTYPE` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FCALDIMENSIONID` bigint NOT NULL DEFAULT '0',
+  `FCALRANGEID` bigint NOT NULL DEFAULT '0',
+  `FFEESHARETOTALAMT` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FSRCBIZENTITYOBJECT` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FINVBIZENTITYOBJECT` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FMVERSIONID` bigint NOT NULL DEFAULT '0',
+  `FQUEUETYPE` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FSIGNNUM` bigint NOT NULL DEFAULT '0',
+  `FINVAUDITDATE` datetime DEFAULT NULL,
+  `FINVBIZDATE` datetime DEFAULT NULL,
+  `FINVBIZTYPEID` bigint NOT NULL DEFAULT '0',
+  `FTRANSTYPE` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FCONFIGUREDCODEID` bigint NOT NULL DEFAULT '0',
+  `FTRACKNUMBERID` bigint NOT NULL DEFAULT '0',
+  `FCOSTESTIMATEBILLID` bigint NOT NULL DEFAULT '0',
+  `FCOSTESTIMATEBILLENTRYID` bigint NOT NULL DEFAULT '0',
+  `FECOSTCENTERID` bigint NOT NULL DEFAULT '0',
+  `FCOSTDOMAINKEY` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FENTRYSTATUS` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FECALSTATUS` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FDIFF_G` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FDIFF_H` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FDIFF_K` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FDIFF_P` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FDIFF_Q` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FDIFF_R` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FDIFF_M` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FDIFF_S` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FDIFF_T` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FDIFF_X` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FDIFF_W` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FDIFF_Y` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FDIFF_C` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FSUBENTRYENTITY` longtext COLLATE utf8mb4_unicode_ci,
+  `FGROUPDIFFBILLID` bigint NOT NULL DEFAULT '0',
+  `FPRODUCTLINEID` bigint NOT NULL DEFAULT '0',
+  `FGROUPDIFFBILLNUM` varchar(80) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FNOUPDATECALFIELDS` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`FENTRYID`),
+  KEY `IDX_CAL_STDCOSTDIFFENTRY` (`FID`),
+  KEY `IDX_CAL_STDCOSTDIFFENTRY_MAT` (`FID`,`FMATERIALID`),
+  KEY `IDX_CAL_STDCOSTDIFFENTRY_CDKEY` (`FID`,`FCOSTDOMAINKEY`),
+  KEY `IDX_CAL_COSTADJUSTENTRY_INVB` (`FID`,`FINVBILLID`),
+  KEY `IDX_CAL_COSTADJUSTENTRY_MAT2` (`FMATERIALID`,`FID`),
+  KEY `IDX_CAL_COSTADJUSTENTRY_INVBID` (`FINVBILLID`,`FID`),
+  KEY `IDX_CAL_STDCOSTDIFFENTRY_SRCID` (`FSRCBILLID`),
+  KEY `IDX_CAL_STDCOSTDIFFENTRY_INVEID` (`FINVBILLENTRYID`),
+  KEY `IDX_CAL_STDCOSTDIFFENTRY_COSTESTBILL` (`FCOSTESTIMATEBILLID`,`FCOSTESTIMATEBILLENTRYID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cal_step definition
+
+CREATE TABLE `t_cal_step` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FSOURCE` char(1) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `FNUMBER` varchar(80) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`FID`),
+  KEY `IDX_CAL_STEP_NUM` (`FNUMBER`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cal_step_l definition
+
+CREATE TABLE `t_cal_step_l` (
+  `FPKID` varchar(36) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FLOCALEID` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FNAME` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`FPKID`),
+  KEY `IDX_CAL_STEP_L_ID` (`FID`,`FLOCALEID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cal_step_r3 definition
+
+CREATE TABLE `t_cal_step_r3` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FRefStatus` char(1) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cal_stopsyncset definition
+
+CREATE TABLE `t_cal_stopsyncset` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FCALORGID` bigint NOT NULL DEFAULT '0',
+  `FACCOUNTTYPE` char(1) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `FSTORAGEORGUNITID` bigint NOT NULL DEFAULT '0',
+  `FWAREHOUSEID` bigint NOT NULL DEFAULT '0',
+  `FMATERIALID` bigint NOT NULL DEFAULT '0',
+  `FFAILBILL` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FFAILBILL_TAG` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `FSTOPTIME` datetime DEFAULT NULL,
+  `FISFINISH` char(1) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  `FSTOPERID` bigint NOT NULL DEFAULT '0',
+  `FSTARTERID` bigint NOT NULL DEFAULT '0',
+  `FSTARTTIME` datetime DEFAULT NULL,
+  `FBIZDATE` datetime DEFAULT NULL,
+  `FSTOPTYPE` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'cal',
+  PRIMARY KEY (`FID`),
+  KEY `IDX_CAL_STOPSYNC_CMA` (`FCALORGID`,`FMATERIALID`,`FACCOUNTTYPE`,`FWAREHOUSEID`,`FSTORAGEORGUNITID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cal_stopsyncset_r3 definition
+
+CREATE TABLE `t_cal_stopsyncset_r3` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FRefStatus` char(1) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cal_successbill definition
+
+CREATE TABLE `t_cal_successbill` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FDATAID` bigint NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FID`),
+  UNIQUE KEY `IDX_CAL_SUCCESS_DATAID` (`FDATAID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cal_syncbizbillrecord definition
+
+CREATE TABLE `t_cal_syncbizbillrecord` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FBIZENTITYOBJECTID` varchar(100) NOT NULL DEFAULT ' ',
+  `FBIZBILLID` bigint NOT NULL DEFAULT '0',
+  `FBIZBILLNUMBER` varchar(80) NOT NULL DEFAULT ' ',
+  `FCALBILLID` bigint NOT NULL DEFAULT '0',
+  `FCALBILLNUMBER` varchar(80) NOT NULL DEFAULT ' ',
+  `FSYNCTIME` datetime DEFAULT NULL,
+  `FSUCCESS` char(1) NOT NULL DEFAULT '0',
+  `FOPERATION` varchar(5) NOT NULL DEFAULT ' ',
+  `FLOG` varchar(255) NOT NULL DEFAULT ' ',
+  `FLOG_TAG` longtext,
+  `FCALBILLTYPE` varchar(5) NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`FID`),
+  KEY `IDX_CAL_SYNCRECORD_BIZBILL` (`FBIZBILLID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+
+
+-- crrc_cal.t_cal_systemctrl definition
+
+CREATE TABLE `t_cal_systemctrl` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FORGID` bigint NOT NULL DEFAULT '0',
+  `FNUMBER` varchar(80) NOT NULL DEFAULT ' ',
+  `FCREATEORGID` bigint NOT NULL DEFAULT '0',
+  `FSTATUS` varchar(5) NOT NULL DEFAULT ' ',
+  `FENABLE` varchar(5) NOT NULL DEFAULT ' ',
+  `FMASTERID` bigint NOT NULL DEFAULT '0',
+  `FCREATORID` bigint NOT NULL DEFAULT '0',
+  `FUSEORGID` bigint NOT NULL DEFAULT '0',
+  `FCTRLSTRATEGY` varchar(5) NOT NULL DEFAULT ' ',
+  `FCREATETIME` datetime DEFAULT NULL,
+  `FMODIFYTIME` datetime DEFAULT NULL,
+  `FMODIFIERID` bigint NOT NULL DEFAULT '0',
+  `FNAME` varchar(80) NOT NULL DEFAULT ' ',
+  `FSOURCEDATAID` bigint NOT NULL DEFAULT '0',
+  `FBITINDEX` int NOT NULL DEFAULT '0',
+  `FSOURCEBITINDEX` int NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FID`),
+  KEY `IDX_CAL_SYSTEMCTRL_ORG` (`FORGID`),
+  KEY `IDX_T_CAL_SYSTEMCTRL_CREATEORG` (`FCREATEORGID`),
+  KEY `IDX_T_CAL_SYSTEMCTRL_MASTER` (`FMASTERID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+
+
+-- crrc_cal.t_cal_systemctrl_bit definition
+
+CREATE TABLE `t_cal_systemctrl_bit` (
+  `FORGID` bigint NOT NULL,
+  `FDATA` longblob NOT NULL,
+  PRIMARY KEY (`FORGID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cal_systemctrl_l definition
+
+CREATE TABLE `t_cal_systemctrl_l` (
+  `FPKID` varchar(36) NOT NULL DEFAULT ' ',
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FLOCALEID` varchar(10) NOT NULL DEFAULT ' ',
+  `FNAME` varchar(100) NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`FPKID`),
+  KEY `IDX_CAL_SYSTEMCTRL_L` (`FID`,`FLOCALEID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+
+
+-- crrc_cal.t_cal_systemctrl_m definition
+
+CREATE TABLE `t_cal_systemctrl_m` (
+  `FORGID` bigint NOT NULL,
+  `FDATA` longblob NOT NULL,
+  PRIMARY KEY (`FORGID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cal_systemctrl_r3 definition
+
+CREATE TABLE `t_cal_systemctrl_r3` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FRefStatus` char(1) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+
+
+-- crrc_cal.t_cal_systemctrl_u definition
+
+CREATE TABLE `t_cal_systemctrl_u` (
+  `FDataID` bigint NOT NULL,
+  `FCreateOrgID` bigint DEFAULT NULL,
+  `FUseOrgID` bigint NOT NULL,
+  PRIMARY KEY (`FDataID`,`FUseOrgID`),
+  KEY `IDX_t_cal_systemctrl_U_UO` (`FUseOrgID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cal_systemctrlentry definition
+
+CREATE TABLE `t_cal_systemctrlentry` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FENTRYID` bigint NOT NULL DEFAULT '0',
+  `FSEQ` bigint NOT NULL DEFAULT '0',
+  `FCOSTACCOUNTID` bigint NOT NULL DEFAULT '0',
+  `FSTARTPERIODID` bigint NOT NULL DEFAULT '0',
+  `FCURRENTPERIODID` bigint NOT NULL DEFAULT '0',
+  `FISENABLED` char(1) NOT NULL DEFAULT '0',
+  `FISINITED` char(1) NOT NULL DEFAULT '0',
+  `FCALPOLICYID` bigint NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FENTRYID`),
+  KEY `IDX_CAL_SYSENTRY_ACCID` (`FCOSTACCOUNTID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+
+
+-- crrc_cal.t_cal_systemctrlexc definition
+
+CREATE TABLE `t_cal_systemctrlexc` (
+  `FDataID` bigint NOT NULL,
+  `FCreateOrgID` bigint DEFAULT NULL,
+  `FUseOrgID` bigint NOT NULL,
+  `FNEWDATAID` bigint NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FDataID`,`FUseOrgID`),
+  KEY `IDX_t_cal_systemctrlExc_UO` (`FUseOrgID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cal_systemctrlusereg definition
+
+CREATE TABLE `t_cal_systemctrlusereg` (
+  `FUseOrgID` bigint NOT NULL,
+  `FDataID` bigint NOT NULL,
+  `FCreateOrgID` bigint DEFAULT NULL,
+  `FAdminOrgID` bigint DEFAULT NULL,
+  `FCtrlStrategy` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `FIsAssign` char(1) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `FAssignOrgID` bigint DEFAULT NULL,
+  `FMASTERID` bigint NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FUseOrgID`,`FDataID`),
+  KEY `IDX_T_CAL_SYSTEMCTRLUSEREG_D` (`FDataID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cal_task definition
+
+CREATE TABLE `t_cal_task` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FTASKID` bigint NOT NULL DEFAULT '0',
+  `FSTARTTIME` datetime DEFAULT NULL,
+  `FENDTIME` datetime DEFAULT NULL,
+  `FCREATORID` bigint NOT NULL DEFAULT '0',
+  `FSTATUS` char(1) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `FNAME` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FPROGRESS` bigint NOT NULL DEFAULT '0',
+  `FCALNUMBER` varchar(80) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FRUNAT` varchar(80) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FISMAINTASK` char(1) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '1',
+  `FPARAMS` varchar(80) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FPARAMS_TAG` longtext COLLATE utf8mb4_unicode_ci,
+  `FTIMES` int NOT NULL DEFAULT '0',
+  `FTASKTYPE` char(1) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'A',
+  `FRESULTPARAMS` varchar(80) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FRESULTPARAMS_TAG` longtext COLLATE utf8mb4_unicode_ci,
+  `FQUERYSCHEMEID` bigint NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FID`),
+  KEY `IDX_CAL_TASK_TASK` (`FTASKID`),
+  KEY `IDX_CAL_TASK_CALNUM` (`FCALNUMBER`),
+  KEY `IDX_CAL_TASK_STIME` (`FSTARTTIME`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cal_task_r3 definition
+
+CREATE TABLE `t_cal_task_r3` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FRefStatus` char(1) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cal_taskparam definition
+
+CREATE TABLE `t_cal_taskparam` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FFUNCTIONNUM` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FTASK` bigint NOT NULL DEFAULT '0',
+  `FPARAM` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FPARAM_TAG` longtext COLLATE utf8mb4_unicode_ci,
+  `FTASKGROUPNO` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FSTATUS` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`FID`),
+  KEY `IDX_CAL_TASKGROUPNO` (`FTASKGROUPNO`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cal_taskparam_r3 definition
+
+CREATE TABLE `t_cal_taskparam_r3` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FRefStatus` char(1) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cal_totalsharefee definition
+
+CREATE TABLE `t_cal_totalsharefee` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FFEESHAREID` bigint NOT NULL DEFAULT '0',
+  `FCOSTRECORDENTRYID` bigint NOT NULL DEFAULT '0',
+  `FTOTALFEE` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  PRIMARY KEY (`FID`),
+  KEY `IDX_CAL_TOTALSHAREFEE_SID` (`FFEESHAREID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+
+
+-- crrc_cal.t_cal_voucher definition
+
+CREATE TABLE `t_cal_voucher` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FYEAR` int NOT NULL DEFAULT '0',
+  `FPERIOD` int NOT NULL DEFAULT '0',
+  `FCOSTACCOUNTID` bigint NOT NULL DEFAULT '0',
+  `FCALORGID` bigint NOT NULL DEFAULT '0',
+  `FCOSTRECORDID` bigint NOT NULL DEFAULT '0',
+  `FVOUCHERID` bigint NOT NULL DEFAULT '0',
+  `FVOUCHERNUM` varchar(80) NOT NULL DEFAULT ' ',
+  `FVOUCHERTYPE` varchar(5) NOT NULL DEFAULT ' ',
+  `FCREATETIME` datetime DEFAULT NULL,
+  `FCREATEMODE` int NOT NULL DEFAULT '0',
+  `FVOUCHERSOURCE` varchar(5) NOT NULL DEFAULT ' ',
+  `FAPBILLID` bigint NOT NULL DEFAULT '0',
+  `FPERIODID` bigint NOT NULL DEFAULT '0',
+  `FDISCHARGETYPE` varchar(5) NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`FID`),
+  KEY `IDX_CAL_VOUCHER_ID` (`FVOUCHERID`),
+  KEY `IDX_CAL_VOUC_CRID` (`FCOSTRECORDID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+
+
+-- crrc_cal.t_cal_wgroupsetting definition
+
+CREATE TABLE `t_cal_wgroupsetting` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FNUMBER` varchar(80) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FSTATUS` char(1) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `FENABLE` char(1) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `FMASTERID` bigint NOT NULL DEFAULT '0',
+  `FCOSTCOLUMN` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FCOSTFIELDS` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FCREATORID` bigint NOT NULL DEFAULT '0',
+  `FMODIFIERID` bigint NOT NULL DEFAULT '0',
+  `FCREATETIME` datetime DEFAULT NULL,
+  `FMODIFYTIME` datetime DEFAULT NULL,
+  PRIMARY KEY (`FID`),
+  KEY `IDX_CAL_WGROUP_NUM` (`FNUMBER`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cal_wgroupsetting_l definition
+
+CREATE TABLE `t_cal_wgroupsetting_l` (
+  `FPKID` varchar(36) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FLOCALEID` varchar(10) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FNAME` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`FPKID`),
+  KEY `IDX_CAL_WGROUPSETTING_L_ID` (`FID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cal_wgroupsetting_r3 definition
+
+CREATE TABLE `t_cal_wgroupsetting_r3` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FRefStatus` char(1) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cal_wgroupsettingentry definition
+
+CREATE TABLE `t_cal_wgroupsettingentry` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FENTRYID` bigint NOT NULL DEFAULT '0',
+  `FSEQ` bigint NOT NULL DEFAULT '0',
+  `FWFTYPEID` bigint NOT NULL DEFAULT '0',
+  `FWFRECORDID` varchar(80) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FSBILLTYPEIDS` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FDBILLTYPEIDS` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`FENTRYID`),
+  KEY `IDX_CAL_WGROUPSETENTRY_WFT` (`FWFTYPEID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cal_wgroupsettingmfield definition
+
+CREATE TABLE `t_cal_wgroupsettingmfield` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FENTRYID` bigint NOT NULL DEFAULT '0',
+  `FSEQ` bigint NOT NULL DEFAULT '0',
+  `FBILLTYPEID` varchar(80) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FMAINFIELD` varchar(80) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FMAINFIELDNAME` varchar(80) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`FENTRYID`),
+  KEY `IDX_CAL_WGROUPSETMF_ID` (`FID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cal_wgs_destbilltype definition
+
+CREATE TABLE `t_cal_wgs_destbilltype` (
+  `FENTRYID` bigint NOT NULL DEFAULT '0',
+  `FPKID` bigint NOT NULL DEFAULT '0',
+  `FBASEDATAID` varchar(80) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`FPKID`),
+  KEY `IDX_CAL_WGS_DESTBILLTYPE_EID` (`FENTRYID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cal_wgs_srcbilltype definition
+
+CREATE TABLE `t_cal_wgs_srcbilltype` (
+  `FENTRYID` bigint NOT NULL DEFAULT '0',
+  `FPKID` bigint NOT NULL DEFAULT '0',
+  `FBASEDATAID` varchar(80) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`FPKID`),
+  KEY `IDX_CAL_WGS_SRCBILLTYPE_EID` (`FENTRYID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cal_wgs_subelement definition
+
+CREATE TABLE `t_cal_wgs_subelement` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FPKID` bigint NOT NULL DEFAULT '0',
+  `FBASEDATAID` bigint NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FPKID`),
+  KEY `IDX_CAL_WGS_SUBELEMENT_ID` (`FID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cal_writeoffsol definition
+
+CREATE TABLE `t_cal_writeoffsol` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FNUMBER` varchar(80) NOT NULL DEFAULT ' ',
+  `FSTATUS` varchar(5) NOT NULL DEFAULT ' ',
+  `FCREATORID` bigint NOT NULL DEFAULT '0',
+  `FMODIFIERID` bigint NOT NULL DEFAULT '0',
+  `FENABLE` varchar(5) NOT NULL DEFAULT ' ',
+  `FCREATETIME` datetime DEFAULT NULL,
+  `FMODIFYTIME` datetime DEFAULT NULL,
+  `FMASTERID` bigint NOT NULL DEFAULT '0',
+  `FWRITEOFFTYPEID` bigint NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FID`),
+  KEY `IDX_CAL_WRITEOFFSOL` (`FNUMBER`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+
+
+-- crrc_cal.t_cal_writeoffsol_l definition
+
+CREATE TABLE `t_cal_writeoffsol_l` (
+  `FPKID` varchar(36) NOT NULL DEFAULT ' ',
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FLOCALEID` varchar(10) NOT NULL DEFAULT ' ',
+  `FNAME` varchar(100) NOT NULL DEFAULT ' ',
+  `FREMARK` varchar(100) NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`FPKID`),
+  KEY `IDX_CAL_WRITEOFFSOL_L` (`FID`,`FLOCALEID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+
+
+-- crrc_cal.t_cal_writeoffsol_r3 definition
+
+CREATE TABLE `t_cal_writeoffsol_r3` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FRefStatus` char(1) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_cal_writeoffsolentry definition
+
+CREATE TABLE `t_cal_writeoffsolentry` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FENTRYID` bigint NOT NULL DEFAULT '0',
+  `FSEQ` bigint NOT NULL DEFAULT '0',
+  `FMATCHRULEID` bigint NOT NULL DEFAULT '0',
+  `FISFLOW` char(1) NOT NULL DEFAULT '',
+  `FBOTPRULEID` varchar(36) NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`FENTRYID`),
+  KEY `IDX_CAL_WRITEOFFSOLENTRY` (`FID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+
+
+-- crrc_cal.t_cal_writeofftype definition
+
+CREATE TABLE `t_cal_writeofftype` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FNUMBER` varchar(80) NOT NULL DEFAULT ' ',
+  `FSTATUS` varchar(5) NOT NULL DEFAULT ' ',
+  `FCREATORID` bigint NOT NULL DEFAULT '0',
+  `FMODIFIERID` bigint NOT NULL DEFAULT '0',
+  `FENABLE` varchar(5) NOT NULL DEFAULT ' ',
+  `FCREATETIME` datetime DEFAULT NULL,
+  `FMODIFYTIME` datetime DEFAULT NULL,
+  `FMASTERID` bigint NOT NULL DEFAULT '0',
+  `FMASTERBILLID` varchar(36) NOT NULL DEFAULT ' ',
+  `FASSTBILLID` varchar(36) NOT NULL DEFAULT ' ',
+  `FISSYS` char(1) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FID`),
+  KEY `IDX_CAL_WRITEOFFTYPE_NUMBER` (`FNUMBER`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+
+
+-- crrc_cal.t_cal_writeofftype_l definition
+
+CREATE TABLE `t_cal_writeofftype_l` (
+  `FPKID` varchar(36) NOT NULL DEFAULT ' ',
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FLOCALEID` varchar(10) NOT NULL DEFAULT ' ',
+  `FNAME` varchar(100) NOT NULL DEFAULT ' ',
+  `FREMARK` varchar(100) NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`FPKID`),
+  KEY `IDX_CAL_WRITEOFFTYPE_L` (`FID`,`FLOCALEID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+
+
+-- crrc_cal.t_calsetting_checkobject definition
+
+CREATE TABLE `t_calsetting_checkobject` (
+  `FPKID` bigint NOT NULL DEFAULT '0',
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FBASEDATAID` varchar(80) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`FPKID`),
+  KEY `IDX_CALSETTING_CHECKOBJECT_ID` (`FID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_calsetting_matbilltype definition
+
+CREATE TABLE `t_calsetting_matbilltype` (
+  `FPKID` bigint NOT NULL DEFAULT '0',
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FBASEDATAID` bigint NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FPKID`),
+  KEY `IDX_CALSETTING_MATBT_FID` (`FID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+
+
+-- crrc_cal.t_calsetting_noupdbiztype definition
+
+CREATE TABLE `t_calsetting_noupdbiztype` (
+  `FPKID` bigint NOT NULL DEFAULT '0',
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FBASEDATAID` bigint NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FPKID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_calsetting_ominbiztype definition
+
+CREATE TABLE `t_calsetting_ominbiztype` (
+  `FPKID` bigint NOT NULL DEFAULT '0',
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FBASEDATAID` varchar(80) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`FPKID`),
+  KEY `PK_CALSETTING_OMINBIZTYPE_FID` (`FID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_calsetting_purbiztype definition
+
+CREATE TABLE `t_calsetting_purbiztype` (
+  `FPKID` bigint NOT NULL DEFAULT '0',
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FBASEDATAID` varchar(80) NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`FPKID`),
+  KEY `IDX_CALSETTING_PURBT_FID` (`FID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+
+
+-- crrc_cal.t_calsetting_zerobiztype definition
+
+CREATE TABLE `t_calsetting_zerobiztype` (
+  `FPKID` bigint NOT NULL DEFAULT '0',
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FBASEDATAID` bigint NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FPKID`),
+  KEY `IDX_CALSETTING_ZEROBIZTYPE_ID` (`FID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_calsettting_inbiztype definition
+
+CREATE TABLE `t_calsettting_inbiztype` (
+  `FPKID` bigint NOT NULL DEFAULT '0',
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FBASEDATAID` varchar(80) NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`FPKID`),
+  KEY `IDX_CALSETTING_INBT_FID` (`FID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+
+
+-- crrc_cal.t_calsettting_opbiztype definition
+
+CREATE TABLE `t_calsettting_opbiztype` (
+  `FPKID` bigint NOT NULL DEFAULT '0',
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FBASEDATAID` varchar(80) NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`FPKID`),
+  KEY `IDX_CALSETTING_OPBT_FID` (`FID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+
+
+-- crrc_cal.t_calsettting_outbiztype definition
+
+CREATE TABLE `t_calsettting_outbiztype` (
+  `FPKID` bigint NOT NULL DEFAULT '0',
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FBASEDATAID` varchar(80) NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`FPKID`),
+  KEY `IDX_CALSETTING_OUTBT_FID` (`FID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+
+
+-- crrc_cal.t_eca_costcarrybill definition
+
+CREATE TABLE `t_eca_costcarrybill` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FBILLNO` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FORGID` bigint NOT NULL DEFAULT '0',
+  `FCOSTACCOUNTID` bigint NOT NULL DEFAULT '0',
+  `FCURRENCYID` bigint NOT NULL DEFAULT '0',
+  `FBILLSTATUS` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FCREATORID` bigint NOT NULL DEFAULT '0',
+  `FMODIFIERID` bigint NOT NULL DEFAULT '0',
+  `FAUDITORID` bigint NOT NULL DEFAULT '0',
+  `FAUDITDATE` datetime DEFAULT NULL,
+  `FMODIFYTIME` datetime DEFAULT NULL,
+  `FCREATETIME` datetime DEFAULT NULL,
+  `FCOSTCENTERID` bigint NOT NULL DEFAULT '0',
+  `FPERIODID` bigint NOT NULL DEFAULT '0',
+  `FBILLTYPE` varchar(60) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FBOOKDATE` datetime DEFAULT NULL,
+  `FVOUCHERNUM` varchar(60) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FSRCBILLID` bigint NOT NULL DEFAULT '0',
+  `FSRCBILLNO` varchar(60) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`FID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_eca_costcarrybill_lk definition
+
+CREATE TABLE `t_eca_costcarrybill_lk` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FPKID` bigint NOT NULL DEFAULT '0',
+  `FSEQ` bigint NOT NULL DEFAULT '0',
+  `FSTABLEID` bigint NOT NULL DEFAULT '0' COMMENT '源单主实体编码',
+  `FSBILLID` bigint NOT NULL DEFAULT '0' COMMENT '源单内码',
+  `FSID` bigint NOT NULL DEFAULT '0' COMMENT '源单主实体内码',
+  PRIMARY KEY (`FPKID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_eca_costcarrybill_tc definition
+
+CREATE TABLE `t_eca_costcarrybill_tc` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FTBILLID` bigint NOT NULL DEFAULT '0' COMMENT '目标单单据内码',
+  `FTTABLEID` bigint NOT NULL DEFAULT '0' COMMENT '目标单主实体表格编码',
+  `FTID` bigint NOT NULL DEFAULT '0' COMMENT '目标单主实体内码',
+  `FSBILLID` bigint NOT NULL DEFAULT '0' COMMENT '源单单据内码',
+  `FSTABLEID` bigint NOT NULL DEFAULT '0' COMMENT '源单主实体表格编码',
+  `FSID` bigint NOT NULL DEFAULT '0' COMMENT '源单主实体内码',
+  PRIMARY KEY (`FID`),
+  KEY `IDX_ECA_COSTCARRYBILL_TC_TBILL` (`FTBILLID`),
+  KEY `IDX_ECA_COSTCARRYBILL_TC_TID` (`FTID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_eca_costcarrybill_wb definition
+
+CREATE TABLE `t_eca_costcarrybill_wb` (
+  `FId` bigint NOT NULL,
+  `FEntryId` bigint NOT NULL,
+  `FSeq` int NOT NULL DEFAULT '0',
+  `FRULEVERID` bigint DEFAULT NULL COMMENT '反写规则历史版本标识',
+  `FRULEITEMID` bigint DEFAULT NULL COMMENT '反写条目编码',
+  `FOPERATE` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ' COMMENT '反写操作',
+  `FSTABLEID` bigint DEFAULT NULL COMMENT '反写源单主实体表格编码',
+  `FSID` bigint DEFAULT NULL COMMENT '反写源单主实体内码',
+  `FSBILLID` bigint DEFAULT NULL COMMENT '反写源单内码',
+  `FWRITEVALUE` decimal(23,10) DEFAULT NULL COMMENT '反写量',
+  PRIMARY KEY (`FEntryId`),
+  KEY `idx_eca_costcarrybill_wb_fk` (`FId`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_eca_costcarrybillentry definition
+
+CREATE TABLE `t_eca_costcarrybillentry` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FENTRYID` bigint NOT NULL DEFAULT '0',
+  `FSEQ` bigint NOT NULL DEFAULT '0',
+  `FSUBELEMENTID` bigint NOT NULL DEFAULT '0',
+  `FELEMENTID` bigint NOT NULL DEFAULT '0',
+  `FMATERIALID` bigint NOT NULL DEFAULT '0',
+  `FMATVERSIONID` bigint NOT NULL DEFAULT '0',
+  `FAUXPTYID` bigint NOT NULL DEFAULT '0',
+  `FTRADEID` bigint NOT NULL DEFAULT '0',
+  `FROLEID` varchar(60) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FRESOURCEID` bigint NOT NULL DEFAULT '0',
+  `FBASEQTY` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FAMOUNT` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FCOSTOBJECTID` bigint NOT NULL DEFAULT '0',
+  `FUNITID` bigint NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FENTRYID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_eca_costinit definition
+
+CREATE TABLE `t_eca_costinit` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FBILLNO` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FORGID` bigint NOT NULL DEFAULT '0',
+  `FCURRENCYID` bigint NOT NULL DEFAULT '0',
+  `FCOSTACCOUNTID` bigint NOT NULL DEFAULT '0',
+  `FBILLSTATUS` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FCREATORID` bigint NOT NULL DEFAULT '0',
+  `FMODIFIERID` bigint NOT NULL DEFAULT '0',
+  `FAUDITORID` bigint NOT NULL DEFAULT '0',
+  `FAUDITDATE` datetime DEFAULT NULL,
+  `FMODIFYTIME` datetime DEFAULT NULL,
+  `FCREATETIME` datetime DEFAULT NULL,
+  `FCOSTCENTERID` bigint NOT NULL DEFAULT '0',
+  `FCOSTOBJECTID` bigint NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_eca_costinitentry definition
+
+CREATE TABLE `t_eca_costinitentry` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FENTRYID` bigint NOT NULL DEFAULT '0',
+  `FSEQ` bigint NOT NULL DEFAULT '0',
+  `FPERIODID` bigint NOT NULL DEFAULT '0',
+  `FSUBELEMENTID` bigint NOT NULL DEFAULT '0',
+  `FELEMENTID` bigint NOT NULL DEFAULT '0',
+  `FMATERIALID` bigint NOT NULL DEFAULT '0',
+  `FMATVERSIONID` bigint NOT NULL DEFAULT '0',
+  `FAUXPTYID` bigint NOT NULL DEFAULT '0',
+  `FTRADEID` bigint NOT NULL DEFAULT '0',
+  `FROLEID` varchar(60) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FRESOURCEID` bigint NOT NULL DEFAULT '0',
+  `FUNITID` bigint NOT NULL DEFAULT '0',
+  `FQTY` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FAMOUNT` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  PRIMARY KEY (`FENTRYID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_eca_workhoursfee definition
+
+CREATE TABLE `t_eca_workhoursfee` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FBILLNO` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FBIZDATE` datetime DEFAULT NULL,
+  `FBOOKDATE` datetime DEFAULT NULL,
+  `FORGID` bigint NOT NULL DEFAULT '0',
+  `FCOSTACCOUNTID` bigint NOT NULL DEFAULT '0',
+  `FCURRENCYID` bigint NOT NULL DEFAULT '0',
+  `FCOSTCENTERID` bigint NOT NULL DEFAULT '0',
+  `FTRADEID` bigint NOT NULL DEFAULT '0',
+  `FROLEID` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FRESOURCEID` bigint NOT NULL DEFAULT '0',
+  `FPERIODID` bigint NOT NULL DEFAULT '0',
+  `FBILLSTATUS` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'C',
+  `FREMARK` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FSOURCEID` bigint NOT NULL DEFAULT '0',
+  `FSOURCEIENTRYID` bigint NOT NULL DEFAULT '0',
+  `FSONBILLENTRYID` bigint NOT NULL DEFAULT '0',
+  `FCREATORID` bigint NOT NULL DEFAULT '0',
+  `FMODIFIERID` bigint NOT NULL DEFAULT '0',
+  `FAUDITORID` bigint NOT NULL DEFAULT '0',
+  `FCREATETIME` datetime DEFAULT NULL,
+  `FMODIFYTIME` datetime DEFAULT NULL,
+  `FAUDITDATE` datetime DEFAULT NULL,
+  PRIMARY KEY (`FID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_eca_workhoursfee_l definition
+
+CREATE TABLE `t_eca_workhoursfee_l` (
+  `FPKID` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FLOCALEID` varchar(10) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FREMARK` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`FPKID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_eca_workhoursfeeentry definition
+
+CREATE TABLE `t_eca_workhoursfeeentry` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FENTRYID` bigint NOT NULL DEFAULT '0',
+  `FSEQ` bigint NOT NULL DEFAULT '0',
+  `FELEMENTID` bigint NOT NULL DEFAULT '0',
+  `FSUBELEMENTID` bigint NOT NULL DEFAULT '0',
+  `FWORKHOURID` bigint NOT NULL DEFAULT '0',
+  `FCOSTOBJECTID` bigint NOT NULL DEFAULT '0',
+  `FPROJECTID` bigint NOT NULL DEFAULT '0',
+  `FFACTHOUR` decimal(20,10) NOT NULL DEFAULT '0.0000000000',
+  `FRATE` decimal(20,10) NOT NULL DEFAULT '0.0000000000',
+  `FAMOUNT` decimal(20,10) NOT NULL DEFAULT '0.0000000000',
+  PRIMARY KEY (`FENTRYID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_eca_workhoursrate definition
+
+CREATE TABLE `t_eca_workhoursrate` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FBILLNO` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FORGID` bigint NOT NULL DEFAULT '0',
+  `FCOSTACCOUNTID` bigint NOT NULL DEFAULT '0',
+  `FCOSTCENTERID` bigint NOT NULL DEFAULT '0',
+  `FPERIODID` bigint NOT NULL DEFAULT '0',
+  `FEFFECTDATE` datetime DEFAULT NULL,
+  `FEXPDATE` datetime DEFAULT NULL,
+  `FCURRENCYID` bigint NOT NULL DEFAULT '0',
+  `FREMARK` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FDATASRC` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'manual',
+  `FSOURCEID` bigint NOT NULL DEFAULT '0',
+  `FBILLSTATUS` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'A',
+  `FELEMENTID` bigint NOT NULL DEFAULT '0',
+  `FSUBELEMENTID` bigint NOT NULL DEFAULT '0',
+  `FRESOURCEUNITID` bigint NOT NULL DEFAULT '0',
+  `FQTY` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FTRADEID` bigint NOT NULL DEFAULT '0',
+  `FROLEID` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FRESOURCEID` bigint NOT NULL DEFAULT '0',
+  `FCREATORID` bigint NOT NULL DEFAULT '0',
+  `FMODIFIERID` bigint NOT NULL DEFAULT '0',
+  `FAUDITORID` bigint NOT NULL DEFAULT '0',
+  `FCREATETIME` datetime DEFAULT NULL,
+  `FMODIFYTIME` datetime DEFAULT NULL,
+  `FAUDITDATE` datetime DEFAULT NULL,
+  PRIMARY KEY (`FID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_eca_workhoursrate_l definition
+
+CREATE TABLE `t_eca_workhoursrate_l` (
+  `FPKID` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FLOCALEID` varchar(10) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FREMARK` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`FPKID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_eca_workhoursrateentry definition
+
+CREATE TABLE `t_eca_workhoursrateentry` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FENTRYID` bigint NOT NULL DEFAULT '0',
+  `FSEQ` bigint NOT NULL DEFAULT '0',
+  `FELEMENTID` bigint NOT NULL DEFAULT '0',
+  `FSUBELEMENTID` bigint NOT NULL DEFAULT '0',
+  `FSTDRATE` decimal(20,10) NOT NULL DEFAULT '0.0000000000',
+  `FAMOUNT` decimal(20,10) NOT NULL DEFAULT '0.0000000000',
+  PRIMARY KEY (`FENTRYID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_pktemp_meta definition
+
+CREATE TABLE `t_pktemp_meta` (
+  `ftable_name` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `fcreate_time` datetime NOT NULL,
+  PRIMARY KEY (`ftable_name`),
+  KEY `IX_T_PKTEMP_META_FCREATE_TIME` (`fcreate_time`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_sca_absorbadjust definition
+
+CREATE TABLE `t_sca_absorbadjust` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FBILLNO` varchar(60) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FBILLSTATUS` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FCREATORID` bigint NOT NULL DEFAULT '0',
+  `FMODIFIERID` bigint NOT NULL DEFAULT '0',
+  `FAUDITORID` bigint NOT NULL DEFAULT '0',
+  `FAUDITDATE` datetime DEFAULT NULL,
+  `FMODIFYTIME` datetime DEFAULT NULL,
+  `FCREATETIME` datetime DEFAULT NULL,
+  `FORGID` bigint NOT NULL DEFAULT '0',
+  `FPERIODID` bigint NOT NULL DEFAULT '0',
+  `FCOSTACCOUNTID` bigint NOT NULL DEFAULT '0',
+  `FCOSTCENTERID` bigint NOT NULL DEFAULT '0',
+  `FCURRENCYID` bigint NOT NULL DEFAULT '0',
+  `FCOSTOBJECTID` bigint NOT NULL DEFAULT '0',
+  `FRESOURCEID` bigint NOT NULL DEFAULT '0',
+  `FDIFFTYPE` char(1) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `FREMARK` varchar(500) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FSOURCE` char(1) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `FMANUORGID` bigint NOT NULL DEFAULT '0',
+  `FBOOKDATE` datetime DEFAULT NULL,
+  PRIMARY KEY (`FID`),
+  KEY `IDX_SCA_ABSORBADJUST` (`FORGID`,`FCOSTACCOUNTID`,`FPERIODID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_sca_absorbadjustentry definition
+
+CREATE TABLE `t_sca_absorbadjustentry` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FENTRYID` bigint NOT NULL DEFAULT '0',
+  `FSEQ` bigint NOT NULL DEFAULT '0',
+  `FELEMENTID` bigint NOT NULL DEFAULT '0',
+  `FSUBELEMENTID` bigint NOT NULL DEFAULT '0',
+  `FAMOUNT` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  PRIMARY KEY (`FENTRYID`),
+  KEY `IDX_SCA_ABSORBADJUSTENTRY` (`FID`,`FELEMENTID`,`FSUBELEMENTID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_sca_alloccountrpt_step definition
+
+CREATE TABLE `t_sca_alloccountrpt_step` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FENTRYID` bigint NOT NULL DEFAULT '0',
+  `FSEQ` bigint NOT NULL DEFAULT '0',
+  `FITEM` varchar(60) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FRESULT` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FCNSMTIME` varchar(60) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FCHECKDESC` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FDETAIL` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FREMARK` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FDETAILCONFIGID` bigint NOT NULL DEFAULT '0',
+  `FSUBNEXTENTITY` varchar(60) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FSUBPARAM` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FSUBSTARTTIME` datetime DEFAULT NULL,
+  `FSUBPARAM_TAG` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `FBIGTEXT` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FBIGTEXT_TAG` longtext COLLATE utf8mb4_unicode_ci,
+  PRIMARY KEY (`FENTRYID`),
+  KEY `IDX_SCA_ALLOCCOUNTRPT_STEP` (`FID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_sca_allocprosubentry definition
+
+CREATE TABLE `t_sca_allocprosubentry` (
+  `FENTRYID` bigint NOT NULL DEFAULT '0',
+  `FSEQ` bigint NOT NULL DEFAULT '0',
+  `FDETAILID` bigint NOT NULL DEFAULT '0',
+  `FPRODUCTID` bigint NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FDETAILID`),
+  KEY `IDX_SCA_ALLOCPROSUBENTRY` (`FENTRYID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_sca_autocalclog definition
+
+CREATE TABLE `t_sca_autocalclog` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FBIZTYPE` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FORDERENTRYID` bigint NOT NULL DEFAULT '0',
+  `FSTATUS` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FORGID` bigint NOT NULL DEFAULT '0',
+  `FCOSTACCOUNTID` bigint NOT NULL DEFAULT '0',
+  `FEXECLOG` varchar(2000) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FSYNCDATE` datetime DEFAULT NULL,
+  `FLASTEXECDATE` datetime DEFAULT NULL,
+  `FOPERDATE` datetime DEFAULT NULL,
+  `FOPERATORID` bigint NOT NULL DEFAULT '0',
+  `FORDERNO` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FORDERENTRYSEQ` bigint NOT NULL DEFAULT '0',
+  `FTRYTIMES` int NOT NULL DEFAULT '0',
+  `FMANUORGID` bigint NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FID`),
+  KEY `IDX_SCA_AUTOCALCLOG_SYNCDATE` (`FSYNCDATE`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_sca_autoexecoper definition
+
+CREATE TABLE `t_sca_autoexecoper` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FNUMBER` varchar(80) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FSTATUS` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  `FCREATORID` bigint NOT NULL DEFAULT '0',
+  `FMODIFIERID` bigint NOT NULL DEFAULT '0',
+  `FENABLE` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  `FCREATETIME` datetime DEFAULT NULL,
+  `FMODIFYTIME` datetime DEFAULT NULL,
+  `FMASTERID` bigint NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FID`),
+  KEY `IDX_SCA_AUTOEXECOPER` (`FNUMBER`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_sca_autoexecoper_l definition
+
+CREATE TABLE `t_sca_autoexecoper_l` (
+  `FPKID` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FLOCALEID` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'zh_CN',
+  `FNAME` varchar(500) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`FPKID`),
+  KEY `IDX_SCA_AUTOEXECOPER_L` (`FLOCALEID`,`FNAME`,`FID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_sca_autoexecoper_r3 definition
+
+CREATE TABLE `t_sca_autoexecoper_r3` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FRefStatus` char(1) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_sca_autoexecoperentry definition
+
+CREATE TABLE `t_sca_autoexecoperentry` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FENTRYID` bigint NOT NULL DEFAULT '0',
+  `FSEQ` bigint NOT NULL DEFAULT '0',
+  `FOPERTITLE` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FENTITY` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FBUSSINESSNAME` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FOPERNAME` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FOPER` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FPARAM` varchar(60) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`FENTRYID`),
+  KEY `IDX_SCA_AUTOEXECOPERENTRY_FID` (`FID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_sca_autoexecorgentry definition
+
+CREATE TABLE `t_sca_autoexecorgentry` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FENTRYID` bigint NOT NULL DEFAULT '0',
+  `FSEQ` bigint NOT NULL DEFAULT '0',
+  `FORGID` bigint NOT NULL DEFAULT '0',
+  `FCOSTACCOUNTID` bigint NOT NULL DEFAULT '0',
+  `FUSERID` bigint NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FENTRYID`),
+  KEY `IDX_AUTOEXECORGENTRY` (`FID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_sca_autoexecsheme definition
+
+CREATE TABLE `t_sca_autoexecsheme` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FNUMBER` varchar(80) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FSTATUS` char(1) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'A',
+  `FCREATORID` bigint NOT NULL DEFAULT '0',
+  `FMODIFIERID` bigint NOT NULL DEFAULT '0',
+  `FENABLE` char(1) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '1',
+  `FCREATETIME` datetime DEFAULT NULL,
+  `FMODIFYTIME` datetime DEFAULT NULL,
+  `FMASTERID` bigint NOT NULL DEFAULT '0',
+  `FEXECUTORID` bigint NOT NULL DEFAULT '0',
+  `FSCHEDULEPLAN` varchar(1000) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FSHEDULEPLANID` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FISPRESET` char(1) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  `FAPPNUM` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`FID`),
+  UNIQUE KEY `IDX_SCA_AUTOEXECSHEME` (`FMASTERID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_sca_autoexecsheme_l definition
+
+CREATE TABLE `t_sca_autoexecsheme_l` (
+  `FPKID` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FLOCALEID` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FNAME` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FREMARK` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`FPKID`),
+  KEY `IDX_SCA_AUTOEXECSHEME_L` (`FID`,`FLOCALEID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_sca_autoexecsheme_r3 definition
+
+CREATE TABLE `t_sca_autoexecsheme_r3` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FRefStatus` char(1) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_sca_autoexecshemeentry definition
+
+CREATE TABLE `t_sca_autoexecshemeentry` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FENTRYID` bigint NOT NULL DEFAULT '0',
+  `FSEQ` bigint NOT NULL DEFAULT '0',
+  `FBUSINESSTYPE` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FAUTOEXECOPERID` bigint NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FENTRYID`),
+  KEY `IDX_SCA_AUTOEXECSHEMEENTRY` (`FID`,`FBUSINESSTYPE`,`FAUTOEXECOPERID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_sca_autofinish_calclog definition
+
+CREATE TABLE `t_sca_autofinish_calclog` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FBILLNO` varchar(60) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FORGID` bigint NOT NULL DEFAULT '0',
+  `FBILLSTATUS` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FCOSTOBJECTID` bigint NOT NULL DEFAULT '0',
+  `FCOSTACCOUNTID` bigint NOT NULL DEFAULT '0',
+  `FPERIODID` bigint NOT NULL DEFAULT '0',
+  `FSRCBILLNO` varchar(60) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FSRCENTRYSEQ` bigint NOT NULL DEFAULT '0',
+  `FSRCENTRYID` bigint NOT NULL DEFAULT '0',
+  `FLOGTYPE` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FLOGDETAIL` varchar(2000) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FTRACEID` varchar(1000) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FMODIFIERID` bigint NOT NULL DEFAULT '0',
+  `FAUDITDATE` datetime DEFAULT NULL,
+  `FMODIFYTIME` datetime DEFAULT NULL,
+  `FCREATETIME` datetime DEFAULT NULL,
+  `FAUDITORID` bigint NOT NULL DEFAULT '0',
+  `FCREATORID` bigint NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FID`),
+  KEY `IDX_SCA_AUTOFINISH_CALCLOG` (`FBILLNO`,`FORGID`,`FCOSTOBJECTID`,`FCOSTACCOUNTID`,`FPERIODID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_sca_benefcostcenter definition
+
+CREATE TABLE `t_sca_benefcostcenter` (
+  `FENTRYID` bigint NOT NULL DEFAULT '0',
+  `FBASEDATAID` bigint NOT NULL DEFAULT '0',
+  `FPKID` bigint NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FPKID`),
+  KEY `INDEX_SCA_BENEFCOSTCENTER` (`FENTRYID`,`FBASEDATAID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_sca_calcresult definition
+
+CREATE TABLE `t_sca_calcresult` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FORGID` bigint NOT NULL DEFAULT '0',
+  `FBILLNO` varchar(60) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FBILLSTATUS` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FAUDITORID` bigint NOT NULL DEFAULT '0',
+  `FCREATORID` bigint NOT NULL DEFAULT '0',
+  `FMODIFIERID` bigint NOT NULL DEFAULT '0',
+  `FAUDITDATE` datetime DEFAULT NULL,
+  `FMODIFYTIME` datetime DEFAULT NULL,
+  `FCOSTOBJECTID` bigint NOT NULL DEFAULT '0',
+  `FCOSTCENTERID` bigint NOT NULL DEFAULT '0',
+  `FCOSTACCOUNTID` bigint NOT NULL DEFAULT '0',
+  `FCURRENCYID` bigint NOT NULL DEFAULT '0',
+  `FBIZDATE` datetime DEFAULT NULL,
+  `FPERIODID` bigint NOT NULL DEFAULT '0',
+  `FCREATETIME` datetime DEFAULT NULL,
+  `FSRCBILID` bigint NOT NULL DEFAULT '0',
+  `FSRCBILLID` bigint NOT NULL DEFAULT '0',
+  `FBIZSTATUS` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'A',
+  PRIMARY KEY (`FID`),
+  KEY `INDEX_SCA_CALCRESULT` (`FORGID`,`FCOSTOBJECTID`,`FCOSTCENTERID`,`FPERIODID`,`FCOSTACCOUNTID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_sca_calcresultentry definition
+
+CREATE TABLE `t_sca_calcresultentry` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FENTRYID` bigint NOT NULL DEFAULT '0',
+  `FSEQ` bigint NOT NULL DEFAULT '0',
+  `FELEMENTID` bigint NOT NULL DEFAULT '0',
+  `FSUBELEMENTID` bigint NOT NULL DEFAULT '0',
+  `FMATERIALID` bigint NOT NULL DEFAULT '0',
+  `FAUXPTY` bigint NOT NULL DEFAULT '0',
+  `FMATVERSIONID` bigint NOT NULL DEFAULT '0',
+  `FPDSTARTQTY` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FPDSTARTAMOUNT` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FPDCURRTQTY` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FPDCURRAMOUNT` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FPDCOMPQTY` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FPDCOMPANOUNT` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FPDENDQTY` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FPDENDAMOUNT` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FTOTALQTY` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FTOTALAMOUNT` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FSTDQTY` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FSTDAMOUNT` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FDIFF` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FDATATYPE` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FCALTYPE` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FDIFFTYPE` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FCOSTUPDATEDIFFAMT` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FDIFFQTY` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FCOSTUPDATEDIFF` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FRESOURCEID` bigint NOT NULL DEFAULT '0',
+  `FCALCBASIS` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FCOSTLEVEL` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FSOURCEINFO` longtext COLLATE utf8mb4_unicode_ci,
+  `FCOSTOBJECTID` bigint NOT NULL DEFAULT '0',
+  `FPRODUCTTYPE` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FKEYCOLID` bigint NOT NULL DEFAULT '0',
+  `FKEYCOL` varchar(200) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`FENTRYID`),
+  KEY `INDEX_SCA_CALCRESULTENTRY` (`FELEMENTID`,`FSUBELEMENTID`,`FMATERIALID`),
+  KEY `IDX_SCA_CALCRESULTENTRY2` (`FID`),
+  KEY `IDX_SCA_CALCRESULTERY_OBJ` (`FCOSTOBJECTID`),
+  KEY `IDX_SCA_CALCRESULTE_TP` (`FDATATYPE`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_sca_calcresultprice definition
+
+CREATE TABLE `t_sca_calcresultprice` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FENTRYID` bigint NOT NULL DEFAULT '0',
+  `FSEQ` bigint NOT NULL DEFAULT '0',
+  `FPERIODTYPE` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FPDATATYPE` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FPELEMENT` bigint NOT NULL DEFAULT '0',
+  `FPSUBELEMENT` bigint NOT NULL DEFAULT '0',
+  `FPMATERIAL` bigint NOT NULL DEFAULT '0',
+  `FPAUXPTY` bigint NOT NULL DEFAULT '0',
+  `FPMATVERSION` bigint NOT NULL DEFAULT '0',
+  `FPPDSTARTQTY` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FPPDSTARTAMOUNT` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FPPDCURRQTY` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FPPDCURRAMOUNT` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FPPDCOMPQTY` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FPPDCOMPAMOUNT` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FPPDENDQTY` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FPPDENDAMOUNT` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FPTOTALQTY` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FPTOTALAMOUNT` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FPSTDQTY` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FPSTDAMOUNT` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FMATDIFF` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FMFGFEEDIFF` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FORDERDIFF` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FRECEIPTDIFF` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FFEEDIFF` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FUNABSORBFEEDIFF` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FCOSTUPDATEDIFF` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FFACTCOST` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  PRIMARY KEY (`FENTRYID`),
+  KEY `IDX_SCA_CALCRESULTPRICE` (`FPELEMENT`,`FPSUBELEMENT`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_sca_calcrpt definition
+
+CREATE TABLE `t_sca_calcrpt` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FBILLNO` varchar(60) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FBILLSTATUS` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FCREATORID` bigint NOT NULL DEFAULT '0',
+  `FMODIFIERID` bigint NOT NULL DEFAULT '0',
+  `FAUDITORID` bigint NOT NULL DEFAULT '0',
+  `FAUDITDATE` datetime DEFAULT NULL,
+  `FMODIFYTIME` datetime DEFAULT NULL,
+  `FCREATETIME` datetime DEFAULT NULL,
+  `FTASKNAME` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FACCOUNTORG` bigint NOT NULL DEFAULT '0',
+  `FCOSTACCOUNTID` bigint NOT NULL DEFAULT '0',
+  `FPERIODID` bigint NOT NULL DEFAULT '0',
+  `FSTARTTIME` datetime DEFAULT NULL,
+  `FTYPE` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FPROGRESS` bigint NOT NULL DEFAULT '0',
+  `FEXECUTOR` bigint NOT NULL DEFAULT '0',
+  `FREPORTTYPE` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FCURRENCYID` bigint NOT NULL DEFAULT '0',
+  `FUSETIME` bigint NOT NULL DEFAULT '0',
+  `FNEXTPAGEPARA` varchar(2000) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FNEXTPAGEPARA_TAG` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `FMANUORGID` bigint NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FID`),
+  KEY `IDX_SCA_CALCRPT` (`FACCOUNTORG`,`FCOSTACCOUNTID`,`FPERIODID`,`FSTARTTIME`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_sca_calcrptcenter definition
+
+CREATE TABLE `t_sca_calcrptcenter` (
+  `FPKID` bigint NOT NULL DEFAULT '0',
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FBASEDATAID` bigint NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FPKID`),
+  KEY `IDX_SCA_CALCRPTCENTER` (`FID`,`FBASEDATAID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_sca_calcrptdtentry definition
+
+CREATE TABLE `t_sca_calcrptdtentry` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FENTRYID` bigint NOT NULL DEFAULT '0',
+  `FSEQ` bigint NOT NULL DEFAULT '0',
+  `FDETAILSTEP` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FDTSTATUS` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FCNSMTIME` bigint NOT NULL DEFAULT '0',
+  `FERRLOG` varchar(500) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FDETAIL` varchar(500) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FREMARK` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FDETAILCONFIGID` bigint NOT NULL DEFAULT '0',
+  `FSUBPARAM` varchar(1000) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FSUBPARAM_TAG` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `FSUBNEXTENTITY` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FSUBSTARTTIME` datetime DEFAULT NULL,
+  `FTIP` varchar(500) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`FENTRYID`),
+  KEY `IDX_SCA_CALCRPTDTENTRY` (`FID`,`FDETAILCONFIGID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_sca_calcrptexpentry definition
+
+CREATE TABLE `t_sca_calcrptexpentry` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FENTRYID` bigint NOT NULL DEFAULT '0',
+  `FSEQ` bigint NOT NULL DEFAULT '0',
+  `FCOSTOBJECTID` bigint NOT NULL DEFAULT '0',
+  `FDIFFERENTMONEY` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FDIFFERENTRATIO` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FACTUALCOST` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FSTANDARDCOST` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  PRIMARY KEY (`FENTRYID`),
+  KEY `IDX_SCA_CALCRPTEXPENTRY` (`FID`,`FCOSTOBJECTID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_sca_calcrptmorg definition
+
+CREATE TABLE `t_sca_calcrptmorg` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FPKID` bigint NOT NULL DEFAULT '0',
+  `FBASEDATAID` bigint NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FPKID`),
+  KEY `IDX_SCA_CALCRPTMORG` (`FID`,`FBASEDATAID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_sca_calcscheme definition
+
+CREATE TABLE `t_sca_calcscheme` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FBILLNO` varchar(60) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FORGID` bigint NOT NULL DEFAULT '0',
+  `FPERIODID` bigint NOT NULL DEFAULT '0',
+  `FCOSTACCOUNTID` bigint NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FID`),
+  KEY `IDX_SCA_CALCSCHEME` (`FORGID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_sca_checkconfig definition
+
+CREATE TABLE `t_sca_checkconfig` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FBILLNO` varchar(60) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FCREATORID` bigint NOT NULL DEFAULT '0',
+  `FCREATETIME` datetime DEFAULT NULL,
+  `FTYPE` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FTASKCONFIGID` bigint NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FID`),
+  KEY `INDEX_SCA_CHECKCONFIG` (`FTYPE`,`FTASKCONFIGID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_sca_checkconfig_l definition
+
+CREATE TABLE `t_sca_checkconfig_l` (
+  `FPKID` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FLOCALEID` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FNAME` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`FPKID`),
+  KEY `INDEX_SCA_CHECKCONFIG_L` (`FLOCALEID`,`FNAME`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_sca_checkconfigentry definition
+
+CREATE TABLE `t_sca_checkconfigentry` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FENTRYID` bigint NOT NULL DEFAULT '0',
+  `FSEQ` bigint NOT NULL DEFAULT '0',
+  `FCLASS` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FMETHOD` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FREUSLTENTITY` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FSORT` bigint NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FENTRYID`),
+  KEY `INDEX_SCA_CHECKCONFIGENTRY` (`FCLASS`,`FREUSLTENTITY`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_sca_checkconfigentry_l definition
+
+CREATE TABLE `t_sca_checkconfigentry_l` (
+  `FPKID` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FENTRYID` bigint NOT NULL DEFAULT '0',
+  `FLOCALEID` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FDESC` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`FPKID`),
+  KEY `INDEX_SCA_CHECKCONFIGENTRY_L` (`FLOCALEID`,`FDESC`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_sca_checkdetail definition
+
+CREATE TABLE `t_sca_checkdetail` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FORGID` bigint NOT NULL DEFAULT '0',
+  `FCOSTACCOUNTID` bigint NOT NULL DEFAULT '0',
+  `FPERIODID` bigint NOT NULL DEFAULT '0',
+  `FCURRENCYID` bigint NOT NULL DEFAULT '0',
+  `FCALCDATE` datetime DEFAULT NULL,
+  `FCHECKITEMDESC` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FTASKID` bigint NOT NULL DEFAULT '0',
+  `FITEMID` bigint NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FID`),
+  KEY `IDX_SCA_CHECKDETAIL` (`FORGID`,`FCOSTACCOUNTID`,`FPERIODID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_sca_checkdetailcenter definition
+
+CREATE TABLE `t_sca_checkdetailcenter` (
+  `FPKID` bigint NOT NULL DEFAULT '0',
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FBASEDATAID` bigint NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FPKID`),
+  KEY `IDX_SCA_CHECKDETAILCENTER` (`FID`,`FBASEDATAID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_sca_checkdetailentry definition
+
+CREATE TABLE `t_sca_checkdetailentry` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FENTRYID` bigint NOT NULL DEFAULT '0',
+  `FSEQ` bigint NOT NULL DEFAULT '0',
+  `FENTRYCOSTCENTERID` bigint NOT NULL DEFAULT '0',
+  `FCHECKDETAIL` varchar(1000) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FCOSTOBJECTID` bigint NOT NULL DEFAULT '0',
+  `FBIGTEXT` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FBIGTEXT_TAG` longtext COLLATE utf8mb4_unicode_ci,
+  PRIMARY KEY (`FENTRYID`),
+  KEY `IDX_SCA_CHECKDETAILENTRY` (`FENTRYCOSTCENTERID`,`FID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_sca_checkreportdetail definition
+
+CREATE TABLE `t_sca_checkreportdetail` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FBILLSTATUS` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FCREATORID` bigint NOT NULL DEFAULT '0',
+  `FMODIFIERID` bigint NOT NULL DEFAULT '0',
+  `FMODIFYTIME` datetime DEFAULT NULL,
+  `FCREATETIME` datetime DEFAULT NULL,
+  `FAUDITDATE` datetime DEFAULT NULL,
+  `FAUDITORID` bigint NOT NULL DEFAULT '0',
+  `FCURRENCYID` bigint NOT NULL DEFAULT '0',
+  `FITEM` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FCHECKITEMDESC` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FORGID` bigint NOT NULL DEFAULT '0',
+  `FCOSTACCOUNTID` bigint NOT NULL DEFAULT '0',
+  `FPERIODID` bigint NOT NULL DEFAULT '0',
+  `FTARGETDATE` datetime DEFAULT NULL,
+  `FBILLNO` varchar(60) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FCALCDATE` datetime DEFAULT NULL,
+  PRIMARY KEY (`FID`),
+  KEY `IDX_SCA_CHECKREPORTDETAIL` (`FORGID`,`FCOSTACCOUNTID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_sca_checkresult definition
+
+CREATE TABLE `t_sca_checkresult` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FBILLNO` varchar(60) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FORGID` bigint NOT NULL DEFAULT '0',
+  `FCOSTACCOUNTID` bigint NOT NULL DEFAULT '0',
+  `FPERIODID` bigint NOT NULL DEFAULT '0',
+  `FCHECKDATE` datetime DEFAULT NULL,
+  `FTASKID` bigint NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FID`),
+  KEY `IDX_SCA_CHECKRESULT` (`FORGID`,`FCOSTACCOUNTID`,`FPERIODID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_sca_checkresultcenter definition
+
+CREATE TABLE `t_sca_checkresultcenter` (
+  `FPKID` bigint NOT NULL DEFAULT '0',
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FBASEDATAID` bigint NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FPKID`),
+  KEY `IDX_SCA_CHECKRESULTCENTER` (`FID`,`FBASEDATAID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_sca_checkresultentry definition
+
+CREATE TABLE `t_sca_checkresultentry` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FENTRYID` bigint NOT NULL DEFAULT '0',
+  `FSEQ` bigint NOT NULL DEFAULT '0',
+  `FITEMID` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FRESULT` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FITEM` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`FENTRYID`),
+  KEY `IDX_SCA_CHECKRESULTENTRY` (`FID`,`FITEMID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_sca_checkresultentry_l definition
+
+CREATE TABLE `t_sca_checkresultentry_l` (
+  `FPKID` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FENTRYID` bigint NOT NULL DEFAULT '0',
+  `FLOCALEID` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FCHECKDESC` varchar(2000) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FPARAM` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `FRESULTDESC` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`FPKID`),
+  KEY `IDX_SCA_CHECKRESULTENTRY_L` (`FLOCALEID`,`FENTRYID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_sca_checkrtmorg definition
+
+CREATE TABLE `t_sca_checkrtmorg` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FPKID` bigint NOT NULL DEFAULT '0',
+  `FBASEDATAID` bigint NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FPKID`),
+  KEY `IDX_SCA_CHECKRTMORG` (`FID`,`FBASEDATAID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_sca_ckreportdetailentry definition
+
+CREATE TABLE `t_sca_ckreportdetailentry` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FENTRYID` bigint NOT NULL DEFAULT '0',
+  `FSEQ` bigint NOT NULL DEFAULT '0',
+  `FCOSTCENTERID` bigint NOT NULL DEFAULT '0',
+  `FCHECKDETAIL` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FBIGTEXT` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FBIGTEXT_TAG` longtext COLLATE utf8mb4_unicode_ci,
+  `FCOSTOBJECTID` bigint NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FENTRYID`),
+  KEY `IDX_SCA_CKREPORTDETAILENTRY` (`FID`,`FSEQ`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_sca_closeaccount definition
+
+CREATE TABLE `t_sca_closeaccount` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FCALORGID` bigint NOT NULL DEFAULT '0',
+  `FMANUORGID` bigint NOT NULL DEFAULT '0',
+  `FCOSTACCOUNTID` bigint NOT NULL DEFAULT '0',
+  `FCLOSEPERIODID` bigint NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FID`),
+  KEY `IDX_T_SCA_CLOSEACCOUNT` (`FCALORGID`,`FCOSTACCOUNTID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_sca_comdiffresultentry definition
+
+CREATE TABLE `t_sca_comdiffresultentry` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FENTRYID` bigint NOT NULL DEFAULT '0',
+  `FSEQ` bigint NOT NULL DEFAULT '0',
+  `FSRCSEQ1` bigint NOT NULL DEFAULT '0',
+  `FSRCBILLID1` bigint NOT NULL DEFAULT '0',
+  `FSRCBILLNO1` varchar(60) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FSUBELEMENTID1` bigint NOT NULL DEFAULT '0',
+  `FELEMENTID1` bigint NOT NULL DEFAULT '0',
+  `FMATERIALID1` bigint NOT NULL DEFAULT '0',
+  `FAUXPTYID1` bigint NOT NULL DEFAULT '0',
+  `FMATVERSIONID1` bigint NOT NULL DEFAULT '0',
+  `FBASEUNITID1` bigint NOT NULL DEFAULT '0',
+  `FSTARTQTY1` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FSTARTAMT1` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FSTARTINVOICEDIFF1` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FSTARTFEEDIFF1` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FSTARTOTHERDIFF1` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FSTARTMADEDIFF1` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FSTARTMADEUPAMT1` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FSTARTORDDIFF1` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FSTARTUNJOINDIFFAMT1` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FSTARTDIFFQTY1` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FSTARTSTDCOSTUPAMT1` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FSTARTACTCOSTUPAMT1` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FCURRQTY1` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FCURRAMT1` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FCURRINVOICEDIFF1` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FCURRFEEDIFF1` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FCURROTHERDIFF1` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FCURRMADEDIFF1` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FCURRMADEUPAMT1` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FCURRORDDIFF1` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FCURRDIFFQTY1` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FCURRUNJOINDIFFAMT1` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FCURRSTDCOSTUPAMT1` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FCURRACTCOSTUPAMT1` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FCOMPFEEDIFF1` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FTYPE1` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FRELACOSTOBJECTID1` bigint NOT NULL DEFAULT '0',
+  `FKEYCOL1ID` bigint NOT NULL DEFAULT '0',
+  `FKEYCOL1` varchar(200) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FSTARTRESERVEDIFFX1` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FSTARTRESERVEDIFFW1` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FSTARTRESERVEDIFFY1` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FCURRRESERVEDIFFX1` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FCURRRESERVEDIFFW1` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FCURRRESERVEDIFFY1` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  PRIMARY KEY (`FENTRYID`),
+  KEY `IDX_SCA_COMDIFFRESULTENTRY` (`FID`),
+  KEY `IDX_SCA_COMDIFFRESULTERY_MAT` (`FMATERIALID1`),
+  KEY `IDX_SCA_COMDIFFRESULTE_OBJ` (`FRELACOSTOBJECTID1`),
+  KEY `IDX_SCA_COMDIFFRESULTE_TP` (`FTYPE1`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_sca_comdiffresultentry_v definition
+
+CREATE TABLE `t_sca_comdiffresultentry_v` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FENTRYID` bigint NOT NULL DEFAULT '0',
+  `FSEQ` bigint NOT NULL DEFAULT '0',
+  `FCOMPQTY1` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FCOMPAMT1` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FCOMPINVOICEDIFF1` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FCOMPFEEDIFF1` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FCOMPOTHERDIFF1` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FCOMPMADEDIFF1` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FCOMPMADEUPAMT1` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FCOMPORDDIFF1` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FCOMPDIFFQTY1` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FCOMPUNJOINDIFFAMT1` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FCOMPSTDCOSTUPAMT1` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FCOMPACTCOSTUPAMT1` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FENDQTY1` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FENDAMT1` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FENDINVOICEDIFF1` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FENDFEEDIFF1` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FENDOTHERDIFF1` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FENDORDDIFF1` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FENDMADEDIFF1` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FENDMADEUPAMT1` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FENDDIFFQTY1` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FENDUNJOINDIFFAMT1` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FENDSTDCOSTUPAMT1` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FENDACTCOSTUPAMT1` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FTOTALQTY1` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FTOTALAMT1` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FTOTALINVOICEDIFF1` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FTOTALFEEDIFF1` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FTOTALOTHERDIFF1` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FTOTALMADEDIFF1` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FTOTALMADEUPAMT1` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FTOTALORDDIFF1` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FTOTALUNJOINDIFFAMT1` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FTOTALDIFFQTY1` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FTOTALSTDCOSTUPAMT1` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FTOTALACTCOSTUPAMT1` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FSTARTFALLDIFF1` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FENDFALLDIFF1` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FCOMPFALLDIFF1` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FTOTALFALLDIFF1` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FCURRFALLDIFF1` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FCOMPRESERVEDIFFX1` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FCOMPRESERVEDIFFW1` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FCOMPRESERVEDIFFY1` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FENDRESERVEDIFFX1` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FENDRESERVEDIFFW1` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FENDRESERVEDIFFY1` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FTOTALRESERVEDIFFX1` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FTOTALRESERVEDIFFW1` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FTOTALRESERVEDIFFY1` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  PRIMARY KEY (`FENTRYID`),
+  KEY `IDX_SCA_COMDIFFRESULTENTRY_V` (`FID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_sca_costchangerecord definition
+
+CREATE TABLE `t_sca_costchangerecord` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FORGID` bigint NOT NULL DEFAULT '0',
+  `FCOSTOBJECTID` bigint NOT NULL DEFAULT '0',
+  `FCOSTCENTERID` bigint NOT NULL DEFAULT '0',
+  `FBUSINESSBILL` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FPERIODID` bigint NOT NULL DEFAULT '0',
+  `FCHANGECONTEXT` varchar(1000) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FCREATORID` bigint NOT NULL DEFAULT '0',
+  `FCREATETIME` datetime DEFAULT NULL,
+  `FCOSTACCOUNTID` bigint NOT NULL DEFAULT '0',
+  `FCHANGECONTEXT_TAG` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `FBIZSTATUS` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'A',
+  `FSOURCEBIZTIME` datetime DEFAULT NULL,
+  `FSOURCEBILLID` bigint NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FID`),
+  KEY `IDX_SCA_COSTCHANGERECORD` (`FORGID`,`FCOSTOBJECTID`,`FCOSTCENTERID`,`FBUSINESSBILL`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_sca_costconfirm definition
+
+CREATE TABLE `t_sca_costconfirm` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FBILLNO` varchar(60) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FBILLSTATUS` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FCREATORID` bigint NOT NULL DEFAULT '0',
+  `FMODIFIERID` bigint NOT NULL DEFAULT '0',
+  `FAUDITORID` bigint NOT NULL DEFAULT '0',
+  `FAUDITDATE` datetime DEFAULT NULL,
+  `FMODIFYTIME` datetime DEFAULT NULL,
+  `FCREATETIME` datetime DEFAULT NULL,
+  `FORGID` bigint NOT NULL DEFAULT '0',
+  `FPERIODID` bigint NOT NULL DEFAULT '0',
+  `FCOSTACCOUNTID` bigint NOT NULL DEFAULT '0',
+  `FCOSTCENTERID` bigint NOT NULL DEFAULT '0',
+  `FCOSTOBJECTID` bigint NOT NULL DEFAULT '0',
+  `FDIFFRATE` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FBIZSTATUS` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FABSORBAMOUNT` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FSTDAMOUNT` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FDIFF` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FCURRENCYID` bigint NOT NULL DEFAULT '0',
+  `FMATERIALID` bigint NOT NULL DEFAULT '0',
+  `FBOMVERSIONID` bigint NOT NULL DEFAULT '0',
+  `FAUXPTYID` bigint NOT NULL DEFAULT '0',
+  `FSRCBILL` bigint NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FID`),
+  KEY `IDX_SCA_COSTCONFIRM` (`FORGID`,`FPERIODID`,`FCOSTACCOUNTID`,`FCOSTOBJECTID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_sca_costmatitemscale definition
+
+CREATE TABLE `t_sca_costmatitemscale` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FBILLNO` varchar(60) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FBILLSTATUS` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FCREATORID` bigint NOT NULL DEFAULT '0',
+  `FMODIFIERID` bigint NOT NULL DEFAULT '0',
+  `FAUDITORID` bigint NOT NULL DEFAULT '0',
+  `FAUDITDATE` datetime DEFAULT NULL,
+  `FMODIFYTIME` datetime DEFAULT NULL,
+  `FCREATETIME` datetime DEFAULT NULL,
+  `FORGID` bigint NOT NULL DEFAULT '0',
+  `FCOSTACCOUNTID` bigint NOT NULL DEFAULT '0',
+  `FPERIODID` bigint NOT NULL DEFAULT '0',
+  `FMATERIALID` bigint NOT NULL DEFAULT '0',
+  `FAUXPTYID` bigint NOT NULL DEFAULT '0',
+  `FVERSIONID` bigint NOT NULL DEFAULT '0',
+  `FDIFFTYPEID` char(1) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  PRIMARY KEY (`FID`),
+  KEY `IDX_SCA_COSTMATITEMSCALE` (`FORGID`,`FCOSTACCOUNTID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_sca_costrecovry definition
+
+CREATE TABLE `t_sca_costrecovry` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FBILLNO` varchar(80) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FBILLSTATUS` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'A',
+  `FCREATORID` bigint NOT NULL DEFAULT '0',
+  `FMODIFIERID` bigint NOT NULL DEFAULT '0',
+  `FAUDITORID` bigint NOT NULL DEFAULT '0',
+  `FAUDITDATE` datetime DEFAULT NULL,
+  `FMODIFYTIME` datetime DEFAULT NULL,
+  `FCREATETIME` datetime DEFAULT NULL,
+  `FORGID` bigint NOT NULL DEFAULT '0',
+  `FCOSTACCOUNTID` bigint NOT NULL DEFAULT '0',
+  `FPERIODID` bigint NOT NULL DEFAULT '0',
+  `FMATERIALID` bigint NOT NULL DEFAULT '0',
+  `FMATERIALVERID` bigint NOT NULL DEFAULT '0',
+  `FAUXPROPID` bigint NOT NULL DEFAULT '0',
+  `FCURRENCYID` bigint NOT NULL DEFAULT '0',
+  `FCALTIME` datetime DEFAULT NULL,
+  `FMANUORGID` bigint NOT NULL DEFAULT '0',
+  `FBATCHNO` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FHEADPREQTY` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FHEADPREAMT` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FHEADQTY` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FHEADTOTALQTY` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FHEADAMOUNT` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FHEADTOTALAMT` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FCALCREPORTID` bigint DEFAULT '0',
+  `FSTORAGEORGID` bigint NOT NULL DEFAULT '0',
+  `FHEADTRANSINQTY` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FHEADTRANSINAMT` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FHEADPURQTY` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FHEADPURAMT` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  PRIMARY KEY (`FID`),
+  KEY `IDX_SCA_COSTRECOVRY` (`FCOSTACCOUNTID`,`FPERIODID`),
+  KEY `IDX_SCA_COSTRECOVRYMAT` (`FMATERIALID`,`FMATERIALVERID`,`FAUXPROPID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_sca_costrecovryentry definition
+
+CREATE TABLE `t_sca_costrecovryentry` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FENTRYID` bigint NOT NULL DEFAULT '0',
+  `FSEQ` bigint NOT NULL DEFAULT '0',
+  `FELEMENTID` bigint NOT NULL DEFAULT '0',
+  `FSUBELEMENTID` bigint NOT NULL DEFAULT '0',
+  `FSUBMATERIALID` bigint NOT NULL DEFAULT '0',
+  `FSUBMATERIALVERID` bigint NOT NULL DEFAULT '0',
+  `FSUBMATERIALAUXPROPID` bigint NOT NULL DEFAULT '0',
+  `FPREQTY` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FPREAMOUNT` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FQTY` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FAMOUNT` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FACTQTY` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FACTAMOUNT` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FTREEPATH` varchar(2000) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FLEVEL` bigint NOT NULL DEFAULT '0',
+  `FISLEAF` varchar(2) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FISUNABSORB` varchar(2) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FSOURCEINFO` varchar(2000) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FTRANSINQTY` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FTRANSINAMOUNT` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FPURQTY` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FPURAMOUNT` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FTRANSLEAF` char(1) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  `FPURSLEAF` char(1) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FENTRYID`),
+  KEY `IDX_SCA_COSTRECOVRYENTRY` (`FID`,`FENTRYID`),
+  KEY `IDX_SCA_COSTRECOVRYENTRYMAT` (`FSUBELEMENTID`,`FSUBMATERIALID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_sca_costrecsubentry definition
+
+CREATE TABLE `t_sca_costrecsubentry` (
+  `FENTRYID` bigint NOT NULL DEFAULT '0',
+  `FSEQ` bigint NOT NULL DEFAULT '0',
+  `FDETAILID` bigint NOT NULL DEFAULT '0',
+  `FSUBTRANSORGID` bigint NOT NULL DEFAULT '0',
+  `FSUBTRANSTYPE` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT ' ',
+  `FSUBTRANSQTY` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FSUBTRANSAMOUNT` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FSUBPRICERADIO` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FSUBPERIODID` bigint NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FDETAILID`),
+  KEY `IDX_T_SCA_COSTRECSUBENTRY` (`FENTRYID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_sca_coststructuresheet definition
+
+CREATE TABLE `t_sca_coststructuresheet` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FBILLNO` varchar(60) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FBILLSTATUS` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FCREATORID` bigint NOT NULL DEFAULT '0',
+  `FMODIFIERID` bigint NOT NULL DEFAULT '0',
+  `FAUDITORID` bigint NOT NULL DEFAULT '0',
+  `FAUDITDATE` datetime DEFAULT NULL,
+  `FMODIFYTIME` datetime DEFAULT NULL,
+  `FCREATETIME` datetime DEFAULT NULL,
+  `FORGID` bigint NOT NULL DEFAULT '0',
+  `FCOSTACCOUNTID` bigint NOT NULL DEFAULT '0',
+  `FPERIODID` bigint NOT NULL DEFAULT '0',
+  `FCURRENCYID` bigint NOT NULL DEFAULT '0',
+  `FPRODUCTID` bigint NOT NULL DEFAULT '0',
+  `FITEMVERSIONID` bigint NOT NULL DEFAULT '0',
+  `FAUXPROPID` bigint NOT NULL DEFAULT '0',
+  `FVERSIONNO` varchar(60) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FAMOUNT` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  PRIMARY KEY (`FID`),
+  KEY `IDX_SCA_COSTSTRUCTURESHEET` (`FORGID`,`FCOSTACCOUNTID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_sca_coststructuresheet_l definition
+
+CREATE TABLE `t_sca_coststructuresheet_l` (
+  `FPKID` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FLOCALEID` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FMEMO` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`FPKID`),
+  KEY `IDX_SCA_COSTSTRUCTURESHEET_L` (`FID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_sca_datacheckitem definition
+
+CREATE TABLE `t_sca_datacheckitem` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FNUMBER` varchar(60) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FPLUGIN` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FISPRESET` char(1) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  `FAPPNUM` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`FID`),
+  KEY `IDX_SCA_DATACHECKITEM` (`FNUMBER`,`FAPPNUM`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_sca_datacheckitem_l definition
+
+CREATE TABLE `t_sca_datacheckitem_l` (
+  `FPKID` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FLOCALEID` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FNAME` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FDESCRIPTION` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FTIPS` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`FPKID`),
+  KEY `IDX_SCA_DATACHECKITEM_L` (`FNAME`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_sca_datacheckitem_r3 definition
+
+CREATE TABLE `t_sca_datacheckitem_r3` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FRefStatus` char(1) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_sca_datacheckresult definition
+
+CREATE TABLE `t_sca_datacheckresult` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FCHECKTASKID` bigint NOT NULL DEFAULT '0',
+  `FUSERID` bigint NOT NULL DEFAULT '0',
+  `FCHECKTIME` datetime DEFAULT NULL,
+  `FSTATUS` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FAPPNUM` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`FID`),
+  KEY `IDX_SCA_DATACHECKRESULT` (`FCHECKTASKID`,`FUSERID`,`FAPPNUM`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_sca_datacheckresult_r3 definition
+
+CREATE TABLE `t_sca_datacheckresult_r3` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FRefStatus` char(1) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_sca_datacheckresultsub definition
+
+CREATE TABLE `t_sca_datacheckresultsub` (
+  `FENTRYID` bigint NOT NULL DEFAULT '0',
+  `FDETAILID` bigint NOT NULL DEFAULT '0',
+  `FSEQ` bigint NOT NULL DEFAULT '0',
+  `FOBJID` bigint NOT NULL DEFAULT '0',
+  `FOBJTYPEID` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FOBJDES` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FEXTRALINFO` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FFISREPAIRED` char(1) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FDETAILID`),
+  KEY `IDX_SCA_DATACHECKRESULTSUB` (`FOBJID`,`FOBJTYPEID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_sca_datacheckresulttry definition
+
+CREATE TABLE `t_sca_datacheckresulttry` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FENTRYID` bigint NOT NULL DEFAULT '0',
+  `FSEQ` bigint NOT NULL DEFAULT '0',
+  `FCHECKITEMID` bigint NOT NULL DEFAULT '0',
+  `FRUNINGSTATUS` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FENTRYSTATUS` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FDESCRIPTION` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`FENTRYID`),
+  KEY `IDX_SCA_DATACHECKRESULTTRY` (`FCHECKITEMID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_sca_datachecktask definition
+
+CREATE TABLE `t_sca_datachecktask` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FNUMBER` varchar(60) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FISPRESET` char(1) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  `FSTATUS` char(1) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  `FOPERATORID` bigint NOT NULL DEFAULT '0',
+  `FRECEIVERID` bigint NOT NULL DEFAULT '0',
+  `FCREATORID` bigint NOT NULL DEFAULT '0',
+  `FCREATEDATE` datetime DEFAULT NULL,
+  `FAPPNUM` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`FID`),
+  KEY `IDX_SCA_DATACHECKTASK` (`FNUMBER`,`FAPPNUM`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_sca_datachecktask_l definition
+
+CREATE TABLE `t_sca_datachecktask_l` (
+  `FPKID` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FLOCALEID` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FNAME` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FDESCRIPTION` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`FPKID`),
+  KEY `IDX_SCA_DATACHECKTASK_L` (`FNAME`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_sca_datachecktask_r3 definition
+
+CREATE TABLE `t_sca_datachecktask_r3` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FRefStatus` char(1) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_sca_datachecktaskentry definition
+
+CREATE TABLE `t_sca_datachecktaskentry` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FENTRYID` bigint NOT NULL DEFAULT '0',
+  `FSEQ` bigint NOT NULL DEFAULT '0',
+  `FCHECKITEMID` bigint NOT NULL DEFAULT '0',
+  `FENTRYENABLE` char(1) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  `FLEVEL` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FOPCYCLE` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`FENTRYID`),
+  KEY `IDX_SCA_DATACHECKTASKENTRY` (`FID`,`FCHECKITEMID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_sca_debugsetting definition
+
+CREATE TABLE `t_sca_debugsetting` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FNAME` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FISDEBUG` bigint NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FID`),
+  KEY `IDX_SCA_DEBUGSETTING` (`FNAME`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_sca_diffalloccountrpt definition
+
+CREATE TABLE `t_sca_diffalloccountrpt` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FBILLSTATUS` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FCREATORID` bigint NOT NULL DEFAULT '0',
+  `FMODIFIERID` bigint NOT NULL DEFAULT '0',
+  `FAUDITORID` bigint NOT NULL DEFAULT '0',
+  `FAUDITDATE` datetime DEFAULT NULL,
+  `FMODIFYTIME` datetime DEFAULT NULL,
+  `FCREATETIME` datetime DEFAULT NULL,
+  `FORGID` bigint NOT NULL DEFAULT '0',
+  `FCOSTACCOUNTID` bigint NOT NULL DEFAULT '0',
+  `FPERIODID` bigint NOT NULL DEFAULT '0',
+  `FTASKNAME` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FSTARTTIME` datetime DEFAULT NULL,
+  `FEXECUTORID` bigint NOT NULL DEFAULT '0',
+  `FBILLTYPE` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FCURRENCYID` bigint NOT NULL DEFAULT '0',
+  `FUSETIME` bigint NOT NULL DEFAULT '0',
+  `FTYPE` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FPROGRESS` bigint NOT NULL DEFAULT '0',
+  `FREPORTTYPE` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FNEXTPAGEPARA` varchar(1000) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FNEXTPAGEPARA_TAG` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `FBILLNO` varchar(60) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`FID`),
+  KEY `IDX_SCA_DIFFALLOCCOUNTRPT` (`FORGID`,`FCOSTACCOUNTID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_sca_diffcalcresult definition
+
+CREATE TABLE `t_sca_diffcalcresult` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FBILLNO` varchar(60) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FBILLSTATUS` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FCREATORID` bigint NOT NULL DEFAULT '0',
+  `FMODIFIERID` bigint NOT NULL DEFAULT '0',
+  `FAUDITORID` bigint NOT NULL DEFAULT '0',
+  `FAUDITDATE` datetime DEFAULT NULL,
+  `FMODIFYTIME` datetime DEFAULT NULL,
+  `FCREATETIME` datetime DEFAULT NULL,
+  `FORGID` bigint NOT NULL DEFAULT '0',
+  `FBIZDATE` datetime DEFAULT NULL,
+  `FCOSTCENTERID` bigint NOT NULL DEFAULT '0',
+  `FCOSTACCOUNTID` bigint NOT NULL DEFAULT '0',
+  `FCOSTOBJECTID` bigint NOT NULL DEFAULT '0',
+  `FCURRENCYID` bigint NOT NULL DEFAULT '0',
+  `FPERIODID` bigint NOT NULL DEFAULT '0',
+  `FSRCBILLID` bigint NOT NULL DEFAULT '0',
+  `FCALCREPORTID` bigint NOT NULL DEFAULT '0',
+  `FSTARTQTYS` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FCURRQTYS` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FCOMPQTYS` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FENDQTYS` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FTOTALQTYS` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FBIZSTATUS` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FENTRYPRODUCTID` bigint NOT NULL DEFAULT '0',
+  `FISUNALLOCDIFF` char(1) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FID`),
+  KEY `IDX_SCA_DIFFCALCRESULT` (`FORGID`,`FCOSTACCOUNTID`,`FPERIODID`),
+  KEY `IDX_SCA_DIFFCALCRESULT_COSB` (`FCOSTOBJECTID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_sca_diffcalcresultentry definition
+
+CREATE TABLE `t_sca_diffcalcresultentry` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FENTRYID` bigint NOT NULL DEFAULT '0',
+  `FSEQ` bigint NOT NULL DEFAULT '0',
+  `FSRCSEQ` bigint NOT NULL DEFAULT '0',
+  `FSRCBILLID` bigint NOT NULL DEFAULT '0',
+  `FSRCBILLNO` varchar(60) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FSUBELEMENTID` bigint NOT NULL DEFAULT '0',
+  `FELEMENTID` bigint NOT NULL DEFAULT '0',
+  `FMATERIALID` bigint NOT NULL DEFAULT '0',
+  `FAUXPTYID` bigint NOT NULL DEFAULT '0',
+  `FMATVERSIONID` bigint NOT NULL DEFAULT '0',
+  `FBASEUNITID` bigint NOT NULL DEFAULT '0',
+  `FSTARTQTY` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FSTARTAMT` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FSTARTORDDIFF` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FSTARTUNJOINDIFFAMT` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FSTARTDIFFQTY` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FSTARTSTDCOSTUPAMT` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FCURRQTY` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FCURRAMT` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FCURRORDDIFF` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FCURRDIFFQTY` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FCURRUNJOINDIFFAMT` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FCURRSTDCOSTUPAMT` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FSTARTACTCOSTUPAMT` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FCURRACTCOSTUPAMT` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FCOMPQTY` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FCOMPAMT` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FCOMPORDDIFF` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FCOMPDIFFQTY` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FCOMPUNJOINDIFFAMT` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FCOMPSTDCOSTUPAMT` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FCOMPACTCOSTUPAMT` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FENDQTY` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FENDAMT` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FENDORDDIFF` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FENDDIFFQTY` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FENDUNJOINDIFFAMT` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FENDSTDCOSTUPAMT` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FENDACTCOSTUPAMT` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FTOTALQTY` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FTOTALAMT` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FTOTALORDDIFF` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FTOTALUNJOINDIFFAMT` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FTOTALDIFFQTY` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FTOTALSTDCOSTUPAMT` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FTOTALACTCOSTUPAMT` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FPARENTENTRYID` bigint NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FENTRYID`),
+  KEY `IDX_SCA_DIFFCALCRESULTENTRY` (`FID`,`FSEQ`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_sca_diffcalcresultentry_m definition
+
+CREATE TABLE `t_sca_diffcalcresultentry_m` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FENTRYID` bigint NOT NULL DEFAULT '0',
+  `FSEQ` bigint NOT NULL DEFAULT '0',
+  `FSTARTINVOICEDIFF` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FSTARTFEEDIFF` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FSTARTOTHERDIFF` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FSTARTMADEDIFF` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FSTARTMADEUPAMT` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FTOTALINVOICEDIFF` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FTOTALFEEDIFF` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FTOTALOTHERDIFF` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FTOTALMADEDIFF` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FTOTALMADEUPAMT` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FENDINVOICEDIFF` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FENDFEEDIFF` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FENDOTHERDIFF` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FENDMADEDIFF` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FENDMADEUPAMT` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FCOMPINVOICEDIFF` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FCOMPFEEDIFF` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FCOMPOTHERDIFF` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FCOMPMADEDIFF` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FCOMPMADEUPAMT` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FCURRINVOICEDIFF` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FCURRFEEDIFF` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FCURROTHERDIFF` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FCURRMADEDIFF` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FCURRMADEUPAMT` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FPARENTENTRYID` bigint NOT NULL DEFAULT '0',
+  `FSTARTFALLDIFF` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FCURRFALLDIFF` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FCOMPFALLDIFF` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FENDFALLDIFF` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FTOTALFALLDIFF` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  PRIMARY KEY (`FENTRYID`),
+  KEY `IDX_SCA_DIFFCALCRESULTENTRY_M` (`FID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_sca_diffrule definition
+
+CREATE TABLE `t_sca_diffrule` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FMODIFIERID` bigint NOT NULL DEFAULT '0',
+  `FMODIFYDATE` datetime DEFAULT NULL,
+  `FORGID` bigint NOT NULL DEFAULT '0',
+  `FCOSTCENTERID` bigint NOT NULL DEFAULT '0',
+  `FCARRYOVERBILL` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FDIFFRULE` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FRATE` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  PRIMARY KEY (`FID`),
+  KEY `IDX_SCA_DIFFRULE` (`FORGID`,`FCOSTCENTERID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_sca_diffrule_r3 definition
+
+CREATE TABLE `t_sca_diffrule_r3` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FRefStatus` char(1) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_sca_diycostdriver definition
+
+CREATE TABLE `t_sca_diycostdriver` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FBILLNO` varchar(60) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FORGID` bigint NOT NULL DEFAULT '0',
+  `FCOSTCENTERID` bigint NOT NULL DEFAULT '0',
+  `FCOSTDRIVERID` bigint NOT NULL DEFAULT '0',
+  `FCOSTBASEUNIT` bigint NOT NULL DEFAULT '0',
+  `FQTY` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FCREATORID` bigint NOT NULL DEFAULT '0',
+  `FCREATETIME` datetime DEFAULT NULL,
+  `FMODIFIERID` bigint NOT NULL DEFAULT '0',
+  `FMODIFYTIME` datetime DEFAULT NULL,
+  `FAUDITORID` bigint NOT NULL DEFAULT '0',
+  `FAUDITDATE` datetime DEFAULT NULL,
+  `FBILLSTATUS` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FAPPNUM` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FMANUORGID` bigint NOT NULL DEFAULT '0',
+  `FEXPDATE` datetime DEFAULT NULL,
+  `FEFFECTDATE` datetime DEFAULT NULL,
+  `FCOSTACCOUNTID` bigint NOT NULL DEFAULT '0',
+  `FEFFECTPERIODID` bigint NOT NULL DEFAULT '0',
+  `FEXPPERIODID` bigint NOT NULL DEFAULT '0',
+  `FSOURCEID` bigint NOT NULL DEFAULT '0',
+  `FEFFECTSTATUS` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FREMARK` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FMATERIALGROUPSTDID` bigint NOT NULL DEFAULT '0',
+  `FSOURCETYPE` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FBOOKDATE` datetime DEFAULT NULL,
+  `FCOLLCONFIGID` bigint NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FID`),
+  KEY `IDX_SCA_DIYCOSTDRIVER` (`FORGID`,`FCOSTCENTERID`,`FCOSTDRIVERID`),
+  KEY `IDX_T_SCA_DIYCOSTDRIVER_O_C_F` (`FORGID`,`FCOSTACCOUNTID`,`FCOSTCENTERID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_sca_diycostdriver_l definition
+
+CREATE TABLE `t_sca_diycostdriver_l` (
+  `FPKID` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FLOCALEID` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FREMARK` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`FPKID`),
+  KEY `IDX_SCA_DIYCOSTDRIVER_L` (`FLOCALEID`,`FREMARK`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_sca_diycostdriverentry definition
+
+CREATE TABLE `t_sca_diycostdriverentry` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FENTRYID` bigint NOT NULL DEFAULT '0',
+  `FSEQ` bigint NOT NULL DEFAULT '0',
+  `FBENEFCOSTCENTERID` bigint NOT NULL DEFAULT '0',
+  `FENTRYQTY` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FCOSTOBJECTID` bigint NOT NULL DEFAULT '0',
+  `FMATERIALID` bigint NOT NULL DEFAULT '0',
+  `FAUXPTYID` bigint NOT NULL DEFAULT '0',
+  `FMATNUMID` bigint NOT NULL DEFAULT '0',
+  `FMATAUXPTYID` bigint NOT NULL DEFAULT '0',
+  `FMATVERSIONID` bigint NOT NULL DEFAULT '0',
+  `FMATERIALGROUPID` bigint NOT NULL DEFAULT '0',
+  `FCONFIGUREDCODEID` bigint NOT NULL DEFAULT '0',
+  `FTRACKNUMBERID` bigint NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FENTRYID`),
+  KEY `IDX_SCA_DIYCOSTDRIVERENTRY` (`FBENEFCOSTCENTERID`,`FCOSTOBJECTID`),
+  KEY `IDX_SCA_DIYCOSTDRIVERENTRY2` (`FID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_sca_entitydetail definition
+
+CREATE TABLE `t_sca_entitydetail` (
+  `FENTRYID` bigint NOT NULL DEFAULT '0',
+  `FDETAILID` bigint NOT NULL DEFAULT '0',
+  `FSEQ` bigint NOT NULL DEFAULT '0',
+  `FELEMENTID` bigint NOT NULL DEFAULT '0',
+  `FSUBELEMENTID` bigint NOT NULL DEFAULT '0',
+  `FDETAILVALEN` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FDIFFCALCDETAILVALEN` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  PRIMARY KEY (`FDETAILID`),
+  KEY `IDX_SCA_ENTITYDETAIL` (`FENTRYID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_sca_equivalent definition
+
+CREATE TABLE `t_sca_equivalent` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FBILLNO` varchar(60) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FAUDITDATE` datetime DEFAULT NULL,
+  `FORGID` bigint NOT NULL DEFAULT '0',
+  `FBILLSTATUS` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FCREATETIME` datetime DEFAULT NULL,
+  `FCREATORID` bigint NOT NULL DEFAULT '0',
+  `FMODIFIERID` bigint NOT NULL DEFAULT '0',
+  `FAUDITORID` bigint NOT NULL DEFAULT '0',
+  `FMODIFYTIME` datetime DEFAULT NULL,
+  `FPERIODID` bigint NOT NULL DEFAULT '0',
+  `FCOSTACCOUNTID` bigint NOT NULL DEFAULT '0',
+  `FMANUORGID` bigint NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FID`),
+  KEY `IDX_SCA_EQUIVALENT` (`FORGID`,`FCOSTACCOUNTID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_sca_equivalententry definition
+
+CREATE TABLE `t_sca_equivalententry` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FENTRYID` bigint NOT NULL DEFAULT '0',
+  `FSEQ` bigint NOT NULL DEFAULT '0',
+  `FCOSTCENTERID` bigint NOT NULL DEFAULT '0',
+  `FTOTALVALEN` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FCOSTOBJECTID` bigint NOT NULL DEFAULT '0',
+  `FMATERIALID` bigint NOT NULL DEFAULT '0',
+  `FAUXPTY` bigint NOT NULL DEFAULT '0',
+  `FDIFFCALCTOTALVALEN` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  PRIMARY KEY (`FENTRYID`),
+  KEY `IDX_SCA_EQUIVALENTENTRY` (`FID`,`FCOSTOBJECTID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_sca_expenseitemsubeleme definition
+
+CREATE TABLE `t_sca_expenseitemsubeleme` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FBILLNO` varchar(60) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FBILLSTATUS` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FORGID` bigint NOT NULL DEFAULT '0',
+  `FCREATORID` bigint NOT NULL DEFAULT '0',
+  `FCREATETIME` datetime DEFAULT NULL,
+  `FMODIFIERID` bigint NOT NULL DEFAULT '0',
+  `FAUDITORID` bigint NOT NULL DEFAULT '0',
+  `FAUDITDATE` datetime DEFAULT NULL,
+  `FMODIFYTIME` datetime DEFAULT NULL,
+  `FCOSTACCOUNTID` bigint NOT NULL DEFAULT '0',
+  `FBENEFCOSTCENTERID` bigint NOT NULL DEFAULT '0',
+  `FPERIODID` bigint NOT NULL DEFAULT '0',
+  `FEXPENSEITEMID` bigint NOT NULL DEFAULT '0',
+  `FELEMENTID` bigint NOT NULL DEFAULT '0',
+  `FCOSTOBJECTID` bigint NOT NULL DEFAULT '0',
+  `FSUBELEMENTID` bigint NOT NULL DEFAULT '0',
+  `FALLOCAMT` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FMFGFEEALLOCCOID` bigint NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FID`),
+  KEY `IDX_SCA_EXPENSEITEMSUBELEME` (`FORGID`,`FCOSTACCOUNTID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_sca_finishdiffbill definition
+
+CREATE TABLE `t_sca_finishdiffbill` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FBILLNO` varchar(60) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FBILLSTATUS` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FCREATORID` bigint NOT NULL DEFAULT '0',
+  `FMODIFIERID` bigint NOT NULL DEFAULT '0',
+  `FAUDITORID` bigint NOT NULL DEFAULT '0',
+  `FAUDITDATE` datetime DEFAULT NULL,
+  `FMODIFYTIME` datetime DEFAULT NULL,
+  `FCREATETIME` datetime DEFAULT NULL,
+  `FORGID` bigint NOT NULL DEFAULT '0',
+  `FPERIODID` bigint NOT NULL DEFAULT '0',
+  `FCOSTACCOUNTID` bigint NOT NULL DEFAULT '0',
+  `FCOSTCENTERID` bigint NOT NULL DEFAULT '0',
+  `FCOSTOBJECTID` bigint NOT NULL DEFAULT '0',
+  `FVOUCHER` varchar(60) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FMATERIALID` bigint NOT NULL DEFAULT '0',
+  `FUNITID` bigint NOT NULL DEFAULT '0',
+  `FAUXPTYID` bigint NOT NULL DEFAULT '0',
+  `FSOURCEBILLID` bigint NOT NULL DEFAULT '0',
+  `FCURRENCYID` bigint NOT NULL DEFAULT '0',
+  `FDIFFAMOUNT` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FVOUCHERNUM` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FMANUORGID` bigint NOT NULL DEFAULT '0',
+  `FPROALLOCGEN` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FID`),
+  KEY `IDX_SCA_FINISHDIFFBILL` (`FCOSTACCOUNTID`,`FCOSTCENTERID`,`FCOSTOBJECTID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_sca_finishdiffbill_dapn definition
+
+CREATE TABLE `t_sca_finishdiffbill_dapn` (
+  `fid` bigint NOT NULL DEFAULT '0',
+  `fcreatetime` datetime DEFAULT NULL,
+  `fsourcebillid` bigint NOT NULL DEFAULT '0',
+  `fsourcebillno` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `forgid` bigint NOT NULL DEFAULT '0',
+  `fcreatorid` bigint NOT NULL DEFAULT '0',
+  `fbilltype` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`fid`),
+  KEY `IDXt_sca_finishdiffbill_DAPN_BINDEX` (`fsourcebillid`,`fbilltype`),
+  KEY `IDXt_sca_finishdiffbill_DAPN_T_BINDEX` (`fbilltype`,`forgid`,`fcreatetime`,`fsourcebillno`,`fcreatorid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_sca_finishdiffbill_dapw definition
+
+CREATE TABLE `t_sca_finishdiffbill_dapw` (
+  `fid` bigint NOT NULL DEFAULT '0',
+  `fcreatetime` datetime DEFAULT NULL,
+  `fsourcebillid` bigint NOT NULL DEFAULT '0',
+  `forgid` bigint NOT NULL DEFAULT '0',
+  `fbilltype` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `foper` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`fid`),
+  KEY `IDXt_sca_finishdiffbill_DAPW_WINDEX` (`fsourcebillid`,`fbilltype`,`foper`),
+  KEY `IDXt_sca_finishdiffbill_DAPW_T_WINDEX` (`fsourcebillid`,`fbilltype`,`foper`,`forgid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_sca_finishdiffbillentry definition
+
+CREATE TABLE `t_sca_finishdiffbillentry` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FENTRYID` bigint NOT NULL DEFAULT '0',
+  `FSEQ` bigint NOT NULL DEFAULT '0',
+  `FDIFFTYPE` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FELEMENTID` bigint NOT NULL DEFAULT '0',
+  `FSUBELEMENTID` bigint NOT NULL DEFAULT '0',
+  `FAMOUNT` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FADJUSTBILL` bigint NOT NULL DEFAULT '0',
+  `FADJUSTNUM` varchar(60) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FMANUORGID` bigint NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FENTRYID`),
+  KEY `IDX_SCA_FINISHDIFFENTRY` (`FELEMENTID`,`FSUBELEMENTID`),
+  KEY `IDX_SCA_FINISHDIFFENTRY2` (`FID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_sca_halfprdhide definition
+
+CREATE TABLE `t_sca_halfprdhide` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FBILLNO` varchar(80) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FBILLSTATUS` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'A',
+  `FCREATORID` bigint NOT NULL DEFAULT '0',
+  `FMODIFIERID` bigint NOT NULL DEFAULT '0',
+  `FAUDITORID` bigint NOT NULL DEFAULT '0',
+  `FAUDITDATE` datetime DEFAULT NULL,
+  `FMODIFYTIME` datetime DEFAULT NULL,
+  `FCREATETIME` datetime DEFAULT NULL,
+  `FORGID` bigint NOT NULL DEFAULT '0',
+  `FCOSTACCOUNTID` bigint NOT NULL DEFAULT '0',
+  `FPRDORGID` bigint NOT NULL DEFAULT '0',
+  `FCURRENCYID` bigint NOT NULL DEFAULT '0',
+  `FPERIODID` bigint NOT NULL DEFAULT '0',
+  `FMATERIALID` bigint NOT NULL DEFAULT '0',
+  `FMATERIALVERSIONID` bigint NOT NULL DEFAULT '0',
+  `FAUXPROPID` bigint NOT NULL DEFAULT '0',
+  `FTOTALAMOUNT` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FLOT` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FROOTID` bigint NOT NULL DEFAULT '0',
+  `FPARENTID` bigint NOT NULL DEFAULT '0',
+  `FISIMPORT` bigint NOT NULL DEFAULT '0',
+  `FSTORAGEORGID` bigint NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FID`),
+  KEY `IDX_SCA_HALFPRDHIDE` (`FCOSTACCOUNTID`,`FPRDORGID`,`FPERIODID`),
+  KEY `IDX_SCA_HALFPRDHIDEMAT` (`FMATERIALID`,`FMATERIALVERSIONID`,`FAUXPROPID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_sca_halfprdhide_l definition
+
+CREATE TABLE `t_sca_halfprdhide_l` (
+  `FPKID` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FLOCALEID` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'ZH_CN',
+  `FREMARK` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT ' ',
+  PRIMARY KEY (`FPKID`),
+  KEY `IDX_SCA_HALFPRDHIDE_L` (`FID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_sca_halfprdhideentry definition
+
+CREATE TABLE `t_sca_halfprdhideentry` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FENTRYID` bigint NOT NULL DEFAULT '0',
+  `FSEQ` bigint NOT NULL DEFAULT '0',
+  `FELEMENT` bigint NOT NULL DEFAULT '0',
+  `FSUBELEMENTID` bigint NOT NULL DEFAULT '0',
+  `FSUBMATERIALID` bigint NOT NULL DEFAULT '0',
+  `FSUBMATERIALVERSIONID` bigint NOT NULL DEFAULT '0',
+  `FSUBMATERIALAUXPROPID` bigint NOT NULL DEFAULT '0',
+  `FQTY` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FAMOUNT` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FSUBLOT` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FLEVEL` bigint NOT NULL DEFAULT '0',
+  `FTREEPATH` varchar(2000) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FISLEAF` varchar(1) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '1',
+  `FAMOUNTCOEFF` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FQTYCOEFF` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FTMPTOTALAMT` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FISUNABSORB` varchar(2) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FISSPRIT` char(1) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  `FVRTDIONNO` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`FENTRYID`),
+  KEY `IDX_SCA_HALFPRDHIDEENTRY` (`FID`,`FENTRYID`),
+  KEY `IDX_SCA_HALFPRDHIDEENTRYMAT` (`FSUBELEMENTID`,`FSUBMATERIALID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_sca_halfprdstructentry definition
+
+CREATE TABLE `t_sca_halfprdstructentry` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FENTRYID` bigint NOT NULL DEFAULT '0',
+  `FSEQ` bigint NOT NULL DEFAULT '0',
+  `FELEMENT` bigint NOT NULL DEFAULT '0',
+  `FSUBELEMENTID` bigint NOT NULL DEFAULT '0',
+  `FSUBMATERIALID` bigint NOT NULL DEFAULT '0',
+  `FSUBMATERIALVERSIONID` bigint NOT NULL DEFAULT '0',
+  `FSUBMATERIALAUXPROPID` bigint NOT NULL DEFAULT '0',
+  `FVRTDIONNO` varchar(150) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FQTY` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FAMOUNT` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `fisunabsorb` varchar(2) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'A',
+  `ftmptotalamt` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FMATERIELUNITID` bigint NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FENTRYID`),
+  KEY `T_SCA_HPSETY_ELEMENT` (`FELEMENT`),
+  KEY `T_SCA_HPSETY_SUBELEMENT` (`FSUBELEMENTID`),
+  KEY `T_SCA_HPSETY_AUTOFID` (`FID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_sca_halfprdstructure definition
+
+CREATE TABLE `t_sca_halfprdstructure` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FBILLNO` varchar(80) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FORGID` bigint NOT NULL DEFAULT '0',
+  `FCOSTACCOUNTID` bigint NOT NULL DEFAULT '0',
+  `FPRDORGID` bigint NOT NULL DEFAULT '0',
+  `FCURRENCYID` bigint NOT NULL DEFAULT '0',
+  `FPERIODID` bigint NOT NULL DEFAULT '0',
+  `FMATERIALID` bigint NOT NULL DEFAULT '0',
+  `FMATERIALVERSIONID` bigint NOT NULL DEFAULT '0',
+  `FAUXPROPID` bigint NOT NULL DEFAULT '0',
+  `FTOTALAMOUNT` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FVERSIONNO` varchar(150) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `FBILLSTATUS` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'A',
+  `FISIMPORT` varchar(2) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  `FCREATORID` bigint NOT NULL DEFAULT '0',
+  `FCREATETIME` datetime DEFAULT NULL,
+  `FMODIFIERID` bigint NOT NULL DEFAULT '0',
+  `FMODIFYTIME` datetime DEFAULT NULL,
+  `FAUDITORID` bigint NOT NULL DEFAULT '0',
+  `FAUDITDATE` datetime DEFAULT NULL,
+  `FISMODIFY` varchar(2) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '1',
+  `FSTORAGEORGID` bigint NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FID`),
+  KEY `T_SCA_HPSTR_ORGCOSTACCT` (`FORGID`,`FCOSTACCOUNTID`),
+  KEY `T_SCA_HPSTR_PRODUCT` (`FMATERIALID`),
+  KEY `T_SCA_HPSTR_BILLNO` (`FBILLNO`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_sca_halfprdstructure_l definition
+
+CREATE TABLE `t_sca_halfprdstructure_l` (
+  `FPKID` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FLOCALEID` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'zh_CN',
+  `FMEMO` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT ' ',
+  PRIMARY KEY (`FPKID`),
+  KEY `T_SCA_HPSETYL_AUTOFID` (`FID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_sca_inproducebill definition
+
+CREATE TABLE `t_sca_inproducebill` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FBILLNO` varchar(80) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FPERIODID` bigint NOT NULL DEFAULT '0',
+  `FORGID` bigint NOT NULL DEFAULT '0',
+  `FCOSTACCOUNTID` bigint NOT NULL DEFAULT '0',
+  `FCURRENCYID` bigint NOT NULL DEFAULT '0',
+  `FCOSTCENTERID` bigint NOT NULL DEFAULT '0',
+  `FCOSTOBJECTID` bigint NOT NULL DEFAULT '0',
+  `FMANUORGID` bigint NOT NULL DEFAULT '0',
+  `FVOUCHERNUM` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FBILLSTATUS` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FMATERIALID` bigint NOT NULL DEFAULT '0',
+  `FUNITID` bigint NOT NULL DEFAULT '0',
+  `FAUXPTYID` bigint NOT NULL DEFAULT '0',
+  `FCREATORID` bigint NOT NULL DEFAULT '0',
+  `FCREATETIME` datetime DEFAULT NULL,
+  `FMODIFIERID` bigint NOT NULL DEFAULT '0',
+  `FMODIFYTIME` datetime DEFAULT NULL,
+  `FAUDITORID` bigint NOT NULL DEFAULT '0',
+  `FAUDITDATE` datetime DEFAULT NULL,
+  `FSUMAMOUNT` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  PRIMARY KEY (`FID`),
+  KEY `IDX_INPRODUCEBILL` (`FORGID`,`FCOSTACCOUNTID`,`FPERIODID`),
+  KEY `IDX_INPRODUCEBILL_COBJ` (`FCOSTOBJECTID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_sca_inproducebillentry definition
+
+CREATE TABLE `t_sca_inproducebillentry` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FENTRYID` bigint NOT NULL DEFAULT '0',
+  `FSEQ` bigint NOT NULL DEFAULT '0',
+  `FELEMENTID` bigint NOT NULL DEFAULT '0',
+  `FSUBELEMENTID` bigint NOT NULL DEFAULT '0',
+  `FAMOUNT` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FDIFFTYPE` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`FENTRYID`),
+  KEY `IDX_SCA_INPRODUCEBILLENTRY` (`FID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_sca_lastdiffmaterial definition
+
+CREATE TABLE `t_sca_lastdiffmaterial` (
+  `FENTRYID` bigint NOT NULL DEFAULT '0',
+  `FSEQ` bigint NOT NULL DEFAULT '0',
+  `FDETAILID` bigint NOT NULL DEFAULT '0',
+  `FLASTMATERIALID` bigint NOT NULL DEFAULT '0',
+  `FLASTVERSIONID` bigint NOT NULL DEFAULT '0',
+  `FLASTAUXPTYID` bigint NOT NULL DEFAULT '0',
+  `FWEIGHTVALUE` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FADJAMOUNT` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  PRIMARY KEY (`FDETAILID`),
+  KEY `IDX_SCA_LASTDIFFMATERIAL` (`FENTRYID`,`FSEQ`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_sca_matalloc definition
+
+CREATE TABLE `t_sca_matalloc` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FBILLNO` varchar(60) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FBILLSTATUS` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FCREATORID` bigint NOT NULL DEFAULT '0',
+  `FMODIFIERID` bigint NOT NULL DEFAULT '0',
+  `FMODIFYTIME` datetime DEFAULT NULL,
+  `FCREATETIME` datetime DEFAULT NULL,
+  `FORGID` bigint NOT NULL DEFAULT '0',
+  `FCOSTOBJECTID` bigint NOT NULL DEFAULT '0',
+  `FCOSTCENTERID` bigint NOT NULL DEFAULT '0',
+  `FCOSTACCOUNTID` bigint NOT NULL DEFAULT '0',
+  `FCURRENCYID` bigint NOT NULL DEFAULT '0',
+  `FBIZDATE` datetime DEFAULT NULL,
+  `FPERIODID` bigint NOT NULL DEFAULT '0',
+  `FBIZTYPE` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'PRODUCTMATGET',
+  `FCOSTDRIVERID` bigint NOT NULL DEFAULT '0',
+  `FMATERIALID` bigint NOT NULL DEFAULT '0',
+  `FMATVERSIONID` bigint NOT NULL DEFAULT '0',
+  `FAUXPTYID` bigint NOT NULL DEFAULT '0',
+  `FLOTCODERULEID` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FUNITID` bigint NOT NULL DEFAULT '0',
+  `FUSEQTY` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FUSEAMOUNT` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FALLOCSTATUS` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FALLOCTYPE` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FALLOCTORID` bigint NOT NULL DEFAULT '0',
+  `FALLOCATEDATE` datetime DEFAULT NULL,
+  `FUSETYPE` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FMATCOLLECTID` bigint NOT NULL DEFAULT '0',
+  `FWAREHOUSEID` bigint NOT NULL DEFAULT '0',
+  `FLOCATIONID` bigint NOT NULL DEFAULT '0',
+  `FMATCOSTINFOID` bigint NOT NULL DEFAULT '0',
+  `FVOUCHERNUM` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FAPPNUM` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FPRODUCTGROUPID` bigint NOT NULL DEFAULT '0',
+  `FAUDITDATE` datetime DEFAULT NULL,
+  `FAUDITORID` bigint NOT NULL DEFAULT '0',
+  `FISRETURNITEM` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  `FENTRYSRC` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FMATUSESRCBILLENTRYID` bigint NOT NULL DEFAULT '0',
+  `FMANUORGID` bigint NOT NULL DEFAULT '0',
+  `FBOOKDATE` datetime DEFAULT NULL,
+  `FPRODUCTNUM` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FPRODUCTID` bigint NOT NULL DEFAULT '0',
+  `FBASEUNITID` bigint NOT NULL DEFAULT '0',
+  `FSRCBIZTYPEID` bigint NOT NULL DEFAULT '0',
+  `FKEYCOLID` bigint NOT NULL DEFAULT '0',
+  `FKEYCOL` varchar(200) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FSOURCEBILLID` bigint NOT NULL DEFAULT '0',
+  `FCREATVOUCHER` char(1) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  `FCONFIGUREDCODEID` bigint NOT NULL DEFAULT '0',
+  `FTRACKNUMBERID` bigint NOT NULL DEFAULT '0',
+  `FPROJECTID` bigint NOT NULL DEFAULT '0',
+  `FSRCAUXPTYID` bigint NOT NULL DEFAULT '0',
+  `FCOSTRECORDENTRYID` bigint NOT NULL DEFAULT '0',
+  `FNSRCAUDITDATE` datetime DEFAULT NULL,
+  `FSOURCEBILLENTRYID` bigint NOT NULL DEFAULT '0',
+  `FCOLLCONFIGID` bigint NOT NULL DEFAULT '0',
+  `FSRCBILLTYPE` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`FID`),
+  KEY `INDEX_SCA_MATALLOC` (`FORGID`,`FCOSTCENTERID`),
+  KEY `IDX_SCA_MATALLOC2` (`FCOSTACCOUNTID`,`FORGID`,`FPERIODID`),
+  KEY `IDX_MATALLOC_MAT` (`FMATERIALID`),
+  KEY `IDX_MATALLOC_BOOKDATE` (`FBOOKDATE`),
+  KEY `IDX_SCA_MATALLOC_CO` (`FCOSTOBJECTID`),
+  KEY `IDX_SCA_MATALLOC_MATC` (`FMATCOLLECTID`),
+  KEY `IDX_CAD_MATALLOC_FKEYCOL` (`FKEYCOL`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_sca_matalloc_dapn definition
+
+CREATE TABLE `t_sca_matalloc_dapn` (
+  `fid` bigint NOT NULL DEFAULT '0',
+  `fcreatetime` datetime DEFAULT NULL,
+  `fsourcebillid` bigint NOT NULL DEFAULT '0',
+  `fsourcebillno` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `forgid` bigint NOT NULL DEFAULT '0',
+  `fcreatorid` bigint NOT NULL DEFAULT '0',
+  `fbilltype` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`fid`),
+  KEY `IDXt_sca_matalloc_DAPN_BINDEX` (`fsourcebillid`,`fbilltype`),
+  KEY `IDXt_sca_matalloc_DAPN_T_BINDEX` (`fbilltype`,`forgid`,`fcreatetime`,`fsourcebillno`,`fcreatorid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_sca_matalloc_dapw definition
+
+CREATE TABLE `t_sca_matalloc_dapw` (
+  `fid` bigint NOT NULL DEFAULT '0',
+  `fcreatetime` datetime DEFAULT NULL,
+  `fsourcebillid` bigint NOT NULL DEFAULT '0',
+  `forgid` bigint NOT NULL DEFAULT '0',
+  `fbilltype` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `foper` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`fid`),
+  KEY `IDXt_sca_matalloc_DAPW_WINDEX` (`fsourcebillid`,`fbilltype`,`foper`),
+  KEY `IDXt_sca_matalloc_DAPW_T_WINDEX` (`fsourcebillid`,`fbilltype`,`foper`,`forgid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_sca_matallocentry definition
+
+CREATE TABLE `t_sca_matallocentry` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FENTRYID` bigint NOT NULL DEFAULT '0',
+  `FSEQ` bigint NOT NULL DEFAULT '0',
+  `FCOSTOBJECTID` bigint NOT NULL DEFAULT '0',
+  `FPRICE` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FAMOUNT` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FALLOCVALUE` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FQTY` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FELEMENTENTRYID` bigint NOT NULL DEFAULT '0',
+  `FSUBELEMENTENTRYID` bigint NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FENTRYID`),
+  KEY `INDEX_SCA_MATALLOCENTRY` (`FCOSTOBJECTID`,`FSUBELEMENTENTRYID`),
+  KEY `IDX_SCA_MATALLOCENTRY2` (`FID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_sca_matallocgsubentry definition
+
+CREATE TABLE `t_sca_matallocgsubentry` (
+  `FENTRYID` bigint NOT NULL DEFAULT '0',
+  `FSEQ` bigint NOT NULL DEFAULT '0',
+  `FDETAILID` bigint NOT NULL DEFAULT '0',
+  `FMATERIALGROUPID` bigint NOT NULL DEFAULT '0',
+  `FCOSTOBJECTGROUPID` bigint NOT NULL DEFAULT '0',
+  `FPRODUCTTYPEGROUP` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FQTYGROUP` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FCOSTAMOUNTGROUP` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FALLOCVALUEGROUP` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FUNITCOSTGROUP` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  PRIMARY KEY (`FDETAILID`),
+  KEY `IDX_SCA_MATALLOCGSUBENTRY` (`FENTRYID`,`FMATERIALGROUPID`,`FCOSTOBJECTGROUPID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_sca_matallocstd definition
+
+CREATE TABLE `t_sca_matallocstd` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FBILLNO` varchar(60) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FBILLSTATUS` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FCREATORID` bigint NOT NULL DEFAULT '0',
+  `FMODIFIERID` bigint NOT NULL DEFAULT '0',
+  `FAUDITORID` bigint NOT NULL DEFAULT '0',
+  `FAUDITDATE` datetime DEFAULT NULL,
+  `FMODIFYTIME` datetime DEFAULT NULL,
+  `FCREATETIME` datetime DEFAULT NULL,
+  `FORGID` bigint NOT NULL DEFAULT '0',
+  `FAPPNUM` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FREPETITIONROW` bigint NOT NULL DEFAULT '0',
+  `FMANUORGID` bigint NOT NULL DEFAULT '0',
+  `FEFFECTDATE` datetime DEFAULT NULL,
+  `FEXPDATE` datetime DEFAULT NULL,
+  `FSOURCEID` bigint NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FID`),
+  KEY `INDEX_SCA_MATALLOCSTD` (`FORGID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_sca_matallocstdentry definition
+
+CREATE TABLE `t_sca_matallocstdentry` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FENTRYID` bigint NOT NULL DEFAULT '0',
+  `FSEQ` bigint NOT NULL DEFAULT '0',
+  `FCOSTCENTERID` bigint NOT NULL DEFAULT '0',
+  `FCOSTDRIVERID` bigint NOT NULL DEFAULT '0',
+  `FPRODUCTGROUPID` bigint NOT NULL DEFAULT '0',
+  `FBMATERIALID` bigint NOT NULL DEFAULT '0',
+  `FMATVERSIONID` bigint NOT NULL DEFAULT '0',
+  `FAUXPTYID` bigint NOT NULL DEFAULT '0',
+  `FMATERIALGROUPID` bigint NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FENTRYID`),
+  KEY `INDEX_MATALLOCSTDENTRY` (`FCOSTCENTERID`,`FCOSTDRIVERID`),
+  KEY `INDEX_MATALLOCSTDENTRY2` (`FID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_sca_matallocsubentry definition
+
+CREATE TABLE `t_sca_matallocsubentry` (
+  `FENTRYID` bigint NOT NULL DEFAULT '0',
+  `FDETAILID` bigint NOT NULL DEFAULT '0',
+  `FSEQ` bigint NOT NULL DEFAULT '0',
+  `FELEMENTID` bigint NOT NULL DEFAULT '0',
+  `FSUBELEMENTID` bigint NOT NULL DEFAULT '0',
+  `FSTANDARDCOST` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FSTANDARDAMT` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FSUBMATERIALID` bigint NOT NULL DEFAULT '0',
+  `FSUBMATVERISONID` bigint NOT NULL DEFAULT '0',
+  `FSUBAUXPTYID` bigint NOT NULL DEFAULT '0',
+  `FSUBQTY` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FRESOURCEID` bigint NOT NULL DEFAULT '0',
+  `FCALCBASIS` varchar(60) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FSUBENTRYKEYCOL` varchar(200) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FSUBENTRYKEYCOLID` bigint NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FDETAILID`),
+  KEY `INDEX_SCA_MATALCSUBENTRY` (`FSUBELEMENTID`,`FSUBMATERIALID`),
+  KEY `IDX_SCA_MATALLOCSUBENTRY2` (`FENTRYID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_sca_matcostelement definition
+
+CREATE TABLE `t_sca_matcostelement` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FENTRYID` bigint NOT NULL DEFAULT '0',
+  `FSEQ` bigint NOT NULL DEFAULT '0',
+  `FSUBELEMENTID` bigint NOT NULL DEFAULT '0',
+  `FELEMENTID` bigint NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FENTRYID`),
+  KEY `IDX_SCA_MATCOSTELEMENT` (`FID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_sca_matreductset definition
+
+CREATE TABLE `t_sca_matreductset` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FNUMBER` varchar(80) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FORGID` bigint NOT NULL DEFAULT '0',
+  `FCOSTACCOUNT` bigint NOT NULL DEFAULT '0',
+  `FPRDORG` bigint NOT NULL DEFAULT '0',
+  `FSTATUS` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  `FENABLE` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  `FMASTERID` bigint NOT NULL DEFAULT '0',
+  `FCREATORID` bigint NOT NULL DEFAULT '0',
+  `FCREATETIME` datetime DEFAULT NULL,
+  `FMODIFIERID` bigint NOT NULL DEFAULT '0',
+  `FMODIFYTIME` datetime DEFAULT NULL,
+  `FAUDITORID` bigint NOT NULL DEFAULT '0',
+  `FAUDITDATE` datetime DEFAULT NULL,
+  PRIMARY KEY (`FID`),
+  KEY `IDX_SCA_MRS_ORGCOSTACCT` (`FORGID`,`FCOSTACCOUNT`),
+  KEY `IDX_SCA_MRS_NUMBER` (`FNUMBER`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_sca_matreductset_l definition
+
+CREATE TABLE `t_sca_matreductset_l` (
+  `FPKID` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FLOCALEID` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'zh_CN',
+  `FNAME` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT ' ',
+  `FREMARK` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  PRIMARY KEY (`FPKID`),
+  KEY `IDX_SCA_MRSL_AUTOID` (`FID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_sca_matreductset_r3 definition
+
+CREATE TABLE `t_sca_matreductset_r3` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FRefStatus` char(1) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_sca_matreductsetentry definition
+
+CREATE TABLE `t_sca_matreductsetentry` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FENTRYID` bigint NOT NULL DEFAULT '0',
+  `FSEQ` bigint NOT NULL DEFAULT '0',
+  `FMATERIAL` bigint NOT NULL DEFAULT '0',
+  `FMATERIALSORT` bigint NOT NULL DEFAULT '0',
+  `FREDUCTPARASET` varchar(2) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`FENTRYID`),
+  KEY `IDX_SCA_MRSETY_AUTOID` (`FID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_sca_matusecollect definition
+
+CREATE TABLE `t_sca_matusecollect` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FBILLNO` varchar(60) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FBILLSTATUS` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FCREATORID` bigint NOT NULL DEFAULT '0',
+  `FMODIFIERID` bigint NOT NULL DEFAULT '0',
+  `FAUDITORID` bigint NOT NULL DEFAULT '0',
+  `FAUDITDATE` datetime DEFAULT NULL,
+  `FMODIFYTIME` datetime DEFAULT NULL,
+  `FCREATETIME` datetime DEFAULT NULL,
+  `FORGID` bigint NOT NULL DEFAULT '0',
+  `FBIZDATE` datetime DEFAULT NULL,
+  `FCOSTCENTERID` bigint NOT NULL DEFAULT '0',
+  `FBIZTYPE` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FSOURCE` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FAPPNUM` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FSOURCEBILLID` bigint NOT NULL DEFAULT '0',
+  `FSRCAUDITDATE` datetime DEFAULT NULL,
+  `FMANUORGID` bigint NOT NULL DEFAULT '0',
+  `FBOOKDATE` datetime DEFAULT NULL,
+  `FNSRCAUDITDATE` datetime DEFAULT NULL,
+  `FSRCBIZTYPEID` bigint NOT NULL DEFAULT '0',
+  `FCOLLCONFIGID` bigint NOT NULL DEFAULT '0',
+  `FSRCBILLTYPE` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`FID`),
+  KEY `IDX_MATUSE_BILLNO` (`FBILLNO`),
+  KEY `IDX_MATUSE_COSTC` (`FCOSTCENTERID`),
+  KEY `IDX_MATUSE_SRCID` (`FSOURCEBILLID`),
+  KEY `INDEX_SCA_MATUSECOLLECT` (`FORGID`,`FBOOKDATE`,`FMANUORGID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_sca_matusecollect_l definition
+
+CREATE TABLE `t_sca_matusecollect_l` (
+  `FPKID` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FLOCALEID` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FREMARK` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`FPKID`),
+  KEY `INDEX_SCA_MATUSECOLLECT_L` (`FID`,`FLOCALEID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_sca_matusecollectentry definition
+
+CREATE TABLE `t_sca_matusecollectentry` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FENTRYID` bigint NOT NULL DEFAULT '0',
+  `FSEQ` bigint NOT NULL DEFAULT '0',
+  `FMATERIALID` bigint NOT NULL DEFAULT '0',
+  `FMATVERSIONID` bigint NOT NULL DEFAULT '0',
+  `FAUXPTYID` bigint NOT NULL DEFAULT '0',
+  `FLOTCODERULEID` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FQTY` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FWAREHOUSEID` bigint NOT NULL DEFAULT '0',
+  `FLOCATIONID` bigint NOT NULL DEFAULT '0',
+  `FCOSTOBJECTID` bigint NOT NULL DEFAULT '0',
+  `FUNITID` bigint NOT NULL DEFAULT '0',
+  `FSOURCEBILLENTRYID` bigint NOT NULL DEFAULT '0',
+  `FPRODUCTGROUPID` bigint NOT NULL DEFAULT '0',
+  `FOUTINVTYPEID` bigint NOT NULL DEFAULT '0',
+  `FPRODUCTNUM` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FISREWORK` char(1) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  `FPRODUCTID` bigint NOT NULL DEFAULT '0',
+  `FKEYCOLID` bigint NOT NULL DEFAULT '0',
+  `FKEYCOL` varchar(200) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FCONFIGUREDCODEID` bigint NOT NULL DEFAULT '0',
+  `FTRACKNUMBERID` bigint NOT NULL DEFAULT '0',
+  `FPROJECTID` bigint NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FENTRYID`),
+  KEY `INDEX_SCA_MATCOLLECTENTRY_FID` (`FID`),
+  KEY `INDEX_SCA_MATCOLLECTENTRY` (`FMATERIALID`,`FCOSTOBJECTID`),
+  KEY `IDX_MATUSEENTRY_COOBB` (`FCOSTOBJECTID`),
+  KEY `IDX_CAD_MATUSECOLLECT_FKEYCOL` (`FKEYCOL`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_sca_mfgallocrecord definition
+
+CREATE TABLE `t_sca_mfgallocrecord` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FBILLNO` varchar(80) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FBILLSTATUS` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FORGID` bigint NOT NULL DEFAULT '0',
+  `FCREATORID` bigint NOT NULL DEFAULT '0',
+  `FCREATETIME` datetime DEFAULT NULL,
+  `FMODIFIERID` bigint NOT NULL DEFAULT '0',
+  `FMODIFYTIME` datetime DEFAULT NULL,
+  `FAUDITDATE` datetime DEFAULT NULL,
+  `FAUDITORID` bigint NOT NULL DEFAULT '0',
+  `FUNIT` bigint NOT NULL DEFAULT '0',
+  `FMFGALLOCBILLNO` varchar(60) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FTOTALAMOUNT` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FTOTALSTDVALUE` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  PRIMARY KEY (`FID`),
+  KEY `IDX_SCA_MFGALLOCRECORD` (`FORGID`),
+  KEY `IDX_SCA_MFGALLOCRECORD2` (`FMFGALLOCBILLNO`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_sca_mfgallocrecordentry definition
+
+CREATE TABLE `t_sca_mfgallocrecordentry` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FENTRYID` bigint NOT NULL DEFAULT '0',
+  `FSEQ` bigint NOT NULL DEFAULT '0',
+  `FBENEFITCOSTCENTERID` bigint NOT NULL DEFAULT '0',
+  `FSTDVALUE` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FAMOUNT` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FMFGFEESTDBILLNO` varchar(60) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`FENTRYID`),
+  KEY `IDX_SCA_MFGALLOCRECORDENTRY` (`FID`,`FBENEFITCOSTCENTERID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_sca_mfgallocrecordsub definition
+
+CREATE TABLE `t_sca_mfgallocrecordsub` (
+  `FENTRYID` bigint NOT NULL DEFAULT '0',
+  `FSEQ` bigint NOT NULL DEFAULT '0',
+  `FDETAILID` bigint NOT NULL DEFAULT '0',
+  `FBENEFITCOSTCENTERID` bigint NOT NULL DEFAULT '0',
+  `FSTDVALUE` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FAMOUNT` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FMFGFEESTDBILLNO` varchar(60) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`FDETAILID`),
+  KEY `IDX_SCA_MFGALLOCRECORDSUB` (`FENTRYID`,`FBENEFITCOSTCENTERID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_sca_mfgfeealloc definition
+
+CREATE TABLE `t_sca_mfgfeealloc` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FBILLNO` varchar(60) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FBILLSTATUS` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FORGID` bigint NOT NULL DEFAULT '0',
+  `FCOSTACCOUNTID` bigint NOT NULL DEFAULT '0',
+  `FCOSTCENTERID` bigint NOT NULL DEFAULT '0',
+  `FPERIODID` bigint NOT NULL DEFAULT '0',
+  `FBIZDATE` datetime DEFAULT NULL,
+  `FEXPENSEITEMID` bigint NOT NULL DEFAULT '0',
+  `FCURRENCYID` bigint NOT NULL DEFAULT '0',
+  `FAMOUNT` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FCOSTDRIVERID` bigint NOT NULL DEFAULT '0',
+  `FALLOCSTATUS` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FALLOCTYPE` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FUSETYPE` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FALLOCTIME` datetime DEFAULT NULL,
+  `FALLOCORID` bigint NOT NULL DEFAULT '0',
+  `FSRCBILLID` bigint NOT NULL DEFAULT '0',
+  `FNOALCSUBELEMENTID` bigint NOT NULL DEFAULT '0',
+  `FVOUCHERNUM` varchar(60) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FNOALCELEMENTID` bigint NOT NULL DEFAULT '0',
+  `FCREATORID` bigint NOT NULL DEFAULT '0',
+  `FCREATETIME` datetime DEFAULT NULL,
+  `FBASEUNITID` bigint NOT NULL DEFAULT '0',
+  `FAPPNUM` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`FID`),
+  KEY `INDEX_SCA_MFGFEEALLOC` (`FORGID`,`FCOSTCENTERID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_sca_mfgfeealloc_dapn definition
+
+CREATE TABLE `t_sca_mfgfeealloc_dapn` (
+  `fid` bigint NOT NULL DEFAULT '0',
+  `fcreatetime` datetime DEFAULT NULL,
+  `fsourcebillid` bigint NOT NULL DEFAULT '0',
+  `fsourcebillno` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `forgid` bigint NOT NULL DEFAULT '0',
+  `fcreatorid` bigint NOT NULL DEFAULT '0',
+  `fbilltype` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`fid`),
+  KEY `IDXt_sca_mfgfeealloc_DAPN_BINDEX` (`fsourcebillid`,`fbilltype`),
+  KEY `IDXt_sca_mfgfeealloc_DAPN_T_BINDEX` (`fbilltype`,`forgid`,`fcreatetime`,`fsourcebillno`,`fcreatorid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_sca_mfgfeealloc_dapw definition
+
+CREATE TABLE `t_sca_mfgfeealloc_dapw` (
+  `fid` bigint NOT NULL DEFAULT '0',
+  `fcreatetime` datetime DEFAULT NULL,
+  `fsourcebillid` bigint NOT NULL DEFAULT '0',
+  `forgid` bigint NOT NULL DEFAULT '0',
+  `fbilltype` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `foper` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`fid`),
+  KEY `IDXt_sca_mfgfeealloc_DAPW_WINDEX` (`fsourcebillid`,`fbilltype`,`foper`),
+  KEY `IDXt_sca_mfgfeealloc_DAPW_T_WINDEX` (`fsourcebillid`,`fbilltype`,`foper`,`forgid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_sca_mfgfeealloccc definition
+
+CREATE TABLE `t_sca_mfgfeealloccc` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FBILLNO` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FBILLSTATUS` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FORGID` bigint NOT NULL DEFAULT '0',
+  `FCOSTACCOUNTID` bigint NOT NULL DEFAULT '0',
+  `FCOSTCENTERID` bigint NOT NULL DEFAULT '0',
+  `FPERIODID` bigint NOT NULL DEFAULT '0',
+  `FBIZDATE` datetime DEFAULT NULL,
+  `FEXPENSEITEMID` bigint NOT NULL DEFAULT '0',
+  `FCURRENCYID` bigint NOT NULL DEFAULT '0',
+  `FAMOUNT` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FCOSTDRIVERID` bigint NOT NULL DEFAULT '0',
+  `FALLOCSTATUS` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FALLOCTYPE` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FUSETYPE` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FALLOCTIME` datetime DEFAULT NULL,
+  `FALLOCORID` bigint NOT NULL DEFAULT '0',
+  `FSRCBILLID` bigint NOT NULL DEFAULT '0',
+  `FVOUCHERNUM` varchar(60) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FCREATORID` bigint NOT NULL DEFAULT '0',
+  `FCREATETIME` datetime DEFAULT NULL,
+  `FBASEUNITID` bigint NOT NULL DEFAULT '0',
+  `FALLOCMOLD` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FSOURCE` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FMODIFIERID` bigint NOT NULL DEFAULT '0',
+  `FAUDITORID` bigint NOT NULL DEFAULT '0',
+  `FAUDITDATE` datetime DEFAULT NULL,
+  `FMODIFYTIME` datetime DEFAULT NULL,
+  `FMANUORGID` bigint NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FID`),
+  KEY `IDX_SCA_MFGFEEALLOCCC` (`FORGID`,`FCOSTCENTERID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_sca_mfgfeealloccc_l definition
+
+CREATE TABLE `t_sca_mfgfeealloccc_l` (
+  `FPKID` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FLOCALEID` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FREMARK` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`FPKID`),
+  KEY `IDX_SCA_MFGFEEALLOCCC_L` (`FID`,`FLOCALEID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_sca_mfgfeeallocccentry definition
+
+CREATE TABLE `t_sca_mfgfeeallocccentry` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FENTRYID` bigint NOT NULL DEFAULT '0',
+  `FSEQ` bigint NOT NULL DEFAULT '0',
+  `FSUBELEMENTID` bigint NOT NULL DEFAULT '0',
+  `FBENEFCOSTCENTERID` bigint NOT NULL DEFAULT '0',
+  `FALLOCAMT` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FALLOCVALUE` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FELEMENTID` bigint NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FENTRYID`),
+  KEY `IDX_SCA_MFGFEEALLOCCCENTRY` (`FID`,`FSUBELEMENTID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_sca_mfgfeeallocco definition
+
+CREATE TABLE `t_sca_mfgfeeallocco` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FBILLNO` varchar(60) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FBILLSTATUS` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FORGID` bigint NOT NULL DEFAULT '0',
+  `FCOSTACCOUNTID` bigint NOT NULL DEFAULT '0',
+  `FBENEFCOSTCENTERID` bigint NOT NULL DEFAULT '0',
+  `FPERIODID` bigint NOT NULL DEFAULT '0',
+  `FBIZDATE` datetime DEFAULT NULL,
+  `FEXPENSEITEMID` bigint NOT NULL DEFAULT '0',
+  `FCURRENCYID` bigint NOT NULL DEFAULT '0',
+  `FAMOUNT` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FCOSTDRIVERID` bigint NOT NULL DEFAULT '0',
+  `FALLOCSTATUS` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FALLOCTYPE` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FUSETYPE` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FALLOCTIME` datetime DEFAULT NULL,
+  `FALLOCORID` bigint NOT NULL DEFAULT '0',
+  `FSRCBILLID` bigint NOT NULL DEFAULT '0',
+  `FVOUCHERNUM` varchar(60) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FCREATORID` bigint NOT NULL DEFAULT '0',
+  `FCREATETIME` datetime DEFAULT NULL,
+  `FBASEUNITID` bigint NOT NULL DEFAULT '0',
+  `FALLOCMOLD` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FSOURCE` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FPRODUCTGROUPID` bigint NOT NULL DEFAULT '0',
+  `FMODIFIERID` bigint NOT NULL DEFAULT '0',
+  `FAUDITORID` bigint NOT NULL DEFAULT '0',
+  `FAUDITDATE` datetime DEFAULT NULL,
+  `FMODIFYTIME` datetime DEFAULT NULL,
+  `FMANUORGID` bigint NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FID`),
+  KEY `IDX_SCA_MFGFEEALLOCCO` (`FORGID`,`FBENEFCOSTCENTERID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_sca_mfgfeeallocco_l definition
+
+CREATE TABLE `t_sca_mfgfeeallocco_l` (
+  `FPKID` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FLOCALEID` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FREMARK` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`FPKID`),
+  KEY `IDX_SCA_MFGFEEALLOCCO_L` (`FID`,`FLOCALEID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_sca_mfgfeealloccoentry definition
+
+CREATE TABLE `t_sca_mfgfeealloccoentry` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FENTRYID` bigint NOT NULL DEFAULT '0',
+  `FSEQ` bigint NOT NULL DEFAULT '0',
+  `FSUBELEMENTID` bigint NOT NULL DEFAULT '0',
+  `FMATERIALID` bigint NOT NULL DEFAULT '0',
+  `FALLOCAMT` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FALLOCVALUE` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FELEMENTID` bigint NOT NULL DEFAULT '0',
+  `FCOSTOBJECTID` bigint NOT NULL DEFAULT '0',
+  `FAUXPTYID` bigint NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FENTRYID`),
+  KEY `IDX_SCA_MFGFEEALLOCCOENTRY` (`FID`,`FCOSTOBJECTID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_sca_mfgfeeallocentry definition
+
+CREATE TABLE `t_sca_mfgfeeallocentry` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FENTRYID` bigint NOT NULL DEFAULT '0',
+  `FSEQ` bigint NOT NULL DEFAULT '0',
+  `FSUBELEMENTID` bigint NOT NULL DEFAULT '0',
+  `FBENEFCOSTCENTERID` bigint NOT NULL DEFAULT '0',
+  `FALLOCAMT` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FALLOCVALUE` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FELEMENTID` bigint NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FENTRYID`),
+  KEY `INDEX_SCA_MFGALLOCENTRY` (`FSUBELEMENTID`,`FBENEFCOSTCENTERID`),
+  KEY `INDEX_SCA_MFGALLOCENTRY2` (`FID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_sca_mfgfeeallocmcostc definition
+
+CREATE TABLE `t_sca_mfgfeeallocmcostc` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FPKID` bigint NOT NULL DEFAULT '0',
+  `FBASEDATAID` bigint NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FPKID`),
+  KEY `INDEX_SCA_MFGALLOCMCOSTC` (`FID`,`FBASEDATAID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_sca_mfgfeeallocstd definition
+
+CREATE TABLE `t_sca_mfgfeeallocstd` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FBILLNO` varchar(80) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FBILLSTATUS` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FORGID` bigint NOT NULL DEFAULT '0',
+  `FCOSTCENTERID` bigint NOT NULL DEFAULT '0',
+  `FCREATORID` bigint NOT NULL DEFAULT '0',
+  `FCREATETIME` datetime DEFAULT NULL,
+  `FMODIFIERID` bigint NOT NULL DEFAULT '0',
+  `FMODIFYTIME` datetime DEFAULT NULL,
+  `FAUDITDATE` datetime DEFAULT NULL,
+  `FAUDITORID` bigint NOT NULL DEFAULT '0',
+  `FALLOCMOLD` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FNOPRODUCTION` char(1) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  `FMANUORGID` bigint NOT NULL DEFAULT '0',
+  `FAPPNUM` varchar(10) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FCOSTCENTERGROUPID` bigint NOT NULL DEFAULT '0',
+  `FISSENDER` char(1) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  `FISEXPENSE` char(1) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  `FISBENEFICIARY` char(1) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  `FEXECONDITION` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`FID`),
+  KEY `IDX_SCA_MFGFEEALLOCSTD` (`FORGID`,`FCOSTCENTERID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_sca_mfgfeeallocstd_l definition
+
+CREATE TABLE `t_sca_mfgfeeallocstd_l` (
+  `FPKID` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FLOCALEID` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FREMARK` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`FPKID`),
+  KEY `IDX_SCA_MFGFEEALLOCSTD_L` (`FID`,`FLOCALEID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_sca_mfgfeeallocstdentry definition
+
+CREATE TABLE `t_sca_mfgfeeallocstdentry` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FENTRYID` bigint NOT NULL DEFAULT '0',
+  `FSEQ` bigint NOT NULL DEFAULT '0',
+  `FEXPENSEITEMID` bigint NOT NULL DEFAULT '0',
+  `FCOSTDRIVERID` bigint NOT NULL DEFAULT '0',
+  `FPRODUCTGROUPID` bigint NOT NULL DEFAULT '0',
+  `FSUBELEMENTID` bigint NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FENTRYID`),
+  KEY `IDX_SCA_MFGFEEALLOCSTDENTRY` (`FID`,`FCOSTDRIVERID`,`FEXPENSEITEMID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_sca_mfgfeeallocstdsuben definition
+
+CREATE TABLE `t_sca_mfgfeeallocstdsuben` (
+  `FENTRYID` bigint NOT NULL DEFAULT '0',
+  `FSEQ` bigint NOT NULL DEFAULT '0',
+  `FBENEFCOSTCENTERID` bigint NOT NULL DEFAULT '0',
+  `FDETAILID` bigint NOT NULL DEFAULT '0',
+  `FCENTERGROUPID` bigint NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FDETAILID`),
+  KEY `IDX_SCA_MFGFEEALLOCSTDSUBEN` (`FENTRYID`,`FBENEFCOSTCENTERID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_sca_mfgfeecollc definition
+
+CREATE TABLE `t_sca_mfgfeecollc` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FBILLNO` varchar(60) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FBILLSTATUS` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FCREATORID` bigint NOT NULL DEFAULT '0',
+  `FMODIFIERID` bigint NOT NULL DEFAULT '0',
+  `FAUDITORID` bigint NOT NULL DEFAULT '0',
+  `FAUDITDATE` datetime DEFAULT NULL,
+  `FMODIFYTIME` datetime DEFAULT NULL,
+  `FCREATETIME` datetime DEFAULT NULL,
+  `FORGID` bigint NOT NULL DEFAULT '0',
+  `FBIZDATE` datetime DEFAULT NULL,
+  `FCOSTCENTERID` bigint NOT NULL DEFAULT '0',
+  `FSOURCE` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FCOSTACCOUNTID` bigint NOT NULL DEFAULT '0',
+  `FPERIODID` bigint NOT NULL DEFAULT '0',
+  `FEXPENSEITEMID` bigint NOT NULL DEFAULT '0',
+  `FTOTALAMOUNT` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FCURRENCYID` bigint NOT NULL DEFAULT '0',
+  `FSRCSYSID` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FSRCBILLNUM` varchar(2000) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FIMPSCHID` varchar(2000) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FAPPNUM` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FSRCBILLID` varchar(2000) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FALLOCMOLD` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FRANGE` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FMANUORGID` bigint NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FID`),
+  KEY `INDEX_SCA_MFGFEECOLLC` (`FORGID`,`FCOSTCENTERID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_sca_mfgfeecollc_l definition
+
+CREATE TABLE `t_sca_mfgfeecollc_l` (
+  `FPKID` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FLOCALEID` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FREMARK` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FREMARKS` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`FPKID`),
+  KEY `INDEX_SCA_MFGFEECOLLC_L` (`FID`,`FLOCALEID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_sca_mfgfeecollc_srcsys definition
+
+CREATE TABLE `t_sca_mfgfeecollc_srcsys` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FPKID` bigint NOT NULL DEFAULT '0',
+  `FBASEDATAID` varchar(60) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`FPKID`),
+  KEY `IDEX_SCA_MFGFEECOLLC_SRCSYS` (`FID`,`FBASEDATAID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_sca_mfgfeecollcentry definition
+
+CREATE TABLE `t_sca_mfgfeecollcentry` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FENTRYID` bigint NOT NULL DEFAULT '0',
+  `FSEQ` bigint NOT NULL DEFAULT '0',
+  `FSUBELEMENTID` bigint NOT NULL DEFAULT '0',
+  `FAMOUNT` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FCOSTOBJECTID` bigint NOT NULL DEFAULT '0',
+  `FELEMENTID` bigint NOT NULL DEFAULT '0',
+  `FVOUCHERENTRYID` varchar(2000) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FBENEFCOSTCENTERID` bigint NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FENTRYID`),
+  KEY `INDEX_SCA_MFGFEECOLLCENTRY` (`FID`,`FSUBELEMENTID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_sca_mfgfeeimpsch definition
+
+CREATE TABLE `t_sca_mfgfeeimpsch` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FBILLNO` varchar(60) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FBILLSTATUS` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FCREATORID` bigint NOT NULL DEFAULT '0',
+  `FMODIFIERID` bigint NOT NULL DEFAULT '0',
+  `FMODIFYTIME` datetime DEFAULT NULL,
+  `FCREATETIME` datetime DEFAULT NULL,
+  `FAUDITORID` bigint NOT NULL DEFAULT '0',
+  `FAUDITDATE` datetime DEFAULT NULL,
+  `FCOSTACCOUNTID` bigint NOT NULL DEFAULT '0',
+  `FSRCBIZSYSID` varchar(60) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FACCOUNTBOOKID` bigint NOT NULL DEFAULT '0',
+  `FSRCBILL` varchar(60) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FACCOUNTVIEWID` bigint NOT NULL DEFAULT '0',
+  `FASSGRP` varchar(2000) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FISFROMGL` char(1) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `FAPPNUM` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FORGID` bigint NOT NULL DEFAULT '0',
+  `FMANUORGID` bigint NOT NULL DEFAULT '0',
+  `FLEVEL` varchar(10) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`FID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_sca_mfgfeeimpsch_l definition
+
+CREATE TABLE `t_sca_mfgfeeimpsch_l` (
+  `FPKID` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FLOCALEID` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FNAME` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FREMARK` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`FPKID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_sca_mfgfeeimpschbcc definition
+
+CREATE TABLE `t_sca_mfgfeeimpschbcc` (
+  `FENTRYID` bigint NOT NULL DEFAULT '0',
+  `FBASEDATAID` bigint NOT NULL DEFAULT '0',
+  `FPKID` bigint NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FPKID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_sca_mfgfeeimpschentry definition
+
+CREATE TABLE `t_sca_mfgfeeimpschentry` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FENTRYID` bigint NOT NULL DEFAULT '0',
+  `FSEQ` bigint NOT NULL DEFAULT '0',
+  `FBIZDATE` varchar(60) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT ' ',
+  `FCOSTCENTERTYPE` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FCOSTCENTERID` bigint NOT NULL DEFAULT '0',
+  `FEXPENSEITEMTYPE` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FEXPENSEITEMID` bigint NOT NULL DEFAULT '0',
+  `FAMOUNT` varchar(200) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FBENEFCOSTCENTERTYPE` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FELEMENTID` bigint NOT NULL DEFAULT '0',
+  `FSUBELEMENTID` bigint NOT NULL DEFAULT '0',
+  `FBENEFCOSTCENTERID` bigint NOT NULL DEFAULT '0',
+  `FPRODUCTGROUPID` bigint NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FENTRYID`),
+  KEY `IDX_SCA_MFGFEEIMPSCHENTRY2` (`FID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_sca_mfgimp_accountviews definition
+
+CREATE TABLE `t_sca_mfgimp_accountviews` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FPKID` bigint NOT NULL DEFAULT '0',
+  `FBASEDATAID` bigint NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FPKID`),
+  KEY `IDX_MFGIMP_BASEDATA` (`FID`,`FBASEDATAID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_sca_overheadallotbenefi definition
+
+CREATE TABLE `t_sca_overheadallotbenefi` (
+  `FENTRYID` bigint NOT NULL DEFAULT '0',
+  `FDETAILID` bigint NOT NULL DEFAULT '0',
+  `FSEQ` bigint NOT NULL DEFAULT '0',
+  `FBENEFCOSTCENTERID` bigint NOT NULL DEFAULT '0',
+  `FCENTERGROUPID` bigint NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FDETAILID`),
+  KEY `IDX_SCA_OVERHEADALLOTBENEFI` (`FENTRYID`,`FSEQ`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_sca_overheadallotcost definition
+
+CREATE TABLE `t_sca_overheadallotcost` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FCREATORID` bigint NOT NULL DEFAULT '0',
+  `FMODIFIERID` bigint NOT NULL DEFAULT '0',
+  `FMODIFYTIME` datetime DEFAULT NULL,
+  `FCREATETIME` datetime DEFAULT NULL,
+  `FORGID` bigint NOT NULL DEFAULT '0',
+  `FAUDITDATE` datetime DEFAULT NULL,
+  `FAUDITORID` bigint NOT NULL DEFAULT '0',
+  `FBILLSTATUS` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FALLOCMOLD` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FCOSTCENTERID` bigint NOT NULL DEFAULT '0',
+  `FNOPRODUCTION` char(1) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  `FBILLNO` varchar(60) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FMANUORGID` bigint NOT NULL DEFAULT '0',
+  `FAPPNUM` varchar(10) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FCOSTCENTERGROUPID` bigint NOT NULL DEFAULT '0',
+  `FISSENDER` char(1) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  `FISEXPENSE` char(1) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  `FISBENEFICIARY` char(1) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FID`),
+  KEY `IDX_SCA_OVERHEADALLOTCOST` (`FORGID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_sca_overheadallotcost_l definition
+
+CREATE TABLE `t_sca_overheadallotcost_l` (
+  `FPKID` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FLOCALEID` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FREMARK` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`FPKID`),
+  KEY `IDX_SCA_OVERHEADALLOTCOST_L` (`FID`,`FLOCALEID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_sca_overheadallotentry definition
+
+CREATE TABLE `t_sca_overheadallotentry` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FENTRYID` bigint NOT NULL DEFAULT '0',
+  `FSEQ` bigint NOT NULL DEFAULT '0',
+  `FCOSTDRIVERID` bigint NOT NULL DEFAULT '0',
+  `FEXPENSEITEMID` bigint NOT NULL DEFAULT '0',
+  `FPRODUCTITEM` bigint NOT NULL DEFAULT '0',
+  `FSUBELEMENTID` bigint NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FENTRYID`),
+  KEY `IDX_SCA_OVERHEADALLOTENTRY` (`FID`,`FSEQ`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_sca_parparam definition
+
+CREATE TABLE `t_sca_parparam` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FTYPE` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FPARAM` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FPARAM_TAG` longtext COLLATE utf8mb4_unicode_ci,
+  `FCREATETIME` datetime DEFAULT NULL,
+  PRIMARY KEY (`FID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_sca_plancostcalclog definition
+
+CREATE TABLE `t_sca_plancostcalclog` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FORGID` bigint NOT NULL DEFAULT '0',
+  `FACCOUNTCOSTTYPEID` bigint NOT NULL DEFAULT '0',
+  `FPLANCOSTTYPEID` bigint NOT NULL DEFAULT '0',
+  `FBILLTYPE` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FSYNCDATE` datetime DEFAULT NULL,
+  `FORDERNO` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FORDERENTRYSEQ` bigint NOT NULL DEFAULT '0',
+  `FORDERENTRYID` bigint NOT NULL DEFAULT '0',
+  `FSTATUS` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FLASTEXECDATE` datetime DEFAULT NULL,
+  `FTRYTIMES` int NOT NULL DEFAULT '0',
+  `FEXECLOG` varchar(2000) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FOPERATORID` bigint NOT NULL DEFAULT '0',
+  `FOPERDATE` datetime DEFAULT NULL,
+  `FRELEASEDATE` datetime DEFAULT NULL,
+  PRIMARY KEY (`FID`),
+  KEY `IDX_PLANCOSTCALCLOG_SYNCDATE` (`FSYNCDATE`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_sca_plancostcalcresult definition
+
+CREATE TABLE `t_sca_plancostcalcresult` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FBILLNO` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FORGID` bigint NOT NULL DEFAULT '0',
+  `FMANUORGID` bigint NOT NULL DEFAULT '0',
+  `FCOSTTYPEID` bigint NOT NULL DEFAULT '0',
+  `FBILLSTATUS` varchar(10) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FBILLTYPE` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FEFFECTDATE` datetime DEFAULT NULL,
+  `FEXPDATE` datetime DEFAULT NULL,
+  `FORDERNO` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FORDERENTRYSEQ` bigint NOT NULL DEFAULT '0',
+  `FORDERENTRYID` bigint NOT NULL DEFAULT '0',
+  `FMATERIALID` bigint NOT NULL DEFAULT '0',
+  `FPROCESSROUTEID` bigint NOT NULL DEFAULT '0',
+  `FUNIT` bigint NOT NULL DEFAULT '0',
+  `FOUTQTY` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FOUTAMOUNT` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FAUDITDATE` datetime DEFAULT NULL,
+  `FCREATETIME` datetime DEFAULT NULL,
+  `FMODIFYTIME` datetime DEFAULT NULL,
+  `FMODIFIERID` bigint DEFAULT '0',
+  `FCREATORID` bigint DEFAULT '0',
+  `FAUDITORID` bigint DEFAULT '0',
+  `FCALCDATE` datetime DEFAULT NULL,
+  `FCONFIGUREDCODEID` bigint NOT NULL DEFAULT '0',
+  `FTRACKNUMBERID` bigint NOT NULL DEFAULT '0',
+  `FKEYCOL` varchar(200) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FKEYCOLID` bigint NOT NULL DEFAULT '0',
+  `FPLANQTY` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  PRIMARY KEY (`FID`),
+  KEY `IDX_PLANCOSTORDERNUM` (`FORDERNO`),
+  KEY `IDX_PLANCOSTORDERSEQ` (`FORDERENTRYSEQ`),
+  KEY `IDX_PLANCOSTENTRYID` (`FORDERENTRYID`),
+  KEY `IDX_T_SCA_PLANCOSTCALCRESULT_FKEYCOL` (`FKEYCOL`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_sca_planresultentry definition
+
+CREATE TABLE `t_sca_planresultentry` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FENTRYID` bigint NOT NULL DEFAULT '0',
+  `FSEQ` bigint NOT NULL DEFAULT '0',
+  `FCALCBASIS` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FSUBMATERIALID` bigint NOT NULL DEFAULT '0',
+  `FNEEDQTY` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FNEEDAMOUNT` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FRESOURCEID` bigint NOT NULL DEFAULT '0',
+  `FSRCQTY` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FSRCAMOUNT` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FSUBELEMENTID` bigint NOT NULL DEFAULT '0',
+  `FCALTYPE` varchar(10) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FPRICE` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  PRIMARY KEY (`FENTRYID`),
+  KEY `IDX_T_SCA_PLANRESULTENTRY` (`FID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_sca_pricediffalloc definition
+
+CREATE TABLE `t_sca_pricediffalloc` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FBILLNO` varchar(60) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FBILLSTATUS` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FCREATORID` bigint NOT NULL DEFAULT '0',
+  `FMODIFIERID` bigint NOT NULL DEFAULT '0',
+  `FAUDITORID` bigint NOT NULL DEFAULT '0',
+  `FAUDITDATE` datetime DEFAULT NULL,
+  `FMODIFYTIME` datetime DEFAULT NULL,
+  `FCREATETIME` datetime DEFAULT NULL,
+  `FORGID` bigint NOT NULL DEFAULT '0',
+  `FCOSTACCOUNTID` bigint NOT NULL DEFAULT '0',
+  `FCOSTCENTERID` bigint NOT NULL DEFAULT '0',
+  `FCURRENCY` bigint NOT NULL DEFAULT '0',
+  `FPERIODID` bigint NOT NULL DEFAULT '0',
+  `FCREATETYPE` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FCOSTOBJECTID` bigint NOT NULL DEFAULT '0',
+  `FMATERIALID` bigint NOT NULL DEFAULT '0',
+  `FAUXPTYID` bigint NOT NULL DEFAULT '0',
+  `FSRCBILLID` bigint NOT NULL DEFAULT '0',
+  `FSRCBILLENTRYID` bigint NOT NULL DEFAULT '0',
+  `FMATVERSIONID` bigint NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FID`),
+  KEY `IDX_SCA_PRICEDIFFALLOC` (`FORGID`,`FCOSTACCOUNTID`,`FCOSTCENTERID`,`FCOSTOBJECTID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_sca_pricediffallocentry definition
+
+CREATE TABLE `t_sca_pricediffallocentry` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FENTRYID` bigint NOT NULL DEFAULT '0',
+  `FSEQ` bigint NOT NULL DEFAULT '0',
+  `FELEMENTID` bigint NOT NULL DEFAULT '0',
+  `FSUBELEMENTID` bigint NOT NULL DEFAULT '0',
+  `FAMOUNT` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  PRIMARY KEY (`FENTRYID`),
+  KEY `IDX_SCA_PRICEDIFFALLOCET` (`FELEMENTID`,`FSUBELEMENTID`),
+  KEY `IDX_SCA_PRICEDIFFALLOCET2` (`FID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_sca_proallocstd definition
+
+CREATE TABLE `t_sca_proallocstd` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FBILLNO` varchar(60) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FORGID` bigint NOT NULL DEFAULT '0',
+  `FCOSTACCOUNTID` bigint NOT NULL DEFAULT '0',
+  `FBILLSTATUS` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FCREATORID` bigint NOT NULL DEFAULT '0',
+  `FMODIFIERID` bigint NOT NULL DEFAULT '0',
+  `FAUDITORID` bigint NOT NULL DEFAULT '0',
+  `FCREATETIME` datetime DEFAULT NULL,
+  `FMODIFYTIME` datetime DEFAULT NULL,
+  `FAUDITDATE` datetime DEFAULT NULL,
+  `FEFFECTDATE` datetime DEFAULT NULL,
+  `FEXPDATE` datetime DEFAULT NULL,
+  `FAPPNUM` varchar(10) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FEFFECTSTATUS` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FSOURCEID` bigint NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FID`),
+  KEY `IDX_SCA_PROALLOCSTD` (`FORGID`,`FCOSTACCOUNTID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_sca_proallocstdentry definition
+
+CREATE TABLE `t_sca_proallocstdentry` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FENTRYID` bigint NOT NULL DEFAULT '0',
+  `FSEQ` bigint NOT NULL DEFAULT '0',
+  `FCOSTCENTERID` bigint NOT NULL DEFAULT '0',
+  `FCOSTDRIVER` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FDIFFCALCCOSTDRIVER` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FUNABSORBCOSTDRIVER` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`FENTRYID`),
+  KEY `IDX_SCA_PROALLOCSTDENTRY` (`FID`,`FCOSTCENTERID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_sca_proallocstdsubentry definition
+
+CREATE TABLE `t_sca_proallocstdsubentry` (
+  `FENTRYID` bigint NOT NULL DEFAULT '0',
+  `FDETAILID` bigint NOT NULL DEFAULT '0',
+  `FSEQ` bigint NOT NULL DEFAULT '0',
+  `FELEMENTID` bigint NOT NULL DEFAULT '0',
+  `FSUBELEMENTID` bigint NOT NULL DEFAULT '0',
+  `FCOSTDRIVERDETAIL` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FDIFFCALCCDRIVERDETAIL` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`FDETAILID`),
+  KEY `IDX_SCA_PROALLOSUBENTRY` (`FENTRYID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_sca_prodiffbill definition
+
+CREATE TABLE `t_sca_prodiffbill` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FBILLNO` varchar(60) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FBILLSTATUS` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FCREATORID` bigint NOT NULL DEFAULT '0',
+  `FMODIFIERID` bigint NOT NULL DEFAULT '0',
+  `FAUDITORID` bigint NOT NULL DEFAULT '0',
+  `FAUDITDATE` datetime DEFAULT NULL,
+  `FMODIFYTIME` datetime DEFAULT NULL,
+  `FCREATETIME` datetime DEFAULT NULL,
+  `FPERIODID` bigint NOT NULL DEFAULT '0',
+  `FORGID` bigint NOT NULL DEFAULT '0',
+  `FCOSTACCOUNTID` bigint NOT NULL DEFAULT '0',
+  `FCOSTCENTERID` bigint NOT NULL DEFAULT '0',
+  `FSOURCEBILL` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FDIFFRULEID` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT ' ',
+  `FVOUCHER` varchar(60) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FSTARTAMOUNT` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FCURDIFFAMOUNT` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FCURCARRYAMOUNT` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FENDAMOUNT` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FDIFFRULE` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FVOUCHERNUM` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`FID`),
+  KEY `IDX_SCA_PRODIFFBILL` (`FORGID`,`FCOSTACCOUNTID`,`FCOSTCENTERID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_sca_prodiffbillentry definition
+
+CREATE TABLE `t_sca_prodiffbillentry` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FENTRYID` bigint NOT NULL DEFAULT '0',
+  `FSEQ` bigint NOT NULL DEFAULT '0',
+  `FCOSTOBJECTID` bigint NOT NULL DEFAULT '0',
+  `FUNITID` bigint NOT NULL DEFAULT '0',
+  `FAUXPTYID` bigint NOT NULL DEFAULT '0',
+  `FENTRYSOURCEBILL` varchar(60) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FDIFFTYPE` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FELEMENTID` bigint NOT NULL DEFAULT '0',
+  `FSUBELEMENTID` bigint NOT NULL DEFAULT '0',
+  `FENTRYSTARTAMT` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FENTRYCURDIFFAMT` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FENTRYCURCARRYAMT` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FENTRYENDAMT` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FMATERIALID` bigint NOT NULL DEFAULT '0',
+  `FCARRYRATE` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FEXERATE` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FSUMRATE` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  PRIMARY KEY (`FENTRYID`),
+  KEY `IDX_SCA_PRODIFFBILLENTRY` (`FCOSTOBJECTID`,`FELEMENTID`,`FSUBELEMENTID`),
+  KEY `IDX_SCA_PRODIFFBILLENTRY2` (`FID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_sca_productsubentry definition
+
+CREATE TABLE `t_sca_productsubentry` (
+  `FENTRYID` bigint NOT NULL DEFAULT '0',
+  `FDETAILID` bigint NOT NULL DEFAULT '0',
+  `FSEQ` bigint NOT NULL DEFAULT '0',
+  `FMATERIALID` bigint NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FDETAILID`),
+  KEY `INDEX_SCA_PRODUCTSUBENTRY` (`FENTRYID`,`FMATERIALID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_sca_purchdiffalloc definition
+
+CREATE TABLE `t_sca_purchdiffalloc` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FBILLNO` varchar(60) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FBILLSTATUS` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FCREATORID` bigint NOT NULL DEFAULT '0',
+  `FMODIFIERID` bigint NOT NULL DEFAULT '0',
+  `FAUDITORID` bigint NOT NULL DEFAULT '0',
+  `FAUDITDATE` datetime DEFAULT NULL,
+  `FMODIFYTIME` datetime DEFAULT NULL,
+  `FCREATETIME` datetime DEFAULT NULL,
+  `FORGID` bigint NOT NULL DEFAULT '0',
+  `FPERIODID` bigint NOT NULL DEFAULT '0',
+  `FCOSTACCOUNTID` bigint NOT NULL DEFAULT '0',
+  `FCOSTCENTERID` bigint NOT NULL DEFAULT '0',
+  `FMATERIALID` bigint NOT NULL DEFAULT '0',
+  `FDIFFTOTAL` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FVOUCHERNUM` varchar(60) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FCURRENCYID` bigint NOT NULL DEFAULT '0',
+  `FVERSIONID` bigint NOT NULL DEFAULT '0',
+  `FAUXPTYID` bigint NOT NULL DEFAULT '0',
+  `FDIFFTYPE` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FCALCSCHEMEID` bigint NOT NULL DEFAULT '0',
+  `FBIZTYPE` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FCOSTOBJBIZSTATUS` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FBECOSTOBJECTID` bigint NOT NULL DEFAULT '0',
+  `FKEYCOLID` bigint NOT NULL DEFAULT '0',
+  `FKEYCOL` varchar(200) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FMAINCOSTOBJECTID` bigint NOT NULL DEFAULT '0',
+  `FCONFIGUREDCODEID` bigint NOT NULL DEFAULT '0',
+  `FTRACKNUMBERID` bigint NOT NULL DEFAULT '0',
+  `FPROJECTID` bigint NOT NULL DEFAULT '0',
+  `FLOT` varchar(80) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`FID`),
+  KEY `IDX_SCA_PURCHDIFFALLOC` (`FORGID`,`FPERIODID`,`FCOSTACCOUNTID`,`FCOSTCENTERID`),
+  KEY `IDX_SCA_PURCHDIFFALLOC_FKEYCOL` (`FKEYCOL`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_sca_purchdiffalloc_dapn definition
+
+CREATE TABLE `t_sca_purchdiffalloc_dapn` (
+  `fid` bigint NOT NULL DEFAULT '0',
+  `fcreatetime` datetime DEFAULT NULL,
+  `fsourcebillid` bigint NOT NULL DEFAULT '0',
+  `fsourcebillno` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `forgid` bigint NOT NULL DEFAULT '0',
+  `fcreatorid` bigint NOT NULL DEFAULT '0',
+  `fbilltype` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`fid`),
+  KEY `IDXt_sca_purchdiffalloc_DAPN_BINDEX` (`fsourcebillid`,`fbilltype`),
+  KEY `IDXt_sca_purchdiffalloc_DAPN_T_BINDEX` (`fbilltype`,`forgid`,`fcreatetime`,`fsourcebillno`,`fcreatorid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_sca_purchdiffalloc_dapw definition
+
+CREATE TABLE `t_sca_purchdiffalloc_dapw` (
+  `fid` bigint NOT NULL DEFAULT '0',
+  `fcreatetime` datetime DEFAULT NULL,
+  `fsourcebillid` bigint NOT NULL DEFAULT '0',
+  `forgid` bigint NOT NULL DEFAULT '0',
+  `fbilltype` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `foper` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`fid`),
+  KEY `IDXt_sca_purchdiffalloc_DAPW_WINDEX` (`fsourcebillid`,`fbilltype`,`foper`),
+  KEY `IDXt_sca_purchdiffalloc_DAPW_T_WINDEX` (`fsourcebillid`,`fbilltype`,`foper`,`forgid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_sca_purchdiffallocentry definition
+
+CREATE TABLE `t_sca_purchdiffallocentry` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FENTRYID` bigint NOT NULL DEFAULT '0',
+  `FSEQ` bigint NOT NULL DEFAULT '0',
+  `FCOSTOBJECTID` bigint NOT NULL DEFAULT '0',
+  `FBIZSTATUS` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FELEMENTID` bigint NOT NULL DEFAULT '0',
+  `FSUBELEMENTID` bigint NOT NULL DEFAULT '0',
+  `FAMOUNT` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FTRANSFERAMOUNT` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FBALANCEAMOUNT` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FDIFAMOUNT` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FWEIGHVALUE` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FORDDIFF` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FINVOICEDIFF` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FFEEDIFF` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FDIFFQTY` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FMADEDIFF` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FUNJOINDIFFAMT` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FSTDCOSTUPAMT` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FMADEUPAMT` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FOTHERDIFF` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FFALLDIFF` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FRESERVEDIFFX` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FRESERVEDIFFW` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FRESERVEDIFFY` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  PRIMARY KEY (`FENTRYID`),
+  KEY `IDX_SCA_PURCHDIFFALLOCENTRY` (`FCOSTOBJECTID`,`FELEMENTID`,`FSUBELEMENTID`),
+  KEY `IDX_SCA_PURCHDIFFALLOCENTRY2` (`FID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_sca_purchpricediff definition
+
+CREATE TABLE `t_sca_purchpricediff` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FBILLNO` varchar(60) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FBILLSTATUS` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FCREATORID` bigint NOT NULL DEFAULT '0',
+  `FMODIFIERID` bigint NOT NULL DEFAULT '0',
+  `FAUDITORID` bigint NOT NULL DEFAULT '0',
+  `FAUDITDATE` datetime DEFAULT NULL,
+  `FMODIFYTIME` datetime DEFAULT NULL,
+  `FCREATETIME` datetime DEFAULT NULL,
+  `FORGID` bigint NOT NULL DEFAULT '0',
+  `FCOSTACCOUNTID` bigint NOT NULL DEFAULT '0',
+  `FCURRENCYID` bigint NOT NULL DEFAULT '0',
+  `FCOSTADJUSTNUM` varchar(60) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FCREATETYPE` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FSRCBILLTYPEID` bigint NOT NULL DEFAULT '0',
+  `FBIZDATE` datetime DEFAULT NULL,
+  `FPERIODID` bigint NOT NULL DEFAULT '0',
+  `FSOURCE` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FBILLTYPEID` bigint NOT NULL DEFAULT '0',
+  `FSOURCEBILLID` bigint NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FID`),
+  KEY `IDX_SCA_PURCHPRICEDIFF` (`FORGID`,`FCOSTACCOUNTID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_sca_purchpriceentry definition
+
+CREATE TABLE `t_sca_purchpriceentry` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FENTRYID` bigint NOT NULL DEFAULT '0',
+  `FSEQ` bigint NOT NULL DEFAULT '0',
+  `FELEMENTID` bigint NOT NULL DEFAULT '0',
+  `FSUBELEMENTID` bigint NOT NULL DEFAULT '0',
+  `FMATERIALID` bigint NOT NULL DEFAULT '0',
+  `FADJUSTAMT` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FCOSTCENTERID` bigint NOT NULL DEFAULT '0',
+  `FSTORAGEORGUNITID` bigint NOT NULL DEFAULT '0',
+  `FAUXPTYID` bigint NOT NULL DEFAULT '0',
+  `FINTOAMOUNT` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FINTOSTATUS` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FVERSIONID` bigint NOT NULL DEFAULT '0',
+  `FLASTINTOAMT` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FLASTPERIOD` bigint NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FENTRYID`),
+  KEY `IDX_SCA_PURCHPRICEET` (`FELEMENTID`,`FSUBELEMENTID`,`FCOSTCENTERID`),
+  KEY `IDX_SCA_PURCHPRICEET2` (`FID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_sca_purdiffacsrcentry definition
+
+CREATE TABLE `t_sca_purdiffacsrcentry` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FENTRYID` bigint NOT NULL DEFAULT '0',
+  `FSEQ` bigint NOT NULL DEFAULT '0',
+  `FSRCBILLID` bigint NOT NULL DEFAULT '0',
+  `FSOURCETYPE` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`FENTRYID`),
+  KEY `IDX_SCA_PURDIFFACSRCENTRY` (`FID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_sca_redcheckdetailentry definition
+
+CREATE TABLE `t_sca_redcheckdetailentry` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FENTRYID` bigint NOT NULL DEFAULT '0',
+  `FSEQ` bigint NOT NULL DEFAULT '0',
+  `FENTRYPRODORGID` bigint NOT NULL DEFAULT '0',
+  `FCHECKDETAIL` varchar(1000) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`FENTRYID`),
+  KEY `IDX_T_SCA_REDCHECKDETAILENTRY` (`FID`,`FENTRYID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_sca_reductcheckdetail definition
+
+CREATE TABLE `t_sca_reductcheckdetail` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FORGID` bigint NOT NULL DEFAULT '0',
+  `FCOSTACCOUNTID` bigint NOT NULL DEFAULT '0',
+  `FPERIODID` bigint NOT NULL DEFAULT '0',
+  `FPRODORGID` bigint NOT NULL DEFAULT '0',
+  `FCURRENCYID` bigint NOT NULL DEFAULT '0',
+  `FCALCDATE` datetime DEFAULT NULL,
+  `FCHECKITEMDESC` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FTASKID` bigint NOT NULL DEFAULT '0',
+  `FITEMID` bigint NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FID`),
+  KEY `IDX_T_SCA_REDUCTCHECKDETAIL` (`FORGID`,`FCOSTACCOUNTID`,`FPERIODID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_sca_reductrpt definition
+
+CREATE TABLE `t_sca_reductrpt` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FORGID` bigint NOT NULL DEFAULT '0',
+  `FCOSTACCOUNTID` bigint NOT NULL DEFAULT '0',
+  `FPRDORGID` bigint NOT NULL DEFAULT '0',
+  `FPERIODID` bigint NOT NULL DEFAULT '0',
+  `FTASKNAME` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FSTARTTIME` datetime DEFAULT NULL,
+  `FCURRENCYID` bigint NOT NULL DEFAULT '0',
+  `FBILLTYPE` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FUSETIME` bigint NOT NULL DEFAULT '0',
+  `FBILLNO` varchar(60) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FTYPE` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FPROGRESS` bigint NOT NULL DEFAULT '0',
+  `FREPORTTYPE` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FNEXTPAGEPARA` varchar(2000) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FNEXTPAGEPARA_TAG` longtext COLLATE utf8mb4_unicode_ci,
+  `FBILLSTATUS` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FCREATORID` bigint NOT NULL DEFAULT '0',
+  `FMODIFIERID` bigint NOT NULL DEFAULT '0',
+  `FAUDITORID` bigint NOT NULL DEFAULT '0',
+  `FAUDITDATE` datetime DEFAULT NULL,
+  `FMODIFYTIME` datetime DEFAULT NULL,
+  `FCREATETIME` datetime DEFAULT NULL,
+  `FEXECUTORID` bigint NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FID`),
+  KEY `IDX_T_SCA_REDUCTRPT` (`FORGID`,`FCOSTACCOUNTID`,`FPERIODID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_sca_reductrptacsub definition
+
+CREATE TABLE `t_sca_reductrptacsub` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FPKID` bigint NOT NULL DEFAULT '0',
+  `FBASEDATAID` bigint NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FPKID`),
+  KEY `IDX_SCA_REDUCTRPTACSUB` (`FID`,`FBASEDATAID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_sca_reductrptentry definition
+
+CREATE TABLE `t_sca_reductrptentry` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FENTRYID` bigint NOT NULL DEFAULT '0',
+  `FSEQ` bigint NOT NULL DEFAULT '0',
+  `FITEM` varchar(60) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FRESULT` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FCNSMTIME` varchar(60) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FCHECKDESC` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FDETAIL` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FREMARK` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FDETAILCONFIGID` bigint NOT NULL DEFAULT '0',
+  `FSUBNEXTENTITY` varchar(60) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FSUBPARAM` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FSUBSTARTTIME` datetime DEFAULT NULL,
+  `FSUBPARAM_TAG` longtext COLLATE utf8mb4_unicode_ci,
+  `FBIGTEXT` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FBIGTEXT_TAG` longtext COLLATE utf8mb4_unicode_ci,
+  PRIMARY KEY (`FENTRYID`),
+  KEY `IDX_T_SCA_REDUCTRPTENTRY` (`FID`,`FENTRYID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_sca_resourceabsorb definition
+
+CREATE TABLE `t_sca_resourceabsorb` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FBILLNO` varchar(60) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FBILLSTATUS` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FCREATORID` bigint NOT NULL DEFAULT '0',
+  `FMODIFIERID` bigint NOT NULL DEFAULT '0',
+  `FAUDITORID` bigint NOT NULL DEFAULT '0',
+  `FAUDITDATE` datetime DEFAULT NULL,
+  `FMODIFYTIME` datetime DEFAULT NULL,
+  `FCREATETIME` datetime DEFAULT NULL,
+  `FORGID` bigint NOT NULL DEFAULT '0',
+  `FPERIODID` bigint NOT NULL DEFAULT '0',
+  `FCOSTACCOUNTID` bigint NOT NULL DEFAULT '0',
+  `FCOSTCENTERID` bigint NOT NULL DEFAULT '0',
+  `FVOUCHERNUM` varchar(60) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FCURRENCYID` bigint NOT NULL DEFAULT '0',
+  `FCOSTOBJECTID` bigint NOT NULL DEFAULT '0',
+  `FBIZDATE` datetime DEFAULT NULL,
+  `FRESOURCEID` bigint NOT NULL DEFAULT '0',
+  `FRESOURCEUSEBILLNO` varchar(60) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FRESOURCEUSEROW` bigint NOT NULL DEFAULT '0',
+  `FMATERIALID` bigint NOT NULL DEFAULT '0',
+  `FAUXPTYID` bigint NOT NULL DEFAULT '0',
+  `FSOURCEBILLID` bigint NOT NULL DEFAULT '0',
+  `FSOURCEBILLENTRYID` bigint NOT NULL DEFAULT '0',
+  `FOPRAID` bigint NOT NULL DEFAULT '0',
+  `FBOOKDATE` datetime DEFAULT NULL,
+  `FSOURCETYPE` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FOUTPUTBILLNO` varchar(80) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FBUSINESSDATE` datetime DEFAULT NULL,
+  `FCALCBASIS` varchar(10) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FDESCRIPTION` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FKEYCOL` varchar(200) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FKEYCOLID` bigint NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FID`),
+  KEY `IDX_SCA_RESOURCEABSORB` (`FORGID`,`FCOSTACCOUNTID`,`FPERIODID`),
+  KEY `IDX_SCA_RESOURCEABSORB_CB` (`FCOSTOBJECTID`),
+  KEY `IDX_SCA_RESOURCEABSORB_NO` (`FBILLNO`),
+  KEY `IDX_RESOURCEABSORB_RESID` (`FSOURCEBILLID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_sca_resourceabsorb_dapn definition
+
+CREATE TABLE `t_sca_resourceabsorb_dapn` (
+  `fid` bigint NOT NULL DEFAULT '0',
+  `fcreatetime` datetime DEFAULT NULL,
+  `fsourcebillid` bigint NOT NULL DEFAULT '0',
+  `fsourcebillno` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `forgid` bigint NOT NULL DEFAULT '0',
+  `fcreatorid` bigint NOT NULL DEFAULT '0',
+  `fbilltype` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`fid`),
+  KEY `IDXt_sca_resourceabsorb_DAPN_BINDEX` (`fsourcebillid`,`fbilltype`),
+  KEY `IDXt_sca_resourceabsorb_DAPN_T_BINDEX` (`fbilltype`,`forgid`,`fcreatetime`,`fsourcebillno`,`fcreatorid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_sca_resourceabsorb_dapw definition
+
+CREATE TABLE `t_sca_resourceabsorb_dapw` (
+  `fid` bigint NOT NULL DEFAULT '0',
+  `fcreatetime` datetime DEFAULT NULL,
+  `fsourcebillid` bigint NOT NULL DEFAULT '0',
+  `forgid` bigint NOT NULL DEFAULT '0',
+  `fbilltype` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `foper` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`fid`),
+  KEY `IDXt_sca_resourceabsorb_DAPW_WINDEX` (`fsourcebillid`,`fbilltype`,`foper`),
+  KEY `IDXt_sca_resourceabsorb_DAPW_T_WINDEX` (`fsourcebillid`,`fbilltype`,`foper`,`forgid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_sca_resourceabsorbentry definition
+
+CREATE TABLE `t_sca_resourceabsorbentry` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FENTRYID` bigint NOT NULL DEFAULT '0',
+  `FSEQ` bigint NOT NULL DEFAULT '0',
+  `FELEMENTID` bigint NOT NULL DEFAULT '0',
+  `FSUBELEMENTID` bigint NOT NULL DEFAULT '0',
+  `FAMOUNT` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FBASEUNITID` bigint NOT NULL DEFAULT '0',
+  `FUNITPRICE` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FQTY` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  PRIMARY KEY (`FENTRYID`),
+  KEY `IDX_SCA_RESOURCEABSORBENTRY` (`FID`,`FELEMENTID`,`FSUBELEMENTID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_sca_resourceuse definition
+
+CREATE TABLE `t_sca_resourceuse` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FBILLNO` varchar(60) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FBILLSTATUS` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FCREATORID` bigint NOT NULL DEFAULT '0',
+  `FMODIFIERID` bigint NOT NULL DEFAULT '0',
+  `FAUDITORID` bigint NOT NULL DEFAULT '0',
+  `FAUDITDATE` datetime DEFAULT NULL,
+  `FMODIFYTIME` datetime DEFAULT NULL,
+  `FCREATETIME` datetime DEFAULT NULL,
+  `FORGID` bigint NOT NULL DEFAULT '0',
+  `FBIZDATE` datetime DEFAULT NULL,
+  `FCOSTCENTERID` bigint NOT NULL DEFAULT '0',
+  `FRESOURCEID` bigint NOT NULL DEFAULT '0',
+  `FREMARK` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FSOURCE` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FSRCBILLID` bigint NOT NULL DEFAULT '0',
+  `FAPPNUM` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FMANUORGID` bigint NOT NULL DEFAULT '0',
+  `FBOOKDATE` datetime DEFAULT NULL,
+  `FPRICEDATE` datetime DEFAULT NULL,
+  `FCOLLCONFIGID` bigint NOT NULL DEFAULT '0',
+  `FSRCBILLTYPE` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FVOUCHERTYPE` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FWORKCENTERID` bigint NOT NULL DEFAULT '0',
+  `FNSRCAUDITDATE` datetime DEFAULT NULL,
+  `FSRCENTRYID` bigint NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FID`),
+  KEY `INDEX_SCA_RESOURCEUSE` (`FORGID`,`FCOSTCENTERID`),
+  KEY `IDX_RESOURCEUSE_COSTC` (`FCOSTCENTERID`),
+  KEY `IDX_RESOURCEUSE_REID` (`FRESOURCEID`),
+  KEY `IDX_SCA_RESOURCE_BILLNO` (`FBILLNO`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_sca_resourceuse_l definition
+
+CREATE TABLE `t_sca_resourceuse_l` (
+  `FPKID` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FLOCALEID` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FREMARK` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`FPKID`),
+  KEY `IDX_SCA_RESOURCEUSE_L` (`FID`,`FLOCALEID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_sca_resourceuseentry definition
+
+CREATE TABLE `t_sca_resourceuseentry` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FENTRYID` bigint NOT NULL DEFAULT '0',
+  `FSEQ` bigint NOT NULL DEFAULT '0',
+  `FWORKHOURID` bigint NOT NULL DEFAULT '0',
+  `FFACTHOUR` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FFACTUSE` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FFACTBATCH` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FCOSTOBJECTID` bigint NOT NULL DEFAULT '0',
+  `FMATERIALID` bigint NOT NULL DEFAULT '0',
+  `FAUXPTYID` bigint NOT NULL DEFAULT '0',
+  `FVERSIONID` bigint NOT NULL DEFAULT '0',
+  `FOPRAID` bigint NOT NULL DEFAULT '0',
+  `FDESCRIPTION` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`FENTRYID`),
+  KEY `INDEX_SCA_RESOURCEENTRY` (`FID`,`FCOSTOBJECTID`),
+  KEY `IDX_REUSEENTRY_COSTOBJ` (`FCOSTOBJECTID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_sca_salorderstdcalclog definition
+
+CREATE TABLE `t_sca_salorderstdcalclog` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FORGID` bigint NOT NULL DEFAULT '0',
+  `FMANUORGID` bigint NOT NULL DEFAULT '0',
+  `FCOSTTYPEID` bigint NOT NULL DEFAULT '0',
+  `FSYNCDATE` datetime DEFAULT NULL,
+  `FSALORDERNO` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FSALORDERSEQ` bigint NOT NULL DEFAULT '0',
+  `FSALORDERENTRYID` bigint NOT NULL DEFAULT '0',
+  `FSALORDERAUDITTIME` datetime DEFAULT NULL,
+  `FMATERIALID` bigint NOT NULL DEFAULT '0',
+  `FCONFIGUREDCODEID` bigint NOT NULL DEFAULT '0',
+  `FTRACKNUMBERID` bigint NOT NULL DEFAULT '0',
+  `FSTATUS` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FEXECLOG` varchar(2000) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FLASTEXECDATE` datetime DEFAULT NULL,
+  `FOPERDATE` datetime DEFAULT NULL,
+  `FOPERATORID` bigint NOT NULL DEFAULT '0',
+  `FTRYTIMES` int NOT NULL DEFAULT '0',
+  `FOPERATIONTYPE` varchar(10) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FTARGETCOSTTYPEID` bigint NOT NULL DEFAULT '0',
+  `FAUXPTYID` bigint NOT NULL DEFAULT '0',
+  `FUPDATESTATU` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FUPDATELOG` varchar(2000) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FBILLTYPEID` bigint NOT NULL DEFAULT '0',
+  `FSRCBILL` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FCALCTASKID` bigint NOT NULL DEFAULT '0',
+  `FUPDATETASKID` bigint NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FID`),
+  KEY `IDX_STDCOSTCALCLOG_SYNCDATE` (`FSYNCDATE`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_sca_schemelog definition
+
+CREATE TABLE `t_sca_schemelog` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FSCHEMEID` bigint NOT NULL DEFAULT '0',
+  `FSTARTTIME` datetime DEFAULT NULL,
+  `FENDTIME` datetime DEFAULT NULL,
+  `FEXECUTERESULT` char(1) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '1',
+  `FAPPNUM` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FEXECUTORID` bigint NOT NULL DEFAULT '0',
+  `FEXECUTETYPE` varchar(60) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FEXECUTETIME` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`FID`),
+  KEY `IDX_SCA_SCHEMELOG_SCHEMEID` (`FSCHEMEID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_sca_schemelogentry definition
+
+CREATE TABLE `t_sca_schemelogentry` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FENTRYID` bigint NOT NULL DEFAULT '0',
+  `FSEQ` bigint NOT NULL DEFAULT '0',
+  `FBUSINESSNAME` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FOPERNAME` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FORGID` bigint NOT NULL DEFAULT '0',
+  `FCOSTCENTERID` bigint NOT NULL DEFAULT '0',
+  `FCOSTACCOUNTID` bigint NOT NULL DEFAULT '0',
+  `FSOURCESYS` bigint NOT NULL DEFAULT '0',
+  `FSOURCEENTITY` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FSOURCEBILLNO` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FDETAIL` varchar(1000) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`FENTRYID`),
+  KEY `IDX_SCA_SCHEMELOGENTRY` (`FID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_sca_schemelogsubentry definition
+
+CREATE TABLE `t_sca_schemelogsubentry` (
+  `FENTRYID` bigint NOT NULL DEFAULT '0',
+  `FSEQ` bigint NOT NULL DEFAULT '0',
+  `FDETAILID` bigint NOT NULL DEFAULT '0',
+  `FORGID` bigint NOT NULL DEFAULT '0',
+  `FCOSTCENTERID` bigint NOT NULL DEFAULT '0',
+  `FCOSTACCOUNTID` bigint NOT NULL DEFAULT '0',
+  `FSUCCESSQTY` int NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FDETAILID`),
+  KEY `IDX_SCA_SCHEMELOGSUBENTRY` (`FENTRYID`,`FORGID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_sca_startstdcost definition
+
+CREATE TABLE `t_sca_startstdcost` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FBILLNO` varchar(60) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FBILLSTATUS` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FCREATORID` bigint NOT NULL DEFAULT '0',
+  `FMODIFIERID` bigint NOT NULL DEFAULT '0',
+  `FAUDITORID` bigint NOT NULL DEFAULT '0',
+  `FAUDITDATE` datetime DEFAULT NULL,
+  `FMODIFYTIME` datetime DEFAULT NULL,
+  `FCREATETIME` datetime DEFAULT NULL,
+  `FORGID` bigint NOT NULL DEFAULT '0',
+  `FAPPNUM` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FCOSTTYPEID` bigint NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FID`),
+  KEY `IDX_SCA_STARTSTDCOST` (`FBILLSTATUS`,`FORGID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_sca_startstdcostentry definition
+
+CREATE TABLE `t_sca_startstdcostentry` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FENTRYID` bigint NOT NULL DEFAULT '0',
+  `FSEQ` bigint NOT NULL DEFAULT '0',
+  `FCOSTACCOUNTID` bigint NOT NULL DEFAULT '0',
+  `FSTARTPERIODID` bigint NOT NULL DEFAULT '0',
+  `FISENABLED` char(1) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  `FISINIT` char(1) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  `FCALPOLICYID` bigint NOT NULL DEFAULT '0',
+  `FCOSTTYPEID` bigint NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FENTRYID`),
+  KEY `IDX_SCA_STARTSTDCOSTENTRY` (`FCOSTACCOUNTID`,`FCALPOLICYID`),
+  KEY `IDX_SCA_STARTSTDCOSTENTRY2` (`FID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_sca_structuresheet_dtl definition
+
+CREATE TABLE `t_sca_structuresheet_dtl` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FENTRYID` bigint NOT NULL DEFAULT '0',
+  `FSEQ` bigint NOT NULL DEFAULT '0',
+  `FSUBELEMENTID` bigint NOT NULL DEFAULT '0',
+  `FELEMENTID` bigint NOT NULL DEFAULT '0',
+  `FSUBJECTORMATERIEL` varchar(60) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FMATERIALID` bigint NOT NULL DEFAULT '0',
+  `FSONVERSIONID` bigint NOT NULL DEFAULT '0',
+  `FSONAUXPROPID` bigint NOT NULL DEFAULT '0',
+  `FCVERTVKPD` varchar(60) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FUNITID` bigint NOT NULL DEFAULT '0',
+  `FSONNUM` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FSUNAMT` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FHIDEMATERIELID` bigint NOT NULL DEFAULT '0',
+  `FMATERIALNAME` varchar(60) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FMODEL` varchar(60) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`FENTRYID`),
+  KEY `IDX_SCA_STRUCTURESHEET_DTL` (`FSUBELEMENTID`,`FID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_sca_subdiffresultentry definition
+
+CREATE TABLE `t_sca_subdiffresultentry` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FENTRYID` bigint NOT NULL DEFAULT '0',
+  `FSEQ` bigint NOT NULL DEFAULT '0',
+  `FRELACOSTOBJECTID2` bigint NOT NULL DEFAULT '0',
+  `FMATERIALID2` bigint NOT NULL DEFAULT '0',
+  `FAUXPTYID2` bigint NOT NULL DEFAULT '0',
+  `FMATVERSIONID2` bigint NOT NULL DEFAULT '0',
+  `FELEMENTID2` bigint NOT NULL DEFAULT '0',
+  `FSUBELEMENTID2` bigint NOT NULL DEFAULT '0',
+  `FBASEUNITID2` bigint NOT NULL DEFAULT '0',
+  `FSTARTDIFFQTY2` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FSTARTMADEDIFF2` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FSTARTMADEUPAMT2` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FSTARTUNJOINDIFFAMT2` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FSTARTSTDCOSTUPAMT2` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FSTARTORDDIFF2` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FSTARTINVOICEDIFF2` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FSTARTFEEDIFF2` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FSTARTOTHERDIFF2` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FSTARTFALLDIFF2` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FCURRQTY2` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FCURRSTDCOST2` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FCURRAMT2` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FCURRDIFFQTY2` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FCURRMADEDIFF2` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FCURRMADEUPAMT2` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FCURRUNJOINDIFFAMT2` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FCURRSTDCOSTUPAMT2` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FCURRORDDIFF2` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FCURRINVOICEDIFF2` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FCURRFEEDIFF2` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FCURROTHERDIFF2` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FCURRFALLDIFF2` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FCURRACTCOSTUPAMT2` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FCOMPDIFFQTY2` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FCOMPMADEUPAMT2` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FCOMPUNJOINDIFFAMT2` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FCOMPSTDCOSTUPAMT2` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FCOMPORDDIFF2` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FCOMPINVOICEDIFF2` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FCOMPFEEDIFF2` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FCOMPOTHERDIFF2` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FCOMPMADEDIFF2` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FCOMPFALLDIFF2` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FENDDIFFQTY2` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FENDMADEDIFF2` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FENDMADEUPAMT2` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FENDUNJOINDIFFAMT2` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FENDSTDCOSTUPAMT2` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FENDORDDIFF2` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FENDINVOICEDIFF2` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FENDFEEDIFF2` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FENDOTHERDIFF2` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FENDFALLDIFF2` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FTOTALDIFFQTY2` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FTOTALMADEDIFF2` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FTOTALMADEUPAMT2` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FTOTALUNJOINDIFFAMT2` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FTOTALSTDCOSTUPAMT2` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FTOTALORDDIFF2` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FTOTALINVOICEDIFF2` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FTOTALFEEDIFF2` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FTOTALOTHERDIFF2` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FTOTALFALLDIFF2` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FKEYCOL2ID` bigint NOT NULL DEFAULT '0',
+  `FKEYCOL2` varchar(200) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FCONFIGUREDCODEID2` bigint NOT NULL DEFAULT '0',
+  `FTRACKNUMBERID2` bigint NOT NULL DEFAULT '0',
+  `FPROJECTID2` bigint NOT NULL DEFAULT '0',
+  `FLOT2` varchar(80) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FTYPE2` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FSTARTQTY2` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FSTARTSTDCOST2` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FSTARTAMT2` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FSTARTACTCOSTUPAMT2` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FCOMPQTY2` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FCOMPSTDCOST2` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FCOMPAMT2` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FCOMPACTCOSTUPAMT2` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FENDQTY2` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FENDSTDCOST2` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FENDAMT2` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FENDACTCOSTUPAMT2` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FTOTALQTY2` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FTOTALSTDCOST2` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FTOTALAMT2` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FTOTALACTCOSTUPAMT2` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FSTARTRESERVEDIFFX2` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FSTARTRESERVEDIFFW2` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FSTARTRESERVEDIFFY2` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FCURRRESERVEDIFFX2` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FCURRRESERVEDIFFW2` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FCURRRESERVEDIFFY2` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FCOMPRESERVEDIFFX2` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FCOMPRESERVEDIFFW2` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FCOMPRESERVEDIFFY2` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FENDRESERVEDIFFX2` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FENDRESERVEDIFFW2` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FENDRESERVEDIFFY2` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FTOTALRESERVEDIFFX2` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FTOTALRESERVEDIFFW2` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FTOTALRESERVEDIFFY2` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  PRIMARY KEY (`FENTRYID`),
+  KEY `IDX_SCA_SUBDIFFRESULTENTRY` (`FID`),
+  KEY `IDX_SCA_SUBDIFFRESULTE_OBJ` (`FRELACOSTOBJECTID2`),
+  KEY `IDX_SCA_SUBDIFFRESULTE_TP` (`FTYPE2`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_sca_submatscale definition
+
+CREATE TABLE `t_sca_submatscale` (
+  `FENTRYID` bigint NOT NULL DEFAULT '0',
+  `FDETAILID` bigint NOT NULL DEFAULT '0',
+  `FSEQ` bigint NOT NULL DEFAULT '0',
+  `FLASTMATERIALID` bigint NOT NULL DEFAULT '0',
+  `FLASTVERSIONID` bigint NOT NULL DEFAULT '0',
+  `FLASTAUXPTYID` bigint NOT NULL DEFAULT '0',
+  `FWEIGHTVALUE` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  PRIMARY KEY (`FDETAILID`),
+  KEY `IDX_SCA_SUBMATSCALE` (`FENTRYID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_sca_taskconfig definition
+
+CREATE TABLE `t_sca_taskconfig` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FNUMBER` varchar(80) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FSTATUS` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FCREATORID` bigint NOT NULL DEFAULT '0',
+  `FMODIFIERID` bigint NOT NULL DEFAULT '0',
+  `FENABLE` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FCREATETIME` datetime DEFAULT NULL,
+  `FMODIFYTIME` datetime DEFAULT NULL,
+  `FMASTERID` bigint NOT NULL DEFAULT '0',
+  `FNEXTENTITY` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FCLASS` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FMETHOD` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`FID`),
+  KEY `INDEX_SCA_TASKCONFIG` (`FNEXTENTITY`,`FCLASS`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_sca_taskconfig_l definition
+
+CREATE TABLE `t_sca_taskconfig_l` (
+  `FPKID` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FLOCALEID` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FNAME` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`FPKID`),
+  KEY `INDEX_SCA_TASKCONFIG_L` (`FID`,`FLOCALEID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_sca_taskconfig_r3 definition
+
+CREATE TABLE `t_sca_taskconfig_r3` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FRefStatus` char(1) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_sca_taskconfigentry definition
+
+CREATE TABLE `t_sca_taskconfigentry` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FENTRYID` bigint NOT NULL DEFAULT '0',
+  `FSEQ` bigint NOT NULL DEFAULT '0',
+  `FSUBNEXTENTITY` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FSUBSORT` bigint NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FENTRYID`),
+  KEY `INDEX_SCA_TASKCONFIGENTRY` (`FID`,`FSUBNEXTENTITY`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_sca_taskconfigentry_l definition
+
+CREATE TABLE `t_sca_taskconfigentry_l` (
+  `FPKID` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FENTRYID` bigint NOT NULL DEFAULT '0',
+  `FLOCALEID` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FSUBNAME` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`FPKID`),
+  KEY `INDEX_SCA_TASKCONFIGENTRY_L` (`FLOCALEID`,`FSUBNAME`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_sca_taskrecord definition
+
+CREATE TABLE `t_sca_taskrecord` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FBILLSTATUS` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FTASKNAME` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FSTARTTIME` datetime DEFAULT NULL,
+  `FTIME` bigint NOT NULL DEFAULT '0',
+  `FSTATUS` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FEXECUTORID` bigint NOT NULL DEFAULT '0',
+  `FPROGRESS` bigint NOT NULL DEFAULT '0',
+  `FNEXTPAGEPARA` varchar(1000) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FNEXTPAGEPARA_TAG` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `FNEXTPAGE` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FTASKCONFIGID` bigint NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FID`),
+  KEY `IDX_SCA_TASKRECORD` (`FSTARTTIME`,`FEXECUTORID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_sca_taskrecordentry definition
+
+CREATE TABLE `t_sca_taskrecordentry` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FENTRYID` bigint NOT NULL DEFAULT '0',
+  `FSEQ` bigint NOT NULL DEFAULT '0',
+  `FSUBNAME` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FSUBSTARTTIME` datetime DEFAULT NULL,
+  `FSUBTIME` bigint NOT NULL DEFAULT '0',
+  `FSUBSTATUS` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FDETAIL` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FREMARK` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FSUBPARAM` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FSUBPARAM_TAG` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `FSUBNEXTENTITY` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FDETAILCONFIGID` bigint NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FENTRYID`),
+  KEY `IDX_SCA_TASKRECORDENTRY` (`FID`,`FSUBSTARTTIME`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_sca_totalmfgfee definition
+
+CREATE TABLE `t_sca_totalmfgfee` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FBILLNO` varchar(60) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FBILLSTATUS` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FCREATORID` bigint NOT NULL DEFAULT '0',
+  `FMODIFIERID` bigint NOT NULL DEFAULT '0',
+  `FAUDITORID` bigint NOT NULL DEFAULT '0',
+  `FAUDITDATE` datetime DEFAULT NULL,
+  `FMODIFYTIME` datetime DEFAULT NULL,
+  `FCREATETIME` datetime DEFAULT NULL,
+  `FORGID` bigint NOT NULL DEFAULT '0',
+  `FPERIODID` bigint NOT NULL DEFAULT '0',
+  `FCOSTACCOUNTID` bigint NOT NULL DEFAULT '0',
+  `FCOSTCENTERID` bigint NOT NULL DEFAULT '0',
+  `FCURRENCYID` bigint NOT NULL DEFAULT '0',
+  `FCOSTOBJECTID` bigint NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FID`),
+  KEY `IDX_SCA_TOTALMFGFEE` (`FORGID`,`FPERIODID`,`FCOSTACCOUNTID`,`FCOSTCENTERID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_sca_totalmfgfeeentry definition
+
+CREATE TABLE `t_sca_totalmfgfeeentry` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FENTRYID` bigint NOT NULL DEFAULT '0',
+  `FSEQ` bigint NOT NULL DEFAULT '0',
+  `FSUBELEMENTID` bigint NOT NULL DEFAULT '0',
+  `FTOTALPRODUCE` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FELEMENTID` bigint NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FENTRYID`),
+  KEY `IDX_SCA_TOTALMFGFEEENTRY` (`FSUBELEMENTID`,`FELEMENTID`),
+  KEY `IDX_SCA_TOTALMFGFEEENTRY2` (`FID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_sca_unabsorbdiff definition
+
+CREATE TABLE `t_sca_unabsorbdiff` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FBILLNO` varchar(60) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FBILLSTATUS` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FCREATORID` bigint NOT NULL DEFAULT '0',
+  `FMODIFIERID` bigint NOT NULL DEFAULT '0',
+  `FAUDITORID` bigint NOT NULL DEFAULT '0',
+  `FAUDITDATE` datetime DEFAULT NULL,
+  `FMODIFYTIME` datetime DEFAULT NULL,
+  `FCREATETIME` datetime DEFAULT NULL,
+  `FORGID` bigint NOT NULL DEFAULT '0',
+  `FPERIODID` bigint NOT NULL DEFAULT '0',
+  `FCOSTACCOUNTID` bigint NOT NULL DEFAULT '0',
+  `FCOSTCENTERID` bigint NOT NULL DEFAULT '0',
+  `FDIFFTYPE` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  `FDIFFTOTAL` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FVOUCHERNUM` varchar(60) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FCARRYNUMID` varchar(60) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FCURRENCYID` bigint NOT NULL DEFAULT '0',
+  `FCOSTOBJECTID` bigint NOT NULL DEFAULT '0',
+  `FADJUSTBILL` bigint NOT NULL DEFAULT '0',
+  `FADJUSTNUM` varchar(60) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FMANUORGID` bigint NOT NULL DEFAULT '0',
+  `FPROALLOCGEN` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FID`),
+  KEY `INDEX_SCA_UNABSORBDIFF` (`FORGID`,`FPERIODID`,`FCOSTACCOUNTID`,`FCOSTCENTERID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_sca_unabsorbdiff_dapn definition
+
+CREATE TABLE `t_sca_unabsorbdiff_dapn` (
+  `fid` bigint NOT NULL DEFAULT '0',
+  `fcreatetime` datetime DEFAULT NULL,
+  `fsourcebillid` bigint NOT NULL DEFAULT '0',
+  `fsourcebillno` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `forgid` bigint NOT NULL DEFAULT '0',
+  `fcreatorid` bigint NOT NULL DEFAULT '0',
+  `fbilltype` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`fid`),
+  KEY `IDXt_sca_unabsorbdiff_DAPN_BINDEX` (`fsourcebillid`,`fbilltype`),
+  KEY `IDXt_sca_unabsorbdiff_DAPN_T_BINDEX` (`fbilltype`,`forgid`,`fcreatetime`,`fsourcebillno`,`fcreatorid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_sca_unabsorbdiff_dapw definition
+
+CREATE TABLE `t_sca_unabsorbdiff_dapw` (
+  `fid` bigint NOT NULL DEFAULT '0',
+  `fcreatetime` datetime DEFAULT NULL,
+  `fsourcebillid` bigint NOT NULL DEFAULT '0',
+  `forgid` bigint NOT NULL DEFAULT '0',
+  `fbilltype` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `foper` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`fid`),
+  KEY `IDXt_sca_unabsorbdiff_DAPW_WINDEX` (`fsourcebillid`,`fbilltype`,`foper`),
+  KEY `IDXt_sca_unabsorbdiff_DAPW_T_WINDEX` (`fsourcebillid`,`fbilltype`,`foper`,`forgid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_sca_unabsorbdiffentry definition
+
+CREATE TABLE `t_sca_unabsorbdiffentry` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FENTRYID` bigint NOT NULL DEFAULT '0',
+  `FSEQ` bigint NOT NULL DEFAULT '0',
+  `FELEMENTID` bigint NOT NULL DEFAULT '0',
+  `FSUBELEMENTID` bigint NOT NULL DEFAULT '0',
+  `FAMOUNT` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  PRIMARY KEY (`FENTRYID`),
+  KEY `IDX_SCA_UNABSORBDIFFENTRY` (`FELEMENTID`,`FSUBELEMENTID`),
+  KEY `IDX_SCA_UNABSORBDIFFENTRY2` (`FID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_sca_unabsorbentry definition
+
+CREATE TABLE `t_sca_unabsorbentry` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FENTRYID` bigint NOT NULL DEFAULT '0',
+  `FSEQ` bigint NOT NULL DEFAULT '0',
+  `FELEMENTID` bigint NOT NULL DEFAULT '0',
+  `FSUBELEMENTID` bigint NOT NULL DEFAULT '0',
+  `FPDSTARTQTY` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FPDSTARTAMT` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FPDCURRQTY` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FPDCURRAMT` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FPDENDQTY` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FPDENDAMT` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FPDDIFFQTY` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FPDDIFFAMT` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FTOTALDIFFQTY` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FTOTALDIFFAMT` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FSOURCEINFO` varchar(2000) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FTYPE` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FMFGOBJID` bigint NOT NULL DEFAULT '0',
+  `FMFGPROTYPE` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`FENTRYID`),
+  KEY `IDX_SCA_UNABSORBENTRY` (`FID`),
+  KEY `IDX_SCA_UNABSORBENTRY_OBJ` (`FMFGOBJID`),
+  KEY `IDX_SCA_UNABSORBENTRY_TP` (`FTYPE`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_sca_userfinishoffset definition
+
+CREATE TABLE `t_sca_userfinishoffset` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FUSERID` bigint NOT NULL DEFAULT '0',
+  `FDIFFTYPE` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '1',
+  `FLEFTOFFSET` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FRIGHTOFFSET` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FOFFSETRATE` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  PRIMARY KEY (`FID`),
+  KEY `INDEX_SCA_USERFINISHOFFSET` (`FUSERID`,`FDIFFTYPE`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_sca_userfinishoffset_r3 definition
+
+CREATE TABLE `t_sca_userfinishoffset_r3` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FRefStatus` char(1) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_sca_wipcostinit definition
+
+CREATE TABLE `t_sca_wipcostinit` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FBILLNO` varchar(60) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FBILLSTATUS` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FCREATORID` bigint NOT NULL DEFAULT '0',
+  `FMODIFIERID` bigint NOT NULL DEFAULT '0',
+  `FAUDITORID` bigint NOT NULL DEFAULT '0',
+  `FAUDITDATE` datetime DEFAULT NULL,
+  `FMODIFYTIME` datetime DEFAULT NULL,
+  `FCREATETIME` datetime DEFAULT NULL,
+  `FORGID` bigint NOT NULL DEFAULT '0',
+  `FMATERIALID` bigint NOT NULL DEFAULT '0',
+  `FAUXPTYID` bigint NOT NULL DEFAULT '0',
+  `FCOSTCENTERID` bigint NOT NULL DEFAULT '0',
+  `FCOSTOBJECTID` bigint NOT NULL DEFAULT '0',
+  `FCURRENCYID` bigint NOT NULL DEFAULT '0',
+  `FCOSTACCOUNTID` bigint NOT NULL DEFAULT '0',
+  `FINITAMT` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FTOTALDIFFAMT` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FBASEUNITID` bigint NOT NULL DEFAULT '0',
+  `FINITQTY` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FCOSTTYPEID` bigint NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FID`),
+  KEY `IDX_SCA_WIPCOSTINIT` (`FORGID`,`FCOSTCENTERID`,`FCOSTOBJECTID`),
+  KEY `IDX_SWIPCOSTI_COSTOBJ` (`FCOSTOBJECTID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_sca_wipcostinit_l definition
+
+CREATE TABLE `t_sca_wipcostinit_l` (
+  `FPKID` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FLOCALEID` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FREMARK` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`FPKID`),
+  KEY `IDX_SCA_WIPCOSTINIT_L` (`FID`,`FLOCALEID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_sca_wipcostinitentry definition
+
+CREATE TABLE `t_sca_wipcostinitentry` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FENTRYID` bigint NOT NULL DEFAULT '0',
+  `FSEQ` bigint NOT NULL DEFAULT '0',
+  `FSTDAMT` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FREALAMT` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FDIFFAMT` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FELEMENTID` bigint NOT NULL DEFAULT '0',
+  `FSUBELEMENTID` bigint NOT NULL DEFAULT '0',
+  `FSTDCOST` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FSUBMATID` bigint NOT NULL DEFAULT '0',
+  `FSUBAUXPTYID` bigint NOT NULL DEFAULT '0',
+  `FSUBBOMVERSIONID` bigint NOT NULL DEFAULT '0',
+  `FSTDQTY` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FSTDPRICE` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FREALQTY` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FDATATYPE` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FRESOURCEID` bigint NOT NULL DEFAULT '0',
+  `FCALCBASIS` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FCOSTLEVEL` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`FENTRYID`),
+  KEY `IDX_SCA_WIPCOSTINITENTRY` (`FELEMENTID`,`FSUBELEMENTID`),
+  KEY `IDX_SCA_WIPCOSTINITENTRY2` (`FID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_sca_workqtycollec definition
+
+CREATE TABLE `t_sca_workqtycollec` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FBILLNO` varchar(60) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FBILLSTATUS` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FCREATORID` bigint NOT NULL DEFAULT '0',
+  `FMODIFIERID` bigint NOT NULL DEFAULT '0',
+  `FAUDITORID` bigint NOT NULL DEFAULT '0',
+  `FAUDITDATE` datetime DEFAULT NULL,
+  `FMODIFYTIME` datetime DEFAULT NULL,
+  `FCREATETIME` datetime DEFAULT NULL,
+  `FORGID` bigint NOT NULL DEFAULT '0',
+  `FBIZDATE` datetime DEFAULT NULL,
+  `FCOSTCENTERID` bigint NOT NULL DEFAULT '0',
+  `FWORKACTIVITYID` bigint NOT NULL DEFAULT '0',
+  `FCOSTDRIVERID` bigint NOT NULL DEFAULT '0',
+  `FQTY` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  `FBASEUNITID` bigint NOT NULL DEFAULT '0',
+  `FAPPNUM` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FMANUORGID` bigint NOT NULL DEFAULT '0',
+  `FSOURCETYPE` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FCOLLCONFIGID` bigint NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FID`),
+  KEY `IDX_SCA_WORKQTYCOLLEC` (`FORGID`,`FBIZDATE`,`FCOSTCENTERID`),
+  KEY `IDX_WORKQTYCOL_COSTC` (`FCOSTCENTERID`),
+  KEY `IDX_WORKQTYCOL_WORKA` (`FWORKACTIVITYID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_sca_workqtycollec_l definition
+
+CREATE TABLE `t_sca_workqtycollec_l` (
+  `FPKID` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FLOCALEID` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FREMARK` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`FPKID`),
+  KEY `IDX_SCA_WORKQTYCOLLEC_L` (`FID`,`FLOCALEID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.t_sca_workqtycollecentry definition
+
+CREATE TABLE `t_sca_workqtycollecentry` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FENTRYID` bigint NOT NULL DEFAULT '0',
+  `FSEQ` bigint NOT NULL DEFAULT '0',
+  `FBENEFCOSTCENTERID` bigint NOT NULL DEFAULT '0',
+  `FCOSTOBJECTID` bigint NOT NULL DEFAULT '0',
+  `FENTRYQTY` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  PRIMARY KEY (`FENTRYID`),
+  KEY `IDX_SCA_WORKQTYCOLLECENTRY` (`FBENEFCOSTCENTERID`,`FCOSTOBJECTID`),
+  KEY `IDX_SCA_WORKQTYCOLLECENTRY2` (`FID`),
+  KEY `IDEX_WQCOLENTRY_COSTOBJ` (`FCOSTOBJECTID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.temp_abmlpcebfmkg0_4 definition
+
+CREATE TABLE `temp_abmlpcebfmkg0_4` (
+  `FID` bigint DEFAULT NULL,
+  KEY `IX_FID` (`FID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.temp_abmlpcf4ufi80_4 definition
+
+CREATE TABLE `temp_abmlpcf4ufi80_4` (
+  `FID` bigint DEFAULT NULL,
+  KEY `IX_FID` (`FID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.temp_abmlpcfrli8e8_4 definition
+
+CREATE TABLE `temp_abmlpcfrli8e8_4` (
+  `FID` bigint DEFAULT NULL,
+  KEY `IX_FID` (`FID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.temp_abmlpcg6fwhkw_4 definition
+
+CREATE TABLE `temp_abmlpcg6fwhkw_4` (
+  `FID` bigint DEFAULT NULL,
+  KEY `IX_FID` (`FID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.temp_abtbscvlaf8qo_a definition
+
+CREATE TABLE `temp_abtbscvlaf8qo_a` (
+  `FID` bigint DEFAULT NULL,
+  KEY `IX_FID` (`FID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.temp_abtbscwbsbzeo_a definition
+
+CREATE TABLE `temp_abtbscwbsbzeo_a` (
+  `FID` bigint DEFAULT NULL,
+  KEY `IX_FID` (`FID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.temp_abtbscwv2k8w0_a definition
+
+CREATE TABLE `temp_abtbscwv2k8w0_a` (
+  `FID` bigint DEFAULT NULL,
+  KEY `IX_FID` (`FID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.temp_abtbscxjhk16o_a definition
+
+CREATE TABLE `temp_abtbscxjhk16o_a` (
+  `FID` bigint DEFAULT NULL,
+  KEY `IX_FID` (`FID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.temp_bbmlpcgq03vuo_4 definition
+
+CREATE TABLE `temp_bbmlpcgq03vuo_4` (
+  `FID` varchar(40) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  KEY `IX_FID` (`FID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.temp_bbmlpchi0yups_4 definition
+
+CREATE TABLE `temp_bbmlpchi0yups_4` (
+  `FID` varchar(40) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  KEY `IX_FID` (`FID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.temp_bbmlpci4d26tc_4 definition
+
+CREATE TABLE `temp_bbmlpci4d26tc_4` (
+  `FID` varchar(40) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  KEY `IX_FID` (`FID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.temp_bbmlpcipb7if4_4 definition
+
+CREATE TABLE `temp_bbmlpcipb7if4_4` (
+  `FID` varchar(40) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  KEY `IX_FID` (`FID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.temp_bbtbscy4kpnnk_a definition
+
+CREATE TABLE `temp_bbtbscy4kpnnk_a` (
+  `FID` varchar(40) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  KEY `IX_FID` (`FID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.temp_bbtbscyx5jcow_a definition
+
+CREATE TABLE `temp_bbtbscyx5jcow_a` (
+  `FID` varchar(40) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  KEY `IX_FID` (`FID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.temp_bbtbsczmjiolc_a definition
+
+CREATE TABLE `temp_bbtbsczmjiolc_a` (
+  `FID` varchar(40) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  KEY `IX_FID` (`FID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.temp_bbtbsd01xvny8_a definition
+
+CREATE TABLE `temp_bbtbsd01xvny8_a` (
+  `FID` varchar(40) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  KEY `IX_FID` (`FID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.temp_cbmlpcjaecoao_4 definition
+
+CREATE TABLE `temp_cbmlpcjaecoao_4` (
+  `FID` varchar(80) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  KEY `IX_FID` (`FID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.temp_cbmlpck4357gg_4 definition
+
+CREATE TABLE `temp_cbmlpck4357gg_4` (
+  `FID` varchar(80) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  KEY `IX_FID` (`FID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.temp_cbmlpcko7bshs_4 definition
+
+CREATE TABLE `temp_cbmlpcko7bshs_4` (
+  `FID` varchar(80) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  KEY `IX_FID` (`FID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.temp_cbmlpcldgatj4_4 definition
+
+CREATE TABLE `temp_cbmlpcldgatj4_4` (
+  `FID` varchar(80) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  KEY `IX_FID` (`FID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.temp_cbtbsd0rgusjk_a definition
+
+CREATE TABLE `temp_cbtbsd0rgusjk_a` (
+  `FID` varchar(80) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  KEY `IX_FID` (`FID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.temp_cbtbsd1cyyubk_a definition
+
+CREATE TABLE `temp_cbtbsd1cyyubk_a` (
+  `FID` varchar(80) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  KEY `IX_FID` (`FID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.temp_cbtbsd1xi5a0w_a definition
+
+CREATE TABLE `temp_cbtbsd1xi5a0w_a` (
+  `FID` varchar(80) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  KEY `IX_FID` (`FID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_cal.temp_cbtbsd2g3dla8_a definition
+
+CREATE TABLE `temp_cbtbsd2g3dla8_a` (
+  `FID` varchar(80) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  KEY `IX_FID` (`FID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;

@@ -1,0 +1,1565 @@
+USE crrc_bdai;
+
+-- crrc_bdai.t_fsa_datacolcombfields definition
+
+CREATE TABLE `t_fsa_datacolcombfields` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FENTRYID` bigint NOT NULL DEFAULT '0',
+  `FSEQ` int NOT NULL DEFAULT '0',
+  `FCOMBOFIELDFNAME` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `FCOMBOFIELDNUMBER` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `FDATATYPE` char(1) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `FCOMBINATIONID` bigint NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FENTRYID`) USING BTREE,
+  KEY `IDX_FSA_DATACOLCOMBFIELDS_1` (`FID`) USING BTREE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci ROW_FORMAT=DYNAMIC;
+
+
+-- crrc_bdai.t_fsa_datacolcombmappings definition
+
+CREATE TABLE `t_fsa_datacolcombmappings` (
+  `FENTRYID` bigint NOT NULL DEFAULT '0',
+  `FDETAILID` bigint NOT NULL DEFAULT '0',
+  `FSEQ` int NOT NULL DEFAULT '0',
+  `FSRCFIELDNAME` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FSRCFIELDNUMBER` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FDATATYPE` char(1) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `FSRCFIELDMEMNAME` varchar(500) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FSRCFIELDMEMNUMBER` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`FDETAILID`) USING BTREE,
+  KEY `IDX_FSA_DATACOLCOMBMAPPINGS_1` (`FSEQ`,`FSRCFIELDNUMBER`,`FSRCFIELDMEMNUMBER`) USING BTREE,
+  KEY `IDX_FSA_DATACOLCOMBMAPPINGS_2` (`FDATATYPE`) USING BTREE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci ROW_FORMAT=DYNAMIC;
+
+
+-- crrc_bdai.t_fsa_datacolfieldparam definition
+
+CREATE TABLE `t_fsa_datacolfieldparam` (
+  `FENTRYID` bigint NOT NULL DEFAULT '0',
+  `FDETAILID` bigint NOT NULL DEFAULT '0',
+  `FSEQ` int NOT NULL DEFAULT '0',
+  `FPARAMNUMBER` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FVALUE` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`FDETAILID`) USING BTREE,
+  KEY `IDX_FSA_DATACOLFIELDPARAM_1` (`FENTRYID`,`FPARAMNUMBER`) USING BTREE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci ROW_FORMAT=DYNAMIC;
+
+
+-- crrc_bdai.t_fsa_datacolfields definition
+
+CREATE TABLE `t_fsa_datacolfields` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FENTRYID` bigint NOT NULL DEFAULT '0',
+  `FSEQ` int NOT NULL DEFAULT '0',
+  `FFIELDCREATETYPE` char(1) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `FNAME` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FNUMBER` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FSRCNUMBER` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FDATATYPE` char(1) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `FDIMID` bigint NOT NULL DEFAULT '0',
+  `FDIMTYPE` char(1) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `FSRCNAME` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`FENTRYID`) USING BTREE,
+  KEY `IDX_FSA_DATACOLFIELDS_1` (`FID`,`FSRCNUMBER`) USING BTREE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci ROW_FORMAT=DYNAMIC;
+
+
+-- crrc_bdai.t_fsa_datacollection definition
+
+CREATE TABLE `t_fsa_datacollection` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FNUMBER` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FSTATUS` char(1) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `FCREATORID` bigint NOT NULL DEFAULT '0',
+  `FMODIFIERID` bigint NOT NULL DEFAULT '0',
+  `FENABLE` char(1) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `FCREATETIME` datetime DEFAULT NULL,
+  `FMODIFYTIME` datetime DEFAULT NULL,
+  `FMASTERID` bigint NOT NULL DEFAULT '0',
+  `FDESCRIPTION` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FDEFAULTFILTERING` char(1) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `FDATASRCTYPE` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FPARAMSRC` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FPARAMSRCNAME` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FPARAMSRC_TAG` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `FALLOWDIMNULL` char(1) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `FSUPERLONGDATA` char(1) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FID`) USING BTREE,
+  KEY `IDX_FSA_DATACOLLECTION_1` (`FENABLE`,`FDATASRCTYPE`) USING BTREE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci ROW_FORMAT=DYNAMIC;
+
+
+-- crrc_bdai.t_fsa_datacollection_l definition
+
+CREATE TABLE `t_fsa_datacollection_l` (
+  `FPKID` varchar(36) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FLOCALEID` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FNAME` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`FPKID`) USING BTREE,
+  KEY `IDX_FSA_DATACOLLECTION_L` (`FID`,`FLOCALEID`) USING BTREE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci ROW_FORMAT=DYNAMIC;
+
+
+-- crrc_bdai.t_fsa_datacollection_r3 definition
+
+CREATE TABLE `t_fsa_datacollection_r3` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FREFSTATUS` char(1) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  PRIMARY KEY (`FID`) USING BTREE,
+  KEY `IDX_FSA_DATACOLLECTION_R3` (`FREFSTATUS`) USING BTREE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci ROW_FORMAT=DYNAMIC;
+
+
+-- crrc_bdai.t_fsa_datacolsrcfilter definition
+
+CREATE TABLE `t_fsa_datacolsrcfilter` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FENTRYID` bigint NOT NULL DEFAULT '0',
+  `FSEQ` int NOT NULL DEFAULT '0',
+  `FFIELDNUMBER` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FVALUE` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FVALUENAME` varchar(500) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FFIELDNAME` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FFIELDDIMTYPE` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FFIELDTYPE` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`FENTRYID`) USING BTREE,
+  KEY `IDX_T_FSA_DATACOLSRCFILTER_1` (`FID`,`FFIELDNUMBER`) USING BTREE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci ROW_FORMAT=DYNAMIC;
+
+
+-- crrc_bdai.t_fsa_datacolsrcparams definition
+
+CREATE TABLE `t_fsa_datacolsrcparams` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FENTRYID` bigint NOT NULL DEFAULT '0',
+  `FSEQ` int NOT NULL DEFAULT '0',
+  `FPARAMNUMBER` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FVALUE` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`FENTRYID`) USING BTREE,
+  KEY `IDX_FSA_DATACOLSRCPARAMS_1` (`FID`,`FPARAMNUMBER`) USING BTREE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci ROW_FORMAT=DYNAMIC;
+
+
+-- crrc_bdai.t_fsa_dataversion definition
+
+CREATE TABLE `t_fsa_dataversion` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FSRCTYPE` varchar(2) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FVERSION` bigint NOT NULL DEFAULT '0',
+  `FREFPARAM` bigint NOT NULL DEFAULT '0',
+  `FTARGETENTITY` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FSTATUS` varchar(2) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FCREATORID` bigint NOT NULL DEFAULT '0',
+  `FCREATETIME` datetime DEFAULT NULL,
+  `FMODIFYTIME` datetime DEFAULT NULL,
+  PRIMARY KEY (`FID`) USING BTREE,
+  KEY `IDX_FSA_DATAVERSION_1` (`FREFPARAM`,`FVERSION`) USING BTREE,
+  KEY `IDX_FSA_DATAVERSION_2` (`FVERSION`) USING BTREE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci ROW_FORMAT=DYNAMIC;
+
+
+-- crrc_bdai.t_fsa_dstoryscheme definition
+
+CREATE TABLE `t_fsa_dstoryscheme` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FNUMBER` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FSTATUS` char(1) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `FCREATORID` bigint NOT NULL DEFAULT '0',
+  `FMODIFIERID` bigint NOT NULL DEFAULT '0',
+  `FENABLE` char(1) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `FCREATETIME` datetime DEFAULT NULL,
+  `FMODIFYTIME` datetime DEFAULT NULL,
+  `FMASTERID` bigint NOT NULL DEFAULT '0',
+  `FDESCRIPTION` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `FDATACOLLECTIONID` bigint NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FID`) USING BTREE,
+  KEY `IDX_FSA_DSTORYSCHEME` (`FNUMBER`) USING BTREE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci ROW_FORMAT=DYNAMIC;
+
+
+-- crrc_bdai.t_fsa_dstoryscheme_l definition
+
+CREATE TABLE `t_fsa_dstoryscheme_l` (
+  `FPKID` varchar(36) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FLOCALEID` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FNAME` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`FPKID`) USING BTREE,
+  KEY `IDX_FSA_DSTORYSCHEME_L` (`FID`,`FLOCALEID`) USING BTREE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci ROW_FORMAT=DYNAMIC;
+
+
+-- crrc_bdai.t_fsa_dstoryscheme_r3 definition
+
+CREATE TABLE `t_fsa_dstoryscheme_r3` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FREFSTATUS` char(1) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  PRIMARY KEY (`FID`) USING BTREE,
+  KEY `IDX_FSA_DSTORYSCHEME_R3` (`FREFSTATUS`) USING BTREE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci ROW_FORMAT=DYNAMIC;
+
+
+-- crrc_bdai.t_fsa_dstoryschemeent definition
+
+CREATE TABLE `t_fsa_dstoryschemeent` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FENTRYID` bigint NOT NULL DEFAULT '0',
+  `FSEQ` int NOT NULL DEFAULT '0',
+  `FDATASYNCPARAMID` bigint NOT NULL DEFAULT '0',
+  `FDISABLEVERSIONS` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT ' ',
+  `FDISABLEVERSIONS_TAG` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `FUSELATESTVERSION` char(1) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '1',
+  `FEXPORTALLDATA` char(1) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FENTRYID`) USING BTREE,
+  KEY `IDX_FSA_DSTORYSCHEMEENT` (`FID`) USING BTREE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci ROW_FORMAT=DYNAMIC;
+
+
+-- crrc_bdai.t_fsa_dsyncparam definition
+
+CREATE TABLE `t_fsa_dsyncparam` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FNUMBER` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FSTATUS` char(1) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `FCREATORID` bigint NOT NULL DEFAULT '0',
+  `FMODIFIERID` bigint NOT NULL DEFAULT '0',
+  `FENABLE` char(1) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `FCREATETIME` datetime DEFAULT NULL,
+  `FMODIFYTIME` datetime DEFAULT NULL,
+  `FMASTERID` bigint NOT NULL DEFAULT '0',
+  `FDESCRIPTION` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FDATACOLLECTIONID` bigint NOT NULL DEFAULT '0',
+  `FTABLENUMBER` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FTABLENAME` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FDATASRCTYPE` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FIGNOREDIMNULL` char(1) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `FAUTOCOMPLETE` char(1) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FID`) USING BTREE,
+  KEY `IDX_FSA_SYNCPARAM_1` (`FENABLE`,`FDATASRCTYPE`,`FNUMBER`) USING BTREE,
+  KEY `IDX_FSA_SYNCPARAM_2` (`FTABLENUMBER`,`FDATACOLLECTIONID`) USING BTREE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci ROW_FORMAT=DYNAMIC;
+
+
+-- crrc_bdai.t_fsa_dsyncparam_l definition
+
+CREATE TABLE `t_fsa_dsyncparam_l` (
+  `FPKID` varchar(36) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FLOCALEID` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FNAME` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`FPKID`) USING BTREE,
+  KEY `IDX_FSA_DSYNCPARAM_L` (`FID`,`FLOCALEID`) USING BTREE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci ROW_FORMAT=DYNAMIC;
+
+
+-- crrc_bdai.t_fsa_dsyncparam_r3 definition
+
+CREATE TABLE `t_fsa_dsyncparam_r3` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FREFSTATUS` char(1) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  PRIMARY KEY (`FID`) USING BTREE,
+  KEY `IDX_FSA_DSYNCPARAM_R3` (`FREFSTATUS`) USING BTREE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci ROW_FORMAT=DYNAMIC;
+
+
+-- crrc_bdai.t_fsa_dsyncparamdimmement definition
+
+CREATE TABLE `t_fsa_dsyncparamdimmement` (
+  `FENTRYID` bigint NOT NULL DEFAULT '0',
+  `FDETAILID` bigint NOT NULL DEFAULT '0',
+  `FSEQ` int NOT NULL DEFAULT '0',
+  `FMEMBERNUMBER` varchar(500) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FMEMBERNAME` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FMEMBERID` bigint NOT NULL DEFAULT '0',
+  `FMEMBERLONGNUMBER` varchar(200) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`FDETAILID`) USING BTREE,
+  KEY `IDX_FSA_DSYNCPARAMDIMMEMENT` (`FMEMBERNUMBER`) USING BTREE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci ROW_FORMAT=DYNAMIC;
+
+
+-- crrc_bdai.t_fsa_dv_filterfields definition
+
+CREATE TABLE `t_fsa_dv_filterfields` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FENTRYID` bigint NOT NULL DEFAULT '0',
+  `FSEQ` int NOT NULL DEFAULT '0',
+  `FDIMNAME` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FDIMNUMBER` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FOLDDIMNUMBER` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FFILTERMODE` char(1) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  PRIMARY KEY (`FENTRYID`) USING BTREE,
+  KEY `IDX_FSA_DV_FILTERFIELDS` (`FID`) USING BTREE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci ROW_FORMAT=DYNAMIC;
+
+
+-- crrc_bdai.t_fsa_dv_filtermembers definition
+
+CREATE TABLE `t_fsa_dv_filtermembers` (
+  `FENTRYID` bigint NOT NULL DEFAULT '0',
+  `FDETAILID` bigint NOT NULL DEFAULT '0',
+  `FSEQ` int NOT NULL DEFAULT '0',
+  `FMEMBERID` bigint NOT NULL DEFAULT '0',
+  `FMEMBERNUMBER` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FMEMBERNAME` varchar(500) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FMEMBERLONGNUMBER` varchar(200) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`FDETAILID`) USING BTREE,
+  KEY `IDX_FSA_DV_FILTERMEMBERS_1` (`FENTRYID`) USING BTREE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci ROW_FORMAT=DYNAMIC;
+
+
+-- crrc_bdai.t_fsa_history_set definition
+
+CREATE TABLE `t_fsa_history_set` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FVERSION` bigint NOT NULL DEFAULT '0',
+  `FDESCRIPTION` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FCREATORID` bigint NOT NULL DEFAULT '0',
+  `FCREATEDATE` datetime DEFAULT NULL,
+  `FSCHEMAID` bigint NOT NULL DEFAULT '0',
+  `FDATAID` bigint NOT NULL DEFAULT '0',
+  `FDATACONTENT` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FDATACONTENT_TAG` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  PRIMARY KEY (`FID`) USING BTREE,
+  KEY `IDX_HISTORY_SET_1` (`FSCHEMAID`,`FDATAID`) USING BTREE,
+  KEY `IDX_HISTORY_SET_2` (`FVERSION`) USING BTREE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci ROW_FORMAT=DYNAMIC;
+
+
+-- crrc_bdai.t_fsa_outputfields definition
+
+CREATE TABLE `t_fsa_outputfields` (
+  `FENTRYID` bigint NOT NULL DEFAULT '0',
+  `FDETAILID` bigint NOT NULL DEFAULT '0',
+  `FSEQ` int NOT NULL DEFAULT '0',
+  `FFIELDNUMBER` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FFIELDNAME` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FDIMTYPE` char(1) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '2',
+  `FOUTPUTHIERARCHY` char(1) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  `FOUTPUT` char(1) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '1',
+  `FSOURCENUMBER` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FDISPLAYNUMBER` char(1) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FDETAILID`) USING BTREE,
+  KEY `IDX_FSA_OUTPUTFIELDS_1` (`FFIELDNUMBER`) USING BTREE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci ROW_FORMAT=DYNAMIC;
+
+
+-- crrc_bdai.t_fsa_paramgroup definition
+
+CREATE TABLE `t_fsa_paramgroup` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FNUMBER` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FPARENTID` bigint NOT NULL DEFAULT '0',
+  `FISLEAF` char(1) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `FLONGNUMBER` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FLEVEL` int NOT NULL DEFAULT '0',
+  `FMASTERID` bigint NOT NULL DEFAULT '0',
+  `FENABLE` char(1) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `FSTATUS` char(1) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'C',
+  `FCREATORID` bigint NOT NULL DEFAULT '0',
+  `FMODIFIERID` bigint NOT NULL DEFAULT '0',
+  `FCREATETIME` datetime DEFAULT NULL,
+  `FMODIFYTIME` datetime DEFAULT NULL,
+  PRIMARY KEY (`FID`) USING BTREE,
+  KEY `IDX_FSA_PARAMGROUP` (`FPARENTID`,`FISLEAF`,`FENABLE`,`FSTATUS`) USING BTREE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci ROW_FORMAT=DYNAMIC;
+
+
+-- crrc_bdai.t_fsa_paramgroup_l definition
+
+CREATE TABLE `t_fsa_paramgroup_l` (
+  `FPKID` varchar(36) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FLOCALEID` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FNAME` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FFULLNAME` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`FPKID`) USING BTREE,
+  KEY `IDX_FSA_PARAMGROUP_L` (`FID`,`FLOCALEID`) USING BTREE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci ROW_FORMAT=DYNAMIC;
+
+
+-- crrc_bdai.t_fsa_paramgroup_r3 definition
+
+CREATE TABLE `t_fsa_paramgroup_r3` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FREFSTATUS` char(1) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  PRIMARY KEY (`FID`) USING BTREE,
+  KEY `IDX_FSA_PARAMGROUP_R3` (`FREFSTATUS`) USING BTREE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci ROW_FORMAT=DYNAMIC;
+
+
+-- crrc_bdai.t_fsa_paramtemplate definition
+
+CREATE TABLE `t_fsa_paramtemplate` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FNUMBER` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FSTATUS` char(1) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'C',
+  `FENABLE` char(1) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `FMODIFIERID` bigint NOT NULL DEFAULT '0',
+  `FCREATORID` bigint NOT NULL DEFAULT '0',
+  `FMODIFYTIME` datetime DEFAULT NULL,
+  `FCREATETIME` datetime DEFAULT NULL,
+  `FMASTERID` bigint NOT NULL DEFAULT '0',
+  `FGROUPID` bigint NOT NULL DEFAULT '0',
+  `FPLUGINNAME` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`FID`) USING BTREE,
+  KEY `IDX_FSA_PARAMTEMPLATE` (`FSTATUS`,`FENABLE`,`FGROUPID`) USING BTREE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci ROW_FORMAT=DYNAMIC;
+
+
+-- crrc_bdai.t_fsa_paramtemplate_l definition
+
+CREATE TABLE `t_fsa_paramtemplate_l` (
+  `FPKID` varchar(36) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FLOCALEID` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FNAME` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`FPKID`) USING BTREE,
+  KEY `IDX_T_FSA_PARAMTEMPLATE_L` (`FID`,`FLOCALEID`) USING BTREE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci ROW_FORMAT=DYNAMIC;
+
+
+-- crrc_bdai.t_fsa_paramtemplate_r3 definition
+
+CREATE TABLE `t_fsa_paramtemplate_r3` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FREFSTATUS` char(1) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  PRIMARY KEY (`FID`) USING BTREE,
+  KEY `IDX_FSA_PARAMTEMPLATE_R3` (`FREFSTATUS`) USING BTREE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci ROW_FORMAT=DYNAMIC;
+
+
+-- crrc_bdai.t_fsa_paramtemplateentry definition
+
+CREATE TABLE `t_fsa_paramtemplateentry` (
+  `FENTRYID` bigint NOT NULL DEFAULT '0',
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FSEQ` int NOT NULL DEFAULT '0',
+  `FPARAMNUMBER` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FPARAMNAME` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FDATATYPE` char(1) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `FOBJECTTYPEID` varchar(36) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FISINPUT` char(1) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `FFORMID` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FCAPTION` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FOPERATENAME` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FRELYPARAMNUMBER` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FPARAMDESCRIPTION` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FREQUESTTYPE` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FFILTER` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FDEFAULTVALUE` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FDISPLAY` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`FENTRYID`) USING BTREE,
+  KEY `IDX_FSA_PARAMTEMPLATEENTRY` (`FID`) USING BTREE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci ROW_FORMAT=DYNAMIC;
+
+
+-- crrc_bdai.t_fsa_rptacctdim_r3 definition
+
+CREATE TABLE `t_fsa_rptacctdim_r3` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FRefStatus` char(1) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FID`) USING BTREE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci ROW_FORMAT=DYNAMIC;
+
+
+-- crrc_bdai.t_fsa_rptbalance definition
+
+CREATE TABLE `t_fsa_rptbalance` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FORGID` bigint NOT NULL DEFAULT '0',
+  `FPERIODID` bigint NOT NULL DEFAULT '0',
+  `FSRCITEMID` bigint NOT NULL DEFAULT '0',
+  `FBEGINVALUE` decimal(23,2) NOT NULL DEFAULT '0.00',
+  `FENDVALUE` decimal(23,2) NOT NULL DEFAULT '0.00',
+  `FMAPPINGSRCTYPE` char(1) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `FDEL` bigint NOT NULL DEFAULT '0',
+  `FACCTBOOKTYPEID` bigint NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FID`) USING BTREE,
+  KEY `IDX_FSA_RPTBALANCE_1` (`FORGID`,`FPERIODID`,`FDEL`) USING BTREE,
+  KEY `IDX_FSA_RPTBALANCE_2` (`FSRCITEMID`,`FDEL`) USING BTREE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci ROW_FORMAT=DYNAMIC;
+
+
+-- crrc_bdai.t_fsa_rptbalance_confi_r3 definition
+
+CREATE TABLE `t_fsa_rptbalance_confi_r3` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FRefStatus` char(1) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FID`) USING BTREE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci ROW_FORMAT=DYNAMIC;
+
+
+-- crrc_bdai.t_fsa_rptbasedim_r3 definition
+
+CREATE TABLE `t_fsa_rptbasedim_r3` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FRefStatus` char(1) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FID`) USING BTREE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci ROW_FORMAT=DYNAMIC;
+
+
+-- crrc_bdai.t_fsa_rptcashflow definition
+
+CREATE TABLE `t_fsa_rptcashflow` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FORGID` bigint NOT NULL DEFAULT '0',
+  `FPERIODID` bigint NOT NULL DEFAULT '0',
+  `FSRCITEMID` bigint NOT NULL DEFAULT '0',
+  `FCURVALUE` decimal(23,2) NOT NULL DEFAULT '0.00',
+  `FYEARVALUE` decimal(23,2) NOT NULL DEFAULT '0.00',
+  `FMAPPINGSRCTYPE` char(1) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `FDEL` bigint NOT NULL DEFAULT '0',
+  `FACCTBOOKTYPEID` bigint NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FID`) USING BTREE,
+  KEY `IDX_FSA_RPTCASHFLOW_1` (`FORGID`,`FPERIODID`) USING BTREE,
+  KEY `IDX_FSA_RPTCASHFLOW_2` (`FSRCITEMID`) USING BTREE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci ROW_FORMAT=DYNAMIC;
+
+
+-- crrc_bdai.t_fsa_rptdatasynclog definition
+
+CREATE TABLE `t_fsa_rptdatasynclog` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FCREATETIME` datetime DEFAULT NULL,
+  `FUPDATETIME` datetime DEFAULT NULL,
+  `FINSTANCE` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FTASKTYPE` varchar(3) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FMSG` varchar(510) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `FMSG_TAG` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `FSTATUS` varchar(2) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  `FTASKOPERATETOKEN` bigint NOT NULL DEFAULT '0',
+  `FDATASYNCTASK` bigint NOT NULL DEFAULT '0',
+  `FDATASRCTYPE` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FDATASYNCPARAM` bigint NOT NULL DEFAULT '0',
+  `FDATACOLLECTION` bigint NOT NULL DEFAULT '0',
+  `FPARAMDETAIL` varchar(510) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `FPARAMDETAIL_TAG` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  PRIMARY KEY (`FID`) USING BTREE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci ROW_FORMAT=DYNAMIC;
+
+
+-- crrc_bdai.t_fsa_rptdatasyncparam definition
+
+CREATE TABLE `t_fsa_rptdatasyncparam` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FNUMBER` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FSTATUS` char(1) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `FCREATORID` bigint NOT NULL DEFAULT '0',
+  `FMODIFIERID` bigint NOT NULL DEFAULT '0',
+  `FENABLE` char(1) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `FCREATETIME` datetime DEFAULT NULL,
+  `FMODIFYTIME` datetime DEFAULT NULL,
+  `FMASTERID` bigint NOT NULL DEFAULT '0',
+  `FMAPPINGSRCTYPE` char(1) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `FRPTTYPE` char(1) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `FACCTPERIODTYPE` bigint NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FID`) USING BTREE,
+  KEY `IDX_SYNCPA_NUMACC` (`FNUMBER`,`FACCTPERIODTYPE`) USING BTREE,
+  KEY `IDX_SYNCPA_MAPRPT` (`FMAPPINGSRCTYPE`,`FRPTTYPE`) USING BTREE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci ROW_FORMAT=DYNAMIC;
+
+
+-- crrc_bdai.t_fsa_rptdatasyncparam_l definition
+
+CREATE TABLE `t_fsa_rptdatasyncparam_l` (
+  `FPKID` varchar(18) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FLOCALEID` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FNAME` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`FPKID`) USING BTREE,
+  KEY `IDX_SYNCPA_L` (`FID`) USING BTREE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci ROW_FORMAT=DYNAMIC;
+
+
+-- crrc_bdai.t_fsa_rptdatasyncparam_r3 definition
+
+CREATE TABLE `t_fsa_rptdatasyncparam_r3` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FREFSTATUS` char(1) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  PRIMARY KEY (`FID`) USING BTREE,
+  KEY `IDX_SYNCPA_R3` (`FREFSTATUS`) USING BTREE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci ROW_FORMAT=DYNAMIC;
+
+
+-- crrc_bdai.t_fsa_rptdatasyncparament definition
+
+CREATE TABLE `t_fsa_rptdatasyncparament` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FENTRYID` bigint NOT NULL DEFAULT '0',
+  `FSEQ` int NOT NULL DEFAULT '0',
+  `FRPTMAPPING` bigint NOT NULL DEFAULT '0',
+  `FACCTORGVIEW` bigint NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FENTRYID`) USING BTREE,
+  KEY `IDX_SYNCPA_ENT_ID` (`FID`) USING BTREE,
+  KEY `IDX_SYNCPA_ENT_1` (`FACCTORGVIEW`) USING BTREE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci ROW_FORMAT=DYNAMIC;
+
+
+-- crrc_bdai.t_fsa_rptdatasynctask definition
+
+CREATE TABLE `t_fsa_rptdatasynctask` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FCREATOR` bigint NOT NULL DEFAULT '0',
+  `FCREATETIME` datetime DEFAULT NULL,
+  `FUPDATETIME` datetime DEFAULT NULL,
+  `FRPTDATASYNCPARAM` bigint NOT NULL DEFAULT '0',
+  `FSTATUS` varchar(2) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FEXECUTIONTIME` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FVERSION` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FSTATICSTATUS_INFO` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FSTATICSTATUS_INFO_TAG` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `FTASKTYPE` varchar(3) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`FID`) USING BTREE,
+  KEY `IDX_FSA_RPTDATASYNCTASK_1` (`FRPTDATASYNCPARAM`,`FSTATUS`) USING BTREE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci ROW_FORMAT=DYNAMIC;
+
+
+-- crrc_bdai.t_fsa_rptidxfacts definition
+
+CREATE TABLE `t_fsa_rptidxfacts` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FORGID` bigint NOT NULL DEFAULT '0',
+  `FPERIODID` bigint NOT NULL DEFAULT '0',
+  `FSRCITEMID` bigint NOT NULL DEFAULT '0',
+  `FBEGINVALUE` decimal(23,2) NOT NULL DEFAULT '0.00',
+  `FENDVALUE` decimal(23,2) NOT NULL DEFAULT '0.00',
+  `FMAPPINGSRCTYPE` char(1) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `FDEL` bigint NOT NULL DEFAULT '0',
+  `FACCTBOOKTYPEID` bigint NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FID`) USING BTREE,
+  KEY `IDX_FSA_RPTFACTS_1` (`FORGID`,`FPERIODID`) USING BTREE,
+  KEY `IDX_FSA_RPTFACTS_2` (`FSRCITEMID`) USING BTREE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci ROW_FORMAT=DYNAMIC;
+
+
+-- crrc_bdai.t_fsa_rptidxrptent definition
+
+CREATE TABLE `t_fsa_rptidxrptent` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FENTRYID` bigint NOT NULL DEFAULT '0',
+  `FSRCSTDRPTID` bigint NOT NULL DEFAULT '0',
+  `FSEQ` int NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FENTRYID`) USING BTREE,
+  KEY `IDX_FSA_RPTIDXRPTENT_1` (`FID`) USING BTREE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci ROW_FORMAT=DYNAMIC;
+
+
+-- crrc_bdai.t_fsa_rptincomestat definition
+
+CREATE TABLE `t_fsa_rptincomestat` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FORGID` bigint NOT NULL DEFAULT '0',
+  `FPERIODID` bigint NOT NULL DEFAULT '0',
+  `FSRCITEMID` bigint NOT NULL DEFAULT '0',
+  `FCURVALUE` decimal(23,2) NOT NULL DEFAULT '0.00',
+  `FYEARVALUE` decimal(23,2) NOT NULL DEFAULT '0.00',
+  `FMAPPINGSRCTYPE` char(1) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `FDEL` bigint NOT NULL DEFAULT '0',
+  `FACCTBOOKTYPEID` bigint NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FID`) USING BTREE,
+  KEY `IDX_RPTINCOMESTAT_1` (`FORGID`,`FPERIODID`) USING BTREE,
+  KEY `IDX_RPTINCOMESTAT_2` (`FSRCITEMID`) USING BTREE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci ROW_FORMAT=DYNAMIC;
+
+
+-- crrc_bdai.t_fsa_rptindicators definition
+
+CREATE TABLE `t_fsa_rptindicators` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FNUMBER` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FDISPLAYFORMULAR` varchar(510) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FDISPLAYFORMULAR_TAG` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `FCALCFORMULAR` varchar(510) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FCALCFORMULAR_TAG` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `FSTATUS` char(1) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `FCREATETIME` datetime DEFAULT NULL,
+  `FMODIFYTIME` datetime DEFAULT NULL,
+  `FCREATORID` bigint NOT NULL DEFAULT '0',
+  `FMODIFIERID` bigint NOT NULL DEFAULT '0',
+  `FENABLE` char(1) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `FRPTITEMSRCTYPE` char(1) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `FRPTTYPE` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FMASTERID` bigint NOT NULL DEFAULT '0',
+  `FDESCRIPTION` varchar(510) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `FDESCRIPTION_TAG` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `FREFRPTCNT` int NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FID`) USING BTREE,
+  KEY `IDX_FSA_RPTINDICATORS` (`FSTATUS`,`FREFRPTCNT`,`FNUMBER`) USING BTREE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci ROW_FORMAT=DYNAMIC;
+
+
+-- crrc_bdai.t_fsa_rptindicators_l definition
+
+CREATE TABLE `t_fsa_rptindicators_l` (
+  `FPKID` varchar(18) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FLOCALEID` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FNAME` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`FPKID`) USING BTREE,
+  KEY `IDX_FSA_RPTINDICATORS_L` (`FID`) USING BTREE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci ROW_FORMAT=DYNAMIC;
+
+
+-- crrc_bdai.t_fsa_rptindicators_r3 definition
+
+CREATE TABLE `t_fsa_rptindicators_r3` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FREFSTATUS` char(1) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  PRIMARY KEY (`FID`) USING BTREE,
+  KEY `IDX_FSA_RPTINDICATORS_R` (`FREFSTATUS`) USING BTREE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci ROW_FORMAT=DYNAMIC;
+
+
+-- crrc_bdai.t_fsa_rptitems definition
+
+CREATE TABLE `t_fsa_rptitems` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FNUMBER` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FSTATUS` char(1) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `FCREATORID` bigint NOT NULL DEFAULT '0',
+  `FMODIFIERID` bigint NOT NULL DEFAULT '0',
+  `FENABLE` char(1) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `FCREATETIME` datetime DEFAULT NULL,
+  `FMODIFYTIME` datetime DEFAULT NULL,
+  `FMASTERID` bigint NOT NULL DEFAULT '0',
+  `FRPTITEMSRCTYPE` char(1) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `FRPTTYPE` char(1) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `FITEMTYPE` char(1) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `FROOTCATEGORY` bigint NOT NULL DEFAULT '0',
+  `FSECCATEGORY` bigint NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FID`) USING BTREE,
+  KEY `IDX_FSA_RPTITEMS_1` (`FNUMBER`,`FITEMTYPE`,`FRPTTYPE`) USING BTREE,
+  KEY `IDX_FSA_RPTITEMS_2` (`FSTATUS`,`FRPTITEMSRCTYPE`) USING BTREE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci ROW_FORMAT=DYNAMIC;
+
+
+-- crrc_bdai.t_fsa_rptitems_l definition
+
+CREATE TABLE `t_fsa_rptitems_l` (
+  `FPKID` varchar(18) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FLOCALEID` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FNAME` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`FPKID`) USING BTREE,
+  KEY `IDX_FSA_RPTIT_L_FID` (`FID`) USING BTREE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci ROW_FORMAT=DYNAMIC;
+
+
+-- crrc_bdai.t_fsa_rptitems_r3 definition
+
+CREATE TABLE `t_fsa_rptitems_r3` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FREFSTATUS` char(1) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  PRIMARY KEY (`FID`) USING BTREE,
+  KEY `IDX_FSA_RPTIT_R3_FRE` (`FREFSTATUS`) USING BTREE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci ROW_FORMAT=DYNAMIC;
+
+
+-- crrc_bdai.t_fsa_rptmappingent definition
+
+CREATE TABLE `t_fsa_rptmappingent` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FENTRYID` bigint NOT NULL DEFAULT '0',
+  `FSEQ` int NOT NULL DEFAULT '0',
+  `FMAPPINGTYPE` char(1) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `FSRCRPTITEMID` bigint NOT NULL DEFAULT '0',
+  `FCALCFORMULAR` varchar(510) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FCALCFORMULAR_TAG` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `FDISPLAYFORMULAR` varchar(510) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FDISPLAYFORMULAR_TAG` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `FDESCRIPTION` varchar(510) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `FDESCRIPTION_TAG` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  PRIMARY KEY (`FENTRYID`) USING BTREE,
+  KEY `IDX_FSA_MAPPING_1` (`FID`) USING BTREE,
+  KEY `IDX_FSA_MAPPING_2` (`FSRCRPTITEMID`) USING BTREE,
+  KEY `IDX_FSA_MAPPING_3` (`FSEQ`) USING BTREE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci ROW_FORMAT=DYNAMIC;
+
+
+-- crrc_bdai.t_fsa_rptmappings definition
+
+CREATE TABLE `t_fsa_rptmappings` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FNUMBER` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FCREATORID` bigint NOT NULL DEFAULT '0',
+  `FMODIFIERID` bigint NOT NULL DEFAULT '0',
+  `FENABLE` char(1) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `FCREATETIME` datetime DEFAULT NULL,
+  `FMODIFYTIME` datetime DEFAULT NULL,
+  `FSTATUS` char(1) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `FMASTERID` bigint NOT NULL DEFAULT '0',
+  `FMAPPINGSRCTYPE` char(1) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `FMAPPINGRPTTYPE` char(1) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `FACCTORG` bigint NOT NULL DEFAULT '0',
+  `FACCTBOOKTYPEID` bigint NOT NULL DEFAULT '0',
+  `FSRCSTDRPTID` bigint NOT NULL DEFAULT '0',
+  `FACCTPERIODTYPE` bigint NOT NULL DEFAULT '0',
+  `FACCOUNTTABLE` bigint NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FID`) USING BTREE,
+  KEY `IDX_MAPPING_1` (`FNUMBER`) USING BTREE,
+  KEY `IDX_MAPPING_2` (`FSTATUS`,`FMAPPINGSRCTYPE`) USING BTREE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci ROW_FORMAT=DYNAMIC;
+
+
+-- crrc_bdai.t_fsa_rptmappings_l definition
+
+CREATE TABLE `t_fsa_rptmappings_l` (
+  `FPKID` varchar(18) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FLOCALEID` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FNAME` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`FPKID`) USING BTREE,
+  KEY `IDX_FSA_MAPPING_L` (`FID`) USING BTREE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci ROW_FORMAT=DYNAMIC;
+
+
+-- crrc_bdai.t_fsa_rptmappings_r3 definition
+
+CREATE TABLE `t_fsa_rptmappings_r3` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FREFSTATUS` char(1) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  PRIMARY KEY (`FID`) USING BTREE,
+  KEY `IDX_FSA_MAP_R3_FRE` (`FREFSTATUS`) USING BTREE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci ROW_FORMAT=DYNAMIC;
+
+
+-- crrc_bdai.t_fsa_rptschema_config_r3 definition
+
+CREATE TABLE `t_fsa_rptschema_config_r3` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FRefStatus` char(1) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FID`) USING BTREE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci ROW_FORMAT=DYNAMIC;
+
+
+-- crrc_bdai.t_fsa_rptscheme_config definition
+
+CREATE TABLE `t_fsa_rptscheme_config` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FNUMBER` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FBEGINPERIODID` bigint NOT NULL DEFAULT '0',
+  `FENDPERIODID` bigint NOT NULL DEFAULT '0',
+  `FACCTPERIODTYPE` bigint NOT NULL DEFAULT '0',
+  `FSTATUS` char(1) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `FCREATORID` bigint NOT NULL DEFAULT '0',
+  `FMODIFIERID` bigint NOT NULL DEFAULT '0',
+  `FMASTERID` bigint NOT NULL DEFAULT '0',
+  `FENABLE` char(1) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `FCREATETIME` datetime DEFAULT NULL,
+  `FMODIFYTIME` datetime DEFAULT NULL,
+  `FAUTHSWITCH` char(1) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `FLINETOROWSWITCH` char(1) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  PRIMARY KEY (`FID`) USING BTREE,
+  KEY `IDX_FSA_SCHEME_CONFIG` (`FNUMBER`) USING BTREE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci ROW_FORMAT=DYNAMIC;
+
+
+-- crrc_bdai.t_fsa_rptscheme_config_l definition
+
+CREATE TABLE `t_fsa_rptscheme_config_l` (
+  `FPKID` varchar(18) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FLOCALEID` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FNAME` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`FPKID`) USING BTREE,
+  KEY `IDX_FSA_RPTSCHEME_CONFIG_L` (`FID`) USING BTREE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci ROW_FORMAT=DYNAMIC;
+
+
+-- crrc_bdai.t_fsa_rptscheme_config_r3 definition
+
+CREATE TABLE `t_fsa_rptscheme_config_r3` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FREFSTATUS` char(1) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  PRIMARY KEY (`FID`) USING BTREE,
+  KEY `FSA_IDX_RPTSCH_R3` (`FREFSTATUS`) USING BTREE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci ROW_FORMAT=DYNAMIC;
+
+
+-- crrc_bdai.t_fsa_scheme_pattern definition
+
+CREATE TABLE `t_fsa_scheme_pattern` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FENTRYID` bigint NOT NULL DEFAULT '0',
+  `FSEQ` bigint NOT NULL DEFAULT '0',
+  `FTABLEPATTERN` bigint NOT NULL DEFAULT '0',
+  `FRPTTYPE` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FDATASRC` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FAUTHCONTENT` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FAUTHCONTENT_TAG` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `FIDXFACTCONFIG` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FIDXFACTCONFIG_TAG` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  PRIMARY KEY (`FENTRYID`) USING BTREE,
+  KEY `FSA_IDX_SCH_PAT` (`FID`) USING BTREE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci ROW_FORMAT=DYNAMIC;
+
+
+-- crrc_bdai.t_fsa_schtaskconfig definition
+
+CREATE TABLE `t_fsa_schtaskconfig` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FNUMBER` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FNAME` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FSTATUS` char(1) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `FCREATORID` bigint NOT NULL DEFAULT '0',
+  `FMODIFIERID` bigint NOT NULL DEFAULT '0',
+  `FENABLE` char(1) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `FCREATETIME` datetime DEFAULT NULL,
+  `FMODIFYTIME` datetime DEFAULT NULL,
+  `FMASTERID` bigint NOT NULL DEFAULT '0',
+  `FDESC` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FTXTDESC` varchar(400) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FSCHID` varchar(36) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FSTARTTIME` datetime DEFAULT NULL,
+  `FENDTIME` datetime DEFAULT NULL,
+  `FREPEATMODE` varchar(4) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FCYCLENUM` int NOT NULL DEFAULT '0',
+  `FPLAN` varchar(300) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FDAYS` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FMONTHS` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FWEEKS` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FBYDAYORWEEK` varchar(4) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FBYWEEK` varchar(1) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FNO` varchar(4) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FNOWEEK` varchar(4) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`FID`) USING BTREE,
+  KEY `IDX_FSA_SCH_NUM` (`FNUMBER`) USING BTREE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci ROW_FORMAT=DYNAMIC;
+
+
+-- crrc_bdai.t_fsa_schtaskconfig_l definition
+
+CREATE TABLE `t_fsa_schtaskconfig_l` (
+  `FPKID` varchar(36) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FLOCALEID` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FNAME` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`FPKID`) USING BTREE,
+  KEY `IDX_FSA_SCH_L_FID` (`FID`) USING BTREE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci ROW_FORMAT=DYNAMIC;
+
+
+-- crrc_bdai.t_fsa_schtaskconfig_n definition
+
+CREATE TABLE `t_fsa_schtaskconfig_n` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FSTIMEOUT` varchar(1) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FSSUCCESSNOTIFY` varchar(1) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FSFAILNOTIFY` varchar(1) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FSNOTIFYTYPE` varchar(300) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FMSGRECEIVER` bigint NOT NULL DEFAULT '0',
+  `FSMSGCONTENT` varchar(2000) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`FID`) USING BTREE,
+  KEY `IDX_FSA_SCH_N_SN` (`FSNOTIFYTYPE`) USING BTREE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci ROW_FORMAT=DYNAMIC;
+
+
+-- crrc_bdai.t_fsa_schtaskconfig_r3 definition
+
+CREATE TABLE `t_fsa_schtaskconfig_r3` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FREFSTATUS` char(1) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  PRIMARY KEY (`FID`) USING BTREE,
+  KEY `IDX_FSA_SCH_R3_FRF` (`FREFSTATUS`) USING BTREE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci ROW_FORMAT=DYNAMIC;
+
+
+-- crrc_bdai.t_fsa_schtaskentity definition
+
+CREATE TABLE `t_fsa_schtaskentity` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FENTRYID` bigint NOT NULL DEFAULT '0',
+  `FSEQ` int NOT NULL DEFAULT '0',
+  `FTASKTYPE` varchar(4) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FTASKTEXT` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FTASKID` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FBATCHPARAM` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FBATCHPARAMJSON` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FBATCHPARAMJSON_TAG` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  PRIMARY KEY (`FENTRYID`) USING BTREE,
+  KEY `IDX_FSA_SCHTASK_ID` (`FID`) USING BTREE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci ROW_FORMAT=DYNAMIC;
+
+
+-- crrc_bdai.t_fsa_schtasktime definition
+
+CREATE TABLE `t_fsa_schtasktime` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FENTRYID` bigint NOT NULL DEFAULT '0',
+  `FSEQ` int NOT NULL DEFAULT '0',
+  `FSCHTIME` datetime DEFAULT NULL,
+  `FISEXECUTED` char(1) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  `FTIMESTATUS` varchar(4) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`FENTRYID`) USING BTREE,
+  KEY `IDX_FSA_SCHTIME_ID` (`FID`) USING BTREE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci ROW_FORMAT=DYNAMIC;
+
+
+-- crrc_bdai.t_fsa_schtasktimesub definition
+
+CREATE TABLE `t_fsa_schtasktimesub` (
+  `FENTRYID` bigint NOT NULL DEFAULT '0',
+  `FDETAILID` bigint NOT NULL DEFAULT '0',
+  `FSEQ` int NOT NULL DEFAULT '0',
+  `FDIMNAME` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FDIMNUMBER` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FSRCNUMBER` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FDIMMEMBER` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FMEMBERJSON` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FMEMBERJSON_TAG` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  PRIMARY KEY (`FDETAILID`) USING BTREE,
+  KEY `IDX_FSA_SCHSUB_ID` (`FENTRYID`) USING BTREE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci ROW_FORMAT=DYNAMIC;
+
+
+-- crrc_bdai.t_fsa_stdrptent definition
+
+CREATE TABLE `t_fsa_stdrptent` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FENTRYID` bigint NOT NULL DEFAULT '0',
+  `FSEQNO` int NOT NULL DEFAULT '0',
+  `FRPTITEMID` bigint NOT NULL DEFAULT '0',
+  `FROOTITEMID` bigint NOT NULL DEFAULT '0',
+  `FLEVEL` int NOT NULL DEFAULT '0',
+  `FISLEAF` char(1) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `FLONGNUMBER` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FLINENO` int NOT NULL DEFAULT '0',
+  `FITEMTYPE` char(1) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `FROOTCATEGORY` bigint NOT NULL DEFAULT '0',
+  `FSECCATEGORY` bigint NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FENTRYID`) USING BTREE,
+  KEY `IDX_FSA_STDENT_FID` (`FID`) USING BTREE,
+  KEY `IDX_FSA_STDRPTENT1` (`FRPTITEMID`,`FITEMTYPE`) USING BTREE,
+  KEY `IDX_FSA_STDRPTENT2` (`FLONGNUMBER`) USING BTREE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci ROW_FORMAT=DYNAMIC;
+
+
+-- crrc_bdai.t_fsa_stdrpts definition
+
+CREATE TABLE `t_fsa_stdrpts` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FNUMBER` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FRPTTYPE` char(1) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `FCREATORID` bigint NOT NULL DEFAULT '0',
+  `FMODIFIERID` bigint NOT NULL DEFAULT '0',
+  `FENABLE` char(1) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `FCREATETIME` datetime DEFAULT NULL,
+  `FMODIFYTIME` datetime DEFAULT NULL,
+  `FSTATUS` char(1) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `FMASTERID` bigint NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FID`) USING BTREE,
+  KEY `IDX_FSA_STDRPTS_1` (`FNUMBER`,`FRPTTYPE`) USING BTREE,
+  KEY `IDX_FSA_STDRPTS_2` (`FSTATUS`) USING BTREE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci ROW_FORMAT=DYNAMIC;
+
+
+-- crrc_bdai.t_fsa_stdrpts_l definition
+
+CREATE TABLE `t_fsa_stdrpts_l` (
+  `FPKID` varchar(18) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FLOCALEID` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FNAME` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`FPKID`) USING BTREE,
+  KEY `IDX_FSA_STDRPTS_L_FID` (`FID`) USING BTREE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci ROW_FORMAT=DYNAMIC;
+
+
+-- crrc_bdai.t_fsa_stdrpts_r3 definition
+
+CREATE TABLE `t_fsa_stdrpts_r3` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FREFSTATUS` char(1) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  PRIMARY KEY (`FID`) USING BTREE,
+  KEY `IDX_FSA_STD_R3_FRE` (`FREFSTATUS`) USING BTREE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci ROW_FORMAT=DYNAMIC;
+
+
+-- crrc_bdai.t_fsa_task_config definition
+
+CREATE TABLE `t_fsa_task_config` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FNUMBER` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FSTATUS` char(1) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `FCREATORID` bigint NOT NULL DEFAULT '0',
+  `FMODIFIERID` bigint NOT NULL DEFAULT '0',
+  `FENABLE` char(1) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `FCREATETIME` datetime DEFAULT NULL,
+  `FMODIFYTIME` datetime DEFAULT NULL,
+  `FMASTERID` bigint NOT NULL DEFAULT '0',
+  `FVALUE` varchar(200) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FREMARK` varchar(200) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`FID`) USING BTREE,
+  KEY `IDX_FSA_TASK_CONFIG` (`FNUMBER`) USING BTREE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci ROW_FORMAT=DYNAMIC;
+
+
+-- crrc_bdai.t_fsa_task_config_l definition
+
+CREATE TABLE `t_fsa_task_config_l` (
+  `FPKID` varchar(36) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FLOCALEID` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FNAME` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`FPKID`) USING BTREE,
+  KEY `IDX_FSA_TASK_CONFIG_L` (`FID`,`FLOCALEID`) USING BTREE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci ROW_FORMAT=DYNAMIC;
+
+
+-- crrc_bdai.t_fsa_task_config_r3 definition
+
+CREATE TABLE `t_fsa_task_config_r3` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FREFSTATUS` char(1) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  PRIMARY KEY (`FID`) USING BTREE,
+  KEY `IDX_FSA_TASK_CONTROL_R3` (`FREFSTATUS`) USING BTREE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci ROW_FORMAT=DYNAMIC;
+
+
+-- crrc_bdai.t_gdt_fieldsparamdict_r3 definition
+
+CREATE TABLE `t_gdt_fieldsparamdict_r3` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FRefStatus` char(1) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FID`) USING BTREE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci ROW_FORMAT=DYNAMIC;
+
+
+-- crrc_bdai.t_idi_accept_log definition
+
+CREATE TABLE `t_idi_accept_log` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FNUMBER` varchar(60) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FACCEPTOR_ID` bigint NOT NULL DEFAULT '0',
+  `FACCEPTTIME` datetime DEFAULT NULL,
+  `FACCEPTTYPE` varchar(4) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FCONTENT` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`FID`) USING BTREE,
+  KEY `IDX_IDI_ACP` (`FNUMBER`) USING BTREE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci ROW_FORMAT=DYNAMIC;
+
+
+-- crrc_bdai.t_idi_api_config definition
+
+CREATE TABLE `t_idi_api_config` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FNUMBER` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FSTATUS` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FCREATORID` bigint NOT NULL DEFAULT '0',
+  `FMODIFIERID` bigint NOT NULL DEFAULT '0',
+  `FENABLE` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FCREATETIME` datetime DEFAULT NULL,
+  `FMODIFYTIME` datetime DEFAULT NULL,
+  `FMASTERID` bigint NOT NULL DEFAULT '0',
+  `FCLIENTID` varchar(64) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FCLIENTSECRET` varchar(128) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FHTTPMETHOD` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FURL` varchar(1024) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`FID`) USING BTREE,
+  KEY `IDX_IDI_API_CONFIG_NUMBER` (`FNUMBER`) USING BTREE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci ROW_FORMAT=DYNAMIC;
+
+
+-- crrc_bdai.t_idi_api_config_copy1 definition
+
+CREATE TABLE `t_idi_api_config_copy1` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FNUMBER` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FSTATUS` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FCREATORID` bigint NOT NULL DEFAULT '0',
+  `FMODIFIERID` bigint NOT NULL DEFAULT '0',
+  `FENABLE` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FCREATETIME` datetime DEFAULT NULL,
+  `FMODIFYTIME` datetime DEFAULT NULL,
+  `FMASTERID` bigint NOT NULL DEFAULT '0',
+  `FCLIENTID` varchar(64) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FCLIENTSECRET` varchar(128) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FHTTPMETHOD` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FURL` varchar(1024) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`FID`) USING BTREE,
+  KEY `IDX_IDI_API_CONFIG_NUMBER` (`FNUMBER`) USING BTREE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci ROW_FORMAT=DYNAMIC;
+
+
+-- crrc_bdai.t_idi_api_config_l definition
+
+CREATE TABLE `t_idi_api_config_l` (
+  `FPKID` varchar(18) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FLOCALEID` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FNAME` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`FPKID`) USING BTREE,
+  KEY `IDX_IDI_API_CONFIG_L_FID` (`FID`) USING BTREE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci ROW_FORMAT=DYNAMIC;
+
+
+-- crrc_bdai.t_idi_api_config_r3 definition
+
+CREATE TABLE `t_idi_api_config_r3` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FREFSTATUS` char(1) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  PRIMARY KEY (`FID`) USING BTREE,
+  KEY `IDX_IDI_API_CONFIG_R3_FRST` (`FREFSTATUS`) USING BTREE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci ROW_FORMAT=DYNAMIC;
+
+
+-- crrc_bdai.t_idi_api_param_config definition
+
+CREATE TABLE `t_idi_api_param_config` (
+  `FPARAMID` bigint NOT NULL DEFAULT '0',
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FSEQ` int NOT NULL DEFAULT '0',
+  `FPARAMNAME` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FPARAMTYPE` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FPARAMDESC` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  PRIMARY KEY (`FPARAMID`) USING BTREE,
+  KEY `IDX_IDI_API_PARAM_CONFIG_FID` (`FID`) USING BTREE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci ROW_FORMAT=DYNAMIC;
+
+
+-- crrc_bdai.t_idi_attachmentfield definition
+
+CREATE TABLE `t_idi_attachmentfield` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FNUMBER` varchar(80) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FNAME` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FSTATUS` char(1) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `FCREATORID` bigint NOT NULL DEFAULT '0',
+  `FMODIFIERID` bigint NOT NULL DEFAULT '0',
+  `FENABLE` char(1) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `FCREATETIME` datetime DEFAULT NULL,
+  `FMODIFYTIME` datetime DEFAULT NULL,
+  `FMASTERID` bigint NOT NULL DEFAULT '0',
+  `FSOURCE` char(1) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `FGROUPID` bigint NOT NULL DEFAULT '0',
+  `FAITEMPLATEID` bigint NOT NULL DEFAULT '0',
+  `FTABLENUMBER` varchar(80) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FLCTEMPLATE` varchar(100) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT ' ',
+  `FFIELDTYPE` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`FID`),
+  KEY `IDX_IDI_ATTACHMENTFIELD_FGROUP` (`FGROUPID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_bdai.t_idi_attachmentfield_l definition
+
+CREATE TABLE `t_idi_attachmentfield_l` (
+  `FPKID` varchar(18) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FLOCALEID` varchar(10) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FNAME` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`FPKID`),
+  KEY `IDX_IDI_ATTACHMENTFIELD_L_FID` (`FID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_bdai.t_idi_attachmentfield_r3 definition
+
+CREATE TABLE `t_idi_attachmentfield_r3` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FRefStatus` char(1) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_bdai.t_idi_decisionschema definition
+
+CREATE TABLE `t_idi_decisionschema` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FNUMBER` varchar(60) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT ' ',
+  `FSTATUS` varchar(30) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT ' ',
+  `FCREATORID` bigint NOT NULL DEFAULT '0',
+  `FMODIFIERID` bigint NOT NULL DEFAULT '0',
+  `FENABLE` varchar(30) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT ' ',
+  `FCREATETIME` datetime DEFAULT NULL,
+  `FMODIFYTIME` datetime DEFAULT NULL,
+  `FMASTERID` bigint NOT NULL DEFAULT '0',
+  `FSOURCEENTITYNUMBER` varchar(36) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT ' ',
+  `FANALYSISMODE` varchar(30) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT ' ',
+  `FDESC` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
+  `FRULE` varchar(510) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
+  `FRULE_TAG` longtext CHARACTER SET utf8 COLLATE utf8_general_ci,
+  `FORDER` int NOT NULL DEFAULT '1',
+  PRIMARY KEY (`FID`) USING BTREE,
+  KEY `IDX_IDI_DECISIONSCHEMA_SRC` (`FSOURCEENTITYNUMBER`) USING BTREE,
+  KEY `IDX_IDI_DECISIONSCHEMA_NUM` (`FNUMBER`) USING BTREE,
+  KEY `IDX_IDI_DECISIONSCHEMA_ENB` (`FENABLE`) USING BTREE,
+  KEY `IDX_IDI_DECISIONSCHEMA_CT` (`FCREATETIME`) USING BTREE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 ROW_FORMAT=DYNAMIC;
+
+
+-- crrc_bdai.t_idi_decisionschema_l definition
+
+CREATE TABLE `t_idi_decisionschema_l` (
+  `FPKID` varchar(18) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT ' ',
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FLOCALEID` varchar(10) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT ' ',
+  `FNAME` varchar(100) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`FPKID`) USING BTREE,
+  KEY `IDX_IDI_DECISIONSCHEMA_L_FID` (`FID`) USING BTREE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 ROW_FORMAT=DYNAMIC;
+
+
+-- crrc_bdai.t_idi_decisionschema_r3 definition
+
+CREATE TABLE `t_idi_decisionschema_r3` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FREFSTATUS` char(1) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT '',
+  PRIMARY KEY (`FID`) USING BTREE,
+  KEY `IDX_IDI_DECISIONSCHEMA_R3_FRST` (`FREFSTATUS`) USING BTREE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 ROW_FORMAT=DYNAMIC;
+
+
+-- crrc_bdai.t_idi_fieldgroup definition
+
+CREATE TABLE `t_idi_fieldgroup` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FNUMBER` varchar(80) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FNAME` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FSTATUS` char(1) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `FCREATORID` bigint NOT NULL DEFAULT '0',
+  `FMODIFIERID` bigint NOT NULL DEFAULT '0',
+  `FENABLE` char(1) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `FCREATETIME` datetime DEFAULT NULL,
+  `FMODIFYTIME` datetime DEFAULT NULL,
+  `FMASTERID` bigint NOT NULL DEFAULT '0',
+  `FLONGNUMBER` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FLEVEL` int NOT NULL DEFAULT '0',
+  `FISLEAF` char(1) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `FPARENTID` bigint NOT NULL DEFAULT '0',
+  `FLCTEMPLATEPIC` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`FID`),
+  KEY `IDX_IDI_FIELDGROUP_FPARENTID` (`FPARENTID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_bdai.t_idi_fieldgroup_l definition
+
+CREATE TABLE `t_idi_fieldgroup_l` (
+  `FPKID` varchar(18) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FLOCALEID` varchar(10) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FFULLNAME` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FNAME` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`FPKID`),
+  KEY `IDX_IDI_FIELDGROUP_L_FID` (`FID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_bdai.t_idi_fieldgroup_r3 definition
+
+CREATE TABLE `t_idi_fieldgroup_r3` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FRefStatus` char(1) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_bdai.t_idi_invoice definition
+
+CREATE TABLE `t_idi_invoice` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FBILLID` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FINVOICEDATE` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FIMAGENUMBER` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FIMAGEPAGE` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FINVOICECODE` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FINVOICETYPE` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FCREATORID` bigint NOT NULL DEFAULT '0',
+  `FCREATETIME` datetime DEFAULT NULL,
+  `FMODIFIERID` bigint NOT NULL DEFAULT '0',
+  `FMODIFYTIME` datetime DEFAULT NULL,
+  `FAUDITORID` bigint NOT NULL DEFAULT '0',
+  `FAUDITDATE` datetime DEFAULT NULL,
+  `FBILLNO` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FBILLSTATUS` char(1) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `FINVOICENO` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FLOCALURL` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FINDEXFIELD` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`FID`) USING BTREE,
+  KEY `IDX_IDI__INVOICE` (`FBILLID`) USING BTREE,
+  KEY `IDX_IDI__INVOICE_DUP` (`FINDEXFIELD`) USING BTREE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci ROW_FORMAT=DYNAMIC;
+
+
+-- crrc_bdai.t_idi_invoiceentrykey definition
+
+CREATE TABLE `t_idi_invoiceentrykey` (
+  `FENTRYID` bigint NOT NULL DEFAULT '0',
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FSEQ` int NOT NULL DEFAULT '0',
+  `FINVOICEENTRYKEY` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FINVOICEENTRYVALUE` varchar(2000) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FINVOICEENTRYINDEX` int NOT NULL DEFAULT '0',
+  PRIMARY KEY (`FENTRYID`) USING BTREE,
+  KEY `IDX_IDI_INVOICEENTRYKEY` (`FID`) USING BTREE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci ROW_FORMAT=DYNAMIC;
+
+
+-- crrc_bdai.t_idi_invoicekey definition
+
+CREATE TABLE `t_idi_invoicekey` (
+  `FENTRYID` bigint NOT NULL DEFAULT '0',
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FSEQ` int NOT NULL DEFAULT '0',
+  `FINVOICEKEY` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FINVOICEVALUE` varchar(2000) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`FENTRYID`) USING BTREE,
+  KEY `IDX_IDI_INVOICEKEY` (`FID`) USING BTREE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci ROW_FORMAT=DYNAMIC;
+
+
+-- crrc_bdai.t_idi_itemexeresult definition
+
+CREATE TABLE `t_idi_itemexeresult` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FSTATUS` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FCREATEDATE` datetime DEFAULT NULL,
+  `FSCHEMARESULTID` bigint NOT NULL DEFAULT '0',
+  `FAREAID` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FAREA` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FITEMID` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FITEM` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FMATCHTYPE` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FCONFIG` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT ' ',
+  `FCONFIG_TAG` longtext COLLATE utf8mb4_unicode_ci,
+  `FREUSLT` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT ' ',
+  `FREUSLT_TAG` longtext COLLATE utf8mb4_unicode_ci,
+  `FDEDUCTION` decimal(23,10) NOT NULL DEFAULT '0.0000000000',
+  PRIMARY KEY (`FID`),
+  KEY `IDX_IDI_ITEMEXERESULT_AREA` (`FAREAID`),
+  KEY `IDX_IDI_ITEMEXERESULT_ITEM` (`FITEMID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_bdai.t_idi_keyword_library definition
+
+CREATE TABLE `t_idi_keyword_library` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FNUMBER` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FSTATUS` varchar(1) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FCREATORID` bigint NOT NULL DEFAULT '0',
+  `FMODIFIERID` bigint NOT NULL DEFAULT '0',
+  `FENABLE` varchar(1) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FCREATETIME` datetime DEFAULT NULL,
+  `FMODIFYTIME` datetime DEFAULT NULL,
+  `FMASTERID` bigint NOT NULL DEFAULT '0',
+  `FDESC` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FKEYWORD` varchar(1000) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`FID`) USING BTREE,
+  KEY `IDX_IDI_KEY_LIB_NUM` (`FNUMBER`) USING BTREE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci ROW_FORMAT=DYNAMIC;
+
+
+-- crrc_bdai.t_idi_keyword_library_l definition
+
+CREATE TABLE `t_idi_keyword_library_l` (
+  `FPKID` varchar(18) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FLOCALEID` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FNAME` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`FPKID`) USING BTREE,
+  KEY `IDX_IDI_KEY_LIB_L_FID` (`FID`) USING BTREE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci ROW_FORMAT=DYNAMIC;
+
+
+-- crrc_bdai.t_idi_keyword_library_r3 definition
+
+CREATE TABLE `t_idi_keyword_library_r3` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FREFSTATUS` char(1) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  PRIMARY KEY (`FID`) USING BTREE,
+  KEY `IDX_IDI_KEY_LIB_R3_FRST` (`FREFSTATUS`) USING BTREE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci ROW_FORMAT=DYNAMIC;
+
+
+-- crrc_bdai.t_idi_logistics_data definition
+
+CREATE TABLE `t_idi_logistics_data` (
+  `FDATAID` bigint NOT NULL DEFAULT '0',
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FSEQ` int NOT NULL DEFAULT '0',
+  `FCONTEXT` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FFTIME` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FSTATUS` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FAREACODE` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FAREANAME` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`FDATAID`) USING BTREE,
+  KEY `IDX_IDI_LOGISTICS_DATA_FID` (`FID`) USING BTREE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci ROW_FORMAT=DYNAMIC;
+
+
+-- crrc_bdai.t_idi_logistics_info definition
+
+CREATE TABLE `t_idi_logistics_info` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FKUAIDINUM` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FCOMPANYCODE` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FKUADICOMNAME` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FSTATE` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FISCHECK` char(1) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `FSENDTIME` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`FID`) USING BTREE,
+  KEY `IDX_IDI_LOGISTICS_INFO_KDNUM` (`FKUAIDINUM`) USING BTREE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci ROW_FORMAT=DYNAMIC;
+
+
+-- crrc_bdai.t_idi_logisticserrorinfo definition
+
+CREATE TABLE `t_idi_logisticserrorinfo` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FBILLID` varchar(36) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FBILLNO` varchar(80) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FBILLTYPEID` varchar(36) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FORDER` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FCOMPNAYNUM` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FMOBILE` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FCODE` varchar(5) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FMESSAGE` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FCREATETIME` datetime DEFAULT NULL,
+  `FCOMPANYNAME` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`FID`) USING BTREE,
+  KEY `IDX_IDI_LOGISTICSERRORINFO` (`FBILLID`,`FBILLTYPEID`) USING BTREE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci ROW_FORMAT=DYNAMIC;
+
+
+-- crrc_bdai.t_idi_param definition
+
+CREATE TABLE `t_idi_param` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FKEY` varchar(60) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT ' ',
+  `FVAL` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT ' ',
+  `FDESC` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`FID`) USING BTREE,
+  UNIQUE KEY `IDX_IDI_PARAM_KEY` (`FKEY`) USING BTREE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 ROW_FORMAT=DYNAMIC;
+
+
+-- crrc_bdai.t_idi_schemaexeresult definition
+
+CREATE TABLE `t_idi_schemaexeresult` (
+  `FID` bigint NOT NULL DEFAULT '0',
+  `FSTATUS` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FCREATEDATE` datetime DEFAULT NULL,
+  `FCREATERID` bigint NOT NULL DEFAULT '0',
+  `FORGID` bigint NOT NULL DEFAULT '0',
+  `FSCHEMAID` bigint NOT NULL DEFAULT '0',
+  `FBILLID` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FBILLTYPEID` varchar(36) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FPAGEID` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  `FTRACEID` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ' ',
+  PRIMARY KEY (`FID`),
+  KEY `IDX_T_IDI_SCHEMAEXERESULT_SGID` (`FSCHEMAID`),
+  KEY `IDX_T_IDI_SCHEMAEXERESULT_TID` (`FTRACEID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- crrc_bdai.t_pktemp_meta definition
+
+CREATE TABLE `t_pktemp_meta` (
+  `ftable_name` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `fcreate_time` datetime NOT NULL,
+  PRIMARY KEY (`ftable_name`) USING BTREE,
+  KEY `IX_T_PKTEMP_META_FCREATE_TIME` (`fcreate_time`) USING BTREE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci ROW_FORMAT=DYNAMIC;
