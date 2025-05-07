@@ -1,5 +1,5 @@
 # 获取所有SQL文件
-$sqlFiles = Get-ChildItem -Path "d:\workspace\LiteServer\db\生产辅助系统\table copy" -Filter "*.sql" -Recurse
+$sqlFiles = Get-ChildItem -Path "d:\workspace\LiteServer\db\考勤系统" -Filter "*.sql" -Recurse
 
 foreach ($file in $sqlFiles) {
     # 读取文件内容
@@ -18,9 +18,17 @@ foreach ($file in $sqlFiles) {
     $pattern_5 = '(?s)CREATE\s+NONCLUSTEREDRED\s+INDEX[\s\S]*?;'
     $newContent_5 = [regex]::Replace($newContent_4, $pattern_5, '')
     $newContent_6 = [regex]::Replace($newContent_5, '[\r\n]{5,}', "`n")
+    $pattern_7 = '(?s)CREATE\s+CLUSTERED\s+INDEX[\s\S]*?;'
+    $newContent_7 = [regex]::Replace($newContent_6, $pattern_7, '')
+    $pattern_8 = '(?s)CREATE\s+view[\s\S]*?;'
+    $newContent_8 = [regex]::Replace($newContent_7, $pattern_8, '')
+    $pattern_9 = '(?s)create\s+view[\s\S]*?;'
+    $newContent_9 = [regex]::Replace($newContent_8, $pattern_9, '')
+    $pattern_10 = '(?s)create\s+VIEW[\s\S]*?;'
+    $newContent_10 = [regex]::Replace($newContent_9, $pattern_10, '')
 
     # 将处理后的内容写回文件
-    $newContent_6 | Set-Content -Path $file.FullName -Force
+    $newContent_10 | Set-Content -Path $file.FullName -Force
 }
 
 Write-Host "所有SQL文件处理完成"
