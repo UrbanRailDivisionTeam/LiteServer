@@ -1,3 +1,4 @@
 docker/test/mongo_data
 docker/develop/mongo_data
 docker/build/mongo_data
+tools/*.zip
