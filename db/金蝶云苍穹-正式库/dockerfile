@@ -4,14 +4,10 @@ FROM mysql:8.0.26
 # 设置 MySQL root 用户密码
 ENV MYSQL_ROOT_PASSWORD=Swq8855830.
 
-# 安装必要的工具（如 mysql-client）
-# RUN apt-get update && apt-get install -y mysql-client
-
 # 将 SQL 初始化脚本复制到镜像中的适当位置
 COPY *.sql /docker-entrypoint-initdb.d/
 COPY table/*.sql /docker-entrypoint-initdb.d/
 
-# 启动 MySQL 服务并执行 SQL 脚本，然后停止服务
-RUN mysql -u root -p${MYSQL_ROOT_PASSWORD} < /docker-entrypoint-initdb.d/*.sql && \
-    mysql -u root -p${MYSQL_ROOT_PASSWORD} < /docker-entrypoint-initdb.d/table/*.sql && \
-    service mysql stop
+# 添加健康检查
+HEALTHCHECK --interval=30s --timeout=10s --start-period=5s --retries=3 \
+    CMD mysql -h localhost -u root -p${MYSQL_ROOT_PASSWORD} -e "SELECT * FROM crrc_wtc_wtte.t_wtpm_supsigntasklog_r3" || exit 1

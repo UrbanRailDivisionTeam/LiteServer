@@ -12,13 +12,11 @@ RUN mkdir -p /init-sql
 COPY *.sql /init-sql/
 COPY table/*.sql /init-sql/
 
-# 启动 SQL Server 并执行初始化脚本
-# CMD /opt/mssql/bin/sqlservr & \
-#     sleep 30 && \
-#     /opt/mssql-tools/bin/sqlcmd -S localhost -U SA -P "$SA_PASSWORD" -i /init-sql/0_init.sql && \
-#     /opt/mssql-tools/bin/sqlcmd -S localhost -U SA -P "$SA_PASSWORD" -i /init-sql/1_data.sql && \
-#     wait
+# 新增执行脚本
+COPY entrypoint.sh /init-sql/
+RUN chmod +x /init-sql/entrypoint.sh
 
-CMD /opt/mssql/bin/sqlservr & \
-    sleep 30 && \
-    wait
+# 启动 SQL Server 并执行初始化脚本
+RUN /init-sql/entrypoint.sh
+
+EXPOSE 1433
