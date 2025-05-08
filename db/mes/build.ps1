@@ -1,7 +1,7 @@
 # 设置参数
-$TEMP_CONTAINERS = "temp_mysql_0"
-$TEMP_IMAGE = "cheakf/custom-mysql_0:latest"
-$FINAL_IMAGE = "cheakf/gold_butterfly_cloud:latest"
+$TEMP_CONTAINERS = "temp_oracle_1"
+$TEMP_IMAGE = "cheakf/custom-oracle-1:latest"
+$FINAL_IMAGE = "cheakf/mes:latest"
 
 # 构建自定义镜像
 docker stop $TEMP_CONTAINERS
@@ -12,11 +12,10 @@ Write-Host "---------------------清理之前的可能文件--------------------
 Set-Location $PSScriptRoot
 docker build -t $TEMP_IMAGE .
 Write-Host "---------------------构建镜像完成--------------------"
-
 # 创建并启动容器（自动执行SQL脚本）
 docker run -d `
     --name $TEMP_CONTAINERS `
-    -e MYSQL_ROOT_PASSWORD=Swq8855830. `
+    -e ORACLE_DISABLE_ASYNCH_IO=true `
     $TEMP_IMAGE
 Write-Host "--------------------临时容器启动完成--------------------"
 Write-Host "--------------------开始进行数据库初始化--------------------"
@@ -25,7 +24,6 @@ do {
     if ($confirm -eq "y") { break }
 } while ($true)
 Write-Host "--------------------数据库初始化完成--------------------"
-
 # 提交容器为新镜像
 docker commit $TEMP_CONTAINERS $FINAL_IMAGE
 Write-Host "--------------------提交镜像完成--------------------"

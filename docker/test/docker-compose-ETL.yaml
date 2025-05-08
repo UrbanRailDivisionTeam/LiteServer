@@ -3,7 +3,7 @@ services:
         container_name: etl
         build:
             context: ../../etl
-            dockerfile: ../../etl/dockerfile
+            dockerfile: dockerfile
         ports:
             - "6379:6379"
         restart: always
@@ -12,7 +12,7 @@ services:
             - ../../etl/source/data.db.wal:/LiteETL/source/data.db.wal
         networks:
             lite_net_testetl:
-                ipv4_address: 192.168.1.100
+                ipv4_address: 192.168.1.1
 
     mongodb:
         container_name: mongodb
@@ -25,128 +25,117 @@ services:
             - ./init_db.js:/docker-entrypoint-initdb.d/init_db.js
         networks:
             lite_net_testetl:
-                ipv4_address: 192.168.1.100
+                ipv4_address: 192.168.1.2
 
     金蝶云苍穹_测试库:
         container_name: kingdee_cloud_test
-        build:
-            context: ../../db/金蝶云苍穹-测试库
-            dockerfile: ../../db/金蝶云苍穹-测试库/dockerfile
+        image: cheakf/gold_butterfly_cloud_test:latest
         ports:
             - "3306:3306"
         restart: always
         networks:
-            - lite_net_testetl
+            lite_net_testetl:
+                ipv4_address: 10.24.204.37
 
     金蝶云苍穹_正式库:
         container_name: kingdee_cloud_prod
-        build:
-            context: ../../db/金蝶云苍穹-正式库
-            dockerfile: ../../db/金蝶云苍穹-正式库/dockerfile
+        image: cheakf/gold_butterfly_cloud:latest
         ports:
             - "3307:3306"
         restart: always
         networks:
-            - lite_net_testetl
+            lite_net_testetl:
+                ipv4_address: 10.24.206.138
 
     智能立库:
         container_name: smart_warehouse
-        build:
-            context: ../../db/智能立库
-            dockerfile: ../../db/智能立库/dockerfile
+        image: cheakf/intelligent_vault:latest
         ports:
             - "3308:3306"
         restart: always
         networks:
-            - lite_net_testetl
+            lite_net_testetl:
+                ipv4_address: 10.24.5.21
 
     数据治理平台_正式库:
         container_name: datagov_prod
-        build:
-            context: ../../db/数据治理平台-正式库
-            dockerfile: ../../db/数据治理平台-正式库/dockerfile
+        image: cheakf/data_governance:latest
         ports:
             - "3309:3306"
         restart: always
         networks:
-            - lite_net_testetl
+            lite_net_testetl:
+                ipv4_address: 10.24.207.80
 
     数据治理平台_测试库:
         container_name: datagov_test
-        build:
-            context: ../../db/数据治理平台-测试库
-            dockerfile: ../../db/数据治理平台-测试库/dockerfile
+        image: cheakf/data_governance_test:latest
         ports:
             - "3310:3306"
         restart: always
         networks:
-            - lite_net_testetl
+            lite_net_testetl:
+                ipv4_address: 10.24.7.145
 
     机车数据库:
         container_name: locomotive_db
-        build:
-            context: ../../db/机车数据库
-            dockerfile: ../../db/机车数据库/dockerfile
+        image: cheakf/scooter_database:latest
         ports:
             - "3311:3306"
         restart: always
         networks:
-            - lite_net_testetl
+            lite_net_testetl:
+                ipv4_address: 10.29.31.159
 
     生产辅助系统:
         container_name: prod_support
-        build:
-            context: ../../db/生产辅助系统
-            dockerfile: ../../db/生产辅助系统/dockerfile
+        images: cheakf/production_support_systems:latest
         ports:
             - "1433:1433"
         restart: always
         networks:
-            - lite_net_testetl
+            lite_net_testetl:
+                ipv4_address: 10.24.5.154
 
     考勤系统:
         container_name: attendance_sys
-        build:
-            context: ../../db/考勤系统
-            dockerfile: ../../db/考勤系统/dockerfile
+        image: cheakf/attendance:latest
         ports:
             - "1434:1433"
         restart: always
         networks:
-            - lite_net_testetl
+            lite_net_testetl:
+                ipv4_address: 10.24.7.48
 
     eas:
         container_name: eas_db
-        build:
-            context: ../../db/eas
-            dockerfile: ../../db/eas/dockerfile
+        image: cheakf/eas:latest
         ports:
             - "1521:1521"
         restart: always
         networks:
-            - lite_net_testetl
+            lite_net_testetl:
+                ipv4_address: 172.18.1.121
 
     mes:
         container_name: mes_db
-        build:
-            context: ../../db/mes
-            dockerfile: ../../db/mes/dockerfile
+        image: cheakf/mes:latest
         ports:
             - "1522:1521"
         restart: always
         networks:
-            - lite_net_testetl
+            lite_net_testetl:
+                ipv4_address: 10.24.212.17
 
     shr:
         container_name: shr_db
-        build:
-            context: ../../db/shr
-            dockerfile: ../../db/shr/dockerfile
+        image: cheakf/shr:latest
         ports:
             - "1523:1521"
         restart: always
         networks:
-            - lite_net_testetl
+            lite_net_testetl:
+                ipv4_address: 10.24.204.67
 
 networks:
     lite_net_testetl:

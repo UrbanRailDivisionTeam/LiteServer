@@ -7,7 +7,3 @@ ENV MYSQL_ROOT_PASSWORD=Swq8855830.
 # 将 SQL 初始化脚本复制到镜像中的适当位置
 COPY *.sql /docker-entrypoint-initdb.d/
 COPY table/*.sql /docker-entrypoint-initdb.d/
-
-# 添加健康检查
-HEALTHCHECK --interval=30s --timeout=10s --start-period=5s --retries=3 \
-    CMD mysql -h localhost -u root -p${MYSQL_ROOT_PASSWORD} -e "SELECT * FROM crrc_wtc_wtte.t_wtpm_supsigntasklog_r3" || exit 1

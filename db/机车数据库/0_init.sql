@@ -1,6 +1,6 @@
-CREATE DATABASE `crrc_temp`
+CREATE DATABASE `crrc_temp`;
 
-USE crrc_temp;
+USE `crrc_temp`;
 -- crrc_temp.EAS_MRL_FULLY_DATA definition
 
 CREATE TABLE `EAS_MRL_FULLY_DATA` (

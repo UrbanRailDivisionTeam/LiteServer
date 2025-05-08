@@ -25,8 +25,7 @@ services:
             - lite_net_develop
         volumes:
             # 保存对应的duckdb数据库文件
-            - ../../etl/source/data.db:/LiteETL/source/data.db
-            - ../../etl/source/data.db.wal:/LiteETL/source/data.db.wal
+            - ./source:/LiteETL/source
 
     mongodb:
         container_name: mongodb

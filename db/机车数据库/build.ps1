@@ -1,6 +1,6 @@
 # 设置参数
 $TEMP_CONTAINERS = "temp_mysql_2"
-$TEMP_IMAGE = "cheakf/custom-mysql_2:latest"
+$TEMP_IMAGE = "cheakf/custom-mysql-2:latest"
 $FINAL_IMAGE = "cheakf/scooter_database:latest"
 
 # 构建自定义镜像
@@ -9,21 +9,19 @@ docker rm $TEMP_CONTAINERS
 docker rmi $TEMP_IMAGE
 docker rmi $FINAL_IMAGE
 Write-Host "---------------------清理之前的可能文件--------------------"
-docker build -t $FINAL_IMAGE .
+Set-Location $PSScriptRoot
+docker build -t $TEMP_IMAGE .
 Write-Host "---------------------构建镜像完成--------------------"
 # 创建并启动容器（自动执行SQL脚本）
 docker run -d `
     --name $TEMP_CONTAINERS `
     -e MYSQL_ROOT_PASSWORD=Swq8855830. `
-    -p 3306:3306 `
     $TEMP_IMAGE
 Write-Host "--------------------临时容器启动完成--------------------"
 Write-Host "--------------------开始进行数据库初始化--------------------"
 do {
-    $status = docker inspect -f '{{.State.Health.Status}}' $TEMP_CONTAINERS
-    Write-Host "当前状态: $status"
-    if ($status -eq "healthy") { break }
-    Start-Sleep -Seconds 10
+    $confirm = Read-Host "$TEMP_CONTAINERS 数据库是否初始化完成？(输入y继续)"
+    if ($confirm -eq "y") { break }
 } while ($true)
 Write-Host "--------------------数据库初始化完成--------------------"
 # 提交容器为新镜像
